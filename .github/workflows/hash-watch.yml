@@ -79,10 +79,21 @@ jobs:
       - name: Check out ubiquex (real source of truth for the group's own member list)
         run: |
           set -euo pipefail
-          # Fine-grained PAT, contents:read on Ubiquex/ubiquex -- same
-          # UBIQUEX_SOURCE_TOKEN secret this repo's own publish.yml uses.
-          git clone --depth=1 \
-            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubiquex.git" \
+          # ubiquex is a public repo -- a plain, unauthenticated clone, no
+          # token needed. (Formerly a fine-grained UBIQUEX_SOURCE_TOKEN
+          # PAT, before ubiquex was made public; that secret was never
+          # actually set on this repo, confirmed directly via the API, so
+          # this checkout always failed here regardless of whether a real
+          # change was ever found.)
+          #
+          # --recurse-submodules: real, found-live bug (on ubx-sdk-google's
+          # own copy of this file, ported back here) -- ubiquex's own
+          # sdk/go, sdk/py, sdk/ts are real git submodules; a bare clone
+          # leaves them empty and `go build ./cmd/ubx` below fails. Never
+          # caught until a real regen actually ran, since every prior test
+          # run's compare step found the corpus unchanged first.
+          git clone --depth=1 --recurse-submodules \
+            "https://github.com/Ubiquex/ubiquex.git" \
             "${{ runner.temp }}/ubiquex-src"
 
       - name: Set up Python
@@ -98,7 +109,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 - <<'PYEOF'
-          import hashlib, json, os, tomllib, urllib.request, yaml, datetime
+          import hashlib, json, os, time, tomllib, urllib.error, urllib.request, yaml, datetime
 
           GROUP = os.environ["GROUP"]
 
@@ -107,15 +118,34 @@ jobs:
           members = sorted(group["members"])
           urls = {m: cfg["dynamic_providers"][m]["schema_url"] for m in members}
 
-          def fetch(url, retries=3):
+          def fetch(url, retries=5):
+              # Real, found-live bug, found twice against ubx-sdk-azure's
+              # own 302-member corpus (irrelevant to this repo's own 2
+              # members, kept identical here for consistency): a first
+              # draft retried with zero delay, which does nothing against
+              # an HTTP 429. A second draft's 0.2s/1s-2s-4s-8s backoff
+              # still wasn't enough -- GitHub-hosted runners share an
+              # outbound IP pool that can already be close to
+              # raw.githubusercontent.com's own limit before this
+              # workflow's own requests even start. Real fix: honor the
+              # real Retry-After header GitHub's own 429 response carries
+              # when present, falling back to a longer exponential backoff
+              # (5s, 10s, 20s, 40s, 80s) when absent, plus a real 1s delay
+              # between every member fetch below, not just retries.
               req = urllib.request.Request(url, headers={"User-Agent": "ubx-hash-watch"})
               for i in range(retries):
                   try:
                       with urllib.request.urlopen(req, timeout=30) as resp:
                           return resp.read()
+                  except urllib.error.HTTPError as e:
+                      if i == retries - 1:
+                          raise
+                      retry_after = e.headers.get("Retry-After") if e.code == 429 else None
+                      time.sleep(float(retry_after) if retry_after else 5 * (2 ** i))
                   except Exception:
                       if i == retries - 1:
                           raise
+                      time.sleep(5 * (2 ** i))
 
           def json_default(o):
               if isinstance(o, (datetime.date, datetime.datetime)):
@@ -141,7 +171,9 @@ jobs:
               return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
 
           h = hashlib.sha256()
-          for m in members:
+          for i, m in enumerate(members):
+              if i > 0:
+                  time.sleep(1.0)
               h.update(canonicalize(fetch(urls[m])))
 
           with open(os.environ["GITHUB_OUTPUT"], "a") as out:
@@ -172,8 +204,10 @@ jobs:
         if: steps.compare.outputs.newer == 'true'
         run: |
           set -euo pipefail
+          # ubx-provider-dynamic is a public repo -- a plain,
+          # unauthenticated clone, no token needed.
           git clone --depth=1 \
-            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubx-provider-dynamic.git" \
+            "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
             "${{ runner.temp }}/ubx-provider-dynamic-src"
 
       - name: Set up Go
