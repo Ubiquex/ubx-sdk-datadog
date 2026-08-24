@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .downtime import Downtime, DowntimeConfig
+from .response import Response, ResponseConfig

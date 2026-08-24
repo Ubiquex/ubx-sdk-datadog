@@ -6,3 +6,4 @@ SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .integration import Integration, IntegrationConfig
 from .integration_custom_variable_response import IntegrationCustomVariableResponse, IntegrationCustomVariableResponseConfig
+from .oauth2_client_credentials_response import Oauth2ClientCredentialsResponse, Oauth2ClientCredentialsResponseConfig
