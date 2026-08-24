@@ -1,24 +1,60 @@
 name: hash-watch
 
-# Weekly check against the real, live Datadog OpenAPI spec URL for content
-# drift. Datadog publishes no discrete, pinnable release for this spec (the
-# schema_url points at a live master branch) -- there is no version number
-# to poll the way version-watch.yml does for the four Terraform-provider-
-# sourced repos (ubx-sdk-aws/-google/-kubernetes/-azure). Instead: re-fetch
-# the same spec bytes, hash them, and compare against VERSION's committed
-# spec-sha256. On a hash change: bumps VERSION, re-runs
-# `ubx sdk gen --lang go|ts|py --out .` against it (all three languages,
-# one PR), and opens a PR with the combined diff for review. Never
-# auto-merges, same as every other repo in this org.
+# Weekly check against every real, live member spec behind
+# [dynamic_provider_groups.datadog_all] (ubiquex, sdk/providers/.ubx/config)
+# for content drift. Datadog publishes no discrete, pinnable release for
+# either of its two OpenAPI sources (v1, v2 -- both live `master`-branch
+# specs, not tagged versions) -- there is no version number to poll the
+# way version-watch.yml does for the four Terraform-provider-sourced
+# repos, and no single spec byte stream to hash the way the original,
+# single-source form of this file did through 1.0.0.
 #
-# Ported from ubx-sdk-google's own version-watch.yml (the real, working
-# reference for the combined-repo layout and the regen/build steps), with
-# the version-source swapped from a Terraform Registry API poll to a
-# spec-hash comparison, and an extra `ubx-provider-dynamic` checkout added
-# -- dynamic providers (schema_source = "openapi") need a local
-# ubx-provider-dynamic build to resolve at all (cli/dynamicprovider.go's
-# UBX_PROVIDER_DYNAMIC_REPO convention), unlike a thirdparty Terraform
-# provider, which ubx sdk gen acquires on its own.
+# 1.1.0: this repo generates from TWO real sources merged
+# ([dynamic_provider_groups.datadog_all]), not one.
+#
+# Real design history worth keeping, found the hard way this session:
+# the first rewrite of this file hashed the combined, POST-ENRICHMENT
+# IR (`ubx sdk gen --dump-ir`'s own schema.json), the same real artifact
+# VERSION's own merged-schema-sha256 used to record. That is wrong for
+# a drift watch -- confirmed live, by checking out ubiquex/
+# ubx-provider-dynamic at the exact commits current when ubx-sdk-azure's
+# and ubx-sdk-google's own VERSION files were last written and
+# recomputing: the historical toolchain against TODAY's live specs
+# produced a THIRD distinct hash, different from both the committed
+# value and a current-toolchain run. Isolating that (same toolchain,
+# different fetch time vs. same fetch time, different toolchain) proved
+# both upstream drift AND toolchain drift were real and independently
+# present -- a hash over post-enrichment IR fires on every
+# ubiquex/ubx-provider-dynamic change that touches generation logic at
+# all, never mind whether Datadog published anything.
+#
+# This file instead hashes the RAW FETCHED SPECS directly -- every
+# member's own schema_url content, parsed, canonicalized (sort_keys,
+# compact separators -- JSON and YAML both parse to the same native
+# structure, so one method covers both, no branching on file
+# extension), and concatenated in a fixed, deterministic order (members
+# sorted by name) before the final hash. This never touches ubx or
+# ubx-provider-dynamic at all for the compare step -- only for the
+# regen step below, when a real change is actually found.
+#
+# One canonicalization rule, found live: Google's own Discovery Documents
+# (irrelevant to Datadog specifically, but this file is the shared
+# reference the ubx-sdk-azure/ubx-sdk-google copies are ported from)
+# carry a top-level "revision" date-stamp that Google's own backend
+# serves inconsistently across concurrent requests to the SAME logical
+# document -- confirmed live, three different values fetched seconds
+# apart. Stripped before hashing, if present. Datadog's OpenAPI YAML and
+# Azure's Swagger JSON carry no top-level "revision" key at all
+# (confirmed against a real sample of each), so this is a real no-op for
+# both -- one rule, safe for every member regardless of provider.
+#
+# Rather than reconstruct the group's own member list by hand here (a
+# real, live drift risk of its own if ubiquex's config ever adds/removes
+# a member and this file isn't updated in lockstep), this checks out
+# ubiquex (still needed, just to read its own real, live
+# sdk/providers/.ubx/config -- Python's stdlib tomllib parses it
+# directly, no external dependency) rather than duplicating the member
+# list here.
 
 on:
   schedule:
@@ -29,6 +65,10 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+  GROUP: datadog_all
+  REPO_NAME: datadog
+
 jobs:
   check-and-regenerate:
     runs-on: ubuntu-latest
@@ -36,45 +76,102 @@ jobs:
       - name: Check out ubx-sdk-datadog
         uses: actions/checkout@v4
 
-      - name: Fetch the real Datadog OpenAPI spec and hash it
-        id: spec
+      - name: Check out ubiquex (real source of truth for the group's own member list)
         run: |
           set -euo pipefail
-          url="https://raw.githubusercontent.com/DataDog/datadog-api-client-go/master/.generator/schemas/v1/openapi.yaml"
-          curl -sf "$url" -o /tmp/spec.bin
-          hash="$(sha256sum /tmp/spec.bin | awk '{print $1}')"
-          echo "hash=$hash" >> "$GITHUB_OUTPUT"
-          echo "Live spec sha256: $hash"
+          # Fine-grained PAT, contents:read on Ubiquex/ubiquex -- same
+          # UBIQUEX_SOURCE_TOKEN secret this repo's own publish.yml uses.
+          git clone --depth=1 \
+            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubiquex.git" \
+            "${{ runner.temp }}/ubiquex-src"
 
-      - name: Compare against this repo's committed hash
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up PyYAML
+        run: pip install --quiet pyyaml
+
+      - name: Fetch every member's raw spec and compute the merged-spec-sha256
+        id: merged
+        run: |
+          set -euo pipefail
+          python3 - <<'PYEOF'
+          import hashlib, json, os, tomllib, urllib.request, yaml, datetime
+
+          GROUP = os.environ["GROUP"]
+
+          cfg = tomllib.load(open("${{ runner.temp }}/ubiquex-src/sdk/providers/.ubx/config", "rb"))
+          group = cfg["dynamic_provider_groups"][GROUP]
+          members = sorted(group["members"])
+          urls = {m: cfg["dynamic_providers"][m]["schema_url"] for m in members}
+
+          def fetch(url, retries=3):
+              req = urllib.request.Request(url, headers={"User-Agent": "ubx-hash-watch"})
+              for i in range(retries):
+                  try:
+                      with urllib.request.urlopen(req, timeout=30) as resp:
+                          return resp.read()
+                  except Exception:
+                      if i == retries - 1:
+                          raise
+
+          def json_default(o):
+              if isinstance(o, (datetime.date, datetime.datetime)):
+                  return o.isoformat()
+              raise TypeError(f"not JSON serializable: {o!r}")
+
+          def canonicalize(raw_bytes):
+              text = raw_bytes.decode("utf-8")
+              try:
+                  doc = json.loads(text)
+              except json.JSONDecodeError:
+                  doc = yaml.safe_load(text)
+              # Real, confirmed instability found live (see this file's own
+              # header comment): a top-level "revision" key, when present,
+              # is metadata (a last-regenerated stamp), not API-surface
+              # content, and some live spec endpoints serve it
+              # inconsistently across replicas. Absent entirely from
+              # Datadog's/Azure's own specs (confirmed), so dropping it is
+              # a real no-op for both -- only Google-shaped Discovery
+              # Documents ever actually have this key.
+              if isinstance(doc, dict) and "revision" in doc:
+                  doc = {k: v for k, v in doc.items() if k != "revision"}
+              return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
+
+          h = hashlib.sha256()
+          for m in members:
+              h.update(canonicalize(fetch(urls[m])))
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"hash={h.hexdigest()}\n")
+              out.write(f"members={len(members)}\n")
+          print(f"Live merged-spec-sha256: {h.hexdigest()} ({len(members)} members)")
+          PYEOF
+
+      - name: Compare against this repo's committed VERSION
         id: compare
         run: |
           set -euo pipefail
-          current="$(grep '^spec-sha256:' VERSION | awk '{print $2}')"
-          echo "current=$current" >> "$GITHUB_OUTPUT"
-          echo "This repo was last generated from spec-sha256: $current"
-          if [ "$current" = "${{ steps.spec.outputs.hash }}" ]; then
+          current_hash="$(grep '^merged-spec-sha256:' VERSION | awk '{print $2}')"
+          current_members="$(grep '^members:' VERSION | awk '{print $2}')"
+          echo "current_hash=$current_hash" >> "$GITHUB_OUTPUT"
+          echo "current_members=$current_members" >> "$GITHUB_OUTPUT"
+          echo "This repo was last generated from merged-spec-sha256: $current_hash ($current_members members)"
+          if [ "$current_hash" = "${{ steps.merged.outputs.hash }}" ] && [ "$current_members" = "${{ steps.merged.outputs.members }}" ]; then
             echo "newer=false" >> "$GITHUB_OUTPUT"
             echo "Already current -- nothing to do."
           else
             echo "newer=true" >> "$GITHUB_OUTPUT"
           fi
 
-      # --- everything below only runs when the spec content changed ---
+      # --- everything below only runs when the merged corpus changed ---
 
-      - name: Check out ubiquex (to build ubx from source)
+      - name: Check out ubx-provider-dynamic (only needed once a real change is found)
         if: steps.compare.outputs.newer == 'true'
         run: |
           set -euo pipefail
-          # Fine-grained PAT, contents:read on BOTH Ubiquex/ubiquex and
-          # Ubiquex/ubx-provider-dynamic -- this repo needs both checkouts
-          # (dynamic providers require a local ubx-provider-dynamic build,
-          # see this file's own header). Same UBIQUEX_SOURCE_TOKEN secret
-          # ubx-sdk-google's own version-watch.yml uses; its scope must
-          # additionally cover ubx-provider-dynamic for this workflow.
-          git clone --depth=1 \
-            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubiquex.git" \
-            "${{ runner.temp }}/ubiquex-src"
           git clone --depth=1 \
             "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubx-provider-dynamic.git" \
             "${{ runner.temp }}/ubx-provider-dynamic-src"
@@ -91,12 +188,6 @@ jobs:
         with:
           deno-version: "2.x"
 
-      - name: Set up Python
-        if: steps.compare.outputs.newer == 'true'
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
       - name: Build ubx
         if: steps.compare.outputs.newer == 'true'
         run: |
@@ -104,48 +195,28 @@ jobs:
           go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
           "${{ runner.temp }}/ubx" version
 
-      - name: Regenerate bindings (all three languages)
+      - name: Regenerate bindings (all three languages, through the real group)
         if: steps.compare.outputs.newer == 'true'
         env:
           UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
         run: |
           set -euo pipefail
           gendir="${{ runner.temp }}/ubxgen"
-          mkdir -p "$gendir/.ubx"
-          cat > "$gendir/.ubx/config" <<EOF
-          [dynamic_providers.datadog]
-          schema_source = "openapi"
-          schema_url = "https://raw.githubusercontent.com/DataDog/datadog-api-client-go/master/.generator/schemas/v1/openapi.yaml"
-          base_url = "https://api.datadoghq.com"
-          EOF
+          mkdir -p "$gendir"
 
-          # Each language's own semver `version` field is owned by
-          # publish.yml, not by codegen -- codegen always writes "0.0.0".
-          # Capture the real, currently-committed values before regen
-          # overwrites them, restore after.
           own_ts_version="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
           own_py_version="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
 
-          # Seed the scratch output's own go.mod with this repo's real,
-          # already-checked-out go.mod before generation runs (matches
-          # ubx-sdk-google's own version-watch.yml, UBI-153).
-          mkdir -p "$gendir/out/datadog/sdk/go"
-          cp sdk/go/go.mod "$gendir/out/datadog/sdk/go/go.mod"
+          mkdir -p "$gendir/out/$REPO_NAME/sdk/go"
+          cp sdk/go/go.mod "$gendir/out/$REPO_NAME/sdk/go/go.mod"
 
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only datadog --lang go --out out )
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only datadog --lang ts --out out )
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only datadog --lang py --out out )
+          for lang in go ts py; do
+            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$GROUP" --lang "$lang" --out "$gendir/out" )
+          done
 
-          # go.sum, deno.json/deno.lock are hand/tooling-maintained, not
-          # codegen output, and are excluded from the regeneration diff.
-          rsync -a --delete \
-            --exclude='go.sum' \
-            "$gendir/out/datadog/sdk/go/" sdk/go/
-          rsync -a --delete \
-            --exclude='deno.json' --exclude='deno.lock' \
-            "$gendir/out/datadog/sdk/typescript/" sdk/typescript/
-          rsync -a --delete \
-            "$gendir/out/datadog/sdk/python/" sdk/python/
+          rsync -a --delete --exclude='go.sum' "$gendir/out/$REPO_NAME/sdk/go/" sdk/go/
+          rsync -a --delete --exclude='deno.json' --exclude='deno.lock' "$gendir/out/$REPO_NAME/sdk/typescript/" sdk/typescript/
+          rsync -a --delete "$gendir/out/$REPO_NAME/sdk/python/" sdk/python/
 
           python3 -c "
           import json
@@ -164,23 +235,24 @@ jobs:
           "
 
           cat > VERSION <<EOF
-          spec-sha256: ${{ steps.spec.outputs.hash }}
+          merged-spec-sha256: ${{ steps.merged.outputs.hash }}
+          members: ${{ steps.merged.outputs.members }}
           fetched: $(date -u +%Y-%m-%d)
-          source: https://raw.githubusercontent.com/DataDog/datadog-api-client-go/master/.generator/schemas/v1/openapi.yaml
+          source: [dynamic_provider_groups.$GROUP] in ubiquex (sdk/providers/.ubx/config)
           EOF
 
       - name: Refresh sdk/typescript/deno.json's exports map for the regenerated tree
         if: steps.compare.outputs.newer == 'true'
         run: |
           set -euo pipefail
-          python3 - <<'PYEOF'
+          python3 - <<PYEOF
           import json, os
 
           with open("sdk/typescript/deno.json") as fh:
               cfg = json.load(fh)
 
           exports = {}
-          for dirpath, _, filenames in os.walk("sdk/typescript/datadog"):
+          for dirpath, _, filenames in os.walk("sdk/typescript/$REPO_NAME"):
               for f in sorted(filenames):
                   if not f.endswith(".ts"):
                       continue
@@ -266,18 +338,18 @@ jobs:
           set -euo pipefail
           git config user.name "ubx-bot"
           git config user.email "actions@users.noreply.github.com"
-          short="$(echo "${{ steps.spec.outputs.hash }}" | cut -c1-12)"
+          short="$(echo "${{ steps.merged.outputs.hash }}" | cut -c1-12)"
           branch="sdk-regen/datadog-$short"
           git checkout -b "$branch"
           git add -A
-          git commit -m "sdk: regenerate from datadog spec $short"
+          git commit -m "sdk: regenerate from datadog_all merged corpus $short"
           git push origin "$branch" --force
           gh pr create \
-            --title "sdk: regenerate from datadog spec $short" \
-            --body "Automated regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a spec content change on Datadog's live \`master\`-branch OpenAPI description -- all three languages (sdk/go/, sdk/typescript/, sdk/python/) regenerated together in this one PR.
+            --title "sdk: regenerate from datadog_all merged corpus $short" \
+            --body "Automated regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a merged-spec content change across [dynamic_provider_groups.datadog_all]'s own members -- all three languages (sdk/go/, sdk/typescript/, sdk/python/) regenerated together in this one PR.
 
-          Previous spec-sha256: \`${{ steps.compare.outputs.current }}\`
-          New spec-sha256: \`${{ steps.spec.outputs.hash }}\`
+          Previous merged-spec-sha256: \`${{ steps.compare.outputs.current_hash }}\` (${{ steps.compare.outputs.current_members }} members)
+          New merged-spec-sha256: \`${{ steps.merged.outputs.hash }}\` (${{ steps.merged.outputs.members }} members)
 
-          New files = new resource. Modified files = an existing resource's schema changed. This never auto-merges -- review the diff before merging." \
+          New files = new resource. Modified files = an existing resource's schema changed. Removed files = a resource dropped out of the corpus (a member removed, or the resource itself removed upstream). This never auto-merges -- review the diff before merging." \
             --base main --head "$branch"
