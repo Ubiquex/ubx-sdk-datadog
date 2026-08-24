@@ -79,10 +79,14 @@ jobs:
       - name: Check out ubiquex (real source of truth for the group's own member list)
         run: |
           set -euo pipefail
-          # Fine-grained PAT, contents:read on Ubiquex/ubiquex -- same
-          # UBIQUEX_SOURCE_TOKEN secret this repo's own publish.yml uses.
+          # ubiquex is a public repo -- a plain, unauthenticated clone, no
+          # token needed. (Formerly a fine-grained UBIQUEX_SOURCE_TOKEN
+          # PAT, before ubiquex was made public; that secret was never
+          # actually set on this repo, confirmed directly via the API, so
+          # this checkout always failed here regardless of whether a real
+          # change was ever found.)
           git clone --depth=1 \
-            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubiquex.git" \
+            "https://github.com/Ubiquex/ubiquex.git" \
             "${{ runner.temp }}/ubiquex-src"
 
       - name: Set up Python
@@ -172,8 +176,10 @@ jobs:
         if: steps.compare.outputs.newer == 'true'
         run: |
           set -euo pipefail
+          # ubx-provider-dynamic is a public repo -- a plain,
+          # unauthenticated clone, no token needed.
           git clone --depth=1 \
-            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubx-provider-dynamic.git" \
+            "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
             "${{ runner.temp }}/ubx-provider-dynamic-src"
 
       - name: Set up Go
