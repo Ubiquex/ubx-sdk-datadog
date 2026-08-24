@@ -5,3 +5,6 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .monitor import Monitor, MonitorConfig
+from .config_policy_response import ConfigPolicyResponse, ConfigPolicyResponseConfig
+from .notification_rule_response import NotificationRuleResponse, NotificationRuleResponseConfig
+from .user_template_response import UserTemplateResponse, UserTemplateResponseConfig

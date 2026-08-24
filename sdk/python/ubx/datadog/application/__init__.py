@@ -5,3 +5,6 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .key_response import KeyResponse, KeyResponseConfig
+from .security_policy_response import SecurityPolicyResponse, SecurityPolicyResponseConfig
+from .security_waf_custom_rule_response import SecurityWafCustomRuleResponse, SecurityWafCustomRuleResponseConfig
+from .security_waf_exclusion_filter_response import SecurityWafExclusionFilterResponse, SecurityWafExclusionFilterResponseConfig

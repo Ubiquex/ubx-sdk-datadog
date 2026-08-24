@@ -21,22 +21,44 @@ Repo shape follows the same one-repo-per-provider convention (UBI-138) as
 ## Versioning
 
 Datadog publishes no discrete, pinnable release for its API description — the
-`schema_url` this provider fetches from
-(`DataDog/datadog-api-client-go/master/.generator/schemas/v1/openapi.yaml`)
-points at a live `master` branch, not a tagged version. There is no upstream
-version number to record the way the four Terraform-provider-sourced repos
-record `hashicorp/<provider>@X.Y.Z`.
+`schema_url`s this provider fetches from point at live branches, not tagged
+versions. There is no upstream version number to record the way the four
+Terraform-provider-sourced repos record `hashicorp/<provider>@X.Y.Z`.
 
-`VERSION` instead records what was actually fetched: a SHA-256 of the raw
-spec bytes, the fetch date, and the source URL. A scheduled workflow
-(`.github/workflows/hash-watch.yml`) re-fetches the same URL periodically,
-hashes it, and compares against the committed hash — a content change (not a
-version bump, since there is none to observe) is what triggers a regen PR
-here, never a schedule alone. The package version fields (`package.json`,
-`deno.json`, `pyproject.toml`) are a separate, ordinary semver dial, bumped
-by `publish.yml` exactly like the other four repos (MINOR for a new resource
-type, PATCH for a changed one). This repo's first published version is
-`1.0.0`.
+As of `1.1.0`, this repo is generated from TWO real Datadog OpenAPI sources
+combined (`[dynamic_provider_groups.datadog_all]` in `ubiquex`'s own
+`sdk/providers/.ubx/config`): the original v1 spec plus v1's own newer,
+much larger v2 spec, merged into one output the same way
+`ubx-sdk-azure`/`ubx-sdk-google` already combine their own many-member
+corpora. v1 alone yields 26 resources; v2 alone yields 148, 145 of them with
+no v1 equivalent at all (v1 and v2 are genuinely complementary, not a
+superset relationship in either direction — 23 of v1's own resources have no
+v2 equivalent). 172 total. 2 of v2's own resources collide by generated name
+with v1's own richer version (`datadog_application_key_response`,
+`datadog_user_response`) — resolved in v1's favor via
+`[dynamic_provider_groups.datadog_all]`'s own `exclude` table in `ubiquex`
+(`cli/sdk.go`), not by renaming either side. v2's own resources carry the
+same plain `datadog_` wire prefix v1's always have — never a version-
+revealing `datadog_v2_` one — via `ubx-provider-dynamic`'s `wire_name`
+config field (PR #7), which decouples a `[dynamic_providers.<name>]` table's
+own key (must be unique, drives `--only` targeting) from what gets baked
+into its resources' public names.
+
+`VERSION` now records a `merged-schema-sha256` (a SHA-256 of the combined,
+deterministic post-enrichment IR, `ubx sdk gen --dump-ir`'s own
+`schema.json` shape, covering both members at once) plus the member count
+and fetch date, the same real scheme `ubx-sdk-azure`/`ubx-sdk-google` use
+for their own multi-member corpora — replacing the single-source
+`spec-sha256`/raw-bytes-hash scheme this file used through `1.0.0`.
+`.github/workflows/hash-watch.yml` still polls the old single-source
+`spec-sha256` shape and needs reworking for two members before it can run
+again — not done in this PR, flagged as real follow-up work, same as
+`ubx-sdk-azure`'s own `version-watch.yml` removal at its `1.0.0`.
+
+The package version fields (`package.json`, `deno.json`, `pyproject.toml`)
+are a separate, ordinary semver dial, bumped by `publish.yml` exactly like
+the other four repos (MINOR for a new resource type, PATCH for a changed
+one). This repo's first published version was `1.0.0`.
 
 Every file except each language's own `doc.{go,ts}` / `__init__.py` is
 generated — do not hand-edit; a hash change triggers `ubx sdk gen` to

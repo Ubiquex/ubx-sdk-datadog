@@ -1,3 +1,4 @@
-spec-sha256: e8e3972a2d77b1395e28f7044e830f526258a4bc5e07d9401c2c07b2bcccabb4
-fetched: 2026-08-23
-source: https://raw.githubusercontent.com/DataDog/datadog-api-client-go/master/.generator/schemas/v1/openapi.yaml
+merged-schema-sha256: 9fcad6eba629c23a51930fbcd5075644fa338fedc5432f60b59fa31a385ff8e0
+members: 2
+fetched: 2026-08-24
+source: [dynamic_provider_groups.datadog_all] in ubiquex (sdk/providers/.ubx/config)

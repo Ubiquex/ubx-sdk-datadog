@@ -6,6 +6,9 @@ SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .apitest import Apitest, ApitestConfig
 from .browser_test import BrowserTest, BrowserTestConfig
+from .downtime_response import DowntimeResponse, DowntimeResponseConfig
 from .global_variable import GlobalVariable, GlobalVariableConfig
 from .mobile_test import MobileTest, MobileTestConfig
+from .network_test_response import NetworkTestResponse, NetworkTestResponseConfig
 from .private_location import PrivateLocation, PrivateLocationConfig
+from .suite_response import SuiteResponse, SuiteResponseConfig
