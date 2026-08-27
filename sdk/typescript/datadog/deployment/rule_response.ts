@@ -5,7 +5,10 @@ export interface RuleResponse_Data_Attributes_Options {
   allowedResources?: string[] | Computed<string[]>;
   duration?: number | Computed<number>;
   excludedResources?: string[] | Computed<string[]>;
+  failOnNoData?: boolean | Computed<boolean>;
+  failOnNoGroupsFound?: boolean | Computed<boolean>;
   query?: string | Computed<string>;
+  warmup?: number | Computed<number>;
 }
 
 export interface RuleResponse_Data_Attributes {
@@ -30,7 +33,10 @@ const RuleResponse_Data_Attributes_OptionsFields: FieldMap = {
   allowedResources: "allowed_resources",
   duration: "duration",
   excludedResources: "excluded_resources",
+  failOnNoData: "fail_on_no_data",
+  failOnNoGroupsFound: "fail_on_no_groups_found",
   query: "query",
+  warmup: "warmup",
 };
 
 const RuleResponse_Data_AttributesFields: FieldMap = {

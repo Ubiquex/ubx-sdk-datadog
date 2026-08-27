@@ -7,7 +7,10 @@ type RuleResponse_Data_Attributes_Options struct {
 	AllowedResources any
 	Duration any
 	ExcludedResources any
+	FailOnNoData any
+	FailOnNoGroupsFound any
 	Query any
+	Warmup any
 }
 
 type RuleResponse_Data_Attributes struct {
@@ -32,7 +35,10 @@ var RuleResponse_Data_Attributes_OptionsFields = ubx.FieldMap{
 		"AllowedResources": ubx.FieldSpec{WireName: "allowed_resources"},
 		"Duration": ubx.FieldSpec{WireName: "duration"},
 		"ExcludedResources": ubx.FieldSpec{WireName: "excluded_resources"},
+		"FailOnNoData": ubx.FieldSpec{WireName: "fail_on_no_data"},
+		"FailOnNoGroupsFound": ubx.FieldSpec{WireName: "fail_on_no_groups_found"},
 		"Query": ubx.FieldSpec{WireName: "query"},
+		"Warmup": ubx.FieldSpec{WireName: "warmup"},
 	}
 
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{

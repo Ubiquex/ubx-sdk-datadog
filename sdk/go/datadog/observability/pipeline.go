@@ -105,6 +105,7 @@ type Pipeline_Data_Attributes_Config_Destinations struct {
 	DcrImmutableId any
 	DefaultNamespace any
 	Encoding any
+	EndpointTarget any
 	EndpointUrlKey any
 	Format any
 	Framing any
@@ -551,6 +552,7 @@ var Pipeline_Data_Attributes_Config_DestinationsFields = ubx.FieldMap{
 		"DcrImmutableId": ubx.FieldSpec{WireName: "dcr_immutable_id"},
 		"DefaultNamespace": ubx.FieldSpec{WireName: "default_namespace"},
 		"Encoding": ubx.FieldSpec{WireName: "encoding"},
+		"EndpointTarget": ubx.FieldSpec{WireName: "endpoint_target"},
 		"EndpointUrlKey": ubx.FieldSpec{WireName: "endpoint_url_key"},
 		"Format": ubx.FieldSpec{WireName: "format"},
 		"Framing": ubx.FieldSpec{

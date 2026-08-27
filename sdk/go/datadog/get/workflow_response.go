@@ -174,7 +174,7 @@ type WorkflowResponse_Data_Attributes_Spec_Triggers struct {
 }
 
 type WorkflowResponse_Data_Attributes_Spec struct {
-	// A list of annotations used in the workflow. These are like sticky notes for your workflow!
+	// Up to 100 text annotations displayed on the workflow canvas.
 	Annotations any
 	// A list of connections or connection groups used in the workflow.
 	ConnectionEnvs any
