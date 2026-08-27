@@ -245,8 +245,15 @@ jobs:
           cp sdk/go/go.mod "$gendir/out/$REPO_NAME/sdk/go/go.mod"
 
           for lang in go ts py; do
-            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$GROUP" --lang "$lang" --out "$gendir/out" )
+            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$GROUP" --lang "$lang" --out "$gendir/out" --require-clean-provenance )
           done
+
+          # UBI-197: real ubx-provider-dynamic provenance (source, commit,
+          # dirty, unpushed) -- --require-clean-provenance above already
+          # refuses on anything but a clean, pushed commit, so this is
+          # real confirmation, not just a record of an unverified claim.
+          # Committed to this repo's own root, sibling to VERSION.
+          cp "$gendir/out/$REPO_NAME/PROVENANCE.json" PROVENANCE.json
 
           rsync -a --delete --exclude='go.sum' "$gendir/out/$REPO_NAME/sdk/go/" sdk/go/
           rsync -a --delete --exclude='deno.json' --exclude='deno.lock' "$gendir/out/$REPO_NAME/sdk/typescript/" sdk/typescript/
