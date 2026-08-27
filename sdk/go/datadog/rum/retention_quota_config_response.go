@@ -3,11 +3,6 @@ package rum
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type RetentionQuotaConfigResponse_Data_Attributes_Adaptive struct {
-	// The maximum fraction of sessions to retain, in the range `(0, 1]`.
-	MaxRetentionRate any
-}
-
 type RetentionQuotaConfigResponse_Data_Attributes_Custom struct {
 	// The time of day when the daily quota resets, in `HH:MM` 24-hour format.
 	DailyResetTime any
@@ -22,11 +17,9 @@ type RetentionQuotaConfigResponse_Data_Attributes_Custom struct {
 }
 
 type RetentionQuotaConfigResponse_Data_Attributes struct {
-	// The configuration used when `mode` is `adaptive`.
-	Adaptive any
 	// The configuration used when `mode` is `custom`.
 	Custom any
-	// The retention quota mode. `custom` enforces a fixed session limit, while `adaptive` dynamically adjusts retention.
+	// The retention quota mode. `custom` enforces a fixed session limit. `custom` is the only supported mode.
 	Mode any
 }
 
@@ -39,10 +32,6 @@ type RetentionQuotaConfigResponse_Data struct {
 	Type any
 }
 
-var RetentionQuotaConfigResponse_Data_Attributes_AdaptiveFields = ubx.FieldMap{
-		"MaxRetentionRate": ubx.FieldSpec{WireName: "max_retention_rate"},
-	}
-
 var RetentionQuotaConfigResponse_Data_Attributes_CustomFields = ubx.FieldMap{
 		"DailyResetTime": ubx.FieldSpec{WireName: "daily_reset_time"},
 		"DailyResetTimezone": ubx.FieldSpec{WireName: "daily_reset_timezone"},
@@ -52,11 +41,6 @@ var RetentionQuotaConfigResponse_Data_Attributes_CustomFields = ubx.FieldMap{
 	}
 
 var RetentionQuotaConfigResponse_Data_AttributesFields = ubx.FieldMap{
-		"Adaptive": ubx.FieldSpec{
-			WireName: "adaptive",
-			Kind: "object",
-			Fields: RetentionQuotaConfigResponse_Data_Attributes_AdaptiveFields,
-		},
 		"Custom": ubx.FieldSpec{
 			WireName: "custom",
 			Kind: "object",

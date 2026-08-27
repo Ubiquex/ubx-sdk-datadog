@@ -5,4 +5,4 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .indexing_rule_response import IndexingRuleResponse, IndexingRuleResponseConfig
-from .policy_response import PolicyResponse, PolicyResponseConfig
+from .rule_response import RuleResponse, RuleResponseConfig

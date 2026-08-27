@@ -7,11 +7,6 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class RetentionQuotaConfigResponse_Data_Attributes_Adaptive:
-    # The maximum fraction of sessions to retain, in the range `(0, 1]`.
-    max_retention_rate: Any = None
-
-@dataclasses.dataclass
 class RetentionQuotaConfigResponse_Data_Attributes_Custom:
     # The time of day when the daily quota resets, in `HH:MM` 24-hour format.
     daily_reset_time: Any = None
@@ -26,11 +21,9 @@ class RetentionQuotaConfigResponse_Data_Attributes_Custom:
 
 @dataclasses.dataclass
 class RetentionQuotaConfigResponse_Data_Attributes:
-    # The configuration used when `mode` is `adaptive`.
-    adaptive: Any = None
     # The configuration used when `mode` is `custom`.
     custom: Any = None
-    # The retention quota mode. `custom` enforces a fixed session limit, while `adaptive` dynamically adjusts retention.
+    # The retention quota mode. `custom` enforces a fixed session limit. `custom` is the only supported mode.
     mode: Any = None
 
 @dataclasses.dataclass
@@ -42,10 +35,6 @@ class RetentionQuotaConfigResponse_Data:
     # The type of the resource, always `rum_quota_config`.
     type: Any = None
 
-_RetentionQuotaConfigResponse_Data_Attributes_AdaptiveFields = {
-    "max_retention_rate": ubx.FieldSpec(wire_name="max_retention_rate"),
-}
-
 _RetentionQuotaConfigResponse_Data_Attributes_CustomFields = {
     "daily_reset_time": ubx.FieldSpec(wire_name="daily_reset_time"),
     "daily_reset_timezone": ubx.FieldSpec(wire_name="daily_reset_timezone"),
@@ -55,11 +44,6 @@ _RetentionQuotaConfigResponse_Data_Attributes_CustomFields = {
 }
 
 _RetentionQuotaConfigResponse_Data_AttributesFields = {
-    "adaptive": ubx.FieldSpec(
-        wire_name="adaptive",
-        kind="object",
-        fields=_RetentionQuotaConfigResponse_Data_Attributes_AdaptiveFields,
-    ),
     "custom": ubx.FieldSpec(
         wire_name="custom",
         kind="object",

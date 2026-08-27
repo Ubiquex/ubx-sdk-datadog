@@ -178,7 +178,7 @@ class WorkflowResponse_Data_Attributes_Spec_Triggers:
 
 @dataclasses.dataclass
 class WorkflowResponse_Data_Attributes_Spec:
-    # A list of annotations used in the workflow. These are like sticky notes for your workflow!
+    # Up to 100 text annotations displayed on the workflow canvas.
     annotations: Any = None
     # A list of connections or connection groups used in the workflow.
     connection_envs: Any = None

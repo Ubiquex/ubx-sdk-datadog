@@ -172,7 +172,7 @@ export interface WorkflowResponse_Data_Attributes_Spec_Triggers {
 }
 
 export interface WorkflowResponse_Data_Attributes_Spec {
-  /** A list of annotations used in the workflow. These are like sticky notes for your workflow! */
+  /** Up to 100 text annotations displayed on the workflow canvas. */
   annotations?: WorkflowResponse_Data_Attributes_Spec_Annotations[] | Computed<WorkflowResponse_Data_Attributes_Spec_Annotations[]>;
   /** A list of connections or connection groups used in the workflow. */
   connectionEnvs?: WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs[] | Computed<WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs[]>;
