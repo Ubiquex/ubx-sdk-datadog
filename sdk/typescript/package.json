@@ -1,6 +1,6 @@
 {
   "name": "@ubx/sdk-datadog",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Generated TypeScript bindings for datadog@dynamic (ubx sdk gen). DO NOT EDIT.",
   "type": "module",
   "dependencies": {
