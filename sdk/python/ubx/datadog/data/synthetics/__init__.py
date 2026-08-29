@@ -4,23 +4,21 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .api_multistep_parent_tests_response import ApiMultistepParentTestsResponse, ApiMultistepParentTestsResponseConfig
-from .api_multistep_subtests_response import ApiMultistepSubtestsResponse, ApiMultistepSubtestsResponseConfig
+from .api_multistep_parent_test_data import ApiMultistepParentTestData, ApiMultistepParentTestDataConfig
+from .api_multistep_subtest_data import ApiMultistepSubtestData, ApiMultistepSubtestDataConfig
 from .apitest_result_full import ApitestResultFull, ApitestResultFullConfig
+from .apitest_result_short import ApitestResultShort, ApitestResultShortConfig
 from .batch_details import BatchDetails, BatchDetailsConfig
 from .browser_test_result_full import BrowserTestResultFull, BrowserTestResultFullConfig
-from .downtimes_response import DowntimesResponse, DowntimesResponseConfig
+from .browser_test_result_short import BrowserTestResultShort, BrowserTestResultShortConfig
+from .downtime_data import DowntimeData, DowntimeDataConfig
 from .fast_test_result import FastTestResult, FastTestResultConfig
-from .get_apitest_latest_results_response import GetApitestLatestResultsResponse, GetApitestLatestResultsResponseConfig
-from .get_browser_test_latest_results_response import GetBrowserTestLatestResultsResponse, GetBrowserTestLatestResultsResponseConfig
-from .list_global_variables_response import ListGlobalVariablesResponse, ListGlobalVariablesResponseConfig
-from .list_tests_response import ListTestsResponse, ListTestsResponseConfig
-from .locations import Locations, LocationsConfig
+from .global_variable import GlobalVariable, GlobalVariableConfig
 from .poll_test_results_response import PollTestResultsResponse, PollTestResultsResponseConfig
 from .suite_search_response import SuiteSearchResponse, SuiteSearchResponseConfig
 from .test_details_without_steps import TestDetailsWithoutSteps, TestDetailsWithoutStepsConfig
 from .test_latest_results_response import TestLatestResultsResponse, TestLatestResultsResponseConfig
-from .test_parent_suites_response import TestParentSuitesResponse, TestParentSuitesResponseConfig
-from .test_result_response import TestResultResponse, TestResultResponseConfig
-from .test_version_history_response import TestVersionHistoryResponse, TestVersionHistoryResponseConfig
+from .test_parent_suite_data import TestParentSuiteData, TestParentSuiteDataConfig
+from .test_result_included_item import TestResultIncludedItem, TestResultIncludedItemConfig
+from .test_version_change_data import TestVersionChangeData, TestVersionChangeDataConfig
 from .test_version_response import TestVersionResponse, TestVersionResponseConfig

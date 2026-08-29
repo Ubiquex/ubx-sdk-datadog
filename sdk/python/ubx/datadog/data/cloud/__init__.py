@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .workload_security_agent_policies_list_response import WorkloadSecurityAgentPoliciesListResponse, WorkloadSecurityAgentPoliciesListResponseConfig
+from .workload_security_agent_policy_data import WorkloadSecurityAgentPolicyData, WorkloadSecurityAgentPolicyDataConfig
+from .workload_security_agent_rule_data import WorkloadSecurityAgentRuleData, WorkloadSecurityAgentRuleDataConfig
 from .workload_security_agent_rule_response import WorkloadSecurityAgentRuleResponse, WorkloadSecurityAgentRuleResponseConfig
-from .workload_security_agent_rules_list_response import WorkloadSecurityAgentRulesListResponse, WorkloadSecurityAgentRulesListResponseConfig

@@ -11,10 +11,7 @@ export interface GateRulesResponse_Data_Attributes_Rules_Options {
   allowedResources?: string[] | Computed<string[]>;
   duration?: number | Computed<number>;
   excludedResources?: string[] | Computed<string[]>;
-  failOnNoData?: boolean | Computed<boolean>;
-  failOnNoGroupsFound?: boolean | Computed<boolean>;
   query?: string | Computed<string>;
-  warmup?: number | Computed<number>;
 }
 
 export interface GateRulesResponse_Data_Attributes_Rules {

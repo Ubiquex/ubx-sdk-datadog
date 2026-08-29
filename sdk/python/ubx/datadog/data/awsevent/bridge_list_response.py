@@ -7,15 +7,31 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class BridgeListResponse_Accounts_EventHubs:
+class BridgeListResponse_Data_Attributes_Accounts_EventHubs:
     name: Any = None
     region: Any = None
 
 @dataclasses.dataclass
-class BridgeListResponse_Accounts:
+class BridgeListResponse_Data_Attributes_Accounts:
     account_id: Any = None
     event_hubs: Any = None
     tags: Any = None
+
+@dataclasses.dataclass
+class BridgeListResponse_Data_Attributes:
+    # List of accounts with their event sources.
+    accounts: Any = None
+    # True if the EventBridge integration is enabled for your organization.
+    is_installed: Any = None
+
+@dataclasses.dataclass
+class BridgeListResponse_Data:
+    # An object describing the EventBridge configuration for multiple accounts.
+    attributes: Any = None
+    # The ID of the Amazon EventBridge list response data.
+    id: Any = None
+    # Amazon EventBridge resource type.
+    type: Any = None
 
 @dataclasses.dataclass
 class BridgeListResponseConfig:
@@ -23,10 +39,8 @@ class BridgeListResponseConfig:
 
 @dataclasses.dataclass
 class BridgeListResponseAttrs:
-    # List of accounts with their event sources.
-    accounts: Any = None
-    # True if the EventBridge sub-integration is enabled for your organization.
-    is_installed: Any = None
+    # Amazon EventBridge list response data.
+    data: Any = None
 
 BridgeListResponse = ubx.DataSourceBinding(
     wire_type="datadog_awsevent_bridge_list_response",

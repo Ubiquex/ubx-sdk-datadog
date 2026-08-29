@@ -11,10 +11,7 @@ class RuleResponse_Data_Attributes_Options:
     allowed_resources: Any = None
     duration: Any = None
     excluded_resources: Any = None
-    fail_on_no_data: Any = None
-    fail_on_no_groups_found: Any = None
     query: Any = None
-    warmup: Any = None
 
 @dataclasses.dataclass
 class RuleResponse_Data_Attributes:
@@ -38,10 +35,7 @@ _RuleResponse_Data_Attributes_OptionsFields = {
     "allowed_resources": ubx.FieldSpec(wire_name="allowed_resources"),
     "duration": ubx.FieldSpec(wire_name="duration"),
     "excluded_resources": ubx.FieldSpec(wire_name="excluded_resources"),
-    "fail_on_no_data": ubx.FieldSpec(wire_name="fail_on_no_data"),
-    "fail_on_no_groups_found": ubx.FieldSpec(wire_name="fail_on_no_groups_found"),
     "query": ubx.FieldSpec(wire_name="query"),
-    "warmup": ubx.FieldSpec(wire_name="warmup"),
 }
 
 _RuleResponse_Data_AttributesFields = {

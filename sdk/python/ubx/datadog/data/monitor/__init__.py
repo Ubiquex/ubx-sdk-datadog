@@ -5,9 +5,9 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .monitor import Monitor, MonitorConfig
-from .config_policy_list_response import ConfigPolicyListResponse, ConfigPolicyListResponseConfig
-from .downtime_match_response import DowntimeMatchResponse, DowntimeMatchResponseConfig
-from .group_search_response import GroupSearchResponse, GroupSearchResponseConfig
+from .config_policy_response_data import ConfigPolicyResponseData, ConfigPolicyResponseDataConfig
+from .downtime_match_response_data import DowntimeMatchResponseData, DowntimeMatchResponseDataConfig
+from .group_search_result import GroupSearchResult, GroupSearchResultConfig
 from .notification_rule_list_response import NotificationRuleListResponse, NotificationRuleListResponseConfig
-from .search_response import SearchResponse, SearchResponseConfig
-from .user_template_list_response import UserTemplateListResponse, UserTemplateListResponseConfig
+from .search_result import SearchResult, SearchResultConfig
+from .user_template_response_data import UserTemplateResponseData, UserTemplateResponseDataConfig

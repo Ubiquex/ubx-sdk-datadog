@@ -103,7 +103,6 @@ export interface Pipeline_Data_Attributes_Config_Destinations {
   dcrImmutableId?: string | Computed<string>;
   defaultNamespace?: string | Computed<string>;
   encoding?: string | Computed<string>;
-  endpointTarget?: string | Computed<string>;
   endpointUrlKey?: string | Computed<string>;
   format?: string | Computed<string>;
   framing?: Pipeline_Data_Attributes_Config_Destinations_Framing | Computed<Pipeline_Data_Attributes_Config_Destinations_Framing>;
@@ -550,7 +549,6 @@ const Pipeline_Data_Attributes_Config_DestinationsFields: FieldMap = {
   dcrImmutableId: "dcr_immutable_id",
   defaultNamespace: "default_namespace",
   encoding: "encoding",
-  endpointTarget: "endpoint_target",
   endpointUrlKey: "endpoint_url_key",
   format: "format",
   framing: {

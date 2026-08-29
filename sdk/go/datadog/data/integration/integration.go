@@ -3,19 +3,34 @@ package integration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Integration_Data_Attributes struct {
+	Categories any
+	Description any
+	Installed any
+	Title any
+}
+
+type Integration_Data_Links struct {
+	Self any
+}
+
+type Integration_Data struct {
+	Attributes any
+	Id any
+	Links any
+	Type any
+}
+
 type IntegrationConfig struct {
-	// The name of a supported LLM provider integration.
-	Integration any
 }
 
 type IntegrationAttrs struct {
-	// The name of a supported LLM provider integration.
-	Integration any
+	// Array of integration objects.
+	Data any
 }
 
 var Integration = ubx.DataSourceBinding{
 	WireType: "datadog_integration",
 	Fields: ubx.FieldMap{
-		"Integration": ubx.FieldSpec{WireName: "integration"},
 	},
 }

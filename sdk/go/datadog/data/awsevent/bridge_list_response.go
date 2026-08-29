@@ -3,25 +3,39 @@ package awsevent
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type BridgeListResponse_Accounts_EventHubs struct {
+type BridgeListResponse_Data_Attributes_Accounts_EventHubs struct {
 	Name any
 	Region any
 }
 
-type BridgeListResponse_Accounts struct {
+type BridgeListResponse_Data_Attributes_Accounts struct {
 	AccountId any
 	EventHubs any
 	Tags any
+}
+
+type BridgeListResponse_Data_Attributes struct {
+	// List of accounts with their event sources.
+	Accounts any
+	// True if the EventBridge integration is enabled for your organization.
+	IsInstalled any
+}
+
+type BridgeListResponse_Data struct {
+	// An object describing the EventBridge configuration for multiple accounts.
+	Attributes any
+	// The ID of the Amazon EventBridge list response data.
+	Id any
+	// Amazon EventBridge resource type.
+	Type any
 }
 
 type BridgeListResponseConfig struct {
 }
 
 type BridgeListResponseAttrs struct {
-	// List of accounts with their event sources.
-	Accounts any
-	// True if the EventBridge sub-integration is enabled for your organization.
-	IsInstalled any
+	// Amazon EventBridge list response data.
+	Data any
 }
 
 var BridgeListResponse = ubx.DataSourceBinding{

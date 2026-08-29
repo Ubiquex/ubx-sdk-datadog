@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .ownership_mappings_response import OwnershipMappingsResponse, OwnershipMappingsResponseConfig
-from .ownership_rules_response import OwnershipRulesResponse, OwnershipRulesResponseConfig
+from .ownership_mapping_response_data import OwnershipMappingResponseData, OwnershipMappingResponseDataConfig
+from .ownership_rule_response_data import OwnershipRuleResponseData, OwnershipRuleResponseDataConfig
 from .response import Response, ResponseConfig

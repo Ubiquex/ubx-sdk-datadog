@@ -4,6 +4,6 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .aggregated_connection_response_array import AggregatedConnectionResponseArray, AggregatedConnectionResponseArrayConfig
-from .aggregated_dns_response_array import AggregatedDnsResponseArray, AggregatedDnsResponseArrayConfig
+from .aggregated_connection_response_data import AggregatedConnectionResponseData, AggregatedConnectionResponseDataConfig
+from .aggregated_dns_response_data import AggregatedDnsResponseData, AggregatedDnsResponseDataConfig
 from .entity_context_response import EntityContextResponse, EntityContextResponseConfig

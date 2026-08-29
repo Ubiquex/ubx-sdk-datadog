@@ -4,6 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .git_hub_accounts_response import GitHubAccountsResponse, GitHubAccountsResponseConfig
-from .pipeline_events_response import PipelineEventsResponse, PipelineEventsResponseConfig
-from .test_events_response import TestEventsResponse, TestEventsResponseConfig
+from .git_hub_account_data import GitHubAccountData, GitHubAccountDataConfig

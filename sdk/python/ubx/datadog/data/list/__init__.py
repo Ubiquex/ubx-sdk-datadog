@@ -4,42 +4,17 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .apis_response import ApisResponse, ApisResponseConfig
-from .app_key_registrations_response import AppKeyRegistrationsResponse, AppKeyRegistrationsResponseConfig
-from .app_versions_response import AppVersionsResponse, AppVersionsResponseConfig
+from .apis_response_data import ApisResponseData, ApisResponseDataConfig
 from .application_keys_response import ApplicationKeysResponse, ApplicationKeysResponseConfig
 from .apps_response import AppsResponse, AppsResponseConfig
-from .assets_sboms_response import AssetsSbomsResponse, AssetsSbomsResponseConfig
-from .blueprints_response import BlueprintsResponse, BlueprintsResponseConfig
-from .campaigns_response import CampaignsResponse, CampaignsResponseConfig
 from .connections_response import ConnectionsResponse, ConnectionsResponseConfig
-from .dashboards_usage_response import DashboardsUsageResponse, DashboardsUsageResponseConfig
-from .devices_response import DevicesResponse, DevicesResponseConfig
 from .downtimes_response import DowntimesResponse, DowntimesResponseConfig
 from .entity_catalog_response import EntityCatalogResponse, EntityCatalogResponseConfig
-from .environments_response import EnvironmentsResponse, EnvironmentsResponseConfig
-from .feature_flags_response import FeatureFlagsResponse, FeatureFlagsResponseConfig
-from .findings_response import FindingsResponse, FindingsResponseConfig
-from .historical_jobs_response import HistoricalJobsResponse, HistoricalJobsResponseConfig
-from .integrations_response import IntegrationsResponse, IntegrationsResponseConfig
 from .interface_tags_response import InterfaceTagsResponse, InterfaceTagsResponseConfig
-from .investigations_response import InvestigationsResponse, InvestigationsResponseConfig
-from .kind_catalog_response import KindCatalogResponse, KindCatalogResponseConfig
-from .notification_channels_response import NotificationChannelsResponse, NotificationChannelsResponseConfig
+from .investigations_response_data import InvestigationsResponseData, InvestigationsResponseDataConfig
 from .on_call_notification_rules_response import OnCallNotificationRulesResponse, OnCallNotificationRulesResponseConfig
-from .personal_access_tokens_response import PersonalAccessTokensResponse, PersonalAccessTokensResponseConfig
-from .pipelines_response import PipelinesResponse, PipelinesResponseConfig
 from .powerpacks_response import PowerpacksResponse, PowerpacksResponseConfig
 from .relation_catalog_response import RelationCatalogResponse, RelationCatalogResponseConfig
-from .rows_response import RowsResponse, RowsResponseConfig
-from .rules_response import RulesResponse, RulesResponseConfig
-from .scorecard_scores_response import ScorecardScoresResponse, ScorecardScoresResponseConfig
-from .scorecards_response import ScorecardsResponse, ScorecardsResponseConfig
-from .security_findings_response import SecurityFindingsResponse, SecurityFindingsResponseConfig
-from .service_access_tokens_response import ServiceAccessTokensResponse, ServiceAccessTokensResponseConfig
+from .rules_response_data_item import RulesResponseDataItem, RulesResponseDataItemConfig
 from .shared_dashboards_response import SharedDashboardsResponse, SharedDashboardsResponseConfig
-from .sourcemaps_response import SourcemapsResponse, SourcemapsResponseConfig
 from .tags_response import TagsResponse, TagsResponseConfig
-from .vulnerabilities_response import VulnerabilitiesResponse, VulnerabilitiesResponseConfig
-from .vulnerable_assets_response import VulnerableAssetsResponse, VulnerableAssetsResponseConfig
-from .workflows_response import WorkflowsResponse, WorkflowsResponseConfig

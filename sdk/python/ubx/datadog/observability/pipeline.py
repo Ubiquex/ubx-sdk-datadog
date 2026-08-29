@@ -109,7 +109,6 @@ class Pipeline_Data_Attributes_Config_Destinations:
     dcr_immutable_id: Any = None
     default_namespace: Any = None
     encoding: Any = None
-    endpoint_target: Any = None
     endpoint_url_key: Any = None
     format: Any = None
     framing: Any = None
@@ -555,7 +554,6 @@ _Pipeline_Data_Attributes_Config_DestinationsFields = {
     "dcr_immutable_id": ubx.FieldSpec(wire_name="dcr_immutable_id"),
     "default_namespace": ubx.FieldSpec(wire_name="default_namespace"),
     "encoding": ubx.FieldSpec(wire_name="encoding"),
-    "endpoint_target": ubx.FieldSpec(wire_name="endpoint_target"),
     "endpoint_url_key": ubx.FieldSpec(wire_name="endpoint_url_key"),
     "format": ubx.FieldSpec(wire_name="format"),
     "framing": ubx.FieldSpec(

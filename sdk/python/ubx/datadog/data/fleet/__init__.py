@@ -5,10 +5,10 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .agent_detail_v2_response import AgentDetailV2Response, AgentDetailV2ResponseConfig
-from .agent_versions_v2_response import AgentVersionsV2Response, AgentVersionsV2ResponseConfig
-from .agents_v2_response import AgentsV2Response, AgentsV2ResponseConfig
+from .agent_v2 import AgentV2, AgentV2Config
+from .agent_version_v2 import AgentVersionV2, AgentVersionV2Config
+from .deployment_v2 import DeploymentV2, DeploymentV2Config
 from .deployment_v2_detail_response import DeploymentV2DetailResponse, DeploymentV2DetailResponseConfig
-from .deployments_v2_response import DeploymentsV2Response, DeploymentsV2ResponseConfig
+from .schedule_v2 import ScheduleV2, ScheduleV2Config
 from .schedule_v2_response import ScheduleV2Response, ScheduleV2ResponseConfig
-from .schedules_v2_response import SchedulesV2Response, SchedulesV2ResponseConfig
 from .tracers_response import TracersResponse, TracersResponseConfig

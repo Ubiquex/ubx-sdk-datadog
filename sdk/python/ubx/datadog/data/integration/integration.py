@@ -7,18 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Integration_Data_Attributes:
+    categories: Any = None
+    description: Any = None
+    installed: Any = None
+    title: Any = None
+
+@dataclasses.dataclass
+class Integration_Data_Links:
+    self: Any = None
+
+@dataclasses.dataclass
+class Integration_Data:
+    attributes: Any = None
+    id: Any = None
+    links: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class IntegrationConfig:
-    # The name of a supported LLM provider integration.
-    integration: Any = None
+    pass
 
 @dataclasses.dataclass
 class IntegrationAttrs:
-    # The name of a supported LLM provider integration.
-    integration: Any = None
+    # Array of integration objects.
+    data: Any = None
 
 Integration = ubx.DataSourceBinding(
     wire_type="datadog_integration",
     fields={
-        "integration": ubx.FieldSpec(wire_name="integration"),
     },
 )

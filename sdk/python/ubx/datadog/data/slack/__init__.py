@@ -5,4 +5,4 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .integration_channels import IntegrationChannels, IntegrationChannelsConfig
-from .user_bindings_response import UserBindingsResponse, UserBindingsResponseConfig
+from .user_binding_data import UserBindingData, UserBindingDataConfig

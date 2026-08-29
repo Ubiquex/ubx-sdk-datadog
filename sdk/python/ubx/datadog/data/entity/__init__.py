@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .context_response import ContextResponse, ContextResponseConfig
+from .context_entity import ContextEntity, ContextEntityConfig

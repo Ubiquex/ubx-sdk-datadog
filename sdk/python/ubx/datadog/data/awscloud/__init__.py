@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .auth_persona_mappings_response import AuthPersonaMappingsResponse, AuthPersonaMappingsResponseConfig
+from .auth_persona_mapping_data_response import AuthPersonaMappingDataResponse, AuthPersonaMappingDataResponseConfig
