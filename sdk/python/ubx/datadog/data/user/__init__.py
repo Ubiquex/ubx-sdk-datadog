@@ -4,8 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
+from .user import User, UserConfig
+from .authorized_client_data import AuthorizedClientData, AuthorizedClientDataConfig
 from .authorized_client_response import AuthorizedClientResponse, AuthorizedClientResponseConfig
-from .authorized_clients_response import AuthorizedClientsResponse, AuthorizedClientsResponseConfig
-from .list_response import ListResponse, ListResponseConfig
-from .override_identity_providers_response import OverrideIdentityProvidersResponse, OverrideIdentityProvidersResponseConfig
+from .override_identity_provider_data import OverrideIdentityProviderData, OverrideIdentityProviderDataConfig
+from .response_included_item import ResponseIncludedItem, ResponseIncludedItemConfig
 from .teams_response import TeamsResponse, TeamsResponseConfig

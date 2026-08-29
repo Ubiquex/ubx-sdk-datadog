@@ -6,16 +6,12 @@ SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .app_key_registration_response import AppKeyRegistrationResponse, AppKeyRegistrationResponseConfig
 from .blueprint_response import BlueprintResponse, BlueprintResponseConfig
-from .blueprints_response import BlueprintsResponse, BlueprintsResponseConfig
 from .custom_framework_response import CustomFrameworkResponse, CustomFrameworkResponseConfig
-from .data_deletions_response_body import DataDeletionsResponseBody, DataDeletionsResponseBodyConfig
 from .data_observability_monitor_run_status_response import DataObservabilityMonitorRunStatusResponse, DataObservabilityMonitorRunStatusResponseConfig
 from .device_response import DeviceResponse, DeviceResponseConfig
 from .finding_response import FindingResponse, FindingResponseConfig
-from .interfaces_response import InterfacesResponse, InterfacesResponseConfig
+from .interfaces_data import InterfacesData, InterfacesDataConfig
 from .io_cindicator_response import IoCindicatorResponse, IoCindicatorResponseConfig
 from .mapping_response import MappingResponse, MappingResponseConfig
 from .resource_evaluation_filters_response import ResourceEvaluationFiltersResponse, ResourceEvaluationFiltersResponseConfig
-from .rule_version_history_response import RuleVersionHistoryResponse, RuleVersionHistoryResponseConfig
 from .sbomresponse import Sbomresponse, SbomresponseConfig
-from .suppression_version_history_response import SuppressionVersionHistoryResponse, SuppressionVersionHistoryResponseConfig

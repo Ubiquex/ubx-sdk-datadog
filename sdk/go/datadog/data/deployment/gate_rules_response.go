@@ -13,10 +13,7 @@ type GateRulesResponse_Data_Attributes_Rules_Options struct {
 	AllowedResources any
 	Duration any
 	ExcludedResources any
-	FailOnNoData any
-	FailOnNoGroupsFound any
 	Query any
-	Warmup any
 }
 
 type GateRulesResponse_Data_Attributes_Rules struct {

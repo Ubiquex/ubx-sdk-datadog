@@ -5,9 +5,9 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .config_response import ConfigResponse, ConfigResponseConfig
+from .control_data import ControlData, ControlDataConfig
+from .control_detection_data import ControlDetectionData, ControlDetectionDataConfig
 from .control_detection_response import ControlDetectionResponse, ControlDetectionResponseConfig
-from .control_detections_response import ControlDetectionsResponse, ControlDetectionsResponseConfig
 from .control_response import ControlResponse, ControlResponseConfig
-from .controls_response import ControlsResponse, ControlsResponseConfig
-from .insights_response import InsightsResponse, InsightsResponseConfig
+from .insight_data import InsightData, InsightDataConfig
 from .notification_settings_response import NotificationSettingsResponse, NotificationSettingsResponseConfig

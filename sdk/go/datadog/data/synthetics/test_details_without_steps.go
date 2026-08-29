@@ -3,7 +3,7 @@ package synthetics
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type TestDetailsWithoutSteps_Config_Assertions struct {
+type TestDetailsWithoutSteps_Tests_Config_Assertions struct {
 	Code any
 	Operator any
 	Property any
@@ -12,7 +12,7 @@ type TestDetailsWithoutSteps_Config_Assertions struct {
 	Type any
 }
 
-type TestDetailsWithoutSteps_Config_ConfigVariables struct {
+type TestDetailsWithoutSteps_Tests_Config_ConfigVariables struct {
 	Example any
 	Id any
 	Name any
@@ -21,12 +21,12 @@ type TestDetailsWithoutSteps_Config_ConfigVariables struct {
 	Type any
 }
 
-type TestDetailsWithoutSteps_Config_Request_BasicAuth_AddClaims struct {
+type TestDetailsWithoutSteps_Tests_Config_Request_BasicAuth_AddClaims struct {
 	Exp any
 	Iat any
 }
 
-type TestDetailsWithoutSteps_Config_Request_BasicAuth struct {
+type TestDetailsWithoutSteps_Tests_Config_Request_BasicAuth struct {
 	AccessKey any
 	AccessTokenUrl any
 	AddClaims any
@@ -53,23 +53,18 @@ type TestDetailsWithoutSteps_Config_Request_BasicAuth struct {
 	Workstation any
 }
 
-type TestDetailsWithoutSteps_Config_Request_Certificate_Cert struct {
-	// Content of the certificate or key.
+type TestDetailsWithoutSteps_Tests_Config_Request_Certificate_Cert struct {
 	Content any
-	// File name for the certificate or key.
 	Filename any
-	// Date of update of the certificate or key, ISO format.
 	UpdatedAt any
 }
 
-type TestDetailsWithoutSteps_Config_Request_Certificate struct {
-	// Define a request certificate.
+type TestDetailsWithoutSteps_Tests_Config_Request_Certificate struct {
 	Cert any
-	// Define a request certificate.
 	Key any
 }
 
-type TestDetailsWithoutSteps_Config_Request_Files struct {
+type TestDetailsWithoutSteps_Tests_Config_Request_Files struct {
 	BucketKey any
 	Content any
 	Encoding any
@@ -79,249 +74,160 @@ type TestDetailsWithoutSteps_Config_Request_Files struct {
 	Type any
 }
 
-type TestDetailsWithoutSteps_Config_Request_Proxy struct {
-	// Headers to include when performing the test.
+type TestDetailsWithoutSteps_Tests_Config_Request_Proxy struct {
 	Headers any
-	// URL of the proxy to perform the test.
 	Url any
 }
 
-type TestDetailsWithoutSteps_Config_Request struct {
-	// Allows loading insecure content for an HTTP request in a multistep test step.
+type TestDetailsWithoutSteps_Tests_Config_Request struct {
 	AllowInsecure any
-	// Object to handle basic authentication when performing the test.
 	BasicAuth any
-	// Body to include in the test.
 	Body any
-	// Type of the request body.
 	BodyType any
-	// The type of call to perform. Used by gRPC steps (`healthcheck`, `unary`) and MCP steps (`init`, `tool_list`, `tool_call`). Valid values depend on the parent step's `subtype`.
 	CallType any
-	// Client certificate to use when performing the test request.
 	Certificate any
-	// By default, the client certificate is applied on the domain of the starting URL for browser tests. If you want your client certificate to be applied on other domains instead, add them in `certificateDomains`.
 	CertificateDomains any
-	// Check for certificate revocation.
 	CheckCertificateRevocation any
-	// A protobuf JSON descriptor that needs to be gzipped first then base64 encoded.
 	CompressedJsonDescriptor any
-	// A protobuf file that needs to be gzipped first then base64 encoded.
 	CompressedProtoFile any
-	// Disable fetching intermediate certificates from AIA.
 	DisableAiaIntermediateFetching any
-	// DNS server to use for DNS tests.
 	DnsServer any
-	// DNS server port to use for DNS tests.
 	DnsServerPort any
-	// Files to be used as part of the request in the test. Only valid if `bodyType` is `multipart/form-data`.
 	Files any
-	// Specifies whether or not the request follows redirects.
 	FollowRedirects any
-	// Form to be used as part of the request in the test. Only valid if `bodyType` is `multipart/form-data`.
 	Form any
-	// Headers to include when performing the test.
 	Headers any
-	// Host name to perform the test with.
 	Host any
-	// HTTP version to use for a Synthetic test.
 	HttpVersion any
-	// For SSL tests, whether the test should ignore certificate validation.
 	IgnoreCertificateValidation any
-	// Whether the message is base64 encoded.
 	IsMessageBase64Encoded any
-	// The MCP protocol version used by the step. See https://modelcontextprotocol.io/specification.
 	McpProtocolVersion any
-	// Message to send for UDP or WebSocket tests.
 	Message any
-	// Metadata to include when performing the gRPC test.
 	Metadata any
-	// Either the HTTP method/verb to use or a gRPC method available on the service set in the `service` field. Required if `subtype` is `HTTP` or if `subtype` is `grpc` and `callType` is `unary`.
 	Method any
-	// Determines whether or not to save the response body.
 	NoSavingResponseBody any
-	// Number of pings to use per test.
 	NumberOfPackets any
-	// Persist cookies across redirects.
 	PersistCookies any
-	// Port to use when performing the test.
 	Port any
-	// The proxy to perform the test.
 	Proxy any
-	// Query to use for the test.
 	Query any
-	// For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number.
 	Servername any
-	// The gRPC service on which you want to perform the gRPC call.
 	Service any
-	// Turns on a traceroute probe to discover all gateways along the path to the host destination.
 	ShouldTrackHops any
-	// Timeout in seconds for the test.
 	Timeout any
-	// Arguments to pass to the MCP tool. Free-form object whose shape depends on the tool. Used when `callType` is `tool_call`.
 	ToolArgs any
-	// The name of the MCP tool to call. Required when `callType` is `tool_call`.
 	ToolName any
-	// URL to perform the test with.
 	Url any
 }
 
-type TestDetailsWithoutSteps_Config struct {
-	// Array of assertions used for the test. Required for single API tests.
+type TestDetailsWithoutSteps_Tests_Config struct {
 	Assertions any
-	// Array of variables used for the test.
 	ConfigVariables any
-	// Object describing the Synthetic test request.
 	Request any
-	// Browser tests only - array of variables used for the test steps.
 	Variables any
 }
 
-type TestDetailsWithoutSteps_Creator struct {
-	// Email of the creator.
+type TestDetailsWithoutSteps_Tests_Creator struct {
 	Email any
-	// Handle of the creator.
 	Handle any
-	// Name of the creator.
 	Name any
 }
 
-type TestDetailsWithoutSteps_Options_Ci struct {
-	// Execution rule for a Synthetic test.
+type TestDetailsWithoutSteps_Tests_Options_Ci struct {
 	ExecutionRule any
 }
 
-type TestDetailsWithoutSteps_Options_MonitorOptions struct {
-	// Message to include in the escalation notification.
+type TestDetailsWithoutSteps_Tests_Options_MonitorOptions struct {
 	EscalationMessage any
-	// The name of the preset for the notification for the monitor.
 	NotificationPresetName any
-	// Time interval before renotifying if the test is still failing (in minutes).
 	RenotifyInterval any
-	// The number of times to renotify if the test is still failing.
 	RenotifyOccurrences any
 }
 
-type TestDetailsWithoutSteps_Options_Retry struct {
-	// Number of times a test needs to be retried before marking a location as failed. Defaults to 0.
+type TestDetailsWithoutSteps_Tests_Options_Retry struct {
 	Count any
-	// Time interval between retries (in milliseconds). Defaults to 300ms.
 	Interval any
 }
 
-type TestDetailsWithoutSteps_Options_RumSettings struct {
-	// RUM application ID used to collect RUM data for the browser test.
+type TestDetailsWithoutSteps_Tests_Options_RumSettings struct {
 	ApplicationId any
-	// RUM application API key ID used to collect RUM data for the browser test.
 	ClientTokenId any
-	// Determines whether RUM data is collected during test runs.
 	IsEnabled any
 }
 
-type TestDetailsWithoutSteps_Options_Scheduling_Timeframes struct {
+type TestDetailsWithoutSteps_Tests_Options_Scheduling_Timeframes struct {
 	Day any
 	From any
 	To any
 }
 
-type TestDetailsWithoutSteps_Options_Scheduling struct {
-	// Array containing objects describing the scheduling pattern to apply to each day.
+type TestDetailsWithoutSteps_Tests_Options_Scheduling struct {
 	Timeframes any
-	// Timezone in which the timeframe is based.
 	Timezone any
 }
 
-type TestDetailsWithoutSteps_Options struct {
-	// For SSL tests, whether or not the test should allow self signed certificates.
+type TestDetailsWithoutSteps_Tests_Options struct {
 	AcceptSelfSigned any
-	// Allows loading insecure content for an HTTP request in an API test.
 	AllowInsecure any
-	// Array of URL patterns to block.
 	BlockedRequestPatterns any
-	// Capture HTTP request/response headers and bodies for Fetch/XHR calls made during browser tests.
 	CaptureNetworkPayloads any
-	// For SSL tests, whether or not the test should fail on revoked certificate in stapled OCSP.
 	CheckCertificateRevocation any
-	// CI/CD options for a Synthetic test.
 	Ci any
-	// For browser test, array with the different device IDs used to run the test.
 	DeviceIds any
-	// For SSL tests, whether or not the test should disable fetching intermediate certificates from AIA.
 	DisableAiaIntermediateFetching any
-	// Whether or not to disable CORS mechanism.
 	DisableCors any
-	// Disable Content Security Policy for browser tests.
 	DisableCsp any
-	// Enable profiling for browser tests.
 	EnableProfiling any
-	// Enable security testing for browser tests. Security testing is not available anymore. This field is deprecated and won't be used.
 	EnableSecurityTesting any
-	// For API HTTP test, whether or not the test should follow redirects.
 	FollowRedirects any
-	// HTTP version to use for a Synthetic test.
 	HttpVersion any
-	// For SSL tests, whether the test should ignore certificate validation.
 	IgnoreCertificateValidation any
-	// Ignore server certificate error for browser tests.
 	IgnoreServerCertificateError any
-	// Timeout before declaring the initial step as failed (in seconds) for browser tests.
 	InitialNavigationTimeout any
-	// Minimum amount of time in failure required to trigger an alert.
 	MinFailureDuration any
-	// Minimum number of locations in failure required to trigger an alert.
 	MinLocationFailed any
-	// The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.
 	MonitorName any
-	// Object containing the options for a Synthetic test as a monitor (for example, renotification).
 	MonitorOptions any
-	// Integer from 1 (high) to 5 (low) indicating alert severity.
 	MonitorPriority any
-	// Prevents saving screenshots of the steps.
 	NoScreenshot any
-	// A list of role identifiers that can be pulled from the Roles API, for restricting read and write access. This field is deprecated. Use the restriction policies API to manage permissions.
 	RestrictedRoles any
-	// Object describing the retry strategy to apply to a Synthetic test.
 	Retry any
-	// The RUM data collection settings for the Synthetic browser test. **Note:** There are 3 ways to format RUM settings: `{ isEnabled: false }` RUM data is not collected. `{ isEnabled: true }` RUM data is collected from the Synthetic test's default application. `{ isEnabled: true, applicationId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", clientTokenId: 12345 }` RUM data is collected using the specified application.
 	RumSettings any
-	// Object containing timeframes and timezone used for advanced scheduling.
 	Scheduling any
-	// The frequency at which to run the Synthetic test (in seconds).
 	TickEvery any
 }
 
-type TestDetailsWithoutStepsConfig struct {
+type TestDetailsWithoutSteps_Tests struct {
+	Config any
+	Creator any
+	Locations any
+	Message any
+	MonitorId any
+	Name any
+	Options any
 	PublicId any
+	Status any
+	Subtype any
+	Tags any
+	Type any
+}
+
+type TestDetailsWithoutStepsConfig struct {
+	PageNumber any
+	PageSize any
 }
 
 type TestDetailsWithoutStepsAttrs struct {
-	// Configuration object for a Synthetic test.
-	Config any
-	// Object describing the creator of the shared element.
-	Creator any
-	// Array of locations used to run the test.
-	Locations any
-	// Notification message associated with the test.
-	Message any
-	// The associated monitor ID.
-	MonitorId any
-	// Name of the test.
-	Name any
-	// Object describing the extra options for a Synthetic test.
-	Options any
-	PublicId any
-	// Define whether you want to start (`live`) or pause (`paused`) a Synthetic test.
-	Status any
-	// The subtype of the Synthetic API test, `http`, `ssl`, `tcp`, `dns`, `icmp`, `udp`, `websocket`, `grpc` or `multi`.
-	Subtype any
-	// Array of tags attached to the test.
-	Tags any
-	// Type of the Synthetic test.
-	Type any
+	PageNumber any
+	PageSize any
+	// Array of Synthetic tests configuration.
+	Tests any
 }
 
 var TestDetailsWithoutSteps = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_test_details_without_steps",
 	Fields: ubx.FieldMap{
-		"PublicId": ubx.FieldSpec{WireName: "public_id"},
+		"PageNumber": ubx.FieldSpec{WireName: "page_number"},
+		"PageSize": ubx.FieldSpec{WireName: "page_size"},
 	},
 }

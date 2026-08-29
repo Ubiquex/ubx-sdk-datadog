@@ -7,7 +7,7 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config_Assertions:
+class TestDetailsWithoutSteps_Tests_Config_Assertions:
     code: Any = None
     operator: Any = None
     property: Any = None
@@ -16,7 +16,7 @@ class TestDetailsWithoutSteps_Config_Assertions:
     type: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config_ConfigVariables:
+class TestDetailsWithoutSteps_Tests_Config_ConfigVariables:
     example: Any = None
     id: Any = None
     name: Any = None
@@ -25,12 +25,12 @@ class TestDetailsWithoutSteps_Config_ConfigVariables:
     type: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config_Request_BasicAuth_AddClaims:
+class TestDetailsWithoutSteps_Tests_Config_Request_BasicAuth_AddClaims:
     exp: Any = None
     iat: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config_Request_BasicAuth:
+class TestDetailsWithoutSteps_Tests_Config_Request_BasicAuth:
     access_key: Any = None
     access_token_url: Any = None
     add_claims: Any = None
@@ -57,23 +57,18 @@ class TestDetailsWithoutSteps_Config_Request_BasicAuth:
     workstation: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config_Request_Certificate_Cert:
-    # Content of the certificate or key.
+class TestDetailsWithoutSteps_Tests_Config_Request_Certificate_Cert:
     content: Any = None
-    # File name for the certificate or key.
     filename: Any = None
-    # Date of update of the certificate or key, ISO format.
     updated_at: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config_Request_Certificate:
-    # Define a request certificate.
+class TestDetailsWithoutSteps_Tests_Config_Request_Certificate:
     cert: Any = None
-    # Define a request certificate.
     key: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config_Request_Files:
+class TestDetailsWithoutSteps_Tests_Config_Request_Files:
     bucket_key: Any = None
     content: Any = None
     encoding: Any = None
@@ -83,248 +78,159 @@ class TestDetailsWithoutSteps_Config_Request_Files:
     type: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config_Request_Proxy:
-    # Headers to include when performing the test.
+class TestDetailsWithoutSteps_Tests_Config_Request_Proxy:
     headers: Any = None
-    # URL of the proxy to perform the test.
     url: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config_Request:
-    # Allows loading insecure content for an HTTP request in a multistep test step.
+class TestDetailsWithoutSteps_Tests_Config_Request:
     allow_insecure: Any = None
-    # Object to handle basic authentication when performing the test.
     basic_auth: Any = None
-    # Body to include in the test.
     body: Any = None
-    # Type of the request body.
     body_type: Any = None
-    # The type of call to perform. Used by gRPC steps (`healthcheck`, `unary`) and MCP steps (`init`, `tool_list`, `tool_call`). Valid values depend on the parent step's `subtype`.
     call_type: Any = None
-    # Client certificate to use when performing the test request.
     certificate: Any = None
-    # By default, the client certificate is applied on the domain of the starting URL for browser tests. If you want your client certificate to be applied on other domains instead, add them in `certificateDomains`.
     certificate_domains: Any = None
-    # Check for certificate revocation.
     check_certificate_revocation: Any = None
-    # A protobuf JSON descriptor that needs to be gzipped first then base64 encoded.
     compressed_json_descriptor: Any = None
-    # A protobuf file that needs to be gzipped first then base64 encoded.
     compressed_proto_file: Any = None
-    # Disable fetching intermediate certificates from AIA.
     disable_aia_intermediate_fetching: Any = None
-    # DNS server to use for DNS tests.
     dns_server: Any = None
-    # DNS server port to use for DNS tests.
     dns_server_port: Any = None
-    # Files to be used as part of the request in the test. Only valid if `bodyType` is `multipart/form-data`.
     files: Any = None
-    # Specifies whether or not the request follows redirects.
     follow_redirects: Any = None
-    # Form to be used as part of the request in the test. Only valid if `bodyType` is `multipart/form-data`.
     form: Any = None
-    # Headers to include when performing the test.
     headers: Any = None
-    # Host name to perform the test with.
     host: Any = None
-    # HTTP version to use for a Synthetic test.
     http_version: Any = None
-    # For SSL tests, whether the test should ignore certificate validation.
     ignore_certificate_validation: Any = None
-    # Whether the message is base64 encoded.
     is_message_base64_encoded: Any = None
-    # The MCP protocol version used by the step. See https://modelcontextprotocol.io/specification.
     mcp_protocol_version: Any = None
-    # Message to send for UDP or WebSocket tests.
     message: Any = None
-    # Metadata to include when performing the gRPC test.
     metadata: Any = None
-    # Either the HTTP method/verb to use or a gRPC method available on the service set in the `service` field. Required if `subtype` is `HTTP` or if `subtype` is `grpc` and `callType` is `unary`.
     method: Any = None
-    # Determines whether or not to save the response body.
     no_saving_response_body: Any = None
-    # Number of pings to use per test.
     number_of_packets: Any = None
-    # Persist cookies across redirects.
     persist_cookies: Any = None
-    # Port to use when performing the test.
     port: Any = None
-    # The proxy to perform the test.
     proxy: Any = None
-    # Query to use for the test.
     query: Any = None
-    # For SSL tests, it specifies on which server you want to initiate the TLS handshake, allowing the server to present one of multiple possible certificates on the same IP address and TCP port number.
     servername: Any = None
-    # The gRPC service on which you want to perform the gRPC call.
     service: Any = None
-    # Turns on a traceroute probe to discover all gateways along the path to the host destination.
     should_track_hops: Any = None
-    # Timeout in seconds for the test.
     timeout: Any = None
-    # Arguments to pass to the MCP tool. Free-form object whose shape depends on the tool. Used when `callType` is `tool_call`.
     tool_args: Any = None
-    # The name of the MCP tool to call. Required when `callType` is `tool_call`.
     tool_name: Any = None
-    # URL to perform the test with.
     url: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Config:
-    # Array of assertions used for the test. Required for single API tests.
+class TestDetailsWithoutSteps_Tests_Config:
     assertions: Any = None
-    # Array of variables used for the test.
     config_variables: Any = None
-    # Object describing the Synthetic test request.
     request: Any = None
-    # Browser tests only - array of variables used for the test steps.
     variables: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Creator:
-    # Email of the creator.
+class TestDetailsWithoutSteps_Tests_Creator:
     email: Any = None
-    # Handle of the creator.
     handle: Any = None
-    # Name of the creator.
     name: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Options_Ci:
-    # Execution rule for a Synthetic test.
+class TestDetailsWithoutSteps_Tests_Options_Ci:
     execution_rule: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Options_MonitorOptions:
-    # Message to include in the escalation notification.
+class TestDetailsWithoutSteps_Tests_Options_MonitorOptions:
     escalation_message: Any = None
-    # The name of the preset for the notification for the monitor.
     notification_preset_name: Any = None
-    # Time interval before renotifying if the test is still failing (in minutes).
     renotify_interval: Any = None
-    # The number of times to renotify if the test is still failing.
     renotify_occurrences: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Options_Retry:
-    # Number of times a test needs to be retried before marking a location as failed. Defaults to 0.
+class TestDetailsWithoutSteps_Tests_Options_Retry:
     count: Any = None
-    # Time interval between retries (in milliseconds). Defaults to 300ms.
     interval: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Options_RumSettings:
-    # RUM application ID used to collect RUM data for the browser test.
+class TestDetailsWithoutSteps_Tests_Options_RumSettings:
     application_id: Any = None
-    # RUM application API key ID used to collect RUM data for the browser test.
     client_token_id: Any = None
-    # Determines whether RUM data is collected during test runs.
     is_enabled: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Options_Scheduling_Timeframes:
+class TestDetailsWithoutSteps_Tests_Options_Scheduling_Timeframes:
     day: Any = None
     from_: Any = None
     to: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Options_Scheduling:
-    # Array containing objects describing the scheduling pattern to apply to each day.
+class TestDetailsWithoutSteps_Tests_Options_Scheduling:
     timeframes: Any = None
-    # Timezone in which the timeframe is based.
     timezone: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutSteps_Options:
-    # For SSL tests, whether or not the test should allow self signed certificates.
+class TestDetailsWithoutSteps_Tests_Options:
     accept_self_signed: Any = None
-    # Allows loading insecure content for an HTTP request in an API test.
     allow_insecure: Any = None
-    # Array of URL patterns to block.
     blocked_request_patterns: Any = None
-    # Capture HTTP request/response headers and bodies for Fetch/XHR calls made during browser tests.
     capture_network_payloads: Any = None
-    # For SSL tests, whether or not the test should fail on revoked certificate in stapled OCSP.
     check_certificate_revocation: Any = None
-    # CI/CD options for a Synthetic test.
     ci: Any = None
-    # For browser test, array with the different device IDs used to run the test.
     device_ids: Any = None
-    # For SSL tests, whether or not the test should disable fetching intermediate certificates from AIA.
     disable_aia_intermediate_fetching: Any = None
-    # Whether or not to disable CORS mechanism.
     disable_cors: Any = None
-    # Disable Content Security Policy for browser tests.
     disable_csp: Any = None
-    # Enable profiling for browser tests.
     enable_profiling: Any = None
-    # Enable security testing for browser tests. Security testing is not available anymore. This field is deprecated and won't be used.
     enable_security_testing: Any = None
-    # For API HTTP test, whether or not the test should follow redirects.
     follow_redirects: Any = None
-    # HTTP version to use for a Synthetic test.
     http_version: Any = None
-    # For SSL tests, whether the test should ignore certificate validation.
     ignore_certificate_validation: Any = None
-    # Ignore server certificate error for browser tests.
     ignore_server_certificate_error: Any = None
-    # Timeout before declaring the initial step as failed (in seconds) for browser tests.
     initial_navigation_timeout: Any = None
-    # Minimum amount of time in failure required to trigger an alert.
     min_failure_duration: Any = None
-    # Minimum number of locations in failure required to trigger an alert.
     min_location_failed: Any = None
-    # The monitor name is used for the alert title as well as for all monitor dashboard widgets and SLOs.
     monitor_name: Any = None
-    # Object containing the options for a Synthetic test as a monitor (for example, renotification).
     monitor_options: Any = None
-    # Integer from 1 (high) to 5 (low) indicating alert severity.
     monitor_priority: Any = None
-    # Prevents saving screenshots of the steps.
     no_screenshot: Any = None
-    # A list of role identifiers that can be pulled from the Roles API, for restricting read and write access. This field is deprecated. Use the restriction policies API to manage permissions.
     restricted_roles: Any = None
-    # Object describing the retry strategy to apply to a Synthetic test.
     retry: Any = None
-    # The RUM data collection settings for the Synthetic browser test. **Note:** There are 3 ways to format RUM settings: `{ isEnabled: false }` RUM data is not collected. `{ isEnabled: true }` RUM data is collected from the Synthetic test's default application. `{ isEnabled: true, applicationId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx", clientTokenId: 12345 }` RUM data is collected using the specified application.
     rum_settings: Any = None
-    # Object containing timeframes and timezone used for advanced scheduling.
     scheduling: Any = None
-    # The frequency at which to run the Synthetic test (in seconds).
     tick_every: Any = None
 
 @dataclasses.dataclass
-class TestDetailsWithoutStepsConfig:
+class TestDetailsWithoutSteps_Tests:
+    config: Any = None
+    creator: Any = None
+    locations: Any = None
+    message: Any = None
+    monitor_id: Any = None
+    name: Any = None
+    options: Any = None
     public_id: Any = None
+    status: Any = None
+    subtype: Any = None
+    tags: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class TestDetailsWithoutStepsConfig:
+    page_number: Any = None
+    page_size: Any = None
 
 @dataclasses.dataclass
 class TestDetailsWithoutStepsAttrs:
-    # Configuration object for a Synthetic test.
-    config: Any = None
-    # Object describing the creator of the shared element.
-    creator: Any = None
-    # Array of locations used to run the test.
-    locations: Any = None
-    # Notification message associated with the test.
-    message: Any = None
-    # The associated monitor ID.
-    monitor_id: Any = None
-    # Name of the test.
-    name: Any = None
-    # Object describing the extra options for a Synthetic test.
-    options: Any = None
-    public_id: Any = None
-    # Define whether you want to start (`live`) or pause (`paused`) a Synthetic test.
-    status: Any = None
-    # The subtype of the Synthetic API test, `http`, `ssl`, `tcp`, `dns`, `icmp`, `udp`, `websocket`, `grpc` or `multi`.
-    subtype: Any = None
-    # Array of tags attached to the test.
-    tags: Any = None
-    # Type of the Synthetic test.
-    type: Any = None
+    page_number: Any = None
+    page_size: Any = None
+    # Array of Synthetic tests configuration.
+    tests: Any = None
 
 TestDetailsWithoutSteps = ubx.DataSourceBinding(
     wire_type="datadog_synthetics_test_details_without_steps",
     fields={
-        "public_id": ubx.FieldSpec(wire_name="public_id"),
+        "page_number": ubx.FieldSpec(wire_name="page_number"),
+        "page_size": ubx.FieldSpec(wire_name="page_size"),
     },
 )

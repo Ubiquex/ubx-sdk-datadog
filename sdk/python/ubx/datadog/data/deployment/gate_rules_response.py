@@ -17,10 +17,7 @@ class GateRulesResponse_Data_Attributes_Rules_Options:
     allowed_resources: Any = None
     duration: Any = None
     excluded_resources: Any = None
-    fail_on_no_data: Any = None
-    fail_on_no_groups_found: Any = None
     query: Any = None
-    warmup: Any = None
 
 @dataclasses.dataclass
 class GateRulesResponse_Data_Attributes_Rules:

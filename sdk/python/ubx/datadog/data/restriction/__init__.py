@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .query_list_response import QueryListResponse, QueryListResponseConfig
-from .query_roles_response import QueryRolesResponse, QueryRolesResponseConfig
+from .query_role import QueryRole, QueryRoleConfig
+from .query_without_relationships import QueryWithoutRelationships, QueryWithoutRelationshipsConfig

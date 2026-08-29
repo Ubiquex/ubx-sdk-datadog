@@ -4,4 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .list_instances_response import ListInstancesResponse, ListInstancesResponseConfig
+from .instance_list_item import InstanceListItem, InstanceListItemConfig
+from .list_item import ListItem, ListItemConfig

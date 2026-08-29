@@ -5,4 +5,4 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .api import Api, ApiConfig
-from .key_list_response import KeyListResponse, KeyListResponseConfig
+from .key import Key, KeyConfig

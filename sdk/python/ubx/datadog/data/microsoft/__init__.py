@@ -5,5 +5,5 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .teams_get_channel_by_name_response import TeamsGetChannelByNameResponse, TeamsGetChannelByNameResponseConfig
-from .teams_tenant_based_handles_response import TeamsTenantBasedHandlesResponse, TeamsTenantBasedHandlesResponseConfig
-from .teams_workflows_webhook_handles_response import TeamsWorkflowsWebhookHandlesResponse, TeamsWorkflowsWebhookHandlesResponseConfig
+from .teams_tenant_based_handle_info_response_data import TeamsTenantBasedHandleInfoResponseData, TeamsTenantBasedHandleInfoResponseDataConfig
+from .teams_workflows_webhook_handle_response_data import TeamsWorkflowsWebhookHandleResponseData, TeamsWorkflowsWebhookHandleResponseDataConfig

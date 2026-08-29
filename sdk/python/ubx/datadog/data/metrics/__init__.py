@@ -6,4 +6,4 @@ SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .and_metric_tag_configurations_response import AndMetricTagConfigurationsResponse, AndMetricTagConfigurationsResponseConfig
 from .list_response import ListResponse, ListResponseConfig
-from .query_response import QueryResponse, QueryResponseConfig
+from .query_metadata import QueryMetadata, QueryMetadataConfig

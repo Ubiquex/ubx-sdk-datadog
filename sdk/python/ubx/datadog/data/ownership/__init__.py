@@ -5,7 +5,6 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .evidence_response import EvidenceResponse, EvidenceResponseConfig
-from .history_response import HistoryResponse, HistoryResponseConfig
 from .inference_list_response import InferenceListResponse, InferenceListResponseConfig
 from .inference_response import InferenceResponse, InferenceResponseConfig
 from .settings_response import SettingsResponse, SettingsResponseConfig

@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .health_insights_response import HealthInsightsResponse, HealthInsightsResponseConfig
+from .health_insight import HealthInsight, HealthInsightConfig
