@@ -1,60 +1,38 @@
 name: hash-watch
 
-# Weekly check against every real, live member spec behind
-# [dynamic_provider_groups.datadog_all] (ubiquex, sdk/providers/.ubx/config)
-# for content drift. Datadog publishes no discrete, pinnable release for
-# either of its two OpenAPI sources (v1, v2 -- both live `master`-branch
-# specs, not tagged versions) -- there is no version number to poll the
-# way version-watch.yml does for the four Terraform-provider-sourced
-# repos, and no single spec byte stream to hash the way the original,
-# single-source form of this file did through 1.0.0.
+# UBI-222: rebuilt on top of manifest.json's own new schema_urls field
+# (ubx-provider-dynamic PR #50) instead of ubiquex's own live
+# [dynamic_provider_groups.datadog_all] table -- UBI-182 Stage E
+# collapsed that table down to a bare source/version pin months ago,
+# and this file was never updated to match. It kept reading a table
+# that no longer existed: a real KeyError on the very first line that
+# touched it, confirmed failed on 2026-08-27 (both scheduled runs that
+# day), a red X nobody saw, because nothing distinguished "this check
+# is broken" from ordinary CI noise. This rewrite closes both real
+# gaps at once: drift detection now reads the same published artifact
+# (ubx-schema-datadog's own manifest.json) that snapshot cutting and
+# `ubx sdk gen`'s own pinned resolution already read, and every real
+# outcome -- clean, drift found, or genuinely unable to check -- is a
+# distinct, surfaced state, not a bare pass/fail.
 #
-# 1.1.0: this repo generates from TWO real sources merged
-# ([dynamic_provider_groups.datadog_all]), not one.
+# Three real states, never conflated:
+#   clean -- checked, live content matches the last cut snapshot.
+#   drift -- checked, live content changed. Opens a tracking issue
+#     naming exactly what changed (never auto-regenerates: cutting a
+#     new pinned snapshot, publishing it, and bumping ubiquex's own
+#     pin is a real, judgment-requiring act this workflow does not
+#     take unattended -- matching this org's own publish-descriptions.yml
+#     precedent for exactly this kind of cut).
+#   error -- could NOT check (schema_urls missing because this
+#     provider's own snapshot hasn't been re-cut with a binary new
+#     enough to record it yet, a live fetch failed, network/rate-limit,
+#     etc.). Opens a SEPARATE tracking issue, its own label -- an error
+#     must never look like "nothing to report" from outside CI. This is
+#     exactly the class of silent failure this rewrite exists to close.
 #
-# Real design history worth keeping, found the hard way this session:
-# the first rewrite of this file hashed the combined, POST-ENRICHMENT
-# IR (`ubx sdk gen --dump-ir`'s own schema.json), the same real artifact
-# VERSION's own merged-schema-sha256 used to record. That is wrong for
-# a drift watch -- confirmed live, by checking out ubiquex/
-# ubx-provider-dynamic at the exact commits current when ubx-sdk-azure's
-# and ubx-sdk-google's own VERSION files were last written and
-# recomputing: the historical toolchain against TODAY's live specs
-# produced a THIRD distinct hash, different from both the committed
-# value and a current-toolchain run. Isolating that (same toolchain,
-# different fetch time vs. same fetch time, different toolchain) proved
-# both upstream drift AND toolchain drift were real and independently
-# present -- a hash over post-enrichment IR fires on every
-# ubiquex/ubx-provider-dynamic change that touches generation logic at
-# all, never mind whether Datadog published anything.
-#
-# This file instead hashes the RAW FETCHED SPECS directly -- every
-# member's own schema_url content, parsed, canonicalized (sort_keys,
-# compact separators -- JSON and YAML both parse to the same native
-# structure, so one method covers both, no branching on file
-# extension), and concatenated in a fixed, deterministic order (members
-# sorted by name) before the final hash. This never touches ubx or
-# ubx-provider-dynamic at all for the compare step -- only for the
-# regen step below, when a real change is actually found.
-#
-# One canonicalization rule, found live: Google's own Discovery Documents
-# (irrelevant to Datadog specifically, but this file is the shared
-# reference the ubx-sdk-azure/ubx-sdk-google copies are ported from)
-# carry a top-level "revision" date-stamp that Google's own backend
-# serves inconsistently across concurrent requests to the SAME logical
-# document -- confirmed live, three different values fetched seconds
-# apart. Stripped before hashing, if present. Datadog's OpenAPI YAML and
-# Azure's Swagger JSON carry no top-level "revision" key at all
-# (confirmed against a real sample of each), so this is a real no-op for
-# both -- one rule, safe for every member regardless of provider.
-#
-# Rather than reconstruct the group's own member list by hand here (a
-# real, live drift risk of its own if ubiquex's config ever adds/removes
-# a member and this file isn't updated in lockstep), this checks out
-# ubiquex (still needed, just to read its own real, live
-# sdk/providers/.ubx/config -- Python's stdlib tomllib parses it
-# directly, no external dependency) rather than duplicating the member
-# list here.
+# This never touches ubiquex or ubx-provider-dynamic at all for the
+# compare step -- manifest.json (ubx-schema-datadog, already published,
+# already public, no auth) is the only real input.
 
 on:
   schedule:
@@ -63,38 +41,22 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
+  issues: write
 
 env:
-  GROUP: datadog_all
   REPO_NAME: datadog
+  SCHEMA_REPO: ubx-schema-datadog
+  ERROR_ISSUE_LABEL: hash-watch-error
+  DRIFT_ISSUE_LABEL: hash-watch-drift
 
 jobs:
-  check-and-regenerate:
+  check:
     runs-on: ubuntu-latest
+    outputs:
+      state: ${{ steps.compare.outputs.state }}
     steps:
       - name: Check out ubx-sdk-datadog
         uses: actions/checkout@v4
-
-      - name: Check out ubiquex (real source of truth for the group's own member list)
-        run: |
-          set -euo pipefail
-          # ubiquex is a public repo -- a plain, unauthenticated clone, no
-          # token needed. (Formerly a fine-grained UBIQUEX_SOURCE_TOKEN
-          # PAT, before ubiquex was made public; that secret was never
-          # actually set on this repo, confirmed directly via the API, so
-          # this checkout always failed here regardless of whether a real
-          # change was ever found.)
-          #
-          # --recurse-submodules: real, found-live bug (on ubx-sdk-google's
-          # own copy of this file, ported back here) -- ubiquex's own
-          # sdk/go, sdk/py, sdk/ts are real git submodules; a bare clone
-          # leaves them empty and `go build ./cmd/ubx` below fails. Never
-          # caught until a real regen actually ran, since every prior test
-          # run's compare step found the corpus unchanged first.
-          git clone --depth=1 --recurse-submodules \
-            "https://github.com/Ubiquex/ubiquex.git" \
-            "${{ runner.temp }}/ubiquex-src"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -104,34 +66,21 @@ jobs:
       - name: Set up PyYAML
         run: pip install --quiet pyyaml
 
-      - name: Fetch every member's raw spec and compute the merged-spec-sha256
-        id: merged
+      - name: Fetch manifest.json, fetch every real member's own live spec, compare
+        id: compare
         run: |
           set -euo pipefail
           python3 - <<'PYEOF'
-          import hashlib, json, os, time, tomllib, urllib.error, urllib.request, yaml, datetime
+          import hashlib, json, os, time, urllib.error, urllib.request, yaml, datetime
 
-          GROUP = os.environ["GROUP"]
+          SCHEMA_REPO = os.environ["SCHEMA_REPO"]
 
-          cfg = tomllib.load(open("${{ runner.temp }}/ubiquex-src/sdk/providers/.ubx/config", "rb"))
-          group = cfg["dynamic_provider_groups"][GROUP]
-          members = sorted(group["members"])
-          urls = {m: cfg["dynamic_providers"][m]["schema_url"] for m in members}
+          def write_output(**kv):
+              with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+                  for k, v in kv.items():
+                      out.write(f"{k}={v}\n")
 
           def fetch(url, retries=5):
-              # Real, found-live bug, found twice against ubx-sdk-azure's
-              # own 302-member corpus (irrelevant to this repo's own 2
-              # members, kept identical here for consistency): a first
-              # draft retried with zero delay, which does nothing against
-              # an HTTP 429. A second draft's 0.2s/1s-2s-4s-8s backoff
-              # still wasn't enough -- GitHub-hosted runners share an
-              # outbound IP pool that can already be close to
-              # raw.githubusercontent.com's own limit before this
-              # workflow's own requests even start. Real fix: honor the
-              # real Retry-After header GitHub's own 429 response carries
-              # when present, falling back to a longer exponential backoff
-              # (5s, 10s, 20s, 40s, 80s) when absent, plus a real 1s delay
-              # between every member fetch below, not just retries.
               req = urllib.request.Request(url, headers={"User-Agent": "ubx-hash-watch"})
               for i in range(retries):
                   try:
@@ -158,239 +107,134 @@ jobs:
                   doc = json.loads(text)
               except json.JSONDecodeError:
                   doc = yaml.safe_load(text)
-              # Real, confirmed instability found live (see this file's own
-              # header comment): a top-level "revision" key, when present,
-              # is metadata (a last-regenerated stamp), not API-surface
-              # content, and some live spec endpoints serve it
-              # inconsistently across replicas. Absent entirely from
-              # Datadog's/Azure's own specs (confirmed), so dropping it is
-              # a real no-op for both -- only Google-shaped Discovery
-              # Documents ever actually have this key.
               if isinstance(doc, dict) and "revision" in doc:
                   doc = {k: v for k, v in doc.items() if k != "revision"}
               return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
 
-          h = hashlib.sha256()
-          for i, m in enumerate(members):
-              if i > 0:
-                  time.sleep(1.0)
-              h.update(canonicalize(fetch(urls[m])))
+          try:
+              manifest_url = f"https://raw.githubusercontent.com/Ubiquex/{SCHEMA_REPO}/main/manifest.json"
+              manifest = json.loads(fetch(manifest_url))
+              schema_urls = manifest.get("schema_urls") or {}
+              members = manifest.get("members", [])
 
-          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
-              out.write(f"hash={h.hexdigest()}\n")
-              out.write(f"members={len(members)}\n")
-          print(f"Live merged-spec-sha256: {h.hexdigest()} ({len(members)} members)")
+              if not schema_urls:
+                  write_output(
+                      state="error",
+                      detail=f"{SCHEMA_REPO}'s own manifest.json has {len(members)} real member(s) but no "
+                             f"schema_urls at all -- this provider's own snapshot has not been re-cut with a "
+                             f"ubx-provider-dynamic build new enough to record it yet (UBI-222, PR #50). "
+                             f"Nothing was checked.",
+              )
+              else:
+                  missing = [m for m in members if m not in schema_urls]
+                  distinct_urls = sorted(set(schema_urls.values()))
+                  h = hashlib.sha256()
+                  for i, url in enumerate(distinct_urls):
+                      if i > 0:
+                          time.sleep(1.0)
+                      h.update(canonicalize(fetch(url)))
+                  live_hash = h.hexdigest()
+
+                  current = None
+                  if os.path.exists("VERSION"):
+                      for line in open("VERSION"):
+                          if line.startswith("merged-spec-sha256:"):
+                              current = line.split()[1]
+                              break
+
+                  if current is None:
+                      write_output(state="error", detail="VERSION has no merged-spec-sha256 line to compare against.")
+                  elif missing:
+                      write_output(
+                          state="error",
+                          detail=f"manifest.json's own schema_urls is missing {len(missing)} of {len(members)} "
+                                 f"real member(s): {missing}. Partial data is not a safe basis for a real compare.",
+                      )
+                  elif live_hash == current:
+                      write_output(state="clean", detail=f"live merged-spec-sha256 {live_hash} matches VERSION.")
+                  else:
+                      write_output(
+                          state="drift",
+                          detail=f"live merged-spec-sha256 {live_hash} does not match VERSION's own {current} "
+                                 f"({len(distinct_urls)} distinct source(s) checked).",
+                      )
+          except Exception as e:
+              write_output(state="error", detail=f"real, unhandled failure while checking: {e!r}")
           PYEOF
 
-      - name: Compare against this repo's committed VERSION
-        id: compare
-        run: |
-          set -euo pipefail
-          current_hash="$(grep '^merged-spec-sha256:' VERSION | awk '{print $2}')"
-          current_members="$(grep '^members:' VERSION | awk '{print $2}')"
-          echo "current_hash=$current_hash" >> "$GITHUB_OUTPUT"
-          echo "current_members=$current_members" >> "$GITHUB_OUTPUT"
-          echo "This repo was last generated from merged-spec-sha256: $current_hash ($current_members members)"
-          if [ "$current_hash" = "${{ steps.merged.outputs.hash }}" ] && [ "$current_members" = "${{ steps.merged.outputs.members }}" ]; then
-            echo "newer=false" >> "$GITHUB_OUTPUT"
-            echo "Already current -- nothing to do."
-          else
-            echo "newer=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      # --- everything below only runs when the merged corpus changed ---
-
-      - name: Check out ubx-provider-dynamic (only needed once a real change is found)
-        if: steps.compare.outputs.newer == 'true'
-        run: |
-          set -euo pipefail
-          # ubx-provider-dynamic is a public repo -- a plain,
-          # unauthenticated clone, no token needed.
-          git clone --depth=1 \
-            "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
-            "${{ runner.temp }}/ubx-provider-dynamic-src"
-
-      - name: Set up Go
-        if: steps.compare.outputs.newer == 'true'
-        uses: actions/setup-go@v5
-        with:
-          go-version-file: ${{ runner.temp }}/ubiquex-src/go.mod
-
-      - name: Set up Deno
-        if: steps.compare.outputs.newer == 'true'
-        uses: denoland/setup-deno@v2.0.5
-        with:
-          deno-version: "2.x"
-
-      - name: Build ubx
-        if: steps.compare.outputs.newer == 'true'
-        run: |
-          set -euo pipefail
-          go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
-          "${{ runner.temp }}/ubx" version
-
-      - name: Regenerate bindings (all three languages, through the real group)
-        if: steps.compare.outputs.newer == 'true'
-        env:
-          UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
-        run: |
-          set -euo pipefail
-          gendir="${{ runner.temp }}/ubxgen"
-          mkdir -p "$gendir"
-
-          own_ts_version="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
-          own_py_version="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
-
-          mkdir -p "$gendir/out/$REPO_NAME/sdk/go"
-          cp sdk/go/go.mod "$gendir/out/$REPO_NAME/sdk/go/go.mod"
-
-          for lang in go ts py; do
-            ( cd "${{ runner.temp }}/ubiquex-src/sdk/providers" && "${{ runner.temp }}/ubx" sdk gen --only "$GROUP" --lang "$lang" --out "$gendir/out" --require-clean-provenance )
-          done
-
-          # UBI-197: real ubx-provider-dynamic provenance (source, commit,
-          # dirty, unpushed) -- --require-clean-provenance above already
-          # refuses on anything but a clean, pushed commit, so this is
-          # real confirmation, not just a record of an unverified claim.
-          # Committed to this repo's own root, sibling to VERSION.
-          cp "$gendir/out/$REPO_NAME/PROVENANCE.json" PROVENANCE.json
-
-          rsync -a --delete --exclude='go.sum' "$gendir/out/$REPO_NAME/sdk/go/" sdk/go/
-          rsync -a --delete --exclude='deno.json' --exclude='deno.lock' "$gendir/out/$REPO_NAME/sdk/typescript/" sdk/typescript/
-          rsync -a --delete "$gendir/out/$REPO_NAME/sdk/python/" sdk/python/
-
-          python3 -c "
-          import json
-          p = 'sdk/typescript/package.json'
-          d = json.load(open(p))
-          d['version'] = '$own_ts_version'
-          json.dump(d, open(p, 'w'), indent=2)
-          open(p, 'a').write('\n')
-          "
-          python3 -c "
-          import re
-          p = 'sdk/python/pyproject.toml'
-          content = open(p).read()
-          content = re.sub(r'version = \"[^\"]+\"', 'version = \"$own_py_version\"', content, count=1)
-          open(p, 'w').write(content)
-          "
-
-          cat > VERSION <<EOF
-          merged-spec-sha256: ${{ steps.merged.outputs.hash }}
-          members: ${{ steps.merged.outputs.members }}
-          fetched: $(date -u +%Y-%m-%d)
-          source: [dynamic_provider_groups.$GROUP] in ubiquex (sdk/providers/.ubx/config)
-          EOF
-
-      - name: Refresh sdk/typescript/deno.json's exports map for the regenerated tree
-        if: steps.compare.outputs.newer == 'true'
-        run: |
-          set -euo pipefail
-          python3 - <<PYEOF
-          import json, os
-
-          with open("sdk/typescript/deno.json") as fh:
-              cfg = json.load(fh)
-
-          exports = {}
-          for dirpath, _, filenames in os.walk("sdk/typescript/$REPO_NAME"):
-              for f in sorted(filenames):
-                  if not f.endswith(".ts"):
-                      continue
-                  rel = os.path.relpath(os.path.join(dirpath, f), "sdk/typescript")
-                  exports["./" + rel[:-3]] = "./" + rel
-
-          cfg["exports"] = exports
-
-          with open("sdk/typescript/deno.json", "w") as fh:
-              json.dump(cfg, fh, indent=2)
-              fh.write("\n")
-
-          print(f"sdk/typescript/deno.json exports: {len(exports)} entries")
-          PYEOF
-
-      - name: Regenerate sdk/go/go.sum
-        if: steps.compare.outputs.newer == 'true'
-        run: |
-          set -euo pipefail
-          cd sdk/go
-          go mod tidy
-
-      - name: Sanity-check the regenerated Go tree still builds
-        if: steps.compare.outputs.newer == 'true'
-        run: |
-          set -euo pipefail
-          cd sdk/go
-          go build ./...
-          go vet ./...
-
-      - name: Sanity-check the regenerated TS tree still typechecks
-        if: steps.compare.outputs.newer == 'true'
-        run: |
-          set -euo pipefail
-          cd sdk/typescript
-          find . -name "*.ts" -print0 | xargs -0 deno cache
-          find . -name "*.ts" -print0 | xargs -0 deno check --frozen
-
-      - name: Sanity-check the regenerated Python tree -- real import of every module
-        if: steps.compare.outputs.newer == 'true'
-        env:
-          PYTHONDONTWRITEBYTECODE: "1"
-        run: |
-          set -euo pipefail
-          deps="$(cd sdk/python && python3 -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml','rb'))['project']['dependencies']))")"
-          pip install $deps
-          python3 - <<'PYEOF'
-          import os, sys, importlib
-
-          repo_root = os.path.join(os.getcwd(), "sdk", "python")
-          sys.path.insert(0, repo_root)
-
-          count = 0
-          errors = []
-          for dirpath, dirnames, filenames in os.walk(repo_root):
-              for f in filenames:
-                  if not f.endswith(".py"):
-                      continue
-                  rel = os.path.relpath(os.path.join(dirpath, f), repo_root)
-                  mod = rel[:-3].replace(os.sep, ".")
-                  if mod.endswith(".__init__"):
-                      mod = mod[: -len(".__init__")]
-                  try:
-                      importlib.import_module(mod)
-                      count += 1
-                  except Exception as e:
-                      errors.append((mod, str(e)))
-
-          print(f"imported {count} modules OK")
-          if errors:
-              print(f"{len(errors)} ERRORS:")
-              for m, e in errors:
-                  print(f"  {m}: {e}")
-              sys.exit(1)
-          print("ZERO errors")
-          PYEOF
-
-      - name: Open PR
-        if: steps.compare.outputs.newer == 'true'
+      - name: Find any existing error/drift tracking issue
+        id: existing
+        if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          git config user.name "ubx-bot"
-          git config user.email "actions@users.noreply.github.com"
-          short="$(echo "${{ steps.merged.outputs.hash }}" | cut -c1-12)"
-          branch="sdk-regen/datadog-$short"
-          git checkout -b "$branch"
-          git add -A
-          git commit -m "sdk: regenerate from datadog_all merged corpus $short"
-          git push origin "$branch" --force
-          gh pr create \
-            --title "sdk: regenerate from datadog_all merged corpus $short" \
-            --body "Automated regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a merged-spec content change across [dynamic_provider_groups.datadog_all]'s own members -- all three languages (sdk/go/, sdk/typescript/, sdk/python/) regenerated together in this one PR.
+          error_number="$(gh issue list --label "$ERROR_ISSUE_LABEL" --state open --json number --jq '.[0].number // empty')"
+          drift_number="$(gh issue list --label "$DRIFT_ISSUE_LABEL" --state open --json number --jq '.[0].number // empty')"
+          echo "error_number=$error_number" >> "$GITHUB_OUTPUT"
+          echo "drift_number=$drift_number" >> "$GITHUB_OUTPUT"
 
-          Previous merged-spec-sha256: \`${{ steps.compare.outputs.current_hash }}\` (${{ steps.compare.outputs.current_members }} members)
-          New merged-spec-sha256: \`${{ steps.merged.outputs.hash }}\` (${{ steps.merged.outputs.members }} members)
+      - name: Surface an error state -- never allowed to look like "nothing to report"
+        if: steps.compare.outputs.state == 'error'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          run_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          body="**hash-watch could not check this repo for drift.**
 
-          New files = new resource. Modified files = an existing resource's schema changed. Removed files = a resource dropped out of the corpus (a member removed, or the resource itself removed upstream). This never auto-merges -- review the diff before merging." \
-            --base main --head "$branch"
+          ${{ steps.compare.outputs.detail }}
+
+          Full workflow run: $run_url"
+          if [ -n "${{ steps.existing.outputs.error_number }}" ]; then
+            gh issue comment "${{ steps.existing.outputs.error_number }}" --body "$body"
+          else
+            gh issue create --title "hash-watch: unable to check for drift" --label "$ERROR_ISSUE_LABEL" --body "$body"
+          fi
+
+      - name: Close a stale error tracking issue once checking works again
+        if: steps.compare.outputs.state != 'error' && steps.existing.outputs.error_number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh issue close "${{ steps.existing.outputs.error_number }}" \
+            --comment "hash-watch checked successfully on this run (state: ${{ steps.compare.outputs.state }}) -- closing."
+
+      - name: Report real drift -- opens a tracking issue, never auto-regenerates
+        if: steps.compare.outputs.state == 'drift'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          run_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          body="**Real schema drift found against the live source.**
+
+          ${{ steps.compare.outputs.detail }}
+
+          Cutting a new pinned snapshot, publishing it as a new $SCHEMA_REPO release, and bumping
+          ubiquex's own [dynamic_providers.$REPO_NAME] pin is a real, judgment-requiring act -- not
+          auto-applied here (this org's own publish-descriptions.yml sets the same precedent for this
+          class of cut). See ubx-provider-dynamic's own --generate-snapshot-group.
+
+          Full workflow run: $run_url"
+          if [ -n "${{ steps.existing.outputs.drift_number }}" ]; then
+            gh issue comment "${{ steps.existing.outputs.drift_number }}" --body "$body"
+          else
+            gh issue create --title "hash-watch: real drift found against the live source" --label "$DRIFT_ISSUE_LABEL" --body "$body"
+          fi
+
+      - name: Close a stale drift tracking issue once content is clean again
+        if: steps.compare.outputs.state == 'clean' && steps.existing.outputs.drift_number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh issue close "${{ steps.existing.outputs.drift_number }}" \
+            --comment "hash-watch found this repo clean on this run -- closing."
+
+      - name: Fail this run's own status on error or drift, so it never shows green by accident
+        if: steps.compare.outputs.state != 'clean'
+        run: |
+          echo "state: ${{ steps.compare.outputs.state }} -- ${{ steps.compare.outputs.detail }}"
+          exit 1
