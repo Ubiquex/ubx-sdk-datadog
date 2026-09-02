@@ -15,11 +15,29 @@
   "datadog_ai_custom_rule_revision_response": {
    "label": "LLM Observability"
   },
+  "datadog_ai_custom_rule_revision_response_data": {
+   "label": "LLM Observability"
+  },
   "datadog_ai_custom_ruleset_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_ai_custom_ruleset_response_data": {
+   "label": "LLM Observability"
+  },
+  "datadog_ai_memory_violation_result_response_data": {
+   "label": "LLM Observability"
+  },
+  "datadog_ai_prompt_response_data": {
    "label": "LLM Observability"
   },
   "datadog_annotation_data": {
    "label": "Dashboards"
+  },
+  "datadog_api": {
+   "label": "Key Management"
+  },
+  "datadog_api_key": {
+   "label": "Key Management"
   },
   "datadog_api_key_response": {
    "label": "Key Management"
@@ -27,19 +45,52 @@
   "datadog_apikey_response": {
    "label": "Key Management"
   },
+  "datadog_apikeys_response": {
+   "label": "Key Management"
+  },
+  "datadog_app_key_registration_data": {
+   "label": "Key Management"
+  },
+  "datadog_app_version": {
+   "label": "App Builder"
+  },
+  "datadog_application_key": {
+   "label": "Key Management"
+  },
   "datadog_application_key_response": {
    "label": "Key Management"
+  },
+  "datadog_application_key_response_included_item": {
+   "label": "Key Management"
+  },
+  "datadog_application_security_policy_data": {
+   "label": "Application Security Management"
   },
   "datadog_application_security_policy_response": {
    "label": "Application Security Management"
   },
+  "datadog_application_security_service_resource": {
+   "label": "Application Security Management"
+  },
+  "datadog_application_security_waf_custom_rule_data": {
+   "label": "Application Security Management"
+  },
   "datadog_application_security_waf_custom_rule_response": {
+   "label": "Application Security Management"
+  },
+  "datadog_application_security_waf_exclusion_filter_resource": {
    "label": "Application Security Management"
   },
   "datadog_application_security_waf_exclusion_filter_response": {
    "label": "Application Security Management"
   },
   "datadog_arbitrary_rule_response": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_arbitrary_rule_response_data": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_arbitrary_rule_status_response_data": {
    "label": "Cloud Security Management"
   },
   "datadog_artifact": {
@@ -54,25 +105,79 @@
   "datadog_auth_nmapping_response": {
    "label": "AWS Integration"
   },
+  "datadog_auth_nmappings_response": {
+   "label": "AWS Integration"
+  },
+  "datadog_automation_rule": {
+   "label": "Case Management"
+  },
   "datadog_automation_rule_response": {
    "label": "Case Management"
   },
   "datadog_aws_cur_config_response": {
    "label": "Cloud Cost Management"
   },
+  "datadog_aws_curconfig": {
+   "label": "Cloud Cost Management"
+  },
+  "datadog_aws_on_demand_data": {
+   "label": "Cloud Security Management"
+  },
   "datadog_aws_on_demand_response": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_aws_scan_options_data": {
    "label": "Cloud Security Management"
   },
   "datadog_aws_scan_options_response": {
    "label": "Cloud Security Management"
   },
+  "datadog_awsaccount": {
+   "label": "AWS Integration"
+  },
   "datadog_awsaccount_response": {
+   "label": "AWS Integration"
+  },
+  "datadog_awsaccount_response_data": {
+   "label": "AWS Integration"
+  },
+  "datadog_awsccm_config_response": {
+   "label": "Cloud Cost Management"
+  },
+  "datadog_awscloud_auth_persona_mapping_data_response": {
    "label": "AWS Integration"
   },
   "datadog_awscloud_auth_persona_mapping_response": {
    "label": "AWS Integration"
   },
+  "datadog_awsevent_bridge_account_configuration": {
+   "label": "AWS Integration"
+  },
+  "datadog_awsevent_bridge_list_response": {
+   "label": "AWS Integration"
+  },
+  "datadog_awsintegration_iam_permissions_response": {
+   "label": "AWS Integration"
+  },
+  "datadog_awslogs_services_response": {
+   "label": "AWS Integration"
+  },
+  "datadog_awsmetric_name_filter_preview_response": {
+   "label": "AWS Integration"
+  },
+  "datadog_awsnamespaces_response": {
+   "label": "AWS Integration"
+  },
+  "datadog_awstag_filter": {
+   "label": "AWS Integration"
+  },
   "datadog_azure_scan_options": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_azure_scan_options_data": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_azure_ucconfig_pair": {
    "label": "Cloud Security Management"
   },
   "datadog_billing_dimensions_mapping_body_item": {
@@ -84,16 +189,43 @@
   "datadog_blueprint_metadata_data": {
    "label": "App Builder"
   },
+  "datadog_budget": {
+   "label": "Cloud Cost Management"
+  },
   "datadog_budget_with_entries": {
    "label": "Cloud Cost Management"
   },
   "datadog_campaign_response": {
    "label": "Vulnerability Management"
   },
+  "datadog_campaign_response_data": {
+   "label": "Vulnerability Management"
+  },
+  "datadog_case": {
+   "label": "Case Management"
+  },
+  "datadog_case_count_response": {
+   "label": "Case Management"
+  },
+  "datadog_case_link": {
+   "label": "Case Management"
+  },
+  "datadog_case_notification_rule": {
+   "label": "Case Management"
+  },
   "datadog_case_response": {
    "label": "Case Management"
   },
+  "datadog_case_type_resource": {
+   "label": "Case Management"
+  },
+  "datadog_case_view": {
+   "label": "Case Management"
+  },
   "datadog_case_view_response": {
+   "label": "Case Management"
+  },
+  "datadog_case_watcher": {
    "label": "Case Management"
   },
   "datadog_change_request_response": {
@@ -108,13 +240,22 @@
   "datadog_ciapp_git_hub_account_data": {
    "label": "CI Visibility"
   },
+  "datadog_cloud_workload_security_agent_policy_data": {
+   "label": "Cloud Security Management"
+  },
   "datadog_cloud_workload_security_agent_policy_response": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_cloud_workload_security_agent_rule_data": {
    "label": "Cloud Security Management"
   },
   "datadog_cloud_workload_security_agent_rule_response": {
    "label": "Cloud Security Management"
   },
   "datadog_cloudflare_account_response": {
+   "label": "Cloudflare Integration"
+  },
+  "datadog_cloudflare_account_response_data": {
    "label": "Cloudflare Integration"
   },
   "datadog_commitments_coverage_timeseries_response": {
@@ -141,7 +282,13 @@
   "datadog_confluent_account_response": {
    "label": "Confluent Integration"
   },
+  "datadog_confluent_account_response_data": {
+   "label": "Confluent Integration"
+  },
   "datadog_confluent_resource_response": {
+   "label": "Confluent Integration"
+  },
+  "datadog_confluent_resource_response_data": {
    "label": "Confluent Integration"
   },
   "datadog_container_image_item": {
@@ -180,10 +327,34 @@
   "datadog_csm_unified_host_facet_data": {
    "label": "Cloud Security Management"
   },
+  "datadog_custom_attribute_config": {
+   "label": "Security Monitoring"
+  },
+  "datadog_custom_costs_file_get_response": {
+   "label": "Cloud Cost Management"
+  },
+  "datadog_custom_costs_file_metadata_high_level": {
+   "label": "Cloud Cost Management"
+  },
   "datadog_custom_destination_response": {
    "label": "Log Forwarding"
   },
+  "datadog_custom_destination_response_definition": {
+   "label": "Log Forwarding"
+  },
+  "datadog_custom_forecast_response": {
+   "label": "Security Monitoring"
+  },
   "datadog_custom_rule_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_custom_rule_revision": {
+   "label": "Security Monitoring"
+  },
+  "datadog_custom_rule_revision_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_custom_ruleset": {
    "label": "Security Monitoring"
   },
   "datadog_custom_ruleset_response": {
@@ -195,10 +366,31 @@
   "datadog_dashboard_list": {
    "label": "Dashboard Lists"
   },
+  "datadog_dashboard_list_item": {
+   "label": "Dashboard Lists"
+  },
+  "datadog_dashboard_summary_definition": {
+   "label": "Dashboards"
+  },
+  "datadog_data_deletion_response_item": {
+   "label": "Governance"
+  },
+  "datadog_dataset": {
+   "label": "Datasets"
+  },
+  "datadog_dataset_report_schedule_list_response": {
+   "label": "Datasets"
+  },
+  "datadog_dataset_response": {
+   "label": "Datasets"
+  },
   "datadog_dataset_response_single": {
    "label": "Datasets"
   },
   "datadog_datastore": {
+   "label": "Workflow Automation"
+  },
+  "datadog_datastore_data": {
    "label": "Workflow Automation"
   },
   "datadog_default_rulesets_per_language_response": {
@@ -207,10 +399,22 @@
   "datadog_degradation": {
    "label": "Degradation Detection"
   },
+  "datadog_degradation_array": {
+   "label": "Degradation Detection"
+  },
   "datadog_degradation_template": {
    "label": "Degradation Detection"
   },
+  "datadog_degradation_template_array": {
+   "label": "Degradation Detection"
+  },
   "datadog_deployment_gate_response": {
+   "label": "Deployment Gates"
+  },
+  "datadog_deployment_gate_response_data": {
+   "label": "Deployment Gates"
+  },
+  "datadog_deployment_gate_rules_response": {
    "label": "Deployment Gates"
   },
   "datadog_deployment_gates_evaluation_result_response": {
@@ -237,13 +441,25 @@
   "datadog_downtime_response": {
    "label": "Downtimes"
   },
+  "datadog_due_date_rule_data_response": {
+   "label": "Case Management"
+  },
   "datadog_due_date_rule_response": {
    "label": "Case Management"
+  },
+  "datadog_elastic_cloud_integration_account_response": {
+   "label": "Elastic Cloud Integration"
   },
   "datadog_elastic_cloud_integration_account_response_data": {
    "label": "Elastic Cloud Integration"
   },
+  "datadog_entity_context_entity": {
+   "label": "Software Catalog"
+  },
   "datadog_entity_integration_config_response": {
+   "label": "Software Catalog"
+  },
+  "datadog_environment": {
    "label": "Software Catalog"
   },
   "datadog_environment_response": {
@@ -261,8 +477,17 @@
   "datadog_fastly_account_response": {
    "label": "Fastly Integration"
   },
+  "datadog_fastly_account_response_data": {
+   "label": "Fastly Integration"
+  },
+  "datadog_fastly_service_data": {
+   "label": "Fastly Integration"
+  },
   "datadog_fastly_service_response": {
    "label": "Fastly Integration"
+  },
+  "datadog_feature_flag_list_item": {
+   "label": "Feature Flag Tracking"
   },
   "datadog_feature_flag_response": {
    "label": "Feature Flag Tracking"
@@ -294,23 +519,68 @@
   "datadog_fleet_tracers_response": {
    "label": "Fleet Automation"
   },
+  "datadog_form_data": {
+   "label": "Workflow Automation"
+  },
   "datadog_form_response": {
    "label": "Workflow Automation"
   },
   "datadog_gcp_scan_options": {
    "label": "Cloud Security Management"
   },
+  "datadog_gcp_scan_options_data": {
+   "label": "Cloud Security Management"
+  },
   "datadog_gcp_uc_config_response": {
    "label": "Cloud Cost Management"
+  },
+  "datadog_gcpstsdelegate_account_response": {
+   "label": "Google Cloud Integration"
+  },
+  "datadog_gcpstsservice_account": {
+   "label": "Google Cloud Integration"
   },
   "datadog_get_action_connection_response": {
    "label": "Workflow Automation"
   },
+  "datadog_get_app_key_registration_response": {
+   "label": "Key Management"
+  },
   "datadog_get_app_response": {
    "label": "Workflow Automation"
   },
+  "datadog_get_blueprint_response": {
+   "label": "Software Catalog"
+  },
+  "datadog_get_custom_framework_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_get_data_observability_monitor_run_status_response": {
+   "label": "Data Observability"
+  },
+  "datadog_get_device_response": {
+   "label": "Network Device Monitoring"
+  },
+  "datadog_get_finding_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_get_interfaces_data": {
+   "label": "Network Device Monitoring"
+  },
   "datadog_get_investigation_response": {
    "label": "Bits AI"
+  },
+  "datadog_get_io_cindicator_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_get_mapping_response": {
+   "label": "Software Catalog"
+  },
+  "datadog_get_resource_evaluation_filters_response": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_get_sbomresponse": {
+   "label": "Code Security"
   },
   "datadog_get_workflow_response": {
    "label": "Workflow Automation"
@@ -321,7 +591,25 @@
   "datadog_global_org_data": {
    "label": "Organizations"
   },
+  "datadog_google_chat_app_named_space_response": {
+   "label": "Google Chat Integration"
+  },
+  "datadog_google_chat_delegated_user_response": {
+   "label": "Google Chat Integration"
+  },
+  "datadog_google_chat_organization_data": {
+   "label": "Google Chat Integration"
+  },
   "datadog_google_chat_organization_handle_response": {
+   "label": "Google Chat Integration"
+  },
+  "datadog_google_chat_organization_handle_response_data": {
+   "label": "Google Chat Integration"
+  },
+  "datadog_google_chat_organization_response": {
+   "label": "Google Chat Integration"
+  },
+  "datadog_google_chat_target_audience_data": {
    "label": "Google Chat Integration"
   },
   "datadog_google_chat_target_audience_response": {
@@ -357,14 +645,35 @@
   "datadog_historical_job_response": {
    "label": "DORA Metrics"
   },
+  "datadog_historical_job_response_data": {
+   "label": "DORA Metrics"
+  },
   "datadog_historical_metrics_configuration_response": {
    "label": "DORA Metrics"
+  },
+  "datadog_host": {
+   "label": "Tags"
   },
   "datadog_host_tags": {
    "label": "Tags"
   },
+  "datadog_host_totals": {
+   "label": "Tags"
+  },
   "datadog_identity_provider_data": {
    "label": "Access Control"
+  },
+  "datadog_incident_handles_response": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_impact_fields_response": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_impacts_response": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_integration_metadata_list_response": {
+   "label": "Incident Management"
   },
   "datadog_incident_integration_metadata_response": {
    "label": "Incident Management"
@@ -372,19 +681,49 @@
   "datadog_incident_notification_rule": {
    "label": "Incident Management"
   },
+  "datadog_incident_notification_rule_array": {
+   "label": "Incident Management"
+  },
   "datadog_incident_notification_template": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_notification_template_array": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_org_settings_data_response": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_org_settings_response": {
    "label": "Incident Management"
   },
   "datadog_incident_responder_response": {
    "label": "Incident Management"
   },
+  "datadog_incident_responders_response": {
+   "label": "Incident Management"
+  },
   "datadog_incident_response": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_response_included_item": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_rule_data_response": {
    "label": "Incident Management"
   },
   "datadog_incident_rule_response": {
    "label": "Incident Management"
   },
+  "datadog_incident_timestamp_overrides_response": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_todo_list_response": {
+   "label": "Incident Management"
+  },
   "datadog_incident_todo_response": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_type_object": {
    "label": "Incident Management"
   },
   "datadog_incident_type_response": {
@@ -393,7 +732,16 @@
   "datadog_incident_user_defined_field_response": {
    "label": "Incident Management"
   },
+  "datadog_incident_user_defined_field_response_data": {
+   "label": "Incident Management"
+  },
   "datadog_incident_user_defined_role_response": {
+   "label": "Incident Management"
+  },
+  "datadog_incident_user_defined_roles_response": {
+   "label": "Incident Management"
+  },
+  "datadog_incidents_response": {
    "label": "Incident Management"
   },
   "datadog_integration": {
@@ -414,7 +762,13 @@
   "datadog_item_api_payload_data": {
    "label": "App Builder"
   },
+  "datadog_jira_account_data": {
+   "label": "Jira Integration"
+  },
   "datadog_jira_issue_template_response": {
+   "label": "Jira Integration"
+  },
+  "datadog_jira_issue_templates_response": {
    "label": "Jira Integration"
   },
   "datadog_kind_data": {
@@ -465,37 +819,175 @@
   "datadog_list_tags_response": {
    "label": "Tags"
   },
+  "datadog_llmobs_annotated_interactions_by_trace_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_annotated_interactions_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_annotation_queue_data_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_annotation_queue_label_schema_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_custom_eval_config_data": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_custom_eval_config_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_dataset_data_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_dataset_draft_state_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_dataset_record_data_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_dataset_version_data": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_experiment_data_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_experiment_events_v2_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_experiment_span_data_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_patterns_clustered_points_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_patterns_config_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_patterns_configs_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_patterns_run_status_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_patterns_runs_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_patterns_topics_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_patterns_topics_with_clustered_points_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_project_data_response": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_prompt_data": {
+   "label": "LLM Observability"
+  },
   "datadog_llmobs_prompt_sdkresponse": {
+   "label": "LLM Observability"
+  },
+  "datadog_llmobs_prompt_version_list_data": {
    "label": "LLM Observability"
   },
   "datadog_llmobs_prompt_version_response": {
    "label": "LLM Observability"
   },
+  "datadog_llmobs_span_data": {
+   "label": "LLM Observability"
+  },
+  "datadog_log": {
+   "label": "Logs Indexes"
+  },
   "datadog_logs_archive": {
+   "label": "Logs Archives"
+  },
+  "datadog_logs_archive_definition": {
+   "label": "Logs Archives"
+  },
+  "datadog_logs_archive_order": {
    "label": "Logs Archives"
   },
   "datadog_logs_index": {
    "label": "Logs Indexes"
   },
+  "datadog_logs_indexes_order": {
+   "label": "Logs Indexes"
+  },
   "datadog_logs_metric_response": {
+   "label": "Metrics"
+  },
+  "datadog_logs_metric_response_data": {
    "label": "Metrics"
   },
   "datadog_logs_pipeline": {
    "label": "Logs Pipelines"
   },
+  "datadog_logs_pipelines_order": {
+   "label": "Logs Pipelines"
+  },
   "datadog_maintenance": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_maintenance_array": {
    "label": "Cloud Security Management"
   },
   "datadog_maintenance_template": {
    "label": "Cloud Security Management"
   },
+  "datadog_maintenance_template_array": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_maintenance_window": {
+   "label": "Cloud Security Management"
+  },
+  "datadog_metric_all_tags_response": {
+   "label": "Metrics"
+  },
+  "datadog_metric_asset_response_included": {
+   "label": "Metrics"
+  },
   "datadog_metric_metadata": {
    "label": "Metrics"
+  },
+  "datadog_metric_search_response": {
+   "label": "Metrics"
+  },
+  "datadog_metric_suggested_tags_and_aggregations_response": {
+   "label": "Metrics"
+  },
+  "datadog_metric_tag_cardinality": {
+   "label": "Metrics"
+  },
+  "datadog_metric_tag_configuration_response": {
+   "label": "Metrics"
+  },
+  "datadog_metric_volumes_response": {
+   "label": "Metrics"
+  },
+  "datadog_metrics_and_metric_tag_configurations_response": {
+   "label": "Metrics"
+  },
+  "datadog_metrics_list_response": {
+   "label": "Metrics"
+  },
+  "datadog_metrics_query_metadata": {
+   "label": "Metrics"
+  },
+  "datadog_microsoft_teams_get_channel_by_name_response": {
+   "label": "Microsoft Teams Integration"
+  },
+  "datadog_microsoft_teams_tenant_based_handle_info_response_data": {
+   "label": "Microsoft Teams Integration"
   },
   "datadog_microsoft_teams_tenant_based_handle_response": {
    "label": "Microsoft Teams Integration"
   },
   "datadog_microsoft_teams_workflows_webhook_handle_response": {
+   "label": "Microsoft Teams Integration"
+  },
+  "datadog_microsoft_teams_workflows_webhook_handle_response_data": {
    "label": "Microsoft Teams Integration"
   },
   "datadog_model_lab_facet_keys_response": {
@@ -528,11 +1020,32 @@
   "datadog_monitor_config_policy_response": {
    "label": "Monitors"
   },
+  "datadog_monitor_config_policy_response_data": {
+   "label": "Monitors"
+  },
+  "datadog_monitor_downtime_match_response_data": {
+   "label": "Monitors"
+  },
+  "datadog_monitor_group_search_result": {
+   "label": "Monitors"
+  },
+  "datadog_monitor_notification_rule_list_response": {
+   "label": "Monitors"
+  },
   "datadog_monitor_notification_rule_response": {
+   "label": "Monitors"
+  },
+  "datadog_monitor_search_result": {
    "label": "Monitors"
   },
   "datadog_monitor_user_template_response": {
    "label": "Monitors"
+  },
+  "datadog_monitor_user_template_response_data": {
+   "label": "Monitors"
+  },
+  "datadog_mute_rule_data_response": {
+   "label": "Security Monitoring"
   },
   "datadog_mute_rule_response": {
    "label": "Security Monitoring"
@@ -546,7 +1059,16 @@
   "datadog_notebook_response": {
    "label": "Notebooks"
   },
+  "datadog_notebooks_response_data": {
+   "label": "Notebooks"
+  },
   "datadog_notification_channel": {
+   "label": "Notifications"
+  },
+  "datadog_notification_channel_data": {
+   "label": "Notifications"
+  },
+  "datadog_notification_rule": {
    "label": "Notifications"
   },
   "datadog_notification_rule_response": {
@@ -561,17 +1083,68 @@
   "datadog_observability_pipeline": {
    "label": "Observability Pipelines"
   },
+  "datadog_observability_pipeline_data": {
+   "label": "Observability Pipelines"
+  },
   "datadog_ociconfig": {
    "label": "Container Monitoring"
   },
   "datadog_okta_account_response": {
    "label": "Okta Integration"
   },
+  "datadog_okta_account_response_data": {
+   "label": "Okta Integration"
+  },
   "datadog_on_call_notification_rule": {
    "label": "On-Call"
   },
+  "datadog_on_demand_concurrency_cap_response": {
+   "label": "On-Call"
+  },
+  "datadog_opsgenie_account_response_data": {
+   "label": "Opsgenie Integration"
+  },
   "datadog_opsgenie_service_response": {
    "label": "Opsgenie Integration"
+  },
+  "datadog_opsgenie_service_response_data": {
+   "label": "Opsgenie Integration"
+  },
+  "datadog_org_authorized_client_data": {
+   "label": "Access Control"
+  },
+  "datadog_org_authorized_client_response": {
+   "label": "Access Control"
+  },
+  "datadog_org_config_get_response": {
+   "label": "Access Control"
+  },
+  "datadog_org_config_read": {
+   "label": "Access Control"
+  },
+  "datadog_org_connection": {
+   "label": "Access Control"
+  },
+  "datadog_org_data": {
+   "label": "Access Control"
+  },
+  "datadog_org_group_data": {
+   "label": "Access Control"
+  },
+  "datadog_org_group_membership_data": {
+   "label": "Access Control"
+  },
+  "datadog_org_group_membership_response": {
+   "label": "Access Control"
+  },
+  "datadog_org_group_policy_config_data": {
+   "label": "Access Control"
+  },
+  "datadog_org_group_policy_data": {
+   "label": "Access Control"
+  },
+  "datadog_org_group_policy_override_data": {
+   "label": "Access Control"
   },
   "datadog_org_group_policy_override_response": {
    "label": "Access Control"
@@ -579,8 +1152,14 @@
   "datadog_org_group_policy_response": {
    "label": "Access Control"
   },
+  "datadog_org_group_policy_suggestion_data": {
+   "label": "Access Control"
+  },
   "datadog_org_group_response": {
    "label": "Access Control"
+  },
+  "datadog_organization": {
+   "label": "Organizations"
   },
   "datadog_organization_response": {
    "label": "Organizations"
@@ -603,6 +1182,9 @@
   "datadog_ownership_untagged_findings_response": {
    "label": "Software Catalog"
   },
+  "datadog_page_annotations_response": {
+   "label": "Dashboards"
+  },
   "datadog_pager_duty_service_name": {
    "label": "PagerDuty Integration"
   },
@@ -618,6 +1200,15 @@
   "datadog_playlist": {
    "label": "Dashboards"
   },
+  "datadog_playlist_data": {
+   "label": "Dashboards"
+  },
+  "datadog_playlists_session_data": {
+   "label": "Dashboards"
+  },
+  "datadog_postmortem_template_data_response": {
+   "label": "Incident Management"
+  },
   "datadog_postmortem_template_response": {
    "label": "Incident Management"
   },
@@ -626,6 +1217,12 @@
   },
   "datadog_process_summary": {
    "label": "Process Monitoring"
+  },
+  "datadog_project": {
+   "label": "Workflow Automation"
+  },
+  "datadog_project_favorite": {
+   "label": "Workflow Automation"
   },
   "datadog_project_response": {
    "label": "Workflow Automation"
@@ -636,26 +1233,77 @@
   "datadog_recommendation_document": {
    "label": "Software Catalog"
   },
+  "datadog_report": {
+   "label": "Reporting"
+  },
+  "datadog_report_schedule_list_response": {
+   "label": "Reporting"
+  },
   "datadog_report_schedule_response": {
    "label": "Reporting"
   },
   "datadog_restriction_policy_response": {
    "label": "Access Control"
   },
+  "datadog_restriction_query_role": {
+   "label": "Access Control"
+  },
   "datadog_restriction_query_with_relationships_response": {
    "label": "Access Control"
+  },
+  "datadog_restriction_query_without_relationships": {
+   "label": "Access Control"
+  },
+  "datadog_retention_filter_all": {
+   "label": "Logs Indexes"
   },
   "datadog_retention_filter_response": {
    "label": "Logs Indexes"
   },
+  "datadog_role": {
+   "label": "Access Control"
+  },
   "datadog_role_response": {
    "label": "Access Control"
+  },
+  "datadog_role_template_data": {
+   "label": "Access Control"
+  },
+  "datadog_rule_based_view_response": {
+   "label": "Software Catalog"
   },
   "datadog_ruleset_resp": {
    "label": "Security Monitoring"
   },
+  "datadog_ruleset_resp_data": {
+   "label": "Security Monitoring"
+  },
+  "datadog_ruleset_status_resp_data": {
+   "label": "Security Monitoring"
+  },
+  "datadog_rum_config_response": {
+   "label": "RUM"
+  },
+  "datadog_rum_exclusion_filter_data": {
+   "label": "RUM"
+  },
+  "datadog_rum_exclusion_filter_response": {
+   "label": "RUM"
+  },
   "datadog_rum_metric_response": {
    "label": "Metrics"
+  },
+  "datadog_rum_metric_response_data": {
+   "label": "Metrics"
+  },
+  "datadog_rum_permanent_retention_filter_data": {
+   "label": "RUM"
+  },
+  "datadog_rum_permanent_retention_filter_response": {
+   "label": "RUM"
+  },
+  "datadog_rum_retention_filter_data": {
+   "label": "RUM"
   },
   "datadog_rum_retention_filter_response": {
    "label": "RUM"
@@ -666,7 +1314,13 @@
   "datadog_rum_sdk_config_response": {
    "label": "RUM"
   },
+  "datadog_rumapplication_list": {
+   "label": "RUM"
+  },
   "datadog_rumapplication_response": {
+   "label": "RUM"
+  },
+  "datadog_rumevent": {
    "label": "RUM"
   },
   "datadog_rumoperation_response": {
@@ -684,6 +1338,9 @@
   "datadog_sample_log_generation_subscription_data": {
    "label": "Logs Pipelines"
   },
+  "datadog_sast_ruleset_data": {
+   "label": "Code Security"
+  },
   "datadog_sast_ruleset_response": {
    "label": "Code Security"
   },
@@ -693,7 +1350,13 @@
   "datadog_scan_result_response": {
    "label": "Cloud Security Management"
   },
+  "datadog_scanned_asset_metadata": {
+   "label": "Cloud Security Management"
+  },
   "datadog_schedule": {
+   "label": "On-Call"
+  },
+  "datadog_schedule_on_call_responders_included": {
    "label": "On-Call"
   },
   "datadog_scorecard_list_response_data": {
@@ -714,16 +1377,64 @@
   "datadog_secure_embed_get_response": {
    "label": "Dashboards"
   },
+  "datadog_security_entity_risk_score": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_entity_risk_score_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_filter": {
+   "label": "Security Monitoring"
+  },
   "datadog_security_filter_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_filter_version": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_findings_data": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_monitoring_content_pack_state_data": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_monitoring_critical_asset": {
    "label": "Security Monitoring"
   },
   "datadog_security_monitoring_critical_asset_response": {
    "label": "Security Monitoring"
   },
+  "datadog_security_monitoring_dataset_data": {
+   "label": "Security Monitoring"
+  },
   "datadog_security_monitoring_dataset_response": {
    "label": "Security Monitoring"
   },
+  "datadog_security_monitoring_entra_id_azure_app_registrations_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_monitoring_integration_config_data": {
+   "label": "Security Monitoring"
+  },
   "datadog_security_monitoring_integration_config_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_monitoring_rule_convert_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_monitoring_rule_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_monitoring_signal": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_monitoring_signal_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_monitoring_signal_suggested_action": {
+   "label": "Security Monitoring"
+  },
+  "datadog_security_monitoring_suppression": {
    "label": "Security Monitoring"
   },
   "datadog_security_monitoring_suppression_response": {
@@ -741,19 +1452,52 @@
   "datadog_sensitive_data_scanner_standard_patterns_response_item": {
    "label": "Sensitive Data Scanner"
   },
+  "datadog_service_access_token": {
+   "label": "Key Management"
+  },
   "datadog_service_access_token_response": {
    "label": "Key Management"
+  },
+  "datadog_service_definition_data": {
+   "label": "Software Catalog"
   },
   "datadog_service_definition_get_response": {
    "label": "Software Catalog"
   },
+  "datadog_service_level_objective": {
+   "label": "Service Level Objectives"
+  },
+  "datadog_service_list": {
+   "label": "Software Catalog"
+  },
+  "datadog_service_now_assignment_group_data": {
+   "label": "ServiceNow Integration"
+  },
+  "datadog_service_now_business_service_data": {
+   "label": "ServiceNow Integration"
+  },
+  "datadog_service_now_instance_data": {
+   "label": "ServiceNow Integration"
+  },
+  "datadog_service_now_template_data": {
+   "label": "ServiceNow Integration"
+  },
   "datadog_service_now_template_response": {
    "label": "ServiceNow Integration"
+  },
+  "datadog_service_now_user_data": {
+   "label": "ServiceNow Integration"
+  },
+  "datadog_severity_modifier_rule_data_response": {
+   "label": "Security Monitoring"
   },
   "datadog_severity_modifier_rule_response": {
    "label": "Security Monitoring"
   },
   "datadog_shared_dashboard": {
+   "label": "Dashboards"
+  },
+  "datadog_shared_dashboard_invites": {
    "label": "Dashboards"
   },
   "datadog_shift_included": {
@@ -773,6 +1517,18 @@
   },
   "datadog_slack_integration_channel": {
    "label": "Slack Integration"
+  },
+  "datadog_slack_integration_channels": {
+   "label": "Slack Integration"
+  },
+  "datadog_slack_user_binding_data": {
+   "label": "Slack Integration"
+  },
+  "datadog_slo_status_response": {
+   "label": "Service Level Objectives"
+  },
+  "datadog_slocorrection": {
+   "label": "Service Level Objective Corrections"
   },
   "datadog_slocorrection_response": {
    "label": "Service Level Objective Corrections"
@@ -795,22 +1551,67 @@
   "datadog_sourcemap_item": {
    "label": "RUM"
   },
+  "datadog_span": {
+   "label": "APM"
+  },
   "datadog_spans_metric_response": {
+   "label": "Metrics"
+  },
+  "datadog_spans_metric_response_data": {
    "label": "Metrics"
   },
   "datadog_status_page": {
    "label": "Status Pages"
   },
+  "datadog_status_page_array": {
+   "label": "Status Pages"
+  },
   "datadog_status_pages_component": {
    "label": "Status Pages"
   },
+  "datadog_status_pages_component_array": {
+   "label": "Status Pages"
+  },
+  "datadog_statuspage_account_response": {
+   "label": "Status Pages"
+  },
+  "datadog_statuspage_url_setting_response_data": {
+   "label": "Status Pages"
+  },
+  "datadog_synthetics_api_multistep_parent_test_data": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_api_multistep_subtest_data": {
+   "label": "Synthetics"
+  },
   "datadog_synthetics_apitest": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_apitest_result_full": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_apitest_result_short": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_batch_details": {
    "label": "Synthetics"
   },
   "datadog_synthetics_browser_test": {
    "label": "Synthetics"
   },
+  "datadog_synthetics_browser_test_result_full": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_browser_test_result_short": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_downtime_data": {
+   "label": "Synthetics"
+  },
   "datadog_synthetics_downtime_response": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_fast_test_result": {
    "label": "Synthetics"
   },
   "datadog_synthetics_global_variable": {
@@ -822,35 +1623,128 @@
   "datadog_synthetics_network_test_response": {
    "label": "Synthetics"
   },
+  "datadog_synthetics_poll_test_results_response": {
+   "label": "Synthetics"
+  },
   "datadog_synthetics_private_location": {
    "label": "Synthetics"
   },
   "datadog_synthetics_suite_response": {
    "label": "Synthetics"
   },
+  "datadog_synthetics_suite_search_response": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_test_details_without_steps": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_test_latest_results_response": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_test_parent_suite_data": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_test_result_included_item": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_test_version_change_data": {
+   "label": "Synthetics"
+  },
+  "datadog_synthetics_test_version_response": {
+   "label": "Synthetics"
+  },
   "datadog_table_result_v2": {
    "label": "Workflow Automation"
+  },
+  "datadog_table_result_v2_data": {
+   "label": "Workflow Automation"
+  },
+  "datadog_table_row_resource_data": {
+   "label": "Workflow Automation"
+  },
+  "datadog_tag_data": {
+   "label": "Security Monitoring"
+  },
+  "datadog_tag_indexing_rule_data": {
+   "label": "Security Monitoring"
+  },
+  "datadog_tag_indexing_rule_exemption_response": {
+   "label": "Security Monitoring"
   },
   "datadog_tag_indexing_rule_response": {
    "label": "Security Monitoring"
   },
-  "datadog_tag_policy_response": {
-   "label": "Tags"
+  "datadog_tag_rule_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_tag_rule_score_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_tag_rules_list_response": {
+   "label": "Security Monitoring"
+  },
+  "datadog_tag_to_hosts": {
+   "label": "Security Monitoring"
+  },
+  "datadog_team_connection": {
+   "label": "Teams"
   },
   "datadog_team_hierarchy_link_response": {
+   "label": "Teams"
+  },
+  "datadog_team_hierarchy_links_response": {
+   "label": "Teams"
+  },
+  "datadog_team_link": {
    "label": "Teams"
   },
   "datadog_team_link_response": {
    "label": "Teams"
   },
+  "datadog_team_notification_rule": {
+   "label": "Notifications"
+  },
   "datadog_team_notification_rule_response": {
    "label": "Notifications"
+  },
+  "datadog_team_on_call_responders_included": {
+   "label": "Teams"
+  },
+  "datadog_team_permission_setting": {
+   "label": "Teams"
   },
   "datadog_team_response": {
    "label": "Teams"
   },
+  "datadog_team_routing_rules_included": {
+   "label": "Teams"
+  },
+  "datadog_team_sync_data": {
+   "label": "Teams"
+  },
+  "datadog_teams_ownership_mapping_response": {
+   "label": "Teams"
+  },
+  "datadog_teams_ownership_mapping_response_data": {
+   "label": "Teams"
+  },
+  "datadog_teams_ownership_rule_response_data": {
+   "label": "Teams"
+  },
+  "datadog_teams_response": {
+   "label": "Teams"
+  },
   "datadog_tenancy_config": {
    "label": "Access Control"
+  },
+  "datadog_tenancy_config_data": {
+   "label": "Access Control"
+  },
+  "datadog_tenancy_products_data": {
+   "label": "Access Control"
+  },
+  "datadog_ticket_creation_rule_data_response": {
+   "label": "Case Management"
   },
   "datadog_ticket_creation_rule_response": {
    "label": "Case Management"
@@ -864,16 +1758,40 @@
   "datadog_tree_sitter_wasm": {
    "label": "Code Security"
   },
+  "datadog_twilio_integration_account_response": {
+   "label": "Twilio Integration"
+  },
   "datadog_twilio_integration_account_response_data": {
    "label": "Twilio Integration"
   },
   "datadog_ucconfig_pair": {
    "label": "Cloud Cost Management"
   },
+  "datadog_user": {
+   "label": "Users"
+  },
+  "datadog_user_authorized_client_data": {
+   "label": "Users"
+  },
+  "datadog_user_authorized_client_response": {
+   "label": "Users"
+  },
   "datadog_user_invitation_response": {
    "label": "Users"
   },
+  "datadog_user_override_identity_provider_data": {
+   "label": "Users"
+  },
   "datadog_user_response": {
+   "label": "Users"
+  },
+  "datadog_user_response_included_item": {
+   "label": "Users"
+  },
+  "datadog_user_teams_response": {
+   "label": "Users"
+  },
+  "datadog_users_response": {
    "label": "Users"
   },
   "datadog_v1": {
@@ -896,6 +1814,12 @@
   },
   "datadog_web_integration_account_response": {
    "label": "Integrations"
+  },
+  "datadog_web_integration_account_response_data": {
+   "label": "Integrations"
+  },
+  "datadog_webhooks_auth_methods_response": {
+   "label": "Webhooks Integration"
   },
   "datadog_webhooks_integration": {
    "label": "Webhooks Integration"
