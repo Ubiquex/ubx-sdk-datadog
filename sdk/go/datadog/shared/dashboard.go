@@ -18,15 +18,20 @@ type Dashboard_GlobalTime struct {
 type Dashboard_Invitees struct {
 	AccessExpiration any
 	CreatedAt        any
-	Email            any
+	// The email address of the invitee granted access to the shared dashboard. (AI-inferred)
+	Email any
 }
 
 type Dashboard_SelectableTemplateVars struct {
+	// The default value for the template variable when the dashboard is shared. Viewers can override this value. (AI-inferred)
 	DefaultValue any
-	Name         any
-	Prefix       any
-	Type         any
-	VisibleTags  any
+	// The name of the template variable that will be selectable by viewers of the shared dashboard. Must correspond to a template variable defined on the dashboard. (AI-inferred)
+	Name any
+	// The tag key prefix associated with a selectable template variable in a shared dashboard, used to scope the variable's values (e.g., 'service' for service-specific filtering). (AI-inferred)
+	Prefix any
+	Type   any
+	// List of tag values that are shown as selectable options for this template variable in the shared dashboard. (AI-inferred)
+	VisibleTags any
 }
 
 type Dashboard_ViewingPreferences struct {

@@ -9,14 +9,19 @@ export interface Index_DailyLimitReset {
 }
 
 export interface Index_ExclusionFilters_Filter {
+  /** The query string to filter logs that should be excluded from the index. It follows the Datadog log search syntax. (AI-inferred) */
   query?: string | Computed<string>;
   sampleAttribute?: string | Computed<string>;
+  /** The fraction of logs matching the exclusion filter query that will be excluded. Must be a number between 0 and 1, where 1.0 excludes all matching logs. (AI-inferred) */
   sampleRate?: number | Computed<number>;
 }
 
 export interface Index_ExclusionFilters {
+  /** The filter object defines the query criteria that determine which logs are excluded from the index based on the exclusion filter's configuration. (AI-inferred) */
   filter?: Index_ExclusionFilters_Filter | Computed<Index_ExclusionFilters_Filter>;
+  /** Whether the exclusion filter is enabled. When true, logs matching the filter's query are excluded from the index. (AI-inferred) */
   isEnabled?: boolean | Computed<boolean>;
+  /** Name of the exclusion filter. This is a user-defined label used to identify the filter within the logs index. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

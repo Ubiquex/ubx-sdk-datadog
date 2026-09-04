@@ -20,46 +20,64 @@ type Sloresponse_Data_Query struct {
 }
 
 type Sloresponse_Data_SliSpecification_Count_BadEventsFormula struct {
+	// The formula string used to define the count of bad events for the SLI, such as a Datadog query or mathematical expression. (AI-inferred)
 	Formula any
 }
 
 type Sloresponse_Data_SliSpecification_Count_Queries struct {
-	Aggregator    any
+	// The aggregation method used to combine query results into a single value. Allowed values are `avg`, `sum`, `min`, `max`, `last`, and `count`. (AI-inferred)
+	Aggregator any
+	// A list of organization UUIDs from which to include data in the SLI query, enabling cross-organization SLOs. If omitted, the query runs against the current organization only. (AI-inferred)
 	CrossOrgUuids any
 	DataSource    any
 	Name          any
-	Query         any
-	SemanticMode  any
+	// The query string for a count query used in the SLI specification. (AI-inferred)
+	Query any
+	// The semantic_mode field specifies how the query result should be interpreted for a count query in a Datadog SLO. It can be set to 'count' for event counts or 'total' for summed numeric values, affecting the SLI calculation. (AI-inferred)
+	SemanticMode any
 }
 
 type Sloresponse_Data_SliSpecification_Count struct {
-	BadEventsFormula   any
-	GoodEventsFormula  any
-	Queries            any
+	BadEventsFormula any
+	// Block defining a formula used to compute the good events count for a count-based SLI specification. This is used in place of a simple query when good events are derived from a formula. (AI-inferred)
+	GoodEventsFormula any
+	// List of query objects that define the metric queries for a count-based SLI specification. Each query includes the query string and formula used to calculate the count of events for the SLO. (AI-inferred)
+	Queries any
+	// The formula used to calculate the total number of events for a count-based Service Level Indicator (SLI). It defines a query or formula that supplies the total events count for SLO computations. (AI-inferred)
 	TotalEventsFormula any
 }
 
 type Sloresponse_Data_SliSpecification_TimeSlice_Query struct {
+	// List of formulas that compute the SLI from the time slice query's individual queries, using arithmetic expressions. (AI-inferred)
 	Formulas any
 	Queries  any
 }
 
 type Sloresponse_Data_SliSpecification_TimeSlice struct {
-	Comparator           any
-	Query                any
+	// The comparison operator used to evaluate the time slice query against the threshold. Valid values are `>` (greater than), `>=` (greater than or equal), `<` (less than), and `<=` (less than or equal). (AI-inferred)
+	Comparator any
+	// The query object that defines the metric or formula used to calculate the SLI for this time slice. (AI-inferred)
+	Query any
+	// The interval, in seconds, at which query data is aggregated for the time-slice SLO. (AI-inferred)
 	QueryIntervalSeconds any
-	Threshold            any
+	// The threshold value that the SLI time slice query result is compared against to determine whether the slice meets the SLO. (AI-inferred)
+	Threshold any
 }
 
 type Sloresponse_Data_SliSpecification struct {
-	Count     any
+	Count any
+	// The time-slice configuration for the SLI, which defines the query and threshold used to evaluate each time slice for the SLO. (AI-inferred)
 	TimeSlice any
 }
 
 type Sloresponse_Data_Thresholds struct {
-	Target         any
-	TargetDisplay  any
-	Timeframe      any
+	// The target percentage for the SLO threshold, e.g., 99.9. (AI-inferred)
+	Target any
+	// The human-readable display string for the target value of the SLO threshold, e.g., '99.9%'. (AI-inferred)
+	TargetDisplay any
+	// The rolling time window over which the SLO target is evaluated. Allowed values are 7d, 30d, 90d, or custom. (AI-inferred)
+	Timeframe any
+	// The warning threshold value for the SLO, typically expressed as a percentage (e.g., 99.9). This is the value at which the SLO is considered to be in a warning state. (AI-inferred)
 	Warning        any
 	WarningDisplay any
 }

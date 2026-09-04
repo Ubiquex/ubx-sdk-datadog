@@ -25,32 +25,45 @@ type Response_Data_Attributes_Author struct {
 }
 
 type Response_Data_Attributes_Cells_Attributes_Definition struct {
+	// The Markdown text displayed in the notebook cell. (AI-inferred)
 	Text any
+	// The type of notebook cell this definition represents, determining how the cell content is interpreted and rendered. (AI-inferred)
 	Type any
 }
 
 type Response_Data_Attributes_Cells_Attributes_SplitBy struct {
+	// The list of tag keys used to split the graph into multiple series. (AI-inferred)
 	Keys any
+	// The list of tags used to split the data in this notebook cell. (AI-inferred)
 	Tags any
 }
 
 type Response_Data_Attributes_Cells_Attributes_Time struct {
-	End      any
-	Live     any
+	// The end of the time range for the notebook cell, in ISO 8601 format (e.g., '2023-01-01T00:00:00Z'). (AI-inferred)
+	End any
+	// Boolean flag indicating whether the time range is live (auto-refreshing) as opposed to a fixed time range. (AI-inferred)
+	Live any
+	// The live time span for the notebook cell's time range, such as '5m', '1h', or '1d'. (AI-inferred)
 	LiveSpan any
-	Start    any
+	// The start timestamp of the time range for the notebook cell, represented as a string (e.g., ISO 8601 format). (AI-inferred)
+	Start any
 }
 
 type Response_Data_Attributes_Cells_Attributes struct {
+	// An object that contains the content and configuration for the notebook cell. Its structure depends on the cell type (e.g., markdown, timeseries). (AI-inferred)
 	Definition any
-	GraphSize  any
-	SplitBy    any
-	Time       any
+	// The size of the graph in the notebook cell, controlling its display dimensions. (AI-inferred)
+	GraphSize any
+	// Configuration for splitting the widget's data by one or more tag keys, including a limit on the number of groups. (AI-inferred)
+	SplitBy any
+	// The time range for the notebook cell, specifying the period over which data is displayed. (AI-inferred)
+	Time any
 }
 
 type Response_Data_Attributes_Cells struct {
 	Attributes any
-	Type       any
+	// The type of notebook cell. The only allowed value is "notebook_cells". (AI-inferred)
+	Type any
 }
 
 type Response_Data_Attributes_Metadata struct {
@@ -63,30 +76,43 @@ type Response_Data_Attributes_Metadata struct {
 }
 
 type Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_GroupBy struct {
+	// The name of the facet (attribute) used to group the results in the available values query for template variables. (AI-inferred)
 	Facet any
 }
 
 type Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_Search struct {
+	// The search query string used to retrieve the available values for the template variable. (AI-inferred)
 	Query any
 }
 
 type Response_Data_Attributes_TemplateVariables_AvailableValuesQuery struct {
+	// Specifies the data source (such as metrics or logs) from which the available values for the template variable are retrieved. (AI-inferred)
 	DataSource any
-	GroupBy    any
-	Query      any
-	Search     any
+	// Groups the metric query results by one or more tags or attributes, using the distinct values of those groupings to populate the template variable's available values. (AI-inferred)
+	GroupBy any
+	// The query string that defines the set of available values for the template variable. (AI-inferred)
+	Query  any
+	Search any
 }
 
 type Response_Data_Attributes_TemplateVariables struct {
-	AvailableValues      any
+	// The list of possible values that can be assigned to the template variable in a Datadog notebook. (AI-inferred)
+	AvailableValues any
+	// An object that configures a query to determine the list of available values for this template variable. (AI-inferred)
 	AvailableValuesQuery any
-	DataSourceMappings   any
-	Default              any
-	Defaults             any
-	Name                 any
-	Placement            any
-	Prefix               any
-	Type                 any
+	// A map from data source types (e.g., 'metrics', 'logs') to template variable values, allowing the variable to resolve to different values depending on the data source used by a panel. (AI-inferred)
+	DataSourceMappings any
+	// The default value for the template variable, used when no other value is selected. (AI-inferred)
+	Default any
+	// List of default values for the template variable. These are used when the notebook is loaded and no other value is specified. (AI-inferred)
+	Defaults any
+	// The name of the template variable, used to reference it in notebook queries. (AI-inferred)
+	Name      any
+	Placement any
+	// The text prefix that is prepended to the template variable's value when used in notebook queries. For example, a prefix of 'env:' with a selected value of 'prod' would produce 'env:prod'. (AI-inferred)
+	Prefix any
+	// The type of the template variable, either 'tag' for tag keys or 'host' for host names. (AI-inferred)
+	Type any
 }
 
 type Response_Data_Attributes struct {

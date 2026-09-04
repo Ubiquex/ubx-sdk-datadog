@@ -8,8 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dashboard_DefaultTimeframe:
+    # The start of the default time range for the dashboard, in epoch milliseconds. (AI-inferred)
     from_: Any = None
+    # The end time of the default time range for the dashboard, expressed as a Unix timestamp. (AI-inferred)
     to: Any = None
+    # The type of default timeframe for the dashboard, indicating whether it is a rolling time window or a fixed date range (e.g., 'rolling' or 'fixed'). (AI-inferred)
     type: Any = None
     unit: Any = None
     value: Any = None
@@ -17,41 +20,60 @@ class Dashboard_DefaultTimeframe:
 @dataclasses.dataclass
 class Dashboard_Tabs:
     id: Any = None
+    # The name of the tab, which serves as its title. The name must be between 1 and 100 characters. (AI-inferred)
     name: Any = None
+    # The list of widget IDs contained within this tab. (AI-inferred)
     widget_ids: Any = None
 
 @dataclasses.dataclass
 class Dashboard_TemplateVariablePresets_TemplateVariables:
+    # The name of the template variable to override, matching a template variable defined on the dashboard. (AI-inferred)
     name: Any = None
+    # The value to assign to the template variable when this preset is applied. (AI-inferred)
     value: Any = None
+    # The list of values assigned to the template variable when this preset is applied. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Dashboard_TemplateVariablePresets:
+    # The name of the template variable preset. (AI-inferred)
     name: Any = None
+    # List of template variable assignments for this preset. Each object defines a template variable name and the value to apply when the preset is selected. (AI-inferred)
     template_variables: Any = None
 
 @dataclasses.dataclass
 class Dashboard_TemplateVariables:
+    # List of values available for selection for this template variable. If not specified, all possible values are shown in the dropdown. (AI-inferred)
     available_values: Any = None
+    # The default value assigned to the template variable when the dashboard is loaded. This value is used unless the viewer changes it. (AI-inferred)
     default: Any = None
+    # Default value(s) used for this template variable when the dashboard is loaded. Provide a list of strings to support multi-select variables. (AI-inferred)
     defaults: Any = None
+    # The name of the template variable, used to reference it in dashboard queries and widgets. (AI-inferred)
     name: Any = None
+    # The prefix used to filter the available values for the template variable, typically a tag key followed by a colon (e.g., 'env:'). (AI-inferred)
     prefix: Any = None
     type: Any = None
 
 @dataclasses.dataclass
 class Dashboard_Widgets_Layout:
+    # The height of the widget in grid units. The minimum allowed value is 0. (AI-inferred)
     height: Any = None
+    # Set to true to treat this widget as a column break, which forces the next widget to start a new column in the structured layout. (AI-inferred)
     is_column_break: Any = None
+    # The width of the widget in grid units (columns) within the dashboard layout. The minimum allowed value is 0. (AI-inferred)
     width: Any = None
+    # The horizontal position (column) of the widget in the dashboard grid. Must be greater than or equal to 0. (AI-inferred)
     x: Any = None
+    # The vertical position of the widget on the dashboard grid, measured from the top. The value must be greater than or equal to 0. (AI-inferred)
     y: Any = None
 
 @dataclasses.dataclass
 class Dashboard_Widgets:
+    # The definition block that specifies the configuration for the widget, including the widget type and type-specific settings (e.g., requests, title, layout). The exact structure varies by widget type. (AI-inferred)
     definition: Any = None
     id: Any = None
+    # Layout of the widget within the dashboard, specifying its position and size on the grid. (AI-inferred)
     layout: Any = None
 
 _Dashboard_DefaultTimeframeFields = {

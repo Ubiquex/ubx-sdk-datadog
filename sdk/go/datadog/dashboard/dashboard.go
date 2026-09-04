@@ -4,51 +4,73 @@ package dashboard
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dashboard_DefaultTimeframe struct {
-	From  any
-	To    any
+	// The start of the default time range for the dashboard, in epoch milliseconds. (AI-inferred)
+	From any
+	// The end time of the default time range for the dashboard, expressed as a Unix timestamp. (AI-inferred)
+	To any
+	// The type of default timeframe for the dashboard, indicating whether it is a rolling time window or a fixed date range (e.g., 'rolling' or 'fixed'). (AI-inferred)
 	Type  any
 	Unit  any
 	Value any
 }
 
 type Dashboard_Tabs struct {
-	Id        any
-	Name      any
+	Id any
+	// The name of the tab, which serves as its title. The name must be between 1 and 100 characters. (AI-inferred)
+	Name any
+	// The list of widget IDs contained within this tab. (AI-inferred)
 	WidgetIds any
 }
 
 type Dashboard_TemplateVariablePresets_TemplateVariables struct {
-	Name   any
-	Value  any
+	// The name of the template variable to override, matching a template variable defined on the dashboard. (AI-inferred)
+	Name any
+	// The value to assign to the template variable when this preset is applied. (AI-inferred)
+	Value any
+	// The list of values assigned to the template variable when this preset is applied. (AI-inferred)
 	Values any
 }
 
 type Dashboard_TemplateVariablePresets struct {
-	Name              any
+	// The name of the template variable preset. (AI-inferred)
+	Name any
+	// List of template variable assignments for this preset. Each object defines a template variable name and the value to apply when the preset is selected. (AI-inferred)
 	TemplateVariables any
 }
 
 type Dashboard_TemplateVariables struct {
+	// List of values available for selection for this template variable. If not specified, all possible values are shown in the dropdown. (AI-inferred)
 	AvailableValues any
-	Default         any
-	Defaults        any
-	Name            any
-	Prefix          any
-	Type            any
+	// The default value assigned to the template variable when the dashboard is loaded. This value is used unless the viewer changes it. (AI-inferred)
+	Default any
+	// Default value(s) used for this template variable when the dashboard is loaded. Provide a list of strings to support multi-select variables. (AI-inferred)
+	Defaults any
+	// The name of the template variable, used to reference it in dashboard queries and widgets. (AI-inferred)
+	Name any
+	// The prefix used to filter the available values for the template variable, typically a tag key followed by a colon (e.g., 'env:'). (AI-inferred)
+	Prefix any
+	Type   any
 }
 
 type Dashboard_Widgets_Layout struct {
-	Height        any
+	// The height of the widget in grid units. The minimum allowed value is 0. (AI-inferred)
+	Height any
+	// Set to true to treat this widget as a column break, which forces the next widget to start a new column in the structured layout. (AI-inferred)
 	IsColumnBreak any
-	Width         any
-	X             any
-	Y             any
+	// The width of the widget in grid units (columns) within the dashboard layout. The minimum allowed value is 0. (AI-inferred)
+	Width any
+	// The horizontal position (column) of the widget in the dashboard grid. Must be greater than or equal to 0. (AI-inferred)
+	X any
+	// The vertical position of the widget on the dashboard grid, measured from the top. The value must be greater than or equal to 0. (AI-inferred)
+	Y any
 }
 
 type Dashboard_Widgets struct {
+	// The definition block that specifies the configuration for the widget, including the widget type and type-specific settings (e.g., requests, title, layout). The exact structure varies by widget type. (AI-inferred)
 	Definition any
 	Id         any
-	Layout     any
+	// Layout of the widget within the dashboard, specifying its position and size on the grid. (AI-inferred)
+	Layout any
 }
 
 var Dashboard_DefaultTimeframeFields = ubx.FieldMap{

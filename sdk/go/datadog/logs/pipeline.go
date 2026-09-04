@@ -9,24 +9,30 @@ type Pipeline_Filter struct {
 }
 
 type Pipeline_Processors_Categories struct {
+	// The filter object for this category, containing the log query used to match logs. Logs that match this query are assigned to this category. (AI-inferred)
 	Filter any
 	Name   any
 }
 
 type Pipeline_Processors_Grok struct {
-	MatchRules   any
+	// The grok match rules, specified as a string containing one or more patterns separated by newlines, used to parse logs in the processor. (AI-inferred)
+	MatchRules any
+	// Support rules for the Grok processor. These are named patterns that can be referenced by the main matching rules to build complex parsing logic. (AI-inferred)
 	SupportRules any
 }
 
 type Pipeline_Processors_Mappers_Categories struct {
+	// The filter object for a category, containing the log query that determines whether a log entry is assigned to this category. (AI-inferred)
 	Filter any
 	Id     any
-	Name   any
+	// The name of the category. When the associated filter matches, the log is assigned this category. (AI-inferred)
+	Name any
 }
 
 type Pipeline_Processors_Mappers_Fallback struct {
 	Sources any
-	Values  any
+	// A map of strings that defines the fallback value mapping for the mapper processor. When the source attribute value does not match any of the primary mapper rules, this map is used to look up the corresponding target value. (AI-inferred)
+	Values any
 }
 
 type Pipeline_Processors_Mappers_Targets struct {
@@ -35,70 +41,103 @@ type Pipeline_Processors_Mappers_Targets struct {
 }
 
 type Pipeline_Processors_Mappers struct {
-	Categories         any
-	Fallback           any
-	Name               any
+	Categories any
+	Fallback   any
+	Name       any
+	// Whether to overwrite the target attribute when it already has a value. If false, the existing value is preserved and the mapping does not take effect. (AI-inferred)
 	OverrideOnConflict any
-	PreserveSource     any
-	Sources            any
-	Target             any
-	TargetFormat       any
-	Targets            any
-	Type               any
+	// Preserves the original source attribute in the log after the remapping is applied. If false, the source attribute is removed after mapping. (AI-inferred)
+	PreserveSource any
+	Sources        any
+	// The name of the target attribute in the log that the mapped source value is written into. This is the new attribute that will be set with the value from the source attribute. (AI-inferred)
+	Target any
+	// Specifies the target data type for the mapped value. Allowed values are: auto, string, integer, double. (AI-inferred)
+	TargetFormat any
+	Targets      any
+	// The type of the mapper, which is 'schema-remapper' in this case. A schema remapper applies a schema mapping to logs, changing field names to align with a standard schema (e.g., remapping custom attributes to Datadog standard attributes). (AI-inferred)
+	Type any
 }
 
 type Pipeline_Processors_Operation struct {
-	Filter             any
-	KeyToExtract       any
+	// The Groq query used to filter logs that this processor operates on. When omitted, the processor applies to all logs. (AI-inferred)
+	Filter       any
+	KeyToExtract any
+	// Boolean that indicates whether the processor should overwrite an existing target attribute value when a conflict occurs. When set to true, the existing value is replaced; when set to false, the original value is kept. (AI-inferred)
 	OverrideOnConflict any
-	PreserveSource     any
-	Source             any
-	Target             any
-	Type               any
-	ValueToExtract     any
+	// Whether to preserve the source attribute after the operation is applied. When set to false, the source attribute is removed from the log. (AI-inferred)
+	PreserveSource any
+	Source         any
+	// The target log attribute name for the processor operation. This is the attribute that will be created or modified. (AI-inferred)
+	Target         any
+	Type           any
+	ValueToExtract any
 }
 
 type Pipeline_Processors_Schema struct {
-	ClassName  any
-	ClassUid   any
-	Profiles   any
+	ClassName any
+	ClassUid  any
+	Profiles  any
+	// Defines the scope of schema inference for the schema processor. Accepted values are 'full' (infer the schema of the entire log event) and 'attribute' (infer the schema of a specific attribute). (AI-inferred)
 	SchemaType any
-	Version    any
+	// The version of the processor schema. This value determines the schema version used to interpret the processor's configuration fields. (AI-inferred)
+	Version any
 }
 
 type Pipeline_Processors struct {
-	AttributeToExclude     any
-	BinaryToTextEncoding   any
-	Categories             any
-	DefaultLookup          any
-	Description            any
-	Expression             any
-	Filter                 any
-	Grok                   any
-	InputRepresentation    any
-	IsEnabled              any
-	IsEncoded              any
-	IsReplaceMissing       any
-	LookupEnrichmentTable  any
-	LookupTable            any
-	Mappers                any
-	Name                   any
+	AttributeToExclude any
+	// Specifies the encoding used to convert binary data to text. Allowed values are `base64` and `base16`. (AI-inferred)
+	BinaryToTextEncoding any
+	// List of categories for the category processor. Each category contains a name and a filter query, and logs matching the query are assigned the corresponding category name. (AI-inferred)
+	Categories any
+	// Default value to assign to the target attribute when the source field is not found in the lookup table. (AI-inferred)
+	DefaultLookup any
+	Description   any
+	Expression    any
+	// This object defines the filter for the processor, including the query that matches logs and whether the processor is enabled. It contains a required `query` string and an optional `is_enabled` boolean. (AI-inferred)
+	Filter any
+	// Configures the Grok parser processor, which uses Grok rules to extract structured data from raw log messages. (AI-inferred)
+	Grok any
+	// Specifies the representation of the input data: `utf_8` for treating the input as UTF-8 encoded text, or `integer` for treating it as an integer value. (AI-inferred)
+	InputRepresentation any
+	// Whether the processor is enabled. Set to false to disable the processor while keeping its configuration intact. (AI-inferred)
+	IsEnabled any
+	IsEncoded any
+	// Boolean flag indicating whether the lookup processor should replace the source attribute with the target value when the source attribute is missing. Set to true to enable replacement of missing source attributes. (AI-inferred)
+	IsReplaceMissing any
+	// The name of the enrichment table used by the lookup processor to enrich log data. (AI-inferred)
+	LookupEnrichmentTable any
+	// List of strings that define the lookup table for the lookup processor. Each entry is a comma-separated mapping in the format 'source_value,target_value', used to replace or enrich attribute values. (AI-inferred)
+	LookupTable any
+	// A list of mapping rules for the attribute mapper processor, where each mapper remaps a source attribute to a target attribute with a specified type. (AI-inferred)
+	Mappers any
+	Name    any
+	// When set to `true`, this setting removes the trailing slash from the path of URLs handled by the URL parser processor (e.g., `http://example.com/path/` becomes `http://example.com/path`). When `false`, the URL remains unchanged. (AI-inferred)
 	NormalizeEndingSlashes any
 	Operation              any
-	OverrideOnConflict     any
-	PreserveSource         any
-	Processors             any
-	Samples                any
-	Schema                 any
-	Source                 any
-	SourceType             any
-	Sources                any
-	Tags                   any
-	Target                 any
-	TargetFormat           any
-	TargetType             any
-	Template               any
-	Type                   any
+	// Determines whether the processor overwrites an existing value on the target attribute when a conflict arises. Set to true to override the existing value, or false to preserve it. (AI-inferred)
+	OverrideOnConflict any
+	// Whether to preserve the source attribute after remapping. When set to `true`, the original source attribute is retained; when `false`, it is removed. (AI-inferred)
+	PreserveSource any
+	// A list of processors to apply to logs in this pipeline. Each processor defines a specific transformation, such as parsing or attribute remapping. (AI-inferred)
+	Processors any
+	// List of sample log messages used to validate the grok parser processor's rule. Each string in the list is an example log that the parser rule is tested against. (AI-inferred)
+	Samples any
+	Schema  any
+	// The source attribute of the log event that this processor operates on (e.g., 'message'). (AI-inferred)
+	Source     any
+	SourceType any
+	// List of source attribute paths that the processor reads from. Used in remapper processors (e.g., attribute, date, message, service, status) to specify which log attributes are mapped to a target field. (AI-inferred)
+	Sources any
+	Tags    any
+	// The name of the target log attribute that the processor operates on. This is the field in the log to which the processor applies its transformation or remapping. (AI-inferred)
+	Target any
+	// The format of the target value. Allowed values are `auto`, `string`, `integer`, and `double`. (AI-inferred)
+	TargetFormat any
+	TargetType   any
+	// The template string used to generate a new attribute value, allowing references to other log attributes with the {{ attribute }} syntax. (AI-inferred)
+	Template any
+	// The type of processor. For this resource, the only allowed value is `grok-parser`, which indicates a Grok parser processor that extracts custom fields from log messages using Grok patterns. (AI-inferred)
+	Type any
 }
 
 var Pipeline_FilterFields = ubx.FieldMap{

@@ -2,9 +2,11 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Monitor_Assets {
+  /** The category of the asset. Allowed value: `runbook`. (AI-inferred) */
   category?: string | Computed<string>;
   name?: string | Computed<string>;
   resourceKey?: string | Computed<string>;
+  /** The type of the asset associated with the monitor. The only supported value is 'notebook'. (AI-inferred) */
   resourceType?: string | Computed<string>;
   url?: string | Computed<string>;
 }
@@ -19,9 +21,13 @@ export interface Monitor_Creator {
 }
 
 export interface Monitor_MatchingDowntimes {
+  /** The timestamp (epoch seconds) when the downtime ends. (AI-inferred) */
   end?: number | Computed<number>;
+  /** The unique identifier of the Datadog downtime that matches the monitor. (AI-inferred) */
   id?: number | Computed<number>;
+  /** The list of monitor scopes (such as host, service, or environment tags) to which the matching downtime applies. The downtime mutes monitors that match these scopes. (AI-inferred) */
   scope?: string[] | Computed<string[]>;
+  /** The start time of the matching downtime, as a Unix timestamp in seconds. (AI-inferred) */
   start?: number | Computed<number>;
 }
 
@@ -35,8 +41,10 @@ export interface Monitor_Options_Aggregation {
 }
 
 export interface Monitor_Options_SchedulingOptions_CustomSchedule_Recurrences {
+  /** The RRULE expression, in RFC 5545 format, that defines the recurrence pattern for the custom schedule. For example, 'FREQ=DAILY;INTERVAL=2'. (AI-inferred) */
   rrule?: string | Computed<string>;
   start?: string | Computed<string>;
+  /** The IANA timezone in which the recurrence's start and end times are expressed. (AI-inferred) */
   timezone?: string | Computed<string>;
 }
 
@@ -90,32 +98,42 @@ export interface Monitor_Options_Thresholds {
 }
 
 export interface Monitor_Options_Variables_AugmentQuery_Columns {
+  /** The alias for the column, used to reference the column in the monitor's template variables and messages. (AI-inferred) */
   alias?: string | Computed<string>;
+  /** The name of the column to be added to the augmented query result. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface Monitor_Options_Variables_AugmentQuery_Compute {
   aggregation?: string | Computed<string>;
+  /** The time interval in seconds over which the compute aggregation is applied. (AI-inferred) */
   interval?: number | Computed<number>;
+  /** The name of the metric to use in the compute operation for the augmented query variable. (AI-inferred) */
   metric?: string | Computed<string>;
   name?: string | Computed<string>;
   source?: string | Computed<string>;
 }
 
 export interface Monitor_Options_Variables_AugmentQuery_GroupBy_Sort {
+  /** The aggregation method for the sort metric. (AI-inferred) */
   aggregation?: string | Computed<string>;
+  /** The metric name used to sort the groups in the augment query's group_by, combined with the aggregation and order to determine the sort order. For example, a metric like 'system.cpu.user'. (AI-inferred) */
   metric?: string | Computed<string>;
   order?: string | Computed<string>;
 }
 
 export interface Monitor_Options_Variables_AugmentQuery_GroupBy {
+  /** The facet used to group query results within the monitor's variable augment query. It specifies the field by which the query is grouped. (AI-inferred) */
   facet?: string | Computed<string>;
+  /** The maximum number of groups to return from the group_by operation in the augment query. (AI-inferred) */
   limit?: number | Computed<number>;
+  /** This object specifies the sorting parameters for the groups created by the group_by, controlling their display order in the monitor. (AI-inferred) */
   sort?: Monitor_Options_Variables_AugmentQuery_GroupBy_Sort | Computed<Monitor_Options_Variables_AugmentQuery_GroupBy_Sort>;
   source?: string | Computed<string>;
 }
 
 export interface Monitor_Options_Variables_AugmentQuery_Search {
+  /** The search query used to augment a monitor variable. It specifies the query string that defines what data to include in the augmentation search. (AI-inferred) */
   query?: string | Computed<string>;
 }
 
@@ -124,63 +142,95 @@ export interface Monitor_Options_Variables_AugmentQuery {
   compute?: Monitor_Options_Variables_AugmentQuery_Compute | Computed<Monitor_Options_Variables_AugmentQuery_Compute>;
   dataSource?: string | Computed<string>;
   groupBy?: Monitor_Options_Variables_AugmentQuery_GroupBy[] | Computed<Monitor_Options_Variables_AugmentQuery_GroupBy[]>;
+  /** A list of log index names used by the augment query to restrict the scope of the variable's search. If not specified, the query may use all available indexes. (AI-inferred) */
   indexes?: string[] | Computed<string[]>;
+  /** The name of the augment query, used to identify it within the monitor. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The filter expression for the augment query. (AI-inferred) */
   queryFilter?: string | Computed<string>;
   search?: Monitor_Options_Variables_AugmentQuery_Search | Computed<Monitor_Options_Variables_AugmentQuery_Search>;
   tableName?: string | Computed<string>;
 }
 
 export interface Monitor_Options_Variables_BaseQuery {
+  /** The aggregation method applied to the variable's base query, controlling how values are combined. (AI-inferred) */
   aggregator?: string | Computed<string>;
+  /** The compute object specifies the aggregation function and field used to transform the base query into a numeric value for the monitor variable. (AI-inferred) */
   compute?: Monitor_Options_Variables_AugmentQuery_Compute | Computed<Monitor_Options_Variables_AugmentQuery_Compute>;
+  /** The data source type for a monitor template variable, which determines where the variable's values are queried from (e.g., 'metrics', 'logs', 'rum', 'events'). (AI-inferred) */
   dataSource?: string | Computed<string>;
+  /** A list of group-by definitions that determine the tag or attribute keys used to aggregate the base query results when populating the template variable's available values. (AI-inferred) */
   groupBy?: Monitor_Options_Variables_AugmentQuery_GroupBy[] | Computed<Monitor_Options_Variables_AugmentQuery_GroupBy[]>;
+  /** The list of log index names to search in the base query. If omitted, all log indexes are searched. (AI-inferred) */
   indexes?: string[] | Computed<string[]>;
+  /** The name of the template variable defined for the monitor. This name is used to reference the variable in the monitor's query or message. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The base query string that defines the possible values for this template variable. (AI-inferred) */
   query?: string | Computed<string>;
   search?: Monitor_Options_Variables_AugmentQuery_Search | Computed<Monitor_Options_Variables_AugmentQuery_Search>;
 }
 
 export interface Monitor_Options_Variables_Filters {
+  /** The base attribute name used to filter the values available for the monitor variable. For example, when the filter's data source is 'logs', this could be a log facet like '@http.url'. (AI-inferred) */
   baseAttribute?: string | Computed<string>;
+  /** Whether the filter is an exclusion filter. When true, the specified tag values are excluded from the template variable's available values. (AI-inferred) */
   exclude?: boolean | Computed<boolean>;
+  /** The attribute name that the filter uses to narrow the template variable's available values. (AI-inferred) */
   filterAttribute?: string | Computed<string>;
 }
 
 export interface Monitor_Options_Variables_JoinCondition {
   augmentAttribute?: string | Computed<string>;
+  /** The attribute from the base query used to join with the other query in the join condition. (AI-inferred) */
   baseAttribute?: string | Computed<string>;
+  /** The type of join to perform for the join condition. Valid values are 'inner' and 'left'. (AI-inferred) */
   joinType?: string | Computed<string>;
 }
 
 export interface Monitor_Options_Variables_MonitorOptions {
   crontabOverride?: string | Computed<string>;
   customSql?: string | Computed<string>;
+  /** A custom where clause used to filter the available values for the monitor template variable. For example, you can scope the variable by specifying a tag-based filter like 'availability-zone:us-east-1a'. (AI-inferred) */
   customWhere?: string | Computed<string>;
+  /** A list of columns to group by for the variable's expression in the monitor query. (AI-inferred) */
   groupByColumns?: string[] | Computed<string[]>;
+  /** Override the model type for the monitor variable. Allowed values are 'freshness', 'percentage', or 'any'. (AI-inferred) */
   modelTypeOverride?: string | Computed<string>;
+  /** The sensitivity of the anomaly detection monitor, from 1 (least sensitive) to 5 (most sensitive). This controls the width of the anomaly detection band. (AI-inferred) */
   sensitivity?: number | Computed<number>;
 }
 
 export interface Monitor_Options_Variables {
+  /** The aggregation method used for the variable query. Valid values are avg, sum, max, min, last, area, l2norm, percentile, stddev. (AI-inferred) */
   aggregator?: string | Computed<string>;
   augmentQuery?: Monitor_Options_Variables_AugmentQuery | Computed<Monitor_Options_Variables_AugmentQuery>;
   baseQuery?: Monitor_Options_Variables_BaseQuery | Computed<Monitor_Options_Variables_BaseQuery>;
+  /** The compute block specifies the aggregation and facet used to calculate the value of the variable. It contains an `aggregation` field (required) and an optional `facet` field. (AI-inferred) */
   compute?: Monitor_Options_Variables_AugmentQuery_Compute | Computed<Monitor_Options_Variables_AugmentQuery_Compute>;
+  /** The data source type for the monitor variable. Allowed values are: rum, ci_pipelines, ci_tests, audit, events, logs, spans, database_queries, network, network_path. (AI-inferred) */
   dataSource?: string | Computed<string>;
+  /** The filter query that restricts the possible values for this template variable in a Datadog monitor. (AI-inferred) */
   filter?: string | Computed<string>;
+  /** The filter query used to restrict the available values for this monitor template variable. (AI-inferred) */
   filterQuery?: Monitor_Options_Variables_AugmentQuery | Computed<Monitor_Options_Variables_AugmentQuery>;
+  /** Filters for the template variable, restricting the available values based on tag keys and values. (AI-inferred) */
   filters?: Monitor_Options_Variables_Filters[] | Computed<Monitor_Options_Variables_Filters[]>;
+  /** List of grouping conditions for the monitor variable. Each item contains a name and tag used to group the query results when resolving the variable's value. (AI-inferred) */
   groupBy?: Monitor_Options_Variables_AugmentQuery_GroupBy[] | Computed<Monitor_Options_Variables_AugmentQuery_GroupBy[]>;
+  /** A list of log indexes that this template variable will be restricted to. When set, the variable only uses these indexes when querying log data in log-based monitors. (AI-inferred) */
   indexes?: string[] | Computed<string[]>;
   jobType?: string | Computed<string>;
+  /** The query used to populate the list of values for this monitor variable. (AI-inferred) */
   jobsQuery?: string | Computed<string>;
   joinCondition?: Monitor_Options_Variables_JoinCondition | Computed<Monitor_Options_Variables_JoinCondition>;
   measure?: string | Computed<string>;
+  /** The options object for a monitor template variable. It contains a `values` attribute (a list of strings) that restricts the selectable values for the variable. (AI-inferred) */
   monitorOptions?: Monitor_Options_Variables_MonitorOptions | Computed<Monitor_Options_Variables_MonitorOptions>;
+  /** The name of the variable, which serves as the identifier used in the monitor's query or message for template variable substitution. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The query string that defines the set of values for this monitor variable. It is used to populate the variable's available values, for example with a metric query or a list of hosts. (AI-inferred) */
   query?: string | Computed<string>;
+  /** The query language used for the variable's query. Valid values are `datadog` (default) for Datadog query syntax or `prometheus` for PromQL. (AI-inferred) */
   queryDialect?: string | Computed<string>;
   schemaVersion?: string | Computed<string>;
   scope?: string | Computed<string>;
@@ -253,10 +303,15 @@ export interface Monitor_Options {
 }
 
 export interface Monitor_State_Groups {
+  /** Unix timestamp of the last time the monitor group reported no data. (AI-inferred) */
   lastNodataTs?: number | Computed<number>;
+  /** The timestamp of the last notification sent for this monitor group. (AI-inferred) */
   lastNotifiedTs?: number | Computed<number>;
+  /** The Unix timestamp (in seconds) when the monitor group was last resolved. (AI-inferred) */
   lastResolvedTs?: number | Computed<number>;
+  /** The timestamp (Unix epoch) when the monitor last triggered an alert for this group. (AI-inferred) */
   lastTriggeredTs?: number | Computed<number>;
+  /** The name of the monitor group, typically the combination of tag values that defines the group for multi-alert monitors. (AI-inferred) */
   name?: string | Computed<string>;
   status?: string | Computed<string>;
 }

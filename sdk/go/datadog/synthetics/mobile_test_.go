@@ -4,12 +4,16 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MobileTest_Config_Variables struct {
+	// Sample value for the variable, used as an example in the test configuration. (AI-inferred)
 	Example any
 	Id      any
+	// The name of the variable, used to reference it within the test configuration. (AI-inferred)
 	Name    any
 	Pattern any
-	Secure  any
-	Type    any
+	// Whether the variable is a secure variable, meaning its value is encrypted and hidden in the UI. (AI-inferred)
+	Secure any
+	// The type of the Synthetics mobile test variable. Valid values are `global` (references a global variable), `text` (a literal text value), and `email` (a generated email address). (AI-inferred)
+	Type any
 }
 
 type MobileTest_Config struct {
@@ -20,8 +24,10 @@ type MobileTest_Config struct {
 }
 
 type MobileTest_Options_Bindings struct {
+	// List of principals (users, groups, or roles) that this binding applies to. Each principal is a string identifier such as a user email or a group ID. (AI-inferred)
 	Principals any
-	Relation   any
+	// The type of access granted to the bound role. Allowed values are `editor` (full edit access) and `viewer` (read-only access). (AI-inferred)
+	Relation any
 }
 
 type MobileTest_Options_Ci struct {
@@ -57,9 +63,12 @@ type MobileTest_Options_Retry struct {
 }
 
 type MobileTest_Options_Scheduling_Timeframes struct {
-	Day  any
+	// The day of the week for this scheduling timeframe, where 1 is Monday and 7 is Sunday. Must be between 1 and 7. (AI-inferred)
+	Day any
+	// Start time of the time frame during which the test is scheduled to run. (AI-inferred)
 	From any
-	To   any
+	// The end time of the scheduling timeframe, formatted as HH:MM. (AI-inferred)
+	To any
 }
 
 type MobileTest_Options_Scheduling struct {
@@ -107,29 +116,39 @@ type MobileTest_Options struct {
 }
 
 type MobileTest_Steps_Params_Element_RelativePosition struct {
+	// The x-coordinate of the element's relative position within the parent context, used to define the element's location for interaction in the mobile test step. (AI-inferred)
 	X any
+	// The y-coordinate of the element's relative position, used to define the vertical offset from the reference element. (AI-inferred)
 	Y any
 }
 
 type MobileTest_Steps_Params_Element_UserLocator_Values struct {
-	Type  any
+	// The type of locator used to identify a mobile element. Allowed values: accessibility-id, id, ios-predicate-string, ios-class-chain, xpath. (AI-inferred)
+	Type any
+	// A single string value in the user locator 'values' list, used to identify the mobile element during the test step. (AI-inferred)
 	Value any
 }
 
 type MobileTest_Steps_Params_Element_UserLocator struct {
+	// If true, the mobile test step is marked as failed when the specified user locator fails to locate the element. (AI-inferred)
 	FailTestOnCannotLocate any
 	Values                 any
 }
 
 type MobileTest_Steps_Params_Element struct {
-	Context            any
-	ContextType        any
+	Context any
+	// Specifies whether the element is in a native or web context. Allowed values are 'native' and 'web'. (AI-inferred)
+	ContextType any
+	// A description of the mobile UI element targeted by the step. (AI-inferred)
 	ElementDescription any
-	MultiLocator       any
-	RelativePosition   any
-	TextContent        any
-	UserLocator        any
-	ViewName           any
+	// A list of alternative locators for the element, allowing the synthetics mobile test to use any of these locators to find the element during test execution. (AI-inferred)
+	MultiLocator     any
+	RelativePosition any
+	// The text content of the on-screen element used to identify and interact with it in the mobile test step. (AI-inferred)
+	TextContent any
+	UserLocator any
+	// The name of the view (screen) in the mobile application where the element is located. (AI-inferred)
+	ViewName any
 }
 
 type MobileTest_Steps_Params_Variable struct {
@@ -138,31 +157,44 @@ type MobileTest_Steps_Params_Variable struct {
 }
 
 type MobileTest_Steps_Params struct {
-	Check           any
-	Delay           any
-	Direction       any
-	Element         any
-	Enabled         any
-	MaxScrolls      any
-	Positions       any
+	// The type of check to perform on the target value. Allowed values: equals, notEquals, contains, notContains, startsWith, notStartsWith, greater, lower, greaterEquals, lowerEquals, matchRegex, between, isEmpty, notIsEmpty. (AI-inferred)
+	Check any
+	// Delay in milliseconds to wait before executing the step. Must be between 0 and 5000. (AI-inferred)
+	Delay any
+	// Specifies the direction of the mobile gesture (e.g., swipe), with allowed values: up, down, left, right. (AI-inferred)
+	Direction any
+	Element   any
+	Enabled   any
+	// The maximum number of scroll actions to perform during this mobile test step. (AI-inferred)
+	MaxScrolls any
+	Positions  any
+	// The public ID of the subtest to run in this step. (AI-inferred)
 	SubtestPublicId any
-	Value           any
-	Variable        any
-	WithEnter       any
-	X               any
-	Y               any
+	// The value associated with a parameter for a step in the mobile test. The type is dynamic and can vary based on the specific step and parameter. (AI-inferred)
+	Value    any
+	Variable any
+	// Whether to press the Enter key after inputting text in the step. (AI-inferred)
+	WithEnter any
+	// The horizontal (x) coordinate for the interaction point in the mobile test step. (AI-inferred)
+	X any
+	Y any
 }
 
 type MobileTest_Steps struct {
+	// Determines if the mobile test step can fail without marking the entire test as failed. When set to true, a failure in this step will not fail the overall test. (AI-inferred)
 	AllowFailure      any
 	HasNewStepElement any
-	IsCritical        any
-	Name              any
-	NoScreenshot      any
-	Params            any
-	PublicId          any
-	Timeout           any
-	Type              any
+	// A boolean indicating whether this step is critical. If a critical step fails, the entire test is considered failed; non-critical steps do not cause failure on their own. (AI-inferred)
+	IsCritical any
+	// The name of the step in the Datadog Synthetics mobile test. Must be at most 1500 characters. (AI-inferred)
+	Name any
+	// Whether to disable the screenshot capture for this step. Set to true to prevent Datadog from taking a screenshot during this step. (AI-inferred)
+	NoScreenshot any
+	Params       any
+	PublicId     any
+	Timeout      any
+	// The type of step to perform in the mobile test. Possible values include assertElementContent, assertScreenContains, assertScreenLacks, doubleTap, extractVariable, flick, openDeeplink, playSubTest, pressBack, restartApplication, rotate, scroll, scrollToElement, tap, toggleWiFi, typeText, and wait. (AI-inferred)
+	Type any
 }
 
 var MobileTest_Config_VariablesFields = ubx.FieldMap{
