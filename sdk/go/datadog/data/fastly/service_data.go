@@ -9,8 +9,8 @@ type ServiceData_Data_Attributes struct {
 
 type ServiceData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ServiceDataConfig struct {

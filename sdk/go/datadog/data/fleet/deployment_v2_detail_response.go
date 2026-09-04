@@ -4,25 +4,25 @@ package fleet
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentV2DetailResponse_Data_Attributes_ConfigOperations struct {
-	FileOp any
+	FileOp   any
 	FilePath any
-	Patch any
+	Patch    any
 }
 
 type DeploymentV2DetailResponse_Data_Attributes_Hosts_Versions struct {
 	CurrentVersion any
 	InitialVersion any
-	PackageName any
-	TargetVersion any
+	PackageName    any
+	TargetVersion  any
 }
 
 type DeploymentV2DetailResponse_Data_Attributes_Hosts struct {
-	Error any
-	Hostname any
-	RunningStep any
-	Status any
+	Error         any
+	Hostname      any
+	RunningStep   any
+	Status        any
 	StatusDetails any
-	Versions any
+	Versions      any
 }
 
 type DeploymentV2DetailResponse_Data_Attributes struct {
@@ -79,7 +79,7 @@ type DeploymentV2DetailResponseConfig struct {
 
 type DeploymentV2DetailResponseAttrs struct {
 	// Detailed information about a deployment.
-	Data any
+	Data         any
 	DeploymentId any
 }
 

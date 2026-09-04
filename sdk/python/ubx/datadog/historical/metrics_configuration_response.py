@@ -7,13 +7,29 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MetricsConfigurationResponse_Data_Attributes:
+    # Timestamp when historical metrics ingestion was enabled for the metric.
+    created_at: Any = None
+
+@dataclasses.dataclass
 class MetricsConfigurationResponse_Data:
+    # Attributes of a historical metrics configuration.
+    attributes: Any = None
     # The metric name, used as the resource ID.
     id: Any = None
     # The historical metrics configuration resource type.
     type: Any = None
 
+_MetricsConfigurationResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+}
+
 _MetricsConfigurationResponse_DataFields = {
+    "attributes": ubx.FieldSpec(
+        wire_name="attributes",
+        kind="object",
+        fields=_MetricsConfigurationResponse_Data_AttributesFields,
+    ),
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }

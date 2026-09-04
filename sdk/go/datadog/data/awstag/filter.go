@@ -4,7 +4,7 @@ package awstag
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Filter_Filters struct {
-	Namespace any
+	Namespace    any
 	TagFilterStr any
 }
 

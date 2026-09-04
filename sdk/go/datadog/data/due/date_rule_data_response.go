@@ -5,41 +5,41 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DateRuleDataResponse_Data_Attributes_Action_DueDaysPerSeverity struct {
 	DueInDays any
-	Severity any
+	Severity  any
 }
 
 type DateRuleDataResponse_Data_Attributes_Action struct {
 	DueDaysPerSeverity any
-	DueFrom any
-	ReasonDescription any
+	DueFrom            any
+	ReasonDescription  any
 }
 
 type DateRuleDataResponse_Data_Attributes_CreatedBy struct {
-	Id any
+	Id   any
 	Name any
 	Type any
 }
 
 type DateRuleDataResponse_Data_Attributes_Rule struct {
 	FindingTypes any
-	Query any
+	Query        any
 }
 
 type DateRuleDataResponse_Data_Attributes struct {
-	Action any
-	CreatedAt any
-	CreatedBy any
-	Enabled any
+	Action     any
+	CreatedAt  any
+	CreatedBy  any
+	Enabled    any
 	ModifiedAt any
 	ModifiedBy any
-	Name any
-	Rule any
+	Name       any
+	Rule       any
 }
 
 type DateRuleDataResponse_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DateRuleDataResponse_Links struct {
@@ -77,6 +77,5 @@ type DateRuleDataResponseAttrs struct {
 
 var DateRuleDataResponse = ubx.DataSourceBinding{
 	WireType: "datadog_due_date_rule_data_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

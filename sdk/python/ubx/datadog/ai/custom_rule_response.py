@@ -7,7 +7,48 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CustomRuleResponse_Data_Attributes_LastRevision:
+    # Rule category
+    category: Any = None
+    # Checksum of the revision content.
+    checksum: Any = None
+    # Base64-encoded AI model content for this revision.
+    content: Any = None
+    # The creation timestamp.
+    created_at: Any = None
+    # The identifier of the user who created the revision.
+    created_by: Any = None
+    # The associated CWE identifier.
+    cwe: Any = None
+    # Base64-encoded full description.
+    description: Any = None
+    # Directory patterns this rule applies to.
+    directories: Any = None
+    # The execution mode for an AI rule revision.
+    execution_mode: Any = None
+    # File glob patterns this rule applies to.
+    globs: Any = None
+    # Whether this is a default Datadog rule.
+    is_default: Any = None
+    # Whether this revision is published.
+    is_published: Any = None
+    # Whether this revision is for testing only.
+    is_testing: Any = None
+    # Rule severity
+    severity: Any = None
+    # Base64-encoded short description.
+    short_description: Any = None
+    # The version identifier for this revision.
+    version_id: Any = None
+
+@dataclasses.dataclass
 class CustomRuleResponse_Data_Attributes:
+    # The creation timestamp.
+    created_at: Any = None
+    # The identifier of the user who created the rule.
+    created_by: Any = None
+    # Response attributes of an AI custom rule revision.
+    last_revision: Any = None
     # The rule name.
     name: Any = None
 
@@ -20,7 +61,33 @@ class CustomRuleResponse_Data:
     # AI custom rule resource type.
     type: Any = None
 
+_CustomRuleResponse_Data_Attributes_LastRevisionFields = {
+    "category": ubx.FieldSpec(wire_name="category"),
+    "checksum": ubx.FieldSpec(wire_name="checksum"),
+    "content": ubx.FieldSpec(wire_name="content"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "cwe": ubx.FieldSpec(wire_name="cwe"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "directories": ubx.FieldSpec(wire_name="directories"),
+    "execution_mode": ubx.FieldSpec(wire_name="execution_mode"),
+    "globs": ubx.FieldSpec(wire_name="globs"),
+    "is_default": ubx.FieldSpec(wire_name="is_default"),
+    "is_published": ubx.FieldSpec(wire_name="is_published"),
+    "is_testing": ubx.FieldSpec(wire_name="is_testing"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "short_description": ubx.FieldSpec(wire_name="short_description"),
+    "version_id": ubx.FieldSpec(wire_name="version_id"),
+}
+
 _CustomRuleResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "last_revision": ubx.FieldSpec(
+        wire_name="last_revision",
+        kind="object",
+        fields=_CustomRuleResponse_Data_Attributes_LastRevisionFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
 }
 

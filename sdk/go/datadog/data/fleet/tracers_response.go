@@ -4,16 +4,16 @@ package fleet
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TracersResponse_Data_Attributes_Tracers struct {
-	Env any
-	Hostname any
-	Language any
-	LanguageVersion any
+	Env                any
+	Hostname           any
+	Language           any
+	LanguageVersion    any
 	RemoteConfigStatus any
-	RuntimeIds any
-	Service any
-	ServiceHostname any
-	ServiceVersion any
-	TracerVersion any
+	RuntimeIds         any
+	Service            any
+	ServiceHostname    any
+	ServiceVersion     any
+	TracerVersion      any
 }
 
 type TracersResponse_Data_Attributes struct {
@@ -36,10 +36,10 @@ type TracersResponse_Meta struct {
 }
 
 type TracersResponseConfig struct {
-	AgentKey any
-	PageNumber any
-	PageSize any
-	SortAttribute any
+	AgentKey       any
+	PageNumber     any
+	PageSize       any
+	SortAttribute  any
 	SortDescending any
 }
 
@@ -48,20 +48,20 @@ type TracersResponseAttrs struct {
 	// The response data containing status and tracers array.
 	Data any
 	// Metadata for the list of tracers response.
-	Meta any
-	PageNumber any
-	PageSize any
-	SortAttribute any
+	Meta           any
+	PageNumber     any
+	PageSize       any
+	SortAttribute  any
 	SortDescending any
 }
 
 var TracersResponse = ubx.DataSourceBinding{
 	WireType: "datadog_fleet_tracers_response",
 	Fields: ubx.FieldMap{
-		"AgentKey": ubx.FieldSpec{WireName: "agent_key"},
-		"PageNumber": ubx.FieldSpec{WireName: "page_number"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"SortAttribute": ubx.FieldSpec{WireName: "sort_attribute"},
+		"AgentKey":       ubx.FieldSpec{WireName: "agent_key"},
+		"PageNumber":     ubx.FieldSpec{WireName: "page_number"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"SortAttribute":  ubx.FieldSpec{WireName: "sort_attribute"},
 		"SortDescending": ubx.FieldSpec{WireName: "sort_descending"},
 	},
 }

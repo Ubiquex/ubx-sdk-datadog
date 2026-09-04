@@ -12,6 +12,15 @@ type RuleResponse_Data_Attributes_Action struct {
 	ReasonDescription any
 }
 
+type RuleResponse_Data_Attributes_CreatedBy struct {
+	// The actor's identifier (a user UUID or a system identifier).
+	Id any
+	// The name of the actor.
+	Name any
+	// Whether the actor is a user or the Datadog system.
+	Type any
+}
+
 type RuleResponse_Data_Attributes_Rule struct {
 	// The list of security finding types that the automation rule applies to.
 	FindingTypes any
@@ -22,8 +31,16 @@ type RuleResponse_Data_Attributes_Rule struct {
 type RuleResponse_Data_Attributes struct {
 	// The action to take when the mute rule matches a finding.
 	Action any
+	// The Unix timestamp in milliseconds when the rule was created.
+	CreatedAt any
+	// The user or Datadog system who created the rule.
+	CreatedBy any
 	// Whether the mute rule is enabled.
 	Enabled any
+	// The Unix timestamp in milliseconds when the rule was last modified.
+	ModifiedAt any
+	// The user or Datadog system who last modified the rule.
+	ModifiedBy any
 	// The name of the mute rule.
 	Name any
 	// Defines the scope of findings to which the automation rule applies.
@@ -33,44 +50,65 @@ type RuleResponse_Data_Attributes struct {
 type RuleResponse_Data struct {
 	// Attributes for creating or updating a mute rule.
 	Attributes any
+	// The ID of the mute rule.
+	Id any
 	// The JSON:API type for mute rules.
 	Type any
 }
 
 var RuleResponse_Data_Attributes_ActionFields = ubx.FieldMap{
-		"ExpireAt": ubx.FieldSpec{WireName: "expire_at"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"ReasonDescription": ubx.FieldSpec{WireName: "reason_description"},
-	}
+	"ExpireAt":          ubx.FieldSpec{WireName: "expire_at"},
+	"Reason":            ubx.FieldSpec{WireName: "reason"},
+	"ReasonDescription": ubx.FieldSpec{WireName: "reason_description"},
+}
+
+var RuleResponse_Data_Attributes_CreatedByFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var RuleResponse_Data_Attributes_RuleFields = ubx.FieldMap{
-		"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
+	"Query":        ubx.FieldSpec{WireName: "query"},
+}
 
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_ActionFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_RuleFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_ActionFields,
+	},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Rule": ubx.FieldSpec{
+		WireName: "rule",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_RuleFields,
+	},
+}
 
 var RuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RuleResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RuleResponseConfig struct {
 	// The data object for a mute rule create or update request.
@@ -91,8 +129,8 @@ var RuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   RuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

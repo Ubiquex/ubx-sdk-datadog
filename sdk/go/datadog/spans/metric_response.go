@@ -18,7 +18,7 @@ type MetricResponse_Data_Attributes_Filter struct {
 }
 
 type MetricResponse_Data_Attributes_GroupBy struct {
-	Path any
+	Path    any
 	TagName any
 }
 
@@ -41,47 +41,47 @@ type MetricResponse_Data struct {
 }
 
 var MetricResponse_Data_Attributes_ComputeFields = ubx.FieldMap{
-		"AggregationType": ubx.FieldSpec{WireName: "aggregation_type"},
-		"IncludePercentiles": ubx.FieldSpec{WireName: "include_percentiles"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"AggregationType":    ubx.FieldSpec{WireName: "aggregation_type"},
+	"IncludePercentiles": ubx.FieldSpec{WireName: "include_percentiles"},
+	"Path":               ubx.FieldSpec{WireName: "path"},
+}
 
 var MetricResponse_Data_Attributes_FilterFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var MetricResponse_Data_Attributes_GroupByFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"TagName": ubx.FieldSpec{WireName: "tag_name"},
-	}
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"TagName": ubx.FieldSpec{WireName: "tag_name"},
+}
 
 var MetricResponse_Data_AttributesFields = ubx.FieldMap{
-		"Compute": ubx.FieldSpec{
-			WireName: "compute",
-			Kind: "object",
-			Fields: MetricResponse_Data_Attributes_ComputeFields,
-		},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: MetricResponse_Data_Attributes_FilterFields,
-		},
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: MetricResponse_Data_Attributes_GroupByFields,
-		},
-	}
+	"Compute": ubx.FieldSpec{
+		WireName: "compute",
+		Kind:     "object",
+		Fields:   MetricResponse_Data_Attributes_ComputeFields,
+	},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   MetricResponse_Data_Attributes_FilterFields,
+	},
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   MetricResponse_Data_Attributes_GroupByFields,
+	},
+}
 
 var MetricResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: MetricResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   MetricResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MetricResponseConfig struct {
 	// The new span-based metric properties.
@@ -102,8 +102,8 @@ var MetricResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: MetricResponse_DataFields,
+			Kind:     "object",
+			Fields:   MetricResponse_DataFields,
 		},
 		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
 	},

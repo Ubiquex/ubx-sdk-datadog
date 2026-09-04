@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Response_Data_Attributes_DeclaredBy:
+    # Non Datadog creator `48px` image.
+    image_48_px: Any = None
+    # Non Datadog creator name.
+    name: Any = None
+
+@dataclasses.dataclass
 class Response_Data_Attributes_Fields:
     type: Any = None
     value: Any = None
@@ -28,10 +35,30 @@ class Response_Data_Attributes_NotificationHandles:
 
 @dataclasses.dataclass
 class Response_Data_Attributes:
+    # Timestamp of when the incident was archived.
+    archived: Any = None
+    # The incident case id.
+    case_id: Any = None
+    # Timestamp when the incident was created.
+    created: Any = None
+    # Length of the incident's customer impact in seconds. Equals the difference between `customer_impact_start` and `customer_impact_end`.
+    customer_impact_duration: Any = None
+    # Timestamp when customers were no longer impacted by the incident.
+    customer_impact_end: Any = None
     # Required if `customer_impacted:"true"`. A summary of the impact customers experienced during the incident.
     customer_impact_scope: Any = None
+    # Timestamp when customers began being impacted by the incident.
+    customer_impact_start: Any = None
     # A flag indicating whether the incident caused customer impact.
     customer_impacted: Any = None
+    # Timestamp when the incident was declared.
+    declared: Any = None
+    # Incident's non Datadog creator.
+    declared_by: Any = None
+    # UUID of the user who declared the incident.
+    declared_by_uuid: Any = None
+    # Timestamp when the incident was detected.
+    detected: Any = None
     # A condensed view of the user-defined fields for which to create initial selections.
     fields: Any = None
     # A unique identifier that represents an incident type. The default incident type will be used if this property is not provided.
@@ -40,17 +67,42 @@ class Response_Data_Attributes:
     initial_cells: Any = None
     # A flag indicating whether the incident is a test incident.
     is_test: Any = None
+    # Timestamp when the incident was last modified.
+    modified: Any = None
+    # Incident's non Datadog creator.
+    non_datadog_creator: Any = None
     # Notification handles that will be notified of the incident at creation.
     notification_handles: Any = None
+    # The monotonically increasing integer ID for the incident.
+    public_id: Any = None
+    # Timestamp when the incident's state was last changed from active or stable to resolved or completed.
+    resolved: Any = None
+    # The incident severity.
+    severity: Any = None
+    # The state incident.
+    state: Any = None
+    # The amount of time in seconds to detect the incident. Equals the difference between `customer_impact_start` and `detected`.
+    time_to_detect: Any = None
+    # The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.
+    time_to_internal_response: Any = None
+    # The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.
+    time_to_repair: Any = None
+    # The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.
+    time_to_resolve: Any = None
     # The title of the incident, which summarizes what happened.
     title: Any = None
+    # The incident visibility status.
+    visibility: Any = None
 
 @dataclasses.dataclass
-class Response_Data_Relationships_CommanderUser_Data:
-    # A unique identifier that represents the user.
+class Response_Data_Relationships_Attachments_Data:
     id: Any = None
-    # Users resource type.
     type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_Attachments:
+    # An array of incident attachments.
+    data: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Relationships_CommanderUser:
@@ -59,13 +111,31 @@ class Response_Data_Relationships_CommanderUser:
 
 @dataclasses.dataclass
 class Response_Data_Relationships:
+    # A relationship reference for attachments.
+    attachments: Any = None
     # Relationship to user.
     commander_user: Any = None
+    # Relationship to user.
+    created_by_user: Any = None
+    # Relationship to user.
+    declared_by_user: Any = None
+    # Relationship to impacts.
+    impacts: Any = None
+    # A relationship reference for multiple integration metadata objects.
+    integrations: Any = None
+    # Relationship to user.
+    last_modified_by_user: Any = None
+    # Relationship to incident responders.
+    responders: Any = None
+    # Relationship to incident user defined fields.
+    user_defined_fields: Any = None
 
 @dataclasses.dataclass
 class Response_Data:
     # The incident's attributes for a create request.
     attributes: Any = None
+    # The incident's ID.
+    id: Any = None
     # The relationships the incident will have with other resources once created.
     relationships: Any = None
     # Incident resource type.
@@ -90,6 +160,11 @@ class Response_Included:
     id: Any = None
     relationships: Any = None
     type: Any = None
+
+_Response_Data_Attributes_DeclaredByFields = {
+    "image_48_px": ubx.FieldSpec(wire_name="image_48_px"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
 
 _Response_Data_Attributes_FieldsFields = {
     "type": ubx.FieldSpec(wire_name="type"),
@@ -116,8 +191,22 @@ _Response_Data_Attributes_NotificationHandlesFields = {
 }
 
 _Response_Data_AttributesFields = {
+    "archived": ubx.FieldSpec(wire_name="archived"),
+    "case_id": ubx.FieldSpec(wire_name="case_id"),
+    "created": ubx.FieldSpec(wire_name="created"),
+    "customer_impact_duration": ubx.FieldSpec(wire_name="customer_impact_duration"),
+    "customer_impact_end": ubx.FieldSpec(wire_name="customer_impact_end"),
     "customer_impact_scope": ubx.FieldSpec(wire_name="customer_impact_scope"),
+    "customer_impact_start": ubx.FieldSpec(wire_name="customer_impact_start"),
     "customer_impacted": ubx.FieldSpec(wire_name="customer_impacted"),
+    "declared": ubx.FieldSpec(wire_name="declared"),
+    "declared_by": ubx.FieldSpec(
+        wire_name="declared_by",
+        kind="object",
+        fields=_Response_Data_Attributes_DeclaredByFields,
+    ),
+    "declared_by_uuid": ubx.FieldSpec(wire_name="declared_by_uuid"),
+    "detected": ubx.FieldSpec(wire_name="detected"),
     "fields": ubx.FieldSpec(
         wire_name="fields",
         kind="map",
@@ -130,32 +219,95 @@ _Response_Data_AttributesFields = {
         fields=_Response_Data_Attributes_InitialCellsFields,
     ),
     "is_test": ubx.FieldSpec(wire_name="is_test"),
+    "modified": ubx.FieldSpec(wire_name="modified"),
+    "non_datadog_creator": ubx.FieldSpec(
+        wire_name="non_datadog_creator",
+        kind="object",
+        fields=_Response_Data_Attributes_DeclaredByFields,
+    ),
     "notification_handles": ubx.FieldSpec(
         wire_name="notification_handles",
         kind="list",
         fields=_Response_Data_Attributes_NotificationHandlesFields,
     ),
+    "public_id": ubx.FieldSpec(wire_name="public_id"),
+    "resolved": ubx.FieldSpec(wire_name="resolved"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "state": ubx.FieldSpec(wire_name="state"),
+    "time_to_detect": ubx.FieldSpec(wire_name="time_to_detect"),
+    "time_to_internal_response": ubx.FieldSpec(wire_name="time_to_internal_response"),
+    "time_to_repair": ubx.FieldSpec(wire_name="time_to_repair"),
+    "time_to_resolve": ubx.FieldSpec(wire_name="time_to_resolve"),
     "title": ubx.FieldSpec(wire_name="title"),
+    "visibility": ubx.FieldSpec(wire_name="visibility"),
 }
 
-_Response_Data_Relationships_CommanderUser_DataFields = {
+_Response_Data_Relationships_Attachments_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Response_Data_Relationships_AttachmentsFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="list",
+        fields=_Response_Data_Relationships_Attachments_DataFields,
+    ),
 }
 
 _Response_Data_Relationships_CommanderUserFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_Response_Data_Relationships_CommanderUser_DataFields,
+        fields=_Response_Data_Relationships_Attachments_DataFields,
     ),
 }
 
 _Response_Data_RelationshipsFields = {
+    "attachments": ubx.FieldSpec(
+        wire_name="attachments",
+        kind="object",
+        fields=_Response_Data_Relationships_AttachmentsFields,
+    ),
     "commander_user": ubx.FieldSpec(
         wire_name="commander_user",
         kind="object",
         fields=_Response_Data_Relationships_CommanderUserFields,
+    ),
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_Response_Data_Relationships_CommanderUserFields,
+    ),
+    "declared_by_user": ubx.FieldSpec(
+        wire_name="declared_by_user",
+        kind="object",
+        fields=_Response_Data_Relationships_CommanderUserFields,
+    ),
+    "impacts": ubx.FieldSpec(
+        wire_name="impacts",
+        kind="object",
+        fields=_Response_Data_Relationships_AttachmentsFields,
+    ),
+    "integrations": ubx.FieldSpec(
+        wire_name="integrations",
+        kind="object",
+        fields=_Response_Data_Relationships_AttachmentsFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_Response_Data_Relationships_CommanderUserFields,
+    ),
+    "responders": ubx.FieldSpec(
+        wire_name="responders",
+        kind="object",
+        fields=_Response_Data_Relationships_AttachmentsFields,
+    ),
+    "user_defined_fields": ubx.FieldSpec(
+        wire_name="user_defined_fields",
+        kind="object",
+        fields=_Response_Data_Relationships_AttachmentsFields,
     ),
 }
 
@@ -165,6 +317,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

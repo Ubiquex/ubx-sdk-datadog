@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Log_Data_Attributes struct {
 	Attributes any
-	Host any
-	Message any
-	Service any
-	Status any
-	Tags any
-	Timestamp any
+	Host       any
+	Message    any
+	Service    any
+	Status     any
+	Tags       any
+	Timestamp  any
 }
 
 type Log_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Log_Links struct {
@@ -30,9 +30,9 @@ type Log_Meta_Page struct {
 }
 
 type Log_Meta_Warnings struct {
-	Code any
+	Code   any
 	Detail any
-	Title any
+	Title  any
 }
 
 type Log_Meta struct {

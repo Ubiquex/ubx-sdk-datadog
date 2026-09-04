@@ -49,6 +49,8 @@ export interface EventResponse_Data_Attributes {
 export interface EventResponse_Data {
   /** Event attributes. */
   attributes: EventResponse_Data_Attributes | Computed<EventResponse_Data_Attributes>;
+  /** The event's ID. */
+  id?: string | Computed<string>;
   /** Entity type. */
   type: string | Computed<string>;
 }
@@ -115,6 +117,7 @@ const EventResponse_DataFields: FieldMap = {
     kind: "object",
     fields: EventResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

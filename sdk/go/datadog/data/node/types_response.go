@@ -23,7 +23,7 @@ type TypesResponseConfig struct {
 
 type TypesResponseAttrs struct {
 	// The primary data object in the node types response.
-	Data any
+	Data     any
 	Language any
 }
 

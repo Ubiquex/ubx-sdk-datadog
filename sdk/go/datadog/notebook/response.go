@@ -3,46 +3,54 @@ package notebook
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Response_Data_Attributes_Author struct {
+	// Creation time of the user.
+	CreatedAt any
+	// Whether the user is disabled.
+	Disabled any
+	// Email of the user.
+	Email any
+	// Handle of the user.
+	Handle any
+	// URL of the user's icon.
+	Icon any
+	// Name of the user.
+	Name any
+	// Status of the user.
+	Status any
+	// Title of the user.
+	Title any
+	// Whether the user is verified.
+	Verified any
+}
+
 type Response_Data_Attributes_Cells_Attributes_Definition struct {
-	// The Markdown text displayed in the notebook cell. (AI-inferred)
 	Text any
-	// The type of notebook cell this definition represents, determining how the cell content is interpreted and rendered. (AI-inferred)
 	Type any
 }
 
 type Response_Data_Attributes_Cells_Attributes_SplitBy struct {
-	// The list of tag keys used to split the graph into multiple series. (AI-inferred)
 	Keys any
-	// The list of tags used to split the data in this notebook cell. (AI-inferred)
 	Tags any
 }
 
 type Response_Data_Attributes_Cells_Attributes_Time struct {
-	// The end of the time range for the notebook cell, in ISO 8601 format (e.g., '2023-01-01T00:00:00Z'). (AI-inferred)
-	End any
-	// Boolean flag indicating whether the time range is live (auto-refreshing) as opposed to a fixed time range. (AI-inferred)
-	Live any
-	// The live time span for the notebook cell's time range, such as '5m', '1h', or '1d'. (AI-inferred)
+	End      any
+	Live     any
 	LiveSpan any
-	// The start timestamp of the time range for the notebook cell, represented as a string (e.g., ISO 8601 format). (AI-inferred)
-	Start any
+	Start    any
 }
 
 type Response_Data_Attributes_Cells_Attributes struct {
-	// An object that contains the content and configuration for the notebook cell. Its structure depends on the cell type (e.g., markdown, timeseries). (AI-inferred)
 	Definition any
-	// The size of the graph in the notebook cell, controlling its display dimensions. (AI-inferred)
-	GraphSize any
-	// Configuration for splitting the widget's data by one or more tag keys, including a limit on the number of groups. (AI-inferred)
-	SplitBy any
-	// The time range for the notebook cell, specifying the period over which data is displayed. (AI-inferred)
-	Time any
+	GraphSize  any
+	SplitBy    any
+	Time       any
 }
 
 type Response_Data_Attributes_Cells struct {
 	Attributes any
-	// The type of notebook cell. The only allowed value is "notebook_cells". (AI-inferred)
-	Type any
+	Type       any
 }
 
 type Response_Data_Attributes_Metadata struct {
@@ -55,50 +63,43 @@ type Response_Data_Attributes_Metadata struct {
 }
 
 type Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_GroupBy struct {
-	// The name of the facet (attribute) used to group the results in the available values query for template variables. (AI-inferred)
 	Facet any
 }
 
 type Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_Search struct {
-	// The search query string used to retrieve the available values for the template variable. (AI-inferred)
 	Query any
 }
 
 type Response_Data_Attributes_TemplateVariables_AvailableValuesQuery struct {
-	// Specifies the data source (such as metrics or logs) from which the available values for the template variable are retrieved. (AI-inferred)
 	DataSource any
-	// Groups the metric query results by one or more tags or attributes, using the distinct values of those groupings to populate the template variable's available values. (AI-inferred)
-	GroupBy any
-	// The query string that defines the set of available values for the template variable. (AI-inferred)
-	Query any
-	Search any
+	GroupBy    any
+	Query      any
+	Search     any
 }
 
 type Response_Data_Attributes_TemplateVariables struct {
-	// The list of possible values that can be assigned to the template variable in a Datadog notebook. (AI-inferred)
-	AvailableValues any
-	// An object that configures a query to determine the list of available values for this template variable. (AI-inferred)
+	AvailableValues      any
 	AvailableValuesQuery any
-	// A map from data source types (e.g., 'metrics', 'logs') to template variable values, allowing the variable to resolve to different values depending on the data source used by a panel. (AI-inferred)
-	DataSourceMappings any
-	// The default value for the template variable, used when no other value is selected. (AI-inferred)
-	Default any
-	// List of default values for the template variable. These are used when the notebook is loaded and no other value is specified. (AI-inferred)
-	Defaults any
-	// The name of the template variable, used to reference it in notebook queries. (AI-inferred)
-	Name any
-	Placement any
-	// The text prefix that is prepended to the template variable's value when used in notebook queries. For example, a prefix of 'env:' with a selected value of 'prod' would produce 'env:prod'. (AI-inferred)
-	Prefix any
-	// The type of the template variable, either 'tag' for tag keys or 'host' for host names. (AI-inferred)
-	Type any
+	DataSourceMappings   any
+	Default              any
+	Defaults             any
+	Name                 any
+	Placement            any
+	Prefix               any
+	Type                 any
 }
 
 type Response_Data_Attributes struct {
+	// Attributes of user object returned by the API.
+	Author any
 	// List of cells to display in the notebook.
 	Cells any
+	// UTC time stamp for when the notebook was created.
+	Created any
 	// Metadata associated with the notebook.
 	Metadata any
+	// UTC time stamp for when the notebook was last modified.
+	Modified any
 	// The name of the notebook.
 	Name any
 	// Publication status of the notebook. For now, always "published".
@@ -112,133 +113,155 @@ type Response_Data_Attributes struct {
 type Response_Data struct {
 	// The data attributes of a notebook.
 	Attributes any
+	// Unique notebook ID, assigned when you create the notebook.
+	Id any
 	// Type of the Notebook resource.
 	Type any
 }
 
+var Response_Data_Attributes_AuthorFields = ubx.FieldMap{
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"Disabled":  ubx.FieldSpec{WireName: "disabled"},
+	"Email":     ubx.FieldSpec{WireName: "email"},
+	"Handle":    ubx.FieldSpec{WireName: "handle"},
+	"Icon":      ubx.FieldSpec{WireName: "icon"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Status":    ubx.FieldSpec{WireName: "status"},
+	"Title":     ubx.FieldSpec{WireName: "title"},
+	"Verified":  ubx.FieldSpec{WireName: "verified"},
+}
+
 var Response_Data_Attributes_Cells_Attributes_DefinitionFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_Attributes_Cells_Attributes_SplitByFields = ubx.FieldMap{
-		"Keys": ubx.FieldSpec{WireName: "keys"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Keys": ubx.FieldSpec{WireName: "keys"},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 var Response_Data_Attributes_Cells_Attributes_TimeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Live": ubx.FieldSpec{WireName: "live"},
-		"LiveSpan": ubx.FieldSpec{WireName: "live_span"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":      ubx.FieldSpec{WireName: "end"},
+	"Live":     ubx.FieldSpec{WireName: "live"},
+	"LiveSpan": ubx.FieldSpec{WireName: "live_span"},
+	"Start":    ubx.FieldSpec{WireName: "start"},
+}
 
 var Response_Data_Attributes_Cells_AttributesFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{
-			WireName: "definition",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Cells_Attributes_DefinitionFields,
-		},
-		"GraphSize": ubx.FieldSpec{WireName: "graph_size"},
-		"SplitBy": ubx.FieldSpec{
-			WireName: "split_by",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Cells_Attributes_SplitByFields,
-		},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Cells_Attributes_TimeFields,
-		},
-	}
+	"Definition": ubx.FieldSpec{
+		WireName: "definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Cells_Attributes_DefinitionFields,
+	},
+	"GraphSize": ubx.FieldSpec{WireName: "graph_size"},
+	"SplitBy": ubx.FieldSpec{
+		WireName: "split_by",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Cells_Attributes_SplitByFields,
+	},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Cells_Attributes_TimeFields,
+	},
+}
 
 var Response_Data_Attributes_CellsFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Cells_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Cells_AttributesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_Attributes_MetadataFields = ubx.FieldMap{
-		"IsTemplate": ubx.FieldSpec{WireName: "is_template"},
-		"TakeSnapshots": ubx.FieldSpec{WireName: "take_snapshots"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"IsTemplate":    ubx.FieldSpec{WireName: "is_template"},
+	"TakeSnapshots": ubx.FieldSpec{WireName: "take_snapshots"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_GroupByFields = ubx.FieldMap{
-		"Facet": ubx.FieldSpec{WireName: "facet"},
-	}
+	"Facet": ubx.FieldSpec{WireName: "facet"},
+}
 
 var Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_SearchFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var Response_Data_Attributes_TemplateVariables_AvailableValuesQueryFields = ubx.FieldMap{
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_GroupByFields,
-		},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Search": ubx.FieldSpec{
-			WireName: "search",
-			Kind: "object",
-			Fields: Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_SearchFields,
-		},
-	}
+	"DataSource": ubx.FieldSpec{WireName: "data_source"},
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_GroupByFields,
+	},
+	"Query": ubx.FieldSpec{WireName: "query"},
+	"Search": ubx.FieldSpec{
+		WireName: "search",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_SearchFields,
+	},
+}
 
 var Response_Data_Attributes_TemplateVariablesFields = ubx.FieldMap{
-		"AvailableValues": ubx.FieldSpec{WireName: "available_values"},
-		"AvailableValuesQuery": ubx.FieldSpec{
-			WireName: "available_values_query",
-			Kind: "object",
-			Fields: Response_Data_Attributes_TemplateVariables_AvailableValuesQueryFields,
-		},
-		"DataSourceMappings": ubx.FieldSpec{WireName: "data_source_mappings"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defaults": ubx.FieldSpec{WireName: "defaults"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Placement": ubx.FieldSpec{WireName: "placement"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AvailableValues": ubx.FieldSpec{WireName: "available_values"},
+	"AvailableValuesQuery": ubx.FieldSpec{
+		WireName: "available_values_query",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_TemplateVariables_AvailableValuesQueryFields,
+	},
+	"DataSourceMappings": ubx.FieldSpec{WireName: "data_source_mappings"},
+	"Default":            ubx.FieldSpec{WireName: "default"},
+	"Defaults":           ubx.FieldSpec{WireName: "defaults"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Placement":          ubx.FieldSpec{WireName: "placement"},
+	"Prefix":             ubx.FieldSpec{WireName: "prefix"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"Cells": ubx.FieldSpec{
-			WireName: "cells",
-			Kind: "list",
-			Fields: Response_Data_Attributes_CellsFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Response_Data_Attributes_MetadataFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TemplateVariables": ubx.FieldSpec{
-			WireName: "template_variables",
-			Kind: "list",
-			Fields: Response_Data_Attributes_TemplateVariablesFields,
-		},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Cells_Attributes_TimeFields,
-		},
-	}
+	"Author": ubx.FieldSpec{
+		WireName: "author",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_AuthorFields,
+	},
+	"Cells": ubx.FieldSpec{
+		WireName: "cells",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_CellsFields,
+	},
+	"Created": ubx.FieldSpec{WireName: "created"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_MetadataFields,
+	},
+	"Modified": ubx.FieldSpec{WireName: "modified"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Status":   ubx.FieldSpec{WireName: "status"},
+	"TemplateVariables": ubx.FieldSpec{
+		WireName: "template_variables",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_TemplateVariablesFields,
+	},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Cells_Attributes_TimeFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// The data for a notebook create request.
@@ -259,8 +282,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"NotebookId": ubx.FieldSpec{WireName: "notebook_id"},
 	},

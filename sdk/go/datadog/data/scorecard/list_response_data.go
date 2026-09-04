@@ -4,16 +4,16 @@ package scorecard
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ListResponseData_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	ModifiedAt any
-	Name any
+	ModifiedAt  any
+	Name        any
 }
 
 type ListResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ListResponseDataConfig struct {
@@ -26,6 +26,5 @@ type ListResponseDataAttrs struct {
 
 var ListResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_scorecard_list_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

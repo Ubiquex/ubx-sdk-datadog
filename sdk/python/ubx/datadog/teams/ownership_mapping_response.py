@@ -10,8 +10,14 @@ import ubx_sdk as ubx
 class OwnershipMappingResponse_Data_Attributes:
     # The ID of the RUM application this mapping applies to. For browser applications, provide the real application UUID — the team is applied to the view regardless of service. For mobile applications, omit this field (or set it to the nil UUID `00000000-0000-0000-0000-000000000000`) — the team is applied to the view and service combination across all applications.
     application_id: Any = None
+    # Timestamp when the mapping was created.
+    created_at: Any = None
+    # The UUID of the user who created the mapping.
+    created_by: Any = None
     # How the `view_name` is matched against RUM view names.
     match_type: Any = None
+    # The ID of the organization that owns this mapping.
+    org_id: Any = None
     # The RUM application's service name. For browser applications, this is optional. For mobile applications, this is required and scopes the ownership to a specific service.
     service: Any = None
     # The handle of the team that owns the matched RUM views.
@@ -23,12 +29,17 @@ class OwnershipMappingResponse_Data_Attributes:
 class OwnershipMappingResponse_Data:
     # The attributes of the teams ownership mapping to create.
     attributes: Any = None
+    # The unique identifier of the teams ownership mapping.
+    id: Any = None
     # The type of the resource. The value should always be teams_ownership_mappings.
     type: Any = None
 
 _OwnershipMappingResponse_Data_AttributesFields = {
     "application_id": ubx.FieldSpec(wire_name="application_id"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
     "match_type": ubx.FieldSpec(wire_name="match_type"),
+    "org_id": ubx.FieldSpec(wire_name="org_id"),
     "service": ubx.FieldSpec(wire_name="service"),
     "team_handle": ubx.FieldSpec(wire_name="team_handle"),
     "view_name": ubx.FieldSpec(wire_name="view_name"),
@@ -40,6 +51,7 @@ _OwnershipMappingResponse_DataFields = {
         kind="object",
         fields=_OwnershipMappingResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

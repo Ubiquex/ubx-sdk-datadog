@@ -12,66 +12,66 @@ type WorkloadSecurityAgentRuleData_Data_Attributes_Actions_Kill struct {
 }
 
 type WorkloadSecurityAgentRuleData_Data_Attributes_Actions_Metadata struct {
-	ImageTag any
-	Service any
+	ImageTag   any
+	Service    any
 	ShortImage any
 }
 
 type WorkloadSecurityAgentRuleData_Data_Attributes_Actions_Set struct {
-	Append any
+	Append       any
 	DefaultValue any
-	Expression any
-	Field any
-	Inherited any
-	Name any
-	Scope any
-	Size any
-	Ttl any
-	Value any
+	Expression   any
+	Field        any
+	Inherited    any
+	Name         any
+	Scope        any
+	Size         any
+	Ttl          any
+	Value        any
 }
 
 type WorkloadSecurityAgentRuleData_Data_Attributes_Actions struct {
-	Filter any
-	Hash any
-	Kill any
+	Filter   any
+	Hash     any
+	Kill     any
 	Metadata any
-	Set any
+	Set      any
 }
 
 type WorkloadSecurityAgentRuleData_Data_Attributes_Creator struct {
 	Handle any
-	Name any
+	Name   any
 }
 
 type WorkloadSecurityAgentRuleData_Data_Attributes struct {
-	Actions any
-	AgentConstraint any
-	Blocking any
-	Category any
+	Actions            any
+	AgentConstraint    any
+	Blocking           any
+	Category           any
 	CreationAuthorUuId any
-	CreationDate any
-	Creator any
-	DefaultRule any
-	Description any
-	Disabled any
-	Enabled any
-	Expression any
-	Filters any
-	Monitoring any
-	Name any
-	ProductTags any
-	Silent any
-	UpdateAuthorUuId any
-	UpdateDate any
-	UpdatedAt any
-	Updater any
-	Version any
+	CreationDate       any
+	Creator            any
+	DefaultRule        any
+	Description        any
+	Disabled           any
+	Enabled            any
+	Expression         any
+	Filters            any
+	Monitoring         any
+	Name               any
+	ProductTags        any
+	Silent             any
+	UpdateAuthorUuId   any
+	UpdateDate         any
+	UpdatedAt          any
+	Updater            any
+	Version            any
 }
 
 type WorkloadSecurityAgentRuleData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type WorkloadSecurityAgentRuleDataConfig struct {
@@ -80,7 +80,7 @@ type WorkloadSecurityAgentRuleDataConfig struct {
 
 type WorkloadSecurityAgentRuleDataAttrs struct {
 	// A list of Agent rules objects
-	Data any
+	Data     any
 	PolicyId any
 }
 

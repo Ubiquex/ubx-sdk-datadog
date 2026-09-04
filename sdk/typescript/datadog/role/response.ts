@@ -2,22 +2,71 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Response_Data_Attributes {
+  /** Creation time of the role. */
+  createdAt?: string | Computed<string>;
+  /** Time of last role modification. */
+  modifiedAt?: string | Computed<string>;
   /** Name of the new role that is cloned. */
   name: string | Computed<string>;
   /** The managed role from which this role automatically inherits new permissions. Specify one of the following: "Datadog Admin Role", "Datadog Standard Role", or "Datadog Read Only Role". If empty or not specified, the role does not automatically inherit permissions from any managed role. */
   receivesPermissionsFrom?: string[] | Computed<string[]>;
+  /** Number of users with that role. */
+  userCount?: number | Computed<number>;
+}
+
+export interface Response_Data_Relationships_Permissions_Data {
+  id?: string | Computed<string>;
+  type?: string | Computed<string>;
+}
+
+export interface Response_Data_Relationships_Permissions {
+  /** Relationships to permission objects. */
+  data?: Response_Data_Relationships_Permissions_Data[] | Computed<Response_Data_Relationships_Permissions_Data[]>;
+}
+
+export interface Response_Data_Relationships {
+  /** Relationship to multiple permissions objects. */
+  permissions?: Response_Data_Relationships_Permissions | Computed<Response_Data_Relationships_Permissions>;
 }
 
 export interface Response_Data {
   /** Attributes required to create a new role by cloning an existing one. */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** The unique identifier of the role. */
+  id?: string | Computed<string>;
+  /** Relationships of the role object returned by the API. */
+  relationships?: Response_Data_Relationships | Computed<Response_Data_Relationships>;
   /** Roles type. */
   type: string | Computed<string>;
 }
 
 const Response_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  modifiedAt: "modified_at",
   name: "name",
   receivesPermissionsFrom: "receives_permissions_from",
+  userCount: "user_count",
+};
+
+const Response_Data_Relationships_Permissions_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const Response_Data_Relationships_PermissionsFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "list",
+    fields: Response_Data_Relationships_Permissions_DataFields,
+  },
+};
+
+const Response_Data_RelationshipsFields: FieldMap = {
+  permissions: {
+    wireName: "permissions",
+    kind: "object",
+    fields: Response_Data_Relationships_PermissionsFields,
+  },
 };
 
 const Response_DataFields: FieldMap = {
@@ -25,6 +74,12 @@ const Response_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: Response_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: Response_Data_RelationshipsFields,
   },
   type: "type",
 };

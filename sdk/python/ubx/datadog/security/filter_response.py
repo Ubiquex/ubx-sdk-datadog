@@ -17,17 +17,23 @@ class FilterResponse_Data_Attributes:
     exclusion_filters: Any = None
     # The filtered data type.
     filtered_data_type: Any = None
+    # Whether the security filter is the built-in filter.
+    is_builtin: Any = None
     # Whether the security filter is enabled.
     is_enabled: Any = None
     # The name of the security filter.
     name: Any = None
     # The query of the security filter.
     query: Any = None
+    # The version of the security filter.
+    version: Any = None
 
 @dataclasses.dataclass
 class FilterResponse_Data:
     # Object containing the attributes of the security filter to be created.
     attributes: Any = None
+    # The ID of the security filter.
+    id: Any = None
     # The type of the resource. The value should always be `security_filters`.
     type: Any = None
 
@@ -48,9 +54,11 @@ _FilterResponse_Data_AttributesFields = {
         fields=_FilterResponse_Data_Attributes_ExclusionFiltersFields,
     ),
     "filtered_data_type": ubx.FieldSpec(wire_name="filtered_data_type"),
+    "is_builtin": ubx.FieldSpec(wire_name="is_builtin"),
     "is_enabled": ubx.FieldSpec(wire_name="is_enabled"),
     "name": ubx.FieldSpec(wire_name="name"),
     "query": ubx.FieldSpec(wire_name="query"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _FilterResponse_DataFields = {
@@ -59,6 +67,7 @@ _FilterResponse_DataFields = {
         kind="object",
         fields=_FilterResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

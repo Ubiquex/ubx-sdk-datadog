@@ -4,21 +4,21 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApitestResultFull_Check_Config_Assertions struct {
-	Code any
-	Operator any
-	Property any
-	Target any
+	Code         any
+	Operator     any
+	Property     any
+	Target       any
 	TimingsScope any
-	Type any
+	Type         any
 }
 
 type ApitestResultFull_Check_Config_ConfigVariables struct {
 	Example any
-	Id any
-	Name any
+	Id      any
+	Name    any
 	Pattern any
-	Secure any
-	Type any
+	Secure  any
+	Type    any
 }
 
 type ApitestResultFull_Check_Config_Request_BasicAuth_AddClaims struct {
@@ -27,30 +27,30 @@ type ApitestResultFull_Check_Config_Request_BasicAuth_AddClaims struct {
 }
 
 type ApitestResultFull_Check_Config_Request_BasicAuth struct {
-	AccessKey any
-	AccessTokenUrl any
-	AddClaims any
-	Algorithm any
-	Audience any
-	ClientId any
-	ClientSecret any
-	Domain any
-	ExpiresIn any
-	Header any
-	Password any
-	Payload any
-	Region any
-	Resource any
-	Scope any
-	Secret any
-	SecretKey any
-	ServiceName any
-	SessionToken any
+	AccessKey              any
+	AccessTokenUrl         any
+	AddClaims              any
+	Algorithm              any
+	Audience               any
+	ClientId               any
+	ClientSecret           any
+	Domain                 any
+	ExpiresIn              any
+	Header                 any
+	Password               any
+	Payload                any
+	Region                 any
+	Resource               any
+	Scope                  any
+	Secret                 any
+	SecretKey              any
+	ServiceName            any
+	SessionToken           any
 	TokenApiAuthentication any
-	TokenPrefix any
-	Type any
-	Username any
-	Workstation any
+	TokenPrefix            any
+	Type                   any
+	Username               any
+	Workstation            any
 }
 
 type ApitestResultFull_Check_Config_Request_Certificate_Cert struct {
@@ -70,13 +70,13 @@ type ApitestResultFull_Check_Config_Request_Certificate struct {
 }
 
 type ApitestResultFull_Check_Config_Request_Files struct {
-	BucketKey any
-	Content any
-	Encoding any
-	Name any
+	BucketKey        any
+	Content          any
+	Encoding         any
+	Name             any
 	OriginalFileName any
-	Size any
-	Type any
+	Size             any
+	Type             any
 }
 
 type ApitestResultFull_Check_Config_Request_Proxy struct {
@@ -302,10 +302,10 @@ type ApitestResultFullAttrs struct {
 	// Version of the API test used.
 	CheckVersion any
 	// Locations for which to query the API test results.
-	ProbeDc any
+	ProbeDc  any
 	PublicId any
 	// Object containing results for your Synthetic API test.
-	Result any
+	Result   any
 	ResultId any
 	// The status of your Synthetic monitor. * `O` for not triggered * `1` for triggered * `2` for no data
 	Status any

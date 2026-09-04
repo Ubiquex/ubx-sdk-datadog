@@ -4,28 +4,34 @@ package downtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes_MonitorIdentifier struct {
-	MonitorId any
+	MonitorId   any
 	MonitorTags any
 }
 
 type Response_Data_Attributes_Schedule_Recurrences struct {
 	Duration any
-	Rrule any
-	Start any
+	Rrule    any
+	Start    any
 }
 
 type Response_Data_Attributes_Schedule struct {
-	End any
+	End         any
 	Recurrences any
-	Start any
-	Timezone any
+	Start       any
+	Timezone    any
 }
 
 type Response_Data_Attributes struct {
+	// Time that the downtime was canceled.
+	Canceled any
+	// Creation time of the downtime.
+	Created any
 	// The timezone in which to display the downtime's start and end times in Datadog applications. This is not used as an offset for scheduling.
 	DisplayTimezone any
 	// A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.
 	Message any
+	// Time that the downtime was last modified.
+	Modified any
 	// Monitor identifier for the downtime.
 	MonitorIdentifier any
 	// If the first recovery notification during a downtime should be muted.
@@ -38,39 +44,55 @@ type Response_Data_Attributes struct {
 	Schedule any
 	// The scope to which the downtime applies. Must follow the [common search syntax](https://docs.datadoghq.com/logs/explorer/search_syntax/).
 	Scope any
+	// The current status of the downtime.
+	Status any
+}
+
+type Response_Data_Relationships_CreatedBy_Data struct {
+	// User ID of the downtime creator.
+	Id any
+	// Users resource type.
+	Type any
+}
+
+type Response_Data_Relationships_CreatedBy struct {
+	// Data for the user who created the downtime.
+	Data any
+}
+
+type Response_Data_Relationships struct {
+	// The user who created the downtime.
+	CreatedBy any
+	// The monitor identified by the downtime.
+	Monitor any
 }
 
 type Response_Data struct {
 	// Downtime details.
 	Attributes any
+	// The downtime ID.
+	Id any
+	// All relationships associated with downtime.
+	Relationships any
 	// Downtime resource type.
 	Type any
 }
 
 type Response_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
-}
-
-type Response_Included_Relationships_Org_Data struct {
-	Id any
-	Type any
-}
-
-type Response_Included_Relationships_Org struct {
-	Data any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type Response_Included_Relationships_OtherOrgs struct {
@@ -78,68 +100,104 @@ type Response_Included_Relationships_OtherOrgs struct {
 }
 
 type Response_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var Response_Data_Attributes_MonitorIdentifierFields = ubx.FieldMap{
-		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
-		"MonitorTags": ubx.FieldSpec{WireName: "monitor_tags"},
-	}
+	"MonitorId":   ubx.FieldSpec{WireName: "monitor_id"},
+	"MonitorTags": ubx.FieldSpec{WireName: "monitor_tags"},
+}
 
 var Response_Data_Attributes_Schedule_RecurrencesFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Rrule": ubx.FieldSpec{WireName: "rrule"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"Rrule":    ubx.FieldSpec{WireName: "rrule"},
+	"Start":    ubx.FieldSpec{WireName: "start"},
+}
 
 var Response_Data_Attributes_ScheduleFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Recurrences": ubx.FieldSpec{
-			WireName: "recurrences",
-			Kind: "list",
-			Fields: Response_Data_Attributes_Schedule_RecurrencesFields,
-		},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"End": ubx.FieldSpec{WireName: "end"},
+	"Recurrences": ubx.FieldSpec{
+		WireName: "recurrences",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_Schedule_RecurrencesFields,
+	},
+	"Start":    ubx.FieldSpec{WireName: "start"},
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"DisplayTimezone": ubx.FieldSpec{WireName: "display_timezone"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"MonitorIdentifier": ubx.FieldSpec{
-			WireName: "monitor_identifier",
-			Kind: "object",
-			Fields: Response_Data_Attributes_MonitorIdentifierFields,
-		},
-		"MuteFirstRecoveryNotification": ubx.FieldSpec{WireName: "mute_first_recovery_notification"},
-		"NotifyEndStates": ubx.FieldSpec{WireName: "notify_end_states"},
-		"NotifyEndTypes": ubx.FieldSpec{WireName: "notify_end_types"},
-		"Schedule": ubx.FieldSpec{
-			WireName: "schedule",
-			Kind: "object",
-			Fields: Response_Data_Attributes_ScheduleFields,
-		},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"Canceled":        ubx.FieldSpec{WireName: "canceled"},
+	"Created":         ubx.FieldSpec{WireName: "created"},
+	"DisplayTimezone": ubx.FieldSpec{WireName: "display_timezone"},
+	"Message":         ubx.FieldSpec{WireName: "message"},
+	"Modified":        ubx.FieldSpec{WireName: "modified"},
+	"MonitorIdentifier": ubx.FieldSpec{
+		WireName: "monitor_identifier",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_MonitorIdentifierFields,
+	},
+	"MuteFirstRecoveryNotification": ubx.FieldSpec{WireName: "mute_first_recovery_notification"},
+	"NotifyEndStates":               ubx.FieldSpec{WireName: "notify_end_states"},
+	"NotifyEndTypes":                ubx.FieldSpec{WireName: "notify_end_types"},
+	"Schedule": ubx.FieldSpec{
+		WireName: "schedule",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_ScheduleFields,
+	},
+	"Scope":  ubx.FieldSpec{WireName: "scope"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
+
+var Response_Data_Relationships_CreatedBy_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var Response_Data_Relationships_CreatedByFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CreatedBy_DataFields,
+	},
+}
+
+var Response_Data_RelationshipsFields = ubx.FieldMap{
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CreatedByFields,
+	},
+	"Monitor": ubx.FieldSpec{
+		WireName: "monitor",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CreatedByFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Response_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Object to create a downtime.
@@ -162,8 +220,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"DowntimeId": ubx.FieldSpec{WireName: "downtime_id"},
 	},

@@ -30,24 +30,24 @@ type HostFacetInfoResponse_Data struct {
 }
 
 type HostFacetInfoResponseConfig struct {
-	Facet any
-	Query any
+	Facet  any
+	Query  any
 	Search any
 }
 
 type HostFacetInfoResponseAttrs struct {
 	// The data wrapper for a facet info response.
-	Data any
-	Facet any
-	Query any
+	Data   any
+	Facet  any
+	Query  any
 	Search any
 }
 
 var HostFacetInfoResponse = ubx.DataSourceBinding{
 	WireType: "datadog_csm_host_facet_info_response",
 	Fields: ubx.FieldMap{
-		"Facet": ubx.FieldSpec{WireName: "facet"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"Facet":  ubx.FieldSpec{WireName: "facet"},
+		"Query":  ubx.FieldSpec{WireName: "query"},
 		"Search": ubx.FieldSpec{WireName: "search"},
 	},
 }

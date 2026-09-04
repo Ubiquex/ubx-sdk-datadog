@@ -4,23 +4,23 @@ package rum
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExclusionFilterData_Data_Attributes struct {
-	Enabled any
+	Enabled   any
 	EventType any
-	Name any
-	Query any
+	Name      any
+	Query     any
 }
 
 type ExclusionFilterData_Data_Meta struct {
-	EnabledAt any
-	UpdatedAt any
+	EnabledAt       any
+	UpdatedAt       any
 	UpdatedByHandle any
 }
 
 type ExclusionFilterData_Data struct {
 	Attributes any
-	Id any
-	Meta any
-	Type any
+	Id         any
+	Meta       any
+	Type       any
 }
 
 type ExclusionFilterDataConfig struct {

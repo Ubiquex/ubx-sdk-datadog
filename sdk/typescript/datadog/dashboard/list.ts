@@ -10,29 +10,9 @@ export interface List_Author {
   name?: string | Computed<string>;
 }
 
-const List_AuthorFields: FieldMap = {
-  email: "email",
-  handle: "handle",
-  name: "name",
-};
-
 export interface ListConfig {
-  /** Object describing the creator of the shared element. */
-  author?: List_Author | Computed<List_Author>;
-  /** Date of creation of the dashboard list. */
-  created?: string | Computed<string>;
-  /** The number of dashboards in the list. */
-  dashboardCount?: number | Computed<number>;
-  /** The ID of the dashboard list. */
-  id?: number | Computed<number>;
-  /** Whether or not the list is in the favorites. */
-  isFavorite?: boolean | Computed<boolean>;
-  /** Date of last edition of the dashboard list. */
-  modified?: string | Computed<string>;
   /** The name of the dashboard list. */
   name: string | Computed<string>;
-  /** The type of dashboard list. */
-  type?: string | Computed<string>;
   /** path parameter, not part of the API's own resource representation */
   listId: string | Computed<string>;
 }
@@ -61,18 +41,7 @@ export interface ListAttrs {
 export const List: ResourceBinding<ListConfig, ListAttrs> = {
   wireType: "datadog_dashboard_list",
   fields: {
-    author: {
-      wireName: "author",
-      kind: "object",
-      fields: List_AuthorFields,
-    },
-    created: "created",
-    dashboardCount: "dashboard_count",
-    id: "id",
-    isFavorite: "is_favorite",
-    modified: "modified",
     name: "name",
-    type: "type",
     listId: "list_id",
   },
 };

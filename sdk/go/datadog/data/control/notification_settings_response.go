@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotificationSettingsResponse_Data_Attributes_EventSettings_Targets struct {
 	Handle any
-	Type any
+	Type   any
 }
 
 type NotificationSettingsResponse_Data_Attributes_EventSettings struct {
-	Enabled any
+	Enabled   any
 	EventType any
-	Targets any
+	Targets   any
 }
 
 type NotificationSettingsResponse_Data_Attributes struct {
@@ -34,7 +34,7 @@ type NotificationSettingsResponseConfig struct {
 
 type NotificationSettingsResponseAttrs struct {
 	// A control notification settings resource.
-	Data any
+	Data          any
 	DetectionType any
 }
 

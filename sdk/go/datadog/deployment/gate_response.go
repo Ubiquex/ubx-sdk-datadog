@@ -3,7 +3,20 @@ package deployment
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type GateResponse_Data_Attributes_CreatedBy struct {
+	// The handle of the user who created the deployment rule.
+	Handle any
+	// The ID of the user who created the deployment rule.
+	Id any
+	// The name of the user who created the deployment rule.
+	Name any
+}
+
 type GateResponse_Data_Attributes struct {
+	// The timestamp when the deployment gate was created.
+	CreatedAt any
+	// Information about the user who created the deployment gate.
+	CreatedBy any
 	// Whether this gate is run in dry-run mode.
 	DryRun any
 	// The environment of the deployment gate.
@@ -12,30 +25,55 @@ type GateResponse_Data_Attributes struct {
 	Identifier any
 	// The service of the deployment gate.
 	Service any
+	// The timestamp when the deployment gate was last updated.
+	UpdatedAt any
+	// Information about the user who updated the deployment gate.
+	UpdatedBy any
 }
 
 type GateResponse_Data struct {
 	// Parameters for creating a deployment gate.
 	Attributes any
+	// Unique identifier of the deployment gate.
+	Id any
 	// Deployment gate resource type.
 	Type any
 }
 
+var GateResponse_Data_Attributes_CreatedByFields = ubx.FieldMap{
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
+
 var GateResponse_Data_AttributesFields = ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   GateResponse_Data_Attributes_CreatedByFields,
+	},
+	"DryRun":     ubx.FieldSpec{WireName: "dry_run"},
+	"Env":        ubx.FieldSpec{WireName: "env"},
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	"Service":    ubx.FieldSpec{WireName: "service"},
+	"UpdatedAt":  ubx.FieldSpec{WireName: "updated_at"},
+	"UpdatedBy": ubx.FieldSpec{
+		WireName: "updated_by",
+		Kind:     "object",
+		Fields:   GateResponse_Data_Attributes_CreatedByFields,
+	},
+}
 
 var GateResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: GateResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   GateResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type GateResponseConfig struct {
 	// Parameters for creating a deployment gate.
@@ -56,8 +94,8 @@ var GateResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: GateResponse_DataFields,
+			Kind:     "object",
+			Fields:   GateResponse_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

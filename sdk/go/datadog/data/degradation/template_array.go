@@ -4,27 +4,27 @@ package degradation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateArray_Data_Attributes_ComponentsAffected struct {
-	Id any
-	Name any
+	Id     any
+	Name   any
 	Status any
 }
 
 type TemplateArray_Data_Attributes_Updates struct {
 	Message any
-	Status any
+	Status  any
 }
 
 type TemplateArray_Data_Attributes struct {
 	ComponentsAffected any
-	CreatedAt any
-	DegradationTitle any
-	ModifiedAt any
-	Name any
-	Updates any
+	CreatedAt          any
+	DegradationTitle   any
+	ModifiedAt         any
+	Name               any
+	Updates            any
 }
 
 type TemplateArray_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -33,56 +33,56 @@ type TemplateArray_Data_Relationships_CreatedByUser struct {
 }
 
 type TemplateArray_Data_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
-	StatusPage any
+	StatusPage         any
 }
 
 type TemplateArray_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TemplateArray_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type TemplateArray_Included_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type TemplateArray_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TemplateArrayConfig struct {
 	Include any
-	PageId any
+	PageId  any
 }
 
 type TemplateArrayAttrs struct {
 	// A list of degradation template data objects.
-	Data any
+	Data    any
 	Include any
 	// The included related resources of a degradation template. Client must explicitly request these resources by name in the `include` query parameter.
 	Included any
-	PageId any
+	PageId   any
 }
 
 var TemplateArray = ubx.DataSourceBinding{
 	WireType: "datadog_degradation_template_array",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"PageId":  ubx.FieldSpec{WireName: "page_id"},
 	},
 }

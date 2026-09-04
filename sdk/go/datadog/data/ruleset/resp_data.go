@@ -4,69 +4,69 @@ package ruleset
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RespData_Data_Attributes_Created struct {
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type RespData_Data_Attributes_Rules_Mapping struct {
 	DestinationKey any
-	IfNotExists any
-	IfTagExists any
-	SourceKeys any
+	IfNotExists    any
+	IfTagExists    any
+	SourceKeys     any
 }
 
 type RespData_Data_Attributes_Rules_Query_Addition struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type RespData_Data_Attributes_Rules_Query struct {
-	Addition any
+	Addition          any
 	CaseInsensitivity any
-	IfNotExists any
-	IfTagExists any
-	Query any
+	IfNotExists       any
+	IfTagExists       any
+	Query             any
 }
 
 type RespData_Data_Attributes_Rules_ReferenceTable_FieldPairs struct {
 	InputColumn any
-	OutputKey any
+	OutputKey   any
 }
 
 type RespData_Data_Attributes_Rules_ReferenceTable struct {
 	CaseInsensitivity any
-	FieldPairs any
-	IfNotExists any
-	IfTagExists any
-	SourceKeys any
-	TableName any
+	FieldPairs        any
+	IfNotExists       any
+	IfTagExists       any
+	SourceKeys        any
+	TableName         any
 }
 
 type RespData_Data_Attributes_Rules struct {
-	Enabled any
-	Mapping any
-	Metadata any
-	Name any
-	Query any
+	Enabled        any
+	Mapping        any
+	Metadata       any
+	Name           any
+	Query          any
 	ReferenceTable any
 }
 
 type RespData_Data_Attributes struct {
-	Created any
-	Enabled any
+	Created              any
+	Enabled              any
 	LastModifiedUserUuid any
-	Modified any
-	Name any
-	Position any
-	ProcessingStatus any
-	Rules any
-	Version any
+	Modified             any
+	Name                 any
+	Position             any
+	ProcessingStatus     any
+	Rules                any
+	Version              any
 }
 
 type RespData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RespDataConfig struct {
@@ -79,6 +79,5 @@ type RespDataAttrs struct {
 
 var RespData = ubx.DataSourceBinding{
 	WireType: "datadog_ruleset_resp_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

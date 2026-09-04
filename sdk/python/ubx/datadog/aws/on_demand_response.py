@@ -10,16 +10,27 @@ import ubx_sdk as ubx
 class OnDemandResponse_Data_Attributes:
     # The arn of the resource to scan. Agentless supports the scan of EC2 instances, lambda functions, AMI, ECR, RDS and S3 buckets.
     arn: Any = None
+    # Specifies the assignment timestamp if the task has been already assigned to a scanner.
+    assigned_at: Any = None
+    # The task submission timestamp.
+    created_at: Any = None
+    # Indicates the status of the task. QUEUED: the task has been submitted successfully and the resource has not been assigned to a scanner yet. ASSIGNED: the task has been assigned. ABORTED: the scan has been aborted after a period of time due to technical reasons, such as resource not found, insufficient permissions, or the absence of a configured scanner.
+    status: Any = None
 
 @dataclasses.dataclass
 class OnDemandResponse_Data:
     # Attributes for the AWS on demand task.
     attributes: Any = None
+    # The UUID of the task.
+    id: Any = None
     # The type of the on demand task. The value should always be `aws_resource`.
     type: Any = None
 
 _OnDemandResponse_Data_AttributesFields = {
     "arn": ubx.FieldSpec(wire_name="arn"),
+    "assigned_at": ubx.FieldSpec(wire_name="assigned_at"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "status": ubx.FieldSpec(wire_name="status"),
 }
 
 _OnDemandResponse_DataFields = {
@@ -28,6 +39,7 @@ _OnDemandResponse_DataFields = {
         kind="object",
         fields=_OnDemandResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

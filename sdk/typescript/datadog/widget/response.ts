@@ -9,15 +9,44 @@ export interface Response_Data_Attributes_Definition {
 }
 
 export interface Response_Data_Attributes {
+  /** ISO 8601 timestamp of when the widget was created. */
+  createdAt?: string | Computed<string>;
   /** The definition of a widget, including its type and configuration. */
   definition: Response_Data_Attributes_Definition | Computed<Response_Data_Attributes_Definition>;
+  /** Whether the current user has favorited this widget. Populated on get, batch_get, update, and search responses; create responses always return `false` because a widget can only be favorited after it exists. Favoriting itself is performed through the shared favorites API, not this service. */
+  isFavorited?: boolean | Computed<boolean>;
+  /** ISO 8601 timestamp of when the widget was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** User-defined tags for organizing the widget. */
   tags?: string[] | Computed<string[]>;
+}
+
+export interface Response_Data_Relationships_CreatedBy_Data {
+  /** The unique identifier of the user. */
+  id: string | Computed<string>;
+  /** Users resource type. */
+  type: string | Computed<string>;
+}
+
+export interface Response_Data_Relationships_CreatedBy {
+  /** Relationship data referencing a user resource. */
+  data?: Response_Data_Relationships_CreatedBy_Data | Computed<Response_Data_Relationships_CreatedBy_Data>;
+}
+
+export interface Response_Data_Relationships {
+  /** A JSON:API relationship to a user. */
+  createdBy?: Response_Data_Relationships_CreatedBy | Computed<Response_Data_Relationships_CreatedBy>;
+  /** A JSON:API relationship to a user. */
+  modifiedBy?: Response_Data_Relationships_CreatedBy | Computed<Response_Data_Relationships_CreatedBy>;
 }
 
 export interface Response_Data {
   /** Attributes for creating or updating a widget. */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** The unique identifier of the widget. */
+  id?: string | Computed<string>;
+  /** Relationships of the widget resource. */
+  relationships?: Response_Data_Relationships | Computed<Response_Data_Relationships>;
   /** Widgets resource type. */
   type: string | Computed<string>;
 }
@@ -39,12 +68,41 @@ const Response_Data_Attributes_DefinitionFields: FieldMap = {
 };
 
 const Response_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
   definition: {
     wireName: "definition",
     kind: "object",
     fields: Response_Data_Attributes_DefinitionFields,
   },
+  isFavorited: "is_favorited",
+  modifiedAt: "modified_at",
   tags: "tags",
+};
+
+const Response_Data_Relationships_CreatedBy_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const Response_Data_Relationships_CreatedByFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: Response_Data_Relationships_CreatedBy_DataFields,
+  },
+};
+
+const Response_Data_RelationshipsFields: FieldMap = {
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: Response_Data_Relationships_CreatedByFields,
+  },
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: Response_Data_Relationships_CreatedByFields,
+  },
 };
 
 const Response_DataFields: FieldMap = {
@@ -52,6 +110,12 @@ const Response_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: Response_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: Response_Data_RelationshipsFields,
   },
   type: "type",
 };

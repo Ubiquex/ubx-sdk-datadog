@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkloadSecurityAgentPolicyData_Data_Attributes_Updater struct {
 	Handle any
-	Name any
+	Name   any
 }
 
 type WorkloadSecurityAgentPolicyData_Data_Attributes_Versions struct {
@@ -14,30 +14,30 @@ type WorkloadSecurityAgentPolicyData_Data_Attributes_Versions struct {
 }
 
 type WorkloadSecurityAgentPolicyData_Data_Attributes struct {
-	BlockingRulesCount any
-	DatadogManaged any
-	Description any
-	DisabledRulesCount any
-	Enabled any
-	HostTags any
-	HostTagsLists any
+	BlockingRulesCount   any
+	DatadogManaged       any
+	Description          any
+	DisabledRulesCount   any
+	Enabled              any
+	HostTags             any
+	HostTagsLists        any
 	MonitoringRulesCount any
-	Name any
-	Pinned any
-	PolicyType any
-	PolicyVersion any
-	Priority any
-	RuleCount any
-	UpdateDate any
-	UpdatedAt any
-	Updater any
-	Versions any
+	Name                 any
+	Pinned               any
+	PolicyType           any
+	PolicyVersion        any
+	Priority             any
+	RuleCount            any
+	UpdateDate           any
+	UpdatedAt            any
+	Updater              any
+	Versions             any
 }
 
 type WorkloadSecurityAgentPolicyData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type WorkloadSecurityAgentPolicyDataConfig struct {
@@ -50,6 +50,5 @@ type WorkloadSecurityAgentPolicyDataAttrs struct {
 
 var WorkloadSecurityAgentPolicyData = ubx.DataSourceBinding{
 	WireType: "datadog_cloud_workload_security_agent_policy_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

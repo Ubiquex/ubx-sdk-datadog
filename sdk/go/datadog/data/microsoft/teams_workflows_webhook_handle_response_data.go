@@ -9,8 +9,8 @@ type TeamsWorkflowsWebhookHandleResponseData_Data_Attributes struct {
 
 type TeamsWorkflowsWebhookHandleResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TeamsWorkflowsWebhookHandleResponseDataConfig struct {

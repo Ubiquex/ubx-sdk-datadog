@@ -20,65 +20,47 @@ type Sloresponse_Data_Query struct {
 }
 
 type Sloresponse_Data_SliSpecification_Count_BadEventsFormula struct {
-	// The formula string used to define the count of bad events for the SLI, such as a Datadog query or mathematical expression. (AI-inferred)
 	Formula any
 }
 
 type Sloresponse_Data_SliSpecification_Count_Queries struct {
-	// The aggregation method used to combine query results into a single value. Allowed values are `avg`, `sum`, `min`, `max`, `last`, and `count`. (AI-inferred)
-	Aggregator any
-	// A list of organization UUIDs from which to include data in the SLI query, enabling cross-organization SLOs. If omitted, the query runs against the current organization only. (AI-inferred)
+	Aggregator    any
 	CrossOrgUuids any
-	DataSource any
-	Name any
-	// The query string for a count query used in the SLI specification. (AI-inferred)
-	Query any
-	// The semantic_mode field specifies how the query result should be interpreted for a count query in a Datadog SLO. It can be set to 'count' for event counts or 'total' for summed numeric values, affecting the SLI calculation. (AI-inferred)
-	SemanticMode any
+	DataSource    any
+	Name          any
+	Query         any
+	SemanticMode  any
 }
 
 type Sloresponse_Data_SliSpecification_Count struct {
-	BadEventsFormula any
-	// Block defining a formula used to compute the good events count for a count-based SLI specification. This is used in place of a simple query when good events are derived from a formula. (AI-inferred)
-	GoodEventsFormula any
-	// List of query objects that define the metric queries for a count-based SLI specification. Each query includes the query string and formula used to calculate the count of events for the SLO. (AI-inferred)
-	Queries any
-	// The formula used to calculate the total number of events for a count-based Service Level Indicator (SLI). It defines a query or formula that supplies the total events count for SLO computations. (AI-inferred)
+	BadEventsFormula   any
+	GoodEventsFormula  any
+	Queries            any
 	TotalEventsFormula any
 }
 
 type Sloresponse_Data_SliSpecification_TimeSlice_Query struct {
-	// List of formulas that compute the SLI from the time slice query's individual queries, using arithmetic expressions. (AI-inferred)
 	Formulas any
-	Queries any
+	Queries  any
 }
 
 type Sloresponse_Data_SliSpecification_TimeSlice struct {
-	// The comparison operator used to evaluate the time slice query against the threshold. Valid values are `>` (greater than), `>=` (greater than or equal), `<` (less than), and `<=` (less than or equal). (AI-inferred)
-	Comparator any
-	// The query object that defines the metric or formula used to calculate the SLI for this time slice. (AI-inferred)
-	Query any
-	// The interval, in seconds, at which query data is aggregated for the time-slice SLO. (AI-inferred)
+	Comparator           any
+	Query                any
 	QueryIntervalSeconds any
-	// The threshold value that the SLI time slice query result is compared against to determine whether the slice meets the SLO. (AI-inferred)
-	Threshold any
+	Threshold            any
 }
 
 type Sloresponse_Data_SliSpecification struct {
-	Count any
-	// The time-slice configuration for the SLI, which defines the query and threshold used to evaluate each time slice for the SLO. (AI-inferred)
+	Count     any
 	TimeSlice any
 }
 
 type Sloresponse_Data_Thresholds struct {
-	// The target percentage for the SLO threshold, e.g., 99.9. (AI-inferred)
-	Target any
-	// The human-readable display string for the target value of the SLO threshold, e.g., '99.9%'. (AI-inferred)
-	TargetDisplay any
-	// The rolling time window over which the SLO target is evaluated. Allowed values are 7d, 30d, 90d, or custom. (AI-inferred)
-	Timeframe any
-	// The warning threshold value for the SLO, typically expressed as a percentage (e.g., 99.9). This is the value at which the SLO is considered to be in a warning state. (AI-inferred)
-	Warning any
+	Target         any
+	TargetDisplay  any
+	Timeframe      any
+	Warning        any
 	WarningDisplay any
 }
 
@@ -122,90 +104,90 @@ type Sloresponse_Data struct {
 }
 
 var Sloresponse_Data_QueryFields = ubx.FieldMap{
-		"Denominator": ubx.FieldSpec{WireName: "denominator"},
-		"Numerator": ubx.FieldSpec{WireName: "numerator"},
-	}
+	"Denominator": ubx.FieldSpec{WireName: "denominator"},
+	"Numerator":   ubx.FieldSpec{WireName: "numerator"},
+}
 
 var Sloresponse_Data_SliSpecification_Count_BadEventsFormulaFields = ubx.FieldMap{
-		"Formula": ubx.FieldSpec{WireName: "formula"},
-	}
+	"Formula": ubx.FieldSpec{WireName: "formula"},
+}
 
 var Sloresponse_Data_SliSpecification_Count_QueriesFields = ubx.FieldMap{
-		"Aggregator": ubx.FieldSpec{WireName: "aggregator"},
-		"CrossOrgUuids": ubx.FieldSpec{WireName: "cross_org_uuids"},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"SemanticMode": ubx.FieldSpec{WireName: "semantic_mode"},
-	}
+	"Aggregator":    ubx.FieldSpec{WireName: "aggregator"},
+	"CrossOrgUuids": ubx.FieldSpec{WireName: "cross_org_uuids"},
+	"DataSource":    ubx.FieldSpec{WireName: "data_source"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Query":         ubx.FieldSpec{WireName: "query"},
+	"SemanticMode":  ubx.FieldSpec{WireName: "semantic_mode"},
+}
 
 var Sloresponse_Data_SliSpecification_CountFields = ubx.FieldMap{
-		"BadEventsFormula": ubx.FieldSpec{
-			WireName: "bad_events_formula",
-			Kind: "object",
-			Fields: Sloresponse_Data_SliSpecification_Count_BadEventsFormulaFields,
-		},
-		"GoodEventsFormula": ubx.FieldSpec{
-			WireName: "good_events_formula",
-			Kind: "object",
-			Fields: Sloresponse_Data_SliSpecification_Count_BadEventsFormulaFields,
-		},
-		"Queries": ubx.FieldSpec{
-			WireName: "queries",
-			Kind: "list",
-			Fields: Sloresponse_Data_SliSpecification_Count_QueriesFields,
-		},
-		"TotalEventsFormula": ubx.FieldSpec{
-			WireName: "total_events_formula",
-			Kind: "object",
-			Fields: Sloresponse_Data_SliSpecification_Count_BadEventsFormulaFields,
-		},
-	}
+	"BadEventsFormula": ubx.FieldSpec{
+		WireName: "bad_events_formula",
+		Kind:     "object",
+		Fields:   Sloresponse_Data_SliSpecification_Count_BadEventsFormulaFields,
+	},
+	"GoodEventsFormula": ubx.FieldSpec{
+		WireName: "good_events_formula",
+		Kind:     "object",
+		Fields:   Sloresponse_Data_SliSpecification_Count_BadEventsFormulaFields,
+	},
+	"Queries": ubx.FieldSpec{
+		WireName: "queries",
+		Kind:     "list",
+		Fields:   Sloresponse_Data_SliSpecification_Count_QueriesFields,
+	},
+	"TotalEventsFormula": ubx.FieldSpec{
+		WireName: "total_events_formula",
+		Kind:     "object",
+		Fields:   Sloresponse_Data_SliSpecification_Count_BadEventsFormulaFields,
+	},
+}
 
 var Sloresponse_Data_SliSpecification_TimeSlice_QueryFields = ubx.FieldMap{
-		"Formulas": ubx.FieldSpec{
-			WireName: "formulas",
-			Kind: "list",
-			Fields: Sloresponse_Data_SliSpecification_Count_BadEventsFormulaFields,
-		},
-		"Queries": ubx.FieldSpec{
-			WireName: "queries",
-			Kind: "list",
-			Fields: Sloresponse_Data_SliSpecification_Count_QueriesFields,
-		},
-	}
+	"Formulas": ubx.FieldSpec{
+		WireName: "formulas",
+		Kind:     "list",
+		Fields:   Sloresponse_Data_SliSpecification_Count_BadEventsFormulaFields,
+	},
+	"Queries": ubx.FieldSpec{
+		WireName: "queries",
+		Kind:     "list",
+		Fields:   Sloresponse_Data_SliSpecification_Count_QueriesFields,
+	},
+}
 
 var Sloresponse_Data_SliSpecification_TimeSliceFields = ubx.FieldMap{
-		"Comparator": ubx.FieldSpec{WireName: "comparator"},
-		"Query": ubx.FieldSpec{
-			WireName: "query",
-			Kind: "object",
-			Fields: Sloresponse_Data_SliSpecification_TimeSlice_QueryFields,
-		},
-		"QueryIntervalSeconds": ubx.FieldSpec{WireName: "query_interval_seconds"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"Comparator": ubx.FieldSpec{WireName: "comparator"},
+	"Query": ubx.FieldSpec{
+		WireName: "query",
+		Kind:     "object",
+		Fields:   Sloresponse_Data_SliSpecification_TimeSlice_QueryFields,
+	},
+	"QueryIntervalSeconds": ubx.FieldSpec{WireName: "query_interval_seconds"},
+	"Threshold":            ubx.FieldSpec{WireName: "threshold"},
+}
 
 var Sloresponse_Data_SliSpecificationFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{
-			WireName: "count",
-			Kind: "object",
-			Fields: Sloresponse_Data_SliSpecification_CountFields,
-		},
-		"TimeSlice": ubx.FieldSpec{
-			WireName: "time_slice",
-			Kind: "object",
-			Fields: Sloresponse_Data_SliSpecification_TimeSliceFields,
-		},
-	}
+	"Count": ubx.FieldSpec{
+		WireName: "count",
+		Kind:     "object",
+		Fields:   Sloresponse_Data_SliSpecification_CountFields,
+	},
+	"TimeSlice": ubx.FieldSpec{
+		WireName: "time_slice",
+		Kind:     "object",
+		Fields:   Sloresponse_Data_SliSpecification_TimeSliceFields,
+	},
+}
 
 var Sloresponse_Data_ThresholdsFields = ubx.FieldMap{
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"TargetDisplay": ubx.FieldSpec{WireName: "target_display"},
-		"Timeframe": ubx.FieldSpec{WireName: "timeframe"},
-		"Warning": ubx.FieldSpec{WireName: "warning"},
-		"WarningDisplay": ubx.FieldSpec{WireName: "warning_display"},
-	}
+	"Target":         ubx.FieldSpec{WireName: "target"},
+	"TargetDisplay":  ubx.FieldSpec{WireName: "target_display"},
+	"Timeframe":      ubx.FieldSpec{WireName: "timeframe"},
+	"Warning":        ubx.FieldSpec{WireName: "warning"},
+	"WarningDisplay": ubx.FieldSpec{WireName: "warning_display"},
+}
 
 type SloresponseConfig struct {
 	// A user-defined description of the service level objective. Always included in service level objective responses (but may be `null`). Optional in create/update requests.
@@ -273,29 +255,29 @@ var Sloresponse = ubx.ResourceBinding{
 	WireType: "datadog_sloresponse",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Groups": ubx.FieldSpec{WireName: "groups"},
-		"MonitorIds": ubx.FieldSpec{WireName: "monitor_ids"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Groups":      ubx.FieldSpec{WireName: "groups"},
+		"MonitorIds":  ubx.FieldSpec{WireName: "monitor_ids"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Query": ubx.FieldSpec{
 			WireName: "query",
-			Kind: "object",
-			Fields: Sloresponse_Data_QueryFields,
+			Kind:     "object",
+			Fields:   Sloresponse_Data_QueryFields,
 		},
 		"SliSpecification": ubx.FieldSpec{
 			WireName: "sli_specification",
-			Kind: "object",
-			Fields: Sloresponse_Data_SliSpecificationFields,
+			Kind:     "object",
+			Fields:   Sloresponse_Data_SliSpecificationFields,
 		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
 		"TargetThreshold": ubx.FieldSpec{WireName: "target_threshold"},
 		"Thresholds": ubx.FieldSpec{
 			WireName: "thresholds",
-			Kind: "list",
-			Fields: Sloresponse_Data_ThresholdsFields,
+			Kind:     "list",
+			Fields:   Sloresponse_Data_ThresholdsFields,
 		},
-		"Timeframe": ubx.FieldSpec{WireName: "timeframe"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Timeframe":        ubx.FieldSpec{WireName: "timeframe"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
 		"WarningThreshold": ubx.FieldSpec{WireName: "warning_threshold"},
-		"SloId": ubx.FieldSpec{WireName: "slo_id"},
+		"SloId":            ubx.FieldSpec{WireName: "slo_id"},
 	},
 }

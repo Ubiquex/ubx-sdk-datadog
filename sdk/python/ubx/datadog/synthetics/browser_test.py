@@ -9,15 +9,10 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class BrowserTest_Config_Assertions:
     code: Any = None
-    # The comparison operator used in the assertion. Allowed values include: contains, doesNotContain, is, isNot, lessThan, lessThanOrEqual, moreThan, moreThanOrEqual, matches, doesNotMatch, validates, isInMoreThan, isInLessThan, doesNotExist, isUndefined. (AI-inferred)
     operator: Any = None
-    # Specifies the property of the response to evaluate, such as a header name when using header assertions. (AI-inferred)
     property: Any = None
-    # The expected value to compare against when evaluating the assertion. The data type depends on the assertion property being validated. (AI-inferred)
     target: Any = None
-    # Specifies which timings are included in the assertion: `all` includes all timings, `withoutDNS` excludes DNS resolution timing. (AI-inferred)
     timings_scope: Any = None
-    # Specifies the kind of assertion to apply, such as 'statusCode', 'body', 'header', or 'responseTime'. The allowed values in this context are: body, header, statusCode, certificate, responseTime, property, recordEvery, recordSome, tlsVersion, minTlsVersion, latency, packetLossPercentage, packetsReceived, networkHop, receivedMessage, grpcHealthcheckStatus, grpcMetadata, grpcProto, connection, multiNetworkHop, jitter, mcpToolNameLength, mcpToolCount. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -25,57 +20,40 @@ class BrowserTest_Config_ConfigVariables:
     example: Any = None
     id: Any = None
     name: Any = None
-    # Regular expression pattern used to generate random values for the config variable during test execution. (AI-inferred)
     pattern: Any = None
-    # Whether the config variable is a secure (hidden) variable. When set to true, the variable's value is not displayed in the UI or API responses. (AI-inferred)
     secure: Any = None
-    # The type of configuration variable. Allowed values are: `global`, `text`, `email`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class BrowserTest_Config_Request_BasicAuth_AddClaims:
     exp: Any = None
-    # If true, includes the 'issued at' (iat) claim in the JWT token used for basic authentication. (AI-inferred)
     iat: Any = None
 
 @dataclasses.dataclass
 class BrowserTest_Config_Request_BasicAuth:
     access_key: Any = None
-    # The URL used to obtain an OAuth access token during authentication for the synthetic request. (AI-inferred)
     access_token_url: Any = None
-    # Map of custom claims to add to the authentication request, where each key is the claim name and the corresponding value is the claim value. (AI-inferred)
     add_claims: Any = None
     algorithm: Any = None
-    # The audience for the OAuth2 token, used when the basic auth type is set to 'oauth2'. (AI-inferred)
     audience: Any = None
     client_id: Any = None
-    # The client secret used for OAuth client authentication in the request's basic_auth configuration. (AI-inferred)
     client_secret: Any = None
-    # The domain for NTLM authentication in the basic auth configuration. Used when the auth type is set to 'ntlm'. (AI-inferred)
     domain: Any = None
     expires_in: Any = None
     header: Any = None
-    # The password to use for basic authentication against the requested endpoint. (AI-inferred)
     password: Any = None
     payload: Any = None
-    # The AWS region to use for SigV4 authentication. Only relevant when the basic authentication type is set to `sigv4`. (AI-inferred)
     region: Any = None
     resource: Any = None
     scope: Any = None
-    # The password or secret used for basic authentication against the endpoint. (AI-inferred)
     secret: Any = None
     secret_key: Any = None
-    # The service name to use for NTLM authentication within the basic auth configuration. (AI-inferred)
     service_name: Any = None
     session_token: Any = None
     token_api_authentication: Any = None
-    # The prefix (scheme) to prepend to the token in the Authorization header, e.g., 'Bearer'. (AI-inferred)
     token_prefix: Any = None
-    # The type of basic authentication to use for the request. (AI-inferred)
     type: Any = None
-    # The username used for basic authentication in the Synthetics browser test request. (AI-inferred)
     username: Any = None
-    # The workstation name for NTLM authentication. (AI-inferred)
     workstation: Any = None
 
 @dataclasses.dataclass
@@ -96,19 +74,12 @@ class BrowserTest_Config_Request_Certificate:
 
 @dataclasses.dataclass
 class BrowserTest_Config_Request_Files:
-    # The object key (path) of the file within the S3 bucket to be uploaded for the browser test. (AI-inferred)
     bucket_key: Any = None
-    # The base64-encoded content of the file to be uploaded in the browser test request. The maximum length of the string is 3,145,728 characters (3 MB). (AI-inferred)
     content: Any = None
-    # Encoding of the file content, such as 'base64'. (AI-inferred)
     encoding: Any = None
-    # The name of the file to be sent in the request, used as the filename in multipart form data. Must be at most 1500 characters. (AI-inferred)
     name: Any = None
-    # The original filename of the file to be uploaded in the browser test step. Must be a string with a maximum length of 1500 characters. (AI-inferred)
     original_file_name: Any = None
-    # The size of the file, in bytes. The value must be between 1 and 3,145,728 bytes (3 MB). (AI-inferred)
     size: Any = None
-    # The MIME type (content type) of the uploaded file, such as 'application/json' or 'image/png'. Must be at most 1500 characters. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -244,11 +215,8 @@ class BrowserTest_Options_RumSettings:
 
 @dataclasses.dataclass
 class BrowserTest_Options_Scheduling_Timeframes:
-    # The day of the week (1=Monday, 7=Sunday) that this timeframe applies to. (AI-inferred)
     day: Any = None
-    # The start time of the scheduling timeframe, formatted as HH:mm in 24-hour time. (AI-inferred)
     from_: Any = None
-    # The end time of the scheduling time window. (AI-inferred)
     to: Any = None
 
 @dataclasses.dataclass
@@ -319,23 +287,15 @@ class BrowserTest_Options:
 
 @dataclasses.dataclass
 class BrowserTest_Steps:
-    # When set to true, failures in this step are allowed and do not fail the entire test. This is useful for steps that may be conditional or non-critical. (AI-inferred)
     allow_failure: Any = None
-    # Boolean that indicates whether the step should always be executed, even if a previous step fails. If set to false, the step will be skipped when a preceding step fails. (AI-inferred)
     always_execute: Any = None
-    # If set to `true`, the test stops and is marked as successful when this step succeeds. Defaults to `false`. (AI-inferred)
     exit_if_succeed: Any = None
-    # Whether the step is critical. If set to `true`, a failure of this step causes the entire synthetic test to fail. If `false`, the step can fail without failing the test. Defaults to `false`. (AI-inferred)
     is_critical: Any = None
     name: Any = None
-    # When set to true, screenshots are not taken for this step. (AI-inferred)
     no_screenshot: Any = None
-    # A dynamic object containing step-specific configuration, such as the element to interact with, text to input, or assertion details, depending on the step type in a Datadog synthetic browser test. (AI-inferred)
     params: Any = None
     public_id: Any = None
-    # The maximum time, in milliseconds, to wait for the step to complete before failing. (AI-inferred)
     timeout: Any = None
-    # The type of step in the browser test, determining the action to be performed. Allowed values include click, typeText, hover, wait, assertCurrentUrl, assertElementPresent, and others. (AI-inferred)
     type: Any = None
 
 _BrowserTest_Config_AssertionsFields = {
@@ -616,14 +576,10 @@ class BrowserTestConfig:
     locations: Any = None
     # Notification message associated with the test. Message can either be text or an empty string.
     message: Any = None
-    # The associated monitor ID.
-    monitor_id: Any = None
     # Name of the test.
     name: Any = None
     # Object describing the extra options for a Synthetic test.
     options: Any = None
-    # The public ID of the test.
-    public_id: Any = None
     # Define whether you want to start (`live`) or pause (`paused`) a Synthetic test.
     status: Any = None
     # Array of steps for the test.
@@ -668,14 +624,12 @@ BrowserTest = ubx.ResourceBinding(
         ),
         "locations": ubx.FieldSpec(wire_name="locations"),
         "message": ubx.FieldSpec(wire_name="message"),
-        "monitor_id": ubx.FieldSpec(wire_name="monitor_id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "options": ubx.FieldSpec(
             wire_name="options",
             kind="object",
             fields=_BrowserTest_OptionsFields,
         ),
-        "public_id": ubx.FieldSpec(wire_name="public_id"),
         "status": ubx.FieldSpec(wire_name="status"),
         "steps": ubx.FieldSpec(
             wire_name="steps",

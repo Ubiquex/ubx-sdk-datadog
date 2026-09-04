@@ -4,6 +4,10 @@ package change
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RequestResponse_Data_Attributes struct {
+	// Timestamp of when the change request was archived.
+	ArchivedAt any
+	// Custom attributes of the change request as key-value pairs.
+	Attributes any
 	// The UUID of an incident to link to the change request.
 	ChangeRequestLinkedIncidentUuid any
 	// The maintenance window query for the change request.
@@ -14,77 +18,170 @@ type RequestResponse_Data_Attributes struct {
 	ChangeRequestRisk any
 	// The type of the change request.
 	ChangeRequestType any
+	// Timestamp of when the change request was closed.
+	ClosedAt any
+	// Timestamp of when the change request was created.
+	CreatedAt any
+	// The source from which the change request was created.
+	CreationSource any
 	// The description of the change request.
 	Description any
 	// The planned end date of the change request.
 	EndDate any
+	// The human-readable key of the change request.
+	Key any
+	// Timestamp of when the change request was last modified.
+	ModifiedAt any
+	// The notebook ID associated with the change request plan.
+	PlanNotebookId any
+	// The priority of the change request.
+	Priority any
 	// The project UUID to associate with the change request.
 	ProjectId any
 	// A list of team handles to request decisions from.
 	RequestedTeams any
 	// The planned start date of the change request.
 	StartDate any
+	// The current status of the change request.
+	Status any
 	// The title of the change request.
 	Title any
+	// The case type.
+	Type any
+}
+
+type RequestResponse_Data_Relationships_ChangeRequestDecisions_Data struct {
+	Id   any
+	Type any
+}
+
+type RequestResponse_Data_Relationships_ChangeRequestDecisions struct {
+	// Array of decision relationship data.
+	Data any
+}
+
+type RequestResponse_Data_Relationships_CreatedBy struct {
+	// User relationship data.
+	Data any
+}
+
+type RequestResponse_Data_Relationships struct {
+	// Relationship to change request decisions.
+	ChangeRequestDecisions any
+	// Relationship to a user.
+	CreatedBy any
+	// Relationship to a user.
+	ModifiedBy any
 }
 
 type RequestResponse_Data struct {
 	// Attributes for creating a change request.
 	Attributes any
+	// The identifier of the change request.
+	Id any
+	// Relationships of a change request.
+	Relationships any
 	// Change request resource type.
 	Type any
 }
 
 type RequestResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Name any
-}
-
-type RequestResponse_Included_Relationships_ModifiedBy_Data struct {
-	Id any
-	Type any
-}
-
-type RequestResponse_Included_Relationships_ModifiedBy struct {
-	Data any
+	Name   any
 }
 
 type RequestResponse_Included_Relationships struct {
-	ModifiedBy any
+	ModifiedBy      any
 	RequestedByUser any
-	RequestedUser any
+	RequestedUser   any
 }
 
 type RequestResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var RequestResponse_Data_AttributesFields = ubx.FieldMap{
-		"ChangeRequestLinkedIncidentUuid": ubx.FieldSpec{WireName: "change_request_linked_incident_uuid"},
-		"ChangeRequestMaintenanceWindowQuery": ubx.FieldSpec{WireName: "change_request_maintenance_window_query"},
-		"ChangeRequestPlan": ubx.FieldSpec{WireName: "change_request_plan"},
-		"ChangeRequestRisk": ubx.FieldSpec{WireName: "change_request_risk"},
-		"ChangeRequestType": ubx.FieldSpec{WireName: "change_request_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"RequestedTeams": ubx.FieldSpec{WireName: "requested_teams"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"ArchivedAt":                          ubx.FieldSpec{WireName: "archived_at"},
+	"Attributes":                          ubx.FieldSpec{WireName: "attributes"},
+	"ChangeRequestLinkedIncidentUuid":     ubx.FieldSpec{WireName: "change_request_linked_incident_uuid"},
+	"ChangeRequestMaintenanceWindowQuery": ubx.FieldSpec{WireName: "change_request_maintenance_window_query"},
+	"ChangeRequestPlan":                   ubx.FieldSpec{WireName: "change_request_plan"},
+	"ChangeRequestRisk":                   ubx.FieldSpec{WireName: "change_request_risk"},
+	"ChangeRequestType":                   ubx.FieldSpec{WireName: "change_request_type"},
+	"ClosedAt":                            ubx.FieldSpec{WireName: "closed_at"},
+	"CreatedAt":                           ubx.FieldSpec{WireName: "created_at"},
+	"CreationSource":                      ubx.FieldSpec{WireName: "creation_source"},
+	"Description":                         ubx.FieldSpec{WireName: "description"},
+	"EndDate":                             ubx.FieldSpec{WireName: "end_date"},
+	"Key":                                 ubx.FieldSpec{WireName: "key"},
+	"ModifiedAt":                          ubx.FieldSpec{WireName: "modified_at"},
+	"PlanNotebookId":                      ubx.FieldSpec{WireName: "plan_notebook_id"},
+	"Priority":                            ubx.FieldSpec{WireName: "priority"},
+	"ProjectId":                           ubx.FieldSpec{WireName: "project_id"},
+	"RequestedTeams":                      ubx.FieldSpec{WireName: "requested_teams"},
+	"StartDate":                           ubx.FieldSpec{WireName: "start_date"},
+	"Status":                              ubx.FieldSpec{WireName: "status"},
+	"Title":                               ubx.FieldSpec{WireName: "title"},
+	"Type":                                ubx.FieldSpec{WireName: "type"},
+}
+
+var RequestResponse_Data_Relationships_ChangeRequestDecisions_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var RequestResponse_Data_Relationships_ChangeRequestDecisionsFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   RequestResponse_Data_Relationships_ChangeRequestDecisions_DataFields,
+	},
+}
+
+var RequestResponse_Data_Relationships_CreatedByFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   RequestResponse_Data_Relationships_ChangeRequestDecisions_DataFields,
+	},
+}
+
+var RequestResponse_Data_RelationshipsFields = ubx.FieldMap{
+	"ChangeRequestDecisions": ubx.FieldSpec{
+		WireName: "change_request_decisions",
+		Kind:     "object",
+		Fields:   RequestResponse_Data_Relationships_ChangeRequestDecisionsFields,
+	},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   RequestResponse_Data_Relationships_CreatedByFields,
+	},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   RequestResponse_Data_Relationships_CreatedByFields,
+	},
+}
 
 var RequestResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RequestResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RequestResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   RequestResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RequestResponseConfig struct {
 	// Data object to create a change request.
@@ -107,8 +204,8 @@ var RequestResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RequestResponse_DataFields,
+			Kind:     "object",
+			Fields:   RequestResponse_DataFields,
 		},
 		"ChangeRequestId": ubx.FieldSpec{WireName: "change_request_id"},
 	},

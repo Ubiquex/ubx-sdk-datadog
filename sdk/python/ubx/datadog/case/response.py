@@ -13,17 +13,69 @@ class Response_Data_Attributes_CustomAttributes:
     value: Any = None
 
 @dataclasses.dataclass
+class Response_Data_Attributes_JiraIssue_Result:
+    # Jira issue ID
+    issue_id: Any = None
+    # Jira issue key
+    issue_key: Any = None
+    # Jira issue URL
+    issue_url: Any = None
+    # Jira project key
+    project_key: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_JiraIssue:
+    # Jira issue information
+    result: Any = None
+    # Case status
+    status: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_ServiceNowTicket_Result:
+    # Link to the Incident created on ServiceNow
+    sys_target_link: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_ServiceNowTicket:
+    # ServiceNow ticket information
+    result: Any = None
+    # Case status
+    status: Any = None
+
+@dataclasses.dataclass
 class Response_Data_Attributes:
+    # Timestamp of when the case was archived
+    archived_at: Any = None
+    # Key-value pairs of case attributes. Each key maps to an array of string values, used for flexible metadata such as labels or tags.
+    attributes: Any = None
+    # Timestamp of when the case was closed
+    closed_at: Any = None
+    # Timestamp of when the case was created
+    created_at: Any = None
     # Case custom attributes
     custom_attributes: Any = None
     # Description
     description: Any = None
+    # Jira issue attached to case
+    jira_issue: Any = None
+    # Key
+    key: Any = None
+    # Timestamp of when the case was last modified
+    modified_at: Any = None
     # Case priority
     priority: Any = None
+    # ServiceNow ticket attached to case
+    service_now_ticket: Any = None
+    # Deprecated way of representing the case status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use `status_name` instead.
+    status: Any = None
+    # Status group of the case.
+    status_group: Any = None
     # Status of the case. Must be one of the existing statuses for the case's type.
     status_name: Any = None
     # Title
     title: Any = None
+    # Case type
+    type: Any = None
     # Case type UUID
     type_id: Any = None
 
@@ -43,6 +95,10 @@ class Response_Data_Relationships_Assignee:
 class Response_Data_Relationships:
     # Relationship to user.
     assignee: Any = None
+    # Relationship to user.
+    created_by: Any = None
+    # Relationship to user.
+    modified_by: Any = None
     # Relationship to project.
     project: Any = None
 
@@ -50,6 +106,8 @@ class Response_Data_Relationships:
 class Response_Data:
     # Case creation attributes
     attributes: Any = None
+    # Case's identifier
+    id: Any = None
     # Relationships formed with the case on creation
     relationships: Any = None
     # JSON:API resource type for cases.
@@ -61,16 +119,64 @@ _Response_Data_Attributes_CustomAttributesFields = {
     "value": ubx.FieldSpec(wire_name="value"),
 }
 
+_Response_Data_Attributes_JiraIssue_ResultFields = {
+    "issue_id": ubx.FieldSpec(wire_name="issue_id"),
+    "issue_key": ubx.FieldSpec(wire_name="issue_key"),
+    "issue_url": ubx.FieldSpec(wire_name="issue_url"),
+    "project_key": ubx.FieldSpec(wire_name="project_key"),
+}
+
+_Response_Data_Attributes_JiraIssueFields = {
+    "result": ubx.FieldSpec(
+        wire_name="result",
+        kind="object",
+        fields=_Response_Data_Attributes_JiraIssue_ResultFields,
+    ),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
+_Response_Data_Attributes_ServiceNowTicket_ResultFields = {
+    "sys_target_link": ubx.FieldSpec(wire_name="sys_target_link"),
+}
+
+_Response_Data_Attributes_ServiceNowTicketFields = {
+    "result": ubx.FieldSpec(
+        wire_name="result",
+        kind="object",
+        fields=_Response_Data_Attributes_ServiceNowTicket_ResultFields,
+    ),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
 _Response_Data_AttributesFields = {
+    "archived_at": ubx.FieldSpec(wire_name="archived_at"),
+    "attributes": ubx.FieldSpec(wire_name="attributes"),
+    "closed_at": ubx.FieldSpec(wire_name="closed_at"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "custom_attributes": ubx.FieldSpec(
         wire_name="custom_attributes",
         kind="map",
         fields=_Response_Data_Attributes_CustomAttributesFields,
     ),
     "description": ubx.FieldSpec(wire_name="description"),
+    "jira_issue": ubx.FieldSpec(
+        wire_name="jira_issue",
+        kind="object",
+        fields=_Response_Data_Attributes_JiraIssueFields,
+    ),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "priority": ubx.FieldSpec(wire_name="priority"),
+    "service_now_ticket": ubx.FieldSpec(
+        wire_name="service_now_ticket",
+        kind="object",
+        fields=_Response_Data_Attributes_ServiceNowTicketFields,
+    ),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "status_group": ubx.FieldSpec(wire_name="status_group"),
     "status_name": ubx.FieldSpec(wire_name="status_name"),
     "title": ubx.FieldSpec(wire_name="title"),
+    "type": ubx.FieldSpec(wire_name="type"),
     "type_id": ubx.FieldSpec(wire_name="type_id"),
 }
 
@@ -93,6 +199,16 @@ _Response_Data_RelationshipsFields = {
         kind="object",
         fields=_Response_Data_Relationships_AssigneeFields,
     ),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_Response_Data_Relationships_AssigneeFields,
+    ),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_Response_Data_Relationships_AssigneeFields,
+    ),
     "project": ubx.FieldSpec(
         wire_name="project",
         kind="object",
@@ -106,6 +222,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

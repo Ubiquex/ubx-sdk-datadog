@@ -4,11 +4,11 @@ package scan
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResultResponse_Data_Attributes_Libraries struct {
-	Exclusions any
-	IsDev any
-	IsDirect any
-	PackageManager any
-	Purl any
+	Exclusions       any
+	IsDev            any
+	IsDirect         any
+	PackageManager   any
+	Purl             any
 	TargetFrameworks any
 }
 
@@ -31,33 +31,33 @@ type ResultResponse_Data struct {
 }
 
 var ResultResponse_Data_Attributes_LibrariesFields = ubx.FieldMap{
-		"Exclusions": ubx.FieldSpec{WireName: "exclusions"},
-		"IsDev": ubx.FieldSpec{WireName: "is_dev"},
-		"IsDirect": ubx.FieldSpec{WireName: "is_direct"},
-		"PackageManager": ubx.FieldSpec{WireName: "package_manager"},
-		"Purl": ubx.FieldSpec{WireName: "purl"},
-		"TargetFrameworks": ubx.FieldSpec{WireName: "target_frameworks"},
-	}
+	"Exclusions":       ubx.FieldSpec{WireName: "exclusions"},
+	"IsDev":            ubx.FieldSpec{WireName: "is_dev"},
+	"IsDirect":         ubx.FieldSpec{WireName: "is_direct"},
+	"PackageManager":   ubx.FieldSpec{WireName: "package_manager"},
+	"Purl":             ubx.FieldSpec{WireName: "purl"},
+	"TargetFrameworks": ubx.FieldSpec{WireName: "target_frameworks"},
+}
 
 var ResultResponse_Data_AttributesFields = ubx.FieldMap{
-		"CommitHash": ubx.FieldSpec{WireName: "commit_hash"},
-		"Libraries": ubx.FieldSpec{
-			WireName: "libraries",
-			Kind: "list",
-			Fields: ResultResponse_Data_Attributes_LibrariesFields,
-		},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-	}
+	"CommitHash": ubx.FieldSpec{WireName: "commit_hash"},
+	"Libraries": ubx.FieldSpec{
+		WireName: "libraries",
+		Kind:     "list",
+		Fields:   ResultResponse_Data_Attributes_LibrariesFields,
+	},
+	"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
+}
 
 var ResultResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ResultResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ResultResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResultResponseConfig struct {
 	// The data object in an MCP SCA scan request, containing the scan attributes and request type.
@@ -78,8 +78,8 @@ var ResultResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ResultResponse_DataFields,
+			Kind:     "object",
+			Fields:   ResultResponse_DataFields,
 		},
 		"JobId": ubx.FieldSpec{WireName: "job_id"},
 	},

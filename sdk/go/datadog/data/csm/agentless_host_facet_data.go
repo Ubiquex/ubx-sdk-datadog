@@ -4,25 +4,25 @@ package csm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentlessHostFacetData_Data_Attributes struct {
-	Bounded any
-	Bundled any
+	Bounded        any
+	Bundled        any
 	BundledAndUsed any
-	DefaultValues any
-	Description any
-	Editable any
-	FacetType any
-	Groups any
-	Name any
-	Path any
-	Source any
-	Type any
-	Values any
+	DefaultValues  any
+	Description    any
+	Editable       any
+	FacetType      any
+	Groups         any
+	Name           any
+	Path           any
+	Source         any
+	Type           any
+	Values         any
 }
 
 type AgentlessHostFacetData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AgentlessHostFacetDataConfig struct {
@@ -35,6 +35,5 @@ type AgentlessHostFacetDataAttrs struct {
 
 var AgentlessHostFacetData = ubx.DataSourceBinding{
 	WireType: "datadog_csm_agentless_host_facet_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

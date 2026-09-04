@@ -3,15 +3,32 @@ package slocorrection
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Response_Data_Attributes_Creator struct {
+	// Email of the creator.
+	Email any
+	// Handle of the creator.
+	Handle any
+	// Name of the creator.
+	Name any
+}
+
 type Response_Data_Attributes struct {
 	// Category the SLO correction belongs to.
 	Category any
+	// The epoch timestamp of when the correction was created at.
+	CreatedAt any
+	// Object describing the creator of the shared element.
+	Creator any
 	// Description of the correction being made.
 	Description any
 	// Length of time (in seconds) for a specified `rrule` recurring SLO correction.
 	Duration any
 	// Ending time of the correction in epoch seconds.
 	End any
+	// The epoch timestamp of when the correction was modified at.
+	ModifiedAt any
+	// Modifier of the object.
+	Modifier any
 	// The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT`, `UNTIL` and `BYDAY`.
 	Rrule any
 	// ID of the single SLO that this correction applies to.
@@ -27,30 +44,51 @@ type Response_Data_Attributes struct {
 type Response_Data struct {
 	// The attribute object associated with the SLO correction to be created. Exactly one of `slo_id` or `slo_query` must be provided.
 	Attributes any
+	// The ID of the SLO correction.
+	Id any
 	// SLO correction resource type.
 	Type any
 }
 
+var Response_Data_Attributes_CreatorFields = ubx.FieldMap{
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
+
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Rrule": ubx.FieldSpec{WireName: "rrule"},
-		"SloId": ubx.FieldSpec{WireName: "slo_id"},
-		"SloQuery": ubx.FieldSpec{WireName: "slo_query"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Category":  ubx.FieldSpec{WireName: "category"},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"Creator": ubx.FieldSpec{
+		WireName: "creator",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_CreatorFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Duration":    ubx.FieldSpec{WireName: "duration"},
+	"End":         ubx.FieldSpec{WireName: "end"},
+	"ModifiedAt":  ubx.FieldSpec{WireName: "modified_at"},
+	"Modifier": ubx.FieldSpec{
+		WireName: "modifier",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_CreatorFields,
+	},
+	"Rrule":    ubx.FieldSpec{WireName: "rrule"},
+	"SloId":    ubx.FieldSpec{WireName: "slo_id"},
+	"SloQuery": ubx.FieldSpec{WireName: "slo_query"},
+	"Start":    ubx.FieldSpec{WireName: "start"},
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// The data object associated with the SLO correction to be created.
@@ -71,8 +109,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"SloCorrectionId": ubx.FieldSpec{WireName: "slo_correction_id"},
 	},

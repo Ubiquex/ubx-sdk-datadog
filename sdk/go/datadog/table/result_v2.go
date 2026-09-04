@@ -4,36 +4,36 @@ package table
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResultV2_Data_Attributes_FileMetadata_AccessDetails_AwsDetail struct {
-	AwsAccountId any
+	AwsAccountId  any
 	AwsBucketName any
-	FilePath any
+	FilePath      any
 }
 
 type ResultV2_Data_Attributes_FileMetadata_AccessDetails_AzureDetail struct {
-	AzureClientId any
-	AzureContainerName any
+	AzureClientId           any
+	AzureContainerName      any
 	AzureStorageAccountName any
-	AzureTenantId any
-	FilePath any
+	AzureTenantId           any
+	FilePath                any
 }
 
 type ResultV2_Data_Attributes_FileMetadata_AccessDetails_GcpDetail struct {
-	FilePath any
-	GcpBucketName any
-	GcpProjectId any
+	FilePath               any
+	GcpBucketName          any
+	GcpProjectId           any
 	GcpServiceAccountEmail any
 }
 
 type ResultV2_Data_Attributes_FileMetadata_AccessDetails struct {
-	AwsDetail any
+	AwsDetail   any
 	AzureDetail any
-	GcpDetail any
+	GcpDetail   any
 }
 
 type ResultV2_Data_Attributes_FileMetadata struct {
 	AccessDetails any
-	SyncEnabled any
-	UploadId any
+	SyncEnabled   any
+	UploadId      any
 }
 
 type ResultV2_Data_Attributes_Schema_Fields struct {
@@ -49,115 +49,133 @@ type ResultV2_Data_Attributes_Schema struct {
 }
 
 type ResultV2_Data_Attributes struct {
+	// UUID of the user who created the reference table.
+	CreatedBy any
 	// Optional text describing the purpose or contents of this reference table.
 	Description any
 	// Metadata specifying where and how to access the reference table's data file.
 	FileMetadata any
+	// UUID of the user who last updated the reference table.
+	LastUpdatedBy any
+	// The number of successfully processed rows in the reference table.
+	RowCount any
 	// Schema defining the structure and columns of the reference table.
 	Schema any
 	// The source type for creating reference table data. Only these source types can be created through this API.
 	Source any
+	// The processing status of the table.
+	Status any
 	// Name to identify this reference table.
 	TableName any
 	// Tags for organizing and filtering reference tables.
 	Tags any
+	// When the reference table was last updated, in ISO 8601 format.
+	UpdatedAt any
 }
 
 type ResultV2_Data struct {
 	// Attributes that define the reference table's configuration and properties.
 	Attributes any
+	// Unique identifier for the reference table.
+	Id any
 	// Reference table resource type.
 	Type any
 }
 
 var ResultV2_Data_Attributes_FileMetadata_AccessDetails_AwsDetailFields = ubx.FieldMap{
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"AwsBucketName": ubx.FieldSpec{WireName: "aws_bucket_name"},
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-	}
+	"AwsAccountId":  ubx.FieldSpec{WireName: "aws_account_id"},
+	"AwsBucketName": ubx.FieldSpec{WireName: "aws_bucket_name"},
+	"FilePath":      ubx.FieldSpec{WireName: "file_path"},
+}
 
 var ResultV2_Data_Attributes_FileMetadata_AccessDetails_AzureDetailFields = ubx.FieldMap{
-		"AzureClientId": ubx.FieldSpec{WireName: "azure_client_id"},
-		"AzureContainerName": ubx.FieldSpec{WireName: "azure_container_name"},
-		"AzureStorageAccountName": ubx.FieldSpec{WireName: "azure_storage_account_name"},
-		"AzureTenantId": ubx.FieldSpec{WireName: "azure_tenant_id"},
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-	}
+	"AzureClientId":           ubx.FieldSpec{WireName: "azure_client_id"},
+	"AzureContainerName":      ubx.FieldSpec{WireName: "azure_container_name"},
+	"AzureStorageAccountName": ubx.FieldSpec{WireName: "azure_storage_account_name"},
+	"AzureTenantId":           ubx.FieldSpec{WireName: "azure_tenant_id"},
+	"FilePath":                ubx.FieldSpec{WireName: "file_path"},
+}
 
 var ResultV2_Data_Attributes_FileMetadata_AccessDetails_GcpDetailFields = ubx.FieldMap{
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-		"GcpBucketName": ubx.FieldSpec{WireName: "gcp_bucket_name"},
-		"GcpProjectId": ubx.FieldSpec{WireName: "gcp_project_id"},
-		"GcpServiceAccountEmail": ubx.FieldSpec{WireName: "gcp_service_account_email"},
-	}
+	"FilePath":               ubx.FieldSpec{WireName: "file_path"},
+	"GcpBucketName":          ubx.FieldSpec{WireName: "gcp_bucket_name"},
+	"GcpProjectId":           ubx.FieldSpec{WireName: "gcp_project_id"},
+	"GcpServiceAccountEmail": ubx.FieldSpec{WireName: "gcp_service_account_email"},
+}
 
 var ResultV2_Data_Attributes_FileMetadata_AccessDetailsFields = ubx.FieldMap{
-		"AwsDetail": ubx.FieldSpec{
-			WireName: "aws_detail",
-			Kind: "object",
-			Fields: ResultV2_Data_Attributes_FileMetadata_AccessDetails_AwsDetailFields,
-		},
-		"AzureDetail": ubx.FieldSpec{
-			WireName: "azure_detail",
-			Kind: "object",
-			Fields: ResultV2_Data_Attributes_FileMetadata_AccessDetails_AzureDetailFields,
-		},
-		"GcpDetail": ubx.FieldSpec{
-			WireName: "gcp_detail",
-			Kind: "object",
-			Fields: ResultV2_Data_Attributes_FileMetadata_AccessDetails_GcpDetailFields,
-		},
-	}
+	"AwsDetail": ubx.FieldSpec{
+		WireName: "aws_detail",
+		Kind:     "object",
+		Fields:   ResultV2_Data_Attributes_FileMetadata_AccessDetails_AwsDetailFields,
+	},
+	"AzureDetail": ubx.FieldSpec{
+		WireName: "azure_detail",
+		Kind:     "object",
+		Fields:   ResultV2_Data_Attributes_FileMetadata_AccessDetails_AzureDetailFields,
+	},
+	"GcpDetail": ubx.FieldSpec{
+		WireName: "gcp_detail",
+		Kind:     "object",
+		Fields:   ResultV2_Data_Attributes_FileMetadata_AccessDetails_GcpDetailFields,
+	},
+}
 
 var ResultV2_Data_Attributes_FileMetadataFields = ubx.FieldMap{
-		"AccessDetails": ubx.FieldSpec{
-			WireName: "access_details",
-			Kind: "object",
-			Fields: ResultV2_Data_Attributes_FileMetadata_AccessDetailsFields,
-		},
-		"SyncEnabled": ubx.FieldSpec{WireName: "sync_enabled"},
-		"UploadId": ubx.FieldSpec{WireName: "upload_id"},
-	}
+	"AccessDetails": ubx.FieldSpec{
+		WireName: "access_details",
+		Kind:     "object",
+		Fields:   ResultV2_Data_Attributes_FileMetadata_AccessDetailsFields,
+	},
+	"SyncEnabled": ubx.FieldSpec{WireName: "sync_enabled"},
+	"UploadId":    ubx.FieldSpec{WireName: "upload_id"},
+}
 
 var ResultV2_Data_Attributes_Schema_FieldsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ResultV2_Data_Attributes_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: ResultV2_Data_Attributes_Schema_FieldsFields,
-		},
-		"PrimaryKeys": ubx.FieldSpec{WireName: "primary_keys"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   ResultV2_Data_Attributes_Schema_FieldsFields,
+	},
+	"PrimaryKeys": ubx.FieldSpec{WireName: "primary_keys"},
+}
 
 var ResultV2_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FileMetadata": ubx.FieldSpec{
-			WireName: "file_metadata",
-			Kind: "object",
-			Fields: ResultV2_Data_Attributes_FileMetadataFields,
-		},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: ResultV2_Data_Attributes_SchemaFields,
-		},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"CreatedBy":   ubx.FieldSpec{WireName: "created_by"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FileMetadata": ubx.FieldSpec{
+		WireName: "file_metadata",
+		Kind:     "object",
+		Fields:   ResultV2_Data_Attributes_FileMetadataFields,
+	},
+	"LastUpdatedBy": ubx.FieldSpec{WireName: "last_updated_by"},
+	"RowCount":      ubx.FieldSpec{WireName: "row_count"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   ResultV2_Data_Attributes_SchemaFields,
+	},
+	"Source":    ubx.FieldSpec{WireName: "source"},
+	"Status":    ubx.FieldSpec{WireName: "status"},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+	"Tags":      ubx.FieldSpec{WireName: "tags"},
+	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+}
 
 var ResultV2_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ResultV2_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ResultV2_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResultV2Config struct {
 	// The data object containing the table definition.
@@ -178,8 +196,8 @@ var ResultV2 = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ResultV2_DataFields,
+			Kind:     "object",
+			Fields:   ResultV2_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

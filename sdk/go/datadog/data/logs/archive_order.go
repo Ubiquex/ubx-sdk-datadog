@@ -25,6 +25,5 @@ type ArchiveOrderAttrs struct {
 
 var ArchiveOrder = ubx.DataSourceBinding{
 	WireType: "datadog_logs_archive_order",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

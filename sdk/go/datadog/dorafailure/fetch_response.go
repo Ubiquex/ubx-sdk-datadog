@@ -3,42 +3,91 @@ package dorafailure
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FetchResponse_Data_Attributes_Git struct {
+	// Git Commit SHA.
+	CommitSha any
+	// Git Repository URL
+	RepositoryUrl any
+}
+
 type FetchResponse_Data_Attributes struct {
+	// A list of user-defined tags. The tags must follow the `key:value` pattern. Up to 100 may be added per event.
+	CustomTags any
+	// Environment name that was impacted by the incident.
+	Env any
+	// The time when the incident finished.
+	FinishedAt any
 	// Minimum timestamp for requested events.
 	From any
+	// Git info for DORA Metrics events.
+	Git any
 	// Maximum number of events in the response.
 	Limit any
+	// Incident name.
+	Name any
 	// Search query with event platform syntax.
 	Query any
+	// Service names impacted by the incident.
+	Services any
+	// Incident severity.
+	Severity any
 	// Sort order (prefixed with `-` for descending).
 	Sort any
+	// The time when the incident started.
+	StartedAt any
+	// Name of the team owning the services impacted.
+	Team any
 	// Maximum timestamp for requested events.
 	To any
+	// Version to correlate with APM Deployment Tracking.
+	Version any
 }
 
 type FetchResponse_Data struct {
 	// Attributes to get a list of incidents.
 	Attributes any
+	// The ID of the incident event.
+	Id any
 	// The definition of `DORAListFailuresRequestDataType` object.
 	Type any
 }
 
+var FetchResponse_Data_Attributes_GitFields = ubx.FieldMap{
+	"CommitSha":     ubx.FieldSpec{WireName: "commit_sha"},
+	"RepositoryUrl": ubx.FieldSpec{WireName: "repository_url"},
+}
+
 var FetchResponse_Data_AttributesFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"CustomTags": ubx.FieldSpec{WireName: "custom_tags"},
+	"Env":        ubx.FieldSpec{WireName: "env"},
+	"FinishedAt": ubx.FieldSpec{WireName: "finished_at"},
+	"From":       ubx.FieldSpec{WireName: "from"},
+	"Git": ubx.FieldSpec{
+		WireName: "git",
+		Kind:     "object",
+		Fields:   FetchResponse_Data_Attributes_GitFields,
+	},
+	"Limit":     ubx.FieldSpec{WireName: "limit"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Query":     ubx.FieldSpec{WireName: "query"},
+	"Services":  ubx.FieldSpec{WireName: "services"},
+	"Severity":  ubx.FieldSpec{WireName: "severity"},
+	"Sort":      ubx.FieldSpec{WireName: "sort"},
+	"StartedAt": ubx.FieldSpec{WireName: "started_at"},
+	"Team":      ubx.FieldSpec{WireName: "team"},
+	"To":        ubx.FieldSpec{WireName: "to"},
+	"Version":   ubx.FieldSpec{WireName: "version"},
+}
 
 var FetchResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: FetchResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   FetchResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type FetchResponseConfig struct {
 	// The JSON:API data.
@@ -59,8 +108,8 @@ var FetchResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: FetchResponse_DataFields,
+			Kind:     "object",
+			Fields:   FetchResponse_DataFields,
 		},
 		"FailureId": ubx.FieldSpec{WireName: "failure_id"},
 	},

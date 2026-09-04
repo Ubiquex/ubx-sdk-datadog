@@ -99,10 +99,14 @@ class Response_Data_Attributes:
     aws_partition: Any = None
     # AWS Regions to collect data from. Defaults to `include_all`.
     aws_regions: Any = None
+    # Timestamp of when the account integration was created.
+    created_at: Any = None
     # AWS Logs Collection config.
     logs_config: Any = None
     # AWS Metrics Collection config.
     metrics_config: Any = None
+    # Timestamp of when the account integration was updated.
+    modified_at: Any = None
     # AWS Resources Collection config.
     resources_config: Any = None
     # AWS Traces Collection config.
@@ -112,6 +116,8 @@ class Response_Data_Attributes:
 class Response_Data:
     # The AWS Account Integration Config to be created.
     attributes: Any = None
+    # Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the [List all AWS integrations](https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations) endpoint and query by AWS Account ID.
+    id: Any = None
     # AWS Account resource type.
     type: Any = None
 
@@ -223,6 +229,7 @@ _Response_Data_AttributesFields = {
         kind="object",
         fields=_Response_Data_Attributes_AwsRegionsFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "logs_config": ubx.FieldSpec(
         wire_name="logs_config",
         kind="object",
@@ -233,6 +240,7 @@ _Response_Data_AttributesFields = {
         kind="object",
         fields=_Response_Data_Attributes_MetricsConfigFields,
     ),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "resources_config": ubx.FieldSpec(
         wire_name="resources_config",
         kind="object",
@@ -251,6 +259,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

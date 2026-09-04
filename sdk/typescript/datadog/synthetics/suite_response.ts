@@ -33,6 +33,8 @@ export interface SuiteResponse_Data_Attributes {
 export interface SuiteResponse_Data {
   /** Object containing details about a Synthetic suite. */
   attributes: SuiteResponse_Data_Attributes | Computed<SuiteResponse_Data_Attributes>;
+  /** The public ID for the suite. */
+  id?: string | Computed<string>;
   /** Type for the Synthetics suites responses, `suites`. */
   type: string | Computed<string>;
 }
@@ -71,6 +73,7 @@ const SuiteResponse_DataFields: FieldMap = {
     kind: "object",
     fields: SuiteResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

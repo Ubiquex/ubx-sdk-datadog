@@ -4,7 +4,7 @@ package tag
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Data_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -18,6 +18,5 @@ type DataAttrs struct {
 
 var Data = ubx.DataSourceBinding{
 	WireType: "datadog_tag_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

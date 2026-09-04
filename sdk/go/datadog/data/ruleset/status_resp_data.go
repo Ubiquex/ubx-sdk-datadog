@@ -9,8 +9,8 @@ type StatusRespData_Data_Attributes struct {
 
 type StatusRespData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type StatusRespDataConfig struct {
@@ -23,6 +23,5 @@ type StatusRespDataAttrs struct {
 
 var StatusRespData = ubx.DataSourceBinding{
 	WireType: "datadog_ruleset_status_resp_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

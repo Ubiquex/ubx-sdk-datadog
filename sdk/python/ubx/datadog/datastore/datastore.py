@@ -8,12 +8,22 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Datastore_Data_Attributes:
+    # Timestamp when the datastore was created.
+    created_at: Any = None
+    # The numeric ID of the user who created the datastore.
+    creator_user_id: Any = None
+    # The UUID of the user who created the datastore.
+    creator_user_uuid: Any = None
     # A human-readable description about the datastore.
     description: Any = None
+    # Timestamp when the datastore was last modified.
+    modified_at: Any = None
     # The display name for the new datastore.
     name: Any = None
     # The organization access level for the datastore. For example, 'contributor'.
     org_access: Any = None
+    # The ID of the organization that owns this datastore.
+    org_id: Any = None
     # The name of the primary key column for this datastore. Primary column names: - Must abide by both [PostgreSQL naming conventions](https://www.postgresql.org/docs/7.0/syntax525.htm) - Cannot exceed 63 characters
     primary_column_name: Any = None
     # Can be set to `uuid` to automatically generate primary keys when new items are added. Default value is `none`, which requires you to supply a primary key for each new item.
@@ -29,9 +39,14 @@ class Datastore_Data:
     type: Any = None
 
 _Datastore_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "creator_user_id": ubx.FieldSpec(wire_name="creator_user_id"),
+    "creator_user_uuid": ubx.FieldSpec(wire_name="creator_user_uuid"),
     "description": ubx.FieldSpec(wire_name="description"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
     "org_access": ubx.FieldSpec(wire_name="org_access"),
+    "org_id": ubx.FieldSpec(wire_name="org_id"),
     "primary_column_name": ubx.FieldSpec(wire_name="primary_column_name"),
     "primary_key_generation_strategy": ubx.FieldSpec(wire_name="primary_key_generation_strategy"),
 }

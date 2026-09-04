@@ -14,6 +14,15 @@ class ModifierRuleResponse_Data_Attributes_Action:
     type: Any = None
 
 @dataclasses.dataclass
+class ModifierRuleResponse_Data_Attributes_CreatedBy:
+    # The actor's identifier (a user UUID or a system identifier).
+    id: Any = None
+    # The name of the actor.
+    name: Any = None
+    # Whether the actor is a user or the Datadog system.
+    type: Any = None
+
+@dataclasses.dataclass
 class ModifierRuleResponse_Data_Attributes_Rule:
     # The list of security finding types that the automation rule applies to.
     finding_types: Any = None
@@ -24,8 +33,16 @@ class ModifierRuleResponse_Data_Attributes_Rule:
 class ModifierRuleResponse_Data_Attributes:
     # The action to take when a severity modifier rule matches a finding. This is a discriminated union on `type`: `set` assigns a fixed severity, while `shift` moves the severity up or down by one rank. A severity modifier rule's `rule.query` must not filter on `@severity` or on the `@severity_details.user_adjusted.*` namespace. Use `@severity_details.adjusted.value` instead, which reflects the severity before user-defined adjustments.
     action: Any = None
+    # The Unix timestamp in milliseconds when the rule was created.
+    created_at: Any = None
+    # The user or Datadog system who created the rule.
+    created_by: Any = None
     # Whether the severity modifier rule is enabled.
     enabled: Any = None
+    # The Unix timestamp in milliseconds when the rule was last modified.
+    modified_at: Any = None
+    # The user or Datadog system who last modified the rule.
+    modified_by: Any = None
     # The name of the severity modifier rule.
     name: Any = None
     # Defines the scope of findings to which the automation rule applies.
@@ -35,6 +52,8 @@ class ModifierRuleResponse_Data_Attributes:
 class ModifierRuleResponse_Data:
     # Attributes for creating or updating a severity modifier rule.
     attributes: Any = None
+    # The ID of the severity modifier rule.
+    id: Any = None
     # The JSON:API type for severity modifier rules.
     type: Any = None
 
@@ -42,6 +61,12 @@ _ModifierRuleResponse_Data_Attributes_ActionFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "severity": ubx.FieldSpec(wire_name="severity"),
     "severity_delta": ubx.FieldSpec(wire_name="severity_delta"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_ModifierRuleResponse_Data_Attributes_CreatedByFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
@@ -56,7 +81,19 @@ _ModifierRuleResponse_Data_AttributesFields = {
         kind="object",
         fields=_ModifierRuleResponse_Data_Attributes_ActionFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_ModifierRuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_ModifierRuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
     "rule": ubx.FieldSpec(
         wire_name="rule",
@@ -71,6 +108,7 @@ _ModifierRuleResponse_DataFields = {
         kind="object",
         fields=_ModifierRuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

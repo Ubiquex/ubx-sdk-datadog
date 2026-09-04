@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceResponseData_Data_Attributes struct {
 	EnableCustomMetrics any
-	Id any
-	ResourceType any
-	Tags any
+	Id                  any
+	ResourceType        any
+	Tags                any
 }
 
 type ResourceResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ResourceResponseDataConfig struct {

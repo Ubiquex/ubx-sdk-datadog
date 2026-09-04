@@ -4,20 +4,20 @@ package awsaccount
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes_AuthConfig struct {
-	AccessKeyId any
-	ExternalId any
-	RoleName any
+	AccessKeyId     any
+	ExternalId      any
+	RoleName        any
 	SecretAccessKey any
 }
 
 type Response_Data_Attributes_AwsRegions struct {
-	IncludeAll any
+	IncludeAll  any
 	IncludeOnly any
 }
 
 type Response_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfig_TagFilters struct {
 	Source any
-	Tags any
+	Tags   any
 }
 
 type Response_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfig struct {
@@ -42,7 +42,7 @@ type Response_Data_Attributes_LogsConfig struct {
 type Response_Data_Attributes_MetricsConfig_MetricNameFilters struct {
 	ExcludeOnly any
 	IncludeOnly any
-	Namespace any
+	Namespace   any
 }
 
 type Response_Data_Attributes_MetricsConfig_NamespaceFilters struct {
@@ -52,7 +52,7 @@ type Response_Data_Attributes_MetricsConfig_NamespaceFilters struct {
 
 type Response_Data_Attributes_MetricsConfig_TagFilters struct {
 	Namespace any
-	Tags any
+	Tags      any
 }
 
 type Response_Data_Attributes_MetricsConfig struct {
@@ -95,10 +95,14 @@ type Response_Data_Attributes struct {
 	AwsPartition any
 	// AWS Regions to collect data from. Defaults to `include_all`.
 	AwsRegions any
+	// Timestamp of when the account integration was created.
+	CreatedAt any
 	// AWS Logs Collection config.
 	LogsConfig any
 	// AWS Metrics Collection config.
 	MetricsConfig any
+	// Timestamp of when the account integration was updated.
+	ModifiedAt any
 	// AWS Resources Collection config.
 	ResourcesConfig any
 	// AWS Traces Collection config.
@@ -108,148 +112,153 @@ type Response_Data_Attributes struct {
 type Response_Data struct {
 	// The AWS Account Integration Config to be created.
 	Attributes any
+	// Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the [List all AWS integrations](https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations) endpoint and query by AWS Account ID.
+	Id any
 	// AWS Account resource type.
 	Type any
 }
 
 var Response_Data_Attributes_AuthConfigFields = ubx.FieldMap{
-		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"RoleName": ubx.FieldSpec{WireName: "role_name"},
-		"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
-	}
+	"AccessKeyId":     ubx.FieldSpec{WireName: "access_key_id"},
+	"ExternalId":      ubx.FieldSpec{WireName: "external_id"},
+	"RoleName":        ubx.FieldSpec{WireName: "role_name"},
+	"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
+}
 
 var Response_Data_Attributes_AwsRegionsFields = ubx.FieldMap{
-		"IncludeAll": ubx.FieldSpec{WireName: "include_all"},
-		"IncludeOnly": ubx.FieldSpec{WireName: "include_only"},
-	}
+	"IncludeAll":  ubx.FieldSpec{WireName: "include_all"},
+	"IncludeOnly": ubx.FieldSpec{WireName: "include_only"},
+}
 
 var Response_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfig_TagFiltersFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Tags":   ubx.FieldSpec{WireName: "tags"},
+}
 
 var Response_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfigFields = ubx.FieldMap{
-		"TagFilters": ubx.FieldSpec{
-			WireName: "tag_filters",
-			Kind: "list",
-			Fields: Response_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfig_TagFiltersFields,
-		},
-	}
+	"TagFilters": ubx.FieldSpec{
+		WireName: "tag_filters",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfig_TagFiltersFields,
+	},
+}
 
 var Response_Data_Attributes_LogsConfig_LambdaForwarderFields = ubx.FieldMap{
-		"Lambdas": ubx.FieldSpec{WireName: "lambdas"},
-		"LogSourceConfig": ubx.FieldSpec{
-			WireName: "log_source_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfigFields,
-		},
-		"Sources": ubx.FieldSpec{WireName: "sources"},
-	}
+	"Lambdas": ubx.FieldSpec{WireName: "lambdas"},
+	"LogSourceConfig": ubx.FieldSpec{
+		WireName: "log_source_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfigFields,
+	},
+	"Sources": ubx.FieldSpec{WireName: "sources"},
+}
 
 var Response_Data_Attributes_LogsConfigFields = ubx.FieldMap{
-		"LambdaForwarder": ubx.FieldSpec{
-			WireName: "lambda_forwarder",
-			Kind: "object",
-			Fields: Response_Data_Attributes_LogsConfig_LambdaForwarderFields,
-		},
-	}
+	"LambdaForwarder": ubx.FieldSpec{
+		WireName: "lambda_forwarder",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_LogsConfig_LambdaForwarderFields,
+	},
+}
 
 var Response_Data_Attributes_MetricsConfig_MetricNameFiltersFields = ubx.FieldMap{
-		"ExcludeOnly": ubx.FieldSpec{WireName: "exclude_only"},
-		"IncludeOnly": ubx.FieldSpec{WireName: "include_only"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"ExcludeOnly": ubx.FieldSpec{WireName: "exclude_only"},
+	"IncludeOnly": ubx.FieldSpec{WireName: "include_only"},
+	"Namespace":   ubx.FieldSpec{WireName: "namespace"},
+}
 
 var Response_Data_Attributes_MetricsConfig_NamespaceFiltersFields = ubx.FieldMap{
-		"ExcludeOnly": ubx.FieldSpec{WireName: "exclude_only"},
-		"IncludeOnly": ubx.FieldSpec{WireName: "include_only"},
-	}
+	"ExcludeOnly": ubx.FieldSpec{WireName: "exclude_only"},
+	"IncludeOnly": ubx.FieldSpec{WireName: "include_only"},
+}
 
 var Response_Data_Attributes_MetricsConfig_TagFiltersFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"Tags":      ubx.FieldSpec{WireName: "tags"},
+}
 
 var Response_Data_Attributes_MetricsConfigFields = ubx.FieldMap{
-		"AutomuteEnabled": ubx.FieldSpec{WireName: "automute_enabled"},
-		"CollectCloudwatchAlarms": ubx.FieldSpec{WireName: "collect_cloudwatch_alarms"},
-		"CollectCustomMetrics": ubx.FieldSpec{WireName: "collect_custom_metrics"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MetricNameFilters": ubx.FieldSpec{
-			WireName: "metric_name_filters",
-			Kind: "list",
-			Fields: Response_Data_Attributes_MetricsConfig_MetricNameFiltersFields,
-		},
-		"NamespaceFilters": ubx.FieldSpec{
-			WireName: "namespace_filters",
-			Kind: "object",
-			Fields: Response_Data_Attributes_MetricsConfig_NamespaceFiltersFields,
-		},
-		"TagFilters": ubx.FieldSpec{
-			WireName: "tag_filters",
-			Kind: "list",
-			Fields: Response_Data_Attributes_MetricsConfig_TagFiltersFields,
-		},
-	}
+	"AutomuteEnabled":         ubx.FieldSpec{WireName: "automute_enabled"},
+	"CollectCloudwatchAlarms": ubx.FieldSpec{WireName: "collect_cloudwatch_alarms"},
+	"CollectCustomMetrics":    ubx.FieldSpec{WireName: "collect_custom_metrics"},
+	"Enabled":                 ubx.FieldSpec{WireName: "enabled"},
+	"MetricNameFilters": ubx.FieldSpec{
+		WireName: "metric_name_filters",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_MetricsConfig_MetricNameFiltersFields,
+	},
+	"NamespaceFilters": ubx.FieldSpec{
+		WireName: "namespace_filters",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_MetricsConfig_NamespaceFiltersFields,
+	},
+	"TagFilters": ubx.FieldSpec{
+		WireName: "tag_filters",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_MetricsConfig_TagFiltersFields,
+	},
+}
 
 var Response_Data_Attributes_ResourcesConfigFields = ubx.FieldMap{
-		"CloudSecurityPostureManagementCollection": ubx.FieldSpec{WireName: "cloud_security_posture_management_collection"},
-		"ExtendedCollection": ubx.FieldSpec{WireName: "extended_collection"},
-	}
+	"CloudSecurityPostureManagementCollection": ubx.FieldSpec{WireName: "cloud_security_posture_management_collection"},
+	"ExtendedCollection":                       ubx.FieldSpec{WireName: "extended_collection"},
+}
 
 var Response_Data_Attributes_TracesConfigFields = ubx.FieldMap{
-		"XrayServices": ubx.FieldSpec{
-			WireName: "xray_services",
-			Kind: "object",
-			Fields: Response_Data_Attributes_AwsRegionsFields,
-		},
-	}
+	"XrayServices": ubx.FieldSpec{
+		WireName: "xray_services",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_AwsRegionsFields,
+	},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"AccountTags": ubx.FieldSpec{WireName: "account_tags"},
-		"AuthConfig": ubx.FieldSpec{
-			WireName: "auth_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_AuthConfigFields,
-		},
-		"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
-		"AwsPartition": ubx.FieldSpec{WireName: "aws_partition"},
-		"AwsRegions": ubx.FieldSpec{
-			WireName: "aws_regions",
-			Kind: "object",
-			Fields: Response_Data_Attributes_AwsRegionsFields,
-		},
-		"LogsConfig": ubx.FieldSpec{
-			WireName: "logs_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_LogsConfigFields,
-		},
-		"MetricsConfig": ubx.FieldSpec{
-			WireName: "metrics_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_MetricsConfigFields,
-		},
-		"ResourcesConfig": ubx.FieldSpec{
-			WireName: "resources_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_ResourcesConfigFields,
-		},
-		"TracesConfig": ubx.FieldSpec{
-			WireName: "traces_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_TracesConfigFields,
-		},
-	}
+	"AccountTags": ubx.FieldSpec{WireName: "account_tags"},
+	"AuthConfig": ubx.FieldSpec{
+		WireName: "auth_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_AuthConfigFields,
+	},
+	"AwsAccountId": ubx.FieldSpec{WireName: "aws_account_id"},
+	"AwsPartition": ubx.FieldSpec{WireName: "aws_partition"},
+	"AwsRegions": ubx.FieldSpec{
+		WireName: "aws_regions",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_AwsRegionsFields,
+	},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"LogsConfig": ubx.FieldSpec{
+		WireName: "logs_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_LogsConfigFields,
+	},
+	"MetricsConfig": ubx.FieldSpec{
+		WireName: "metrics_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_MetricsConfigFields,
+	},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"ResourcesConfig": ubx.FieldSpec{
+		WireName: "resources_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_ResourcesConfigFields,
+	},
+	"TracesConfig": ubx.FieldSpec{
+		WireName: "traces_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_TracesConfigFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// AWS Account Create Request data.
@@ -270,8 +279,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"AwsAccountConfigId": ubx.FieldSpec{WireName: "aws_account_config_id"},
 	},

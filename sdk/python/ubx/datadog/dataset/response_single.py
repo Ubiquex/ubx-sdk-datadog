@@ -13,6 +13,10 @@ class ResponseSingle_Data_Attributes_ProductFilters:
 
 @dataclasses.dataclass
 class ResponseSingle_Data_Attributes:
+    # Timestamp when the dataset was created.
+    created_at: Any = None
+    # Unique ID of the user who created the dataset.
+    created_by: Any = None
     # Name of the dataset.
     name: Any = None
     # List of access principals, formatted as `principal_type:id`. Principal can be 'team' or 'role'.
@@ -24,6 +28,8 @@ class ResponseSingle_Data_Attributes:
 class ResponseSingle_Data:
     # Dataset metadata and configurations.
     attributes: Any = None
+    # Unique identifier for the dataset.
+    id: Any = None
     # Resource type, always set to `dataset`.
     type: Any = None
 
@@ -33,6 +39,8 @@ _ResponseSingle_Data_Attributes_ProductFiltersFields = {
 }
 
 _ResponseSingle_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
     "name": ubx.FieldSpec(wire_name="name"),
     "principals": ubx.FieldSpec(wire_name="principals"),
     "product_filters": ubx.FieldSpec(
@@ -48,6 +56,7 @@ _ResponseSingle_DataFields = {
         kind="object",
         fields=_ResponseSingle_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

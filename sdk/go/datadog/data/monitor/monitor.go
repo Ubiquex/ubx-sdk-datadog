@@ -4,16 +4,37 @@ package monitor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitorConfig struct {
-	MonitorId any
+	GroupStates   any
+	IdOffset      any
+	MonitorTags   any
+	Name          any
+	Page          any
+	PageSize      any
+	Tags          any
+	WithDowntimes any
 }
 
 type MonitorAttrs struct {
-	MonitorId any
+	GroupStates   any
+	IdOffset      any
+	MonitorTags   any
+	Name          any
+	Page          any
+	PageSize      any
+	Tags          any
+	WithDowntimes any
 }
 
 var Monitor = ubx.DataSourceBinding{
 	WireType: "datadog_monitor",
 	Fields: ubx.FieldMap{
-		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
+		"GroupStates":   ubx.FieldSpec{WireName: "group_states"},
+		"IdOffset":      ubx.FieldSpec{WireName: "id_offset"},
+		"MonitorTags":   ubx.FieldSpec{WireName: "monitor_tags"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Page":          ubx.FieldSpec{WireName: "page"},
+		"PageSize":      ubx.FieldSpec{WireName: "page_size"},
+		"Tags":          ubx.FieldSpec{WireName: "tags"},
+		"WithDowntimes": ubx.FieldSpec{WireName: "with_downtimes"},
 	},
 }

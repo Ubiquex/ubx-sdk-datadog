@@ -4,20 +4,20 @@ package status
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Page_Data_Attributes_Components_Components struct {
-	Id any
-	Name any
+	Id       any
+	Name     any
 	Position any
-	Status any
-	Type any
+	Status   any
+	Type     any
 }
 
 type Page_Data_Attributes_Components struct {
 	Components any
-	Id any
-	Name any
-	Position any
-	Status any
-	Type any
+	Id         any
+	Name       any
+	Position   any
+	Status     any
+	Type       any
 }
 
 type Page_Data_Attributes struct {
@@ -25,14 +25,26 @@ type Page_Data_Attributes struct {
 	CompanyLogo any
 	// The components displayed on the status page.
 	Components any
+	// Timestamp of when the status page was created.
+	CreatedAt any
+	// If configured, the url that the status page is accessible at.
+	CustomDomain any
+	// Whether the custom domain is configured.
+	CustomDomainEnabled any
 	// The subdomain of the status page's url taking the form `https://{domain_prefix}.statuspage.datadoghq.com`. Globally unique across Datadog Status Pages.
 	DomainPrefix any
 	// Base64-encoded image data included in email notifications sent to status page subscribers.
 	EmailHeaderImage any
+	// Whether the status page is enabled.
+	Enabled any
 	// Base64-encoded image data displayed in the browser tab.
 	Favicon any
+	// Timestamp of when the status page was last modified.
+	ModifiedAt any
 	// The name of the status page.
 	Name any
+	// The url that the status page is accessible at.
+	PageUrl any
 	// The Slack app icon URL for the status page.
 	SlackAppIcon any
 	// Whether Slack subscriptions are enabled for the status page.
@@ -45,74 +57,135 @@ type Page_Data_Attributes struct {
 	VisualizationType any
 }
 
+type Page_Data_Relationships_CreatedByUser_Data struct {
+	// The ID of the Datadog user who created the status page.
+	Id any
+	// Users resource type.
+	Type any
+}
+
+type Page_Data_Relationships_CreatedByUser struct {
+	// The data object identifying the Datadog user who created the status page.
+	Data any
+}
+
+type Page_Data_Relationships struct {
+	// The Datadog user who created the status page.
+	CreatedByUser any
+	// The Datadog user who last modified the status page.
+	LastModifiedByUser any
+}
+
 type Page_Data struct {
 	// The supported attributes for creating a status page.
 	Attributes any
+	// The ID of the status page.
+	Id any
+	// The relationships of a status page.
+	Relationships any
 	// Status pages resource type.
 	Type any
 }
 
 type Page_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type Page_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 var Page_Data_Attributes_Components_ComponentsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Position": ubx.FieldSpec{WireName: "position"},
+	"Status":   ubx.FieldSpec{WireName: "status"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Page_Data_Attributes_ComponentsFields = ubx.FieldMap{
-		"Components": ubx.FieldSpec{
-			WireName: "components",
-			Kind: "list",
-			Fields: Page_Data_Attributes_Components_ComponentsFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Components": ubx.FieldSpec{
+		WireName: "components",
+		Kind:     "list",
+		Fields:   Page_Data_Attributes_Components_ComponentsFields,
+	},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Position": ubx.FieldSpec{WireName: "position"},
+	"Status":   ubx.FieldSpec{WireName: "status"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Page_Data_AttributesFields = ubx.FieldMap{
-		"CompanyLogo": ubx.FieldSpec{WireName: "company_logo"},
-		"Components": ubx.FieldSpec{
-			WireName: "components",
-			Kind: "list",
-			Fields: Page_Data_Attributes_ComponentsFields,
-		},
-		"DomainPrefix": ubx.FieldSpec{WireName: "domain_prefix"},
-		"EmailHeaderImage": ubx.FieldSpec{WireName: "email_header_image"},
-		"Favicon": ubx.FieldSpec{WireName: "favicon"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SlackAppIcon": ubx.FieldSpec{WireName: "slack_app_icon"},
-		"SlackSubscriptionsEnabled": ubx.FieldSpec{WireName: "slack_subscriptions_enabled"},
-		"SubscriptionsEnabled": ubx.FieldSpec{WireName: "subscriptions_enabled"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VisualizationType": ubx.FieldSpec{WireName: "visualization_type"},
-	}
+	"CompanyLogo": ubx.FieldSpec{WireName: "company_logo"},
+	"Components": ubx.FieldSpec{
+		WireName: "components",
+		Kind:     "list",
+		Fields:   Page_Data_Attributes_ComponentsFields,
+	},
+	"CreatedAt":                 ubx.FieldSpec{WireName: "created_at"},
+	"CustomDomain":              ubx.FieldSpec{WireName: "custom_domain"},
+	"CustomDomainEnabled":       ubx.FieldSpec{WireName: "custom_domain_enabled"},
+	"DomainPrefix":              ubx.FieldSpec{WireName: "domain_prefix"},
+	"EmailHeaderImage":          ubx.FieldSpec{WireName: "email_header_image"},
+	"Enabled":                   ubx.FieldSpec{WireName: "enabled"},
+	"Favicon":                   ubx.FieldSpec{WireName: "favicon"},
+	"ModifiedAt":                ubx.FieldSpec{WireName: "modified_at"},
+	"Name":                      ubx.FieldSpec{WireName: "name"},
+	"PageUrl":                   ubx.FieldSpec{WireName: "page_url"},
+	"SlackAppIcon":              ubx.FieldSpec{WireName: "slack_app_icon"},
+	"SlackSubscriptionsEnabled": ubx.FieldSpec{WireName: "slack_subscriptions_enabled"},
+	"SubscriptionsEnabled":      ubx.FieldSpec{WireName: "subscriptions_enabled"},
+	"Type":                      ubx.FieldSpec{WireName: "type"},
+	"VisualizationType":         ubx.FieldSpec{WireName: "visualization_type"},
+}
+
+var Page_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var Page_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Page_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
+
+var Page_Data_RelationshipsFields = ubx.FieldMap{
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   Page_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   Page_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var Page_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Page_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Page_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Page_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PageConfig struct {
 	// The data object for creating a status page.
@@ -135,8 +208,8 @@ var Page = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Page_DataFields,
+			Kind:     "object",
+			Fields:   Page_DataFields,
 		},
 		"PageId": ubx.FieldSpec{WireName: "page_id"},
 	},

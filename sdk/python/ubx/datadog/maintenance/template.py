@@ -12,19 +12,48 @@ class Template_Data_Attributes:
     completed_description: Any = None
     # The IDs of the components affected by a maintenance created from this template.
     component_ids: Any = None
+    # Timestamp of when the maintenance template was created.
+    created_at: Any = None
     # The description shown while a maintenance created from this template is in progress.
     in_progress_description: Any = None
     # The title used for a maintenance created from this template.
     maintenance_title: Any = None
+    # Timestamp of when the maintenance template was last modified.
+    modified_at: Any = None
     # The name of the maintenance template.
     name: Any = None
     # The description shown when a maintenance created from this template is scheduled.
     scheduled_description: Any = None
 
 @dataclasses.dataclass
+class Template_Data_Relationships_CreatedByUser_Data:
+    # The ID of the Datadog user who created the maintenance template.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class Template_Data_Relationships_CreatedByUser:
+    # The data object identifying the Datadog user who created the maintenance template.
+    data: Any = None
+
+@dataclasses.dataclass
+class Template_Data_Relationships:
+    # The Datadog user who created the maintenance template.
+    created_by_user: Any = None
+    # The Datadog user who last modified the maintenance template.
+    last_modified_by_user: Any = None
+    # The status page the maintenance template belongs to.
+    status_page: Any = None
+
+@dataclasses.dataclass
 class Template_Data:
     # The attributes for creating a maintenance template.
     attributes: Any = None
+    # The ID of the maintenance template.
+    id: Any = None
+    # The relationships of a maintenance template.
+    relationships: Any = None
     # Maintenance templates resource type.
     type: Any = None
 
@@ -35,15 +64,6 @@ class Template_Included_Attributes:
     icon: Any = None
     name: Any = None
     uuid: Any = None
-
-@dataclasses.dataclass
-class Template_Included_Relationships_CreatedByUser_Data:
-    id: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class Template_Included_Relationships_CreatedByUser:
-    data: Any = None
 
 @dataclasses.dataclass
 class Template_Included_Relationships:
@@ -60,10 +80,43 @@ class Template_Included:
 _Template_Data_AttributesFields = {
     "completed_description": ubx.FieldSpec(wire_name="completed_description"),
     "component_ids": ubx.FieldSpec(wire_name="component_ids"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "in_progress_description": ubx.FieldSpec(wire_name="in_progress_description"),
     "maintenance_title": ubx.FieldSpec(wire_name="maintenance_title"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
     "scheduled_description": ubx.FieldSpec(wire_name="scheduled_description"),
+}
+
+_Template_Data_Relationships_CreatedByUser_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Template_Data_Relationships_CreatedByUserFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_Template_Data_Relationships_CreatedByUser_DataFields,
+    ),
+}
+
+_Template_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_Template_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_Template_Data_Relationships_CreatedByUserFields,
+    ),
+    "status_page": ubx.FieldSpec(
+        wire_name="status_page",
+        kind="object",
+        fields=_Template_Data_Relationships_CreatedByUserFields,
+    ),
 }
 
 _Template_DataFields = {
@@ -71,6 +124,12 @@ _Template_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_Template_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_Template_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

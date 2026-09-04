@@ -4,19 +4,19 @@ package case_
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotificationRule_Data_Attributes_Recipients_Data struct {
-	Channel any
-	ChannelId any
-	ChannelName any
+	Channel       any
+	ChannelId     any
+	ChannelName   any
 	ConnectorName any
-	Email any
-	Name any
-	ServiceName any
-	TeamId any
-	TeamName any
-	TenantId any
-	TenantName any
-	Workspace any
-	WorkspaceId any
+	Email         any
+	Name          any
+	ServiceName   any
+	TeamId        any
+	TeamName      any
+	TenantId      any
+	TenantName    any
+	Workspace     any
+	WorkspaceId   any
 }
 
 type NotificationRule_Data_Attributes_Recipients struct {
@@ -25,12 +25,12 @@ type NotificationRule_Data_Attributes_Recipients struct {
 }
 
 type NotificationRule_Data_Attributes_Triggers_Data struct {
-	ChangeType any
-	Field any
-	FromStatus any
+	ChangeType     any
+	Field          any
+	FromStatus     any
 	FromStatusName any
-	ToStatus any
-	ToStatusName any
+	ToStatus       any
+	ToStatusName   any
 }
 
 type NotificationRule_Data_Attributes_Triggers struct {
@@ -39,16 +39,16 @@ type NotificationRule_Data_Attributes_Triggers struct {
 }
 
 type NotificationRule_Data_Attributes struct {
-	IsEnabled any
-	Query any
+	IsEnabled  any
+	Query      any
 	Recipients any
-	Triggers any
+	Triggers   any
 }
 
 type NotificationRule_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type NotificationRuleConfig struct {
@@ -57,7 +57,7 @@ type NotificationRuleConfig struct {
 
 type NotificationRuleAttrs struct {
 	// Notification rules data
-	Data any
+	Data      any
 	ProjectId any
 }
 

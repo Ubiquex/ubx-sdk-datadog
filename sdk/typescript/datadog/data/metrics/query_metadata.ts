@@ -27,7 +27,6 @@ export interface QueryMetadata_Series {
 
 export interface QueryMetadataConfig {
   from: number | Computed<number>;
-  query: string | Computed<string>;
   to: number | Computed<number>;
 }
 
@@ -57,7 +56,6 @@ export const QueryMetadata: DataSourceBinding<QueryMetadataConfig, QueryMetadata
   wireType: "datadog_metrics_query_metadata",
   fields: {
     from: "from",
-    query: "query",
     to: "to",
   },
 };

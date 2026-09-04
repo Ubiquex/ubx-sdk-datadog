@@ -4,29 +4,29 @@ package span
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Span_Data_Attributes struct {
-	Attributes any
-	Custom any
-	EndTimestamp any
-	Env any
-	Host any
+	Attributes      any
+	Custom          any
+	EndTimestamp    any
+	Env             any
+	Host            any
 	IngestionReason any
-	ParentId any
-	ResourceHash any
-	ResourceName any
-	RetainedBy any
-	Service any
-	SingleSpan any
-	SpanId any
-	StartTimestamp any
-	Tags any
-	TraceId any
-	Type any
+	ParentId        any
+	ResourceHash    any
+	ResourceName    any
+	RetainedBy      any
+	Service         any
+	SingleSpan      any
+	SpanId          any
+	StartTimestamp  any
+	Tags            any
+	TraceId         any
+	Type            any
 }
 
 type Span_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Span_Links struct {
@@ -40,9 +40,9 @@ type Span_Meta_Page struct {
 }
 
 type Span_Meta_Warnings struct {
-	Code any
+	Code   any
 	Detail any
-	Title any
+	Title  any
 }
 
 type Span_Meta struct {

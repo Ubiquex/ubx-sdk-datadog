@@ -4,6 +4,8 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface AuthPersonaMappingResponse_Data_Attributes {
   /** Datadog account identifier (email or handle) mapped to the AWS principal */
   accountIdentifier: string | Computed<string>;
+  /** Datadog account UUID */
+  accountUuid?: string | Computed<string>;
   /** AWS IAM ARN pattern to match for authentication */
   arnPattern: string | Computed<string>;
 }
@@ -11,12 +13,15 @@ export interface AuthPersonaMappingResponse_Data_Attributes {
 export interface AuthPersonaMappingResponse_Data {
   /** Attributes for creating an AWS cloud authentication persona mapping */
   attributes: AuthPersonaMappingResponse_Data_Attributes | Computed<AuthPersonaMappingResponse_Data_Attributes>;
+  /** Unique identifier for the persona mapping */
+  id?: string | Computed<string>;
   /** Type identifier for AWS cloud authentication persona mapping */
   type: string | Computed<string>;
 }
 
 const AuthPersonaMappingResponse_Data_AttributesFields: FieldMap = {
   accountIdentifier: "account_identifier",
+  accountUuid: "account_uuid",
   arnPattern: "arn_pattern",
 };
 
@@ -26,6 +31,7 @@ const AuthPersonaMappingResponse_DataFields: FieldMap = {
     kind: "object",
     fields: AuthPersonaMappingResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

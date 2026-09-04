@@ -4,44 +4,44 @@ package ai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomRulesetResponseData_Data_Attributes_Rules_LastRevision struct {
-	Category any
-	Checksum any
-	Content any
-	CreatedAt any
-	CreatedBy any
-	Cwe any
-	Description any
-	Directories any
-	ExecutionMode any
-	Globs any
-	IsDefault any
-	IsPublished any
-	IsTesting any
-	Severity any
+	Category         any
+	Checksum         any
+	Content          any
+	CreatedAt        any
+	CreatedBy        any
+	Cwe              any
+	Description      any
+	Directories      any
+	ExecutionMode    any
+	Globs            any
+	IsDefault        any
+	IsPublished      any
+	IsTesting        any
+	Severity         any
 	ShortDescription any
-	VersionId any
+	VersionId        any
 }
 
 type CustomRulesetResponseData_Data_Attributes_Rules struct {
-	CreatedAt any
-	CreatedBy any
+	CreatedAt    any
+	CreatedBy    any
 	LastRevision any
-	Name any
+	Name         any
 }
 
 type CustomRulesetResponseData_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Name any
-	Rules any
+	CreatedAt        any
+	CreatedBy        any
+	Description      any
+	Name             any
+	Rules            any
 	ShortDescription any
 }
 
 type CustomRulesetResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type CustomRulesetResponseDataConfig struct {
@@ -54,6 +54,5 @@ type CustomRulesetResponseDataAttrs struct {
 
 var CustomRulesetResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_ai_custom_ruleset_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

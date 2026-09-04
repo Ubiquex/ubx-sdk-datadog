@@ -8,6 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Response_Data_Attributes:
+    # Creation time of the campaign.
+    created_at: Any = None
     # The description of the campaign.
     description: Any = None
     # The due date of the campaign.
@@ -18,8 +20,12 @@ class Response_Data_Attributes:
     guidance: Any = None
     # The unique key for the campaign.
     key: Any = None
+    # Time of last campaign modification.
+    modified_at: Any = None
     # The name of the campaign.
     name: Any = None
+    # The UUID of the campaign owner.
+    owner: Any = None
     # The UUID of the campaign owner.
     owner_id: Any = None
     # Array of rule IDs associated with this campaign.
@@ -33,16 +39,21 @@ class Response_Data_Attributes:
 class Response_Data:
     # Attributes for creating a new campaign.
     attributes: Any = None
+    # The unique ID of the campaign.
+    id: Any = None
     # The JSON:API type for campaigns.
     type: Any = None
 
 _Response_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "description": ubx.FieldSpec(wire_name="description"),
     "due_date": ubx.FieldSpec(wire_name="due_date"),
     "entity_scope": ubx.FieldSpec(wire_name="entity_scope"),
     "guidance": ubx.FieldSpec(wire_name="guidance"),
     "key": ubx.FieldSpec(wire_name="key"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "owner": ubx.FieldSpec(wire_name="owner"),
     "owner_id": ubx.FieldSpec(wire_name="owner_id"),
     "rule_ids": ubx.FieldSpec(wire_name="rule_ids"),
     "start_date": ubx.FieldSpec(wire_name="start_date"),
@@ -55,6 +66,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

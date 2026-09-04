@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponseData_Data_Attributes_Author struct {
 	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	Name any
-	Status any
-	Title any
-	Verified any
+	Disabled  any
+	Email     any
+	Handle    any
+	Icon      any
+	Name      any
+	Status    any
+	Title     any
+	Verified  any
 }
 
 type ResponseData_Data_Attributes_Cells_Attributes_Definition struct {
@@ -26,29 +26,29 @@ type ResponseData_Data_Attributes_Cells_Attributes_SplitBy struct {
 }
 
 type ResponseData_Data_Attributes_Cells_Attributes_Time struct {
-	End any
-	Live any
+	End      any
+	Live     any
 	LiveSpan any
-	Start any
+	Start    any
 }
 
 type ResponseData_Data_Attributes_Cells_Attributes struct {
 	Definition any
-	GraphSize any
-	SplitBy any
-	Time any
+	GraphSize  any
+	SplitBy    any
+	Time       any
 }
 
 type ResponseData_Data_Attributes_Cells struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ResponseData_Data_Attributes_Metadata struct {
-	IsTemplate any
+	IsTemplate    any
 	TakeSnapshots any
-	Type any
+	Type          any
 }
 
 type ResponseData_Data_Attributes_TemplateVariables_AvailableValuesQuery_GroupBy struct {
@@ -61,39 +61,39 @@ type ResponseData_Data_Attributes_TemplateVariables_AvailableValuesQuery_Search 
 
 type ResponseData_Data_Attributes_TemplateVariables_AvailableValuesQuery struct {
 	DataSource any
-	GroupBy any
-	Query any
-	Search any
+	GroupBy    any
+	Query      any
+	Search     any
 }
 
 type ResponseData_Data_Attributes_TemplateVariables struct {
-	AvailableValues any
+	AvailableValues      any
 	AvailableValuesQuery any
-	DataSourceMappings any
-	Default any
-	Defaults any
-	Name any
-	Placement any
-	Prefix any
-	Type any
+	DataSourceMappings   any
+	Default              any
+	Defaults             any
+	Name                 any
+	Placement            any
+	Prefix               any
+	Type                 any
 }
 
 type ResponseData_Data_Attributes struct {
-	Author any
-	Cells any
-	Created any
-	Metadata any
-	Modified any
-	Name any
-	Status any
+	Author            any
+	Cells             any
+	Created           any
+	Metadata          any
+	Modified          any
+	Name              any
+	Status            any
 	TemplateVariables any
-	Time any
+	Time              any
 }
 
 type ResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ResponseData_Meta_Page struct {
@@ -109,47 +109,47 @@ type ResponseData_Meta struct {
 }
 
 type ResponseDataConfig struct {
-	AuthorHandle any
-	Count any
+	AuthorHandle        any
+	Count               any
 	ExcludeAuthorHandle any
-	IncludeCells any
-	IsTemplate any
-	Query any
-	SortDir any
-	SortField any
-	Start any
-	Type any
+	IncludeCells        any
+	IsTemplate          any
+	Query               any
+	SortDir             any
+	SortField           any
+	Start               any
+	Type                any
 }
 
 type ResponseDataAttrs struct {
 	AuthorHandle any
-	Count any
+	Count        any
 	// List of notebook definitions.
-	Data any
+	Data                any
 	ExcludeAuthorHandle any
-	IncludeCells any
-	IsTemplate any
+	IncludeCells        any
+	IsTemplate          any
 	// Searches metadata returned by the API.
-	Meta any
-	Query any
-	SortDir any
+	Meta      any
+	Query     any
+	SortDir   any
 	SortField any
-	Start any
-	Type any
+	Start     any
+	Type      any
 }
 
 var ResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_notebooks_response_data",
 	Fields: ubx.FieldMap{
-		"AuthorHandle": ubx.FieldSpec{WireName: "author_handle"},
-		"Count": ubx.FieldSpec{WireName: "count"},
+		"AuthorHandle":        ubx.FieldSpec{WireName: "author_handle"},
+		"Count":               ubx.FieldSpec{WireName: "count"},
 		"ExcludeAuthorHandle": ubx.FieldSpec{WireName: "exclude_author_handle"},
-		"IncludeCells": ubx.FieldSpec{WireName: "include_cells"},
-		"IsTemplate": ubx.FieldSpec{WireName: "is_template"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"SortDir": ubx.FieldSpec{WireName: "sort_dir"},
-		"SortField": ubx.FieldSpec{WireName: "sort_field"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"IncludeCells":        ubx.FieldSpec{WireName: "include_cells"},
+		"IsTemplate":          ubx.FieldSpec{WireName: "is_template"},
+		"Query":               ubx.FieldSpec{WireName: "query"},
+		"SortDir":             ubx.FieldSpec{WireName: "sort_dir"},
+		"SortField":           ubx.FieldSpec{WireName: "sort_field"},
+		"Start":               ubx.FieldSpec{WireName: "start"},
+		"Type":                ubx.FieldSpec{WireName: "type"},
 	},
 }

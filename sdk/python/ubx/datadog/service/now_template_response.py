@@ -27,6 +27,8 @@ class NowTemplateResponse_Data_Attributes:
 class NowTemplateResponse_Data:
     # Attributes for creating a ServiceNow template
     attributes: Any = None
+    # Unique identifier for the ServiceNow template
+    id: Any = None
     # Type identifier for ServiceNow template resources
     type: Any = None
 
@@ -46,6 +48,7 @@ _NowTemplateResponse_DataFields = {
         kind="object",
         fields=_NowTemplateResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

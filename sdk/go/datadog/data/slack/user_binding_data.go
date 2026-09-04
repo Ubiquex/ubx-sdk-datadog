@@ -4,7 +4,7 @@ package slack
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserBindingData_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -14,7 +14,7 @@ type UserBindingDataConfig struct {
 
 type UserBindingDataAttrs struct {
 	// An array of Slack user bindings.
-	Data any
+	Data     any
 	UserUuid any
 }
 

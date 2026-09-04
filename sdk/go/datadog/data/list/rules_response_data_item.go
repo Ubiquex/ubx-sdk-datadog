@@ -4,21 +4,21 @@ package list
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RulesResponseDataItem_Data_Attributes struct {
-	Category any
-	CreatedAt any
-	Custom any
-	Description any
-	Enabled any
-	Level any
-	ModifiedAt any
-	Name any
-	Owner any
-	ScopeQuery any
+	Category      any
+	CreatedAt     any
+	Custom        any
+	Description   any
+	Enabled       any
+	Level         any
+	ModifiedAt    any
+	Name          any
+	Owner         any
+	ScopeQuery    any
 	ScorecardName any
 }
 
 type RulesResponseDataItem_Data_Relationships_Scorecard_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -31,10 +31,10 @@ type RulesResponseDataItem_Data_Relationships struct {
 }
 
 type RulesResponseDataItem_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type RulesResponseDataItem_Links struct {
@@ -48,7 +48,7 @@ type RulesResponseDataItemConfig struct {
 
 type RulesResponseDataItemAttrs struct {
 	// Array of rule details.
-	Data any
+	Data    any
 	Include any
 	// Links attributes.
 	Links any

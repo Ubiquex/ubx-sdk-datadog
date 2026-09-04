@@ -2,28 +2,42 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Response_Data_Attributes {
+  /** The timestamp when the environment was created. */
+  createdAt?: string | Computed<string>;
+  /** The description of the environment. */
+  description?: string | Computed<string>;
   /** Indicates whether this is a production environment. */
   isProduction?: boolean | Computed<boolean>;
+  /** The unique key of the environment. */
+  key?: string | Computed<string>;
   /** The name of the environment. */
   name: string | Computed<string>;
   /** List of queries to define the environment scope. */
   queries: string[] | Computed<string[]>;
   /** Indicates whether feature flag changes require approval in this environment. */
   requireFeatureFlagApproval?: boolean | Computed<boolean>;
+  /** The timestamp when the environment was last updated. */
+  updatedAt?: string | Computed<string>;
 }
 
 export interface Response_Data {
   /** Attributes for creating a new environment. */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** The unique identifier of the environment. */
+  id?: string | Computed<string>;
   /** The resource type. */
   type: string | Computed<string>;
 }
 
 const Response_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  description: "description",
   isProduction: "is_production",
+  key: "key",
   name: "name",
   queries: "queries",
   requireFeatureFlagApproval: "require_feature_flag_approval",
+  updatedAt: "updated_at",
 };
 
 const Response_DataFields: FieldMap = {
@@ -32,6 +46,7 @@ const Response_DataFields: FieldMap = {
     kind: "object",
     fields: Response_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

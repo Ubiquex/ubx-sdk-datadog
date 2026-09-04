@@ -15,10 +15,14 @@ class NotificationRule_Data_Attributes_Conditions:
 class NotificationRule_Data_Attributes:
     # The conditions that trigger this notification rule.
     conditions: Any = None
+    # Timestamp when the notification rule was created.
+    created: Any = None
     # Whether the notification rule is enabled.
     enabled: Any = None
     # The notification handles (targets) for this rule.
     handles: Any = None
+    # Timestamp when the notification rule was last modified.
+    modified: Any = None
     # List of incident fields that trigger re-notification when changed.
     renotify_on: Any = None
     # The trigger event for this notification rule.
@@ -27,21 +31,25 @@ class NotificationRule_Data_Attributes:
     visibility: Any = None
 
 @dataclasses.dataclass
-class NotificationRule_Data_Relationships_IncidentType_Data:
-    # The incident type's ID.
+class NotificationRule_Data_Relationships_CreatedByUser_Data:
+    # A unique identifier that represents the user.
     id: Any = None
-    # Incident type resource type.
+    # Users resource type.
     type: Any = None
 
 @dataclasses.dataclass
-class NotificationRule_Data_Relationships_IncidentType:
-    # Relationship to incident type object.
+class NotificationRule_Data_Relationships_CreatedByUser:
+    # Relationship to user object.
     data: Any = None
 
 @dataclasses.dataclass
 class NotificationRule_Data_Relationships:
+    # Relationship to user.
+    created_by_user: Any = None
     # Relationship to an incident type.
     incident_type: Any = None
+    # Relationship to user.
+    last_modified_by_user: Any = None
     # A relationship reference to a notification template.
     notification_template: Any = None
 
@@ -49,6 +57,8 @@ class NotificationRule_Data_Relationships:
 class NotificationRule_Data:
     # The attributes for creating a notification rule.
     attributes: Any = None
+    # The unique identifier of the notification rule.
+    id: Any = None
     # The definition of `NotificationRuleCreateDataRelationships` object.
     relationships: Any = None
     # Notification rules resource type.
@@ -100,36 +110,48 @@ _NotificationRule_Data_AttributesFields = {
         kind="list",
         fields=_NotificationRule_Data_Attributes_ConditionsFields,
     ),
+    "created": ubx.FieldSpec(wire_name="created"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
     "handles": ubx.FieldSpec(wire_name="handles"),
+    "modified": ubx.FieldSpec(wire_name="modified"),
     "renotify_on": ubx.FieldSpec(wire_name="renotify_on"),
     "trigger": ubx.FieldSpec(wire_name="trigger"),
     "visibility": ubx.FieldSpec(wire_name="visibility"),
 }
 
-_NotificationRule_Data_Relationships_IncidentType_DataFields = {
+_NotificationRule_Data_Relationships_CreatedByUser_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_NotificationRule_Data_Relationships_IncidentTypeFields = {
+_NotificationRule_Data_Relationships_CreatedByUserFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_NotificationRule_Data_Relationships_IncidentType_DataFields,
+        fields=_NotificationRule_Data_Relationships_CreatedByUser_DataFields,
     ),
 }
 
 _NotificationRule_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_NotificationRule_Data_Relationships_CreatedByUserFields,
+    ),
     "incident_type": ubx.FieldSpec(
         wire_name="incident_type",
         kind="object",
-        fields=_NotificationRule_Data_Relationships_IncidentTypeFields,
+        fields=_NotificationRule_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_NotificationRule_Data_Relationships_CreatedByUserFields,
     ),
     "notification_template": ubx.FieldSpec(
         wire_name="notification_template",
         kind="object",
-        fields=_NotificationRule_Data_Relationships_IncidentTypeFields,
+        fields=_NotificationRule_Data_Relationships_CreatedByUserFields,
     ),
 }
 
@@ -139,6 +161,7 @@ _NotificationRule_DataFields = {
         kind="object",
         fields=_NotificationRule_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

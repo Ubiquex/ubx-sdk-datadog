@@ -53,7 +53,7 @@ type ControlDetectionResponseConfig struct {
 
 type ControlDetectionResponseAttrs struct {
 	// A governance control detection resource.
-	Data any
+	Data        any
 	DetectionId any
 }
 

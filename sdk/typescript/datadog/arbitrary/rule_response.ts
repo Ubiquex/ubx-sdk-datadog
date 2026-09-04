@@ -42,10 +42,16 @@ export interface RuleResponse_Data_Attributes_Strategy {
 export interface RuleResponse_Data_Attributes {
   /** The `attributes` `costs_to_allocate`. */
   costsToAllocate: RuleResponse_Data_Attributes_CostsToAllocate[] | Computed<RuleResponse_Data_Attributes_CostsToAllocate[]>;
+  /** The `attributes` `created`. */
+  created?: string | Computed<string>;
   /** The `attributes` `enabled`. */
   enabled?: boolean | Computed<boolean>;
+  /** The `attributes` `last_modified_user_uuid`. */
+  lastModifiedUserUuid?: string | Computed<string>;
   /** The `attributes` `order_id`. */
   orderId?: number | Computed<number>;
+  /** The `attributes` `processing_status`. */
+  processingStatus?: string | Computed<string>;
   /** The `attributes` `provider`. */
   provider: string[] | Computed<string[]>;
   /** The `attributes` `rejected`. */
@@ -56,6 +62,10 @@ export interface RuleResponse_Data_Attributes {
   strategy: RuleResponse_Data_Attributes_Strategy | Computed<RuleResponse_Data_Attributes_Strategy>;
   /** The `attributes` `type`. */
   type: string | Computed<string>;
+  /** The `attributes` `updated`. */
+  updated?: string | Computed<string>;
+  /** The `attributes` `version`. */
+  version?: number | Computed<number>;
 }
 
 export interface RuleResponse_Data {
@@ -122,8 +132,11 @@ const RuleResponse_Data_AttributesFields: FieldMap = {
     kind: "list",
     fields: RuleResponse_Data_Attributes_CostsToAllocateFields,
   },
+  created: "created",
   enabled: "enabled",
+  lastModifiedUserUuid: "last_modified_user_uuid",
   orderId: "order_id",
+  processingStatus: "processing_status",
   provider: "provider",
   rejected: "rejected",
   ruleName: "rule_name",
@@ -133,6 +146,8 @@ const RuleResponse_Data_AttributesFields: FieldMap = {
     fields: RuleResponse_Data_Attributes_StrategyFields,
   },
   type: "type",
+  updated: "updated",
+  version: "version",
 };
 
 const RuleResponse_DataFields: FieldMap = {

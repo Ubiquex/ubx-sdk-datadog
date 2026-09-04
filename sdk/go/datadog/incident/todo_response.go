@@ -20,37 +20,51 @@ type TodoResponse_Data_Attributes struct {
 	Modified any
 }
 
+type TodoResponse_Data_Relationships_CreatedByUser_Data struct {
+	// A unique identifier that represents the user.
+	Id any
+	// Users resource type.
+	Type any
+}
+
+type TodoResponse_Data_Relationships_CreatedByUser struct {
+	// Relationship to user object.
+	Data any
+}
+
+type TodoResponse_Data_Relationships struct {
+	// Relationship to user.
+	CreatedByUser any
+	// Relationship to user.
+	LastModifiedByUser any
+}
+
 type TodoResponse_Data struct {
 	// Incident todo's attributes.
 	Attributes any
+	// The incident todo's ID.
+	Id any
+	// The incident's relationships from a response.
+	Relationships any
 	// Todo resource type.
 	Type any
 }
 
 type TodoResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
-}
-
-type TodoResponse_Included_Relationships_Org_Data struct {
-	Id any
-	Type any
-}
-
-type TodoResponse_Included_Relationships_Org struct {
-	Data any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type TodoResponse_Included_Relationships_OtherOrgs struct {
@@ -58,37 +72,69 @@ type TodoResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type TodoResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type TodoResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var TodoResponse_Data_AttributesFields = ubx.FieldMap{
-		"Assignees": ubx.FieldSpec{WireName: "assignees"},
-		"Completed": ubx.FieldSpec{WireName: "completed"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Created": ubx.FieldSpec{WireName: "created"},
-		"DueDate": ubx.FieldSpec{WireName: "due_date"},
-		"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
-		"Modified": ubx.FieldSpec{WireName: "modified"},
-	}
+	"Assignees":  ubx.FieldSpec{WireName: "assignees"},
+	"Completed":  ubx.FieldSpec{WireName: "completed"},
+	"Content":    ubx.FieldSpec{WireName: "content"},
+	"Created":    ubx.FieldSpec{WireName: "created"},
+	"DueDate":    ubx.FieldSpec{WireName: "due_date"},
+	"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
+	"Modified":   ubx.FieldSpec{WireName: "modified"},
+}
+
+var TodoResponse_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var TodoResponse_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   TodoResponse_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
+
+var TodoResponse_Data_RelationshipsFields = ubx.FieldMap{
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   TodoResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   TodoResponse_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var TodoResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: TodoResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   TodoResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   TodoResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type TodoResponseConfig struct {
 	// Incident todo data for a create request.
@@ -115,10 +161,10 @@ var TodoResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: TodoResponse_DataFields,
+			Kind:     "object",
+			Fields:   TodoResponse_DataFields,
 		},
 		"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
-		"TodoId": ubx.FieldSpec{WireName: "todo_id"},
+		"TodoId":     ubx.FieldSpec{WireName: "todo_id"},
 	},
 }

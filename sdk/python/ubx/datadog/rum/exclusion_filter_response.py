@@ -18,9 +18,22 @@ class ExclusionFilterResponse_Data_Attributes:
     query: Any = None
 
 @dataclasses.dataclass
+class ExclusionFilterResponse_Data_Meta:
+    # Unix epoch (in milliseconds) when the exclusion filter was last enabled.
+    enabled_at: Any = None
+    # Unix epoch (in milliseconds) of the last update.
+    updated_at: Any = None
+    # Handle of the user who last updated the exclusion filter.
+    updated_by_handle: Any = None
+
+@dataclasses.dataclass
 class ExclusionFilterResponse_Data:
     # The attributes of an exclusion filter to create.
     attributes: Any = None
+    # The ID of the exclusion filter.
+    id: Any = None
+    # Metadata about the exclusion filter.
+    meta: Any = None
     # The resource type. The value must be `exclusion_filters`.
     type: Any = None
 
@@ -31,11 +44,23 @@ _ExclusionFilterResponse_Data_AttributesFields = {
     "query": ubx.FieldSpec(wire_name="query"),
 }
 
+_ExclusionFilterResponse_Data_MetaFields = {
+    "enabled_at": ubx.FieldSpec(wire_name="enabled_at"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updated_by_handle": ubx.FieldSpec(wire_name="updated_by_handle"),
+}
+
 _ExclusionFilterResponse_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
         kind="object",
         fields=_ExclusionFilterResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "meta": ubx.FieldSpec(
+        wire_name="meta",
+        kind="object",
+        fields=_ExclusionFilterResponse_Data_MetaFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

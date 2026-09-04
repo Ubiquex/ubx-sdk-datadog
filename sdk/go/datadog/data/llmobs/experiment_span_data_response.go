@@ -4,57 +4,57 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperimentSpanDataResponse_Data_Attributes_EvalMetrics struct {
-	Assessment any
-	BooleanValue any
+	Assessment       any
+	BooleanValue     any
 	CategoricalValue any
-	EvalSourceType any
-	Id any
-	JsonValue any
-	Label any
-	Metadata any
-	MetricSource any
-	MetricType any
-	Reasoning any
-	ScoreValue any
-	SpanId any
-	Tags any
-	TimestampMs any
-	TraceId any
+	EvalSourceType   any
+	Id               any
+	JsonValue        any
+	Label            any
+	Metadata         any
+	MetricSource     any
+	MetricType       any
+	Reasoning        any
+	ScoreValue       any
+	SpanId           any
+	Tags             any
+	TimestampMs      any
+	TraceId          any
 }
 
 type ExperimentSpanDataResponse_Data_Attributes_Meta_Error struct {
 	Message any
-	Stack any
-	Type any
+	Stack   any
+	Type    any
 }
 
 type ExperimentSpanDataResponse_Data_Attributes_Meta struct {
-	Error any
+	Error          any
 	ExpectedOutput any
-	Input any
-	Output any
+	Input          any
+	Output         any
 }
 
 type ExperimentSpanDataResponse_Data_Attributes struct {
 	DatasetRecordId any
-	Duration any
-	EvalMetrics any
-	Id any
-	Meta any
-	Metrics any
-	Name any
-	ParentId any
-	SpanId any
-	StartNs any
-	Status any
-	Tags any
-	TraceId any
+	Duration        any
+	EvalMetrics     any
+	Id              any
+	Meta            any
+	Metrics         any
+	Name            any
+	ParentId        any
+	SpanId          any
+	StartNs         any
+	Status          any
+	Tags            any
+	TraceId         any
 }
 
 type ExperimentSpanDataResponse_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ExperimentSpanDataResponseConfig struct {
@@ -63,7 +63,7 @@ type ExperimentSpanDataResponseConfig struct {
 
 type ExperimentSpanDataResponseAttrs struct {
 	// List of experiment spans with their evaluation metrics.
-	Data any
+	Data         any
 	ExperimentId any
 }
 

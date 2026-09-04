@@ -68,6 +68,8 @@ class AppResponse_Data_Attributes:
     components: Any = None
     # A human-readable description for the app.
     description: Any = None
+    # Whether the app is marked as a favorite by the current user.
+    favorite: Any = None
     # The name of the app.
     name: Any = None
     # An array of queries, such as external actions and state variables, that the app uses.
@@ -81,6 +83,8 @@ class AppResponse_Data_Attributes:
 class AppResponse_Data:
     # App definition attributes such as name, description, and components.
     attributes: Any = None
+    # The ID of the app.
+    id: Any = None
     # The app definition type.
     type: Any = None
 
@@ -254,6 +258,7 @@ _AppResponse_Data_AttributesFields = {
         fields=_AppResponse_Data_Attributes_ComponentsFields,
     ),
     "description": ubx.FieldSpec(wire_name="description"),
+    "favorite": ubx.FieldSpec(wire_name="favorite"),
     "name": ubx.FieldSpec(wire_name="name"),
     "queries": ubx.FieldSpec(
         wire_name="queries",
@@ -270,6 +275,7 @@ _AppResponse_DataFields = {
         kind="object",
         fields=_AppResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

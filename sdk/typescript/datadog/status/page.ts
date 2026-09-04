@@ -23,14 +23,26 @@ export interface Page_Data_Attributes {
   companyLogo?: string | Computed<string>;
   /** The components displayed on the status page. */
   components?: Page_Data_Attributes_Components[] | Computed<Page_Data_Attributes_Components[]>;
+  /** Timestamp of when the status page was created. */
+  createdAt?: string | Computed<string>;
+  /** If configured, the url that the status page is accessible at. */
+  customDomain?: string | Computed<string>;
+  /** Whether the custom domain is configured. */
+  customDomainEnabled?: boolean | Computed<boolean>;
   /** The subdomain of the status page's url taking the form `https://{domain_prefix}.statuspage.datadoghq.com`. Globally unique across Datadog Status Pages. */
   domainPrefix: string | Computed<string>;
   /** Base64-encoded image data included in email notifications sent to status page subscribers. */
   emailHeaderImage?: string | Computed<string>;
+  /** Whether the status page is enabled. */
+  enabled?: boolean | Computed<boolean>;
   /** Base64-encoded image data displayed in the browser tab. */
   favicon?: string | Computed<string>;
+  /** Timestamp of when the status page was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the status page. */
   name: string | Computed<string>;
+  /** The url that the status page is accessible at. */
+  pageUrl?: string | Computed<string>;
   /** The Slack app icon URL for the status page. */
   slackAppIcon?: string | Computed<string>;
   /** Whether Slack subscriptions are enabled for the status page. */
@@ -43,9 +55,32 @@ export interface Page_Data_Attributes {
   visualizationType: string | Computed<string>;
 }
 
+export interface Page_Data_Relationships_CreatedByUser_Data {
+  /** The ID of the Datadog user who created the status page. */
+  id: string | Computed<string>;
+  /** Users resource type. */
+  type: string | Computed<string>;
+}
+
+export interface Page_Data_Relationships_CreatedByUser {
+  /** The data object identifying the Datadog user who created the status page. */
+  data: Page_Data_Relationships_CreatedByUser_Data | Computed<Page_Data_Relationships_CreatedByUser_Data>;
+}
+
+export interface Page_Data_Relationships {
+  /** The Datadog user who created the status page. */
+  createdByUser?: Page_Data_Relationships_CreatedByUser | Computed<Page_Data_Relationships_CreatedByUser>;
+  /** The Datadog user who last modified the status page. */
+  lastModifiedByUser?: Page_Data_Relationships_CreatedByUser | Computed<Page_Data_Relationships_CreatedByUser>;
+}
+
 export interface Page_Data {
   /** The supported attributes for creating a status page. */
   attributes: Page_Data_Attributes | Computed<Page_Data_Attributes>;
+  /** The ID of the status page. */
+  id?: string | Computed<string>;
+  /** The relationships of a status page. */
+  relationships?: Page_Data_Relationships | Computed<Page_Data_Relationships>;
   /** Status pages resource type. */
   type: string | Computed<string>;
 }
@@ -92,10 +127,16 @@ const Page_Data_AttributesFields: FieldMap = {
     kind: "list",
     fields: Page_Data_Attributes_ComponentsFields,
   },
+  createdAt: "created_at",
+  customDomain: "custom_domain",
+  customDomainEnabled: "custom_domain_enabled",
   domainPrefix: "domain_prefix",
   emailHeaderImage: "email_header_image",
+  enabled: "enabled",
   favicon: "favicon",
+  modifiedAt: "modified_at",
   name: "name",
+  pageUrl: "page_url",
   slackAppIcon: "slack_app_icon",
   slackSubscriptionsEnabled: "slack_subscriptions_enabled",
   subscriptionsEnabled: "subscriptions_enabled",
@@ -103,11 +144,43 @@ const Page_Data_AttributesFields: FieldMap = {
   visualizationType: "visualization_type",
 };
 
+const Page_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const Page_Data_Relationships_CreatedByUserFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: Page_Data_Relationships_CreatedByUser_DataFields,
+  },
+};
+
+const Page_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: Page_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: Page_Data_Relationships_CreatedByUserFields,
+  },
+};
+
 const Page_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
     kind: "object",
     fields: Page_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: Page_Data_RelationshipsFields,
   },
   type: "type",
 };

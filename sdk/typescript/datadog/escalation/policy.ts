@@ -32,24 +32,28 @@ export interface Policy_Data_Attributes {
   steps: Policy_Data_Attributes_Steps[] | Computed<Policy_Data_Attributes_Steps[]>;
 }
 
-export interface Policy_Data_Relationships_Teams_Data {
+export interface Policy_Data_Relationships_Steps_Data {
   id?: string | Computed<string>;
   type?: string | Computed<string>;
 }
 
-export interface Policy_Data_Relationships_Teams {
-  /** An array of team references for this schedule. */
-  data?: Policy_Data_Relationships_Teams_Data[] | Computed<Policy_Data_Relationships_Teams_Data[]>;
+export interface Policy_Data_Relationships_Steps {
+  /** An array of references to the steps defined in this escalation policy. */
+  data?: Policy_Data_Relationships_Steps_Data[] | Computed<Policy_Data_Relationships_Steps_Data[]>;
 }
 
 export interface Policy_Data_Relationships {
+  /** Defines the relationship to a collection of steps within an escalation policy. Contains an array of step data references. */
+  steps?: Policy_Data_Relationships_Steps | Computed<Policy_Data_Relationships_Steps>;
   /** Associates teams with this schedule in a data structure. */
-  teams?: Policy_Data_Relationships_Teams | Computed<Policy_Data_Relationships_Teams>;
+  teams?: Policy_Data_Relationships_Steps | Computed<Policy_Data_Relationships_Steps>;
 }
 
 export interface Policy_Data {
   /** Defines the attributes for creating an escalation policy, including its description, name, resolution behavior, retries, and steps. */
   attributes: Policy_Data_Attributes | Computed<Policy_Data_Attributes>;
+  /** Specifies the unique identifier of the escalation policy. */
+  id?: string | Computed<string>;
   /** Represents relationships in an escalation policy creation request, including references to teams. */
   relationships?: Policy_Data_Relationships | Computed<Policy_Data_Relationships>;
   /** Indicates that the resource is of type `policies`. */
@@ -62,7 +66,7 @@ export interface Policy_Included_Attributes {
 }
 
 export interface Policy_Included_Relationships {
-  targets?: Policy_Data_Relationships_Teams | Computed<Policy_Data_Relationships_Teams>;
+  targets?: Policy_Data_Relationships_Steps | Computed<Policy_Data_Relationships_Steps>;
 }
 
 export interface Policy_Included {
@@ -115,24 +119,29 @@ const Policy_Data_AttributesFields: FieldMap = {
   },
 };
 
-const Policy_Data_Relationships_Teams_DataFields: FieldMap = {
+const Policy_Data_Relationships_Steps_DataFields: FieldMap = {
   id: "id",
   type: "type",
 };
 
-const Policy_Data_Relationships_TeamsFields: FieldMap = {
+const Policy_Data_Relationships_StepsFields: FieldMap = {
   data: {
     wireName: "data",
     kind: "list",
-    fields: Policy_Data_Relationships_Teams_DataFields,
+    fields: Policy_Data_Relationships_Steps_DataFields,
   },
 };
 
 const Policy_Data_RelationshipsFields: FieldMap = {
+  steps: {
+    wireName: "steps",
+    kind: "object",
+    fields: Policy_Data_Relationships_StepsFields,
+  },
   teams: {
     wireName: "teams",
     kind: "object",
-    fields: Policy_Data_Relationships_TeamsFields,
+    fields: Policy_Data_Relationships_StepsFields,
   },
 };
 
@@ -142,6 +151,7 @@ const Policy_DataFields: FieldMap = {
     kind: "object",
     fields: Policy_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

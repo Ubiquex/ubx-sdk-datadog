@@ -32,6 +32,8 @@ class RetentionFilterResponse_Data_Attributes:
 class RetentionFilterResponse_Data:
     # The object describing attributes of a RUM retention filter to create.
     attributes: Any = None
+    # ID of retention filter in UUID.
+    id: Any = None
     # The type of the resource. The value should always be retention_filters.
     type: Any = None
 
@@ -59,6 +61,7 @@ _RetentionFilterResponse_DataFields = {
         kind="object",
         fields=_RetentionFilterResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

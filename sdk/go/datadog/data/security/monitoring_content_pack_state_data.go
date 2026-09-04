@@ -4,24 +4,24 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringContentPackStateData_Data_Attributes_Details struct {
-	CpActivation any
-	DataLastSeen any
-	FiltersConfigured any
+	CpActivation               any
+	DataLastSeen               any
+	FiltersConfigured          any
 	IntegrationInstalledStatus any
-	LogsSeenFromAnyIndex any
-	SiemIndexIncorrect any
-	Type any
+	LogsSeenFromAnyIndex       any
+	SiemIndexIncorrect         any
+	Type                       any
 }
 
 type MonitoringContentPackStateData_Data_Attributes struct {
 	Details any
-	Status any
+	Status  any
 }
 
 type MonitoringContentPackStateData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MonitoringContentPackStateData_Meta struct {
@@ -45,6 +45,5 @@ type MonitoringContentPackStateDataAttrs struct {
 
 var MonitoringContentPackStateData = ubx.DataSourceBinding{
 	WireType: "datadog_security_monitoring_content_pack_state_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

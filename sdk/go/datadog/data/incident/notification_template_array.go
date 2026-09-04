@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotificationTemplateArray_Data_Attributes struct {
 	Category any
-	Content any
-	Created any
+	Content  any
+	Created  any
 	Modified any
-	Name any
-	Subject any
+	Name     any
+	Subject  any
 }
 
 type NotificationTemplateArray_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -22,33 +22,33 @@ type NotificationTemplateArray_Data_Relationships_CreatedByUser struct {
 }
 
 type NotificationTemplateArray_Data_Relationships struct {
-	CreatedByUser any
-	IncidentType any
+	CreatedByUser      any
+	IncidentType       any
 	LastModifiedByUser any
 }
 
 type NotificationTemplateArray_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type NotificationTemplateArray_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type NotificationTemplateArray_Included_Relationships_OtherOrgs struct {
@@ -56,17 +56,17 @@ type NotificationTemplateArray_Included_Relationships_OtherOrgs struct {
 }
 
 type NotificationTemplateArray_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type NotificationTemplateArray_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type NotificationTemplateArray_Meta_Page struct {
@@ -87,7 +87,7 @@ type NotificationTemplateArrayConfig struct {
 
 type NotificationTemplateArrayAttrs struct {
 	// The `NotificationTemplateArray` `data`.
-	Data any
+	Data    any
 	Include any
 	// Related objects that are included in the response.
 	Included any

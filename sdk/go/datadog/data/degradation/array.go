@@ -4,44 +4,44 @@ package degradation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Array_Data_Attributes_ComponentsAffected struct {
-	Id any
-	Name any
+	Id     any
+	Name   any
 	Status any
 }
 
 type Array_Data_Attributes_Source struct {
 	CreatedAt any
-	SourceId any
-	Type any
+	SourceId  any
+	Type      any
 }
 
 type Array_Data_Attributes_Updates struct {
-	ComponentsAffected any
-	CreatedAt any
-	DeletedAt any
-	DeletedByUserUuid any
-	Description any
-	Id any
+	ComponentsAffected     any
+	CreatedAt              any
+	DeletedAt              any
+	DeletedByUserUuid      any
+	Description            any
+	Id                     any
 	LastModifiedByUserUuid any
-	ModifiedAt any
-	StartedAt any
-	Status any
+	ModifiedAt             any
+	StartedAt              any
+	Status                 any
 }
 
 type Array_Data_Attributes struct {
 	ComponentsAffected any
-	CreatedAt any
-	Description any
-	IsBackfilled any
-	ModifiedAt any
-	Source any
-	Status any
-	Title any
-	Updates any
+	CreatedAt          any
+	Description        any
+	IsBackfilled       any
+	ModifiedAt         any
+	Source             any
+	Status             any
+	Title              any
+	Updates            any
 }
 
 type Array_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -50,37 +50,37 @@ type Array_Data_Relationships_CreatedByUser struct {
 }
 
 type Array_Data_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
-	StatusPage any
-	Template any
+	StatusPage         any
+	Template           any
 }
 
 type Array_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Array_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type Array_Included_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type Array_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Array_Meta_Page struct {
@@ -109,12 +109,12 @@ type Array_Meta struct {
 
 type ArrayConfig struct {
 	Include any
-	Sort any
+	Sort    any
 }
 
 type ArrayAttrs struct {
 	// A list of degradation data objects.
-	Data any
+	Data    any
 	Include any
 	// The included related resources of a degradation. Client must explicitly request these resources by name in the `include` query parameter.
 	Included any
@@ -127,6 +127,6 @@ var Array = ubx.DataSourceBinding{
 	WireType: "datadog_degradation_array",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

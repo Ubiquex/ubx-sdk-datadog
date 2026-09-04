@@ -7,11 +7,43 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class CustomRulesetResponse_Data_Attributes_Rules_LastRevision:
+    category: Any = None
+    checksum: Any = None
+    content: Any = None
+    created_at: Any = None
+    created_by: Any = None
+    cwe: Any = None
+    description: Any = None
+    directories: Any = None
+    execution_mode: Any = None
+    globs: Any = None
+    is_default: Any = None
+    is_published: Any = None
+    is_testing: Any = None
+    severity: Any = None
+    short_description: Any = None
+    version_id: Any = None
+
+@dataclasses.dataclass
+class CustomRulesetResponse_Data_Attributes_Rules:
+    created_at: Any = None
+    created_by: Any = None
+    last_revision: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class CustomRulesetResponse_Data_Attributes:
+    # The creation timestamp.
+    created_at: Any = None
+    # The identifier of the user who created the ruleset.
+    created_by: Any = None
     # Base64-encoded full description of the ruleset.
     description: Any = None
     # The ruleset name.
     name: Any = None
+    # The rules contained in the ruleset.
+    rules: Any = None
     # Base64-encoded short description of the ruleset.
     short_description: Any = None
 
@@ -24,9 +56,46 @@ class CustomRulesetResponse_Data:
     # AI custom ruleset resource type.
     type: Any = None
 
+_CustomRulesetResponse_Data_Attributes_Rules_LastRevisionFields = {
+    "category": ubx.FieldSpec(wire_name="category"),
+    "checksum": ubx.FieldSpec(wire_name="checksum"),
+    "content": ubx.FieldSpec(wire_name="content"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "cwe": ubx.FieldSpec(wire_name="cwe"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "directories": ubx.FieldSpec(wire_name="directories"),
+    "execution_mode": ubx.FieldSpec(wire_name="execution_mode"),
+    "globs": ubx.FieldSpec(wire_name="globs"),
+    "is_default": ubx.FieldSpec(wire_name="is_default"),
+    "is_published": ubx.FieldSpec(wire_name="is_published"),
+    "is_testing": ubx.FieldSpec(wire_name="is_testing"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "short_description": ubx.FieldSpec(wire_name="short_description"),
+    "version_id": ubx.FieldSpec(wire_name="version_id"),
+}
+
+_CustomRulesetResponse_Data_Attributes_RulesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "last_revision": ubx.FieldSpec(
+        wire_name="last_revision",
+        kind="object",
+        fields=_CustomRulesetResponse_Data_Attributes_Rules_LastRevisionFields,
+    ),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 _CustomRulesetResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
     "description": ubx.FieldSpec(wire_name="description"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "rules": ubx.FieldSpec(
+        wire_name="rules",
+        kind="list",
+        fields=_CustomRulesetResponse_Data_Attributes_RulesFields,
+    ),
     "short_description": ubx.FieldSpec(wire_name="short_description"),
 }
 

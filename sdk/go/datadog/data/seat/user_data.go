@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserData_Data_Attributes struct {
 	AssignedAt any
-	Email any
-	Name any
+	Email      any
+	Name       any
 }
 
 type UserData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type UserData_Meta struct {
@@ -32,7 +32,7 @@ type UserDataAttrs struct {
 	// The list of seat users.
 	Data any
 	// Pagination metadata for the seat users list response.
-	Meta any
+	Meta        any
 	ProductCode any
 }
 

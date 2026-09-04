@@ -17,6 +17,8 @@ class ScheduleResponse_Data_Attributes:
     delivery_format: Any = None
     # A description of the report, up to 4096 characters.
     description: Any = None
+    # The Unix timestamp, in milliseconds, of the next scheduled delivery, or `null` if none is scheduled.
+    next_recurrence: Any = None
     # The recipients of the report. Each entry is an email address, a Slack channel reference in the form `slack:{team_id}.{channel_id}.{channel_name}`, or a Microsoft Teams channel reference in the form `teams:{tenant_id}|{team_id}|{channel_id}`.
     recipients: Any = None
     # The identifier of the dashboard or integration dashboard to render in the report.
@@ -25,6 +27,8 @@ class ScheduleResponse_Data_Attributes:
     resource_type: Any = None
     # The recurrence rule for the schedule, expressed as an iCalendar `RRULE` string.
     rrule: Any = None
+    # Whether the schedule is currently delivering reports (`active`) or paused (`inactive`).
+    status: Any = None
     # The identifier of the dashboard tab to render, when the dashboard has tabs.
     tab_id: Any = None
     # The dashboard template variables applied when rendering the report.
@@ -37,9 +41,30 @@ class ScheduleResponse_Data_Attributes:
     title: Any = None
 
 @dataclasses.dataclass
+class ScheduleResponse_Data_Relationships_Author_Data:
+    # The user UUID of the report schedule author.
+    id: Any = None
+    # JSON:API resource type for the included report author.
+    type: Any = None
+
+@dataclasses.dataclass
+class ScheduleResponse_Data_Relationships_Author:
+    # Relationship data for the author of the report schedule.
+    data: Any = None
+
+@dataclasses.dataclass
+class ScheduleResponse_Data_Relationships:
+    # Relationship to the author of the report schedule.
+    author: Any = None
+
+@dataclasses.dataclass
 class ScheduleResponse_Data:
     # The configuration of the report schedule to create.
     attributes: Any = None
+    # The unique identifier of the report schedule.
+    id: Any = None
+    # Relationships for the report schedule.
+    relationships: Any = None
     # JSON:API resource type for report schedules.
     type: Any = None
 
@@ -62,10 +87,12 @@ _ScheduleResponse_Data_Attributes_TemplateVariablesFields = {
 _ScheduleResponse_Data_AttributesFields = {
     "delivery_format": ubx.FieldSpec(wire_name="delivery_format"),
     "description": ubx.FieldSpec(wire_name="description"),
+    "next_recurrence": ubx.FieldSpec(wire_name="next_recurrence"),
     "recipients": ubx.FieldSpec(wire_name="recipients"),
     "resource_id": ubx.FieldSpec(wire_name="resource_id"),
     "resource_type": ubx.FieldSpec(wire_name="resource_type"),
     "rrule": ubx.FieldSpec(wire_name="rrule"),
+    "status": ubx.FieldSpec(wire_name="status"),
     "tab_id": ubx.FieldSpec(wire_name="tab_id"),
     "template_variables": ubx.FieldSpec(
         wire_name="template_variables",
@@ -77,11 +104,38 @@ _ScheduleResponse_Data_AttributesFields = {
     "title": ubx.FieldSpec(wire_name="title"),
 }
 
+_ScheduleResponse_Data_Relationships_Author_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_ScheduleResponse_Data_Relationships_AuthorFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_ScheduleResponse_Data_Relationships_Author_DataFields,
+    ),
+}
+
+_ScheduleResponse_Data_RelationshipsFields = {
+    "author": ubx.FieldSpec(
+        wire_name="author",
+        kind="object",
+        fields=_ScheduleResponse_Data_Relationships_AuthorFields,
+    ),
+}
+
 _ScheduleResponse_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
         kind="object",
         fields=_ScheduleResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_ScheduleResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

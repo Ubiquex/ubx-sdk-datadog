@@ -421,6 +421,8 @@ class Pipeline_Data_Attributes:
 class Pipeline_Data:
     # Defines the pipeline’s name and its components (sources, processors, and destinations).
     attributes: Any = None
+    # Unique identifier for the pipeline.
+    id: Any = None
     # The resource type identifier. For pipeline resources, this should always be set to `pipelines`.
     type: Any = None
 
@@ -1045,6 +1047,7 @@ _Pipeline_DataFields = {
         kind="object",
         fields=_Pipeline_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

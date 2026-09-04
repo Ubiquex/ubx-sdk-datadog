@@ -3,17 +3,33 @@ package historical
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MetricsConfigurationResponse_Data_Attributes struct {
+	// Timestamp when historical metrics ingestion was enabled for the metric.
+	CreatedAt any
+}
+
 type MetricsConfigurationResponse_Data struct {
+	// Attributes of a historical metrics configuration.
+	Attributes any
 	// The metric name, used as the resource ID.
 	Id any
 	// The historical metrics configuration resource type.
 	Type any
 }
 
+var MetricsConfigurationResponse_Data_AttributesFields = ubx.FieldMap{
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+}
+
 var MetricsConfigurationResponse_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   MetricsConfigurationResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MetricsConfigurationResponseConfig struct {
 	// Data object for enabling historical metrics ingestion for a metric.
@@ -34,8 +50,8 @@ var MetricsConfigurationResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: MetricsConfigurationResponse_DataFields,
+			Kind:     "object",
+			Fields:   MetricsConfigurationResponse_DataFields,
 		},
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
 	},

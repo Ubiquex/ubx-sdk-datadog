@@ -4,21 +4,21 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PatternsRunsResponse_Data_Attributes_Runs_ConfigSnapshot struct {
-	AccountId any
-	EvpQuery any
-	HierarchyDepth any
+	AccountId           any
+	EvpQuery            any
+	HierarchyDepth      any
 	IntegrationProvider any
-	ModelName any
-	NumRecords any
-	SamplingRatio any
+	ModelName           any
+	NumRecords          any
+	SamplingRatio       any
 }
 
 type PatternsRunsResponse_Data_Attributes_Runs struct {
-	CompletedAt any
+	CompletedAt    any
 	ConfigSnapshot any
-	CreatedAt any
-	Id any
-	Status any
+	CreatedAt      any
+	Id             any
+	Status         any
 }
 
 type PatternsRunsResponse_Data_Attributes struct {

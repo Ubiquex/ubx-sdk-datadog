@@ -8,24 +8,78 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccessTokenResponse_Data_Attributes:
+    # Creation date of the access token.
+    created_at: Any = None
     # Expiration date of the access token. Optional for service account tokens.
     expires_at: Any = None
+    # Date the access token was last used.
+    last_used_at: Any = None
+    # Date of last modification of the access token.
+    modified_at: Any = None
     # Name of the access token.
     name: Any = None
+    # The public portion of the access token.
+    public_portion: Any = None
     # Array of scopes to grant the access token.
     scopes: Any = None
+
+@dataclasses.dataclass
+class AccessTokenResponse_Data_Relationships_OwnedBy_Data:
+    # A unique identifier that represents the service account.
+    id: Any = None
+    # Service account resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class AccessTokenResponse_Data_Relationships_OwnedBy:
+    # Relationship to service account object.
+    data: Any = None
+
+@dataclasses.dataclass
+class AccessTokenResponse_Data_Relationships:
+    # Relationship to service account.
+    owned_by: Any = None
 
 @dataclasses.dataclass
 class AccessTokenResponse_Data:
     # Attributes used to create a service account access token.
     attributes: Any = None
+    # ID of the access token.
+    id: Any = None
+    # Resources related to the access token.
+    relationships: Any = None
     # Service access tokens resource type.
     type: Any = None
 
 _AccessTokenResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "expires_at": ubx.FieldSpec(wire_name="expires_at"),
+    "last_used_at": ubx.FieldSpec(wire_name="last_used_at"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "public_portion": ubx.FieldSpec(wire_name="public_portion"),
     "scopes": ubx.FieldSpec(wire_name="scopes"),
+}
+
+_AccessTokenResponse_Data_Relationships_OwnedBy_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_AccessTokenResponse_Data_Relationships_OwnedByFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_AccessTokenResponse_Data_Relationships_OwnedBy_DataFields,
+    ),
+}
+
+_AccessTokenResponse_Data_RelationshipsFields = {
+    "owned_by": ubx.FieldSpec(
+        wire_name="owned_by",
+        kind="object",
+        fields=_AccessTokenResponse_Data_Relationships_OwnedByFields,
+    ),
 }
 
 _AccessTokenResponse_DataFields = {
@@ -33,6 +87,12 @@ _AccessTokenResponse_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_AccessTokenResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_AccessTokenResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

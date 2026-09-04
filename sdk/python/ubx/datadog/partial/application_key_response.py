@@ -8,15 +8,42 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApplicationKeyResponse_Data_Attributes:
+    # Creation date of the application key.
+    created_at: Any = None
+    # The last four characters of the application key.
+    last4: Any = None
+    # Last usage timestamp of the application key.
+    last_used_at: Any = None
     # Name of the application key.
     name: Any = None
     # Array of scopes to grant the application key.
     scopes: Any = None
 
 @dataclasses.dataclass
+class ApplicationKeyResponse_Data_Relationships_OwnedBy_Data:
+    # A unique identifier that represents the user.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class ApplicationKeyResponse_Data_Relationships_OwnedBy:
+    # Relationship to user object.
+    data: Any = None
+
+@dataclasses.dataclass
+class ApplicationKeyResponse_Data_Relationships:
+    # Relationship to user.
+    owned_by: Any = None
+
+@dataclasses.dataclass
 class ApplicationKeyResponse_Data:
     # Attributes used to create an application Key.
     attributes: Any = None
+    # ID of the application key.
+    id: Any = None
+    # Resources related to the application key.
+    relationships: Any = None
     # Application Keys resource type.
     type: Any = None
 
@@ -38,15 +65,6 @@ class ApplicationKeyResponse_Included_Attributes:
     verified: Any = None
 
 @dataclasses.dataclass
-class ApplicationKeyResponse_Included_Relationships_Org_Data:
-    id: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class ApplicationKeyResponse_Included_Relationships_Org:
-    data: Any = None
-
-@dataclasses.dataclass
 class ApplicationKeyResponse_Included_Relationships_OtherOrgs:
     data: Any = None
 
@@ -65,8 +83,32 @@ class ApplicationKeyResponse_Included:
     type: Any = None
 
 _ApplicationKeyResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "last4": ubx.FieldSpec(wire_name="last4"),
+    "last_used_at": ubx.FieldSpec(wire_name="last_used_at"),
     "name": ubx.FieldSpec(wire_name="name"),
     "scopes": ubx.FieldSpec(wire_name="scopes"),
+}
+
+_ApplicationKeyResponse_Data_Relationships_OwnedBy_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_ApplicationKeyResponse_Data_Relationships_OwnedByFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_ApplicationKeyResponse_Data_Relationships_OwnedBy_DataFields,
+    ),
+}
+
+_ApplicationKeyResponse_Data_RelationshipsFields = {
+    "owned_by": ubx.FieldSpec(
+        wire_name="owned_by",
+        kind="object",
+        fields=_ApplicationKeyResponse_Data_Relationships_OwnedByFields,
+    ),
 }
 
 _ApplicationKeyResponse_DataFields = {
@@ -74,6 +116,12 @@ _ApplicationKeyResponse_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_ApplicationKeyResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_ApplicationKeyResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

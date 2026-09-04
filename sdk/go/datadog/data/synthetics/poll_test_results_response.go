@@ -8,10 +8,10 @@ type PollTestResultsResponse_Data_Attributes_Batch struct {
 }
 
 type PollTestResultsResponse_Data_Attributes_Ci_Pipeline struct {
-	Id any
-	Name any
+	Id     any
+	Name   any
 	Number any
-	Url any
+	Url    any
 }
 
 type PollTestResultsResponse_Data_Attributes_Ci_Provider struct {
@@ -19,156 +19,156 @@ type PollTestResultsResponse_Data_Attributes_Ci_Provider struct {
 }
 
 type PollTestResultsResponse_Data_Attributes_Ci struct {
-	Pipeline any
-	Provider any
-	Stage any
+	Pipeline      any
+	Provider      any
+	Stage         any
 	WorkspacePath any
 }
 
 type PollTestResultsResponse_Data_Attributes_Device_Browser struct {
-	Type any
+	Type      any
 	UserAgent any
-	Version any
+	Version   any
 }
 
 type PollTestResultsResponse_Data_Attributes_Device_Platform struct {
-	Name any
+	Name    any
 	Version any
 }
 
 type PollTestResultsResponse_Data_Attributes_Device_Resolution struct {
-	Height any
+	Height     any
 	PixelRatio any
-	Width any
+	Width      any
 }
 
 type PollTestResultsResponse_Data_Attributes_Device struct {
-	Browser any
-	Id any
-	Name any
-	Platform any
+	Browser    any
+	Id         any
+	Name       any
+	Platform   any
 	Resolution any
-	Type any
+	Type       any
 }
 
 type PollTestResultsResponse_Data_Attributes_Git_Commit_Author struct {
-	Date any
+	Date  any
 	Email any
-	Name any
+	Name  any
 }
 
 type PollTestResultsResponse_Data_Attributes_Git_Commit struct {
-	Author any
+	Author    any
 	Committer any
-	Message any
-	Sha any
-	Url any
+	Message   any
+	Sha       any
+	Url       any
 }
 
 type PollTestResultsResponse_Data_Attributes_Git struct {
-	Branch any
-	Commit any
+	Branch        any
+	Commit        any
 	RepositoryUrl any
 }
 
 type PollTestResultsResponse_Data_Attributes_Location struct {
-	Id any
-	Name any
-	Version any
+	Id       any
+	Name     any
+	Version  any
 	WorkerId any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Assertions struct {
-	Actual any
-	ErrorMessage any
-	Expected any
-	Operator any
-	Property any
-	Target any
-	TargetPath any
+	Actual             any
+	ErrorMessage       any
+	Expected           any
+	Operator           any
+	Property           any
+	Target             any
+	TargetPath         any
 	TargetPathOperator any
-	Type any
-	Valid any
+	Type               any
+	Valid              any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_BucketKeys struct {
-	AfterStepScreenshot any
-	AfterTurnScreenshot any
-	Artifacts any
+	AfterStepScreenshot  any
+	AfterTurnScreenshot  any
+	Artifacts            any
 	BeforeStepScreenshot any
 	BeforeTurnScreenshot any
-	CrashReport any
-	DeviceLogs any
-	EmailMessages any
-	Screenshot any
-	Snapshot any
-	Source any
+	CrashReport          any
+	DeviceLogs           any
+	EmailMessages        any
+	Screenshot           any
+	Snapshot             any
+	Source               any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Cert_Valid struct {
 	From any
-	To any
+	To   any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Cert struct {
-	Cipher any
-	Exponent any
-	ExtKeyUsage any
-	Fingerprint any
+	Cipher         any
+	Exponent       any
+	ExtKeyUsage    any
+	Fingerprint    any
 	Fingerprint256 any
-	Issuer any
-	Modulus any
-	Protocol any
-	SerialNumber any
-	Subject any
-	TlsVersion any
-	Valid any
+	Issuer         any
+	Modulus        any
+	Protocol       any
+	SerialNumber   any
+	Subject        any
+	TlsVersion     any
+	Valid          any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_DnsResolution struct {
-	Attempts any
-	ResolvedIp any
+	Attempts     any
+	ResolvedIp   any
 	ResolvedPort any
-	Server any
+	Server       any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Failure struct {
-	Code any
-	InternalCode any
+	Code            any
+	InternalCode    any
 	InternalMessage any
-	Message any
+	Message         any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake_Request_Files struct {
 	BucketKey any
-	Encoding any
-	Name any
-	Size any
-	Type any
+	Encoding  any
+	Name      any
+	Size      any
+	Type      any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake_Request struct {
-	AllowInsecure any
-	Body any
-	CallType any
-	DestinationService any
-	DnsServer any
-	DnsServerPort any
-	E2eQueries any
-	Files any
-	Headers any
-	Host any
-	MaxTtl any
-	Message any
-	Method any
+	AllowInsecure        any
+	Body                 any
+	CallType             any
+	DestinationService   any
+	DnsServer            any
+	DnsServerPort        any
+	E2eQueries           any
+	Files                any
+	Headers              any
+	Host                 any
+	MaxTtl               any
+	Message              any
+	Method               any
 	NoSavingResponseBody any
-	Port any
-	Service any
-	SourceService any
-	Timeout any
-	ToolName any
-	TracerouteQueries any
-	Url any
+	Port                 any
+	Service              any
+	SourceService        any
+	Timeout              any
+	ToolName             any
+	TracerouteQueries    any
+	Url                  any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake_Response_Cdn_Cache struct {
@@ -177,68 +177,68 @@ type PollTestResultsResponse_Data_Attributes_Result_Handshake_Response_Cdn_Cache
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake_Response_Cdn struct {
-	Cache any
+	Cache    any
 	Provider any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake_Response_Close struct {
-	Reason any
+	Reason     any
 	StatusCode any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake_Response_Healthcheck struct {
 	Message any
-	Status any
+	Status  any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake_Response_Records struct {
-	Type any
+	Type   any
 	Values any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake_Response_Redirects struct {
-	Location any
+	Location   any
 	StatusCode any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake_Response struct {
-	Body any
-	BodyCompressed any
-	BodyHashes any
-	BodySize any
-	CacheHeaders any
-	Cdn any
-	Close any
-	CompressedMessage any
-	Headers any
-	Healthcheck any
-	HttpVersion any
-	IsBodyTruncated any
+	Body               any
+	BodyCompressed     any
+	BodyHashes         any
+	BodySize           any
+	CacheHeaders       any
+	Cdn                any
+	Close              any
+	CompressedMessage  any
+	Headers            any
+	Healthcheck        any
+	HttpVersion        any
+	IsBodyTruncated    any
 	IsMessageTruncated any
-	Message any
-	Metadata any
-	Records any
-	Redirects any
-	StatusCode any
+	Message            any
+	Metadata           any
+	Records            any
+	Redirects          any
+	StatusCode         any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Handshake struct {
-	Request any
+	Request  any
 	Response any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Netpath_Destination struct {
-	Hostname any
+	Hostname  any
 	IpAddress any
-	Port any
+	Port      any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Netpath_Hops struct {
-	Hostname any
+	Hostname  any
 	IpAddress any
 	Reachable any
-	Rtt any
-	Ttl any
+	Rtt       any
+	Ttl       any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Netpath_Source struct {
@@ -247,13 +247,13 @@ type PollTestResultsResponse_Data_Attributes_Result_Netpath_Source struct {
 
 type PollTestResultsResponse_Data_Attributes_Result_Netpath struct {
 	Destination any
-	Hops any
-	Origin any
+	Hops        any
+	Origin      any
 	PathtraceId any
-	Protocol any
-	Source any
-	Tags any
-	Timestamp any
+	Protocol    any
+	Source      any
+	Tags        any
+	Timestamp   any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Netstats_Hops struct {
@@ -263,18 +263,18 @@ type PollTestResultsResponse_Data_Attributes_Result_Netstats_Hops struct {
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Netstats struct {
-	Hops any
-	Jitter any
-	Latency any
+	Hops                 any
+	Jitter               any
+	Latency              any
 	PacketLossPercentage any
-	PacketsReceived any
-	PacketsSent any
+	PacketsReceived      any
+	PacketsSent          any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Ocsp_Certificate struct {
 	RevocationReason any
-	RevocationTime any
-	SerialNumber any
+	RevocationTime   any
+	SerialNumber     any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Ocsp_Updates struct {
@@ -285,73 +285,73 @@ type PollTestResultsResponse_Data_Attributes_Result_Ocsp_Updates struct {
 
 type PollTestResultsResponse_Data_Attributes_Result_Ocsp struct {
 	Certificate any
-	Status any
-	Updates any
+	Status      any
+	Updates     any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Ping_Routers struct {
-	Ip any
+	Ip           any
 	ResolvedHost any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Ping struct {
-	Host any
-	Latency any
+	Host                 any
+	Latency              any
 	PacketLossPercentage any
-	PacketSize any
-	PacketsReceived any
-	PacketsSent any
-	ResolvedIp any
-	Routers any
+	PacketSize           any
+	PacketsReceived      any
+	PacketsSent          any
+	ResolvedIp           any
+	Routers              any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_AssertionResult struct {
-	Actual any
-	CheckType any
-	Expected any
+	Actual             any
+	CheckType          any
+	Expected           any
 	HasSecureVariables any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_Bounds struct {
 	Height any
-	Width any
-	X any
-	Y any
+	Width  any
+	X      any
+	Y      any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_BrowserErrors struct {
 	Description any
-	Method any
-	Name any
-	Status any
-	Type any
-	Url any
+	Method      any
+	Name        any
+	Status      any
+	Type        any
+	Url         any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_CdnResources struct {
-	Cdn any
+	Cdn        any
 	ResolvedIp any
-	Timestamp any
-	Timings any
+	Timestamp  any
+	Timings    any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_ElementUpdates struct {
-	MultiLocator any
+	MultiLocator    any
 	TargetOuterHtml any
-	Version any
+	Version         any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_ExtractedValue struct {
-	Err any
+	Err          any
 	ErrorMessage any
-	Example any
-	Id any
-	Name any
-	Pattern any
-	Secure any
-	Type any
-	Val any
-	Value any
+	Example      any
+	Id           any
+	Name         any
+	Pattern      any
+	Secure       any
+	Type         any
+	Val          any
+	Value        any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_Retries struct {
@@ -359,171 +359,171 @@ type PollTestResultsResponse_Data_Attributes_Result_Steps_Retries struct {
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_RumContext struct {
 	ApplicationId any
-	SessionId any
-	ViewId any
+	SessionId     any
+	ViewId        any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_SubStep struct {
-	Level any
+	Level      any
 	ParentStep any
 	ParentTest any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_SubTest struct {
-	Id any
+	Id         any
 	PlayingTab any
 	RumContext any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_Tabs struct {
 	Focused any
-	Title any
-	Url any
+	Title   any
+	Url     any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_Variables struct {
-	Config any
+	Config    any
 	Extracted any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_VitalsMetrics struct {
-	Cls any
-	Fcp any
-	Inp any
-	Lcp any
+	Cls  any
+	Fcp  any
+	Inp  any
+	Lcp  any
 	Ttfb any
-	Url any
+	Url  any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps_Warnings struct {
 	ElementBounds any
-	Message any
-	Type any
+	Message       any
+	Type          any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Steps struct {
-	AllowFailure any
-	ApiTest any
-	AssertionResult any
-	Assertions any
-	BlockedRequestsUrls any
-	Bounds any
-	BrowserErrors any
-	BucketKeys any
-	CdnResources any
-	ClickType any
-	CompressedJsonDescriptor any
-	Config any
-	Description any
-	Duration any
-	ElementDescription any
-	ElementUpdates any
-	ExtractedValue any
-	Failure any
-	HttpResults any
-	Id any
-	IsCritical any
+	AllowFailure                  any
+	ApiTest                       any
+	AssertionResult               any
+	Assertions                    any
+	BlockedRequestsUrls           any
+	Bounds                        any
+	BrowserErrors                 any
+	BucketKeys                    any
+	CdnResources                  any
+	ClickType                     any
+	CompressedJsonDescriptor      any
+	Config                        any
+	Description                   any
+	Duration                      any
+	ElementDescription            any
+	ElementUpdates                any
+	ExtractedValue                any
+	Failure                       any
+	HttpResults                   any
+	Id                            any
+	IsCritical                    any
 	JavascriptCustomAssertionCode any
-	LocateElementDuration any
-	Name any
-	Request any
-	Response any
-	Retries any
-	RetryCount any
-	RumContext any
-	StartedAt any
-	Status any
-	SubStep any
-	SubTest any
-	Subtype any
-	Tabs any
-	Timings any
-	Tunnel any
-	Type any
-	Url any
-	Value any
-	Variables any
-	VitalsMetrics any
-	Warnings any
+	LocateElementDuration         any
+	Name                          any
+	Request                       any
+	Response                      any
+	Retries                       any
+	RetryCount                    any
+	RumContext                    any
+	StartedAt                     any
+	Status                        any
+	SubStep                       any
+	SubTest                       any
+	Subtype                       any
+	Tabs                          any
+	Timings                       any
+	Tunnel                        any
+	Type                          any
+	Url                           any
+	Value                         any
+	Variables                     any
+	VitalsMetrics                 any
+	Warnings                      any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Trace struct {
-	Id any
+	Id     any
 	OtelId any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Turns_Steps struct {
 	BucketKeys any
-	Config any
+	Config     any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result_Turns struct {
-	BucketKeys any
-	Name any
-	Reasoning any
-	Status any
-	Steps any
+	BucketKeys     any
+	Name           any
+	Reasoning      any
+	Status         any
+	Steps          any
 	TurnFinishedAt any
-	TurnStartedAt any
+	TurnStartedAt  any
 }
 
 type PollTestResultsResponse_Data_Attributes_Result struct {
-	Assertions any
-	BucketKeys any
-	CallType any
-	Cert any
+	Assertions               any
+	BucketKeys               any
+	CallType                 any
+	Cert                     any
 	CompressedJsonDescriptor any
-	CompressedSteps any
-	ConnectionOutcome any
-	DnsResolution any
-	Duration any
-	ExitedOnStepSuccess any
-	Failure any
-	FinishedAt any
-	Handshake any
-	Id any
-	InitialId any
-	IsFastRetry any
-	IsLastRetry any
-	Netpath any
-	Netstats any
-	Ocsp any
-	Ping any
-	ReceivedEmailCount any
-	ReceivedMessage any
-	Request any
-	ResolvedIp any
-	Response any
-	RunType any
-	SentMessage any
-	StartUrl any
-	StartedAt any
-	Status any
-	Steps any
-	TimeToInteractive any
-	Timings any
-	Trace any
-	Traceroute any
-	TriggeredAt any
-	Tunnel any
-	Turns any
-	Unhealthy any
-	Variables any
+	CompressedSteps          any
+	ConnectionOutcome        any
+	DnsResolution            any
+	Duration                 any
+	ExitedOnStepSuccess      any
+	Failure                  any
+	FinishedAt               any
+	Handshake                any
+	Id                       any
+	InitialId                any
+	IsFastRetry              any
+	IsLastRetry              any
+	Netpath                  any
+	Netstats                 any
+	Ocsp                     any
+	Ping                     any
+	ReceivedEmailCount       any
+	ReceivedMessage          any
+	Request                  any
+	ResolvedIp               any
+	Response                 any
+	RunType                  any
+	SentMessage              any
+	StartUrl                 any
+	StartedAt                any
+	Status                   any
+	Steps                    any
+	TimeToInteractive        any
+	Timings                  any
+	Trace                    any
+	Traceroute               any
+	TriggeredAt              any
+	Tunnel                   any
+	Turns                    any
+	Unhealthy                any
+	Variables                any
 }
 
 type PollTestResultsResponse_Data_Attributes struct {
-	Batch any
-	Ci any
-	Device any
-	Git any
-	Location any
-	Result any
+	Batch       any
+	Ci          any
+	Device      any
+	Git         any
+	Location    any
+	Result      any
 	TestSubType any
-	TestType any
+	TestType    any
 }
 
 type PollTestResultsResponse_Data_Relationships_Test_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -536,16 +536,16 @@ type PollTestResultsResponse_Data_Relationships struct {
 }
 
 type PollTestResultsResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type PollTestResultsResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type PollTestResultsResponseConfig struct {
@@ -556,7 +556,7 @@ type PollTestResultsResponseAttrs struct {
 	// Array of Synthetic test results.
 	Data any
 	// Array of included related resources, such as the test definition.
-	Included any
+	Included  any
 	ResultIds any
 }
 

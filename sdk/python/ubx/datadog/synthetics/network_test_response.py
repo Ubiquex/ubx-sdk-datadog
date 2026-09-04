@@ -122,6 +122,8 @@ class NetworkTestResponse_Data_Attributes:
 class NetworkTestResponse_Data:
     # Object containing details about a Network Path test.
     attributes: Any = None
+    # The public ID of the Network Path test.
+    id: Any = None
     # Type of the Synthetic test, `network`.
     type: Any = None
 
@@ -236,6 +238,7 @@ _NetworkTestResponse_DataFields = {
         kind="object",
         fields=_NetworkTestResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

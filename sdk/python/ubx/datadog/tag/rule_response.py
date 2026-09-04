@@ -8,8 +8,20 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RuleResponse_Data_Attributes:
+    # The RFC 3339 timestamp at which the rule was created.
+    created_at: Any = None
+    # The identifier of the user who created the rule.
+    created_by: Any = None
+    # The RFC 3339 timestamp at which the rule was soft-deleted. `null` if the rule has not been deleted. Only present when `include_deleted=true` is requested.
+    deleted_at: Any = None
+    # The identifier of the user who soft-deleted the rule. `null` if the rule has not been deleted.
+    deleted_by: Any = None
     # Whether the rule is currently enforced. Defaults to `true` for newly created rules.
     enabled: Any = None
+    # The RFC 3339 timestamp at which the rule was last modified.
+    modified_at: Any = None
+    # The identifier of the user who last modified the rule.
+    modified_by: Any = None
     # Human-readable name for the tag rule.
     name: Any = None
     # When `true`, the rule matches tag values that do NOT match any of the supplied patterns. Defaults to `false`.
@@ -26,11 +38,34 @@ class RuleResponse_Data_Attributes:
     tag_key: Any = None
     # One or more patterns that valid values for the tag key must match. At least one pattern is required.
     tag_value_patterns: Any = None
+    # A monotonically increasing version counter that is incremented on each update.
+    version: Any = None
+
+@dataclasses.dataclass
+class RuleResponse_Data_Relationships_Score_Data:
+    # The unique identifier of the related compliance score resource.
+    id: Any = None
+    # JSON:API resource type for a tag rule compliance score.
+    type: Any = None
+
+@dataclasses.dataclass
+class RuleResponse_Data_Relationships_Score:
+    # Identifier of the related compliance score resource.
+    data: Any = None
+
+@dataclasses.dataclass
+class RuleResponse_Data_Relationships:
+    # A relationship to the compliance score resource for this rule.
+    score: Any = None
 
 @dataclasses.dataclass
 class RuleResponse_Data:
     # Attributes that can be supplied when creating a tag rule.
     attributes: Any = None
+    # The unique identifier of the tag rule.
+    id: Any = None
+    # Related resources for a tag rule. Only present when the corresponding `include` query parameter is supplied.
+    relationships: Any = None
     # JSON:API resource type for a tag rule.
     type: Any = None
 
@@ -48,7 +83,13 @@ class RuleResponse_Included:
     type: Any = None
 
 _RuleResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "deleted_at": ubx.FieldSpec(wire_name="deleted_at"),
+    "deleted_by": ubx.FieldSpec(wire_name="deleted_by"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(wire_name="modified_by"),
     "name": ubx.FieldSpec(wire_name="name"),
     "negated": ubx.FieldSpec(wire_name="negated"),
     "required": ubx.FieldSpec(wire_name="required"),
@@ -57,6 +98,28 @@ _RuleResponse_Data_AttributesFields = {
     "source": ubx.FieldSpec(wire_name="source"),
     "tag_key": ubx.FieldSpec(wire_name="tag_key"),
     "tag_value_patterns": ubx.FieldSpec(wire_name="tag_value_patterns"),
+    "version": ubx.FieldSpec(wire_name="version"),
+}
+
+_RuleResponse_Data_Relationships_Score_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_RuleResponse_Data_Relationships_ScoreFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_RuleResponse_Data_Relationships_Score_DataFields,
+    ),
+}
+
+_RuleResponse_Data_RelationshipsFields = {
+    "score": ubx.FieldSpec(
+        wire_name="score",
+        kind="object",
+        fields=_RuleResponse_Data_Relationships_ScoreFields,
+    ),
 }
 
 _RuleResponse_DataFields = {
@@ -64,6 +127,12 @@ _RuleResponse_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_RuleResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_RuleResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

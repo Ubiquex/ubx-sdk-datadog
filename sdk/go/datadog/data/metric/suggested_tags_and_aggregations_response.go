@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SuggestedTagsAndAggregationsResponse_Data_Attributes_ActiveAggregations struct {
 	Space any
-	Time any
+	Time  any
 }
 
 type SuggestedTagsAndAggregationsResponse_Data_Attributes struct {
@@ -30,7 +30,7 @@ type SuggestedTagsAndAggregationsResponseConfig struct {
 
 type SuggestedTagsAndAggregationsResponseAttrs struct {
 	// Object for a single metric's actively queried tags and aggregations.
-	Data any
+	Data       any
 	MetricName any
 }
 

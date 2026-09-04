@@ -4,6 +4,8 @@ package campaign
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes struct {
+	// Creation time of the campaign.
+	CreatedAt any
 	// The description of the campaign.
 	Description any
 	// The due date of the campaign.
@@ -14,8 +16,12 @@ type Response_Data_Attributes struct {
 	Guidance any
 	// The unique key for the campaign.
 	Key any
+	// Time of last campaign modification.
+	ModifiedAt any
 	// The name of the campaign.
 	Name any
+	// The UUID of the campaign owner.
+	Owner any
 	// The UUID of the campaign owner.
 	OwnerId any
 	// Array of rule IDs associated with this campaign.
@@ -29,31 +35,37 @@ type Response_Data_Attributes struct {
 type Response_Data struct {
 	// Attributes for creating a new campaign.
 	Attributes any
+	// The unique ID of the campaign.
+	Id any
 	// The JSON:API type for campaigns.
 	Type any
 }
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DueDate": ubx.FieldSpec{WireName: "due_date"},
-		"EntityScope": ubx.FieldSpec{WireName: "entity_scope"},
-		"Guidance": ubx.FieldSpec{WireName: "guidance"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OwnerId": ubx.FieldSpec{WireName: "owner_id"},
-		"RuleIds": ubx.FieldSpec{WireName: "rule_ids"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"CreatedAt":   ubx.FieldSpec{WireName: "created_at"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DueDate":     ubx.FieldSpec{WireName: "due_date"},
+	"EntityScope": ubx.FieldSpec{WireName: "entity_scope"},
+	"Guidance":    ubx.FieldSpec{WireName: "guidance"},
+	"Key":         ubx.FieldSpec{WireName: "key"},
+	"ModifiedAt":  ubx.FieldSpec{WireName: "modified_at"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Owner":       ubx.FieldSpec{WireName: "owner"},
+	"OwnerId":     ubx.FieldSpec{WireName: "owner_id"},
+	"RuleIds":     ubx.FieldSpec{WireName: "rule_ids"},
+	"StartDate":   ubx.FieldSpec{WireName: "start_date"},
+	"Status":      ubx.FieldSpec{WireName: "status"},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Data for creating a new campaign.
@@ -74,8 +86,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"CampaignId": ubx.FieldSpec{WireName: "campaign_id"},
 	},

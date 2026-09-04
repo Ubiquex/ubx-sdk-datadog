@@ -4,12 +4,12 @@ package commitments
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OnDemandHotspotsScalarResponse_Columns_Meta_Unit struct {
-	Family any
-	Id any
-	Name any
-	Plural any
+	Family      any
+	Id          any
+	Name        any
+	Plural      any
 	ScaleFactor any
-	ShortName any
+	ShortName   any
 }
 
 type OnDemandHotspotsScalarResponse_Columns_Meta struct {
@@ -17,9 +17,9 @@ type OnDemandHotspotsScalarResponse_Columns_Meta struct {
 }
 
 type OnDemandHotspotsScalarResponse_Columns struct {
-	Meta any
-	Name any
-	Type any
+	Meta   any
+	Name   any
+	Type   any
 	Values any
 }
 
@@ -29,25 +29,25 @@ type OnDemandHotspotsScalarResponse_Meta struct {
 }
 
 type OnDemandHotspotsScalarResponseConfig struct {
-	End any
+	End      any
 	FilterBy any
-	Product any
+	Product  any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 }
 
 type OnDemandHotspotsScalarResponseAttrs struct {
 	// Array of scalar columns in the response.
-	Columns any
-	End any
+	Columns  any
+	End      any
 	FilterBy any
 	// Metadata for the on-demand hot-spots scalar response.
-	Meta any
+	Meta    any
 	Product any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 	// Array of scalar columns in the response.
 	Total any
 }
@@ -55,10 +55,10 @@ type OnDemandHotspotsScalarResponseAttrs struct {
 var OnDemandHotspotsScalarResponse = ubx.DataSourceBinding{
 	WireType: "datadog_commitments_on_demand_hotspots_scalar_response",
 	Fields: ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
+		"End":      ubx.FieldSpec{WireName: "end"},
 		"FilterBy": ubx.FieldSpec{WireName: "filter_by"},
-		"Product": ubx.FieldSpec{WireName: "product"},
+		"Product":  ubx.FieldSpec{WireName: "product"},
 		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Start": ubx.FieldSpec{WireName: "start"},
+		"Start":    ubx.FieldSpec{WireName: "start"},
 	},
 }

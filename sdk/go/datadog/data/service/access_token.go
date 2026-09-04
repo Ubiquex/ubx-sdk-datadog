@@ -4,17 +4,17 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessToken_Data_Attributes struct {
-	CreatedAt any
-	ExpiresAt any
-	LastUsedAt any
-	ModifiedAt any
-	Name any
+	CreatedAt     any
+	ExpiresAt     any
+	LastUsedAt    any
+	ModifiedAt    any
+	Name          any
 	PublicPortion any
-	Scopes any
+	Scopes        any
 }
 
 type AccessToken_Data_Relationships_OwnedBy_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -27,10 +27,10 @@ type AccessToken_Data_Relationships struct {
 }
 
 type AccessToken_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type AccessToken_Meta_Page struct {
@@ -44,7 +44,7 @@ type AccessToken_Meta struct {
 }
 
 type AccessTokenConfig struct {
-	Filter any
+	Filter           any
 	ServiceAccountId any
 	// Sorting options
 	Sort any
@@ -52,10 +52,10 @@ type AccessTokenConfig struct {
 
 type AccessTokenAttrs struct {
 	// Array of access tokens.
-	Data any
+	Data   any
 	Filter any
 	// Additional information related to the access token response.
-	Meta any
+	Meta             any
 	ServiceAccountId any
 	// Sorting options
 	Sort any
@@ -64,8 +64,8 @@ type AccessTokenAttrs struct {
 var AccessToken = ubx.DataSourceBinding{
 	WireType: "datadog_service_access_token",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":           ubx.FieldSpec{WireName: "filter"},
 		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":             ubx.FieldSpec{WireName: "sort"},
 	},
 }

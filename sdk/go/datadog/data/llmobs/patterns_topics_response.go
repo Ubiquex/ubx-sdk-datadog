@@ -21,16 +21,16 @@ type PatternsTopicsResponse_Data_Attributes_ConfigSnapshot struct {
 }
 
 type PatternsTopicsResponse_Data_Attributes_Topics struct {
-	CreatedAt any
-	Description any
-	FirstSeenAt any
+	CreatedAt      any
+	Description    any
+	FirstSeenAt    any
 	HierarchyLevel any
-	Id any
-	IsValidated any
-	Name any
-	ParentTopicId any
-	PointCount any
-	RunId any
+	Id             any
+	IsValidated    any
+	Name           any
+	ParentTopicId  any
+	PointCount     any
+	RunId          any
 }
 
 type PatternsTopicsResponse_Data_Attributes struct {
@@ -61,13 +61,13 @@ type PatternsTopicsResponse_Data struct {
 
 type PatternsTopicsResponseConfig struct {
 	ConfigId any
-	RunId any
+	RunId    any
 }
 
 type PatternsTopicsResponseAttrs struct {
 	ConfigId any
 	// Data object of an Agent Observability patterns topics response.
-	Data any
+	Data  any
 	RunId any
 }
 
@@ -75,6 +75,6 @@ var PatternsTopicsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_patterns_topics_response",
 	Fields: ubx.FieldMap{
 		"ConfigId": ubx.FieldSpec{WireName: "config_id"},
-		"RunId": ubx.FieldSpec{WireName: "run_id"},
+		"RunId":    ubx.FieldSpec{WireName: "run_id"},
 	},
 }

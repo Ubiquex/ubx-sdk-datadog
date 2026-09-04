@@ -66,49 +66,11 @@ const Downtime_ActiveChild_RecurrenceFields: FieldMap = {
   weekDays: "week_days",
 };
 
-const Downtime_ActiveChildFields: FieldMap = {
-  active: "active",
-  canceled: "canceled",
-  creatorId: "creator_id",
-  disabled: "disabled",
-  downtimeType: "downtime_type",
-  end: "end",
-  id: "id",
-  message: "message",
-  monitorId: "monitor_id",
-  monitorTags: "monitor_tags",
-  muteFirstRecoveryNotification: "mute_first_recovery_notification",
-  notifyEndStates: "notify_end_states",
-  notifyEndTypes: "notify_end_types",
-  parentId: "parent_id",
-  recurrence: {
-    wireName: "recurrence",
-    kind: "object",
-    fields: Downtime_ActiveChild_RecurrenceFields,
-  },
-  scope: "scope",
-  start: "start",
-  timezone: "timezone",
-  updaterId: "updater_id",
-};
-
 export interface DowntimeConfig {
-  /** If a scheduled downtime currently exists. */
-  active?: boolean | Computed<boolean>;
-  /** The downtime object definition of the active child for the original parent recurring downtime. This field will only exist on recurring downtimes. */
-  activeChild?: Downtime_ActiveChild | Computed<Downtime_ActiveChild>;
-  /** If a scheduled downtime is canceled. */
-  canceled?: number | Computed<number>;
-  /** User ID of the downtime creator. */
-  creatorId?: number | Computed<number>;
   /** If a downtime has been disabled. */
   disabled?: boolean | Computed<boolean>;
-  /** `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts. */
-  downtimeType?: number | Computed<number>;
   /** POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it. */
   end?: number | Computed<number>;
-  /** The downtime ID. */
-  id?: number | Computed<number>;
   /** A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events. */
   message?: string | Computed<string>;
   /** A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors. */
@@ -131,8 +93,6 @@ export interface DowntimeConfig {
   start?: number | Computed<number>;
   /** The timezone in which to display the downtime's start and end times in Datadog applications. */
   timezone?: string | Computed<string>;
-  /** ID of the last user that updated the downtime. */
-  updaterId?: number | Computed<number>;
   /** path parameter, not part of the API's own resource representation */
   downtimeId: string | Computed<string>;
 }
@@ -185,18 +145,8 @@ export interface DowntimeAttrs {
 export const Downtime: ResourceBinding<DowntimeConfig, DowntimeAttrs> = {
   wireType: "datadog_downtime",
   fields: {
-    active: "active",
-    activeChild: {
-      wireName: "active_child",
-      kind: "object",
-      fields: Downtime_ActiveChildFields,
-    },
-    canceled: "canceled",
-    creatorId: "creator_id",
     disabled: "disabled",
-    downtimeType: "downtime_type",
     end: "end",
-    id: "id",
     message: "message",
     monitorId: "monitor_id",
     monitorTags: "monitor_tags",
@@ -212,7 +162,6 @@ export const Downtime: ResourceBinding<DowntimeConfig, DowntimeAttrs> = {
     scope: "scope",
     start: "start",
     timezone: "timezone",
-    updaterId: "updater_id",
     downtimeId: "downtime_id",
   },
 };

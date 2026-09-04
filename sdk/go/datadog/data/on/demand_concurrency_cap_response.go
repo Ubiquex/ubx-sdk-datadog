@@ -25,6 +25,5 @@ type DemandConcurrencyCapResponseAttrs struct {
 
 var DemandConcurrencyCapResponse = ubx.DataSourceBinding{
 	WireType: "datadog_on_demand_concurrency_cap_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,16 +4,16 @@ package notification
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChannelData_Data_Attributes_Config struct {
-	Address any
+	Address         any
 	ApplicationName any
-	DeviceName any
-	Formats any
+	DeviceName      any
+	Formats         any
 	FormattedNumber any
-	Number any
-	Region any
+	Number          any
+	Region          any
 	SmsSubscribedAt any
-	Type any
-	Verified any
+	Type            any
+	Verified        any
 }
 
 type ChannelData_Data_Attributes struct {
@@ -23,8 +23,8 @@ type ChannelData_Data_Attributes struct {
 
 type ChannelData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ChannelDataConfig struct {
@@ -33,7 +33,7 @@ type ChannelDataConfig struct {
 
 type ChannelDataAttrs struct {
 	// Array of notification channel data objects.
-	Data any
+	Data   any
 	UserId any
 }
 

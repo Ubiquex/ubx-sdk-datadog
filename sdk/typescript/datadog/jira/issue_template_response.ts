@@ -19,22 +19,42 @@ export interface IssueTemplateResponse_Data_Attributes {
   projectId?: string | Computed<string>;
 }
 
-export interface IssueTemplateResponse_Data {
-  /** Attributes for creating a Jira issue template */
-  attributes?: IssueTemplateResponse_Data_Attributes | Computed<IssueTemplateResponse_Data_Attributes>;
-  /** Type identifier for Jira issue template resources */
-  type?: string | Computed<string>;
-}
-
-export interface IssueTemplateResponse_Included_Attributes {
-  consumerKey?: string | Computed<string>;
-  instanceUrl?: string | Computed<string>;
+export interface IssueTemplateResponse_Data_Relationships_JiraAccount_Data_Attributes {
+  /** The consumer key for the Jira account */
+  consumerKey: string | Computed<string>;
+  /** The URL of the Jira instance */
+  instanceUrl: string | Computed<string>;
+  /** Timestamp of the last webhook received */
   lastWebhookTimestamp?: string | Computed<string>;
 }
 
-export interface IssueTemplateResponse_Included {
-  attributes?: IssueTemplateResponse_Included_Attributes | Computed<IssueTemplateResponse_Included_Attributes>;
+export interface IssueTemplateResponse_Data_Relationships_JiraAccount_Data {
+  /** Attributes of a Jira account */
+  attributes: IssueTemplateResponse_Data_Relationships_JiraAccount_Data_Attributes | Computed<IssueTemplateResponse_Data_Relationships_JiraAccount_Data_Attributes>;
+  /** Unique identifier for the Jira account */
+  id: string | Computed<string>;
+  /** Type identifier for Jira account resources */
+  type: string | Computed<string>;
+}
+
+export interface IssueTemplateResponse_Data_Relationships_JiraAccount {
+  /** Data object for a Jira account */
+  data: IssueTemplateResponse_Data_Relationships_JiraAccount_Data | Computed<IssueTemplateResponse_Data_Relationships_JiraAccount_Data>;
+}
+
+export interface IssueTemplateResponse_Data_Relationships {
+  /** Relationship to a Jira account */
+  jiraAccount: IssueTemplateResponse_Data_Relationships_JiraAccount | Computed<IssueTemplateResponse_Data_Relationships_JiraAccount>;
+}
+
+export interface IssueTemplateResponse_Data {
+  /** Attributes for creating a Jira issue template */
+  attributes?: IssueTemplateResponse_Data_Attributes | Computed<IssueTemplateResponse_Data_Attributes>;
+  /** Unique identifier for the Jira issue template */
   id?: string | Computed<string>;
+  /** Relationships of a Jira issue template */
+  relationships?: IssueTemplateResponse_Data_Relationships | Computed<IssueTemplateResponse_Data_Relationships>;
+  /** Type identifier for Jira issue template resources */
   type?: string | Computed<string>;
 }
 
@@ -54,11 +74,49 @@ const IssueTemplateResponse_Data_AttributesFields: FieldMap = {
   projectId: "project_id",
 };
 
+const IssueTemplateResponse_Data_Relationships_JiraAccount_Data_AttributesFields: FieldMap = {
+  consumerKey: "consumer_key",
+  instanceUrl: "instance_url",
+  lastWebhookTimestamp: "last_webhook_timestamp",
+};
+
+const IssueTemplateResponse_Data_Relationships_JiraAccount_DataFields: FieldMap = {
+  attributes: {
+    wireName: "attributes",
+    kind: "object",
+    fields: IssueTemplateResponse_Data_Relationships_JiraAccount_Data_AttributesFields,
+  },
+  id: "id",
+  type: "type",
+};
+
+const IssueTemplateResponse_Data_Relationships_JiraAccountFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: IssueTemplateResponse_Data_Relationships_JiraAccount_DataFields,
+  },
+};
+
+const IssueTemplateResponse_Data_RelationshipsFields: FieldMap = {
+  jiraAccount: {
+    wireName: "jira_account",
+    kind: "object",
+    fields: IssueTemplateResponse_Data_Relationships_JiraAccountFields,
+  },
+};
+
 const IssueTemplateResponse_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
     kind: "object",
     fields: IssueTemplateResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: IssueTemplateResponse_Data_RelationshipsFields,
   },
   type: "type",
 };
@@ -74,7 +132,7 @@ export interface IssueTemplateResponseAttrs {
   /** Data object for creating a Jira issue template */
   data: IssueTemplateResponse_Data;
   /** Array of Jira account data objects */
-  included: IssueTemplateResponse_Included[];
+  included: IssueTemplateResponse_Data_Relationships_JiraAccount_Data[];
   /** path parameter, not part of the API's own resource representation */
   issueTemplateId: string;
 }

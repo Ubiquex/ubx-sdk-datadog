@@ -7,6 +7,17 @@ export interface Maintenance_Data_Attributes_ComponentsAffected {
   status?: string | Computed<string>;
 }
 
+export interface Maintenance_Data_Attributes_Updates {
+  componentsAffected?: Maintenance_Data_Attributes_ComponentsAffected[] | Computed<Maintenance_Data_Attributes_ComponentsAffected[]>;
+  createdAt?: string | Computed<string>;
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  manualTransition?: boolean | Computed<boolean>;
+  modifiedAt?: string | Computed<string>;
+  startedAt?: string | Computed<string>;
+  status?: string | Computed<string>;
+}
+
 export interface Maintenance_Data_Attributes {
   /** Timestamp of when the maintenance was completed. */
   completedDate: string | Computed<string>;
@@ -16,34 +27,52 @@ export interface Maintenance_Data_Attributes {
   componentsAffected?: Maintenance_Data_Attributes_ComponentsAffected[] | Computed<Maintenance_Data_Attributes_ComponentsAffected[]>;
   /** The description shown while the maintenance is in progress. */
   inProgressDescription: string | Computed<string>;
+  /** Whether the maintenance was backfilled. */
+  isBackfilled?: boolean | Computed<boolean>;
+  /** Timestamp of when the maintenance was last modified. */
+  modifiedAt?: string | Computed<string>;
+  /** Timestamp of when the maintenance was published. */
+  publishedDate?: string | Computed<string>;
   /** The description shown when the maintenance is scheduled. */
   scheduledDescription: string | Computed<string>;
   /** Timestamp of when the maintenance is scheduled to start. */
   startDate: string | Computed<string>;
+  /** The status of the maintenance. */
+  status?: string | Computed<string>;
   /** The title of the maintenance. */
   title: string | Computed<string>;
+  /** Past updates made to the maintenance. */
+  updates?: Maintenance_Data_Attributes_Updates[] | Computed<Maintenance_Data_Attributes_Updates[]>;
 }
 
-export interface Maintenance_Data_Relationships_Template_Data {
-  /** The ID of the maintenance template. */
+export interface Maintenance_Data_Relationships_CreatedByUser_Data {
+  /** The ID of the Datadog user who created the maintenance. */
   id: string | Computed<string>;
-  /** Maintenance templates resource type. */
+  /** Users resource type. */
   type: string | Computed<string>;
 }
 
-export interface Maintenance_Data_Relationships_Template {
-  /** The data object identifying the template used to create the maintenance. */
-  data: Maintenance_Data_Relationships_Template_Data | Computed<Maintenance_Data_Relationships_Template_Data>;
+export interface Maintenance_Data_Relationships_CreatedByUser {
+  /** The data object identifying the Datadog user who created the maintenance. */
+  data: Maintenance_Data_Relationships_CreatedByUser_Data | Computed<Maintenance_Data_Relationships_CreatedByUser_Data>;
 }
 
 export interface Maintenance_Data_Relationships {
+  /** The Datadog user who created the maintenance. */
+  createdByUser?: Maintenance_Data_Relationships_CreatedByUser | Computed<Maintenance_Data_Relationships_CreatedByUser>;
+  /** The Datadog user who last modified the maintenance. */
+  lastModifiedByUser?: Maintenance_Data_Relationships_CreatedByUser | Computed<Maintenance_Data_Relationships_CreatedByUser>;
+  /** The status page the maintenance belongs to. */
+  statusPage?: Maintenance_Data_Relationships_CreatedByUser | Computed<Maintenance_Data_Relationships_CreatedByUser>;
   /** The template used to create the maintenance. */
-  template?: Maintenance_Data_Relationships_Template | Computed<Maintenance_Data_Relationships_Template>;
+  template?: Maintenance_Data_Relationships_CreatedByUser | Computed<Maintenance_Data_Relationships_CreatedByUser>;
 }
 
 export interface Maintenance_Data {
   /** The supported attributes for creating a maintenance. */
   attributes: Maintenance_Data_Attributes | Computed<Maintenance_Data_Attributes>;
+  /** The ID of the maintenance. */
+  id?: string | Computed<string>;
   /** The supported relationships for creating a maintenance. */
   relationships?: Maintenance_Data_Relationships | Computed<Maintenance_Data_Relationships>;
   /** Maintenances resource type. */
@@ -59,8 +88,8 @@ export interface Maintenance_Included_Attributes {
 }
 
 export interface Maintenance_Included_Relationships {
-  createdByUser?: Maintenance_Data_Relationships_Template | Computed<Maintenance_Data_Relationships_Template>;
-  lastModifiedByUser?: Maintenance_Data_Relationships_Template | Computed<Maintenance_Data_Relationships_Template>;
+  createdByUser?: Maintenance_Data_Relationships_CreatedByUser | Computed<Maintenance_Data_Relationships_CreatedByUser>;
+  lastModifiedByUser?: Maintenance_Data_Relationships_CreatedByUser | Computed<Maintenance_Data_Relationships_CreatedByUser>;
 }
 
 export interface Maintenance_Included {
@@ -76,6 +105,21 @@ const Maintenance_Data_Attributes_ComponentsAffectedFields: FieldMap = {
   status: "status",
 };
 
+const Maintenance_Data_Attributes_UpdatesFields: FieldMap = {
+  componentsAffected: {
+    wireName: "components_affected",
+    kind: "list",
+    fields: Maintenance_Data_Attributes_ComponentsAffectedFields,
+  },
+  createdAt: "created_at",
+  description: "description",
+  id: "id",
+  manualTransition: "manual_transition",
+  modifiedAt: "modified_at",
+  startedAt: "started_at",
+  status: "status",
+};
+
 const Maintenance_Data_AttributesFields: FieldMap = {
   completedDate: "completed_date",
   completedDescription: "completed_description",
@@ -85,29 +129,53 @@ const Maintenance_Data_AttributesFields: FieldMap = {
     fields: Maintenance_Data_Attributes_ComponentsAffectedFields,
   },
   inProgressDescription: "in_progress_description",
+  isBackfilled: "is_backfilled",
+  modifiedAt: "modified_at",
+  publishedDate: "published_date",
   scheduledDescription: "scheduled_description",
   startDate: "start_date",
+  status: "status",
   title: "title",
+  updates: {
+    wireName: "updates",
+    kind: "list",
+    fields: Maintenance_Data_Attributes_UpdatesFields,
+  },
 };
 
-const Maintenance_Data_Relationships_Template_DataFields: FieldMap = {
+const Maintenance_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
   id: "id",
   type: "type",
 };
 
-const Maintenance_Data_Relationships_TemplateFields: FieldMap = {
+const Maintenance_Data_Relationships_CreatedByUserFields: FieldMap = {
   data: {
     wireName: "data",
     kind: "object",
-    fields: Maintenance_Data_Relationships_Template_DataFields,
+    fields: Maintenance_Data_Relationships_CreatedByUser_DataFields,
   },
 };
 
 const Maintenance_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: Maintenance_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: Maintenance_Data_Relationships_CreatedByUserFields,
+  },
+  statusPage: {
+    wireName: "status_page",
+    kind: "object",
+    fields: Maintenance_Data_Relationships_CreatedByUserFields,
+  },
   template: {
     wireName: "template",
     kind: "object",
-    fields: Maintenance_Data_Relationships_TemplateFields,
+    fields: Maintenance_Data_Relationships_CreatedByUserFields,
   },
 };
 
@@ -117,6 +185,7 @@ const Maintenance_DataFields: FieldMap = {
     kind: "object",
     fields: Maintenance_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

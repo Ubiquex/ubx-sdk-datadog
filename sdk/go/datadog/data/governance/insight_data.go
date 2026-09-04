@@ -5,72 +5,72 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InsightData_Data_Attributes_AuditQuery_Compute struct {
 	Aggregation any
-	Interval any
-	Metric any
-	Rollup any
+	Interval    any
+	Metric      any
+	Rollup      any
 }
 
 type InsightData_Data_Attributes_AuditQuery struct {
 	Compute any
 	Indexes any
-	Query any
-	Source any
+	Query   any
+	Source  any
 }
 
 type InsightData_Data_Attributes_EventQuery_Compute struct {
 	Aggregation any
-	Interval any
+	Interval    any
 }
 
 type InsightData_Data_Attributes_EventQuery struct {
 	Compute any
 	Indexes any
-	Query any
+	Query   any
 }
 
 type InsightData_Data_Attributes_MetricQuery struct {
-	Query any
+	Query   any
 	Reducer any
-	Source any
+	Source  any
 }
 
 type InsightData_Data_Attributes_PercentageQuery struct {
 	DenominatorQuery any
-	NumeratorQuery any
+	NumeratorQuery   any
 }
 
 type InsightData_Data_Attributes_QueryConfig struct {
-	ChartType any
-	ComparisonShift any
-	DefaultValue any
-	Directionality any
+	ChartType               any
+	ComparisonShift         any
+	DefaultValue            any
+	Directionality          any
 	EffectiveTimeWindowDays any
 }
 
 type InsightData_Data_Attributes_UsageQuery struct {
-	Query any
+	Query   any
 	Reducer any
 }
 
 type InsightData_Data_Attributes struct {
-	AuditQuery any
-	Description any
-	DisplayName any
-	EventQuery any
-	MetricQuery any
+	AuditQuery      any
+	Description     any
+	DisplayName     any
+	EventQuery      any
+	MetricQuery     any
 	PercentageQuery any
-	Product any
-	QueryConfig any
-	SubProduct any
-	TimeRange any
-	UnitName any
-	UsageQuery any
+	Product         any
+	QueryConfig     any
+	SubProduct      any
+	TimeRange       any
+	UnitName        any
+	UsageQuery      any
 }
 
 type InsightData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type InsightDataConfig struct {
@@ -83,6 +83,5 @@ type InsightDataAttrs struct {
 
 var InsightData = ubx.DataSourceBinding{
 	WireType: "datadog_governance_insight_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

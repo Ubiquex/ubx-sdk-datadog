@@ -32,6 +32,12 @@ class DowntimeResponse_Data_Attributes_TimeSlots:
 
 @dataclasses.dataclass
 class DowntimeResponse_Data_Attributes:
+    # The timestamp when the downtime was created.
+    created_at: Any = None
+    # The UUID of the user who created the downtime.
+    created_by: Any = None
+    # The display name of the user who created the downtime.
+    created_by_name: Any = None
     # An optional description of the downtime.
     description: Any = None
     # Whether the downtime is enabled.
@@ -44,11 +50,19 @@ class DowntimeResponse_Data_Attributes:
     test_ids: Any = None
     # List of time slots for a Synthetics downtime create or update request.
     time_slots: Any = None
+    # The timestamp when the downtime was last updated.
+    updated_at: Any = None
+    # The UUID of the user who last updated the downtime.
+    updated_by: Any = None
+    # The display name of the user who last updated the downtime.
+    updated_by_name: Any = None
 
 @dataclasses.dataclass
 class DowntimeResponse_Data:
     # Attributes for creating or updating a Synthetics downtime.
     attributes: Any = None
+    # The unique identifier of the downtime.
+    id: Any = None
     # The resource type for a Synthetics downtime.
     type: Any = None
 
@@ -89,6 +103,9 @@ _DowntimeResponse_Data_Attributes_TimeSlotsFields = {
 }
 
 _DowntimeResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "created_by_name": ubx.FieldSpec(wire_name="created_by_name"),
     "description": ubx.FieldSpec(wire_name="description"),
     "is_enabled": ubx.FieldSpec(wire_name="is_enabled"),
     "name": ubx.FieldSpec(wire_name="name"),
@@ -99,6 +116,9 @@ _DowntimeResponse_Data_AttributesFields = {
         kind="list",
         fields=_DowntimeResponse_Data_Attributes_TimeSlotsFields,
     ),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updated_by": ubx.FieldSpec(wire_name="updated_by"),
+    "updated_by_name": ubx.FieldSpec(wire_name="updated_by_name"),
 }
 
 _DowntimeResponse_DataFields = {
@@ -107,6 +127,7 @@ _DowntimeResponse_DataFields = {
         kind="object",
         fields=_DowntimeResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

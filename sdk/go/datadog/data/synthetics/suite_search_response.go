@@ -9,18 +9,18 @@ type SuiteSearchResponse_Data_Attributes_Suites_Options struct {
 
 type SuiteSearchResponse_Data_Attributes_Suites_Tests struct {
 	AlertingCriticality any
-	PublicId any
+	PublicId            any
 }
 
 type SuiteSearchResponse_Data_Attributes_Suites struct {
-	Message any
+	Message   any
 	MonitorId any
-	Name any
-	Options any
-	PublicId any
-	Tags any
-	Tests any
-	Type any
+	Name      any
+	Options   any
+	PublicId  any
+	Tags      any
+	Tests     any
+	Type      any
 }
 
 type SuiteSearchResponse_Data_Attributes struct {
@@ -40,30 +40,30 @@ type SuiteSearchResponse_Data struct {
 }
 
 type SuiteSearchResponseConfig struct {
-	Count any
+	Count      any
 	FacetsOnly any
-	Query any
-	Sort any
-	Start any
+	Query      any
+	Sort       any
+	Start      any
 }
 
 type SuiteSearchResponseAttrs struct {
 	Count any
 	// Synthetics suite search response data
-	Data any
+	Data       any
 	FacetsOnly any
-	Query any
-	Sort any
-	Start any
+	Query      any
+	Sort       any
+	Start      any
 }
 
 var SuiteSearchResponse = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_suite_search_response",
 	Fields: ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
+		"Count":      ubx.FieldSpec{WireName: "count"},
 		"FacetsOnly": ubx.FieldSpec{WireName: "facets_only"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"Start": ubx.FieldSpec{WireName: "start"},
+		"Query":      ubx.FieldSpec{WireName: "query"},
+		"Sort":       ubx.FieldSpec{WireName: "sort"},
+		"Start":      ubx.FieldSpec{WireName: "start"},
 	},
 }

@@ -20,10 +20,16 @@ export interface Response_Data_Attributes_Schedule {
 }
 
 export interface Response_Data_Attributes {
+  /** Time that the downtime was canceled. */
+  canceled?: string | Computed<string>;
+  /** Creation time of the downtime. */
+  created?: string | Computed<string>;
   /** The timezone in which to display the downtime's start and end times in Datadog applications. This is not used as an offset for scheduling. */
   displayTimezone?: string | Computed<string>;
   /** A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events. */
   message?: string | Computed<string>;
+  /** Time that the downtime was last modified. */
+  modified?: string | Computed<string>;
   /** Monitor identifier for the downtime. */
   monitorIdentifier: Response_Data_Attributes_MonitorIdentifier | Computed<Response_Data_Attributes_MonitorIdentifier>;
   /** If the first recovery notification during a downtime should be muted. */
@@ -36,11 +42,36 @@ export interface Response_Data_Attributes {
   schedule?: Response_Data_Attributes_Schedule | Computed<Response_Data_Attributes_Schedule>;
   /** The scope to which the downtime applies. Must follow the [common search syntax](https://docs.datadoghq.com/logs/explorer/search_syntax/). */
   scope: string | Computed<string>;
+  /** The current status of the downtime. */
+  status?: string | Computed<string>;
+}
+
+export interface Response_Data_Relationships_CreatedBy_Data {
+  /** User ID of the downtime creator. */
+  id?: string | Computed<string>;
+  /** Users resource type. */
+  type?: string | Computed<string>;
+}
+
+export interface Response_Data_Relationships_CreatedBy {
+  /** Data for the user who created the downtime. */
+  data?: Response_Data_Relationships_CreatedBy_Data | Computed<Response_Data_Relationships_CreatedBy_Data>;
+}
+
+export interface Response_Data_Relationships {
+  /** The user who created the downtime. */
+  createdBy?: Response_Data_Relationships_CreatedBy | Computed<Response_Data_Relationships_CreatedBy>;
+  /** The monitor identified by the downtime. */
+  monitor?: Response_Data_Relationships_CreatedBy | Computed<Response_Data_Relationships_CreatedBy>;
 }
 
 export interface Response_Data {
   /** Downtime details. */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** The downtime ID. */
+  id?: string | Computed<string>;
+  /** All relationships associated with downtime. */
+  relationships?: Response_Data_Relationships | Computed<Response_Data_Relationships>;
   /** Downtime resource type. */
   type: string | Computed<string>;
 }
@@ -62,21 +93,12 @@ export interface Response_Included_Attributes {
   verified?: boolean | Computed<boolean>;
 }
 
-export interface Response_Included_Relationships_Org_Data {
-  id?: string | Computed<string>;
-  type?: string | Computed<string>;
-}
-
-export interface Response_Included_Relationships_Org {
-  data?: Response_Included_Relationships_Org_Data | Computed<Response_Included_Relationships_Org_Data>;
-}
-
 export interface Response_Included_Relationships_OtherOrgs {
-  data?: Response_Included_Relationships_Org_Data[] | Computed<Response_Included_Relationships_Org_Data[]>;
+  data?: Response_Data_Relationships_CreatedBy_Data[] | Computed<Response_Data_Relationships_CreatedBy_Data[]>;
 }
 
 export interface Response_Included_Relationships {
-  org?: Response_Included_Relationships_Org | Computed<Response_Included_Relationships_Org>;
+  org?: Response_Data_Relationships_CreatedBy | Computed<Response_Data_Relationships_CreatedBy>;
   otherOrgs?: Response_Included_Relationships_OtherOrgs | Computed<Response_Included_Relationships_OtherOrgs>;
   otherUsers?: Response_Included_Relationships_OtherOrgs | Computed<Response_Included_Relationships_OtherOrgs>;
   roles?: Response_Included_Relationships_OtherOrgs | Computed<Response_Included_Relationships_OtherOrgs>;
@@ -112,8 +134,11 @@ const Response_Data_Attributes_ScheduleFields: FieldMap = {
 };
 
 const Response_Data_AttributesFields: FieldMap = {
+  canceled: "canceled",
+  created: "created",
   displayTimezone: "display_timezone",
   message: "message",
+  modified: "modified",
   monitorIdentifier: {
     wireName: "monitor_identifier",
     kind: "object",
@@ -128,6 +153,33 @@ const Response_Data_AttributesFields: FieldMap = {
     fields: Response_Data_Attributes_ScheduleFields,
   },
   scope: "scope",
+  status: "status",
+};
+
+const Response_Data_Relationships_CreatedBy_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const Response_Data_Relationships_CreatedByFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: Response_Data_Relationships_CreatedBy_DataFields,
+  },
+};
+
+const Response_Data_RelationshipsFields: FieldMap = {
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: Response_Data_Relationships_CreatedByFields,
+  },
+  monitor: {
+    wireName: "monitor",
+    kind: "object",
+    fields: Response_Data_Relationships_CreatedByFields,
+  },
 };
 
 const Response_DataFields: FieldMap = {
@@ -135,6 +187,12 @@ const Response_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: Response_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: Response_Data_RelationshipsFields,
   },
   type: "type",
 };

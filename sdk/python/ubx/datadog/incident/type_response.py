@@ -47,9 +47,38 @@ class TypeResponse_Data_Attributes:
     prefix: Any = None
 
 @dataclasses.dataclass
+class TypeResponse_Data_Relationships_CreatedByUser_Data:
+    # A unique identifier that represents the user.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class TypeResponse_Data_Relationships_CreatedByUser:
+    # Relationship to user object.
+    data: Any = None
+
+@dataclasses.dataclass
+class TypeResponse_Data_Relationships:
+    # Relationship to user.
+    created_by_user: Any = None
+    # A reference to a Google Meet Configuration resource.
+    google_meet_configuration: Any = None
+    # Relationship to user.
+    last_modified_by_user: Any = None
+    # A reference to a Microsoft Teams Configuration resource.
+    microsoft_teams_configuration: Any = None
+    # A reference to a Zoom configuration resource.
+    zoom_configuration: Any = None
+
+@dataclasses.dataclass
 class TypeResponse_Data:
     # Incident type's attributes.
     attributes: Any = None
+    # The incident type's ID.
+    id: Any = None
+    # The incident type's resource relationships.
+    relationships: Any = None
     # Incident type resource type.
     type: Any = None
 
@@ -80,11 +109,58 @@ _TypeResponse_Data_AttributesFields = {
     "prefix": ubx.FieldSpec(wire_name="prefix"),
 }
 
+_TypeResponse_Data_Relationships_CreatedByUser_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_TypeResponse_Data_Relationships_CreatedByUserFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_TypeResponse_Data_Relationships_CreatedByUser_DataFields,
+    ),
+}
+
+_TypeResponse_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_TypeResponse_Data_Relationships_CreatedByUserFields,
+    ),
+    "google_meet_configuration": ubx.FieldSpec(
+        wire_name="google_meet_configuration",
+        kind="object",
+        fields=_TypeResponse_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_TypeResponse_Data_Relationships_CreatedByUserFields,
+    ),
+    "microsoft_teams_configuration": ubx.FieldSpec(
+        wire_name="microsoft_teams_configuration",
+        kind="object",
+        fields=_TypeResponse_Data_Relationships_CreatedByUserFields,
+    ),
+    "zoom_configuration": ubx.FieldSpec(
+        wire_name="zoom_configuration",
+        kind="object",
+        fields=_TypeResponse_Data_Relationships_CreatedByUserFields,
+    ),
+}
+
 _TypeResponse_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
         kind="object",
         fields=_TypeResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_TypeResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

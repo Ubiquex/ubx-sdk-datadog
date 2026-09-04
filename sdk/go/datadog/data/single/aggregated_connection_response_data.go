@@ -4,60 +4,60 @@ package single
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregatedConnectionResponseData_Data_Attributes struct {
-	BytesSentByClient any
-	BytesSentByServer any
-	GroupBys any
-	PacketsSentByClient any
-	PacketsSentByServer any
-	RttMicroSeconds any
-	TcpClosedConnections any
-	TcpDeliveredCe any
+	BytesSentByClient         any
+	BytesSentByServer         any
+	GroupBys                  any
+	PacketsSentByClient       any
+	PacketsSentByServer       any
+	RttMicroSeconds           any
+	TcpClosedConnections      any
+	TcpDeliveredCe            any
 	TcpEstablishedConnections any
-	TcpProbe0Count any
-	TcpRcvOooPack any
-	TcpRecoveryCount any
-	TcpRefusals any
-	TcpReordSeen any
-	TcpResets any
-	TcpRetransmits any
-	TcpRtoCount any
-	TcpTimeouts any
+	TcpProbe0Count            any
+	TcpRcvOooPack             any
+	TcpRecoveryCount          any
+	TcpRefusals               any
+	TcpReordSeen              any
+	TcpResets                 any
+	TcpRetransmits            any
+	TcpRtoCount               any
+	TcpTimeouts               any
 }
 
 type AggregatedConnectionResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AggregatedConnectionResponseDataConfig struct {
-	From any
+	From    any
 	GroupBy any
-	Limit any
-	Query any
-	Tags any
-	To any
+	Limit   any
+	Query   any
+	Tags    any
+	To      any
 }
 
 type AggregatedConnectionResponseDataAttrs struct {
 	// Array of aggregated connection objects.
-	Data any
-	From any
+	Data    any
+	From    any
 	GroupBy any
-	Limit any
-	Query any
-	Tags any
-	To any
+	Limit   any
+	Query   any
+	Tags    any
+	To      any
 }
 
 var AggregatedConnectionResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_single_aggregated_connection_response_data",
 	Fields: ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
+		"From":    ubx.FieldSpec{WireName: "from"},
 		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"Limit":   ubx.FieldSpec{WireName: "limit"},
+		"Query":   ubx.FieldSpec{WireName: "query"},
+		"Tags":    ubx.FieldSpec{WireName: "tags"},
+		"To":      ubx.FieldSpec{WireName: "to"},
 	},
 }

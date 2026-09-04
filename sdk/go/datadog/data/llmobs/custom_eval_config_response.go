@@ -36,33 +36,33 @@ type CustomEvalConfigResponse_Data_Attributes_LlmJudgeConfig_InferenceParams str
 
 type CustomEvalConfigResponse_Data_Attributes_LlmJudgeConfig_PromptTemplate_Contents_Value_ToolCall struct {
 	Arguments any
-	Id any
-	Name any
-	Type any
+	Id        any
+	Name      any
+	Type      any
 }
 
 type CustomEvalConfigResponse_Data_Attributes_LlmJudgeConfig_PromptTemplate_Contents_Value_ToolCallResult struct {
-	Name any
+	Name   any
 	Result any
 	ToolId any
-	Type any
+	Type   any
 }
 
 type CustomEvalConfigResponse_Data_Attributes_LlmJudgeConfig_PromptTemplate_Contents_Value struct {
-	Text any
-	ToolCall any
+	Text           any
+	ToolCall       any
 	ToolCallResult any
 }
 
 type CustomEvalConfigResponse_Data_Attributes_LlmJudgeConfig_PromptTemplate_Contents struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type CustomEvalConfigResponse_Data_Attributes_LlmJudgeConfig_PromptTemplate struct {
-	Content any
+	Content  any
 	Contents any
-	Role any
+	Role     any
 }
 
 type CustomEvalConfigResponse_Data_Attributes_LlmJudgeConfig struct {
@@ -168,7 +168,7 @@ type CustomEvalConfigResponseConfig struct {
 
 type CustomEvalConfigResponseAttrs struct {
 	// Data object for a custom Agent Observability evaluator configuration.
-	Data any
+	Data     any
 	EvalName any
 }
 

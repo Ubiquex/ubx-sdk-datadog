@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RuleResponse_Data_Attributes_CreatedBy:
+    # The user handle.
+    handle: Any = None
+    # The user name.
+    name: Any = None
+
+@dataclasses.dataclass
 class RuleResponse_Data_Attributes_Routing:
     # The routing mode for the notification rule. `manual` sends notifications to the configured targets.
     mode: Any = None
@@ -24,8 +31,16 @@ class RuleResponse_Data_Attributes_Selectors:
 
 @dataclasses.dataclass
 class RuleResponse_Data_Attributes:
+    # Date as Unix timestamp in milliseconds.
+    created_at: Any = None
+    # User creating or modifying a rule.
+    created_by: Any = None
     # Field used to enable or disable the rule.
     enabled: Any = None
+    # Date as Unix timestamp in milliseconds.
+    modified_at: Any = None
+    # User creating or modifying a rule.
+    modified_by: Any = None
     # Name of the notification rule.
     name: Any = None
     # Routing configuration for the notification rule.
@@ -36,13 +51,22 @@ class RuleResponse_Data_Attributes:
     targets: Any = None
     # Time aggregation period (in seconds) is used to aggregate the results of the notification rule evaluation. Results are aggregated over a selected time frame using a rolling window, which updates with each new evaluation. Notifications are only sent for new issues discovered during the window. Time aggregation is only available for vulnerability-based notification rules. When omitted or set to 0, no aggregation is done.
     time_aggregation: Any = None
+    # Version of the notification rule. It is updated when the rule is modified.
+    version: Any = None
 
 @dataclasses.dataclass
 class RuleResponse_Data:
     # Attributes of the notification rule create request.
     attributes: Any = None
+    # The ID of a notification rule.
+    id: Any = None
     # The rule type associated to notification rules.
     type: Any = None
+
+_RuleResponse_Data_Attributes_CreatedByFields = {
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
 
 _RuleResponse_Data_Attributes_RoutingFields = {
     "mode": ubx.FieldSpec(wire_name="mode"),
@@ -56,7 +80,19 @@ _RuleResponse_Data_Attributes_SelectorsFields = {
 }
 
 _RuleResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_RuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_RuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
     "routing": ubx.FieldSpec(
         wire_name="routing",
@@ -70,6 +106,7 @@ _RuleResponse_Data_AttributesFields = {
     ),
     "targets": ubx.FieldSpec(wire_name="targets"),
     "time_aggregation": ubx.FieldSpec(wire_name="time_aggregation"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _RuleResponse_DataFields = {
@@ -78,6 +115,7 @@ _RuleResponse_DataFields = {
         kind="object",
         fields=_RuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

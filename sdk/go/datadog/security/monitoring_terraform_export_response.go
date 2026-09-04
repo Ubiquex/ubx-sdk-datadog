@@ -4,8 +4,14 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringTerraformExportResponse_Data_Attributes struct {
+	// The Terraform configuration for the resource.
+	Output any
+	// The ID of the exported resource.
+	ResourceId any
 	// The resource attributes as a JSON object, matching the structure returned by the corresponding Datadog API (for example, the attributes of a suppression rule).
 	ResourceJson any
+	// The Terraform resource type name.
+	TypeName any
 }
 
 type MonitoringTerraformExportResponse_Data struct {
@@ -18,18 +24,21 @@ type MonitoringTerraformExportResponse_Data struct {
 }
 
 var MonitoringTerraformExportResponse_Data_AttributesFields = ubx.FieldMap{
-		"ResourceJson": ubx.FieldSpec{WireName: "resource_json"},
-	}
+	"Output":       ubx.FieldSpec{WireName: "output"},
+	"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceJson": ubx.FieldSpec{WireName: "resource_json"},
+	"TypeName":     ubx.FieldSpec{WireName: "type_name"},
+}
 
 var MonitoringTerraformExportResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: MonitoringTerraformExportResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   MonitoringTerraformExportResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MonitoringTerraformExportResponseConfig struct {
 	// The convert request data object.
@@ -54,10 +63,10 @@ var MonitoringTerraformExportResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: MonitoringTerraformExportResponse_DataFields,
+			Kind:     "object",
+			Fields:   MonitoringTerraformExportResponse_DataFields,
 		},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

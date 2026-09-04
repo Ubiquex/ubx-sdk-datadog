@@ -4,19 +4,19 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestParentSuiteData_Data_Attributes struct {
-	ChildName any
-	ChildPublicId any
-	MonitorId any
-	Name any
-	OverallState any
+	ChildName            any
+	ChildPublicId        any
+	MonitorId            any
+	Name                 any
+	OverallState         any
 	OverallStateModified any
-	PublicId any
+	PublicId             any
 }
 
 type TestParentSuiteData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TestParentSuiteDataConfig struct {
@@ -25,7 +25,7 @@ type TestParentSuiteDataConfig struct {
 
 type TestParentSuiteDataAttrs struct {
 	// List of parent suites for the given test.
-	Data any
+	Data     any
 	PublicId any
 }
 

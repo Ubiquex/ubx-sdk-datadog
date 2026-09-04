@@ -21,16 +21,30 @@ export interface EmbedGetResponse_Data_Attributes_ViewingPreferences {
 }
 
 export interface EmbedGetResponse_Data_Attributes {
+  /** Creation timestamp. */
+  createdAt?: string | Computed<string>;
+  /** Last 4 characters of the credential. Defaults to `0000` if unavailable. */
+  credentialSuffix?: string | Computed<string>;
+  /** The source dashboard ID. */
+  dashboardId?: string | Computed<string>;
   /** Default time range configuration for the secure embed. */
   globalTime: EmbedGetResponse_Data_Attributes_GlobalTime | Computed<EmbedGetResponse_Data_Attributes_GlobalTime>;
   /** Whether viewers can change the time range. */
   globalTimeSelectable: boolean | Computed<boolean>;
+  /** Internal share ID. */
+  id?: string | Computed<string>;
   /** Template variables viewers can modify. */
   selectableTemplateVars: EmbedGetResponse_Data_Attributes_SelectableTemplateVars[] | Computed<EmbedGetResponse_Data_Attributes_SelectableTemplateVars[]>;
+  /** The type of share. Always `secure_embed`. */
+  shareType?: string | Computed<string>;
   /** The status of the secure embed share. Active means the shared dashboard is available. Paused means it is not. */
   status: string | Computed<string>;
   /** Display title for the shared dashboard. */
   title: string | Computed<string>;
+  /** Public share token. */
+  token?: string | Computed<string>;
+  /** CDN URL for the shared dashboard. */
+  url?: string | Computed<string>;
   /** Display settings for the secure embed shared dashboard. */
   viewingPreferences: EmbedGetResponse_Data_Attributes_ViewingPreferences | Computed<EmbedGetResponse_Data_Attributes_ViewingPreferences>;
 }
@@ -38,6 +52,8 @@ export interface EmbedGetResponse_Data_Attributes {
 export interface EmbedGetResponse_Data {
   /** Attributes for creating a secure embed shared dashboard. */
   attributes: EmbedGetResponse_Data_Attributes | Computed<EmbedGetResponse_Data_Attributes>;
+  /** Internal share ID. */
+  id?: string | Computed<string>;
   /** Resource type for secure embed create requests. */
   type: string | Computed<string>;
 }
@@ -59,19 +75,26 @@ const EmbedGetResponse_Data_Attributes_ViewingPreferencesFields: FieldMap = {
 };
 
 const EmbedGetResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  credentialSuffix: "credential_suffix",
+  dashboardId: "dashboard_id",
   globalTime: {
     wireName: "global_time",
     kind: "object",
     fields: EmbedGetResponse_Data_Attributes_GlobalTimeFields,
   },
   globalTimeSelectable: "global_time_selectable",
+  id: "id",
   selectableTemplateVars: {
     wireName: "selectable_template_vars",
     kind: "list",
     fields: EmbedGetResponse_Data_Attributes_SelectableTemplateVarsFields,
   },
+  shareType: "share_type",
   status: "status",
   title: "title",
+  token: "token",
+  url: "url",
   viewingPreferences: {
     wireName: "viewing_preferences",
     kind: "object",
@@ -85,6 +108,7 @@ const EmbedGetResponse_DataFields: FieldMap = {
     kind: "object",
     fields: EmbedGetResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -15,6 +15,8 @@ class Channel_Data_Attributes_Config:
 
 @dataclasses.dataclass
 class Channel_Data_Attributes:
+    # Whether the notification channel is currently active.
+    active: Any = None
     # Defines the configuration for creating an On-Call notification channel
     config: Any = None
 
@@ -22,6 +24,8 @@ class Channel_Data_Attributes:
 class Channel_Data:
     # Attributes for creating an on-call notification channel.
     attributes: Any = None
+    # Unique identifier for the channel
+    id: Any = None
     # Indicates that the resource is of type 'notification_channels'.
     type: Any = None
 
@@ -33,6 +37,7 @@ _Channel_Data_Attributes_ConfigFields = {
 }
 
 _Channel_Data_AttributesFields = {
+    "active": ubx.FieldSpec(wire_name="active"),
     "config": ubx.FieldSpec(
         wire_name="config",
         kind="object",
@@ -46,6 +51,7 @@ _Channel_DataFields = {
         kind="object",
         fields=_Channel_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

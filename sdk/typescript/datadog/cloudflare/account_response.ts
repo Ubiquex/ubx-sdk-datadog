@@ -17,6 +17,8 @@ export interface AccountResponse_Data_Attributes {
 export interface AccountResponse_Data {
   /** Attributes object for creating a Cloudflare account. */
   attributes: AccountResponse_Data_Attributes | Computed<AccountResponse_Data_Attributes>;
+  /** The ID of the Cloudflare account, a hash of the account name. */
+  id?: string | Computed<string>;
   /** The JSON:API type for this API. Should always be `cloudflare-accounts`. */
   type: string | Computed<string>;
 }
@@ -35,6 +37,7 @@ const AccountResponse_DataFields: FieldMap = {
     kind: "object",
     fields: AccountResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -4,15 +4,15 @@ package timeline
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CellResource_Data_Attributes_Author_Content struct {
-	Email any
+	Email  any
 	Handle any
-	Id any
-	Name any
+	Id     any
+	Name   any
 }
 
 type CellResource_Data_Attributes_Author struct {
 	Content any
-	Type any
+	Type    any
 }
 
 type CellResource_Data_Attributes_CellContent struct {
@@ -20,18 +20,18 @@ type CellResource_Data_Attributes_CellContent struct {
 }
 
 type CellResource_Data_Attributes struct {
-	Author any
+	Author      any
 	CellContent any
-	CreatedAt any
-	DeletedAt any
-	ModifiedAt any
-	Type any
+	CreatedAt   any
+	DeletedAt   any
+	ModifiedAt  any
+	Type        any
 }
 
 type CellResource_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type CellResourceConfig struct {

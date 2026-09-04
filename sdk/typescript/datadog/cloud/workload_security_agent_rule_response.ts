@@ -36,13 +36,32 @@ export interface WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions {
   set?: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Set | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Set>;
 }
 
+export interface WorkloadSecurityAgentRuleResponse_Data_Attributes_Creator {
+  /** The handle of the user */
+  handle?: string | Computed<string>;
+  /** The name of the user */
+  name?: string | Computed<string>;
+}
+
 export interface WorkloadSecurityAgentRuleResponse_Data_Attributes {
   /** The array of actions the rule can perform if triggered */
   actions?: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions[] | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions[]>;
+  /** The version of the Agent */
+  agentConstraint?: string | Computed<string>;
   /** Constrain the rule to specific versions of the Datadog Agent. */
   agentVersion?: string | Computed<string>;
   /** The blocking policies that the rule belongs to. */
   blocking?: string[] | Computed<string[]>;
+  /** The category of the Agent rule */
+  category?: string | Computed<string>;
+  /** The ID of the user who created the rule */
+  creationAuthorUuId?: string | Computed<string>;
+  /** When the Agent rule was created, timestamp in milliseconds */
+  creationDate?: number | Computed<number>;
+  /** The attributes of the user who created the Agent rule */
+  creator?: WorkloadSecurityAgentRuleResponse_Data_Attributes_Creator | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes_Creator>;
+  /** Whether the rule is included by default */
+  defaultRule?: boolean | Computed<boolean>;
   /** The description of the Agent rule. */
   description?: string | Computed<string>;
   /** The disabled policies that the rule belongs to. */
@@ -63,11 +82,23 @@ export interface WorkloadSecurityAgentRuleResponse_Data_Attributes {
   productTags?: string[] | Computed<string[]>;
   /** Whether the rule is silent. */
   silent?: boolean | Computed<boolean>;
+  /** The ID of the user who updated the rule */
+  updateAuthorUuId?: string | Computed<string>;
+  /** Timestamp in milliseconds when the Agent rule was last updated */
+  updateDate?: number | Computed<number>;
+  /** When the Agent rule was last updated, timestamp in milliseconds */
+  updatedAt?: number | Computed<number>;
+  /** The attributes of the user who last updated the Agent rule */
+  updater?: WorkloadSecurityAgentRuleResponse_Data_Attributes_Creator | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes_Creator>;
+  /** The version of the Agent rule */
+  version?: number | Computed<number>;
 }
 
 export interface WorkloadSecurityAgentRuleResponse_Data {
   /** Create a new Cloud Workload Security Agent rule. */
   attributes: WorkloadSecurityAgentRuleResponse_Data_Attributes | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes>;
+  /** The ID of the Agent rule */
+  id?: string | Computed<string>;
   /** The type of the resource, must always be `agent_rule` */
   type: string | Computed<string>;
 }
@@ -123,14 +154,29 @@ const WorkloadSecurityAgentRuleResponse_Data_Attributes_ActionsFields: FieldMap 
   },
 };
 
+const WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields: FieldMap = {
+  handle: "handle",
+  name: "name",
+};
+
 const WorkloadSecurityAgentRuleResponse_Data_AttributesFields: FieldMap = {
   actions: {
     wireName: "actions",
     kind: "list",
     fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_ActionsFields,
   },
+  agentConstraint: "agent_constraint",
   agentVersion: "agent_version",
   blocking: "blocking",
+  category: "category",
+  creationAuthorUuId: "creation_author_uu_id",
+  creationDate: "creation_date",
+  creator: {
+    wireName: "creator",
+    kind: "object",
+    fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields,
+  },
+  defaultRule: "default_rule",
   description: "description",
   disabled: "disabled",
   enabled: "enabled",
@@ -141,6 +187,15 @@ const WorkloadSecurityAgentRuleResponse_Data_AttributesFields: FieldMap = {
   policyId: "policy_id",
   productTags: "product_tags",
   silent: "silent",
+  updateAuthorUuId: "update_author_uu_id",
+  updateDate: "update_date",
+  updatedAt: "updated_at",
+  updater: {
+    wireName: "updater",
+    kind: "object",
+    fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields,
+  },
+  version: "version",
 };
 
 const WorkloadSecurityAgentRuleResponse_DataFields: FieldMap = {
@@ -149,6 +204,7 @@ const WorkloadSecurityAgentRuleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: WorkloadSecurityAgentRuleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

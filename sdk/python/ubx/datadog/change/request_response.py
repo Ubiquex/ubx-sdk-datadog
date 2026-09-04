@@ -8,6 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RequestResponse_Data_Attributes:
+    # Timestamp of when the change request was archived.
+    archived_at: Any = None
+    # Custom attributes of the change request as key-value pairs.
+    attributes: Any = None
     # The UUID of an incident to link to the change request.
     change_request_linked_incident_uuid: Any = None
     # The maintenance window query for the change request.
@@ -18,23 +22,69 @@ class RequestResponse_Data_Attributes:
     change_request_risk: Any = None
     # The type of the change request.
     change_request_type: Any = None
+    # Timestamp of when the change request was closed.
+    closed_at: Any = None
+    # Timestamp of when the change request was created.
+    created_at: Any = None
+    # The source from which the change request was created.
+    creation_source: Any = None
     # The description of the change request.
     description: Any = None
     # The planned end date of the change request.
     end_date: Any = None
+    # The human-readable key of the change request.
+    key: Any = None
+    # Timestamp of when the change request was last modified.
+    modified_at: Any = None
+    # The notebook ID associated with the change request plan.
+    plan_notebook_id: Any = None
+    # The priority of the change request.
+    priority: Any = None
     # The project UUID to associate with the change request.
     project_id: Any = None
     # A list of team handles to request decisions from.
     requested_teams: Any = None
     # The planned start date of the change request.
     start_date: Any = None
+    # The current status of the change request.
+    status: Any = None
     # The title of the change request.
     title: Any = None
+    # The case type.
+    type: Any = None
+
+@dataclasses.dataclass
+class RequestResponse_Data_Relationships_ChangeRequestDecisions_Data:
+    id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class RequestResponse_Data_Relationships_ChangeRequestDecisions:
+    # Array of decision relationship data.
+    data: Any = None
+
+@dataclasses.dataclass
+class RequestResponse_Data_Relationships_CreatedBy:
+    # User relationship data.
+    data: Any = None
+
+@dataclasses.dataclass
+class RequestResponse_Data_Relationships:
+    # Relationship to change request decisions.
+    change_request_decisions: Any = None
+    # Relationship to a user.
+    created_by: Any = None
+    # Relationship to a user.
+    modified_by: Any = None
 
 @dataclasses.dataclass
 class RequestResponse_Data:
     # Attributes for creating a change request.
     attributes: Any = None
+    # The identifier of the change request.
+    id: Any = None
+    # Relationships of a change request.
+    relationships: Any = None
     # Change request resource type.
     type: Any = None
 
@@ -43,15 +93,6 @@ class RequestResponse_Included_Attributes:
     email: Any = None
     handle: Any = None
     name: Any = None
-
-@dataclasses.dataclass
-class RequestResponse_Included_Relationships_ModifiedBy_Data:
-    id: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class RequestResponse_Included_Relationships_ModifiedBy:
-    data: Any = None
 
 @dataclasses.dataclass
 class RequestResponse_Included_Relationships:
@@ -67,17 +108,67 @@ class RequestResponse_Included:
     type: Any = None
 
 _RequestResponse_Data_AttributesFields = {
+    "archived_at": ubx.FieldSpec(wire_name="archived_at"),
+    "attributes": ubx.FieldSpec(wire_name="attributes"),
     "change_request_linked_incident_uuid": ubx.FieldSpec(wire_name="change_request_linked_incident_uuid"),
     "change_request_maintenance_window_query": ubx.FieldSpec(wire_name="change_request_maintenance_window_query"),
     "change_request_plan": ubx.FieldSpec(wire_name="change_request_plan"),
     "change_request_risk": ubx.FieldSpec(wire_name="change_request_risk"),
     "change_request_type": ubx.FieldSpec(wire_name="change_request_type"),
+    "closed_at": ubx.FieldSpec(wire_name="closed_at"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "creation_source": ubx.FieldSpec(wire_name="creation_source"),
     "description": ubx.FieldSpec(wire_name="description"),
     "end_date": ubx.FieldSpec(wire_name="end_date"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "plan_notebook_id": ubx.FieldSpec(wire_name="plan_notebook_id"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
     "project_id": ubx.FieldSpec(wire_name="project_id"),
     "requested_teams": ubx.FieldSpec(wire_name="requested_teams"),
     "start_date": ubx.FieldSpec(wire_name="start_date"),
+    "status": ubx.FieldSpec(wire_name="status"),
     "title": ubx.FieldSpec(wire_name="title"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_RequestResponse_Data_Relationships_ChangeRequestDecisions_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_RequestResponse_Data_Relationships_ChangeRequestDecisionsFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="list",
+        fields=_RequestResponse_Data_Relationships_ChangeRequestDecisions_DataFields,
+    ),
+}
+
+_RequestResponse_Data_Relationships_CreatedByFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_RequestResponse_Data_Relationships_ChangeRequestDecisions_DataFields,
+    ),
+}
+
+_RequestResponse_Data_RelationshipsFields = {
+    "change_request_decisions": ubx.FieldSpec(
+        wire_name="change_request_decisions",
+        kind="object",
+        fields=_RequestResponse_Data_Relationships_ChangeRequestDecisionsFields,
+    ),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_RequestResponse_Data_Relationships_CreatedByFields,
+    ),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_RequestResponse_Data_Relationships_CreatedByFields,
+    ),
 }
 
 _RequestResponse_DataFields = {
@@ -85,6 +176,12 @@ _RequestResponse_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_RequestResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_RequestResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

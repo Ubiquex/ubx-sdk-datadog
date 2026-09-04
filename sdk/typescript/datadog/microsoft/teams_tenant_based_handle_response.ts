@@ -15,6 +15,8 @@ export interface TeamsTenantBasedHandleResponse_Data_Attributes {
 export interface TeamsTenantBasedHandleResponse_Data {
   /** Tenant-based handle attributes. */
   attributes: TeamsTenantBasedHandleResponse_Data_Attributes | Computed<TeamsTenantBasedHandleResponse_Data_Attributes>;
+  /** The ID of the tenant-based handle. */
+  id?: string | Computed<string>;
   /** Specifies the tenant-based handle resource type. */
   type: string | Computed<string>;
 }
@@ -32,6 +34,7 @@ const TeamsTenantBasedHandleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: TeamsTenantBasedHandleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

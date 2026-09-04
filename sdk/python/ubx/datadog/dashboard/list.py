@@ -15,30 +15,10 @@ class List_Author:
     # Name of the creator.
     name: Any = None
 
-_List_AuthorFields = {
-    "email": ubx.FieldSpec(wire_name="email"),
-    "handle": ubx.FieldSpec(wire_name="handle"),
-    "name": ubx.FieldSpec(wire_name="name"),
-}
-
 @dataclasses.dataclass
 class ListConfig:
-    # Object describing the creator of the shared element.
-    author: Any = None
-    # Date of creation of the dashboard list.
-    created: Any = None
-    # The number of dashboards in the list.
-    dashboard_count: Any = None
-    # The ID of the dashboard list.
-    id: Any = None
-    # Whether or not the list is in the favorites.
-    is_favorite: Any = None
-    # Date of last edition of the dashboard list.
-    modified: Any = None
     # The name of the dashboard list.
     name: Any = None
-    # The type of dashboard list.
-    type: Any = None
     # path parameter, not part of the API's own resource representation
     list_id: Any = None
 
@@ -66,18 +46,7 @@ class ListAttrs:
 List = ubx.ResourceBinding(
     wire_type="datadog_dashboard_list",
     fields={
-        "author": ubx.FieldSpec(
-            wire_name="author",
-            kind="object",
-            fields=_List_AuthorFields,
-        ),
-        "created": ubx.FieldSpec(wire_name="created"),
-        "dashboard_count": ubx.FieldSpec(wire_name="dashboard_count"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "is_favorite": ubx.FieldSpec(wire_name="is_favorite"),
-        "modified": ubx.FieldSpec(wire_name="modified"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "type": ubx.FieldSpec(wire_name="type"),
         "list_id": ubx.FieldSpec(wire_name="list_id"),
     },
 )

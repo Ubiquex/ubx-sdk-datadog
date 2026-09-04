@@ -7,9 +7,20 @@ export interface IntegrationAccountResponse_Data_Attributes_Authentication {
   username?: string | Computed<string>;
 }
 
+export interface IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_Status {
+  /** Collection health of a single dataflow. */
+  health?: string | Computed<string>;
+  /** Human-readable detail, populated when the dataflow is not healthy. */
+  message?: string | Computed<string>;
+  /** Time the status was last computed. */
+  updatedAt?: string | Computed<string>;
+}
+
 export interface IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs {
   /** Whether the Twilio dataflow is enabled. */
   enabled?: boolean | Computed<boolean>;
+  /** Read-only collection status of a dataflow. */
+  status?: IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_Status | Computed<IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_Status>;
 }
 
 export interface IntegrationAccountResponse_Data_Attributes_Dataflows {
@@ -46,6 +57,8 @@ export interface IntegrationAccountResponse_Data_Attributes {
 export interface IntegrationAccountResponse_Data {
   /** Writable attributes used to create a Twilio integration account. */
   attributes: IntegrationAccountResponse_Data_Attributes | Computed<IntegrationAccountResponse_Data_Attributes>;
+  /** Server-generated unique identifier of the Twilio integration account. */
+  id?: string | Computed<string>;
   /** The type of the integration account resource. Always `integration-account`. */
   type: string | Computed<string>;
 }
@@ -56,8 +69,19 @@ const IntegrationAccountResponse_Data_Attributes_AuthenticationFields: FieldMap 
   username: "username",
 };
 
+const IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_StatusFields: FieldMap = {
+  health: "health",
+  message: "message",
+  updatedAt: "updated_at",
+};
+
 const IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields: FieldMap = {
   enabled: "enabled",
+  status: {
+    wireName: "status",
+    kind: "object",
+    fields: IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_StatusFields,
+  },
 };
 
 const IntegrationAccountResponse_Data_Attributes_DataflowsFields: FieldMap = {
@@ -118,6 +142,7 @@ const IntegrationAccountResponse_DataFields: FieldMap = {
     kind: "object",
     fields: IntegrationAccountResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -42,13 +42,17 @@ export interface Archive_Data_Attributes {
   rehydrationMaxScanSizeInGb?: number | Computed<number>;
   /** An array of tags to add to rehydrated logs from an archive. */
   rehydrationTags?: string[] | Computed<string[]>;
+  /** The state of the archive. */
+  state?: string | Computed<string>;
 }
 
 export interface Archive_Data {
   /** The attributes associated with the archive. */
   attributes?: Archive_Data_Attributes | Computed<Archive_Data_Attributes>;
+  /** The archive ID. */
+  id?: string | Computed<string>;
   /** The type of the resource. The value should always be archives. */
-  type: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 const Archive_Data_Attributes_Destination_EncryptionFields: FieldMap = {
@@ -95,6 +99,7 @@ const Archive_Data_AttributesFields: FieldMap = {
   query: "query",
   rehydrationMaxScanSizeInGb: "rehydration_max_scan_size_in_gb",
   rehydrationTags: "rehydration_tags",
+  state: "state",
 };
 
 const Archive_DataFields: FieldMap = {
@@ -103,6 +108,7 @@ const Archive_DataFields: FieldMap = {
     kind: "object",
     fields: Archive_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -4,24 +4,24 @@ package sourcemap
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Item_Data_Attributes struct {
-	AbsolutePath any
+	AbsolutePath             any
 	BlobStorageSourcemapPath any
-	BuildId any
-	CreatedAt any
-	Domain any
-	FileName any
-	Mapkind any
-	Service any
-	Size any
-	Variant any
-	Version any
-	VersionCode any
+	BuildId                  any
+	CreatedAt                any
+	Domain                   any
+	FileName                 any
+	Mapkind                  any
+	Service                  any
+	Size                     any
+	Variant                  any
+	Version                  any
+	VersionCode              any
 }
 
 type Item_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Item_Meta_Page struct {

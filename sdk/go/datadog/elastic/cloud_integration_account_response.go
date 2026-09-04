@@ -9,9 +9,20 @@ type CloudIntegrationAccountResponse_Data_Attributes_Authentication struct {
 	Username any
 }
 
+type CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_Status struct {
+	// Collection health of a single dataflow.
+	Health any
+	// Human-readable detail, populated when the dataflow is not healthy.
+	Message any
+	// Time the status was last computed.
+	UpdatedAt any
+}
+
 type CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats struct {
 	// Whether the Elastic Cloud dataflow is enabled.
 	Enabled any
+	// Read-only collection status of a dataflow.
+	Status any
 }
 
 type CloudIntegrationAccountResponse_Data_Attributes_Dataflows struct {
@@ -19,6 +30,8 @@ type CloudIntegrationAccountResponse_Data_Attributes_Dataflows struct {
 	ElasticCloudDetailedIndexStats any
 	// The Elastic Cloud index stats dataflow.
 	ElasticCloudIndexStats any
+	// The Elastic Cloud metrics dataflow.
+	ElasticCloudMetrics any
 	// The Elastic Cloud pending task stats dataflow.
 	ElasticCloudPendingTaskStats any
 	// The Elastic Cloud primary shard graceful timeout dataflow.
@@ -52,90 +65,109 @@ type CloudIntegrationAccountResponse_Data_Attributes struct {
 type CloudIntegrationAccountResponse_Data struct {
 	// Writable attributes used to create an Elastic Cloud integration account.
 	Attributes any
+	// Server-generated unique identifier of the Elastic Cloud integration account.
+	Id any
 	// The type of the integration account resource. Always `integration-account`.
 	Type any
 }
 
 var CloudIntegrationAccountResponse_Data_Attributes_AuthenticationFields = ubx.FieldMap{
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
+
+var CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_StatusFields = ubx.FieldMap{
+	"Health":    ubx.FieldSpec{WireName: "health"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+}
 
 var CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_StatusFields,
+	},
+}
 
 var CloudIntegrationAccountResponse_Data_Attributes_DataflowsFields = ubx.FieldMap{
-		"ElasticCloudDetailedIndexStats": ubx.FieldSpec{
-			WireName: "elastic_cloud_detailed_index_stats",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
-		},
-		"ElasticCloudIndexStats": ubx.FieldSpec{
-			WireName: "elastic_cloud_index_stats",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
-		},
-		"ElasticCloudPendingTaskStats": ubx.FieldSpec{
-			WireName: "elastic_cloud_pending_task_stats",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
-		},
-		"ElasticCloudPrimaryShardGracefulTimeout": ubx.FieldSpec{
-			WireName: "elastic_cloud_primary_shard_graceful_timeout",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
-		},
-		"ElasticCloudPrimaryShardStats": ubx.FieldSpec{
-			WireName: "elastic_cloud_primary_shard_stats",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
-		},
-		"ElasticCloudShardAllocationStats": ubx.FieldSpec{
-			WireName: "elastic_cloud_shard_allocation_stats",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
-		},
-		"ElasticCloudSlmStats": ubx.FieldSpec{
-			WireName: "elastic_cloud_slm_stats",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
-		},
-	}
+	"ElasticCloudDetailedIndexStats": ubx.FieldSpec{
+		WireName: "elastic_cloud_detailed_index_stats",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+	},
+	"ElasticCloudIndexStats": ubx.FieldSpec{
+		WireName: "elastic_cloud_index_stats",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+	},
+	"ElasticCloudMetrics": ubx.FieldSpec{
+		WireName: "elastic_cloud_metrics",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+	},
+	"ElasticCloudPendingTaskStats": ubx.FieldSpec{
+		WireName: "elastic_cloud_pending_task_stats",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+	},
+	"ElasticCloudPrimaryShardGracefulTimeout": ubx.FieldSpec{
+		WireName: "elastic_cloud_primary_shard_graceful_timeout",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+	},
+	"ElasticCloudPrimaryShardStats": ubx.FieldSpec{
+		WireName: "elastic_cloud_primary_shard_stats",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+	},
+	"ElasticCloudShardAllocationStats": ubx.FieldSpec{
+		WireName: "elastic_cloud_shard_allocation_stats",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+	},
+	"ElasticCloudSlmStats": ubx.FieldSpec{
+		WireName: "elastic_cloud_slm_stats",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+	},
+}
 
 var CloudIntegrationAccountResponse_Data_Attributes_SettingsFields = ubx.FieldMap{
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+	"Url":  ubx.FieldSpec{WireName: "url"},
+}
 
 var CloudIntegrationAccountResponse_Data_AttributesFields = ubx.FieldMap{
-		"Authentication": ubx.FieldSpec{
-			WireName: "authentication",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_AuthenticationFields,
-		},
-		"Dataflows": ubx.FieldSpec{
-			WireName: "dataflows",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_DataflowsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Settings": ubx.FieldSpec{
-			WireName: "settings",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_Attributes_SettingsFields,
-		},
-	}
+	"Authentication": ubx.FieldSpec{
+		WireName: "authentication",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_AuthenticationFields,
+	},
+	"Dataflows": ubx.FieldSpec{
+		WireName: "dataflows",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_DataflowsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Settings": ubx.FieldSpec{
+		WireName: "settings",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_Attributes_SettingsFields,
+	},
+}
 
 var CloudIntegrationAccountResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   CloudIntegrationAccountResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type CloudIntegrationAccountResponseConfig struct {
 	// Data envelope for creating an Elastic Cloud integration account.
@@ -156,8 +188,8 @@ var CloudIntegrationAccountResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: CloudIntegrationAccountResponse_DataFields,
+			Kind:     "object",
+			Fields:   CloudIntegrationAccountResponse_DataFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

@@ -28,34 +28,34 @@ type CoverageTimeseriesResponse_Cost struct {
 }
 
 type CoverageTimeseriesResponseConfig struct {
-	End any
+	End      any
 	FilterBy any
-	Product any
+	Product  any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 }
 
 type CoverageTimeseriesResponseAttrs struct {
 	// A timeseries metric containing timestamps, series values, and optional unit metadata.
-	Cost any
-	End any
+	Cost     any
+	End      any
 	FilterBy any
 	// A timeseries metric containing timestamps, series values, and optional unit metadata.
-	Hours any
+	Hours   any
 	Product any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 }
 
 var CoverageTimeseriesResponse = ubx.DataSourceBinding{
 	WireType: "datadog_commitments_coverage_timeseries_response",
 	Fields: ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
+		"End":      ubx.FieldSpec{WireName: "end"},
 		"FilterBy": ubx.FieldSpec{WireName: "filter_by"},
-		"Product": ubx.FieldSpec{WireName: "product"},
+		"Product":  ubx.FieldSpec{WireName: "product"},
 		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Start": ubx.FieldSpec{WireName: "start"},
+		"Start":    ubx.FieldSpec{WireName: "start"},
 	},
 }

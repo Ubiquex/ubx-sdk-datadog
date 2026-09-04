@@ -4,46 +4,46 @@ package governance
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ControlDetectionData_Data_Attributes struct {
-	AssignedTeam any
-	AssignedTo any
+	AssignedTeam     any
+	AssignedTo       any
 	AssignmentSource any
-	ControlId any
-	CreatedAt any
-	DetectionType any
-	DisplayName any
-	ExceptionAt any
-	ExceptionBy any
-	Metadata any
-	MitigateAfter any
-	MitigatedAt any
-	Priority any
-	ResourceId any
-	ResourceType any
-	State any
+	ControlId        any
+	CreatedAt        any
+	DetectionType    any
+	DisplayName      any
+	ExceptionAt      any
+	ExceptionBy      any
+	Metadata         any
+	MitigateAfter    any
+	MitigatedAt      any
+	Priority         any
+	ResourceId       any
+	ResourceType     any
+	State            any
 }
 
 type ControlDetectionData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ControlDetectionDataConfig struct {
 	DetectionType any
-	Sort any
+	Sort          any
 }
 
 type ControlDetectionDataAttrs struct {
 	// An array of governance control detection resources.
-	Data any
+	Data          any
 	DetectionType any
-	Sort any
+	Sort          any
 }
 
 var ControlDetectionData = ubx.DataSourceBinding{
 	WireType: "datadog_governance_control_detection_data",
 	Fields: ubx.FieldMap{
 		"DetectionType": ubx.FieldSpec{WireName: "detection_type"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":          ubx.FieldSpec{WireName: "sort"},
 	},
 }

@@ -20,14 +20,28 @@ export interface RuleResponse_Data_Attributes {
   conditionTableType: number | Computed<number>;
   /** List of field-based conditions. */
   conditions?: RuleResponse_Data_Attributes_Conditions[] | Computed<RuleResponse_Data_Attributes_Conditions[]>;
+  /** Timestamp when the rule was created. */
+  created?: string | Computed<string>;
+  /** UUID of the user who created the rule. */
+  createdByUuid?: string | Computed<string>;
+  /** Timestamp when the rule was deleted. */
+  deleted?: string | Computed<string>;
   /** Whether the rule is enabled. */
   enabled: boolean | Computed<boolean>;
   /** The execution type of an incident rule. */
   executionType: number | Computed<number>;
+  /** The incident settings association UUID. */
+  incidentSettingsAssociationUuid?: string | Computed<string>;
   /** The UUID of the incident type this rule applies to. */
   incidentTypeUuid?: string | Computed<string>;
   /** Whether any condition (OR logic) should match instead of all (AND logic). */
   matchAnyCondition?: boolean | Computed<boolean>;
+  /** Timestamp when the rule was last modified. */
+  modified?: string | Computed<string>;
+  /** UUID of the user who last modified the rule. */
+  modifiedByUuid?: string | Computed<string>;
+  /** The organization ID. */
+  orgId?: number | Computed<number>;
   /** The task ID for an incident rule. */
   taskId: string | Computed<string>;
   /** The JSON-encoded payload for the task. */
@@ -39,6 +53,8 @@ export interface RuleResponse_Data_Attributes {
 export interface RuleResponse_Data {
   /** Attributes for creating an incident rule. */
   attributes: RuleResponse_Data_Attributes | Computed<RuleResponse_Data_Attributes>;
+  /** The rule identifier. */
+  id?: string | Computed<string>;
   /** Incident rule resource type. */
   type: string | Computed<string>;
 }
@@ -65,10 +81,17 @@ const RuleResponse_Data_AttributesFields: FieldMap = {
     kind: "list",
     fields: RuleResponse_Data_Attributes_ConditionsFields,
   },
+  created: "created",
+  createdByUuid: "created_by_uuid",
+  deleted: "deleted",
   enabled: "enabled",
   executionType: "execution_type",
+  incidentSettingsAssociationUuid: "incident_settings_association_uuid",
   incidentTypeUuid: "incident_type_uuid",
   matchAnyCondition: "match_any_condition",
+  modified: "modified",
+  modifiedByUuid: "modified_by_uuid",
+  orgId: "org_id",
   taskId: "task_id",
   taskPayload: "task_payload",
   trigger: "trigger",
@@ -80,6 +103,7 @@ const RuleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: RuleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

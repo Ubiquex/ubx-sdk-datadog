@@ -35,6 +35,8 @@ export interface CallNotificationRule_Data_Relationships {
 export interface CallNotificationRule_Data {
   /** Attributes for creating or modifying an on-call notification rule. */
   attributes?: CallNotificationRule_Data_Attributes | Computed<CallNotificationRule_Data_Attributes>;
+  /** Unique identifier for the rule */
+  id?: string | Computed<string>;
   /** Relationship object for creating a notification rule */
   relationships?: CallNotificationRule_Data_Relationships | Computed<CallNotificationRule_Data_Relationships>;
   /** Indicates that the resource is of type 'notification_rules'. */
@@ -107,6 +109,7 @@ const CallNotificationRule_DataFields: FieldMap = {
     kind: "object",
     fields: CallNotificationRule_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

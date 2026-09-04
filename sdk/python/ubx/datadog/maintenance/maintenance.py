@@ -13,6 +13,17 @@ class Maintenance_Data_Attributes_ComponentsAffected:
     status: Any = None
 
 @dataclasses.dataclass
+class Maintenance_Data_Attributes_Updates:
+    components_affected: Any = None
+    created_at: Any = None
+    description: Any = None
+    id: Any = None
+    manual_transition: Any = None
+    modified_at: Any = None
+    started_at: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class Maintenance_Data_Attributes:
     # Timestamp of when the maintenance was completed.
     completed_date: Any = None
@@ -22,27 +33,43 @@ class Maintenance_Data_Attributes:
     components_affected: Any = None
     # The description shown while the maintenance is in progress.
     in_progress_description: Any = None
+    # Whether the maintenance was backfilled.
+    is_backfilled: Any = None
+    # Timestamp of when the maintenance was last modified.
+    modified_at: Any = None
+    # Timestamp of when the maintenance was published.
+    published_date: Any = None
     # The description shown when the maintenance is scheduled.
     scheduled_description: Any = None
     # Timestamp of when the maintenance is scheduled to start.
     start_date: Any = None
+    # The status of the maintenance.
+    status: Any = None
     # The title of the maintenance.
     title: Any = None
+    # Past updates made to the maintenance.
+    updates: Any = None
 
 @dataclasses.dataclass
-class Maintenance_Data_Relationships_Template_Data:
-    # The ID of the maintenance template.
+class Maintenance_Data_Relationships_CreatedByUser_Data:
+    # The ID of the Datadog user who created the maintenance.
     id: Any = None
-    # Maintenance templates resource type.
+    # Users resource type.
     type: Any = None
 
 @dataclasses.dataclass
-class Maintenance_Data_Relationships_Template:
-    # The data object identifying the template used to create the maintenance.
+class Maintenance_Data_Relationships_CreatedByUser:
+    # The data object identifying the Datadog user who created the maintenance.
     data: Any = None
 
 @dataclasses.dataclass
 class Maintenance_Data_Relationships:
+    # The Datadog user who created the maintenance.
+    created_by_user: Any = None
+    # The Datadog user who last modified the maintenance.
+    last_modified_by_user: Any = None
+    # The status page the maintenance belongs to.
+    status_page: Any = None
     # The template used to create the maintenance.
     template: Any = None
 
@@ -50,6 +77,8 @@ class Maintenance_Data_Relationships:
 class Maintenance_Data:
     # The supported attributes for creating a maintenance.
     attributes: Any = None
+    # The ID of the maintenance.
+    id: Any = None
     # The supported relationships for creating a maintenance.
     relationships: Any = None
     # Maintenances resource type.
@@ -81,6 +110,21 @@ _Maintenance_Data_Attributes_ComponentsAffectedFields = {
     "status": ubx.FieldSpec(wire_name="status"),
 }
 
+_Maintenance_Data_Attributes_UpdatesFields = {
+    "components_affected": ubx.FieldSpec(
+        wire_name="components_affected",
+        kind="list",
+        fields=_Maintenance_Data_Attributes_ComponentsAffectedFields,
+    ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "manual_transition": ubx.FieldSpec(wire_name="manual_transition"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "started_at": ubx.FieldSpec(wire_name="started_at"),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
 _Maintenance_Data_AttributesFields = {
     "completed_date": ubx.FieldSpec(wire_name="completed_date"),
     "completed_description": ubx.FieldSpec(wire_name="completed_description"),
@@ -90,29 +134,53 @@ _Maintenance_Data_AttributesFields = {
         fields=_Maintenance_Data_Attributes_ComponentsAffectedFields,
     ),
     "in_progress_description": ubx.FieldSpec(wire_name="in_progress_description"),
+    "is_backfilled": ubx.FieldSpec(wire_name="is_backfilled"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "published_date": ubx.FieldSpec(wire_name="published_date"),
     "scheduled_description": ubx.FieldSpec(wire_name="scheduled_description"),
     "start_date": ubx.FieldSpec(wire_name="start_date"),
+    "status": ubx.FieldSpec(wire_name="status"),
     "title": ubx.FieldSpec(wire_name="title"),
+    "updates": ubx.FieldSpec(
+        wire_name="updates",
+        kind="list",
+        fields=_Maintenance_Data_Attributes_UpdatesFields,
+    ),
 }
 
-_Maintenance_Data_Relationships_Template_DataFields = {
+_Maintenance_Data_Relationships_CreatedByUser_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_Maintenance_Data_Relationships_TemplateFields = {
+_Maintenance_Data_Relationships_CreatedByUserFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_Maintenance_Data_Relationships_Template_DataFields,
+        fields=_Maintenance_Data_Relationships_CreatedByUser_DataFields,
     ),
 }
 
 _Maintenance_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_Maintenance_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_Maintenance_Data_Relationships_CreatedByUserFields,
+    ),
+    "status_page": ubx.FieldSpec(
+        wire_name="status_page",
+        kind="object",
+        fields=_Maintenance_Data_Relationships_CreatedByUserFields,
+    ),
     "template": ubx.FieldSpec(
         wire_name="template",
         kind="object",
-        fields=_Maintenance_Data_Relationships_TemplateFields,
+        fields=_Maintenance_Data_Relationships_CreatedByUserFields,
     ),
 }
 
@@ -122,6 +190,7 @@ _Maintenance_DataFields = {
         kind="object",
         fields=_Maintenance_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

@@ -31,6 +31,5 @@ type LabFacetKeysResponseAttrs struct {
 
 var LabFacetKeysResponse = ubx.DataSourceBinding{
 	WireType: "datadog_model_lab_facet_keys_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

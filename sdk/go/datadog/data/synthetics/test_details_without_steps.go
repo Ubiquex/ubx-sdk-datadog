@@ -4,21 +4,21 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestDetailsWithoutSteps_Tests_Config_Assertions struct {
-	Code any
-	Operator any
-	Property any
-	Target any
+	Code         any
+	Operator     any
+	Property     any
+	Target       any
 	TimingsScope any
-	Type any
+	Type         any
 }
 
 type TestDetailsWithoutSteps_Tests_Config_ConfigVariables struct {
 	Example any
-	Id any
-	Name any
+	Id      any
+	Name    any
 	Pattern any
-	Secure any
-	Type any
+	Secure  any
+	Type    any
 }
 
 type TestDetailsWithoutSteps_Tests_Config_Request_BasicAuth_AddClaims struct {
@@ -27,110 +27,110 @@ type TestDetailsWithoutSteps_Tests_Config_Request_BasicAuth_AddClaims struct {
 }
 
 type TestDetailsWithoutSteps_Tests_Config_Request_BasicAuth struct {
-	AccessKey any
-	AccessTokenUrl any
-	AddClaims any
-	Algorithm any
-	Audience any
-	ClientId any
-	ClientSecret any
-	Domain any
-	ExpiresIn any
-	Header any
-	Password any
-	Payload any
-	Region any
-	Resource any
-	Scope any
-	Secret any
-	SecretKey any
-	ServiceName any
-	SessionToken any
+	AccessKey              any
+	AccessTokenUrl         any
+	AddClaims              any
+	Algorithm              any
+	Audience               any
+	ClientId               any
+	ClientSecret           any
+	Domain                 any
+	ExpiresIn              any
+	Header                 any
+	Password               any
+	Payload                any
+	Region                 any
+	Resource               any
+	Scope                  any
+	Secret                 any
+	SecretKey              any
+	ServiceName            any
+	SessionToken           any
 	TokenApiAuthentication any
-	TokenPrefix any
-	Type any
-	Username any
-	Workstation any
+	TokenPrefix            any
+	Type                   any
+	Username               any
+	Workstation            any
 }
 
 type TestDetailsWithoutSteps_Tests_Config_Request_Certificate_Cert struct {
-	Content any
-	Filename any
+	Content   any
+	Filename  any
 	UpdatedAt any
 }
 
 type TestDetailsWithoutSteps_Tests_Config_Request_Certificate struct {
 	Cert any
-	Key any
+	Key  any
 }
 
 type TestDetailsWithoutSteps_Tests_Config_Request_Files struct {
-	BucketKey any
-	Content any
-	Encoding any
-	Name any
+	BucketKey        any
+	Content          any
+	Encoding         any
+	Name             any
 	OriginalFileName any
-	Size any
-	Type any
+	Size             any
+	Type             any
 }
 
 type TestDetailsWithoutSteps_Tests_Config_Request_Proxy struct {
 	Headers any
-	Url any
+	Url     any
 }
 
 type TestDetailsWithoutSteps_Tests_Config_Request struct {
-	AllowInsecure any
-	BasicAuth any
-	Body any
-	BodyType any
-	CallType any
-	Certificate any
-	CertificateDomains any
-	CheckCertificateRevocation any
-	CompressedJsonDescriptor any
-	CompressedProtoFile any
+	AllowInsecure                  any
+	BasicAuth                      any
+	Body                           any
+	BodyType                       any
+	CallType                       any
+	Certificate                    any
+	CertificateDomains             any
+	CheckCertificateRevocation     any
+	CompressedJsonDescriptor       any
+	CompressedProtoFile            any
 	DisableAiaIntermediateFetching any
-	DnsServer any
-	DnsServerPort any
-	Files any
-	FollowRedirects any
-	Form any
-	Headers any
-	Host any
-	HttpVersion any
-	IgnoreCertificateValidation any
-	IsMessageBase64Encoded any
-	McpProtocolVersion any
-	Message any
-	Metadata any
-	Method any
-	NoSavingResponseBody any
-	NumberOfPackets any
-	PersistCookies any
-	Port any
-	Proxy any
-	Query any
-	Servername any
-	Service any
-	ShouldTrackHops any
-	Timeout any
-	ToolArgs any
-	ToolName any
-	Url any
+	DnsServer                      any
+	DnsServerPort                  any
+	Files                          any
+	FollowRedirects                any
+	Form                           any
+	Headers                        any
+	Host                           any
+	HttpVersion                    any
+	IgnoreCertificateValidation    any
+	IsMessageBase64Encoded         any
+	McpProtocolVersion             any
+	Message                        any
+	Metadata                       any
+	Method                         any
+	NoSavingResponseBody           any
+	NumberOfPackets                any
+	PersistCookies                 any
+	Port                           any
+	Proxy                          any
+	Query                          any
+	Servername                     any
+	Service                        any
+	ShouldTrackHops                any
+	Timeout                        any
+	ToolArgs                       any
+	ToolName                       any
+	Url                            any
 }
 
 type TestDetailsWithoutSteps_Tests_Config struct {
-	Assertions any
+	Assertions      any
 	ConfigVariables any
-	Request any
-	Variables any
+	Request         any
+	Variables       any
 }
 
 type TestDetailsWithoutSteps_Tests_Creator struct {
-	Email any
+	Email  any
 	Handle any
-	Name any
+	Name   any
 }
 
 type TestDetailsWithoutSteps_Tests_Options_Ci struct {
@@ -138,88 +138,88 @@ type TestDetailsWithoutSteps_Tests_Options_Ci struct {
 }
 
 type TestDetailsWithoutSteps_Tests_Options_MonitorOptions struct {
-	EscalationMessage any
+	EscalationMessage      any
 	NotificationPresetName any
-	RenotifyInterval any
-	RenotifyOccurrences any
+	RenotifyInterval       any
+	RenotifyOccurrences    any
 }
 
 type TestDetailsWithoutSteps_Tests_Options_Retry struct {
-	Count any
+	Count    any
 	Interval any
 }
 
 type TestDetailsWithoutSteps_Tests_Options_RumSettings struct {
 	ApplicationId any
 	ClientTokenId any
-	IsEnabled any
+	IsEnabled     any
 }
 
 type TestDetailsWithoutSteps_Tests_Options_Scheduling_Timeframes struct {
-	Day any
+	Day  any
 	From any
-	To any
+	To   any
 }
 
 type TestDetailsWithoutSteps_Tests_Options_Scheduling struct {
 	Timeframes any
-	Timezone any
+	Timezone   any
 }
 
 type TestDetailsWithoutSteps_Tests_Options struct {
-	AcceptSelfSigned any
-	AllowInsecure any
-	BlockedRequestPatterns any
-	CaptureNetworkPayloads any
-	CheckCertificateRevocation any
-	Ci any
-	DeviceIds any
+	AcceptSelfSigned               any
+	AllowInsecure                  any
+	BlockedRequestPatterns         any
+	CaptureNetworkPayloads         any
+	CheckCertificateRevocation     any
+	Ci                             any
+	DeviceIds                      any
 	DisableAiaIntermediateFetching any
-	DisableCors any
-	DisableCsp any
-	EnableProfiling any
-	EnableSecurityTesting any
-	FollowRedirects any
-	HttpVersion any
-	IgnoreCertificateValidation any
-	IgnoreServerCertificateError any
-	InitialNavigationTimeout any
-	MinFailureDuration any
-	MinLocationFailed any
-	MonitorName any
-	MonitorOptions any
-	MonitorPriority any
-	NoScreenshot any
-	RestrictedRoles any
-	Retry any
-	RumSettings any
-	Scheduling any
-	TickEvery any
+	DisableCors                    any
+	DisableCsp                     any
+	EnableProfiling                any
+	EnableSecurityTesting          any
+	FollowRedirects                any
+	HttpVersion                    any
+	IgnoreCertificateValidation    any
+	IgnoreServerCertificateError   any
+	InitialNavigationTimeout       any
+	MinFailureDuration             any
+	MinLocationFailed              any
+	MonitorName                    any
+	MonitorOptions                 any
+	MonitorPriority                any
+	NoScreenshot                   any
+	RestrictedRoles                any
+	Retry                          any
+	RumSettings                    any
+	Scheduling                     any
+	TickEvery                      any
 }
 
 type TestDetailsWithoutSteps_Tests struct {
-	Config any
-	Creator any
+	Config    any
+	Creator   any
 	Locations any
-	Message any
+	Message   any
 	MonitorId any
-	Name any
-	Options any
-	PublicId any
-	Status any
-	Subtype any
-	Tags any
-	Type any
+	Name      any
+	Options   any
+	PublicId  any
+	Status    any
+	Subtype   any
+	Tags      any
+	Type      any
 }
 
 type TestDetailsWithoutStepsConfig struct {
 	PageNumber any
-	PageSize any
+	PageSize   any
 }
 
 type TestDetailsWithoutStepsAttrs struct {
 	PageNumber any
-	PageSize any
+	PageSize   any
 	// Array of Synthetic tests configuration.
 	Tests any
 }
@@ -228,6 +228,6 @@ var TestDetailsWithoutSteps = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_test_details_without_steps",
 	Fields: ubx.FieldMap{
 		"PageNumber": ubx.FieldSpec{WireName: "page_number"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":   ubx.FieldSpec{WireName: "page_size"},
 	},
 }

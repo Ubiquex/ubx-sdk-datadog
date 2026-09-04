@@ -4,20 +4,20 @@ package scorecard
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScoreData_Data_Attributes struct {
-	Aggregation any
-	Denominator any
-	Level any
-	Numerator any
-	Score any
+	Aggregation   any
+	Denominator   any
+	Level         any
+	Numerator     any
+	Score         any
 	TotalEntities any
-	TotalFail any
-	TotalNoData any
-	TotalPass any
-	TotalSkip any
+	TotalFail     any
+	TotalNoData   any
+	TotalPass     any
+	TotalSkip     any
 }
 
 type ScoreData_Data_Relationships_Entity_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -26,18 +26,18 @@ type ScoreData_Data_Relationships_Entity struct {
 }
 
 type ScoreData_Data_Relationships struct {
-	Entity any
-	Rule any
+	Entity    any
+	Rule      any
 	Scorecard any
-	Service any
-	Team any
+	Service   any
+	Team      any
 }
 
 type ScoreData_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ScoreData_Links struct {
@@ -59,7 +59,7 @@ type ScoreData_Meta struct {
 type ScoreDataConfig struct {
 	// Dimension to group scores by.
 	Aggregation any
-	Sort any
+	Sort        any
 }
 
 type ScoreDataAttrs struct {
@@ -78,6 +78,6 @@ var ScoreData = ubx.DataSourceBinding{
 	WireType: "datadog_scorecard_score_data",
 	Fields: ubx.FieldMap{
 		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":        ubx.FieldSpec{WireName: "sort"},
 	},
 }

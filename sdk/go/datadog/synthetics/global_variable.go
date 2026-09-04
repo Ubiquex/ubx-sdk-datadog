@@ -48,55 +48,53 @@ type GlobalVariable_Value struct {
 }
 
 var GlobalVariable_AttributesFields = ubx.FieldMap{
-		"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
-	}
+	"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
+}
 
 var GlobalVariable_ParseTestOptions_ParserFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var GlobalVariable_ParseTestOptionsFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"LocalVariableName": ubx.FieldSpec{WireName: "local_variable_name"},
-		"Parser": ubx.FieldSpec{
-			WireName: "parser",
-			Kind: "object",
-			Fields: GlobalVariable_ParseTestOptions_ParserFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Field":             ubx.FieldSpec{WireName: "field"},
+	"LocalVariableName": ubx.FieldSpec{WireName: "local_variable_name"},
+	"Parser": ubx.FieldSpec{
+		WireName: "parser",
+		Kind:     "object",
+		Fields:   GlobalVariable_ParseTestOptions_ParserFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var GlobalVariable_Value_Options_TotpParametersFields = ubx.FieldMap{
-		"Digits": ubx.FieldSpec{WireName: "digits"},
-		"RefreshInterval": ubx.FieldSpec{WireName: "refresh_interval"},
-	}
+	"Digits":          ubx.FieldSpec{WireName: "digits"},
+	"RefreshInterval": ubx.FieldSpec{WireName: "refresh_interval"},
+}
 
 var GlobalVariable_Value_OptionsFields = ubx.FieldMap{
-		"TotpParameters": ubx.FieldSpec{
-			WireName: "totp_parameters",
-			Kind: "object",
-			Fields: GlobalVariable_Value_Options_TotpParametersFields,
-		},
-	}
+	"TotpParameters": ubx.FieldSpec{
+		WireName: "totp_parameters",
+		Kind:     "object",
+		Fields:   GlobalVariable_Value_Options_TotpParametersFields,
+	},
+}
 
 var GlobalVariable_ValueFields = ubx.FieldMap{
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: GlobalVariable_Value_OptionsFields,
-		},
-		"Secure": ubx.FieldSpec{WireName: "secure"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   GlobalVariable_Value_OptionsFields,
+	},
+	"Secure": ubx.FieldSpec{WireName: "secure"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 type GlobalVariableConfig struct {
 	// Attributes of the global variable.
 	Attributes any
 	// Description of the global variable.
 	Description any
-	// Unique identifier of the global variable.
-	Id any
 	// Determines if the global variable is a FIDO variable.
 	IsFido any
 	// Determines if the global variable is a TOTP/MFA variable.
@@ -145,25 +143,24 @@ var GlobalVariable = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "object",
-			Fields: GlobalVariable_AttributesFields,
+			Kind:     "object",
+			Fields:   GlobalVariable_AttributesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IsFido": ubx.FieldSpec{WireName: "is_fido"},
-		"IsTotp": ubx.FieldSpec{WireName: "is_totp"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"IsFido":      ubx.FieldSpec{WireName: "is_fido"},
+		"IsTotp":      ubx.FieldSpec{WireName: "is_totp"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ParseTestOptions": ubx.FieldSpec{
 			WireName: "parse_test_options",
-			Kind: "object",
-			Fields: GlobalVariable_ParseTestOptionsFields,
+			Kind:     "object",
+			Fields:   GlobalVariable_ParseTestOptionsFields,
 		},
 		"ParseTestPublicId": ubx.FieldSpec{WireName: "parse_test_public_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":              ubx.FieldSpec{WireName: "tags"},
 		"Value": ubx.FieldSpec{
 			WireName: "value",
-			Kind: "object",
-			Fields: GlobalVariable_ValueFields,
+			Kind:     "object",
+			Fields:   GlobalVariable_ValueFields,
 		},
 		"VariableId": ubx.FieldSpec{WireName: "variable_id"},
 	},

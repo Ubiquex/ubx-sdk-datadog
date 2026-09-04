@@ -46,16 +46,26 @@ type IndexingRuleResponse_Data_Attributes_Options struct {
 }
 
 type IndexingRuleResponse_Data_Attributes struct {
+	// Timestamp when the rule was created.
+	CreatedAt any
+	// Handle of the user who created the rule.
+	CreatedByHandle any
 	// When true, the rule excludes the listed tags and indexes all others. When false (default), the rule includes only the listed tags.
 	ExcludeTagsMode any
 	// Metric name prefixes excluded from the rule's scope.
 	IgnoredMetricNameMatches any
 	// Metric name prefixes (glob patterns) this rule applies to.
 	MetricNameMatches any
+	// Timestamp when the rule was last modified.
+	ModifiedAt any
+	// Handle of the user who last modified the rule.
+	ModifiedByHandle any
 	// Human-readable name for the rule.
 	Name any
 	// Versioned configuration options for a tag indexing rule.
 	Options any
+	// Evaluation order within the org. Lower values are evaluated first. Assigned server-side on create (max+1); pass on update to change the rule's position.
+	RuleOrder any
 	// Tag keys managed by this rule.
 	Tags any
 }
@@ -63,70 +73,78 @@ type IndexingRuleResponse_Data_Attributes struct {
 type IndexingRuleResponse_Data struct {
 	// Attributes for creating a tag indexing rule.
 	Attributes any
+	// The unique identifier (UUID) of the tag indexing rule.
+	Id any
 	// The tag indexing rule resource type.
 	Type any
 }
 
 var IndexingRuleResponse_Data_Attributes_Options_Data_DynamicTagsFields = ubx.FieldMap{
-		"ExcludeNotQueriedWindowSeconds": ubx.FieldSpec{WireName: "exclude_not_queried_window_seconds"},
-		"ExcludeNotUsedInAssets": ubx.FieldSpec{WireName: "exclude_not_used_in_assets"},
-		"QueriedTagsWindowSeconds": ubx.FieldSpec{WireName: "queried_tags_window_seconds"},
-		"RelatedAssetTags": ubx.FieldSpec{WireName: "related_asset_tags"},
-	}
+	"ExcludeNotQueriedWindowSeconds": ubx.FieldSpec{WireName: "exclude_not_queried_window_seconds"},
+	"ExcludeNotUsedInAssets":         ubx.FieldSpec{WireName: "exclude_not_used_in_assets"},
+	"QueriedTagsWindowSeconds":       ubx.FieldSpec{WireName: "queried_tags_window_seconds"},
+	"RelatedAssetTags":               ubx.FieldSpec{WireName: "related_asset_tags"},
+}
 
 var IndexingRuleResponse_Data_Attributes_Options_Data_MetricMatchFields = ubx.FieldMap{
-		"IsQueried": ubx.FieldSpec{WireName: "is_queried"},
-		"NotQueried": ubx.FieldSpec{WireName: "not_queried"},
-		"NotUsedInAssets": ubx.FieldSpec{WireName: "not_used_in_assets"},
-		"QueriedWindowSeconds": ubx.FieldSpec{WireName: "queried_window_seconds"},
-		"UsedInAssets": ubx.FieldSpec{WireName: "used_in_assets"},
-	}
+	"IsQueried":            ubx.FieldSpec{WireName: "is_queried"},
+	"NotQueried":           ubx.FieldSpec{WireName: "not_queried"},
+	"NotUsedInAssets":      ubx.FieldSpec{WireName: "not_used_in_assets"},
+	"QueriedWindowSeconds": ubx.FieldSpec{WireName: "queried_window_seconds"},
+	"UsedInAssets":         ubx.FieldSpec{WireName: "used_in_assets"},
+}
 
 var IndexingRuleResponse_Data_Attributes_Options_DataFields = ubx.FieldMap{
-		"DynamicTags": ubx.FieldSpec{
-			WireName: "dynamic_tags",
-			Kind: "object",
-			Fields: IndexingRuleResponse_Data_Attributes_Options_Data_DynamicTagsFields,
-		},
-		"ManagePreexistingMetrics": ubx.FieldSpec{WireName: "manage_preexisting_metrics"},
-		"MetricMatch": ubx.FieldSpec{
-			WireName: "metric_match",
-			Kind: "object",
-			Fields: IndexingRuleResponse_Data_Attributes_Options_Data_MetricMatchFields,
-		},
-		"OverridePreviousRules": ubx.FieldSpec{WireName: "override_previous_rules"},
-	}
+	"DynamicTags": ubx.FieldSpec{
+		WireName: "dynamic_tags",
+		Kind:     "object",
+		Fields:   IndexingRuleResponse_Data_Attributes_Options_Data_DynamicTagsFields,
+	},
+	"ManagePreexistingMetrics": ubx.FieldSpec{WireName: "manage_preexisting_metrics"},
+	"MetricMatch": ubx.FieldSpec{
+		WireName: "metric_match",
+		Kind:     "object",
+		Fields:   IndexingRuleResponse_Data_Attributes_Options_Data_MetricMatchFields,
+	},
+	"OverridePreviousRules": ubx.FieldSpec{WireName: "override_previous_rules"},
+}
 
 var IndexingRuleResponse_Data_Attributes_OptionsFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: IndexingRuleResponse_Data_Attributes_Options_DataFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   IndexingRuleResponse_Data_Attributes_Options_DataFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var IndexingRuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"ExcludeTagsMode": ubx.FieldSpec{WireName: "exclude_tags_mode"},
-		"IgnoredMetricNameMatches": ubx.FieldSpec{WireName: "ignored_metric_name_matches"},
-		"MetricNameMatches": ubx.FieldSpec{WireName: "metric_name_matches"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: IndexingRuleResponse_Data_Attributes_OptionsFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"CreatedAt":                ubx.FieldSpec{WireName: "created_at"},
+	"CreatedByHandle":          ubx.FieldSpec{WireName: "created_by_handle"},
+	"ExcludeTagsMode":          ubx.FieldSpec{WireName: "exclude_tags_mode"},
+	"IgnoredMetricNameMatches": ubx.FieldSpec{WireName: "ignored_metric_name_matches"},
+	"MetricNameMatches":        ubx.FieldSpec{WireName: "metric_name_matches"},
+	"ModifiedAt":               ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedByHandle":         ubx.FieldSpec{WireName: "modified_by_handle"},
+	"Name":                     ubx.FieldSpec{WireName: "name"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   IndexingRuleResponse_Data_Attributes_OptionsFields,
+	},
+	"RuleOrder": ubx.FieldSpec{WireName: "rule_order"},
+	"Tags":      ubx.FieldSpec{WireName: "tags"},
+}
 
 var IndexingRuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: IndexingRuleResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   IndexingRuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type IndexingRuleResponseConfig struct {
 	// Data object for creating a tag indexing rule.
@@ -147,8 +165,8 @@ var IndexingRuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: IndexingRuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   IndexingRuleResponse_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

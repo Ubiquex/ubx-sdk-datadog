@@ -4,31 +4,31 @@ package custom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CostsFileMetadataHighLevel_Data_Attributes_ChargePeriod struct {
-	End any
+	End   any
 	Start any
 }
 
 type CostsFileMetadataHighLevel_Data_Attributes_UploadedBy struct {
 	Email any
-	Icon any
-	Name any
+	Icon  any
+	Name  any
 }
 
 type CostsFileMetadataHighLevel_Data_Attributes struct {
-	BilledCost any
+	BilledCost      any
 	BillingCurrency any
-	ChargePeriod any
-	Name any
-	ProviderNames any
-	Status any
-	UploadedAt any
-	UploadedBy any
+	ChargePeriod    any
+	Name            any
+	ProviderNames   any
+	Status          any
+	UploadedAt      any
+	UploadedBy      any
 }
 
 type CostsFileMetadataHighLevel_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type CostsFileMetadataHighLevel_Meta struct {

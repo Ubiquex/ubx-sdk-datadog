@@ -4,27 +4,27 @@ package model
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LabProjectData_Data_Attributes_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type LabProjectData_Data_Attributes struct {
 	ArtifactStorageLocation any
-	CreatedAt any
-	DeletedAt any
-	Description any
-	ExternalUrl any
-	IsStarred any
-	Name any
-	OwnerId any
-	Tags any
-	UpdatedAt any
+	CreatedAt               any
+	DeletedAt               any
+	Description             any
+	ExternalUrl             any
+	IsStarred               any
+	Name                    any
+	OwnerId                 any
+	Tags                    any
+	UpdatedAt               any
 }
 
 type LabProjectData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type LabProjectData_Links struct {
@@ -66,12 +66,12 @@ type LabProjectData_Meta struct {
 
 type LabProjectDataConfig struct {
 	Filter any
-	Sort any
+	Sort   any
 }
 
 type LabProjectDataAttrs struct {
 	// The list of projects.
-	Data any
+	Data   any
 	Filter any
 	// Pagination links for navigating list responses.
 	Links any
@@ -84,6 +84,6 @@ var LabProjectData = ubx.DataSourceBinding{
 	WireType: "datadog_model_lab_project_data",
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":   ubx.FieldSpec{WireName: "sort"},
 	},
 }

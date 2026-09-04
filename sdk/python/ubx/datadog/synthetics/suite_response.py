@@ -39,6 +39,8 @@ class SuiteResponse_Data_Attributes:
 class SuiteResponse_Data:
     # Object containing details about a Synthetic suite.
     attributes: Any = None
+    # The public ID for the suite.
+    id: Any = None
     # Type for the Synthetics suites responses, `suites`.
     type: Any = None
 
@@ -76,6 +78,7 @@ _SuiteResponse_DataFields = {
         kind="object",
         fields=_SuiteResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

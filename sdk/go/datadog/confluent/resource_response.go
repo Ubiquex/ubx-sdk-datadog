@@ -6,6 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ResourceResponse_Data_Attributes struct {
 	// Enable the `custom.consumer_lag_offset` metric, which contains extra metric tags.
 	EnableCustomMetrics any
+	// The ID associated with the Confluent resource.
+	Id any
 	// The resource type of the Resource. Can be `kafka`, `connector`, `ksql`, or `schema_registry`.
 	ResourceType any
 	// A list of strings representing tags. Can be a single key, or key-value pairs separated by a colon.
@@ -22,20 +24,21 @@ type ResourceResponse_Data struct {
 }
 
 var ResourceResponse_Data_AttributesFields = ubx.FieldMap{
-		"EnableCustomMetrics": ubx.FieldSpec{WireName: "enable_custom_metrics"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"EnableCustomMetrics": ubx.FieldSpec{WireName: "enable_custom_metrics"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"ResourceType":        ubx.FieldSpec{WireName: "resource_type"},
+	"Tags":                ubx.FieldSpec{WireName: "tags"},
+}
 
 var ResourceResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ResourceResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ResourceResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResourceResponseConfig struct {
 	// JSON:API request for updating a Confluent resource.
@@ -60,10 +63,10 @@ var ResourceResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ResourceResponse_DataFields,
+			Kind:     "object",
+			Fields:   ResourceResponse_DataFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

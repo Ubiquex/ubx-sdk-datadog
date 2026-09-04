@@ -4,33 +4,33 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PromptData_Data_Attributes_Datasets struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type PromptData_Data_Attributes struct {
-	Author any
-	CreatedAt any
-	CreatedFrom any
-	Datasets any
-	Description any
-	ExtractedFrom any
-	InRegistry any
-	LastSeenAt any
+	Author               any
+	CreatedAt            any
+	CreatedFrom          any
+	Datasets             any
+	Description          any
+	ExtractedFrom        any
+	InRegistry           any
+	LastSeenAt           any
 	LastVersionCreatedAt any
-	MlApp any
-	MlApps any
-	NumVersions any
-	PromptId any
-	Source any
-	Tags any
-	Title any
+	MlApp                any
+	MlApps               any
+	NumVersions          any
+	PromptId             any
+	Source               any
+	Tags                 any
+	Title                any
 }
 
 type PromptData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type PromptDataConfig struct {
@@ -43,6 +43,5 @@ type PromptDataAttrs struct {
 
 var PromptData = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_prompt_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

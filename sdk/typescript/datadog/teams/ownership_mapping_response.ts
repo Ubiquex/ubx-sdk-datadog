@@ -4,8 +4,14 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface OwnershipMappingResponse_Data_Attributes {
   /** The ID of the RUM application this mapping applies to. For browser applications, provide the real application UUID — the team is applied to the view regardless of service. For mobile applications, omit this field (or set it to the nil UUID `00000000-0000-0000-0000-000000000000`) — the team is applied to the view and service combination across all applications. */
   applicationId?: string | Computed<string>;
+  /** Timestamp when the mapping was created. */
+  createdAt?: string | Computed<string>;
+  /** The UUID of the user who created the mapping. */
+  createdBy?: string | Computed<string>;
   /** How the `view_name` is matched against RUM view names. */
   matchType?: string | Computed<string>;
+  /** The ID of the organization that owns this mapping. */
+  orgId?: number | Computed<number>;
   /** The RUM application's service name. For browser applications, this is optional. For mobile applications, this is required and scopes the ownership to a specific service. */
   service?: string | Computed<string>;
   /** The handle of the team that owns the matched RUM views. */
@@ -17,13 +23,18 @@ export interface OwnershipMappingResponse_Data_Attributes {
 export interface OwnershipMappingResponse_Data {
   /** The attributes of the teams ownership mapping to create. */
   attributes: OwnershipMappingResponse_Data_Attributes | Computed<OwnershipMappingResponse_Data_Attributes>;
+  /** The unique identifier of the teams ownership mapping. */
+  id?: string | Computed<string>;
   /** The type of the resource. The value should always be teams_ownership_mappings. */
   type: string | Computed<string>;
 }
 
 const OwnershipMappingResponse_Data_AttributesFields: FieldMap = {
   applicationId: "application_id",
+  createdAt: "created_at",
+  createdBy: "created_by",
   matchType: "match_type",
+  orgId: "org_id",
   service: "service",
   teamHandle: "team_handle",
   viewName: "view_name",
@@ -35,6 +46,7 @@ const OwnershipMappingResponse_DataFields: FieldMap = {
     kind: "object",
     fields: OwnershipMappingResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

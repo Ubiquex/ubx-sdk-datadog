@@ -37,28 +37,34 @@ export interface Schedule_Data_Attributes {
   layers: Schedule_Data_Attributes_Layers[] | Computed<Schedule_Data_Attributes_Layers[]>;
   /** A human-readable name for the new schedule. */
   name: string | Computed<string>;
+  /** A list of tags associated with the schedule. */
+  tags?: string[] | Computed<string[]>;
   /** The time zone in which the schedule is defined. */
   timeZone: string | Computed<string>;
 }
 
-export interface Schedule_Data_Relationships_Teams_Data {
+export interface Schedule_Data_Relationships_Layers_Data {
   id?: string | Computed<string>;
   type?: string | Computed<string>;
 }
 
-export interface Schedule_Data_Relationships_Teams {
-  /** An array of team references for this schedule. */
-  data?: Schedule_Data_Relationships_Teams_Data[] | Computed<Schedule_Data_Relationships_Teams_Data[]>;
+export interface Schedule_Data_Relationships_Layers {
+  /** An array of layer references for this schedule. */
+  data?: Schedule_Data_Relationships_Layers_Data[] | Computed<Schedule_Data_Relationships_Layers_Data[]>;
 }
 
 export interface Schedule_Data_Relationships {
+  /** Associates layers with this schedule in a data structure. */
+  layers?: Schedule_Data_Relationships_Layers | Computed<Schedule_Data_Relationships_Layers>;
   /** Associates teams with this schedule in a data structure. */
-  teams?: Schedule_Data_Relationships_Teams | Computed<Schedule_Data_Relationships_Teams>;
+  teams?: Schedule_Data_Relationships_Layers | Computed<Schedule_Data_Relationships_Layers>;
 }
 
 export interface Schedule_Data {
   /** Describes the main attributes for creating a new schedule, including name, layers, and time zone. */
   attributes: Schedule_Data_Attributes | Computed<Schedule_Data_Attributes>;
+  /** The schedule's unique identifier. */
+  id?: string | Computed<string>;
   /** Gathers relationship objects for the schedule creation request, including the teams to associate. */
   relationships?: Schedule_Data_Relationships | Computed<Schedule_Data_Relationships>;
   /** Schedules resource type. */
@@ -73,7 +79,7 @@ export interface Schedule_Included_Attributes {
 }
 
 export interface Schedule_Included_Relationships {
-  members?: Schedule_Data_Relationships_Teams | Computed<Schedule_Data_Relationships_Teams>;
+  members?: Schedule_Data_Relationships_Layers | Computed<Schedule_Data_Relationships_Layers>;
 }
 
 export interface Schedule_Included {
@@ -137,27 +143,33 @@ const Schedule_Data_AttributesFields: FieldMap = {
     fields: Schedule_Data_Attributes_LayersFields,
   },
   name: "name",
+  tags: "tags",
   timeZone: "time_zone",
 };
 
-const Schedule_Data_Relationships_Teams_DataFields: FieldMap = {
+const Schedule_Data_Relationships_Layers_DataFields: FieldMap = {
   id: "id",
   type: "type",
 };
 
-const Schedule_Data_Relationships_TeamsFields: FieldMap = {
+const Schedule_Data_Relationships_LayersFields: FieldMap = {
   data: {
     wireName: "data",
     kind: "list",
-    fields: Schedule_Data_Relationships_Teams_DataFields,
+    fields: Schedule_Data_Relationships_Layers_DataFields,
   },
 };
 
 const Schedule_Data_RelationshipsFields: FieldMap = {
+  layers: {
+    wireName: "layers",
+    kind: "object",
+    fields: Schedule_Data_Relationships_LayersFields,
+  },
   teams: {
     wireName: "teams",
     kind: "object",
-    fields: Schedule_Data_Relationships_TeamsFields,
+    fields: Schedule_Data_Relationships_LayersFields,
   },
 };
 
@@ -167,6 +179,7 @@ const Schedule_DataFields: FieldMap = {
     kind: "object",
     fields: Schedule_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

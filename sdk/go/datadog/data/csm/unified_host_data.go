@@ -4,29 +4,29 @@ package csm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UnifiedHostData_Data_Attributes struct {
-	AccountId any
-	AgentCsmVmContainersEnabled any
-	AgentCsmVmHostsEnabled any
-	AgentCwsEnabled any
-	AgentPostureManagement any
-	AgentVersion any
-	AgentlessPostureManagement any
+	AccountId                      any
+	AgentCsmVmContainersEnabled    any
+	AgentCsmVmHostsEnabled         any
+	AgentCwsEnabled                any
+	AgentPostureManagement         any
+	AgentVersion                   any
+	AgentlessPostureManagement     any
 	AgentlessVulnerabilityScanning any
-	CloudProvider any
-	ClusterName any
-	DatadogAgentKey any
-	Env any
-	HostId any
-	InstallMethodTool any
-	Os any
-	ResourceType any
-	Source any
+	CloudProvider                  any
+	ClusterName                    any
+	DatadogAgentKey                any
+	Env                            any
+	HostId                         any
+	InstallMethodTool              any
+	Os                             any
+	ResourceType                   any
+	Source                         any
 }
 
 type UnifiedHostData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type UnifiedHostData_Meta struct {
@@ -41,26 +41,26 @@ type UnifiedHostData_Meta struct {
 }
 
 type UnifiedHostDataConfig struct {
-	Page any
+	Page  any
 	Query any
-	Size any
+	Size  any
 }
 
 type UnifiedHostDataAttrs struct {
 	// The list of unified hosts for the current page.
 	Data any
 	// Pagination metadata for a unified hosts list response.
-	Meta any
-	Page any
+	Meta  any
+	Page  any
 	Query any
-	Size any
+	Size  any
 }
 
 var UnifiedHostData = ubx.DataSourceBinding{
 	WireType: "datadog_csm_unified_host_data",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":  ubx.FieldSpec{WireName: "page"},
 		"Query": ubx.FieldSpec{WireName: "query"},
-		"Size": ubx.FieldSpec{WireName: "size"},
+		"Size":  ubx.FieldSpec{WireName: "size"},
 	},
 }

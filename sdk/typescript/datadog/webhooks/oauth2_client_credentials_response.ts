@@ -12,6 +12,8 @@ export interface Oauth2ClientCredentialsResponse_Data_Attributes {
   clientSecret: string | Computed<string>;
   /** Human-readable name for this auth method. Must be unique within your organization. */
   name: string | Computed<string>;
+  /** Authentication protocol used by the auth method. */
+  protocol?: string | Computed<string>;
   /** Space-separated list of OAuth2 scopes to request. */
   scope?: string | Computed<string>;
 }
@@ -19,6 +21,8 @@ export interface Oauth2ClientCredentialsResponse_Data_Attributes {
 export interface Oauth2ClientCredentialsResponse_Data {
   /** OAuth2 client credentials attributes for a create request. */
   attributes: Oauth2ClientCredentialsResponse_Data_Attributes | Computed<Oauth2ClientCredentialsResponse_Data_Attributes>;
+  /** The ID of the OAuth2 client credentials auth method. */
+  id?: string | Computed<string>;
   /** OAuth2 client credentials resource type. */
   type: string | Computed<string>;
 }
@@ -29,6 +33,7 @@ const Oauth2ClientCredentialsResponse_Data_AttributesFields: FieldMap = {
   clientId: "client_id",
   clientSecret: "client_secret",
   name: "name",
+  protocol: "protocol",
   scope: "scope",
 };
 
@@ -38,6 +43,7 @@ const Oauth2ClientCredentialsResponse_DataFields: FieldMap = {
     kind: "object",
     fields: Oauth2ClientCredentialsResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

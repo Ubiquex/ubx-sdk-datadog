@@ -40,9 +40,28 @@ export interface SecurityPolicyResponse_Data_Attributes {
   version?: number | Computed<number>;
 }
 
+export interface SecurityPolicyResponse_Data_Meta {
+  /** The date and time the WAF policy was created. */
+  addedAt?: string | Computed<string>;
+  /** The handle of the user who created the WAF policy. */
+  addedBy?: string | Computed<string>;
+  /** The name of the user who created the WAF policy. */
+  addedByName?: string | Computed<string>;
+  /** The date and time the WAF policy was last updated. */
+  modifiedAt?: string | Computed<string>;
+  /** The handle of the user who last updated the WAF policy. */
+  modifiedBy?: string | Computed<string>;
+  /** The name of the user who last updated the WAF policy. */
+  modifiedByName?: string | Computed<string>;
+}
+
 export interface SecurityPolicyResponse_Data {
   /** Create a new WAF policy. */
   attributes: SecurityPolicyResponse_Data_Attributes | Computed<SecurityPolicyResponse_Data_Attributes>;
+  /** The ID of the policy. */
+  id?: string | Computed<string>;
+  /** Metadata associated with the WAF policy. */
+  meta?: SecurityPolicyResponse_Data_Meta | Computed<SecurityPolicyResponse_Data_Meta>;
   /** The type of the resource. The value should always be `policy`. */
   type: string | Computed<string>;
 }
@@ -89,11 +108,26 @@ const SecurityPolicyResponse_Data_AttributesFields: FieldMap = {
   version: "version",
 };
 
+const SecurityPolicyResponse_Data_MetaFields: FieldMap = {
+  addedAt: "added_at",
+  addedBy: "added_by",
+  addedByName: "added_by_name",
+  modifiedAt: "modified_at",
+  modifiedBy: "modified_by",
+  modifiedByName: "modified_by_name",
+};
+
 const SecurityPolicyResponse_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
     kind: "object",
     fields: SecurityPolicyResponse_Data_AttributesFields,
+  },
+  id: "id",
+  meta: {
+    wireName: "meta",
+    kind: "object",
+    fields: SecurityPolicyResponse_Data_MetaFields,
   },
   type: "type",
 };

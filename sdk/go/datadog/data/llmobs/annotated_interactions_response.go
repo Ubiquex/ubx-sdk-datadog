@@ -4,42 +4,42 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnnotatedInteractionsResponse_Data_Attributes_AnnotatedInteractions_Annotations struct {
-	CreatedAt any
-	CreatedBy any
-	Id any
+	CreatedAt     any
+	CreatedBy     any
+	Id            any
 	InteractionId any
-	LabelValues any
-	ModifiedAt any
-	ModifiedBy any
+	LabelValues   any
+	ModifiedAt    any
+	ModifiedBy    any
 }
 
 type AnnotatedInteractionsResponse_Data_Attributes_AnnotatedInteractions_DisplayBlock_TimeFrame struct {
-	End any
+	End   any
 	Start any
 }
 
 type AnnotatedInteractionsResponse_Data_Attributes_AnnotatedInteractions_DisplayBlock struct {
-	Alt any
-	Content any
-	Height any
+	Alt             any
+	Content         any
+	Height          any
 	InteractionType any
-	Label any
-	Level any
-	TileDef any
-	TimeFrame any
-	TraceId any
-	Type any
-	Url any
+	Label           any
+	Level           any
+	TileDef         any
+	TimeFrame       any
+	TraceId         any
+	Type            any
+	Url             any
 }
 
 type AnnotatedInteractionsResponse_Data_Attributes_AnnotatedInteractions struct {
-	Annotations any
-	ContentId any
-	CreatedAt any
+	Annotations  any
+	ContentId    any
+	CreatedAt    any
 	DisplayBlock any
-	Id any
-	ModifiedAt any
-	Type any
+	Id           any
+	ModifiedAt   any
+	Type         any
 }
 
 type AnnotatedInteractionsResponse_Data_Attributes struct {
@@ -62,7 +62,7 @@ type AnnotatedInteractionsResponseConfig struct {
 
 type AnnotatedInteractionsResponseAttrs struct {
 	// Data object for annotated interactions.
-	Data any
+	Data    any
 	QueueId any
 }
 

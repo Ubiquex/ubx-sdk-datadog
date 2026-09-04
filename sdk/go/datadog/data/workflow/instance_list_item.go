@@ -25,7 +25,7 @@ type InstanceListItemAttrs struct {
 	// A list of workflow instances.
 	Data any
 	// Metadata about the instances list
-	Meta any
+	Meta       any
 	WorkflowId any
 }
 

@@ -17,6 +17,8 @@ export interface ConfigPolicyResponse_Data_Attributes {
 export interface ConfigPolicyResponse_Data {
   /** Policy and policy type for a monitor configuration policy. */
   attributes: ConfigPolicyResponse_Data_Attributes | Computed<ConfigPolicyResponse_Data_Attributes>;
+  /** ID of this monitor configuration policy. */
+  id?: string | Computed<string>;
   /** Monitor configuration policy resource type. */
   type: string | Computed<string>;
 }
@@ -42,6 +44,7 @@ const ConfigPolicyResponse_DataFields: FieldMap = {
     kind: "object",
     fields: ConfigPolicyResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

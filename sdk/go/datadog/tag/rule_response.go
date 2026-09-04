@@ -4,8 +4,20 @@ package tag
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleResponse_Data_Attributes struct {
+	// The RFC 3339 timestamp at which the rule was created.
+	CreatedAt any
+	// The identifier of the user who created the rule.
+	CreatedBy any
+	// The RFC 3339 timestamp at which the rule was soft-deleted. `null` if the rule has not been deleted. Only present when `include_deleted=true` is requested.
+	DeletedAt any
+	// The identifier of the user who soft-deleted the rule. `null` if the rule has not been deleted.
+	DeletedBy any
 	// Whether the rule is currently enforced. Defaults to `true` for newly created rules.
 	Enabled any
+	// The RFC 3339 timestamp at which the rule was last modified.
+	ModifiedAt any
+	// The identifier of the user who last modified the rule.
+	ModifiedBy any
 	// Human-readable name for the tag rule.
 	Name any
 	// When `true`, the rule matches tag values that do NOT match any of the supplied patterns. Defaults to `false`.
@@ -22,48 +34,105 @@ type RuleResponse_Data_Attributes struct {
 	TagKey any
 	// One or more patterns that valid values for the tag key must match. At least one pattern is required.
 	TagValuePatterns any
+	// A monotonically increasing version counter that is incremented on each update.
+	Version any
+}
+
+type RuleResponse_Data_Relationships_Score_Data struct {
+	// The unique identifier of the related compliance score resource.
+	Id any
+	// JSON:API resource type for a tag rule compliance score.
+	Type any
+}
+
+type RuleResponse_Data_Relationships_Score struct {
+	// Identifier of the related compliance score resource.
+	Data any
+}
+
+type RuleResponse_Data_Relationships struct {
+	// A relationship to the compliance score resource for this rule.
+	Score any
 }
 
 type RuleResponse_Data struct {
 	// Attributes that can be supplied when creating a tag rule.
 	Attributes any
+	// The unique identifier of the tag rule.
+	Id any
+	// Related resources for a tag rule. Only present when the corresponding `include` query parameter is supplied.
+	Relationships any
 	// JSON:API resource type for a tag rule.
 	Type any
 }
 
 type RuleResponse_Included_Attributes struct {
-	Score any
-	TsEnd any
+	Score   any
+	TsEnd   any
 	TsStart any
 	Version any
 }
 
 type RuleResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Negated": ubx.FieldSpec{WireName: "negated"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"RuleType": ubx.FieldSpec{WireName: "rule_type"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"TagValuePatterns": ubx.FieldSpec{WireName: "tag_value_patterns"},
-	}
+	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":        ubx.FieldSpec{WireName: "created_by"},
+	"DeletedAt":        ubx.FieldSpec{WireName: "deleted_at"},
+	"DeletedBy":        ubx.FieldSpec{WireName: "deleted_by"},
+	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+	"ModifiedAt":       ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy":       ubx.FieldSpec{WireName: "modified_by"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Negated":          ubx.FieldSpec{WireName: "negated"},
+	"Required":         ubx.FieldSpec{WireName: "required"},
+	"RuleType":         ubx.FieldSpec{WireName: "rule_type"},
+	"Scope":            ubx.FieldSpec{WireName: "scope"},
+	"Source":           ubx.FieldSpec{WireName: "source"},
+	"TagKey":           ubx.FieldSpec{WireName: "tag_key"},
+	"TagValuePatterns": ubx.FieldSpec{WireName: "tag_value_patterns"},
+	"Version":          ubx.FieldSpec{WireName: "version"},
+}
+
+var RuleResponse_Data_Relationships_Score_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var RuleResponse_Data_Relationships_ScoreFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Relationships_Score_DataFields,
+	},
+}
+
+var RuleResponse_Data_RelationshipsFields = ubx.FieldMap{
+	"Score": ubx.FieldSpec{
+		WireName: "score",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Relationships_ScoreFields,
+	},
+}
 
 var RuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RuleResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RuleResponseConfig struct {
 	// Data object for creating a tag rule.
@@ -86,8 +155,8 @@ var RuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   RuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleRevisionResponse_Data_Attributes_Arguments struct {
 	Description any
-	Name any
+	Name        any
 }
 
 type RuleRevisionResponse_Data_Attributes_Tests struct {
 	AnnotationCount any
-	Code any
-	Filename any
+	Code            any
+	Filename        any
 }
 
 type RuleRevisionResponse_Data_Attributes struct {
@@ -67,24 +67,24 @@ type RuleRevisionResponse_Data struct {
 }
 
 type RuleRevisionResponseConfig struct {
-	Id any
-	RuleName any
+	Id          any
+	RuleName    any
 	RulesetName any
 }
 
 type RuleRevisionResponseAttrs struct {
 	// A specific revision of a custom static analysis rule.
-	Data any
-	Id any
-	RuleName any
+	Data        any
+	Id          any
+	RuleName    any
 	RulesetName any
 }
 
 var RuleRevisionResponse = ubx.DataSourceBinding{
 	WireType: "datadog_custom_rule_revision_response",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
+		"RuleName":    ubx.FieldSpec{WireName: "rule_name"},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
 	},
 }

@@ -4,44 +4,74 @@ package gcp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UcConfigResponse_Data_Attributes struct {
+	// The `attributes` `account_id`.
+	AccountId any
 	// The Google Cloud account ID.
 	BillingAccountId any
 	// The Google Cloud bucket name used to store the Usage Cost export.
 	BucketName any
+	// The `attributes` `created_at`.
+	CreatedAt any
+	// The `attributes` `dataset`.
+	Dataset any
+	// The `attributes` `error_messages`.
+	ErrorMessages any
 	// The export dataset name used for the Google Cloud Usage Cost report.
 	ExportDatasetName any
 	// The export prefix used for the Google Cloud Usage Cost report.
 	ExportPrefix any
 	// The name of the Google Cloud Usage Cost report.
 	ExportProjectName any
+	// The `attributes` `months`.
+	Months any
+	// The `attributes` `project_id`.
+	ProjectId any
 	// The unique Google Cloud service account email.
 	ServiceAccount any
+	// The `attributes` `status`.
+	Status any
+	// The `attributes` `status_updated_at`.
+	StatusUpdatedAt any
+	// The `attributes` `updated_at`.
+	UpdatedAt any
 }
 
 type UcConfigResponse_Data struct {
 	// Attributes for Google Cloud Usage Cost config post request.
 	Attributes any
+	// The `GcpUcConfigResponseData` `id`.
+	Id any
 	// Type of Google Cloud Usage Cost config post request.
 	Type any
 }
 
 var UcConfigResponse_Data_AttributesFields = ubx.FieldMap{
-		"BillingAccountId": ubx.FieldSpec{WireName: "billing_account_id"},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"ExportDatasetName": ubx.FieldSpec{WireName: "export_dataset_name"},
-		"ExportPrefix": ubx.FieldSpec{WireName: "export_prefix"},
-		"ExportProjectName": ubx.FieldSpec{WireName: "export_project_name"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"AccountId":         ubx.FieldSpec{WireName: "account_id"},
+	"BillingAccountId":  ubx.FieldSpec{WireName: "billing_account_id"},
+	"BucketName":        ubx.FieldSpec{WireName: "bucket_name"},
+	"CreatedAt":         ubx.FieldSpec{WireName: "created_at"},
+	"Dataset":           ubx.FieldSpec{WireName: "dataset"},
+	"ErrorMessages":     ubx.FieldSpec{WireName: "error_messages"},
+	"ExportDatasetName": ubx.FieldSpec{WireName: "export_dataset_name"},
+	"ExportPrefix":      ubx.FieldSpec{WireName: "export_prefix"},
+	"ExportProjectName": ubx.FieldSpec{WireName: "export_project_name"},
+	"Months":            ubx.FieldSpec{WireName: "months"},
+	"ProjectId":         ubx.FieldSpec{WireName: "project_id"},
+	"ServiceAccount":    ubx.FieldSpec{WireName: "service_account"},
+	"Status":            ubx.FieldSpec{WireName: "status"},
+	"StatusUpdatedAt":   ubx.FieldSpec{WireName: "status_updated_at"},
+	"UpdatedAt":         ubx.FieldSpec{WireName: "updated_at"},
+}
 
 var UcConfigResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: UcConfigResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   UcConfigResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type UcConfigResponseConfig struct {
 	// Google Cloud Usage Cost config post data.
@@ -62,8 +92,8 @@ var UcConfigResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: UcConfigResponse_DataFields,
+			Kind:     "object",
+			Fields:   UcConfigResponse_DataFields,
 		},
 		"CloudAccountId": ubx.FieldSpec{WireName: "cloud_account_id"},
 	},

@@ -4,13 +4,13 @@ package org
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthorizedClientData_Data_Attributes struct {
-	Disabled any
+	Disabled      any
 	LastExercised any
-	UserCount any
+	UserCount     any
 }
 
 type AuthorizedClientData_Data_Relationships_Oauth2Client_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -23,20 +23,20 @@ type AuthorizedClientData_Data_Relationships_UserAuthorizedClients_Links struct 
 }
 
 type AuthorizedClientData_Data_Relationships_UserAuthorizedClients struct {
-	Data any
+	Data  any
 	Links any
 }
 
 type AuthorizedClientData_Data_Relationships struct {
-	Oauth2Client any
+	Oauth2Client          any
 	UserAuthorizedClients any
 }
 
 type AuthorizedClientData_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type AuthorizedClientData_Meta_Page struct {
@@ -52,15 +52,15 @@ type AuthorizedClientData_Meta struct {
 }
 
 type AuthorizedClientDataConfig struct {
-	Filter any
+	Filter  any
 	Include any
-	Sort any
+	Sort    any
 }
 
 type AuthorizedClientDataAttrs struct {
 	// List of org authorized client data objects.
-	Data any
-	Filter any
+	Data    any
+	Filter  any
 	Include any
 	// Object describing meta attributes of response.
 	Meta any
@@ -70,8 +70,8 @@ type AuthorizedClientDataAttrs struct {
 var AuthorizedClientData = ubx.DataSourceBinding{
 	WireType: "datadog_org_authorized_client_data",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":  ubx.FieldSpec{WireName: "filter"},
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

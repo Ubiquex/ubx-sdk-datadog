@@ -3,6 +3,13 @@ package notification
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RuleResponse_Data_Attributes_CreatedBy struct {
+	// The user handle.
+	Handle any
+	// The user name.
+	Name any
+}
+
 type RuleResponse_Data_Attributes_Routing struct {
 	// The routing mode for the notification rule. `manual` sends notifications to the configured targets.
 	Mode any
@@ -20,8 +27,16 @@ type RuleResponse_Data_Attributes_Selectors struct {
 }
 
 type RuleResponse_Data_Attributes struct {
+	// Date as Unix timestamp in milliseconds.
+	CreatedAt any
+	// User creating or modifying a rule.
+	CreatedBy any
 	// Field used to enable or disable the rule.
 	Enabled any
+	// Date as Unix timestamp in milliseconds.
+	ModifiedAt any
+	// User creating or modifying a rule.
+	ModifiedBy any
 	// Name of the notification rule.
 	Name any
 	// Routing configuration for the notification rule.
@@ -32,51 +47,74 @@ type RuleResponse_Data_Attributes struct {
 	Targets any
 	// Time aggregation period (in seconds) is used to aggregate the results of the notification rule evaluation. Results are aggregated over a selected time frame using a rolling window, which updates with each new evaluation. Notifications are only sent for new issues discovered during the window. Time aggregation is only available for vulnerability-based notification rules. When omitted or set to 0, no aggregation is done.
 	TimeAggregation any
+	// Version of the notification rule. It is updated when the rule is modified.
+	Version any
 }
 
 type RuleResponse_Data struct {
 	// Attributes of the notification rule create request.
 	Attributes any
+	// The ID of a notification rule.
+	Id any
 	// The rule type associated to notification rules.
 	Type any
 }
 
+var RuleResponse_Data_Attributes_CreatedByFields = ubx.FieldMap{
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
+
 var RuleResponse_Data_Attributes_RoutingFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var RuleResponse_Data_Attributes_SelectorsFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"RuleTypes": ubx.FieldSpec{WireName: "rule_types"},
-		"Severities": ubx.FieldSpec{WireName: "severities"},
-		"TriggerSource": ubx.FieldSpec{WireName: "trigger_source"},
-	}
+	"Query":         ubx.FieldSpec{WireName: "query"},
+	"RuleTypes":     ubx.FieldSpec{WireName: "rule_types"},
+	"Severities":    ubx.FieldSpec{WireName: "severities"},
+	"TriggerSource": ubx.FieldSpec{WireName: "trigger_source"},
+}
 
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Routing": ubx.FieldSpec{
-			WireName: "routing",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_RoutingFields,
-		},
-		"Selectors": ubx.FieldSpec{
-			WireName: "selectors",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_SelectorsFields,
-		},
-		"Targets": ubx.FieldSpec{WireName: "targets"},
-		"TimeAggregation": ubx.FieldSpec{WireName: "time_aggregation"},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Routing": ubx.FieldSpec{
+		WireName: "routing",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_RoutingFields,
+	},
+	"Selectors": ubx.FieldSpec{
+		WireName: "selectors",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_SelectorsFields,
+	},
+	"Targets":         ubx.FieldSpec{WireName: "targets"},
+	"TimeAggregation": ubx.FieldSpec{WireName: "time_aggregation"},
+	"Version":         ubx.FieldSpec{WireName: "version"},
+}
 
 var RuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RuleResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RuleResponseConfig struct {
 	// Data of the notification rule create request: the rule type, and the rule attributes. All fields are required.
@@ -97,8 +135,8 @@ var RuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   RuleResponse_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

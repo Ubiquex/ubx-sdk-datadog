@@ -4,7 +4,7 @@ package schedule
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schedule_Data_Attributes_Layers_Interval struct {
-	Days any
+	Days    any
 	Seconds any
 }
 
@@ -17,21 +17,21 @@ type Schedule_Data_Attributes_Layers_Members struct {
 }
 
 type Schedule_Data_Attributes_Layers_Restrictions struct {
-	EndDay any
-	EndTime any
-	StartDay any
+	EndDay    any
+	EndTime   any
+	StartDay  any
 	StartTime any
 }
 
 type Schedule_Data_Attributes_Layers struct {
 	EffectiveDate any
-	EndDate any
-	Interval any
-	Members any
-	Name any
-	Restrictions any
+	EndDate       any
+	Interval      any
+	Members       any
+	Name          any
+	Restrictions  any
 	RotationStart any
-	TimeZone any
+	TimeZone      any
 }
 
 type Schedule_Data_Attributes struct {
@@ -39,21 +39,25 @@ type Schedule_Data_Attributes struct {
 	Layers any
 	// A human-readable name for the new schedule.
 	Name any
+	// A list of tags associated with the schedule.
+	Tags any
 	// The time zone in which the schedule is defined.
 	TimeZone any
 }
 
-type Schedule_Data_Relationships_Teams_Data struct {
-	Id any
+type Schedule_Data_Relationships_Layers_Data struct {
+	Id   any
 	Type any
 }
 
-type Schedule_Data_Relationships_Teams struct {
-	// An array of team references for this schedule.
+type Schedule_Data_Relationships_Layers struct {
+	// An array of layer references for this schedule.
 	Data any
 }
 
 type Schedule_Data_Relationships struct {
+	// Associates layers with this schedule in a data structure.
+	Layers any
 	// Associates teams with this schedule in a data structure.
 	Teams any
 }
@@ -61,6 +65,8 @@ type Schedule_Data_Relationships struct {
 type Schedule_Data struct {
 	// Describes the main attributes for creating a new schedule, including name, layers, and time zone.
 	Attributes any
+	// The schedule's unique identifier.
+	Id any
 	// Gathers relationship objects for the schedule creation request, including the teams to associate.
 	Relationships any
 	// Schedules resource type.
@@ -68,10 +74,10 @@ type Schedule_Data struct {
 }
 
 type Schedule_Included_Attributes struct {
-	Avatar any
+	Avatar      any
 	Description any
-	Handle any
-	Name any
+	Handle      any
+	Name        any
 }
 
 type Schedule_Included_Relationships struct {
@@ -79,103 +85,110 @@ type Schedule_Included_Relationships struct {
 }
 
 type Schedule_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var Schedule_Data_Attributes_Layers_IntervalFields = ubx.FieldMap{
-		"Days": ubx.FieldSpec{WireName: "days"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Days":    ubx.FieldSpec{WireName: "days"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var Schedule_Data_Attributes_Layers_Members_UserFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var Schedule_Data_Attributes_Layers_MembersFields = ubx.FieldMap{
-		"User": ubx.FieldSpec{
-			WireName: "user",
-			Kind: "object",
-			Fields: Schedule_Data_Attributes_Layers_Members_UserFields,
-		},
-	}
+	"User": ubx.FieldSpec{
+		WireName: "user",
+		Kind:     "object",
+		Fields:   Schedule_Data_Attributes_Layers_Members_UserFields,
+	},
+}
 
 var Schedule_Data_Attributes_Layers_RestrictionsFields = ubx.FieldMap{
-		"EndDay": ubx.FieldSpec{WireName: "end_day"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartDay": ubx.FieldSpec{WireName: "start_day"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndDay":    ubx.FieldSpec{WireName: "end_day"},
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartDay":  ubx.FieldSpec{WireName: "start_day"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Schedule_Data_Attributes_LayersFields = ubx.FieldMap{
-		"EffectiveDate": ubx.FieldSpec{WireName: "effective_date"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"Interval": ubx.FieldSpec{
-			WireName: "interval",
-			Kind: "object",
-			Fields: Schedule_Data_Attributes_Layers_IntervalFields,
-		},
-		"Members": ubx.FieldSpec{
-			WireName: "members",
-			Kind: "list",
-			Fields: Schedule_Data_Attributes_Layers_MembersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Restrictions": ubx.FieldSpec{
-			WireName: "restrictions",
-			Kind: "list",
-			Fields: Schedule_Data_Attributes_Layers_RestrictionsFields,
-		},
-		"RotationStart": ubx.FieldSpec{WireName: "rotation_start"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"EffectiveDate": ubx.FieldSpec{WireName: "effective_date"},
+	"EndDate":       ubx.FieldSpec{WireName: "end_date"},
+	"Interval": ubx.FieldSpec{
+		WireName: "interval",
+		Kind:     "object",
+		Fields:   Schedule_Data_Attributes_Layers_IntervalFields,
+	},
+	"Members": ubx.FieldSpec{
+		WireName: "members",
+		Kind:     "list",
+		Fields:   Schedule_Data_Attributes_Layers_MembersFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Restrictions": ubx.FieldSpec{
+		WireName: "restrictions",
+		Kind:     "list",
+		Fields:   Schedule_Data_Attributes_Layers_RestrictionsFields,
+	},
+	"RotationStart": ubx.FieldSpec{WireName: "rotation_start"},
+	"TimeZone":      ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var Schedule_Data_AttributesFields = ubx.FieldMap{
-		"Layers": ubx.FieldSpec{
-			WireName: "layers",
-			Kind: "list",
-			Fields: Schedule_Data_Attributes_LayersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"Layers": ubx.FieldSpec{
+		WireName: "layers",
+		Kind:     "list",
+		Fields:   Schedule_Data_Attributes_LayersFields,
+	},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Tags":     ubx.FieldSpec{WireName: "tags"},
+	"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+}
 
-var Schedule_Data_Relationships_Teams_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+var Schedule_Data_Relationships_Layers_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
-var Schedule_Data_Relationships_TeamsFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "list",
-			Fields: Schedule_Data_Relationships_Teams_DataFields,
-		},
-	}
+var Schedule_Data_Relationships_LayersFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   Schedule_Data_Relationships_Layers_DataFields,
+	},
+}
 
 var Schedule_Data_RelationshipsFields = ubx.FieldMap{
-		"Teams": ubx.FieldSpec{
-			WireName: "teams",
-			Kind: "object",
-			Fields: Schedule_Data_Relationships_TeamsFields,
-		},
-	}
+	"Layers": ubx.FieldSpec{
+		WireName: "layers",
+		Kind:     "object",
+		Fields:   Schedule_Data_Relationships_LayersFields,
+	},
+	"Teams": ubx.FieldSpec{
+		WireName: "teams",
+		Kind:     "object",
+		Fields:   Schedule_Data_Relationships_LayersFields,
+	},
+}
 
 var Schedule_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Schedule_Data_AttributesFields,
-		},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: Schedule_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Schedule_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Schedule_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ScheduleConfig struct {
 	// The core data wrapper for creating a schedule, encompassing attributes, relationships, and the resource type.
@@ -198,8 +211,8 @@ var Schedule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Schedule_DataFields,
+			Kind:     "object",
+			Fields:   Schedule_DataFields,
 		},
 		"ScheduleId": ubx.FieldSpec{WireName: "schedule_id"},
 	},

@@ -18,6 +18,8 @@ class Oauth2ClientCredentialsResponse_Data_Attributes:
     client_secret: Any = None
     # Human-readable name for this auth method. Must be unique within your organization.
     name: Any = None
+    # Authentication protocol used by the auth method.
+    protocol: Any = None
     # Space-separated list of OAuth2 scopes to request.
     scope: Any = None
 
@@ -25,6 +27,8 @@ class Oauth2ClientCredentialsResponse_Data_Attributes:
 class Oauth2ClientCredentialsResponse_Data:
     # OAuth2 client credentials attributes for a create request.
     attributes: Any = None
+    # The ID of the OAuth2 client credentials auth method.
+    id: Any = None
     # OAuth2 client credentials resource type.
     type: Any = None
 
@@ -34,6 +38,7 @@ _Oauth2ClientCredentialsResponse_Data_AttributesFields = {
     "client_id": ubx.FieldSpec(wire_name="client_id"),
     "client_secret": ubx.FieldSpec(wire_name="client_secret"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "protocol": ubx.FieldSpec(wire_name="protocol"),
     "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
@@ -43,6 +48,7 @@ _Oauth2ClientCredentialsResponse_DataFields = {
         kind="object",
         fields=_Oauth2ClientCredentialsResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

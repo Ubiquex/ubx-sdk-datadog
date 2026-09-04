@@ -4,6 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
+from .model import Model, ModelConfig
 from .lab_facet_keys_response import LabFacetKeysResponse, LabFacetKeysResponseConfig
 from .lab_facet_values_response import LabFacetValuesResponse, LabFacetValuesResponseConfig
 from .lab_project_artifacts_response import LabProjectArtifactsResponse, LabProjectArtifactsResponseConfig

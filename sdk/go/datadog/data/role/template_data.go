@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateData_Data_Attributes struct {
 	Description any
-	Name any
+	Name        any
 }
 
 type TemplateData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TemplateDataConfig struct {
@@ -24,6 +24,5 @@ type TemplateDataAttrs struct {
 
 var TemplateData = ubx.DataSourceBinding{
 	WireType: "datadog_role_template_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

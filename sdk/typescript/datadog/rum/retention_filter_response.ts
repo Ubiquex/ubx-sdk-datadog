@@ -26,6 +26,8 @@ export interface RetentionFilterResponse_Data_Attributes {
 export interface RetentionFilterResponse_Data {
   /** The object describing attributes of a RUM retention filter to create. */
   attributes: RetentionFilterResponse_Data_Attributes | Computed<RetentionFilterResponse_Data_Attributes>;
+  /** ID of retention filter in UUID. */
+  id?: string | Computed<string>;
   /** The type of the resource. The value should always be retention_filters. */
   type: string | Computed<string>;
 }
@@ -54,6 +56,7 @@ const RetentionFilterResponse_DataFields: FieldMap = {
     kind: "object",
     fields: RetentionFilterResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

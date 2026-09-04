@@ -4,30 +4,36 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DowntimeResponse_Data_Attributes_TimeSlots_Recurrence_End struct {
-	Day any
-	Hour any
+	Day    any
+	Hour   any
 	Minute any
-	Month any
-	Year any
+	Month  any
+	Year   any
 }
 
 type DowntimeResponse_Data_Attributes_TimeSlots_Recurrence struct {
-	End any
-	Frequency any
-	Interval any
+	End              any
+	Frequency        any
+	Interval         any
 	WeekdayPositions any
-	Weekdays any
+	Weekdays         any
 }
 
 type DowntimeResponse_Data_Attributes_TimeSlots struct {
-	Duration any
-	Name any
+	Duration   any
+	Name       any
 	Recurrence any
-	Start any
-	Timezone any
+	Start      any
+	Timezone   any
 }
 
 type DowntimeResponse_Data_Attributes struct {
+	// The timestamp when the downtime was created.
+	CreatedAt any
+	// The UUID of the user who created the downtime.
+	CreatedBy any
+	// The display name of the user who created the downtime.
+	CreatedByName any
 	// An optional description of the downtime.
 	Description any
 	// Whether the downtime is enabled.
@@ -40,72 +46,87 @@ type DowntimeResponse_Data_Attributes struct {
 	TestIds any
 	// List of time slots for a Synthetics downtime create or update request.
 	TimeSlots any
+	// The timestamp when the downtime was last updated.
+	UpdatedAt any
+	// The UUID of the user who last updated the downtime.
+	UpdatedBy any
+	// The display name of the user who last updated the downtime.
+	UpdatedByName any
 }
 
 type DowntimeResponse_Data struct {
 	// Attributes for creating or updating a Synthetics downtime.
 	Attributes any
+	// The unique identifier of the downtime.
+	Id any
 	// The resource type for a Synthetics downtime.
 	Type any
 }
 
 var DowntimeResponse_Data_Attributes_TimeSlots_Recurrence_EndFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Hour": ubx.FieldSpec{WireName: "hour"},
-		"Minute": ubx.FieldSpec{WireName: "minute"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":    ubx.FieldSpec{WireName: "day"},
+	"Hour":   ubx.FieldSpec{WireName: "hour"},
+	"Minute": ubx.FieldSpec{WireName: "minute"},
+	"Month":  ubx.FieldSpec{WireName: "month"},
+	"Year":   ubx.FieldSpec{WireName: "year"},
+}
 
 var DowntimeResponse_Data_Attributes_TimeSlots_RecurrenceFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{
-			WireName: "end",
-			Kind: "object",
-			Fields: DowntimeResponse_Data_Attributes_TimeSlots_Recurrence_EndFields,
-		},
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"WeekdayPositions": ubx.FieldSpec{WireName: "weekday_positions"},
-		"Weekdays": ubx.FieldSpec{WireName: "weekdays"},
-	}
+	"End": ubx.FieldSpec{
+		WireName: "end",
+		Kind:     "object",
+		Fields:   DowntimeResponse_Data_Attributes_TimeSlots_Recurrence_EndFields,
+	},
+	"Frequency":        ubx.FieldSpec{WireName: "frequency"},
+	"Interval":         ubx.FieldSpec{WireName: "interval"},
+	"WeekdayPositions": ubx.FieldSpec{WireName: "weekday_positions"},
+	"Weekdays":         ubx.FieldSpec{WireName: "weekdays"},
+}
 
 var DowntimeResponse_Data_Attributes_TimeSlotsFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Recurrence": ubx.FieldSpec{
-			WireName: "recurrence",
-			Kind: "object",
-			Fields: DowntimeResponse_Data_Attributes_TimeSlots_RecurrenceFields,
-		},
-		"Start": ubx.FieldSpec{
-			WireName: "start",
-			Kind: "object",
-			Fields: DowntimeResponse_Data_Attributes_TimeSlots_Recurrence_EndFields,
-		},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Recurrence": ubx.FieldSpec{
+		WireName: "recurrence",
+		Kind:     "object",
+		Fields:   DowntimeResponse_Data_Attributes_TimeSlots_RecurrenceFields,
+	},
+	"Start": ubx.FieldSpec{
+		WireName: "start",
+		Kind:     "object",
+		Fields:   DowntimeResponse_Data_Attributes_TimeSlots_Recurrence_EndFields,
+	},
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 var DowntimeResponse_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IsEnabled": ubx.FieldSpec{WireName: "is_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TestIds": ubx.FieldSpec{WireName: "test_ids"},
-		"TimeSlots": ubx.FieldSpec{
-			WireName: "time_slots",
-			Kind: "list",
-			Fields: DowntimeResponse_Data_Attributes_TimeSlotsFields,
-		},
-	}
+	"CreatedAt":     ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":     ubx.FieldSpec{WireName: "created_by"},
+	"CreatedByName": ubx.FieldSpec{WireName: "created_by_name"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"IsEnabled":     ubx.FieldSpec{WireName: "is_enabled"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Tags":          ubx.FieldSpec{WireName: "tags"},
+	"TestIds":       ubx.FieldSpec{WireName: "test_ids"},
+	"TimeSlots": ubx.FieldSpec{
+		WireName: "time_slots",
+		Kind:     "list",
+		Fields:   DowntimeResponse_Data_Attributes_TimeSlotsFields,
+	},
+	"UpdatedAt":     ubx.FieldSpec{WireName: "updated_at"},
+	"UpdatedBy":     ubx.FieldSpec{WireName: "updated_by"},
+	"UpdatedByName": ubx.FieldSpec{WireName: "updated_by_name"},
+}
 
 var DowntimeResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: DowntimeResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   DowntimeResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type DowntimeResponseConfig struct {
 	// The data object for a Synthetics downtime create or update request.
@@ -126,8 +147,8 @@ var DowntimeResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: DowntimeResponse_DataFields,
+			Kind:     "object",
+			Fields:   DowntimeResponse_DataFields,
 		},
 		"DowntimeId": ubx.FieldSpec{WireName: "downtime_id"},
 	},

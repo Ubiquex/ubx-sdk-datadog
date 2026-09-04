@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestVersionChangeData_Data_Attributes_ChangeMetadata_ActionMetadata_DiffPatches_Diffs struct {
 	ChangeText any
-	Operation any
+	Operation  any
 }
 
 type TestVersionChangeData_Data_Attributes_ChangeMetadata_ActionMetadata_DiffPatches struct {
-	Diffs any
+	Diffs   any
 	Length1 any
 	Length2 any
-	Start1 any
-	Start2 any
+	Start1  any
+	Start2  any
 }
 
 type TestVersionChangeData_Data_Attributes_ChangeMetadata_ActionMetadata struct {
-	AfterValue any
-	BeforeValue any
-	DiffPatches any
+	AfterValue   any
+	BeforeValue  any
+	DiffPatches  any
 	PropertyPath any
 }
 
 type TestVersionChangeData_Data_Attributes_ChangeMetadata struct {
-	Action any
+	Action         any
 	ActionMetadata any
 }
 
 type TestVersionChangeData_Data_Attributes struct {
-	AuthorUuid any
-	ChangeMetadata any
-	VersionNumber any
+	AuthorUuid              any
+	ChangeMetadata          any
+	VersionNumber           any
 	VersionPayloadCreatedAt any
 }
 
 type TestVersionChangeData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TestVersionChangeData_Meta struct {
@@ -50,17 +50,17 @@ type TestVersionChangeData_Meta struct {
 
 type TestVersionChangeDataConfig struct {
 	LastVersionNumber any
-	Limit any
-	PublicId any
+	Limit             any
+	PublicId          any
 }
 
 type TestVersionChangeDataAttrs struct {
 	// List of version change records.
-	Data any
+	Data              any
 	LastVersionNumber any
-	Limit any
+	Limit             any
 	// Pagination metadata for a version history response.
-	Meta any
+	Meta     any
 	PublicId any
 }
 
@@ -68,7 +68,7 @@ var TestVersionChangeData = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_test_version_change_data",
 	Fields: ubx.FieldMap{
 		"LastVersionNumber": ubx.FieldSpec{WireName: "last_version_number"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"PublicId": ubx.FieldSpec{WireName: "public_id"},
+		"Limit":             ubx.FieldSpec{WireName: "limit"},
+		"PublicId":          ubx.FieldSpec{WireName: "public_id"},
 	},
 }

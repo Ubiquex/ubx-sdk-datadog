@@ -4,7 +4,7 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FilterResponse_Data_Attributes_ExclusionFilters struct {
-	Name any
+	Name  any
 	Query any
 }
 
@@ -13,17 +13,23 @@ type FilterResponse_Data_Attributes struct {
 	ExclusionFilters any
 	// The filtered data type.
 	FilteredDataType any
+	// Whether the security filter is the built-in filter.
+	IsBuiltin any
 	// Whether the security filter is enabled.
 	IsEnabled any
 	// The name of the security filter.
 	Name any
 	// The query of the security filter.
 	Query any
+	// The version of the security filter.
+	Version any
 }
 
 type FilterResponse_Data struct {
 	// Object containing the attributes of the security filter to be created.
 	Attributes any
+	// The ID of the security filter.
+	Id any
 	// The type of the resource. The value should always be `security_filters`.
 	Type any
 }
@@ -34,30 +40,33 @@ type FilterResponse_Meta struct {
 }
 
 var FilterResponse_Data_Attributes_ExclusionFiltersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var FilterResponse_Data_AttributesFields = ubx.FieldMap{
-		"ExclusionFilters": ubx.FieldSpec{
-			WireName: "exclusion_filters",
-			Kind: "list",
-			Fields: FilterResponse_Data_Attributes_ExclusionFiltersFields,
-		},
-		"FilteredDataType": ubx.FieldSpec{WireName: "filtered_data_type"},
-		"IsEnabled": ubx.FieldSpec{WireName: "is_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"ExclusionFilters": ubx.FieldSpec{
+		WireName: "exclusion_filters",
+		Kind:     "list",
+		Fields:   FilterResponse_Data_Attributes_ExclusionFiltersFields,
+	},
+	"FilteredDataType": ubx.FieldSpec{WireName: "filtered_data_type"},
+	"IsBuiltin":        ubx.FieldSpec{WireName: "is_builtin"},
+	"IsEnabled":        ubx.FieldSpec{WireName: "is_enabled"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Query":            ubx.FieldSpec{WireName: "query"},
+	"Version":          ubx.FieldSpec{WireName: "version"},
+}
 
 var FilterResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: FilterResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   FilterResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type FilterResponseConfig struct {
 	// Object for a single security filter.
@@ -80,8 +89,8 @@ var FilterResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: FilterResponse_DataFields,
+			Kind:     "object",
+			Fields:   FilterResponse_DataFields,
 		},
 		"SecurityFilterId": ubx.FieldSpec{WireName: "security_filter_id"},
 	},

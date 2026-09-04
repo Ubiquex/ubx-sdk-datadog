@@ -5,14 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserTemplateResponse_Data_Attributes_TemplateVariables struct {
 	AvailableValues any
-	Defaults any
-	Name any
-	TagKey any
+	Defaults        any
+	Name            any
+	TagKey          any
+}
+
+type UserTemplateResponse_Data_Attributes_Versions struct {
+	Created           any
+	Description       any
+	Id                any
+	MonitorDefinition any
+	Tags              any
+	TemplateVariables any
+	Title             any
+	Version           any
 }
 
 type UserTemplateResponse_Data_Attributes struct {
+	// The created timestamp of the template.
+	Created any
 	// A brief description of the monitor user template.
 	Description any
+	// The last modified timestamp. When the template version was created.
+	Modified any
 	// A valid monitor definition in the same format as the [V1 Monitor API](https://docs.datadoghq.com/api/latest/monitors/#create-a-monitor).
 	MonitorDefinition any
 	// The definition of `MonitorUserTemplateTags` object.
@@ -21,6 +36,10 @@ type UserTemplateResponse_Data_Attributes struct {
 	TemplateVariables any
 	// The title of the monitor user template.
 	Title any
+	// The version of the monitor user template.
+	Version any
+	// All versions of the monitor user template.
+	Versions any
 }
 
 type UserTemplateResponse_Data struct {
@@ -33,33 +52,56 @@ type UserTemplateResponse_Data struct {
 }
 
 var UserTemplateResponse_Data_Attributes_TemplateVariablesFields = ubx.FieldMap{
-		"AvailableValues": ubx.FieldSpec{WireName: "available_values"},
-		"Defaults": ubx.FieldSpec{WireName: "defaults"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-	}
+	"AvailableValues": ubx.FieldSpec{WireName: "available_values"},
+	"Defaults":        ubx.FieldSpec{WireName: "defaults"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"TagKey":          ubx.FieldSpec{WireName: "tag_key"},
+}
+
+var UserTemplateResponse_Data_Attributes_VersionsFields = ubx.FieldMap{
+	"Created":           ubx.FieldSpec{WireName: "created"},
+	"Description":       ubx.FieldSpec{WireName: "description"},
+	"Id":                ubx.FieldSpec{WireName: "id"},
+	"MonitorDefinition": ubx.FieldSpec{WireName: "monitor_definition"},
+	"Tags":              ubx.FieldSpec{WireName: "tags"},
+	"TemplateVariables": ubx.FieldSpec{
+		WireName: "template_variables",
+		Kind:     "list",
+		Fields:   UserTemplateResponse_Data_Attributes_TemplateVariablesFields,
+	},
+	"Title":   ubx.FieldSpec{WireName: "title"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var UserTemplateResponse_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"MonitorDefinition": ubx.FieldSpec{WireName: "monitor_definition"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TemplateVariables": ubx.FieldSpec{
-			WireName: "template_variables",
-			Kind: "list",
-			Fields: UserTemplateResponse_Data_Attributes_TemplateVariablesFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Created":           ubx.FieldSpec{WireName: "created"},
+	"Description":       ubx.FieldSpec{WireName: "description"},
+	"Modified":          ubx.FieldSpec{WireName: "modified"},
+	"MonitorDefinition": ubx.FieldSpec{WireName: "monitor_definition"},
+	"Tags":              ubx.FieldSpec{WireName: "tags"},
+	"TemplateVariables": ubx.FieldSpec{
+		WireName: "template_variables",
+		Kind:     "list",
+		Fields:   UserTemplateResponse_Data_Attributes_TemplateVariablesFields,
+	},
+	"Title":   ubx.FieldSpec{WireName: "title"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "list",
+		Fields:   UserTemplateResponse_Data_Attributes_VersionsFields,
+	},
+}
 
 var UserTemplateResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: UserTemplateResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   UserTemplateResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type UserTemplateResponseConfig struct {
 	// Monitor user template data.
@@ -80,8 +122,8 @@ var UserTemplateResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: UserTemplateResponse_DataFields,
+			Kind:     "object",
+			Fields:   UserTemplateResponse_DataFields,
 		},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
 	},

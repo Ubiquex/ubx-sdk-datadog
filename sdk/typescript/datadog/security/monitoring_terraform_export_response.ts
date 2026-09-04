@@ -2,8 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MonitoringTerraformExportResponse_Data_Attributes {
+  /** The Terraform configuration for the resource. */
+  output?: string | Computed<string>;
+  /** The ID of the exported resource. */
+  resourceId?: string | Computed<string>;
   /** The resource attributes as a JSON object, matching the structure returned by the corresponding Datadog API (for example, the attributes of a suppression rule). */
   resourceJson: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The Terraform resource type name. */
+  typeName?: string | Computed<string>;
 }
 
 export interface MonitoringTerraformExportResponse_Data {
@@ -16,7 +22,10 @@ export interface MonitoringTerraformExportResponse_Data {
 }
 
 const MonitoringTerraformExportResponse_Data_AttributesFields: FieldMap = {
+  output: "output",
+  resourceId: "resource_id",
   resourceJson: "resource_json",
+  typeName: "type_name",
 };
 
 const MonitoringTerraformExportResponse_DataFields: FieldMap = {

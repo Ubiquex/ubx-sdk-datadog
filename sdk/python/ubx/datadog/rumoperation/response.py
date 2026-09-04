@@ -7,6 +7,17 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Response_Data_Attributes_CreatedBy:
+    # The email of the user.
+    email: Any = None
+    # The handle of the user.
+    handle: Any = None
+    # The name of the user.
+    name: Any = None
+    # The UUID of the user.
+    uuid: Any = None
+
+@dataclasses.dataclass
 class Response_Data_Attributes_JourneyRum_RumSteps_Composite_Predicates:
     query: Any = None
 
@@ -40,6 +51,10 @@ class Response_Data_Attributes:
     application_id: Any = None
     # The category of the RUM operation.
     category: Any = None
+    # The timestamp when the RUM operation was created.
+    created_at: Any = None
+    # A Datadog user referenced by a RUM operation.
+    created_by: Any = None
     # A description of the RUM operation.
     description: Any = None
     # A human-readable display name for the RUM operation.
@@ -50,15 +65,30 @@ class Response_Data_Attributes:
     journey_rum: Any = None
     # The unique name of the RUM operation. Must not contain spaces.
     name: Any = None
+    # The ID of the organization the RUM operation belongs to.
+    org_id: Any = None
     # A list of tags associated with the RUM operation.
     tags: Any = None
+    # The timestamp when the RUM operation was last updated.
+    updated_at: Any = None
+    # A Datadog user referenced by a RUM operation.
+    updated_by: Any = None
 
 @dataclasses.dataclass
 class Response_Data:
     # Attributes for creating or updating a RUM operation.
     attributes: Any = None
+    # The unique identifier of the RUM operation.
+    id: Any = None
     # The JSON:API type for RUM operation resources.
     type: Any = None
+
+_Response_Data_Attributes_CreatedByFields = {
+    "email": ubx.FieldSpec(wire_name="email"),
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "uuid": ubx.FieldSpec(wire_name="uuid"),
+}
 
 _Response_Data_Attributes_JourneyRum_RumSteps_Composite_PredicatesFields = {
     "query": ubx.FieldSpec(wire_name="query"),
@@ -106,6 +136,12 @@ _Response_Data_Attributes_JourneyRumFields = {
 _Response_Data_AttributesFields = {
     "application_id": ubx.FieldSpec(wire_name="application_id"),
     "category": ubx.FieldSpec(wire_name="category"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_Response_Data_Attributes_CreatedByFields,
+    ),
     "description": ubx.FieldSpec(wire_name="description"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
     "feature_ids": ubx.FieldSpec(wire_name="feature_ids"),
@@ -115,7 +151,14 @@ _Response_Data_AttributesFields = {
         fields=_Response_Data_Attributes_JourneyRumFields,
     ),
     "name": ubx.FieldSpec(wire_name="name"),
+    "org_id": ubx.FieldSpec(wire_name="org_id"),
     "tags": ubx.FieldSpec(wire_name="tags"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updated_by": ubx.FieldSpec(
+        wire_name="updated_by",
+        kind="object",
+        fields=_Response_Data_Attributes_CreatedByFields,
+    ),
 }
 
 _Response_DataFields = {
@@ -124,6 +167,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

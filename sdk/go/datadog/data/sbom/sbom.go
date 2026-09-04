@@ -12,24 +12,24 @@ type Sbom_Data_Attributes_Components_Licenses struct {
 }
 
 type Sbom_Data_Attributes_Components_Properties struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Sbom_Data_Attributes_Components struct {
-	BomRef any
-	Licenses any
-	Name any
+	BomRef     any
+	Licenses   any
+	Name       any
 	Properties any
-	Purl any
-	Supplier any
-	Type any
-	Version any
+	Purl       any
+	Supplier   any
+	Type       any
+	Version    any
 }
 
 type Sbom_Data_Attributes_Dependencies struct {
 	DependsOn any
-	Ref any
+	Ref       any
 }
 
 type Sbom_Data_Attributes_Metadata_Component struct {
@@ -38,25 +38,25 @@ type Sbom_Data_Attributes_Metadata_Component struct {
 }
 
 type Sbom_Data_Attributes_Metadata struct {
-	Authors any
+	Authors   any
 	Component any
 	Timestamp any
 }
 
 type Sbom_Data_Attributes struct {
-	BomFormat any
-	Components any
+	BomFormat    any
+	Components   any
 	Dependencies any
-	Metadata any
+	Metadata     any
 	SerialNumber any
-	SpecVersion any
-	Version any
+	SpecVersion  any
+	Version      any
 }
 
 type Sbom_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Sbom_Links struct {
@@ -95,6 +95,5 @@ type SbomAttrs struct {
 
 var Sbom = ubx.DataSourceBinding{
 	WireType: "datadog_sbom",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

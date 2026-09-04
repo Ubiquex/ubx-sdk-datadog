@@ -15,15 +15,44 @@ class Response_Data_Attributes_Definition:
 
 @dataclasses.dataclass
 class Response_Data_Attributes:
+    # ISO 8601 timestamp of when the widget was created.
+    created_at: Any = None
     # The definition of a widget, including its type and configuration.
     definition: Any = None
+    # Whether the current user has favorited this widget. Populated on get, batch_get, update, and search responses; create responses always return `false` because a widget can only be favorited after it exists. Favoriting itself is performed through the shared favorites API, not this service.
+    is_favorited: Any = None
+    # ISO 8601 timestamp of when the widget was last modified.
+    modified_at: Any = None
     # User-defined tags for organizing the widget.
     tags: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_CreatedBy_Data:
+    # The unique identifier of the user.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_CreatedBy:
+    # Relationship data referencing a user resource.
+    data: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships:
+    # A JSON:API relationship to a user.
+    created_by: Any = None
+    # A JSON:API relationship to a user.
+    modified_by: Any = None
 
 @dataclasses.dataclass
 class Response_Data:
     # Attributes for creating or updating a widget.
     attributes: Any = None
+    # The unique identifier of the widget.
+    id: Any = None
+    # Relationships of the widget resource.
+    relationships: Any = None
     # Widgets resource type.
     type: Any = None
 
@@ -44,12 +73,41 @@ _Response_Data_Attributes_DefinitionFields = {
 }
 
 _Response_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "definition": ubx.FieldSpec(
         wire_name="definition",
         kind="object",
         fields=_Response_Data_Attributes_DefinitionFields,
     ),
+    "is_favorited": ubx.FieldSpec(wire_name="is_favorited"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "tags": ubx.FieldSpec(wire_name="tags"),
+}
+
+_Response_Data_Relationships_CreatedBy_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Response_Data_Relationships_CreatedByFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_Response_Data_Relationships_CreatedBy_DataFields,
+    ),
+}
+
+_Response_Data_RelationshipsFields = {
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_Response_Data_Relationships_CreatedByFields,
+    ),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_Response_Data_Relationships_CreatedByFields,
+    ),
 }
 
 _Response_DataFields = {
@@ -57,6 +115,12 @@ _Response_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_Response_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_Response_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

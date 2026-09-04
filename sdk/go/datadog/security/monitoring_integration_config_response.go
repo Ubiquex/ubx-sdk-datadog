@@ -5,67 +5,70 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringIntegrationConfigResponse_Data_Attributes_Secrets_ServiceAccountJson struct {
 	ClientEmail any
-	PrivateKey any
-	ProjectId any
-	Type any
+	PrivateKey  any
+	ProjectId   any
+	Type        any
 }
 
 type MonitoringIntegrationConfigResponse_Data_Attributes_Secrets struct {
-	AdminEmail any
+	AdminEmail         any
 	ServiceAccountJson any
 }
 
 type MonitoringIntegrationConfigResponse_Data_Attributes struct {
-	Domain any
+	Domain          any
 	IntegrationType any
-	Name any
-	Secrets any
-	Settings any
+	Name            any
+	Secrets         any
+	Settings        any
 }
 
 type MonitoringIntegrationConfigResponse_Data struct {
 	// The attributes of the entity context sync configuration to create.
 	Attributes any
+	// The unique identifier of the integration configuration.
+	Id any
 	// The type of the resource. The value should always be `integration_config`.
 	Type any
 }
 
 var MonitoringIntegrationConfigResponse_Data_Attributes_Secrets_ServiceAccountJsonFields = ubx.FieldMap{
-		"ClientEmail": ubx.FieldSpec{WireName: "client_email"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ClientEmail": ubx.FieldSpec{WireName: "client_email"},
+	"PrivateKey":  ubx.FieldSpec{WireName: "private_key"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var MonitoringIntegrationConfigResponse_Data_Attributes_SecretsFields = ubx.FieldMap{
-		"AdminEmail": ubx.FieldSpec{WireName: "admin_email"},
-		"ServiceAccountJson": ubx.FieldSpec{
-			WireName: "service_account_json",
-			Kind: "object",
-			Fields: MonitoringIntegrationConfigResponse_Data_Attributes_Secrets_ServiceAccountJsonFields,
-		},
-	}
+	"AdminEmail": ubx.FieldSpec{WireName: "admin_email"},
+	"ServiceAccountJson": ubx.FieldSpec{
+		WireName: "service_account_json",
+		Kind:     "object",
+		Fields:   MonitoringIntegrationConfigResponse_Data_Attributes_Secrets_ServiceAccountJsonFields,
+	},
+}
 
 var MonitoringIntegrationConfigResponse_Data_AttributesFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Secrets": ubx.FieldSpec{
-			WireName: "secrets",
-			Kind: "object",
-			Fields: MonitoringIntegrationConfigResponse_Data_Attributes_SecretsFields,
-		},
-		"Settings": ubx.FieldSpec{WireName: "settings"},
-	}
+	"Domain":          ubx.FieldSpec{WireName: "domain"},
+	"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Secrets": ubx.FieldSpec{
+		WireName: "secrets",
+		Kind:     "object",
+		Fields:   MonitoringIntegrationConfigResponse_Data_Attributes_SecretsFields,
+	},
+	"Settings": ubx.FieldSpec{WireName: "settings"},
+}
 
 var MonitoringIntegrationConfigResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: MonitoringIntegrationConfigResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   MonitoringIntegrationConfigResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MonitoringIntegrationConfigResponseConfig struct {
 	// The entity context sync configuration to create.
@@ -86,8 +89,8 @@ var MonitoringIntegrationConfigResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: MonitoringIntegrationConfigResponse_DataFields,
+			Kind:     "object",
+			Fields:   MonitoringIntegrationConfigResponse_DataFields,
 		},
 		"IntegrationConfigId": ubx.FieldSpec{WireName: "integration_config_id"},
 	},

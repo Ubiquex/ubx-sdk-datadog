@@ -9,26 +9,26 @@ type RowResourceData_Data_Attributes struct {
 
 type RowResourceData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RowResourceDataConfig struct {
-	Id any
+	Id    any
 	RowId any
 }
 
 type RowResourceDataAttrs struct {
 	// The rows.
-	Data any
-	Id any
+	Data  any
+	Id    any
 	RowId any
 }
 
 var RowResourceData = ubx.DataSourceBinding{
 	WireType: "datadog_table_row_resource_data",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":    ubx.FieldSpec{WireName: "id"},
 		"RowId": ubx.FieldSpec{WireName: "row_id"},
 	},
 }

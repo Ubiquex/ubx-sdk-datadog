@@ -8,17 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Apitest_Config_Assertions:
-    # The expected HTTP status code for the assertion, as a string (e.g., '200'). (AI-inferred)
     code: Any = None
-    # The operator to apply for the assertion. Valid values are: contains, doesNotContain, is, isNot, lessThan, lessThanOrEqual, moreThan, moreThanOrEqual, matches, doesNotMatch, validates, isInMoreThan, isInLessThan, doesNotExist, isUndefined. (AI-inferred)
     operator: Any = None
-    # The property to assert on, such as a header name or a JSONPath expression, depending on the assertion type. (AI-inferred)
     property: Any = None
-    # Expected value for the assertion. Its type depends on the assertion type (e.g., string for header/text assertions, number for response time/status code). (AI-inferred)
     target: Any = None
-    # The scope of timings used for the assertion. Set to 'all' to include all timings (including DNS), or 'withoutDNS' to exclude DNS resolution time. (AI-inferred)
     timings_scope: Any = None
-    # The type of assertion to perform on the API test response. Must be one of: body, header, statusCode, certificate, responseTime, property, recordEvery, recordSome, tlsVersion, minTlsVersion, latency, packetLossPercentage, packetsReceived, networkHop, receivedMessage, grpcHealthcheckStatus, grpcMetadata, grpcProto, connection, multiNetworkHop, jitter, mcpToolNameLength, mcpToolCount. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -26,59 +20,40 @@ class Apitest_Config_ConfigVariables:
     example: Any = None
     id: Any = None
     name: Any = None
-    # Regex string that the variable's value must match to be considered valid. Used for input validation of the config variable. (AI-inferred)
     pattern: Any = None
-    # Boolean indicating whether the config variable's value is secured and hidden from plain text views. (AI-inferred)
     secure: Any = None
-    # Type of the configuration variable. Allowed values are 'global' (reference a global variable), 'text' (a text value), or 'email' (an email address). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Apitest_Config_Request_BasicAuth_AddClaims:
-    # When set to `true`, adds the `exp` (expiration) claim to the JWT token, including an expiration timestamp. This is used within the `add_claims` block for JWT-based authentication in Datadog Synthetics API tests. (AI-inferred)
     exp: Any = None
-    # When true, adds the 'iat' (issued at) claim to the JWT token used for authentication. (AI-inferred)
     iat: Any = None
 
 @dataclasses.dataclass
 class Apitest_Config_Request_BasicAuth:
     access_key: Any = None
-    # The endpoint URL used to request an OAuth access token for authenticating the API test request. (AI-inferred)
     access_token_url: Any = None
     add_claims: Any = None
     algorithm: Any = None
-    # The audience of the OAuth2 token, identifying the intended recipient API resource. (AI-inferred)
     audience: Any = None
     client_id: Any = None
-    # The client secret used for OAuth2 client credentials authentication. This is the secret key associated with the client ID, required when the auth type is oauth2. (AI-inferred)
     client_secret: Any = None
-    # The domain for the NTLM authentication scheme, used when the basic_auth type is 'ntlm'. (AI-inferred)
     domain: Any = None
     expires_in: Any = None
-    # The name of the HTTP header used to send basic authentication credentials (e.g., `Authorization`). (AI-inferred)
     header: Any = None
-    # The password used for basic authentication in the request. (AI-inferred)
     password: Any = None
     payload: Any = None
     region: Any = None
     resource: Any = None
     scope: Any = None
-    # The password or secret used for basic authentication in the API test request. (AI-inferred)
     secret: Any = None
-    # The secret key (password) used with the username for HTTP basic authentication in the synthetic API test request. (AI-inferred)
     secret_key: Any = None
-    # The service name (SPN) for NTLM authentication within the basic auth configuration. (AI-inferred)
     service_name: Any = None
     session_token: Any = None
-    # The API token used for token-based authentication in the basic auth configuration. This is typically used when the authentication type is set to 'token'. (AI-inferred)
     token_api_authentication: Any = None
-    # The prefix used in the Authorization header before the token (e.g., 'Bearer'). When set, the authorization header becomes '<token_prefix> <token>'. (AI-inferred)
     token_prefix: Any = None
-    # The type of basic authentication to use. Valid values are `web` for standard HTTP basic auth and `ntlm` for NTLM authentication. (AI-inferred)
     type: Any = None
-    # The username for basic authentication used in the API test request. (AI-inferred)
     username: Any = None
-    # The Windows workstation name used for NTLM authentication. This is only relevant when the basic_auth configuration is set to NTLM authentication type. (AI-inferred)
     workstation: Any = None
 
 @dataclasses.dataclass
@@ -100,17 +75,11 @@ class Apitest_Config_Request_Certificate:
 @dataclasses.dataclass
 class Apitest_Config_Request_Files:
     bucket_key: Any = None
-    # Content of the file to be sent in the request. Maximum length is 3145728 bytes (3 MB). (AI-inferred)
     content: Any = None
-    # The encoding used for the file content, such as `base64` or `binary` when constructing the multipart request. (AI-inferred)
     encoding: Any = None
-    # The file name for a file to be sent in the request. The maximum allowed length is 1500 characters. (AI-inferred)
     name: Any = None
-    # The original file name of the file being uploaded in the request. Must not exceed 1500 characters. (AI-inferred)
     original_file_name: Any = None
-    # The size of the file in bytes. Must be between 1 and 3,145,728 bytes (3 MiB). (AI-inferred)
     size: Any = None
-    # The MIME type of the file being sent in the request, such as 'text/plain' or 'application/json'. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -201,54 +170,36 @@ class Apitest_Config_Request:
 
 @dataclasses.dataclass
 class Apitest_Config_Steps_ExtractedValues_Parser:
-    # The type of parser used to extract the value from the HTTP response. Valid values are `raw`, `json_path`, `regex`, and `x_path`. (AI-inferred)
     type: Any = None
-    # The value of the parser, such as the regex pattern or JSON path, used to extract the desired content from the response. The interpretation depends on the parser type. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class Apitest_Config_Steps_ExtractedValues:
-    # Specifies the part of the HTTP response from which the value in the extracted value step is taken, such as `http_response_body` or `http_response_headers`. (AI-inferred)
     field: Any = None
     name: Any = None
-    # Parser configuration used to extract the value from the response, defining the extraction method and pattern to apply. (AI-inferred)
     parser: Any = None
-    # Whether the extracted value is treated as a secret and hidden from plain view in the Datadog UI and test logs. (AI-inferred)
     secure: Any = None
-    # The type of value to extract from the step response. Allowed values are: `grpc_message`, `grpc_metadata`, `http_body`, `http_header`, `http_status_code`. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Apitest_Config_Steps_Retry:
-    # The number of retry attempts for the step. (AI-inferred)
     count: Any = None
-    # The interval in milliseconds to wait between retry attempts. (AI-inferred)
     interval: Any = None
 
 @dataclasses.dataclass
 class Apitest_Config_Steps:
-    # If true, the step is allowed to fail without failing the entire API test. (AI-inferred)
     allow_failure: Any = None
-    # When set to true, this step runs unconditionally, even if previous steps fail. (AI-inferred)
     always_execute: Any = None
-    # List of assertions that define expected conditions on the step's response, such as status code, response time, or header/body content. (AI-inferred)
     assertions: Any = None
-    # If true, the test will stop (exit) after this step if the step passes successfully. (AI-inferred)
     exit_if_succeed: Any = None
-    # A list of objects defining variables to extract from the step's response (e.g., from response body or headers) for use in later steps. (AI-inferred)
     extracted_values: Any = None
     extracted_values_from_script: Any = None
     id: Any = None
-    # Whether the step is critical: if a critical step fails, the entire test is considered failed. Non-critical steps do not fail the test on failure. (AI-inferred)
     is_critical: Any = None
     name: Any = None
-    # The request configuration for this step, containing the HTTP method, URL, headers, and body of the request to be made. (AI-inferred)
     request: Any = None
-    # The retry block configures automatic retries for this step on failure, including the number of attempts and the interval between them. (AI-inferred)
     retry: Any = None
-    # The public ID of the Datadog Synthetics test to run as a subtest in this step. (AI-inferred)
     subtest_public_id: Any = None
-    # The subtype of the step, indicating the protocol or service type. Allowed values are: `http`, `grpc`, `ssl`, `dns`, `tcp`, `udp`, `icmp`, `websocket`, `mcp`. (AI-inferred)
     subtype: Any = None
     value: Any = None
 
@@ -292,11 +243,8 @@ class Apitest_Options_RumSettings:
 
 @dataclasses.dataclass
 class Apitest_Options_Scheduling_Timeframes:
-    # The day of the week for this scheduled timeframe, as an integer between 1 and 7, where 1 represents Monday and 7 represents Sunday. (AI-inferred)
     day: Any = None
-    # The starting time of the scheduling timeframe, representing when the test is allowed to begin running. (AI-inferred)
     from_: Any = None
-    # End time of the scheduled time window in HH:mm format. (AI-inferred)
     to: Any = None
 
 @dataclasses.dataclass
@@ -680,14 +628,10 @@ class ApitestConfig:
     locations: Any = None
     # Notification message associated with the test.
     message: Any = None
-    # The associated monitor ID.
-    monitor_id: Any = None
     # Name of the test.
     name: Any = None
     # Object describing the extra options for a Synthetic test.
     options: Any = None
-    # The public ID for the test.
-    public_id: Any = None
     # Define whether you want to start (`live`) or pause (`paused`) a Synthetic test.
     status: Any = None
     # The subtype of the Synthetic API test, `http`, `ssl`, `tcp`, `dns`, `icmp`, `udp`, `websocket`, `grpc` or `multi`.
@@ -732,14 +676,12 @@ Apitest = ubx.ResourceBinding(
         ),
         "locations": ubx.FieldSpec(wire_name="locations"),
         "message": ubx.FieldSpec(wire_name="message"),
-        "monitor_id": ubx.FieldSpec(wire_name="monitor_id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "options": ubx.FieldSpec(
             wire_name="options",
             kind="object",
             fields=_Apitest_OptionsFields,
         ),
-        "public_id": ubx.FieldSpec(wire_name="public_id"),
         "status": ubx.FieldSpec(wire_name="status"),
         "subtype": ubx.FieldSpec(wire_name="subtype"),
         "tags": ubx.FieldSpec(wire_name="tags"),

@@ -5,183 +5,183 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringRuleResponse_Data_CalculatedFields struct {
 	Expression any
-	Name any
+	Name       any
 }
 
 type MonitoringRuleResponse_Data_Cases_Actions_Options struct {
-	Duration any
-	FlaggedIptype any
+	Duration         any
+	FlaggedIptype    any
 	UserBehaviorName any
 }
 
 type MonitoringRuleResponse_Data_Cases_Actions struct {
 	Options any
-	Type any
+	Type    any
 }
 
 type MonitoringRuleResponse_Data_Cases struct {
-	Actions any
-	Condition any
-	CustomStatus any
-	Name any
+	Actions       any
+	Condition     any
+	CustomStatus  any
+	Name          any
 	Notifications any
-	Status any
+	Status        any
 }
 
 type MonitoringRuleResponse_Data_ComplianceSignalOptions struct {
 	DefaultActivationStatus any
-	DefaultGroupByFields any
-	UserActivationStatus any
-	UserGroupByFields any
+	DefaultGroupByFields    any
+	UserActivationStatus    any
+	UserGroupByFields       any
 }
 
 type MonitoringRuleResponse_Data_Filters struct {
 	Action any
-	Query any
+	Query  any
 }
 
 type MonitoringRuleResponse_Data_Options_AnomalyDetectionOptions struct {
-	BucketDuration any
-	DetectionTolerance any
-	InstantaneousBaseline any
-	LearningDuration any
+	BucketDuration         any
+	DetectionTolerance     any
+	InstantaneousBaseline  any
+	LearningDuration       any
 	LearningPeriodBaseline any
 }
 
 type MonitoringRuleResponse_Data_Options_ComplianceRuleOptions_RegoRule struct {
-	Policy any
+	Policy        any
 	ResourceTypes any
 }
 
 type MonitoringRuleResponse_Data_Options_ComplianceRuleOptions struct {
-	ComplexRule any
-	RegoRule any
+	ComplexRule  any
+	RegoRule     any
 	ResourceType any
 }
 
 type MonitoringRuleResponse_Data_Options_ImpossibleTravelOptions struct {
-	BaselineUserLocations any
+	BaselineUserLocations         any
 	BaselineUserLocationsDuration any
 }
 
 type MonitoringRuleResponse_Data_Options_NewValueOptions struct {
-	ForgetAfter any
+	ForgetAfter           any
 	InstantaneousBaseline any
-	LearningDuration any
-	LearningMethod any
-	LearningThreshold any
+	LearningDuration      any
+	LearningMethod        any
+	LearningThreshold     any
 }
 
 type MonitoringRuleResponse_Data_Options_SequenceDetectionOptions_StepTransitions struct {
-	Child any
+	Child            any
 	EvaluationWindow any
-	Parent any
+	Parent           any
 }
 
 type MonitoringRuleResponse_Data_Options_SequenceDetectionOptions_Steps struct {
-	Condition any
+	Condition        any
 	EvaluationWindow any
-	Name any
+	Name             any
 }
 
 type MonitoringRuleResponse_Data_Options_SequenceDetectionOptions struct {
 	StepTransitions any
-	Steps any
+	Steps           any
 }
 
 type MonitoringRuleResponse_Data_Options_ThirdPartyRuleOptions_RootQueries struct {
 	GroupByFields any
-	Query any
+	Query         any
 }
 
 type MonitoringRuleResponse_Data_Options_ThirdPartyRuleOptions struct {
 	DefaultNotifications any
-	DefaultStatus any
-	RootQueries any
-	SignalTitleTemplate any
+	DefaultStatus        any
+	RootQueries          any
+	SignalTitleTemplate  any
 }
 
 type MonitoringRuleResponse_Data_Options struct {
-	AnomalyDetectionOptions any
-	ComplianceRuleOptions any
+	AnomalyDetectionOptions       any
+	ComplianceRuleOptions         any
 	DecreaseCriticalityBasedOnEnv any
-	DetectionMethod any
-	EvaluationWindow any
-	HardcodedEvaluatorType any
-	ImpossibleTravelOptions any
-	KeepAlive any
-	MaxSignalDuration any
-	NewValueOptions any
-	SequenceDetectionOptions any
-	ThirdPartyRuleOptions any
+	DetectionMethod               any
+	EvaluationWindow              any
+	HardcodedEvaluatorType        any
+	ImpossibleTravelOptions       any
+	KeepAlive                     any
+	MaxSignalDuration             any
+	NewValueOptions               any
+	SequenceDetectionOptions      any
+	ThirdPartyRuleOptions         any
 }
 
 type MonitoringRuleResponse_Data_Queries struct {
-	Aggregation any
-	CustomQueryExtension any
-	DataSource any
-	DistinctFields any
-	GroupByFields any
+	Aggregation              any
+	CustomQueryExtension     any
+	DataSource               any
+	DistinctFields           any
+	GroupByFields            any
 	HasOptionalGroupByFields any
-	Index any
-	Indexes any
-	Metric any
-	Metrics any
-	Name any
-	Query any
+	Index                    any
+	Indexes                  any
+	Metric                   any
+	Metrics                  any
+	Name                     any
+	Query                    any
 }
 
 type MonitoringRuleResponse_Data_ReferenceTables struct {
 	CheckPresence any
-	ColumnName any
-	LogFieldPath any
+	ColumnName    any
+	LogFieldPath  any
 	RuleQueryName any
-	TableName any
+	TableName     any
 }
 
 type MonitoringRuleResponse_Data_SchedulingOptions struct {
-	Rrule any
-	Start any
+	Rrule    any
+	Start    any
 	Timezone any
 }
 
 type MonitoringRuleResponse_Data_ThirdPartyCases struct {
-	CustomStatus any
-	Name any
+	CustomStatus  any
+	Name          any
 	Notifications any
-	Query any
-	Status any
+	Query         any
+	Status        any
 }
 
 type MonitoringRuleResponse_Data struct {
-	CalculatedFields any
-	Cases any
+	CalculatedFields        any
+	Cases                   any
 	ComplianceSignalOptions any
-	CreatedAt any
-	CreationAuthorId any
-	CustomMessage any
-	CustomName any
-	DefaultTags any
-	DeprecationDate any
-	Filters any
-	GroupSignalsBy any
-	HasExtendedTitle any
-	Id any
-	IsDefault any
-	IsDeleted any
-	IsEnabled any
-	Message any
-	Name any
-	Options any
-	Queries any
-	ReferenceTables any
-	SchedulingOptions any
-	Tags any
-	ThirdPartyCases any
-	Type any
-	UpdateAuthorId any
-	UpdatedAt any
-	Version any
+	CreatedAt               any
+	CreationAuthorId        any
+	CustomMessage           any
+	CustomName              any
+	DefaultTags             any
+	DeprecationDate         any
+	Filters                 any
+	GroupSignalsBy          any
+	HasExtendedTitle        any
+	Id                      any
+	IsDefault               any
+	IsDeleted               any
+	IsEnabled               any
+	Message                 any
+	Name                    any
+	Options                 any
+	Queries                 any
+	ReferenceTables         any
+	SchedulingOptions       any
+	Tags                    any
+	ThirdPartyCases         any
+	Type                    any
+	UpdateAuthorId          any
+	UpdatedAt               any
+	Version                 any
 }
 
 type MonitoringRuleResponse_Meta_Page struct {
@@ -206,7 +206,7 @@ type MonitoringRuleResponseAttrs struct {
 	// Array containing the list of rules.
 	Data any
 	// Object describing meta attributes of response.
-	Meta any
+	Meta  any
 	Query any
 	// The sort parameters used for querying security monitoring rules.
 	Sort any
@@ -216,6 +216,6 @@ var MonitoringRuleResponse = ubx.DataSourceBinding{
 	WireType: "datadog_security_monitoring_rule_response",
 	Fields: ubx.FieldMap{
 		"Query": ubx.FieldSpec{WireName: "query"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":  ubx.FieldSpec{WireName: "sort"},
 	},
 }

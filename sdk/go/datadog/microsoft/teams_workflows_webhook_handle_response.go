@@ -13,23 +13,26 @@ type TeamsWorkflowsWebhookHandleResponse_Data_Attributes struct {
 type TeamsWorkflowsWebhookHandleResponse_Data struct {
 	// Workflows Webhook handle attributes.
 	Attributes any
+	// The ID of the Workflows webhook handle.
+	Id any
 	// Specifies the Workflows webhook handle resource type.
 	Type any
 }
 
 var TeamsWorkflowsWebhookHandleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Url":  ubx.FieldSpec{WireName: "url"},
+}
 
 var TeamsWorkflowsWebhookHandleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: TeamsWorkflowsWebhookHandleResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   TeamsWorkflowsWebhookHandleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type TeamsWorkflowsWebhookHandleResponseConfig struct {
 	// Workflows Webhook handle data from a response.
@@ -50,8 +53,8 @@ var TeamsWorkflowsWebhookHandleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: TeamsWorkflowsWebhookHandleResponse_DataFields,
+			Kind:     "object",
+			Fields:   TeamsWorkflowsWebhookHandleResponse_DataFields,
 		},
 		"HandleId": ubx.FieldSpec{WireName: "handle_id"},
 	},

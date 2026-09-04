@@ -7,31 +7,73 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FetchResponse_Data_Attributes_Git:
+    # Git Commit SHA.
+    commit_sha: Any = None
+    # Git Repository ID
+    repository_id: Any = None
+
+@dataclasses.dataclass
 class FetchResponse_Data_Attributes:
+    # A list of user-defined tags. The tags must follow the `key:value` pattern. Up to 100 may be added per event.
+    custom_tags: Any = None
+    # Environment name to where the service was deployed.
+    env: Any = None
+    # The time when the deployment finished.
+    finished_at: Any = None
     # Minimum timestamp for requested events.
     from_: Any = None
+    # Git info returned by DORA Metrics events.
+    git: Any = None
     # Maximum number of events in the response.
     limit: Any = None
     # Search query with event platform syntax.
     query: Any = None
+    # Service name.
+    service: Any = None
     # Sort order (prefixed with `-` for descending).
     sort: Any = None
+    # The time when the deployment started.
+    started_at: Any = None
+    # Name of the team owning the deployed service.
+    team: Any = None
     # Maximum timestamp for requested events.
     to: Any = None
+    # Version to correlate with APM Deployment Tracking.
+    version: Any = None
 
 @dataclasses.dataclass
 class FetchResponse_Data:
     # Attributes to get a list of deployments.
     attributes: Any = None
+    # The ID of the deployment event.
+    id: Any = None
     # The definition of `DORAListDeploymentsRequestDataType` object.
     type: Any = None
 
+_FetchResponse_Data_Attributes_GitFields = {
+    "commit_sha": ubx.FieldSpec(wire_name="commit_sha"),
+    "repository_id": ubx.FieldSpec(wire_name="repository_id"),
+}
+
 _FetchResponse_Data_AttributesFields = {
+    "custom_tags": ubx.FieldSpec(wire_name="custom_tags"),
+    "env": ubx.FieldSpec(wire_name="env"),
+    "finished_at": ubx.FieldSpec(wire_name="finished_at"),
     "from_": ubx.FieldSpec(wire_name="from"),
+    "git": ubx.FieldSpec(
+        wire_name="git",
+        kind="object",
+        fields=_FetchResponse_Data_Attributes_GitFields,
+    ),
     "limit": ubx.FieldSpec(wire_name="limit"),
     "query": ubx.FieldSpec(wire_name="query"),
+    "service": ubx.FieldSpec(wire_name="service"),
     "sort": ubx.FieldSpec(wire_name="sort"),
+    "started_at": ubx.FieldSpec(wire_name="started_at"),
+    "team": ubx.FieldSpec(wire_name="team"),
     "to": ubx.FieldSpec(wire_name="to"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _FetchResponse_DataFields = {
@@ -40,6 +82,7 @@ _FetchResponse_DataFields = {
         kind="object",
         fields=_FetchResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

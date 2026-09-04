@@ -7,7 +7,37 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class HierarchyLinkResponse_Data_Attributes:
+    # Timestamp when the team hierarchy link was created
+    created_at: Any = None
+    # The provisioner of the team hierarchy link
+    provisioned_by: Any = None
+
+@dataclasses.dataclass
+class HierarchyLinkResponse_Data_Relationships_ParentTeam_Data_Attributes:
+    # The team's avatar
+    avatar: Any = None
+    # The team's banner
+    banner: Any = None
+    # The team's handle
+    handle: Any = None
+    # Whether the team is managed
+    is_managed: Any = None
+    # Whether the team has open membership
+    is_open_membership: Any = None
+    # The number of links for the team
+    link_count: Any = None
+    # The team's name
+    name: Any = None
+    # The team's summary
+    summary: Any = None
+    # The number of users in the team
+    user_count: Any = None
+
+@dataclasses.dataclass
 class HierarchyLinkResponse_Data_Relationships_ParentTeam_Data:
+    # Team hierarchy links connect different teams. This represents attributes from teams that are connected by the team hierarchy link.
+    attributes: Any = None
     # The team's identifier
     id: Any = None
     # Team type
@@ -27,27 +57,13 @@ class HierarchyLinkResponse_Data_Relationships:
 
 @dataclasses.dataclass
 class HierarchyLinkResponse_Data:
+    # Team hierarchy link attributes
+    attributes: Any = None
+    # The team hierarchy link's identifier
+    id: Any = None
     # The related teams that will be connected by the team hierarchy link
     relationships: Any = None
     # Team hierarchy link type
-    type: Any = None
-
-@dataclasses.dataclass
-class HierarchyLinkResponse_Included_Attributes:
-    avatar: Any = None
-    banner: Any = None
-    handle: Any = None
-    is_managed: Any = None
-    is_open_membership: Any = None
-    link_count: Any = None
-    name: Any = None
-    summary: Any = None
-    user_count: Any = None
-
-@dataclasses.dataclass
-class HierarchyLinkResponse_Included:
-    attributes: Any = None
-    id: Any = None
     type: Any = None
 
 @dataclasses.dataclass
@@ -63,7 +79,29 @@ class HierarchyLinkResponse_Links:
     # Link to the current object.
     self: Any = None
 
+_HierarchyLinkResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "provisioned_by": ubx.FieldSpec(wire_name="provisioned_by"),
+}
+
+_HierarchyLinkResponse_Data_Relationships_ParentTeam_Data_AttributesFields = {
+    "avatar": ubx.FieldSpec(wire_name="avatar"),
+    "banner": ubx.FieldSpec(wire_name="banner"),
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "is_managed": ubx.FieldSpec(wire_name="is_managed"),
+    "is_open_membership": ubx.FieldSpec(wire_name="is_open_membership"),
+    "link_count": ubx.FieldSpec(wire_name="link_count"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "summary": ubx.FieldSpec(wire_name="summary"),
+    "user_count": ubx.FieldSpec(wire_name="user_count"),
+}
+
 _HierarchyLinkResponse_Data_Relationships_ParentTeam_DataFields = {
+    "attributes": ubx.FieldSpec(
+        wire_name="attributes",
+        kind="object",
+        fields=_HierarchyLinkResponse_Data_Relationships_ParentTeam_Data_AttributesFields,
+    ),
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
@@ -90,6 +128,12 @@ _HierarchyLinkResponse_Data_RelationshipsFields = {
 }
 
 _HierarchyLinkResponse_DataFields = {
+    "attributes": ubx.FieldSpec(
+        wire_name="attributes",
+        kind="object",
+        fields=_HierarchyLinkResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

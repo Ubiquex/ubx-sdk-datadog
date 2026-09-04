@@ -4,23 +4,23 @@ package trace
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes_Spans struct {
-	Duration any
-	EndTime any
-	Error any
-	Meta any
-	Metrics any
-	Name any
-	ParentId any
-	Resource any
+	Duration     any
+	EndTime      any
+	Error        any
+	Meta         any
+	Metrics      any
+	Name         any
+	ParentId     any
+	Resource     any
 	ResourceHash any
-	Restricted any
-	SelfTime any
-	Service any
-	SpanId any
-	StartTime any
-	TraceId any
-	TraceIdfull any
-	Type any
+	Restricted   any
+	SelfTime     any
+	Service      any
+	SpanId       any
+	StartTime    any
+	TraceId      any
+	TraceIdfull  any
+	Type         any
 }
 
 type Response_Data_Attributes struct {
@@ -41,20 +41,20 @@ type Response_Data struct {
 
 type ResponseConfig struct {
 	IncludeFields any
-	TraceId any
+	TraceId       any
 }
 
 type ResponseAttrs struct {
 	// A trace resource document.
-	Data any
+	Data          any
 	IncludeFields any
-	TraceId any
+	TraceId       any
 }
 
 var Response = ubx.DataSourceBinding{
 	WireType: "datadog_trace_response",
 	Fields: ubx.FieldMap{
 		"IncludeFields": ubx.FieldSpec{WireName: "include_fields"},
-		"TraceId": ubx.FieldSpec{WireName: "trace_id"},
+		"TraceId":       ubx.FieldSpec{WireName: "trace_id"},
 	},
 }

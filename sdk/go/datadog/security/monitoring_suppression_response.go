@@ -3,11 +3,24 @@ package security
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MonitoringSuppressionResponse_Data_Attributes_Creator struct {
+	// The handle of the user.
+	Handle any
+	// The name of the user.
+	Name any
+}
+
 type MonitoringSuppressionResponse_Data_Attributes struct {
+	// A Unix millisecond timestamp given the creation date of the suppression rule.
+	CreationDate any
+	// A user.
+	Creator any
 	// An exclusion query on the input data of the security rules, which could be logs, Agent events, or other types of data based on the security rule. Events matching this query are ignored by any detection rules referenced in the suppression rule.
 	DataExclusionQuery any
 	// A description for the suppression rule.
 	Description any
+	// Whether the suppression rule is editable.
+	Editable any
 	// Whether the suppression rule is enabled.
 	Enabled any
 	// A Unix millisecond timestamp giving an expiration date for the suppression rule. After this date, it won't suppress signals anymore.
@@ -22,35 +35,63 @@ type MonitoringSuppressionResponse_Data_Attributes struct {
 	SuppressionQuery any
 	// List of tags associated with the suppression rule.
 	Tags any
+	// A Unix millisecond timestamp given the update date of the suppression rule.
+	UpdateDate any
+	// A user.
+	Updater any
+	// The version of the suppression rule; it starts at 1, and is incremented at each update.
+	Version any
 }
 
 type MonitoringSuppressionResponse_Data struct {
 	// Object containing the attributes of the suppression rule to be created.
 	Attributes any
+	// The ID of the suppression rule.
+	Id any
 	// The type of the resource. The value should always be `suppressions`.
 	Type any
 }
 
+var MonitoringSuppressionResponse_Data_Attributes_CreatorFields = ubx.FieldMap{
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
+
 var MonitoringSuppressionResponse_Data_AttributesFields = ubx.FieldMap{
-		"DataExclusionQuery": ubx.FieldSpec{WireName: "data_exclusion_query"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExpirationDate": ubx.FieldSpec{WireName: "expiration_date"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RuleQuery": ubx.FieldSpec{WireName: "rule_query"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-		"SuppressionQuery": ubx.FieldSpec{WireName: "suppression_query"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"CreationDate": ubx.FieldSpec{WireName: "creation_date"},
+	"Creator": ubx.FieldSpec{
+		WireName: "creator",
+		Kind:     "object",
+		Fields:   MonitoringSuppressionResponse_Data_Attributes_CreatorFields,
+	},
+	"DataExclusionQuery": ubx.FieldSpec{WireName: "data_exclusion_query"},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"Editable":           ubx.FieldSpec{WireName: "editable"},
+	"Enabled":            ubx.FieldSpec{WireName: "enabled"},
+	"ExpirationDate":     ubx.FieldSpec{WireName: "expiration_date"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"RuleQuery":          ubx.FieldSpec{WireName: "rule_query"},
+	"StartDate":          ubx.FieldSpec{WireName: "start_date"},
+	"SuppressionQuery":   ubx.FieldSpec{WireName: "suppression_query"},
+	"Tags":               ubx.FieldSpec{WireName: "tags"},
+	"UpdateDate":         ubx.FieldSpec{WireName: "update_date"},
+	"Updater": ubx.FieldSpec{
+		WireName: "updater",
+		Kind:     "object",
+		Fields:   MonitoringSuppressionResponse_Data_Attributes_CreatorFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var MonitoringSuppressionResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: MonitoringSuppressionResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   MonitoringSuppressionResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MonitoringSuppressionResponseConfig struct {
 	// Object for a single suppression rule.
@@ -71,8 +112,8 @@ var MonitoringSuppressionResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: MonitoringSuppressionResponse_DataFields,
+			Kind:     "object",
+			Fields:   MonitoringSuppressionResponse_DataFields,
 		},
 		"SuppressionId": ubx.FieldSpec{WireName: "suppression_id"},
 	},

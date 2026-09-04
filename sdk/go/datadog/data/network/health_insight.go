@@ -4,54 +4,54 @@ package network
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HealthInsight_Data_Attributes_TrafficVolume struct {
-	BytesRead any
+	BytesRead    any
 	BytesWritten any
 	TotalTraffic any
 }
 
 type HealthInsight_Data_Attributes struct {
-	AccountId any
-	CertificateId any
+	AccountId                  any
+	CertificateId              any
 	CertificateLifetimePercent any
-	ClientRegion any
-	ClientService any
-	DaysUntilExpiration any
-	DnsQuery any
-	DnsServer any
-	DomainName any
-	FailureMagnitude any
-	FailureRate any
-	FailureType any
-	LoadbalancerId any
-	ServerRegion any
-	ServerService any
-	TotalRequests any
-	TrafficVolume any
-	Type any
+	ClientRegion               any
+	ClientService              any
+	DaysUntilExpiration        any
+	DnsQuery                   any
+	DnsServer                  any
+	DomainName                 any
+	FailureMagnitude           any
+	FailureRate                any
+	FailureType                any
+	LoadbalancerId             any
+	ServerRegion               any
+	ServerService              any
+	TotalRequests              any
+	TrafficVolume              any
+	Type                       any
 }
 
 type HealthInsight_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type HealthInsightConfig struct {
 	From any
-	To any
+	To   any
 }
 
 type HealthInsightAttrs struct {
 	// Array of network health insights returned for the query window.
 	Data any
 	From any
-	To any
+	To   any
 }
 
 var HealthInsight = ubx.DataSourceBinding{
 	WireType: "datadog_network_health_insight",
 	Fields: ubx.FieldMap{
 		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"To":   ubx.FieldSpec{WireName: "to"},
 	},
 }

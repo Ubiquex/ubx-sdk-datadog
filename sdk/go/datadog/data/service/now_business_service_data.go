@@ -4,15 +4,15 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NowBusinessServiceData_Data_Attributes struct {
-	InstanceId any
-	ServiceName any
+	InstanceId   any
+	ServiceName  any
 	ServiceSysId any
 }
 
 type NowBusinessServiceData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type NowBusinessServiceDataConfig struct {
@@ -21,7 +21,7 @@ type NowBusinessServiceDataConfig struct {
 
 type NowBusinessServiceDataAttrs struct {
 	// Array of ServiceNow business service data objects
-	Data any
+	Data       any
 	InstanceId any
 }
 

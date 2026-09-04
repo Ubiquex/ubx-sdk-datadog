@@ -4,6 +4,8 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface CreationRuleResponse_Data_Attributes_Action {
   /** The UUID of the default assignee for created tickets. */
   assigneeId?: string | Computed<string>;
+  /** The reason the rule was automatically disabled by the system due to a ticketing integration error. */
+  autoDisabledReason?: string | Computed<string>;
   /** Custom fields of the Jira issue to create. For the list of available fields, see [Jira documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-issues/#api-rest-api-2-issue-createmeta-projectidorkey-issuetypes-issuetypeid-get). */
   fields?: unknown | Computed<unknown>;
   /** The maximum number of tickets the rule may create per day. If exceeded, one final ticket will be created, explaining the limit was hit and link back to the responsible rule. */
@@ -12,6 +14,15 @@ export interface CreationRuleResponse_Data_Attributes_Action {
   projectId: string | Computed<string>;
   /** The ticketing system to create tickets in. */
   target: string | Computed<string>;
+}
+
+export interface CreationRuleResponse_Data_Attributes_CreatedBy {
+  /** The actor's identifier (a user UUID or a system identifier). */
+  id: string | Computed<string>;
+  /** The name of the actor. */
+  name: string | Computed<string>;
+  /** Whether the actor is a user or the Datadog system. */
+  type: string | Computed<string>;
 }
 
 export interface CreationRuleResponse_Data_Attributes_Rule {
@@ -24,8 +35,16 @@ export interface CreationRuleResponse_Data_Attributes_Rule {
 export interface CreationRuleResponse_Data_Attributes {
   /** The action to take when the ticket creation rule matches a finding. */
   action: CreationRuleResponse_Data_Attributes_Action | Computed<CreationRuleResponse_Data_Attributes_Action>;
+  /** The Unix timestamp in milliseconds when the rule was created. */
+  createdAt?: number | Computed<number>;
+  /** The user or Datadog system who created the rule. */
+  createdBy?: CreationRuleResponse_Data_Attributes_CreatedBy | Computed<CreationRuleResponse_Data_Attributes_CreatedBy>;
   /** Whether the ticket creation rule is enabled. */
   enabled?: boolean | Computed<boolean>;
+  /** The Unix timestamp in milliseconds when the rule was last modified. */
+  modifiedAt?: number | Computed<number>;
+  /** The user or Datadog system who last modified the rule. */
+  modifiedBy?: CreationRuleResponse_Data_Attributes_CreatedBy | Computed<CreationRuleResponse_Data_Attributes_CreatedBy>;
   /** The name of the ticket creation rule. */
   name: string | Computed<string>;
   /** Defines the scope of findings to which the automation rule applies. */
@@ -35,16 +54,25 @@ export interface CreationRuleResponse_Data_Attributes {
 export interface CreationRuleResponse_Data {
   /** Attributes for creating or updating a ticket creation rule. */
   attributes: CreationRuleResponse_Data_Attributes | Computed<CreationRuleResponse_Data_Attributes>;
+  /** The ID of the ticket creation rule. */
+  id?: string | Computed<string>;
   /** The JSON:API type for ticket creation rules. */
   type: string | Computed<string>;
 }
 
 const CreationRuleResponse_Data_Attributes_ActionFields: FieldMap = {
   assigneeId: "assignee_id",
+  autoDisabledReason: "auto_disabled_reason",
   fields: "fields",
   maxTicketsPerDay: "max_tickets_per_day",
   projectId: "project_id",
   target: "target",
+};
+
+const CreationRuleResponse_Data_Attributes_CreatedByFields: FieldMap = {
+  id: "id",
+  name: "name",
+  type: "type",
 };
 
 const CreationRuleResponse_Data_Attributes_RuleFields: FieldMap = {
@@ -58,7 +86,19 @@ const CreationRuleResponse_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: CreationRuleResponse_Data_Attributes_ActionFields,
   },
+  createdAt: "created_at",
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: CreationRuleResponse_Data_Attributes_CreatedByFields,
+  },
   enabled: "enabled",
+  modifiedAt: "modified_at",
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: CreationRuleResponse_Data_Attributes_CreatedByFields,
+  },
   name: "name",
   rule: {
     wireName: "rule",
@@ -73,6 +113,7 @@ const CreationRuleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: CreationRuleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

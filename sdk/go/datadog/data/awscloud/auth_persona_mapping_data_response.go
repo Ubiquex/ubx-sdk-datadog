@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthPersonaMappingDataResponse_Data_Attributes struct {
 	AccountIdentifier any
-	AccountUuid any
-	ArnPattern any
+	AccountUuid       any
+	ArnPattern        any
 }
 
 type AuthPersonaMappingDataResponse_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AuthPersonaMappingDataResponseConfig struct {
@@ -25,6 +25,5 @@ type AuthPersonaMappingDataResponseAttrs struct {
 
 var AuthPersonaMappingDataResponse = ubx.DataSourceBinding{
 	WireType: "datadog_awscloud_auth_persona_mapping_data_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

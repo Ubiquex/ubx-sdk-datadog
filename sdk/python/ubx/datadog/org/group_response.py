@@ -8,18 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupResponse_Data_Attributes:
+    # Timestamp when the org group was created.
+    created_at: Any = None
+    # Timestamp when the org group was last modified.
+    modified_at: Any = None
     # The name of the org group.
     name: Any = None
+    # The site of the organization that owns this org group.
+    owner_org_site: Any = None
+    # The UUID of the organization that owns this org group.
+    owner_org_uuid: Any = None
 
 @dataclasses.dataclass
 class GroupResponse_Data:
     # Attributes for creating an org group.
     attributes: Any = None
+    # The ID of the org group.
+    id: Any = None
     # Org groups resource type.
     type: Any = None
 
 _GroupResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "owner_org_site": ubx.FieldSpec(wire_name="owner_org_site"),
+    "owner_org_uuid": ubx.FieldSpec(wire_name="owner_org_uuid"),
 }
 
 _GroupResponse_DataFields = {
@@ -28,6 +42,7 @@ _GroupResponse_DataFields = {
         kind="object",
         fields=_GroupResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

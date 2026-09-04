@@ -2,34 +2,63 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface UcConfigResponse_Data_Attributes {
+  /** The `attributes` `account_id`. */
+  accountId?: string | Computed<string>;
   /** The Google Cloud account ID. */
   billingAccountId: string | Computed<string>;
   /** The Google Cloud bucket name used to store the Usage Cost export. */
   bucketName: string | Computed<string>;
+  /** The `attributes` `created_at`. */
+  createdAt?: string | Computed<string>;
+  /** The `attributes` `dataset`. */
+  dataset?: string | Computed<string>;
+  /** The `attributes` `error_messages`. */
+  errorMessages?: string[] | Computed<string[]>;
   /** The export dataset name used for the Google Cloud Usage Cost report. */
   exportDatasetName: string | Computed<string>;
   /** The export prefix used for the Google Cloud Usage Cost report. */
   exportPrefix?: string | Computed<string>;
   /** The name of the Google Cloud Usage Cost report. */
   exportProjectName: string | Computed<string>;
+  /** The `attributes` `months`. */
+  months?: number | Computed<number>;
+  /** The `attributes` `project_id`. */
+  projectId?: string | Computed<string>;
   /** The unique Google Cloud service account email. */
   serviceAccount: string | Computed<string>;
+  /** The `attributes` `status`. */
+  status?: string | Computed<string>;
+  /** The `attributes` `status_updated_at`. */
+  statusUpdatedAt?: string | Computed<string>;
+  /** The `attributes` `updated_at`. */
+  updatedAt?: string | Computed<string>;
 }
 
 export interface UcConfigResponse_Data {
   /** Attributes for Google Cloud Usage Cost config post request. */
   attributes?: UcConfigResponse_Data_Attributes | Computed<UcConfigResponse_Data_Attributes>;
+  /** The `GcpUcConfigResponseData` `id`. */
+  id?: string | Computed<string>;
   /** Type of Google Cloud Usage Cost config post request. */
   type: string | Computed<string>;
 }
 
 const UcConfigResponse_Data_AttributesFields: FieldMap = {
+  accountId: "account_id",
   billingAccountId: "billing_account_id",
   bucketName: "bucket_name",
+  createdAt: "created_at",
+  dataset: "dataset",
+  errorMessages: "error_messages",
   exportDatasetName: "export_dataset_name",
   exportPrefix: "export_prefix",
   exportProjectName: "export_project_name",
+  months: "months",
+  projectId: "project_id",
   serviceAccount: "service_account",
+  status: "status",
+  statusUpdatedAt: "status_updated_at",
+  updatedAt: "updated_at",
 };
 
 const UcConfigResponse_DataFields: FieldMap = {
@@ -38,6 +67,7 @@ const UcConfigResponse_DataFields: FieldMap = {
     kind: "object",
     fields: UcConfigResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

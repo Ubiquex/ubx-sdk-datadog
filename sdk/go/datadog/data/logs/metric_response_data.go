@@ -4,9 +4,9 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricResponseData_Data_Attributes_Compute struct {
-	AggregationType any
+	AggregationType    any
 	IncludePercentiles any
-	Path any
+	Path               any
 }
 
 type MetricResponseData_Data_Attributes_Filter struct {
@@ -14,20 +14,20 @@ type MetricResponseData_Data_Attributes_Filter struct {
 }
 
 type MetricResponseData_Data_Attributes_GroupBy struct {
-	Path any
+	Path    any
 	TagName any
 }
 
 type MetricResponseData_Data_Attributes struct {
 	Compute any
-	Filter any
+	Filter  any
 	GroupBy any
 }
 
 type MetricResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MetricResponseDataConfig struct {
@@ -40,6 +40,5 @@ type MetricResponseDataAttrs struct {
 
 var MetricResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_logs_metric_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

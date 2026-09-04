@@ -4,150 +4,118 @@ package dashboard
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Dashboard_DefaultTimeframe struct {
-	// The start of the default time range for the dashboard, in epoch milliseconds. (AI-inferred)
-	From any
-	// The end time of the default time range for the dashboard, expressed as a Unix timestamp. (AI-inferred)
-	To any
-	// The type of default timeframe for the dashboard, indicating whether it is a rolling time window or a fixed date range (e.g., 'rolling' or 'fixed'). (AI-inferred)
-	Type any
-	Unit any
+	From  any
+	To    any
+	Type  any
+	Unit  any
 	Value any
 }
 
 type Dashboard_Tabs struct {
-	Id any
-	// The name of the tab, which serves as its title. The name must be between 1 and 100 characters. (AI-inferred)
-	Name any
-	// The list of widget IDs contained within this tab. (AI-inferred)
+	Id        any
+	Name      any
 	WidgetIds any
 }
 
 type Dashboard_TemplateVariablePresets_TemplateVariables struct {
-	// The name of the template variable to override, matching a template variable defined on the dashboard. (AI-inferred)
-	Name any
-	// The value to assign to the template variable when this preset is applied. (AI-inferred)
-	Value any
-	// The list of values assigned to the template variable when this preset is applied. (AI-inferred)
+	Name   any
+	Value  any
 	Values any
 }
 
 type Dashboard_TemplateVariablePresets struct {
-	// The name of the template variable preset. (AI-inferred)
-	Name any
-	// List of template variable assignments for this preset. Each object defines a template variable name and the value to apply when the preset is selected. (AI-inferred)
+	Name              any
 	TemplateVariables any
 }
 
 type Dashboard_TemplateVariables struct {
-	// List of values available for selection for this template variable. If not specified, all possible values are shown in the dropdown. (AI-inferred)
 	AvailableValues any
-	// The default value assigned to the template variable when the dashboard is loaded. This value is used unless the viewer changes it. (AI-inferred)
-	Default any
-	// Default value(s) used for this template variable when the dashboard is loaded. Provide a list of strings to support multi-select variables. (AI-inferred)
-	Defaults any
-	// The name of the template variable, used to reference it in dashboard queries and widgets. (AI-inferred)
-	Name any
-	// The prefix used to filter the available values for the template variable, typically a tag key followed by a colon (e.g., 'env:'). (AI-inferred)
-	Prefix any
-	Type any
+	Default         any
+	Defaults        any
+	Name            any
+	Prefix          any
+	Type            any
 }
 
 type Dashboard_Widgets_Layout struct {
-	// The height of the widget in grid units. The minimum allowed value is 0. (AI-inferred)
-	Height any
-	// Set to true to treat this widget as a column break, which forces the next widget to start a new column in the structured layout. (AI-inferred)
+	Height        any
 	IsColumnBreak any
-	// The width of the widget in grid units (columns) within the dashboard layout. The minimum allowed value is 0. (AI-inferred)
-	Width any
-	// The horizontal position (column) of the widget in the dashboard grid. Must be greater than or equal to 0. (AI-inferred)
-	X any
-	// The vertical position of the widget on the dashboard grid, measured from the top. The value must be greater than or equal to 0. (AI-inferred)
-	Y any
+	Width         any
+	X             any
+	Y             any
 }
 
 type Dashboard_Widgets struct {
-	// The definition block that specifies the configuration for the widget, including the widget type and type-specific settings (e.g., requests, title, layout). The exact structure varies by widget type. (AI-inferred)
 	Definition any
-	Id any
-	// Layout of the widget within the dashboard, specifying its position and size on the grid. (AI-inferred)
-	Layout any
+	Id         any
+	Layout     any
 }
 
 var Dashboard_DefaultTimeframeFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"From":  ubx.FieldSpec{WireName: "from"},
+	"To":    ubx.FieldSpec{WireName: "to"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Unit":  ubx.FieldSpec{WireName: "unit"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Dashboard_TabsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"WidgetIds": ubx.FieldSpec{WireName: "widget_ids"},
-	}
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"WidgetIds": ubx.FieldSpec{WireName: "widget_ids"},
+}
 
 var Dashboard_TemplateVariablePresets_TemplateVariablesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Dashboard_TemplateVariablePresetsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TemplateVariables": ubx.FieldSpec{
-			WireName: "template_variables",
-			Kind: "list",
-			Fields: Dashboard_TemplateVariablePresets_TemplateVariablesFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"TemplateVariables": ubx.FieldSpec{
+		WireName: "template_variables",
+		Kind:     "list",
+		Fields:   Dashboard_TemplateVariablePresets_TemplateVariablesFields,
+	},
+}
 
 var Dashboard_TemplateVariablesFields = ubx.FieldMap{
-		"AvailableValues": ubx.FieldSpec{WireName: "available_values"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defaults": ubx.FieldSpec{WireName: "defaults"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AvailableValues": ubx.FieldSpec{WireName: "available_values"},
+	"Default":         ubx.FieldSpec{WireName: "default"},
+	"Defaults":        ubx.FieldSpec{WireName: "defaults"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Prefix":          ubx.FieldSpec{WireName: "prefix"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 var Dashboard_Widgets_LayoutFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"IsColumnBreak": ubx.FieldSpec{WireName: "is_column_break"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-		"X": ubx.FieldSpec{WireName: "x"},
-		"Y": ubx.FieldSpec{WireName: "y"},
-	}
+	"Height":        ubx.FieldSpec{WireName: "height"},
+	"IsColumnBreak": ubx.FieldSpec{WireName: "is_column_break"},
+	"Width":         ubx.FieldSpec{WireName: "width"},
+	"X":             ubx.FieldSpec{WireName: "x"},
+	"Y":             ubx.FieldSpec{WireName: "y"},
+}
 
 var Dashboard_WidgetsFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Layout": ubx.FieldSpec{
-			WireName: "layout",
-			Kind: "object",
-			Fields: Dashboard_Widgets_LayoutFields,
-		},
-	}
+	"Definition": ubx.FieldSpec{WireName: "definition"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"Layout": ubx.FieldSpec{
+		WireName: "layout",
+		Kind:     "object",
+		Fields:   Dashboard_Widgets_LayoutFields,
+	},
+}
 
 type DashboardConfig struct {
-	// Identifier of the dashboard author.
-	AuthorHandle any
-	// Name of the dashboard author.
-	AuthorName any
-	// Creation date of the dashboard.
-	CreatedAt any
 	// The default timeframe applied when opening the dashboard. Set to `null` to clear the dashboard's default timeframe.
 	DefaultTimeframe any
 	// Description of the dashboard.
 	Description any
-	// ID of the dashboard.
-	Id any
 	// Whether this dashboard is read-only. If True, only the author and admins can make changes to it. This property is deprecated; please use the [Restriction Policies API](https://docs.datadoghq.com/api/latest/restriction-policies/) instead to manage write authorization for individual dashboards.
 	IsReadOnly any
 	// Layout type of the dashboard.
 	LayoutType any
-	// Modification date of the dashboard.
-	ModifiedAt any
 	// List of handles of users to notify when changes are made to this dashboard.
 	NotifyList any
 	// Reflow type for a **new dashboard layout** dashboard. Set this only when layout type is 'ordered'. If set to 'fixed', the dashboard expects all widgets to have a layout, and if it's set to 'auto', widgets should not have layouts.
@@ -164,8 +132,6 @@ type DashboardConfig struct {
 	TemplateVariables any
 	// Title of the dashboard.
 	Title any
-	// The URL of the dashboard.
-	Url any
 	// List of widgets to display on the dashboard.
 	Widgets any
 	// path parameter, not part of the API's own resource representation
@@ -218,44 +184,38 @@ type DashboardAttrs struct {
 var Dashboard = ubx.ResourceBinding{
 	WireType: "datadog_dashboard",
 	Fields: ubx.FieldMap{
-		"AuthorHandle": ubx.FieldSpec{WireName: "author_handle"},
-		"AuthorName": ubx.FieldSpec{WireName: "author_name"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
 		"DefaultTimeframe": ubx.FieldSpec{
 			WireName: "default_timeframe",
-			Kind: "object",
-			Fields: Dashboard_DefaultTimeframeFields,
+			Kind:     "object",
+			Fields:   Dashboard_DefaultTimeframeFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IsReadOnly": ubx.FieldSpec{WireName: "is_read_only"},
-		"LayoutType": ubx.FieldSpec{WireName: "layout_type"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"NotifyList": ubx.FieldSpec{WireName: "notify_list"},
-		"ReflowType": ubx.FieldSpec{WireName: "reflow_type"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"IsReadOnly":      ubx.FieldSpec{WireName: "is_read_only"},
+		"LayoutType":      ubx.FieldSpec{WireName: "layout_type"},
+		"NotifyList":      ubx.FieldSpec{WireName: "notify_list"},
+		"ReflowType":      ubx.FieldSpec{WireName: "reflow_type"},
 		"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
 		"Tabs": ubx.FieldSpec{
 			WireName: "tabs",
-			Kind: "list",
-			Fields: Dashboard_TabsFields,
+			Kind:     "list",
+			Fields:   Dashboard_TabsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"TemplateVariablePresets": ubx.FieldSpec{
 			WireName: "template_variable_presets",
-			Kind: "list",
-			Fields: Dashboard_TemplateVariablePresetsFields,
+			Kind:     "list",
+			Fields:   Dashboard_TemplateVariablePresetsFields,
 		},
 		"TemplateVariables": ubx.FieldSpec{
 			WireName: "template_variables",
-			Kind: "list",
-			Fields: Dashboard_TemplateVariablesFields,
+			Kind:     "list",
+			Fields:   Dashboard_TemplateVariablesFields,
 		},
 		"Title": ubx.FieldSpec{WireName: "title"},
-		"Url": ubx.FieldSpec{WireName: "url"},
 		"Widgets": ubx.FieldSpec{
 			WireName: "widgets",
-			Kind: "list",
-			Fields: Dashboard_WidgetsFields,
+			Kind:     "list",
+			Fields:   Dashboard_WidgetsFields,
 		},
 		"DashboardId": ubx.FieldSpec{WireName: "dashboard_id"},
 	},

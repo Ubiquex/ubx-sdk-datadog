@@ -12,6 +12,12 @@ class NmappingResponse_Data_Attributes:
     attribute_key: Any = None
     # Value portion of a key/value pair of the attribute sent from the Identity Provider.
     attribute_value: Any = None
+    # Creation time of the AuthN Mapping.
+    created_at: Any = None
+    # Time of last AuthN Mapping modification.
+    modified_at: Any = None
+    # The ID of the SAML assertion attribute.
+    saml_assertion_attribute_id: Any = None
 
 @dataclasses.dataclass
 class NmappingResponse_Data_Relationships_Role_Data:
@@ -31,10 +37,17 @@ class NmappingResponse_Data_Relationships:
 class NmappingResponse_Data:
     # Key/Value pair of attributes used for create request.
     attributes: Any = None
+    # ID of the AuthN Mapping.
+    id: Any = None
     # Relationship of AuthN Mapping create object to a Role or Team.
     relationships: Any = None
     # AuthN Mappings resource type.
     type: Any = None
+
+@dataclasses.dataclass
+class NmappingResponse_Included_Attributes:
+    attribute_key: Any = None
+    attribute_value: Any = None
 
 @dataclasses.dataclass
 class NmappingResponse_Included_Relationships_Permissions:
@@ -54,6 +67,9 @@ class NmappingResponse_Included:
 _NmappingResponse_Data_AttributesFields = {
     "attribute_key": ubx.FieldSpec(wire_name="attribute_key"),
     "attribute_value": ubx.FieldSpec(wire_name="attribute_value"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "saml_assertion_attribute_id": ubx.FieldSpec(wire_name="saml_assertion_attribute_id"),
 }
 
 _NmappingResponse_Data_Relationships_Role_DataFields = {
@@ -88,6 +104,7 @@ _NmappingResponse_DataFields = {
         kind="object",
         fields=_NmappingResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

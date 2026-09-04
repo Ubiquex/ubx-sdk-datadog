@@ -28,9 +28,9 @@ type IntegrationCustomVariableResponseAttrs struct {
 var IntegrationCustomVariableResponse = ubx.ResourceBinding{
 	WireType: "datadog_webhooks_integration_custom_variable_response",
 	Fields: ubx.FieldMap{
-		"IsSecret": ubx.FieldSpec{WireName: "is_secret"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
+		"IsSecret":           ubx.FieldSpec{WireName: "is_secret"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Value":              ubx.FieldSpec{WireName: "value"},
 		"CustomVariableName": ubx.FieldSpec{WireName: "custom_variable_name"},
 	},
 }

@@ -4,6 +4,8 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ChatOrganizationHandleResponse_Data_Attributes {
   /** Organization handle name. */
   name: string | Computed<string>;
+  /** Google space display name. */
+  spaceDisplayName?: string | Computed<string>;
   /** Google space resource name. */
   spaceResourceName: string | Computed<string>;
 }
@@ -11,10 +13,15 @@ export interface ChatOrganizationHandleResponse_Data_Attributes {
 export interface ChatOrganizationHandleResponse_Data {
   /** Organization handle attributes for a create request. */
   attributes: ChatOrganizationHandleResponse_Data_Attributes | Computed<ChatOrganizationHandleResponse_Data_Attributes>;
+  /** The ID of the organization handle. */
+  id?: string | Computed<string>;
+  /** Organization handle resource type. */
+  type?: string | Computed<string>;
 }
 
 const ChatOrganizationHandleResponse_Data_AttributesFields: FieldMap = {
   name: "name",
+  spaceDisplayName: "space_display_name",
   spaceResourceName: "space_resource_name",
 };
 
@@ -24,6 +31,8 @@ const ChatOrganizationHandleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: ChatOrganizationHandleResponse_Data_AttributesFields,
   },
+  id: "id",
+  type: "type",
 };
 
 export interface ChatOrganizationHandleResponseConfig {

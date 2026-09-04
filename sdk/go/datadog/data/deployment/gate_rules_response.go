@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GateRulesResponse_Data_Attributes_Rules_CreatedBy struct {
 	Handle any
-	Id any
-	Name any
+	Id     any
+	Name   any
 }
 
 type GateRulesResponse_Data_Attributes_Rules_Options struct {
-	AllowedResources any
-	Duration any
+	AllowedResources  any
+	Duration          any
 	ExcludedResources any
-	Query any
+	Query             any
 }
 
 type GateRulesResponse_Data_Attributes_Rules struct {
 	CreatedAt any
 	CreatedBy any
-	DryRun any
-	GateId any
-	Name any
-	Options any
-	Type any
+	DryRun    any
+	GateId    any
+	Name      any
+	Options   any
+	Type      any
 	UpdatedAt any
 	UpdatedBy any
 }
@@ -48,7 +48,7 @@ type GateRulesResponseConfig struct {
 
 type GateRulesResponseAttrs struct {
 	// Data for a list of deployment rules.
-	Data any
+	Data   any
 	GateId any
 }
 

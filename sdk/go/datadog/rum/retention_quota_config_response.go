@@ -21,6 +21,12 @@ type RetentionQuotaConfigResponse_Data_Attributes struct {
 	Custom any
 	// The retention quota mode. `custom` enforces a fixed session limit. `custom` is the only supported mode.
 	Mode any
+	// The ID of the organization the retention quota configuration belongs to.
+	OrgId any
+	// The date the retention quota configuration was last updated.
+	UpdatedAt any
+	// The handle of the user who last updated the retention quota configuration.
+	UpdatedBy any
 }
 
 type RetentionQuotaConfigResponse_Data struct {
@@ -33,31 +39,34 @@ type RetentionQuotaConfigResponse_Data struct {
 }
 
 var RetentionQuotaConfigResponse_Data_Attributes_CustomFields = ubx.FieldMap{
-		"DailyResetTime": ubx.FieldSpec{WireName: "daily_reset_time"},
-		"DailyResetTimezone": ubx.FieldSpec{WireName: "daily_reset_timezone"},
-		"QuotaReachedAction": ubx.FieldSpec{WireName: "quota_reached_action"},
-		"SessionLimit": ubx.FieldSpec{WireName: "session_limit"},
-		"WindowType": ubx.FieldSpec{WireName: "window_type"},
-	}
+	"DailyResetTime":     ubx.FieldSpec{WireName: "daily_reset_time"},
+	"DailyResetTimezone": ubx.FieldSpec{WireName: "daily_reset_timezone"},
+	"QuotaReachedAction": ubx.FieldSpec{WireName: "quota_reached_action"},
+	"SessionLimit":       ubx.FieldSpec{WireName: "session_limit"},
+	"WindowType":         ubx.FieldSpec{WireName: "window_type"},
+}
 
 var RetentionQuotaConfigResponse_Data_AttributesFields = ubx.FieldMap{
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "object",
-			Fields: RetentionQuotaConfigResponse_Data_Attributes_CustomFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Custom": ubx.FieldSpec{
+		WireName: "custom",
+		Kind:     "object",
+		Fields:   RetentionQuotaConfigResponse_Data_Attributes_CustomFields,
+	},
+	"Mode":      ubx.FieldSpec{WireName: "mode"},
+	"OrgId":     ubx.FieldSpec{WireName: "org_id"},
+	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+	"UpdatedBy": ubx.FieldSpec{WireName: "updated_by"},
+}
 
 var RetentionQuotaConfigResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RetentionQuotaConfigResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RetentionQuotaConfigResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RetentionQuotaConfigResponseConfig struct {
 	// The RUM retention quota configuration to create or update.
@@ -82,10 +91,10 @@ var RetentionQuotaConfigResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RetentionQuotaConfigResponse_DataFields,
+			Kind:     "object",
+			Fields:   RetentionQuotaConfigResponse_DataFields,
 		},
 		"ScopeType": ubx.FieldSpec{WireName: "scope_type"},
-		"ScopeId": ubx.FieldSpec{WireName: "scope_id"},
+		"ScopeId":   ubx.FieldSpec{WireName: "scope_id"},
 	},
 }

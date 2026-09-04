@@ -4,32 +4,32 @@ package fleet
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentV2_Data_Attributes_ConfigOperations struct {
-	FileOp any
+	FileOp   any
 	FilePath any
-	Patch any
+	Patch    any
 }
 
 type DeploymentV2_Data_Attributes struct {
-	Author any
-	ConfigOperations any
-	DurationSeconds any
-	ErrorSummary any
+	Author              any
+	ConfigOperations    any
+	DurationSeconds     any
+	ErrorSummary        any
 	EstimatedFinishedAt any
-	FinishedAt any
-	IsScheduled any
-	Query any
-	ScheduleId any
-	StartedAt any
-	Status any
-	TargetVersions any
-	TotalHosts any
-	UpdateType any
+	FinishedAt          any
+	IsScheduled         any
+	Query               any
+	ScheduleId          any
+	StartedAt           any
+	Status              any
+	TargetVersions      any
+	TotalHosts          any
+	UpdateType          any
 }
 
 type DeploymentV2_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DeploymentV2_Meta_Page struct {
@@ -45,32 +45,32 @@ type DeploymentV2_Meta struct {
 }
 
 type DeploymentV2Config struct {
-	Ascending any
-	Filter any
+	Ascending  any
+	Filter     any
 	PageNumber any
-	PageSize any
-	Sort any
+	PageSize   any
+	Sort       any
 }
 
 type DeploymentV2Attrs struct {
 	Ascending any
 	// Array of deployments matching the query criteria.
-	Data any
+	Data   any
 	Filter any
 	// Metadata for the v2 list of deployments, including pagination information.
-	Meta any
+	Meta       any
 	PageNumber any
-	PageSize any
-	Sort any
+	PageSize   any
+	Sort       any
 }
 
 var DeploymentV2 = ubx.DataSourceBinding{
 	WireType: "datadog_fleet_deployment_v2",
 	Fields: ubx.FieldMap{
-		"Ascending": ubx.FieldSpec{WireName: "ascending"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Ascending":  ubx.FieldSpec{WireName: "ascending"},
+		"Filter":     ubx.FieldSpec{WireName: "filter"},
 		"PageNumber": ubx.FieldSpec{WireName: "page_number"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"PageSize":   ubx.FieldSpec{WireName: "page_size"},
+		"Sort":       ubx.FieldSpec{WireName: "sort"},
 	},
 }

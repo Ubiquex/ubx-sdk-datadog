@@ -21,6 +21,8 @@ class ServiceResponse_Data_Attributes:
 class ServiceResponse_Data:
     # The Opsgenie service attributes for a create request.
     attributes: Any = None
+    # The ID of the Opsgenie service.
+    id: Any = None
     # Opsgenie service resource type.
     type: Any = None
 
@@ -37,6 +39,7 @@ _ServiceResponse_DataFields = {
         kind="object",
         fields=_ServiceResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

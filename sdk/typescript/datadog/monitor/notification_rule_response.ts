@@ -28,17 +28,42 @@ export interface NotificationRuleResponse_Data_Attributes {
   bundleConfig?: NotificationRuleResponse_Data_Attributes_BundleConfig | Computed<NotificationRuleResponse_Data_Attributes_BundleConfig>;
   /** Use conditional recipients to define different recipients for different situations. Cannot be used with `recipients`. */
   conditionalRecipients?: NotificationRuleResponse_Data_Attributes_ConditionalRecipients | Computed<NotificationRuleResponse_Data_Attributes_ConditionalRecipients>;
+  /** Creation time of the monitor notification rule. */
+  created?: string | Computed<string>;
   /** Specifies the matching criteria for monitor notifications. */
   filter?: NotificationRuleResponse_Data_Attributes_Filter | Computed<NotificationRuleResponse_Data_Attributes_Filter>;
+  /** Time the monitor notification rule was last modified. */
+  modified?: string | Computed<string>;
   /** The name of the monitor notification rule. */
   name: string | Computed<string>;
   /** A list of recipients to notify. Uses the same format as the monitor `message` field. Must not start with an '@'. Cannot be used with `conditional_recipients`. */
   recipients?: string[] | Computed<string[]>;
 }
 
+export interface NotificationRuleResponse_Data_Relationships_CreatedBy_Data {
+  /** User ID of the monitor notification rule creator. */
+  id?: string | Computed<string>;
+  /** Users resource type. */
+  type?: string | Computed<string>;
+}
+
+export interface NotificationRuleResponse_Data_Relationships_CreatedBy {
+  /** Data for the user who created the monitor notification rule. */
+  data?: NotificationRuleResponse_Data_Relationships_CreatedBy_Data | Computed<NotificationRuleResponse_Data_Relationships_CreatedBy_Data>;
+}
+
+export interface NotificationRuleResponse_Data_Relationships {
+  /** The user who created the monitor notification rule. */
+  createdBy?: NotificationRuleResponse_Data_Relationships_CreatedBy | Computed<NotificationRuleResponse_Data_Relationships_CreatedBy>;
+}
+
 export interface NotificationRuleResponse_Data {
   /** Attributes of the monitor notification rule. */
   attributes: NotificationRuleResponse_Data_Attributes | Computed<NotificationRuleResponse_Data_Attributes>;
+  /** The ID of the monitor notification rule. */
+  id?: string | Computed<string>;
+  /** All relationships associated with monitor notification rule. */
+  relationships?: NotificationRuleResponse_Data_Relationships | Computed<NotificationRuleResponse_Data_Relationships>;
   /** Monitor notification rule resource type. */
   type?: string | Computed<string>;
 }
@@ -60,21 +85,12 @@ export interface NotificationRuleResponse_Included_Attributes {
   verified?: boolean | Computed<boolean>;
 }
 
-export interface NotificationRuleResponse_Included_Relationships_Org_Data {
-  id?: string | Computed<string>;
-  type?: string | Computed<string>;
-}
-
-export interface NotificationRuleResponse_Included_Relationships_Org {
-  data?: NotificationRuleResponse_Included_Relationships_Org_Data | Computed<NotificationRuleResponse_Included_Relationships_Org_Data>;
-}
-
 export interface NotificationRuleResponse_Included_Relationships_OtherOrgs {
-  data?: NotificationRuleResponse_Included_Relationships_Org_Data[] | Computed<NotificationRuleResponse_Included_Relationships_Org_Data[]>;
+  data?: NotificationRuleResponse_Data_Relationships_CreatedBy_Data[] | Computed<NotificationRuleResponse_Data_Relationships_CreatedBy_Data[]>;
 }
 
 export interface NotificationRuleResponse_Included_Relationships {
-  org?: NotificationRuleResponse_Included_Relationships_Org | Computed<NotificationRuleResponse_Included_Relationships_Org>;
+  org?: NotificationRuleResponse_Data_Relationships_CreatedBy | Computed<NotificationRuleResponse_Data_Relationships_CreatedBy>;
   otherOrgs?: NotificationRuleResponse_Included_Relationships_OtherOrgs | Computed<NotificationRuleResponse_Included_Relationships_OtherOrgs>;
   otherUsers?: NotificationRuleResponse_Included_Relationships_OtherOrgs | Computed<NotificationRuleResponse_Included_Relationships_OtherOrgs>;
   roles?: NotificationRuleResponse_Included_Relationships_OtherOrgs | Computed<NotificationRuleResponse_Included_Relationships_OtherOrgs>;
@@ -121,13 +137,36 @@ const NotificationRuleResponse_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: NotificationRuleResponse_Data_Attributes_ConditionalRecipientsFields,
   },
+  created: "created",
   filter: {
     wireName: "filter",
     kind: "object",
     fields: NotificationRuleResponse_Data_Attributes_FilterFields,
   },
+  modified: "modified",
   name: "name",
   recipients: "recipients",
+};
+
+const NotificationRuleResponse_Data_Relationships_CreatedBy_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const NotificationRuleResponse_Data_Relationships_CreatedByFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: NotificationRuleResponse_Data_Relationships_CreatedBy_DataFields,
+  },
+};
+
+const NotificationRuleResponse_Data_RelationshipsFields: FieldMap = {
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: NotificationRuleResponse_Data_Relationships_CreatedByFields,
+  },
 };
 
 const NotificationRuleResponse_DataFields: FieldMap = {
@@ -135,6 +174,12 @@ const NotificationRuleResponse_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: NotificationRuleResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: NotificationRuleResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

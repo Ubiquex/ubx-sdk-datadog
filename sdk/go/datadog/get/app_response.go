@@ -12,50 +12,50 @@ type AppResponse_Data_Attributes_Components_Properties_Children_Properties_Child
 }
 
 type AppResponse_Data_Attributes_Components_Properties_Children_Properties struct {
-	Children any
+	Children  any
 	IsVisible any
 }
 
 type AppResponse_Data_Attributes_Components_Properties_Children struct {
-	Events any
-	Id any
-	Name any
+	Events     any
+	Id         any
+	Name       any
 	Properties any
-	Type any
+	Type       any
 }
 
 type AppResponse_Data_Attributes_Components_Properties struct {
 	BackgroundColor any
-	Children any
-	IsVisible any
+	Children        any
+	IsVisible       any
 }
 
 type AppResponse_Data_Attributes_Components struct {
-	Events any
-	Id any
-	Name any
+	Events     any
+	Id         any
+	Name       any
 	Properties any
-	Type any
+	Type       any
 }
 
 type AppResponse_Data_Attributes_Queries_Properties struct {
-	Condition any
-	DebounceInMs any
-	MockedOutputs any
-	OnlyTriggerManually any
-	Outputs any
-	PollingIntervalInMs any
+	Condition            any
+	DebounceInMs         any
+	MockedOutputs        any
+	OnlyTriggerManually  any
+	Outputs              any
+	PollingIntervalInMs  any
 	RequiresConfirmation any
-	ShowToastOnError any
-	Spec any
+	ShowToastOnError     any
+	Spec                 any
 }
 
 type AppResponse_Data_Attributes_Queries struct {
-	Events any
-	Id any
-	Name any
+	Events     any
+	Id         any
+	Name       any
 	Properties any
-	Type any
+	Type       any
 }
 
 type AppResponse_Data_Attributes struct {
@@ -63,6 +63,8 @@ type AppResponse_Data_Attributes struct {
 	Components any
 	// A human-readable description for the app.
 	Description any
+	// Whether the app is marked as a favorite by the current user.
+	Favorite any
 	// The name of the app.
 	Name any
 	// An array of queries, such as external actions and state variables, that the app uses.
@@ -76,6 +78,8 @@ type AppResponse_Data_Attributes struct {
 type AppResponse_Data struct {
 	// App definition attributes such as name, description, and components.
 	Attributes any
+	// The ID of the app.
+	Id any
 	// The app definition type.
 	Type any
 }
@@ -86,16 +90,16 @@ type AppResponse_Included_Attributes struct {
 
 type AppResponse_Included_Meta struct {
 	CreatedAt any
-	UserId any
-	UserName any
-	UserUuid any
+	UserId    any
+	UserName  any
+	UserUuid  any
 }
 
 type AppResponse_Included struct {
 	Attributes any
-	Id any
-	Meta any
-	Type any
+	Id         any
+	Meta       any
+	Type       any
 }
 
 type AppResponse_Meta struct {
@@ -120,19 +124,19 @@ type AppResponse_Meta struct {
 }
 
 type AppResponse_Relationship_Connections_Attributes_OnPremRunner struct {
-	Id any
+	Id  any
 	Url any
 }
 
 type AppResponse_Relationship_Connections_Attributes struct {
-	Name any
+	Name         any
 	OnPremRunner any
 }
 
 type AppResponse_Relationship_Connections struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AppResponse_Relationship_Deployment_Data struct {
@@ -157,117 +161,118 @@ type AppResponse_Relationship struct {
 }
 
 var AppResponse_Data_Attributes_Components_EventsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
-var AppResponse_Data_Attributes_Components_Properties_Children_Properties_ChildrenFields = ubx.FieldMap{
-	}
+var AppResponse_Data_Attributes_Components_Properties_Children_Properties_ChildrenFields = ubx.FieldMap{}
 
 var AppResponse_Data_Attributes_Components_Properties_Children_PropertiesFields = ubx.FieldMap{
-		"Children": ubx.FieldSpec{
-			WireName: "children",
-			Kind: "list",
-			Fields: AppResponse_Data_Attributes_Components_Properties_Children_Properties_ChildrenFields,
-		},
-		"IsVisible": ubx.FieldSpec{WireName: "is_visible"},
-	}
+	"Children": ubx.FieldSpec{
+		WireName: "children",
+		Kind:     "list",
+		Fields:   AppResponse_Data_Attributes_Components_Properties_Children_Properties_ChildrenFields,
+	},
+	"IsVisible": ubx.FieldSpec{WireName: "is_visible"},
+}
 
 var AppResponse_Data_Attributes_Components_Properties_ChildrenFields = ubx.FieldMap{
-		"Events": ubx.FieldSpec{
-			WireName: "events",
-			Kind: "list",
-			Fields: AppResponse_Data_Attributes_Components_EventsFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: AppResponse_Data_Attributes_Components_Properties_Children_PropertiesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Events": ubx.FieldSpec{
+		WireName: "events",
+		Kind:     "list",
+		Fields:   AppResponse_Data_Attributes_Components_EventsFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   AppResponse_Data_Attributes_Components_Properties_Children_PropertiesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AppResponse_Data_Attributes_Components_PropertiesFields = ubx.FieldMap{
-		"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
-		"Children": ubx.FieldSpec{
-			WireName: "children",
-			Kind: "list",
-			Fields: AppResponse_Data_Attributes_Components_Properties_ChildrenFields,
-		},
-		"IsVisible": ubx.FieldSpec{WireName: "is_visible"},
-	}
+	"BackgroundColor": ubx.FieldSpec{WireName: "background_color"},
+	"Children": ubx.FieldSpec{
+		WireName: "children",
+		Kind:     "list",
+		Fields:   AppResponse_Data_Attributes_Components_Properties_ChildrenFields,
+	},
+	"IsVisible": ubx.FieldSpec{WireName: "is_visible"},
+}
 
 var AppResponse_Data_Attributes_ComponentsFields = ubx.FieldMap{
-		"Events": ubx.FieldSpec{
-			WireName: "events",
-			Kind: "list",
-			Fields: AppResponse_Data_Attributes_Components_EventsFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: AppResponse_Data_Attributes_Components_PropertiesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Events": ubx.FieldSpec{
+		WireName: "events",
+		Kind:     "list",
+		Fields:   AppResponse_Data_Attributes_Components_EventsFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   AppResponse_Data_Attributes_Components_PropertiesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AppResponse_Data_Attributes_Queries_PropertiesFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"DebounceInMs": ubx.FieldSpec{WireName: "debounce_in_ms"},
-		"MockedOutputs": ubx.FieldSpec{WireName: "mocked_outputs"},
-		"OnlyTriggerManually": ubx.FieldSpec{WireName: "only_trigger_manually"},
-		"Outputs": ubx.FieldSpec{WireName: "outputs"},
-		"PollingIntervalInMs": ubx.FieldSpec{WireName: "polling_interval_in_ms"},
-		"RequiresConfirmation": ubx.FieldSpec{WireName: "requires_confirmation"},
-		"ShowToastOnError": ubx.FieldSpec{WireName: "show_toast_on_error"},
-		"Spec": ubx.FieldSpec{WireName: "spec"},
-	}
+	"Condition":            ubx.FieldSpec{WireName: "condition"},
+	"DebounceInMs":         ubx.FieldSpec{WireName: "debounce_in_ms"},
+	"MockedOutputs":        ubx.FieldSpec{WireName: "mocked_outputs"},
+	"OnlyTriggerManually":  ubx.FieldSpec{WireName: "only_trigger_manually"},
+	"Outputs":              ubx.FieldSpec{WireName: "outputs"},
+	"PollingIntervalInMs":  ubx.FieldSpec{WireName: "polling_interval_in_ms"},
+	"RequiresConfirmation": ubx.FieldSpec{WireName: "requires_confirmation"},
+	"ShowToastOnError":     ubx.FieldSpec{WireName: "show_toast_on_error"},
+	"Spec":                 ubx.FieldSpec{WireName: "spec"},
+}
 
 var AppResponse_Data_Attributes_QueriesFields = ubx.FieldMap{
-		"Events": ubx.FieldSpec{
-			WireName: "events",
-			Kind: "list",
-			Fields: AppResponse_Data_Attributes_Components_EventsFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: AppResponse_Data_Attributes_Queries_PropertiesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Events": ubx.FieldSpec{
+		WireName: "events",
+		Kind:     "list",
+		Fields:   AppResponse_Data_Attributes_Components_EventsFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   AppResponse_Data_Attributes_Queries_PropertiesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AppResponse_Data_AttributesFields = ubx.FieldMap{
-		"Components": ubx.FieldSpec{
-			WireName: "components",
-			Kind: "list",
-			Fields: AppResponse_Data_Attributes_ComponentsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Queries": ubx.FieldSpec{
-			WireName: "queries",
-			Kind: "list",
-			Fields: AppResponse_Data_Attributes_QueriesFields,
-		},
-		"RootInstanceName": ubx.FieldSpec{WireName: "root_instance_name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Components": ubx.FieldSpec{
+		WireName: "components",
+		Kind:     "list",
+		Fields:   AppResponse_Data_Attributes_ComponentsFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Favorite":    ubx.FieldSpec{WireName: "favorite"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Queries": ubx.FieldSpec{
+		WireName: "queries",
+		Kind:     "list",
+		Fields:   AppResponse_Data_Attributes_QueriesFields,
+	},
+	"RootInstanceName": ubx.FieldSpec{WireName: "root_instance_name"},
+	"Tags":             ubx.FieldSpec{WireName: "tags"},
+}
 
 var AppResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: AppResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   AppResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type AppResponseConfig struct {
 	// The data object containing the app definition.
@@ -294,8 +299,8 @@ var AppResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: AppResponse_DataFields,
+			Kind:     "object",
+			Fields:   AppResponse_DataFields,
 		},
 		"AppId": ubx.FieldSpec{WireName: "app_id"},
 	},

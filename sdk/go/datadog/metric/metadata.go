@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type MetadataConfig struct {
 	// Metric description.
 	Description any
-	// Name of the integration that sent the metric if applicable.
-	Integration any
 	// Per unit of the metric such as `second` in `bytes per second`.
 	PerUnit any
 	// A more human-readable and abbreviated version of the metric name.
@@ -44,13 +42,12 @@ type MetadataAttrs struct {
 var Metadata = ubx.ResourceBinding{
 	WireType: "datadog_metric_metadata",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Integration": ubx.FieldSpec{WireName: "integration"},
-		"PerUnit": ubx.FieldSpec{WireName: "per_unit"},
-		"ShortName": ubx.FieldSpec{WireName: "short_name"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"PerUnit":        ubx.FieldSpec{WireName: "per_unit"},
+		"ShortName":      ubx.FieldSpec{WireName: "short_name"},
 		"StatsdInterval": ubx.FieldSpec{WireName: "statsd_interval"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
+		"Type":           ubx.FieldSpec{WireName: "type"},
+		"Unit":           ubx.FieldSpec{WireName: "unit"},
+		"MetricName":     ubx.FieldSpec{WireName: "metric_name"},
 	},
 }

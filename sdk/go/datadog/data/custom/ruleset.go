@@ -5,64 +5,64 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ruleset_Data_Attributes_Rules_LastRevision_Attributes_Arguments struct {
 	Description any
-	Name any
+	Name        any
 }
 
 type Ruleset_Data_Attributes_Rules_LastRevision_Attributes_Tests struct {
 	AnnotationCount any
-	Code any
-	Filename any
+	Code            any
+	Filename        any
 }
 
 type Ruleset_Data_Attributes_Rules_LastRevision_Attributes struct {
-	Arguments any
-	Category any
-	Checksum any
-	Code any
-	CreatedAt any
-	CreatedBy any
-	CreationMessage any
-	Cve any
-	Cwe any
-	Description any
+	Arguments        any
+	Category         any
+	Checksum         any
+	Code             any
+	CreatedAt        any
+	CreatedBy        any
+	CreationMessage  any
+	Cve              any
+	Cwe              any
+	Description      any
 	DocumentationUrl any
-	IsPublished any
-	IsTesting any
-	Language any
-	Severity any
+	IsPublished      any
+	IsTesting        any
+	Language         any
+	Severity         any
 	ShortDescription any
-	ShouldUseAiFix any
-	Tags any
-	Tests any
-	TreeSitterQuery any
+	ShouldUseAiFix   any
+	Tags             any
+	Tests            any
+	TreeSitterQuery  any
 }
 
 type Ruleset_Data_Attributes_Rules_LastRevision struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Ruleset_Data_Attributes_Rules struct {
-	CreatedAt any
-	CreatedBy any
+	CreatedAt    any
+	CreatedBy    any
 	LastRevision any
-	Name any
+	Name         any
 }
 
 type Ruleset_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Name any
-	Rules any
+	CreatedAt        any
+	CreatedBy        any
+	Description      any
+	Name             any
+	Rules            any
 	ShortDescription any
 }
 
 type Ruleset_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RulesetConfig struct {
@@ -75,6 +75,5 @@ type RulesetAttrs struct {
 
 var Ruleset = ubx.DataSourceBinding{
 	WireType: "datadog_custom_ruleset",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

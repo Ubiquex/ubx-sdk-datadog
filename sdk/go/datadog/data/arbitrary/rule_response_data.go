@@ -5,53 +5,53 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleResponseData_Data_Attributes_CostsToAllocate struct {
 	Condition any
-	Tag any
-	Value any
-	Values any
+	Tag       any
+	Value     any
+	Values    any
 }
 
 type RuleResponseData_Data_Attributes_Strategy_AllocatedBy_AllocatedTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type RuleResponseData_Data_Attributes_Strategy_AllocatedBy struct {
 	AllocatedTags any
-	Percentage any
+	Percentage    any
 }
 
 type RuleResponseData_Data_Attributes_Strategy struct {
-	AllocatedBy any
-	AllocatedByFilters any
-	AllocatedByTagKeys any
-	BasedOnCosts any
-	BasedOnTimeseries any
+	AllocatedBy              any
+	AllocatedByFilters       any
+	AllocatedByTagKeys       any
+	BasedOnCosts             any
+	BasedOnTimeseries        any
 	EvaluateGroupedByFilters any
 	EvaluateGroupedByTagKeys any
-	Granularity any
-	Method any
+	Granularity              any
+	Method                   any
 }
 
 type RuleResponseData_Data_Attributes struct {
-	CostsToAllocate any
-	Created any
-	Enabled any
+	CostsToAllocate      any
+	Created              any
+	Enabled              any
 	LastModifiedUserUuid any
-	OrderId any
-	ProcessingStatus any
-	Provider any
-	Rejected any
-	RuleName any
-	Strategy any
-	Type any
-	Updated any
-	Version any
+	OrderId              any
+	ProcessingStatus     any
+	Provider             any
+	Rejected             any
+	RuleName             any
+	Strategy             any
+	Type                 any
+	Updated              any
+	Version              any
 }
 
 type RuleResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RuleResponseData_Meta struct {
@@ -71,6 +71,5 @@ type RuleResponseDataAttrs struct {
 
 var RuleResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_arbitrary_rule_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

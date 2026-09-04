@@ -27,16 +27,30 @@ class EmbedGetResponse_Data_Attributes_ViewingPreferences:
 
 @dataclasses.dataclass
 class EmbedGetResponse_Data_Attributes:
+    # Creation timestamp.
+    created_at: Any = None
+    # Last 4 characters of the credential. Defaults to `0000` if unavailable.
+    credential_suffix: Any = None
+    # The source dashboard ID.
+    dashboard_id: Any = None
     # Default time range configuration for the secure embed.
     global_time: Any = None
     # Whether viewers can change the time range.
     global_time_selectable: Any = None
+    # Internal share ID.
+    id: Any = None
     # Template variables viewers can modify.
     selectable_template_vars: Any = None
+    # The type of share. Always `secure_embed`.
+    share_type: Any = None
     # The status of the secure embed share. Active means the shared dashboard is available. Paused means it is not.
     status: Any = None
     # Display title for the shared dashboard.
     title: Any = None
+    # Public share token.
+    token: Any = None
+    # CDN URL for the shared dashboard.
+    url: Any = None
     # Display settings for the secure embed shared dashboard.
     viewing_preferences: Any = None
 
@@ -44,6 +58,8 @@ class EmbedGetResponse_Data_Attributes:
 class EmbedGetResponse_Data:
     # Attributes for creating a secure embed shared dashboard.
     attributes: Any = None
+    # Internal share ID.
+    id: Any = None
     # Resource type for secure embed create requests.
     type: Any = None
 
@@ -64,19 +80,26 @@ _EmbedGetResponse_Data_Attributes_ViewingPreferencesFields = {
 }
 
 _EmbedGetResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "credential_suffix": ubx.FieldSpec(wire_name="credential_suffix"),
+    "dashboard_id": ubx.FieldSpec(wire_name="dashboard_id"),
     "global_time": ubx.FieldSpec(
         wire_name="global_time",
         kind="object",
         fields=_EmbedGetResponse_Data_Attributes_GlobalTimeFields,
     ),
     "global_time_selectable": ubx.FieldSpec(wire_name="global_time_selectable"),
+    "id": ubx.FieldSpec(wire_name="id"),
     "selectable_template_vars": ubx.FieldSpec(
         wire_name="selectable_template_vars",
         kind="list",
         fields=_EmbedGetResponse_Data_Attributes_SelectableTemplateVarsFields,
     ),
+    "share_type": ubx.FieldSpec(wire_name="share_type"),
     "status": ubx.FieldSpec(wire_name="status"),
     "title": ubx.FieldSpec(wire_name="title"),
+    "token": ubx.FieldSpec(wire_name="token"),
+    "url": ubx.FieldSpec(wire_name="url"),
     "viewing_preferences": ubx.FieldSpec(
         wire_name="viewing_preferences",
         kind="object",
@@ -90,6 +113,7 @@ _EmbedGetResponse_DataFields = {
         kind="object",
         fields=_EmbedGetResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

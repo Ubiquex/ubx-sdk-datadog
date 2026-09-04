@@ -4,16 +4,16 @@ package cloudflare
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountResponseData_Data_Attributes struct {
-	Email any
-	Name any
+	Email     any
+	Name      any
 	Resources any
-	Zones any
+	Zones     any
 }
 
 type AccountResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AccountResponseDataConfig struct {
@@ -26,6 +26,5 @@ type AccountResponseDataAttrs struct {
 
 var AccountResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_cloudflare_account_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

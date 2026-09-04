@@ -24,6 +24,8 @@ export interface MonitoringIntegrationConfigResponse_Data_Attributes {
 export interface MonitoringIntegrationConfigResponse_Data {
   /** The attributes of the entity context sync configuration to create. */
   attributes: MonitoringIntegrationConfigResponse_Data_Attributes | Computed<MonitoringIntegrationConfigResponse_Data_Attributes>;
+  /** The unique identifier of the integration configuration. */
+  id?: string | Computed<string>;
   /** The type of the resource. The value should always be `integration_config`. */
   type: string | Computed<string>;
 }
@@ -62,6 +64,7 @@ const MonitoringIntegrationConfigResponse_DataFields: FieldMap = {
     kind: "object",
     fields: MonitoringIntegrationConfigResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

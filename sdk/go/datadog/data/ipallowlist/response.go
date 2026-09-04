@@ -4,16 +4,16 @@ package ipallowlist
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes_Entries_Data_Attributes struct {
-	CidrBlock any
-	CreatedAt any
+	CidrBlock  any
+	CreatedAt  any
 	ModifiedAt any
-	Note any
+	Note       any
 }
 
 type Response_Data_Attributes_Entries_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Response_Data_Attributes_Entries struct {
@@ -46,6 +46,5 @@ type ResponseAttrs struct {
 
 var Response = ubx.DataSourceBinding{
 	WireType: "datadog_ipallowlist_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

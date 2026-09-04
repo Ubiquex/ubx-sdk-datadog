@@ -5,49 +5,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IndexingRuleData_Data_Attributes_Options_Data_DynamicTags struct {
 	ExcludeNotQueriedWindowSeconds any
-	ExcludeNotUsedInAssets any
-	QueriedTagsWindowSeconds any
-	RelatedAssetTags any
+	ExcludeNotUsedInAssets         any
+	QueriedTagsWindowSeconds       any
+	RelatedAssetTags               any
 }
 
 type IndexingRuleData_Data_Attributes_Options_Data_MetricMatch struct {
-	IsQueried any
-	NotQueried any
-	NotUsedInAssets any
+	IsQueried            any
+	NotQueried           any
+	NotUsedInAssets      any
 	QueriedWindowSeconds any
-	UsedInAssets any
+	UsedInAssets         any
 }
 
 type IndexingRuleData_Data_Attributes_Options_Data struct {
-	DynamicTags any
+	DynamicTags              any
 	ManagePreexistingMetrics any
-	MetricMatch any
-	OverridePreviousRules any
+	MetricMatch              any
+	OverridePreviousRules    any
 }
 
 type IndexingRuleData_Data_Attributes_Options struct {
-	Data any
+	Data    any
 	Version any
 }
 
 type IndexingRuleData_Data_Attributes struct {
-	CreatedAt any
-	CreatedByHandle any
-	ExcludeTagsMode any
+	CreatedAt                any
+	CreatedByHandle          any
+	ExcludeTagsMode          any
 	IgnoredMetricNameMatches any
-	MetricNameMatches any
-	ModifiedAt any
-	ModifiedByHandle any
-	Name any
-	Options any
-	RuleOrder any
-	Tags any
+	MetricNameMatches        any
+	ModifiedAt               any
+	ModifiedByHandle         any
+	Name                     any
+	Options                  any
+	RuleOrder                any
+	Tags                     any
 }
 
 type IndexingRuleData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type IndexingRuleData_Links struct {
@@ -78,7 +78,7 @@ type IndexingRuleDataAttrs struct {
 	// Pagination links. Only present if pagination query parameters were provided.
 	Links any
 	// Pagination metadata for a list of tag indexing rules.
-	Meta any
+	Meta   any
 	Search any
 }
 

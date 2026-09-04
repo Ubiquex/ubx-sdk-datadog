@@ -36,6 +36,6 @@ var KeyResponse = ubx.ResourceBinding{
 	WireType: "datadog_application_key_response",
 	Fields: ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"Key":  ubx.FieldSpec{WireName: "key"},
 	},
 }

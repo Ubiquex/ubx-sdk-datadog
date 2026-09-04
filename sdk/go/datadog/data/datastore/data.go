@@ -4,21 +4,21 @@ package datastore
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Data_Data_Attributes struct {
-	CreatedAt any
-	CreatorUserId any
-	CreatorUserUuid any
-	Description any
-	ModifiedAt any
-	Name any
-	OrgId any
-	PrimaryColumnName any
+	CreatedAt                    any
+	CreatorUserId                any
+	CreatorUserUuid              any
+	Description                  any
+	ModifiedAt                   any
+	Name                         any
+	OrgId                        any
+	PrimaryColumnName            any
 	PrimaryKeyGenerationStrategy any
 }
 
 type Data_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataConfig struct {
@@ -31,6 +31,5 @@ type DataAttrs struct {
 
 var Data = ubx.DataSourceBinding{
 	WireType: "datadog_datastore_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

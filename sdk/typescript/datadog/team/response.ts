@@ -6,29 +6,64 @@ export interface Response_Data_Attributes {
   avatar?: string | Computed<string>;
   /** Banner selection for the team */
   banner?: number | Computed<number>;
+  /** Creation date of the team */
+  createdAt?: string | Computed<string>;
   /** Free-form markdown description/content for the team's homepage */
   description?: string | Computed<string>;
   /** The team's identifier */
   handle: string | Computed<string>;
   /** Collection of hidden modules for the team */
   hiddenModules?: string[] | Computed<string[]>;
+  /** Whether the team is managed from an external source */
+  isManaged?: boolean | Computed<boolean>;
+  /** The number of links belonging to the team */
+  linkCount?: number | Computed<number>;
+  /** Modification date of the team */
+  modifiedAt?: string | Computed<string>;
   /** The name of the team */
   name: string | Computed<string>;
+  /** A brief summary of the team, derived from the `description` */
+  summary?: string | Computed<string>;
+  /** The number of users belonging to the team */
+  userCount?: number | Computed<number>;
   /** Collection of visible modules for the team */
   visibleModules?: string[] | Computed<string[]>;
 }
 
-export interface Response_Data_Relationships_Users_Data {
+export interface Response_Data_Relationships_TeamLinks_Data {
   id?: string | Computed<string>;
   type?: string | Computed<string>;
 }
 
+export interface Response_Data_Relationships_TeamLinks_Links {
+  /** Related link. */
+  related?: string | Computed<string>;
+}
+
+export interface Response_Data_Relationships_TeamLinks {
+  /** Related team links */
+  data?: Response_Data_Relationships_TeamLinks_Data[] | Computed<Response_Data_Relationships_TeamLinks_Data[]>;
+  /** Links attributes. */
+  links?: Response_Data_Relationships_TeamLinks_Links | Computed<Response_Data_Relationships_TeamLinks_Links>;
+}
+
+export interface Response_Data_Relationships_UserTeamPermissions {
+  /** Related user team permission data */
+  data?: Response_Data_Relationships_TeamLinks_Data | Computed<Response_Data_Relationships_TeamLinks_Data>;
+  /** Links attributes. */
+  links?: Response_Data_Relationships_TeamLinks_Links | Computed<Response_Data_Relationships_TeamLinks_Links>;
+}
+
 export interface Response_Data_Relationships_Users {
   /** Relationships to user objects. */
-  data: Response_Data_Relationships_Users_Data[] | Computed<Response_Data_Relationships_Users_Data[]>;
+  data: Response_Data_Relationships_TeamLinks_Data[] | Computed<Response_Data_Relationships_TeamLinks_Data[]>;
 }
 
 export interface Response_Data_Relationships {
+  /** Relationship between a team and a team link */
+  teamLinks?: Response_Data_Relationships_TeamLinks | Computed<Response_Data_Relationships_TeamLinks>;
+  /** Relationship between a user team permission and a team */
+  userTeamPermissions?: Response_Data_Relationships_UserTeamPermissions | Computed<Response_Data_Relationships_UserTeamPermissions>;
   /** Relationship to users. */
   users?: Response_Data_Relationships_Users | Computed<Response_Data_Relationships_Users>;
 }
@@ -36,6 +71,8 @@ export interface Response_Data_Relationships {
 export interface Response_Data {
   /** Team creation attributes */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** The team's identifier */
+  id?: string | Computed<string>;
   /** Relationships formed with the team on creation */
   relationships?: Response_Data_Relationships | Computed<Response_Data_Relationships>;
   /** Team type */
@@ -45,27 +82,73 @@ export interface Response_Data {
 const Response_Data_AttributesFields: FieldMap = {
   avatar: "avatar",
   banner: "banner",
+  createdAt: "created_at",
   description: "description",
   handle: "handle",
   hiddenModules: "hidden_modules",
+  isManaged: "is_managed",
+  linkCount: "link_count",
+  modifiedAt: "modified_at",
   name: "name",
+  summary: "summary",
+  userCount: "user_count",
   visibleModules: "visible_modules",
 };
 
-const Response_Data_Relationships_Users_DataFields: FieldMap = {
+const Response_Data_Relationships_TeamLinks_DataFields: FieldMap = {
   id: "id",
   type: "type",
+};
+
+const Response_Data_Relationships_TeamLinks_LinksFields: FieldMap = {
+  related: "related",
+};
+
+const Response_Data_Relationships_TeamLinksFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "list",
+    fields: Response_Data_Relationships_TeamLinks_DataFields,
+  },
+  links: {
+    wireName: "links",
+    kind: "object",
+    fields: Response_Data_Relationships_TeamLinks_LinksFields,
+  },
+};
+
+const Response_Data_Relationships_UserTeamPermissionsFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: Response_Data_Relationships_TeamLinks_DataFields,
+  },
+  links: {
+    wireName: "links",
+    kind: "object",
+    fields: Response_Data_Relationships_TeamLinks_LinksFields,
+  },
 };
 
 const Response_Data_Relationships_UsersFields: FieldMap = {
   data: {
     wireName: "data",
     kind: "list",
-    fields: Response_Data_Relationships_Users_DataFields,
+    fields: Response_Data_Relationships_TeamLinks_DataFields,
   },
 };
 
 const Response_Data_RelationshipsFields: FieldMap = {
+  teamLinks: {
+    wireName: "team_links",
+    kind: "object",
+    fields: Response_Data_Relationships_TeamLinksFields,
+  },
+  userTeamPermissions: {
+    wireName: "user_team_permissions",
+    kind: "object",
+    fields: Response_Data_Relationships_UserTeamPermissionsFields,
+  },
   users: {
     wireName: "users",
     kind: "object",
@@ -79,6 +162,7 @@ const Response_DataFields: FieldMap = {
     kind: "object",
     fields: Response_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

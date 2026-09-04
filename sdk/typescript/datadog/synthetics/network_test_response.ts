@@ -116,6 +116,8 @@ export interface NetworkTestResponse_Data_Attributes {
 export interface NetworkTestResponse_Data {
   /** Object containing details about a Network Path test. */
   attributes: NetworkTestResponse_Data_Attributes | Computed<NetworkTestResponse_Data_Attributes>;
+  /** The public ID of the Network Path test. */
+  id?: string | Computed<string>;
   /** Type of the Synthetic test, `network`. */
   type: string | Computed<string>;
 }
@@ -231,6 +233,7 @@ const NetworkTestResponse_DataFields: FieldMap = {
     kind: "object",
     fields: NetworkTestResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

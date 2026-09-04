@@ -53,6 +53,10 @@ export interface PolicyResponse_Data_Attributes_Targets {
 export interface PolicyResponse_Data_Attributes {
   /** The set of actions this policy applies to. */
   actionPattern: PolicyResponse_Data_Attributes_ActionPattern | Computed<PolicyResponse_Data_Attributes_ActionPattern>;
+  /** The date and time the execution policy was created. */
+  createdAt?: string | Computed<string>;
+  /** The ID of the user who created the execution policy. */
+  createdBy?: string | Computed<string>;
   /** Whether the policy allows or denies matching actions. */
   effect: string | Computed<string>;
   /** The name of the execution policy. */
@@ -61,11 +65,19 @@ export interface PolicyResponse_Data_Attributes {
   scope?: PolicyResponse_Data_Attributes_Scope | Computed<PolicyResponse_Data_Attributes_Scope>;
   /** The targets this policy applies to. */
   targets?: PolicyResponse_Data_Attributes_Targets[] | Computed<PolicyResponse_Data_Attributes_Targets[]>;
+  /** The date and time the execution policy was last updated. */
+  updatedAt?: string | Computed<string>;
+  /** The ID of the user who last updated the execution policy. */
+  updatedBy?: string | Computed<string>;
+  /** The version of the execution policy. Incremented on every update. */
+  version?: number | Computed<number>;
 }
 
 export interface PolicyResponse_Data {
   /** Attributes used to create or update an execution policy. */
   attributes: PolicyResponse_Data_Attributes | Computed<PolicyResponse_Data_Attributes>;
+  /** The ID of the execution policy. */
+  id?: string | Computed<string>;
   /** The type of the resource. The value should always be `execution_policy`. */
   type: string | Computed<string>;
 }
@@ -141,6 +153,8 @@ const PolicyResponse_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: PolicyResponse_Data_Attributes_ActionPatternFields,
   },
+  createdAt: "created_at",
+  createdBy: "created_by",
   effect: "effect",
   name: "name",
   scope: {
@@ -153,6 +167,9 @@ const PolicyResponse_Data_AttributesFields: FieldMap = {
     kind: "list",
     fields: PolicyResponse_Data_Attributes_TargetsFields,
   },
+  updatedAt: "updated_at",
+  updatedBy: "updated_by",
+  version: "version",
 };
 
 const PolicyResponse_DataFields: FieldMap = {
@@ -161,6 +178,7 @@ const PolicyResponse_DataFields: FieldMap = {
     kind: "object",
     fields: PolicyResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

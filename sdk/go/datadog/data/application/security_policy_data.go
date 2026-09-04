@@ -4,48 +4,48 @@ package application
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityPolicyData_Data_Attributes_Rules struct {
-	Blocking any
-	Enabled any
+	Blocking               any
+	Enabled                any
 	ExtendedDataCollection any
-	Id any
+	Id                     any
 }
 
 type SecurityPolicyData_Data_Attributes_Rulesets struct {
 	Blocking any
-	Enabled any
-	Id any
+	Enabled  any
+	Id       any
 }
 
 type SecurityPolicyData_Data_Attributes_Scope struct {
-	Env any
+	Env     any
 	Service any
 }
 
 type SecurityPolicyData_Data_Attributes struct {
-	Description any
-	IsDefault any
-	Name any
+	Description       any
+	IsDefault         any
+	Name              any
 	ProtectionPresets any
-	Rules any
-	Rulesets any
-	Scope any
-	Version any
+	Rules             any
+	Rulesets          any
+	Scope             any
+	Version           any
 }
 
 type SecurityPolicyData_Data_Meta struct {
-	AddedAt any
-	AddedBy any
-	AddedByName any
-	ModifiedAt any
-	ModifiedBy any
+	AddedAt        any
+	AddedBy        any
+	AddedByName    any
+	ModifiedAt     any
+	ModifiedBy     any
 	ModifiedByName any
 }
 
 type SecurityPolicyData_Data struct {
 	Attributes any
-	Id any
-	Meta any
-	Type any
+	Id         any
+	Meta       any
+	Type       any
 }
 
 type SecurityPolicyDataConfig struct {
@@ -58,6 +58,5 @@ type SecurityPolicyDataAttrs struct {
 
 var SecurityPolicyData = ubx.DataSourceBinding{
 	WireType: "datadog_application_security_policy_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

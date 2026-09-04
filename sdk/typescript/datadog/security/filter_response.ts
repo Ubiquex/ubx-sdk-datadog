@@ -11,17 +11,23 @@ export interface FilterResponse_Data_Attributes {
   exclusionFilters: FilterResponse_Data_Attributes_ExclusionFilters[] | Computed<FilterResponse_Data_Attributes_ExclusionFilters[]>;
   /** The filtered data type. */
   filteredDataType: string | Computed<string>;
+  /** Whether the security filter is the built-in filter. */
+  isBuiltin?: boolean | Computed<boolean>;
   /** Whether the security filter is enabled. */
   isEnabled: boolean | Computed<boolean>;
   /** The name of the security filter. */
   name: string | Computed<string>;
   /** The query of the security filter. */
   query: string | Computed<string>;
+  /** The version of the security filter. */
+  version?: number | Computed<number>;
 }
 
 export interface FilterResponse_Data {
   /** Object containing the attributes of the security filter to be created. */
   attributes: FilterResponse_Data_Attributes | Computed<FilterResponse_Data_Attributes>;
+  /** The ID of the security filter. */
+  id?: string | Computed<string>;
   /** The type of the resource. The value should always be `security_filters`. */
   type: string | Computed<string>;
 }
@@ -43,9 +49,11 @@ const FilterResponse_Data_AttributesFields: FieldMap = {
     fields: FilterResponse_Data_Attributes_ExclusionFiltersFields,
   },
   filteredDataType: "filtered_data_type",
+  isBuiltin: "is_builtin",
   isEnabled: "is_enabled",
   name: "name",
   query: "query",
+  version: "version",
 };
 
 const FilterResponse_DataFields: FieldMap = {
@@ -54,6 +62,7 @@ const FilterResponse_DataFields: FieldMap = {
     kind: "object",
     fields: FilterResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -4,18 +4,18 @@ package sensitive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataScannerStandardPatternsResponseItem_Data_Attributes struct {
-	Description any
+	Description      any
 	IncludedKeywords any
-	Name any
-	Pattern any
-	Priority any
-	Tags any
+	Name             any
+	Pattern          any
+	Priority         any
+	Tags             any
 }
 
 type DataScannerStandardPatternsResponseItem_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataScannerStandardPatternsResponseItemConfig struct {
@@ -28,6 +28,5 @@ type DataScannerStandardPatternsResponseItemAttrs struct {
 
 var DataScannerStandardPatternsResponseItem = ubx.DataSourceBinding{
 	WireType: "datadog_sensitive_data_scanner_standard_patterns_response_item",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -16,21 +16,21 @@ type NotificationRule_Data_Attributes_Pagerduty struct {
 }
 
 type NotificationRule_Data_Attributes_Slack struct {
-	Channel any
+	Channel   any
 	Workspace any
 }
 
 type NotificationRule_Data_Attributes struct {
-	Email any
-	MsTeams any
+	Email     any
+	MsTeams   any
 	Pagerduty any
-	Slack any
+	Slack     any
 }
 
 type NotificationRule_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type NotificationRule_Meta_Page struct {
@@ -65,7 +65,7 @@ type NotificationRuleAttrs struct {
 	// Team notification rules response data
 	Data any
 	// Metadata that is included in the response when querying the team notification rules
-	Meta any
+	Meta   any
 	TeamId any
 }
 

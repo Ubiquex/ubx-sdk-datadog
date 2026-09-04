@@ -4,7 +4,7 @@ package metric
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AssetResponseIncluded_Data_Relationships_Dashboards_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -35,15 +35,15 @@ type AssetResponseIncluded_Data struct {
 
 type AssetResponseIncluded_Included_Attributes struct {
 	Popularity any
-	Tags any
-	Title any
-	Url any
+	Tags       any
+	Title      any
+	Url        any
 }
 
 type AssetResponseIncluded_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AssetResponseIncludedConfig struct {
@@ -54,7 +54,7 @@ type AssetResponseIncludedAttrs struct {
 	// Metric assets response data.
 	Data any
 	// Array of objects related to the metric assets.
-	Included any
+	Included   any
 	MetricName any
 }
 

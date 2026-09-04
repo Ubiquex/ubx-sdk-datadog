@@ -2,13 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QueryWithRelationshipsResponse_Data_Attributes {
+  /** Creation time of the restriction query. */
+  createdAt?: string | Computed<string>;
+  /** Email of the user who last modified this restriction query. */
+  lastModifierEmail?: string | Computed<string>;
+  /** Name of the user who last modified this restriction query. */
+  lastModifierName?: string | Computed<string>;
+  /** Time of last restriction query modification. */
+  modifiedAt?: string | Computed<string>;
   /** The restriction query. */
   restrictionQuery: string | Computed<string>;
+  /** Number of roles associated with this restriction query. */
+  roleCount?: number | Computed<number>;
+  /** Number of users associated with this restriction query. */
+  userCount?: number | Computed<number>;
+}
+
+export interface QueryWithRelationshipsResponse_Data_Relationships_Roles_Data {
+  id?: string | Computed<string>;
+  type?: string | Computed<string>;
+}
+
+export interface QueryWithRelationshipsResponse_Data_Relationships_Roles {
+  /** An array containing type and the unique identifier of a role. */
+  data?: QueryWithRelationshipsResponse_Data_Relationships_Roles_Data[] | Computed<QueryWithRelationshipsResponse_Data_Relationships_Roles_Data[]>;
+}
+
+export interface QueryWithRelationshipsResponse_Data_Relationships {
+  /** Relationship to roles. */
+  roles?: QueryWithRelationshipsResponse_Data_Relationships_Roles | Computed<QueryWithRelationshipsResponse_Data_Relationships_Roles>;
 }
 
 export interface QueryWithRelationshipsResponse_Data {
   /** Attributes of the created restriction query. */
   attributes?: QueryWithRelationshipsResponse_Data_Attributes | Computed<QueryWithRelationshipsResponse_Data_Attributes>;
+  /** ID of the restriction query. */
+  id?: string | Computed<string>;
+  /** Relationships of the user object. */
+  relationships?: QueryWithRelationshipsResponse_Data_Relationships | Computed<QueryWithRelationshipsResponse_Data_Relationships>;
   /** Restriction query resource type. */
   type?: string | Computed<string>;
 }
@@ -24,7 +55,34 @@ export interface QueryWithRelationshipsResponse_Included {
 }
 
 const QueryWithRelationshipsResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  lastModifierEmail: "last_modifier_email",
+  lastModifierName: "last_modifier_name",
+  modifiedAt: "modified_at",
   restrictionQuery: "restriction_query",
+  roleCount: "role_count",
+  userCount: "user_count",
+};
+
+const QueryWithRelationshipsResponse_Data_Relationships_Roles_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const QueryWithRelationshipsResponse_Data_Relationships_RolesFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "list",
+    fields: QueryWithRelationshipsResponse_Data_Relationships_Roles_DataFields,
+  },
+};
+
+const QueryWithRelationshipsResponse_Data_RelationshipsFields: FieldMap = {
+  roles: {
+    wireName: "roles",
+    kind: "object",
+    fields: QueryWithRelationshipsResponse_Data_Relationships_RolesFields,
+  },
 };
 
 const QueryWithRelationshipsResponse_DataFields: FieldMap = {
@@ -32,6 +90,12 @@ const QueryWithRelationshipsResponse_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: QueryWithRelationshipsResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: QueryWithRelationshipsResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

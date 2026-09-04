@@ -3,8 +3,15 @@ package incident
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Response_Data_Attributes_DeclaredBy struct {
+	// Non Datadog creator `48px` image.
+	Image48Px any
+	// Non Datadog creator name.
+	Name any
+}
+
 type Response_Data_Attributes_Fields struct {
-	Type any
+	Type  any
 	Value any
 }
 
@@ -13,21 +20,41 @@ type Response_Data_Attributes_InitialCells_Content struct {
 }
 
 type Response_Data_Attributes_InitialCells struct {
-	CellType any
-	Content any
+	CellType  any
+	Content   any
 	Important any
 }
 
 type Response_Data_Attributes_NotificationHandles struct {
 	DisplayName any
-	Handle any
+	Handle      any
 }
 
 type Response_Data_Attributes struct {
+	// Timestamp of when the incident was archived.
+	Archived any
+	// The incident case id.
+	CaseId any
+	// Timestamp when the incident was created.
+	Created any
+	// Length of the incident's customer impact in seconds. Equals the difference between `customer_impact_start` and `customer_impact_end`.
+	CustomerImpactDuration any
+	// Timestamp when customers were no longer impacted by the incident.
+	CustomerImpactEnd any
 	// Required if `customer_impacted:"true"`. A summary of the impact customers experienced during the incident.
 	CustomerImpactScope any
+	// Timestamp when customers began being impacted by the incident.
+	CustomerImpactStart any
 	// A flag indicating whether the incident caused customer impact.
 	CustomerImpacted any
+	// Timestamp when the incident was declared.
+	Declared any
+	// Incident's non Datadog creator.
+	DeclaredBy any
+	// UUID of the user who declared the incident.
+	DeclaredByUuid any
+	// Timestamp when the incident was detected.
+	Detected any
 	// A condensed view of the user-defined fields for which to create initial selections.
 	Fields any
 	// A unique identifier that represents an incident type. The default incident type will be used if this property is not provided.
@@ -36,17 +63,42 @@ type Response_Data_Attributes struct {
 	InitialCells any
 	// A flag indicating whether the incident is a test incident.
 	IsTest any
+	// Timestamp when the incident was last modified.
+	Modified any
+	// Incident's non Datadog creator.
+	NonDatadogCreator any
 	// Notification handles that will be notified of the incident at creation.
 	NotificationHandles any
+	// The monotonically increasing integer ID for the incident.
+	PublicId any
+	// Timestamp when the incident's state was last changed from active or stable to resolved or completed.
+	Resolved any
+	// The incident severity.
+	Severity any
+	// The state incident.
+	State any
+	// The amount of time in seconds to detect the incident. Equals the difference between `customer_impact_start` and `detected`.
+	TimeToDetect any
+	// The amount of time in seconds to call incident after detection. Equals the difference of `detected` and `created`.
+	TimeToInternalResponse any
+	// The amount of time in seconds to resolve customer impact after detecting the issue. Equals the difference between `customer_impact_end` and `detected`.
+	TimeToRepair any
+	// The amount of time in seconds to resolve the incident after it was created. Equals the difference between `created` and `resolved`.
+	TimeToResolve any
 	// The title of the incident, which summarizes what happened.
 	Title any
+	// The incident visibility status.
+	Visibility any
 }
 
-type Response_Data_Relationships_CommanderUser_Data struct {
-	// A unique identifier that represents the user.
-	Id any
-	// Users resource type.
+type Response_Data_Relationships_Attachments_Data struct {
+	Id   any
 	Type any
+}
+
+type Response_Data_Relationships_Attachments struct {
+	// An array of incident attachments.
+	Data any
 }
 
 type Response_Data_Relationships_CommanderUser struct {
@@ -55,13 +107,31 @@ type Response_Data_Relationships_CommanderUser struct {
 }
 
 type Response_Data_Relationships struct {
+	// A relationship reference for attachments.
+	Attachments any
 	// Relationship to user.
 	CommanderUser any
+	// Relationship to user.
+	CreatedByUser any
+	// Relationship to user.
+	DeclaredByUser any
+	// Relationship to impacts.
+	Impacts any
+	// A relationship reference for multiple integration metadata objects.
+	Integrations any
+	// Relationship to user.
+	LastModifiedByUser any
+	// Relationship to incident responders.
+	Responders any
+	// Relationship to incident user defined fields.
+	UserDefinedFields any
 }
 
 type Response_Data struct {
 	// The incident's attributes for a create request.
 	Attributes any
+	// The incident's ID.
+	Id any
 	// The relationships the incident will have with other resources once created.
 	Relationships any
 	// Incident resource type.
@@ -69,106 +139,189 @@ type Response_Data struct {
 }
 
 type Response_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type Response_Included_Relationships struct {
-	Incident any
+	Incident           any
 	LastModifiedByUser any
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
+}
+
+var Response_Data_Attributes_DeclaredByFields = ubx.FieldMap{
+	"Image48Px": ubx.FieldSpec{WireName: "image_48_px"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
 }
 
 var Response_Data_Attributes_FieldsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Response_Data_Attributes_InitialCells_ContentFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+}
 
 var Response_Data_Attributes_InitialCellsFields = ubx.FieldMap{
-		"CellType": ubx.FieldSpec{WireName: "cell_type"},
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: Response_Data_Attributes_InitialCells_ContentFields,
-		},
-		"Important": ubx.FieldSpec{WireName: "important"},
-	}
+	"CellType": ubx.FieldSpec{WireName: "cell_type"},
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_InitialCells_ContentFields,
+	},
+	"Important": ubx.FieldSpec{WireName: "important"},
+}
 
 var Response_Data_Attributes_NotificationHandlesFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Handle":      ubx.FieldSpec{WireName: "handle"},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"CustomerImpactScope": ubx.FieldSpec{WireName: "customer_impact_scope"},
-		"CustomerImpacted": ubx.FieldSpec{WireName: "customer_impacted"},
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "map",
-			Fields: Response_Data_Attributes_FieldsFields,
-		},
-		"IncidentTypeUuid": ubx.FieldSpec{WireName: "incident_type_uuid"},
-		"InitialCells": ubx.FieldSpec{
-			WireName: "initial_cells",
-			Kind: "list",
-			Fields: Response_Data_Attributes_InitialCellsFields,
-		},
-		"IsTest": ubx.FieldSpec{WireName: "is_test"},
-		"NotificationHandles": ubx.FieldSpec{
-			WireName: "notification_handles",
-			Kind: "list",
-			Fields: Response_Data_Attributes_NotificationHandlesFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Archived":               ubx.FieldSpec{WireName: "archived"},
+	"CaseId":                 ubx.FieldSpec{WireName: "case_id"},
+	"Created":                ubx.FieldSpec{WireName: "created"},
+	"CustomerImpactDuration": ubx.FieldSpec{WireName: "customer_impact_duration"},
+	"CustomerImpactEnd":      ubx.FieldSpec{WireName: "customer_impact_end"},
+	"CustomerImpactScope":    ubx.FieldSpec{WireName: "customer_impact_scope"},
+	"CustomerImpactStart":    ubx.FieldSpec{WireName: "customer_impact_start"},
+	"CustomerImpacted":       ubx.FieldSpec{WireName: "customer_impacted"},
+	"Declared":               ubx.FieldSpec{WireName: "declared"},
+	"DeclaredBy": ubx.FieldSpec{
+		WireName: "declared_by",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_DeclaredByFields,
+	},
+	"DeclaredByUuid": ubx.FieldSpec{WireName: "declared_by_uuid"},
+	"Detected":       ubx.FieldSpec{WireName: "detected"},
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "map",
+		Fields:   Response_Data_Attributes_FieldsFields,
+	},
+	"IncidentTypeUuid": ubx.FieldSpec{WireName: "incident_type_uuid"},
+	"InitialCells": ubx.FieldSpec{
+		WireName: "initial_cells",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_InitialCellsFields,
+	},
+	"IsTest":   ubx.FieldSpec{WireName: "is_test"},
+	"Modified": ubx.FieldSpec{WireName: "modified"},
+	"NonDatadogCreator": ubx.FieldSpec{
+		WireName: "non_datadog_creator",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_DeclaredByFields,
+	},
+	"NotificationHandles": ubx.FieldSpec{
+		WireName: "notification_handles",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_NotificationHandlesFields,
+	},
+	"PublicId":               ubx.FieldSpec{WireName: "public_id"},
+	"Resolved":               ubx.FieldSpec{WireName: "resolved"},
+	"Severity":               ubx.FieldSpec{WireName: "severity"},
+	"State":                  ubx.FieldSpec{WireName: "state"},
+	"TimeToDetect":           ubx.FieldSpec{WireName: "time_to_detect"},
+	"TimeToInternalResponse": ubx.FieldSpec{WireName: "time_to_internal_response"},
+	"TimeToRepair":           ubx.FieldSpec{WireName: "time_to_repair"},
+	"TimeToResolve":          ubx.FieldSpec{WireName: "time_to_resolve"},
+	"Title":                  ubx.FieldSpec{WireName: "title"},
+	"Visibility":             ubx.FieldSpec{WireName: "visibility"},
+}
 
-var Response_Data_Relationships_CommanderUser_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+var Response_Data_Relationships_Attachments_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var Response_Data_Relationships_AttachmentsFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   Response_Data_Relationships_Attachments_DataFields,
+	},
+}
 
 var Response_Data_Relationships_CommanderUserFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: Response_Data_Relationships_CommanderUser_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_Attachments_DataFields,
+	},
+}
 
 var Response_Data_RelationshipsFields = ubx.FieldMap{
-		"CommanderUser": ubx.FieldSpec{
-			WireName: "commander_user",
-			Kind: "object",
-			Fields: Response_Data_Relationships_CommanderUserFields,
-		},
-	}
+	"Attachments": ubx.FieldSpec{
+		WireName: "attachments",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AttachmentsFields,
+	},
+	"CommanderUser": ubx.FieldSpec{
+		WireName: "commander_user",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CommanderUserFields,
+	},
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CommanderUserFields,
+	},
+	"DeclaredByUser": ubx.FieldSpec{
+		WireName: "declared_by_user",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CommanderUserFields,
+	},
+	"Impacts": ubx.FieldSpec{
+		WireName: "impacts",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AttachmentsFields,
+	},
+	"Integrations": ubx.FieldSpec{
+		WireName: "integrations",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AttachmentsFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CommanderUserFields,
+	},
+	"Responders": ubx.FieldSpec{
+		WireName: "responders",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AttachmentsFields,
+	},
+	"UserDefinedFields": ubx.FieldSpec{
+		WireName: "user_defined_fields",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AttachmentsFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: Response_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Response_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Incident data for a create request.
@@ -191,8 +344,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
 	},

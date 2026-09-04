@@ -7,28 +7,659 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Response_Data_Attributes_ColumnsConfig_Columns_Sort:
+    ascending: Any = None
+    priority: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_ColumnsConfig_Columns:
+    sort: Any = None
+    sort_field: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_ColumnsConfig:
+    # List of column configurations for the project board view.
+    columns: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_AutoCloseInactiveCases:
+    # Whether auto-close is enabled.
+    enabled: Any = None
+    # Maximum inactive time in seconds before auto-closing.
+    max_inactive_time_in_secs: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_AutoTransitionAssignedCases:
+    # Whether to auto-transition cases when self-assigned.
+    auto_transition_assigned_cases_on_self_assigned: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationIncident_FieldMappings:
+    case_field: Any = None
+    incident_user_defined_field_id: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationIncident_SeverityConfig:
+    # Mapping of incident severity values to case priority values.
+    priority_mapping: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationIncident:
+    # Query for auto-escalation.
+    auto_escalation_query: Any = None
+    # Default incident commander.
+    default_incident_commander: Any = None
+    # Whether incident integration is enabled.
+    enabled: Any = None
+    # List of mappings between incident fields and case fields.
+    field_mappings: Any = None
+    # Incident type.
+    incident_type: Any = None
+    # Severity configuration for mapping incident priorities to case priorities.
+    severity_config: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationJira_AutoCreation:
+    # Whether automatic Jira issue creation is enabled.
+    enabled: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationJira_Metadata:
+    # The Jira account identifier.
+    account_id: Any = None
+    # The Jira issue type identifier to use when creating issues.
+    issue_type_id: Any = None
+    # The Jira project identifier to associate with this case project.
+    project_id: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_Assignee:
+    # The direction and type of synchronization for this property.
+    sync_type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_CustomFields:
+    sync_type: Any = None
+    value: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_DueDate:
+    # The Jira field identifier used to store the due date.
+    jira_field_id: Any = None
+    # The type of synchronization to apply for the due date field.
+    sync_type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_Priority:
+    # Map of source values to destination values for synchronization.
+    mapping: Any = None
+    # Map of source names to display names used during synchronization.
+    name_mapping: Any = None
+    # The direction and type of synchronization for this property.
+    sync_type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties:
+    # Sync property configuration.
+    assignee: Any = None
+    # Sync property configuration.
+    comments: Any = None
+    # Map of custom field identifiers to their sync configurations.
+    custom_fields: Any = None
+    # Sync property configuration.
+    description: Any = None
+    # Due date synchronization configuration for Jira integration.
+    due_date: Any = None
+    # Sync property with mapping configuration.
+    priority: Any = None
+    # Sync property with mapping configuration.
+    status: Any = None
+    # Sync property configuration.
+    title: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationJira_Sync:
+    # Whether Jira field synchronization is enabled.
+    enabled: Any = None
+    # Field synchronization properties for Jira integration.
+    properties: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationJira:
+    # Auto-creation settings for Jira issues from cases.
+    auto_creation: Any = None
+    # Whether Jira integration is enabled.
+    enabled: Any = None
+    # Metadata for connecting a case management project to a Jira project.
+    metadata: Any = None
+    # Synchronization configuration for Jira integration.
+    sync: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationMonitor:
+    # Whether auto-resolve is enabled.
+    auto_resolve_enabled: Any = None
+    # Case type ID for monitor integration.
+    case_type_id: Any = None
+    # Whether monitor integration is enabled.
+    enabled: Any = None
+    # Monitor handle.
+    handle: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries_Target:
+    dynamic_team_paging: Any = None
+    team_id: Any = None
+    user_id: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries:
+    enabled: Any = None
+    id: Any = None
+    query: Any = None
+    target: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationOnCall:
+    # Whether to auto-assign on-call.
+    auto_assign_on_call: Any = None
+    # Whether On-Call integration is enabled.
+    enabled: Any = None
+    # List of escalation queries for routing cases to on-call responders.
+    escalation_queries: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_Properties_Priority:
+    # Mapping of case priority values to ServiceNow impact values.
+    impact_mapping: Any = None
+    # The type of synchronization to apply for priority.
+    sync_type: Any = None
+    # Mapping of case priority values to ServiceNow urgency values.
+    urgency_mapping: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_Properties:
+    # Sync property configuration.
+    comments: Any = None
+    # Priority synchronization configuration for ServiceNow integration.
+    priority: Any = None
+    # Sync property with mapping configuration.
+    status: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig:
+    # Whether ServiceNow synchronization is enabled.
+    enabled: Any = None
+    # Field-level synchronization properties for ServiceNow integration.
+    properties: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_IntegrationServiceNow:
+    # Assignment group.
+    assignment_group: Any = None
+    # Auto-creation settings for ServiceNow incidents from cases.
+    auto_creation: Any = None
+    # Whether ServiceNow integration is enabled.
+    enabled: Any = None
+    # ServiceNow instance name.
+    instance_name: Any = None
+    # Synchronization configuration for ServiceNow integration.
+    sync_config: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings_Notification:
+    # Notification destinations (1=email, 2=slack, 3=in-app).
+    destinations: Any = None
+    # Whether notifications are enabled.
+    enabled: Any = None
+    # Whether to send a notification when a case is assigned.
+    notify_on_case_assignment: Any = None
+    # Whether to send a notification when a case is closed.
+    notify_on_case_closed: Any = None
+    # Whether to send a notification when a comment is added to a case.
+    notify_on_case_comment: Any = None
+    # Whether to send a notification when a user is mentioned in a case comment.
+    notify_on_case_comment_mention: Any = None
+    # Whether to send a notification when a case's priority changes.
+    notify_on_case_priority_change: Any = None
+    # Whether to send a notification when a case's status changes.
+    notify_on_case_status_change: Any = None
+    # Whether to send a notification when a case is unassigned.
+    notify_on_case_unassignment: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Settings:
+    # Auto-close inactive cases settings.
+    auto_close_inactive_cases: Any = None
+    # Auto-transition assigned cases settings.
+    auto_transition_assigned_cases: Any = None
+    # Incident integration settings.
+    integration_incident: Any = None
+    # Jira integration settings.
+    integration_jira: Any = None
+    # Monitor integration settings.
+    integration_monitor: Any = None
+    # On-Call integration settings.
+    integration_on_call: Any = None
+    # ServiceNow integration settings.
+    integration_service_now: Any = None
+    # Project notification settings.
+    notification: Any = None
+
+@dataclasses.dataclass
 class Response_Data_Attributes:
+    # Project columns configuration.
+    columns_config: Any = None
     # List of enabled custom case type IDs.
     enabled_custom_case_types: Any = None
     # Project's key. Cannot be "CASE".
     key: Any = None
     # Project name.
     name: Any = None
+    # Whether the project is restricted.
+    restricted: Any = None
+    # Project settings.
+    settings: Any = None
     # Team UUID to associate with the project.
     team_uuid: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_MemberTeam_Data:
+    id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_MemberTeam_Links:
+    # Related link.
+    related: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_MemberTeam:
+    # Related team links
+    data: Any = None
+    # Links attributes.
+    links: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_MemberUser:
+    # Relationships to user objects.
+    data: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships:
+    # Relationship between a team and a team link
+    member_team: Any = None
+    # Relationship to users.
+    member_user: Any = None
 
 @dataclasses.dataclass
 class Response_Data:
     # Project creation attributes.
     attributes: Any = None
+    # The Project's identifier.
+    id: Any = None
+    # Project relationships.
+    relationships: Any = None
     # Project resource type.
     type: Any = None
 
+_Response_Data_Attributes_ColumnsConfig_Columns_SortFields = {
+    "ascending": ubx.FieldSpec(wire_name="ascending"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+}
+
+_Response_Data_Attributes_ColumnsConfig_ColumnsFields = {
+    "sort": ubx.FieldSpec(
+        wire_name="sort",
+        kind="object",
+        fields=_Response_Data_Attributes_ColumnsConfig_Columns_SortFields,
+    ),
+    "sort_field": ubx.FieldSpec(wire_name="sort_field"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Response_Data_Attributes_ColumnsConfigFields = {
+    "columns": ubx.FieldSpec(
+        wire_name="columns",
+        kind="list",
+        fields=_Response_Data_Attributes_ColumnsConfig_ColumnsFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_AutoCloseInactiveCasesFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "max_inactive_time_in_secs": ubx.FieldSpec(wire_name="max_inactive_time_in_secs"),
+}
+
+_Response_Data_Attributes_Settings_AutoTransitionAssignedCasesFields = {
+    "auto_transition_assigned_cases_on_self_assigned": ubx.FieldSpec(wire_name="auto_transition_assigned_cases_on_self_assigned"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationIncident_FieldMappingsFields = {
+    "case_field": ubx.FieldSpec(wire_name="case_field"),
+    "incident_user_defined_field_id": ubx.FieldSpec(wire_name="incident_user_defined_field_id"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationIncident_SeverityConfigFields = {
+    "priority_mapping": ubx.FieldSpec(wire_name="priority_mapping"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationIncidentFields = {
+    "auto_escalation_query": ubx.FieldSpec(wire_name="auto_escalation_query"),
+    "default_incident_commander": ubx.FieldSpec(wire_name="default_incident_commander"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "field_mappings": ubx.FieldSpec(
+        wire_name="field_mappings",
+        kind="list",
+        fields=_Response_Data_Attributes_Settings_IntegrationIncident_FieldMappingsFields,
+    ),
+    "incident_type": ubx.FieldSpec(wire_name="incident_type"),
+    "severity_config": ubx.FieldSpec(
+        wire_name="severity_config",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationIncident_SeverityConfigFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_IntegrationJira_AutoCreationFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationJira_MetadataFields = {
+    "account_id": ubx.FieldSpec(wire_name="account_id"),
+    "issue_type_id": ubx.FieldSpec(wire_name="issue_type_id"),
+    "project_id": ubx.FieldSpec(wire_name="project_id"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields = {
+    "sync_type": ubx.FieldSpec(wire_name="sync_type"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_CustomFieldsFields = {
+    "sync_type": ubx.FieldSpec(wire_name="sync_type"),
+    "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_DueDateFields = {
+    "jira_field_id": ubx.FieldSpec(wire_name="jira_field_id"),
+    "sync_type": ubx.FieldSpec(wire_name="sync_type"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields = {
+    "mapping": ubx.FieldSpec(wire_name="mapping"),
+    "name_mapping": ubx.FieldSpec(wire_name="name_mapping"),
+    "sync_type": ubx.FieldSpec(wire_name="sync_type"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationJira_Sync_PropertiesFields = {
+    "assignee": ubx.FieldSpec(
+        wire_name="assignee",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+    ),
+    "comments": ubx.FieldSpec(
+        wire_name="comments",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+    ),
+    "custom_fields": ubx.FieldSpec(
+        wire_name="custom_fields",
+        kind="map",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_CustomFieldsFields,
+    ),
+    "description": ubx.FieldSpec(
+        wire_name="description",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+    ),
+    "due_date": ubx.FieldSpec(
+        wire_name="due_date",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_DueDateFields,
+    ),
+    "priority": ubx.FieldSpec(
+        wire_name="priority",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields,
+    ),
+    "status": ubx.FieldSpec(
+        wire_name="status",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields,
+    ),
+    "title": ubx.FieldSpec(
+        wire_name="title",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_IntegrationJira_SyncFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "properties": ubx.FieldSpec(
+        wire_name="properties",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_PropertiesFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_IntegrationJiraFields = {
+    "auto_creation": ubx.FieldSpec(
+        wire_name="auto_creation",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_AutoCreationFields,
+    ),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "metadata": ubx.FieldSpec(
+        wire_name="metadata",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_MetadataFields,
+    ),
+    "sync": ubx.FieldSpec(
+        wire_name="sync",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_SyncFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_IntegrationMonitorFields = {
+    "auto_resolve_enabled": ubx.FieldSpec(wire_name="auto_resolve_enabled"),
+    "case_type_id": ubx.FieldSpec(wire_name="case_type_id"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "handle": ubx.FieldSpec(wire_name="handle"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries_TargetFields = {
+    "dynamic_team_paging": ubx.FieldSpec(wire_name="dynamic_team_paging"),
+    "team_id": ubx.FieldSpec(wire_name="team_id"),
+    "user_id": ubx.FieldSpec(wire_name="user_id"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueriesFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "query": ubx.FieldSpec(wire_name="query"),
+    "target": ubx.FieldSpec(
+        wire_name="target",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries_TargetFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_IntegrationOnCallFields = {
+    "auto_assign_on_call": ubx.FieldSpec(wire_name="auto_assign_on_call"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "escalation_queries": ubx.FieldSpec(
+        wire_name="escalation_queries",
+        kind="list",
+        fields=_Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueriesFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_Properties_PriorityFields = {
+    "impact_mapping": ubx.FieldSpec(wire_name="impact_mapping"),
+    "sync_type": ubx.FieldSpec(wire_name="sync_type"),
+    "urgency_mapping": ubx.FieldSpec(wire_name="urgency_mapping"),
+}
+
+_Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_PropertiesFields = {
+    "comments": ubx.FieldSpec(
+        wire_name="comments",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+    ),
+    "priority": ubx.FieldSpec(
+        wire_name="priority",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_Properties_PriorityFields,
+    ),
+    "status": ubx.FieldSpec(
+        wire_name="status",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfigFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "properties": ubx.FieldSpec(
+        wire_name="properties",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_PropertiesFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_IntegrationServiceNowFields = {
+    "assignment_group": ubx.FieldSpec(wire_name="assignment_group"),
+    "auto_creation": ubx.FieldSpec(
+        wire_name="auto_creation",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJira_AutoCreationFields,
+    ),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "instance_name": ubx.FieldSpec(wire_name="instance_name"),
+    "sync_config": ubx.FieldSpec(
+        wire_name="sync_config",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfigFields,
+    ),
+}
+
+_Response_Data_Attributes_Settings_NotificationFields = {
+    "destinations": ubx.FieldSpec(wire_name="destinations"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "notify_on_case_assignment": ubx.FieldSpec(wire_name="notify_on_case_assignment"),
+    "notify_on_case_closed": ubx.FieldSpec(wire_name="notify_on_case_closed"),
+    "notify_on_case_comment": ubx.FieldSpec(wire_name="notify_on_case_comment"),
+    "notify_on_case_comment_mention": ubx.FieldSpec(wire_name="notify_on_case_comment_mention"),
+    "notify_on_case_priority_change": ubx.FieldSpec(wire_name="notify_on_case_priority_change"),
+    "notify_on_case_status_change": ubx.FieldSpec(wire_name="notify_on_case_status_change"),
+    "notify_on_case_unassignment": ubx.FieldSpec(wire_name="notify_on_case_unassignment"),
+}
+
+_Response_Data_Attributes_SettingsFields = {
+    "auto_close_inactive_cases": ubx.FieldSpec(
+        wire_name="auto_close_inactive_cases",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_AutoCloseInactiveCasesFields,
+    ),
+    "auto_transition_assigned_cases": ubx.FieldSpec(
+        wire_name="auto_transition_assigned_cases",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_AutoTransitionAssignedCasesFields,
+    ),
+    "integration_incident": ubx.FieldSpec(
+        wire_name="integration_incident",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationIncidentFields,
+    ),
+    "integration_jira": ubx.FieldSpec(
+        wire_name="integration_jira",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationJiraFields,
+    ),
+    "integration_monitor": ubx.FieldSpec(
+        wire_name="integration_monitor",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationMonitorFields,
+    ),
+    "integration_on_call": ubx.FieldSpec(
+        wire_name="integration_on_call",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationOnCallFields,
+    ),
+    "integration_service_now": ubx.FieldSpec(
+        wire_name="integration_service_now",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_IntegrationServiceNowFields,
+    ),
+    "notification": ubx.FieldSpec(
+        wire_name="notification",
+        kind="object",
+        fields=_Response_Data_Attributes_Settings_NotificationFields,
+    ),
+}
+
 _Response_Data_AttributesFields = {
+    "columns_config": ubx.FieldSpec(
+        wire_name="columns_config",
+        kind="object",
+        fields=_Response_Data_Attributes_ColumnsConfigFields,
+    ),
     "enabled_custom_case_types": ubx.FieldSpec(wire_name="enabled_custom_case_types"),
     "key": ubx.FieldSpec(wire_name="key"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "restricted": ubx.FieldSpec(wire_name="restricted"),
+    "settings": ubx.FieldSpec(
+        wire_name="settings",
+        kind="object",
+        fields=_Response_Data_Attributes_SettingsFields,
+    ),
     "team_uuid": ubx.FieldSpec(wire_name="team_uuid"),
+}
+
+_Response_Data_Relationships_MemberTeam_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Response_Data_Relationships_MemberTeam_LinksFields = {
+    "related": ubx.FieldSpec(wire_name="related"),
+}
+
+_Response_Data_Relationships_MemberTeamFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="list",
+        fields=_Response_Data_Relationships_MemberTeam_DataFields,
+    ),
+    "links": ubx.FieldSpec(
+        wire_name="links",
+        kind="object",
+        fields=_Response_Data_Relationships_MemberTeam_LinksFields,
+    ),
+}
+
+_Response_Data_Relationships_MemberUserFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="list",
+        fields=_Response_Data_Relationships_MemberTeam_DataFields,
+    ),
+}
+
+_Response_Data_RelationshipsFields = {
+    "member_team": ubx.FieldSpec(
+        wire_name="member_team",
+        kind="object",
+        fields=_Response_Data_Relationships_MemberTeamFields,
+    ),
+    "member_user": ubx.FieldSpec(
+        wire_name="member_user",
+        kind="object",
+        fields=_Response_Data_Relationships_MemberUserFields,
+    ),
 }
 
 _Response_DataFields = {
@@ -36,6 +667,12 @@ _Response_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_Response_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_Response_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LabRunArtifactsResponse_Data_Attributes_Files struct {
 	FileSize any
-	IsDir any
-	Path any
+	IsDir    any
+	Path     any
 }
 
 type LabRunArtifactsResponse_Data_Attributes struct {
@@ -26,21 +26,21 @@ type LabRunArtifactsResponse_Data struct {
 }
 
 type LabRunArtifactsResponseConfig struct {
-	Path any
+	Path  any
 	RunId any
 }
 
 type LabRunArtifactsResponseAttrs struct {
 	// A run artifacts JSON:API resource object.
-	Data any
-	Path any
+	Data  any
+	Path  any
 	RunId any
 }
 
 var LabRunArtifactsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_model_lab_run_artifacts_response",
 	Fields: ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
+		"Path":  ubx.FieldSpec{WireName: "path"},
 		"RunId": ubx.FieldSpec{WireName: "run_id"},
 	},
 }

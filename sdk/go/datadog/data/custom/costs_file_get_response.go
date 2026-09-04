@@ -11,13 +11,13 @@ type CostsFileGetResponse_Data_Attributes_ChargePeriod struct {
 }
 
 type CostsFileGetResponse_Data_Attributes_Content struct {
-	BilledCost any
-	BillingCurrency any
+	BilledCost        any
+	BillingCurrency   any
 	ChargeDescription any
-	ChargePeriodEnd any
+	ChargePeriodEnd   any
 	ChargePeriodStart any
-	ProviderName any
-	Tags any
+	ProviderName      any
+	Tags              any
 }
 
 type CostsFileGetResponse_Data_Attributes_UploadedBy struct {
@@ -70,7 +70,7 @@ type CostsFileGetResponseConfig struct {
 
 type CostsFileGetResponseAttrs struct {
 	// JSON API format of for a Custom Costs file with content.
-	Data any
+	Data   any
 	FileId any
 	// Meta for the response from the Get Custom Costs endpoints.
 	Meta any

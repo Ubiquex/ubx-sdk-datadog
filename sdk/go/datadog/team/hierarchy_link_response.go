@@ -3,7 +3,37 @@ package team
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type HierarchyLinkResponse_Data_Attributes struct {
+	// Timestamp when the team hierarchy link was created
+	CreatedAt any
+	// The provisioner of the team hierarchy link
+	ProvisionedBy any
+}
+
+type HierarchyLinkResponse_Data_Relationships_ParentTeam_Data_Attributes struct {
+	// The team's avatar
+	Avatar any
+	// The team's banner
+	Banner any
+	// The team's handle
+	Handle any
+	// Whether the team is managed
+	IsManaged any
+	// Whether the team has open membership
+	IsOpenMembership any
+	// The number of links for the team
+	LinkCount any
+	// The team's name
+	Name any
+	// The team's summary
+	Summary any
+	// The number of users in the team
+	UserCount any
+}
+
 type HierarchyLinkResponse_Data_Relationships_ParentTeam_Data struct {
+	// Team hierarchy links connect different teams. This represents attributes from teams that are connected by the team hierarchy link.
+	Attributes any
 	// The team's identifier
 	Id any
 	// Team type
@@ -23,27 +53,13 @@ type HierarchyLinkResponse_Data_Relationships struct {
 }
 
 type HierarchyLinkResponse_Data struct {
+	// Team hierarchy link attributes
+	Attributes any
+	// The team hierarchy link's identifier
+	Id any
 	// The related teams that will be connected by the team hierarchy link
 	Relationships any
 	// Team hierarchy link type
-	Type any
-}
-
-type HierarchyLinkResponse_Included_Attributes struct {
-	Avatar any
-	Banner any
-	Handle any
-	IsManaged any
-	IsOpenMembership any
-	LinkCount any
-	Name any
-	Summary any
-	UserCount any
-}
-
-type HierarchyLinkResponse_Included struct {
-	Attributes any
-	Id any
 	Type any
 }
 
@@ -60,40 +76,68 @@ type HierarchyLinkResponse_Links struct {
 	Self any
 }
 
+var HierarchyLinkResponse_Data_AttributesFields = ubx.FieldMap{
+	"CreatedAt":     ubx.FieldSpec{WireName: "created_at"},
+	"ProvisionedBy": ubx.FieldSpec{WireName: "provisioned_by"},
+}
+
+var HierarchyLinkResponse_Data_Relationships_ParentTeam_Data_AttributesFields = ubx.FieldMap{
+	"Avatar":           ubx.FieldSpec{WireName: "avatar"},
+	"Banner":           ubx.FieldSpec{WireName: "banner"},
+	"Handle":           ubx.FieldSpec{WireName: "handle"},
+	"IsManaged":        ubx.FieldSpec{WireName: "is_managed"},
+	"IsOpenMembership": ubx.FieldSpec{WireName: "is_open_membership"},
+	"LinkCount":        ubx.FieldSpec{WireName: "link_count"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Summary":          ubx.FieldSpec{WireName: "summary"},
+	"UserCount":        ubx.FieldSpec{WireName: "user_count"},
+}
+
 var HierarchyLinkResponse_Data_Relationships_ParentTeam_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   HierarchyLinkResponse_Data_Relationships_ParentTeam_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var HierarchyLinkResponse_Data_Relationships_ParentTeamFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: HierarchyLinkResponse_Data_Relationships_ParentTeam_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   HierarchyLinkResponse_Data_Relationships_ParentTeam_DataFields,
+	},
+}
 
 var HierarchyLinkResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"ParentTeam": ubx.FieldSpec{
-			WireName: "parent_team",
-			Kind: "object",
-			Fields: HierarchyLinkResponse_Data_Relationships_ParentTeamFields,
-		},
-		"SubTeam": ubx.FieldSpec{
-			WireName: "sub_team",
-			Kind: "object",
-			Fields: HierarchyLinkResponse_Data_Relationships_ParentTeamFields,
-		},
-	}
+	"ParentTeam": ubx.FieldSpec{
+		WireName: "parent_team",
+		Kind:     "object",
+		Fields:   HierarchyLinkResponse_Data_Relationships_ParentTeamFields,
+	},
+	"SubTeam": ubx.FieldSpec{
+		WireName: "sub_team",
+		Kind:     "object",
+		Fields:   HierarchyLinkResponse_Data_Relationships_ParentTeamFields,
+	},
+}
 
 var HierarchyLinkResponse_DataFields = ubx.FieldMap{
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: HierarchyLinkResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   HierarchyLinkResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   HierarchyLinkResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type HierarchyLinkResponseConfig struct {
 	// Data provided when creating a team hierarchy link
@@ -118,8 +162,8 @@ var HierarchyLinkResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: HierarchyLinkResponse_DataFields,
+			Kind:     "object",
+			Fields:   HierarchyLinkResponse_DataFields,
 		},
 		"LinkId": ubx.FieldSpec{WireName: "link_id"},
 	},

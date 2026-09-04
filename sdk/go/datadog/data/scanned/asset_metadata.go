@@ -9,21 +9,21 @@ type AssetMetadata_Data_Attributes_Asset struct {
 }
 
 type AssetMetadata_Data_Attributes_LastSuccess struct {
-	Env any
-	Origin any
+	Env       any
+	Origin    any
 	Timestamp any
 }
 
 type AssetMetadata_Data_Attributes struct {
-	Asset any
+	Asset                 any
 	FirstSuccessTimestamp any
-	LastSuccess any
+	LastSuccess           any
 }
 
 type AssetMetadata_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AssetMetadata_Links struct {
@@ -62,6 +62,5 @@ type AssetMetadataAttrs struct {
 
 var AssetMetadata = ubx.DataSourceBinding{
 	WireType: "datadog_scanned_asset_metadata",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupSearchResult_Counts_Status struct {
 	Count any
-	Name any
+	Name  any
 }
 
 type GroupSearchResult_Counts struct {
@@ -16,13 +16,13 @@ type GroupSearchResult_Counts struct {
 }
 
 type GroupSearchResult_Groups struct {
-	Group any
-	GroupTags any
-	LastNodataTs any
+	Group           any
+	GroupTags       any
+	LastNodataTs    any
 	LastTriggeredTs any
-	MonitorId any
-	MonitorName any
-	Status any
+	MonitorId       any
+	MonitorName     any
+	Status          any
 }
 
 type GroupSearchResult_Metadata struct {
@@ -37,10 +37,10 @@ type GroupSearchResult_Metadata struct {
 }
 
 type GroupSearchResultConfig struct {
-	Page any
+	Page    any
 	PerPage any
-	Query any
-	Sort any
+	Query   any
+	Sort    any
 }
 
 type GroupSearchResultAttrs struct {
@@ -50,18 +50,18 @@ type GroupSearchResultAttrs struct {
 	Groups any
 	// Metadata about the response.
 	Metadata any
-	Page any
-	PerPage any
-	Query any
-	Sort any
+	Page     any
+	PerPage  any
+	Query    any
+	Sort     any
 }
 
 var GroupSearchResult = ubx.DataSourceBinding{
 	WireType: "datadog_monitor_group_search_result",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Query":   ubx.FieldSpec{WireName: "query"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

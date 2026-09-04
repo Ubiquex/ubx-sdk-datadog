@@ -4,7 +4,7 @@ package report
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScheduleResponse_Data_Attributes_TemplateVariables struct {
-	Name any
+	Name   any
 	Values any
 }
 
@@ -13,6 +13,8 @@ type ScheduleResponse_Data_Attributes struct {
 	DeliveryFormat any
 	// A description of the report, up to 4096 characters.
 	Description any
+	// The Unix timestamp, in milliseconds, of the next scheduled delivery, or `null` if none is scheduled.
+	NextRecurrence any
 	// The recipients of the report. Each entry is an email address, a Slack channel reference in the form `slack:{team_id}.{channel_id}.{channel_name}`, or a Microsoft Teams channel reference in the form `teams:{tenant_id}|{team_id}|{channel_id}`.
 	Recipients any
 	// The identifier of the dashboard or integration dashboard to render in the report.
@@ -21,6 +23,8 @@ type ScheduleResponse_Data_Attributes struct {
 	ResourceType any
 	// The recurrence rule for the schedule, expressed as an iCalendar `RRULE` string.
 	Rrule any
+	// Whether the schedule is currently delivering reports (`active`) or paused (`inactive`).
+	Status any
 	// The identifier of the dashboard tab to render, when the dashboard has tabs.
 	TabId any
 	// The dashboard template variables applied when rendering the report.
@@ -33,55 +37,105 @@ type ScheduleResponse_Data_Attributes struct {
 	Title any
 }
 
+type ScheduleResponse_Data_Relationships_Author_Data struct {
+	// The user UUID of the report schedule author.
+	Id any
+	// JSON:API resource type for the included report author.
+	Type any
+}
+
+type ScheduleResponse_Data_Relationships_Author struct {
+	// Relationship data for the author of the report schedule.
+	Data any
+}
+
+type ScheduleResponse_Data_Relationships struct {
+	// Relationship to the author of the report schedule.
+	Author any
+}
+
 type ScheduleResponse_Data struct {
 	// The configuration of the report schedule to create.
 	Attributes any
+	// The unique identifier of the report schedule.
+	Id any
+	// Relationships for the report schedule.
+	Relationships any
 	// JSON:API resource type for report schedules.
 	Type any
 }
 
 type ScheduleResponse_Included_Attributes struct {
 	Email any
-	Name any
+	Name  any
 }
 
 type ScheduleResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 var ScheduleResponse_Data_Attributes_TemplateVariablesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ScheduleResponse_Data_AttributesFields = ubx.FieldMap{
-		"DeliveryFormat": ubx.FieldSpec{WireName: "delivery_format"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Recipients": ubx.FieldSpec{WireName: "recipients"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Rrule": ubx.FieldSpec{WireName: "rrule"},
-		"TabId": ubx.FieldSpec{WireName: "tab_id"},
-		"TemplateVariables": ubx.FieldSpec{
-			WireName: "template_variables",
-			Kind: "list",
-			Fields: ScheduleResponse_Data_Attributes_TemplateVariablesFields,
-		},
-		"Timeframe": ubx.FieldSpec{WireName: "timeframe"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"DeliveryFormat": ubx.FieldSpec{WireName: "delivery_format"},
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"NextRecurrence": ubx.FieldSpec{WireName: "next_recurrence"},
+	"Recipients":     ubx.FieldSpec{WireName: "recipients"},
+	"ResourceId":     ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceType":   ubx.FieldSpec{WireName: "resource_type"},
+	"Rrule":          ubx.FieldSpec{WireName: "rrule"},
+	"Status":         ubx.FieldSpec{WireName: "status"},
+	"TabId":          ubx.FieldSpec{WireName: "tab_id"},
+	"TemplateVariables": ubx.FieldSpec{
+		WireName: "template_variables",
+		Kind:     "list",
+		Fields:   ScheduleResponse_Data_Attributes_TemplateVariablesFields,
+	},
+	"Timeframe": ubx.FieldSpec{WireName: "timeframe"},
+	"Timezone":  ubx.FieldSpec{WireName: "timezone"},
+	"Title":     ubx.FieldSpec{WireName: "title"},
+}
+
+var ScheduleResponse_Data_Relationships_Author_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var ScheduleResponse_Data_Relationships_AuthorFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   ScheduleResponse_Data_Relationships_Author_DataFields,
+	},
+}
+
+var ScheduleResponse_Data_RelationshipsFields = ubx.FieldMap{
+	"Author": ubx.FieldSpec{
+		WireName: "author",
+		Kind:     "object",
+		Fields:   ScheduleResponse_Data_Relationships_AuthorFields,
+	},
+}
 
 var ScheduleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ScheduleResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ScheduleResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   ScheduleResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ScheduleResponseConfig struct {
 	// The JSON:API data object for a report schedule creation request.
@@ -104,8 +158,8 @@ var ScheduleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ScheduleResponse_DataFields,
+			Kind:     "object",
+			Fields:   ScheduleResponse_DataFields,
 		},
 		"ScheduleUuid": ubx.FieldSpec{WireName: "schedule_uuid"},
 	},

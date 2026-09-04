@@ -39,35 +39,35 @@ type Included_Data struct {
 }
 
 type Included_Included_Attributes struct {
-	Email any
-	Name any
+	Email  any
+	Name   any
 	Status any
 }
 
 type Included_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type IncludedConfig struct {
-	Include any
+	Include    any
 	ScheduleId any
 }
 
 type IncludedAttrs struct {
 	// Data for an on-call shift.
-	Data any
+	Data    any
 	Include any
 	// The `Shift` `included`.
-	Included any
+	Included   any
 	ScheduleId any
 }
 
 var Included = ubx.DataSourceBinding{
 	WireType: "datadog_shift_included",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":    ubx.FieldSpec{WireName: "include"},
 		"ScheduleId": ubx.FieldSpec{WireName: "schedule_id"},
 	},
 }

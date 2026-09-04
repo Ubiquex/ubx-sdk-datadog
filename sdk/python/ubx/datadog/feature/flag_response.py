@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class FlagResponse_Data_Attributes_FeatureFlagEnvironments:
+    allocations: Any = None
+    default_allocation_key: Any = None
+    default_variant_id: Any = None
+    environment_id: Any = None
+    environment_name: Any = None
+    environment_queries: Any = None
+    is_production: Any = None
+    override_allocation_key: Any = None
+    override_variant_id: Any = None
+    pending_suggestion_id: Any = None
+    require_feature_flag_approval: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class FlagResponse_Data_Attributes_Variants:
     key: Any = None
     name: Any = None
@@ -14,16 +29,36 @@ class FlagResponse_Data_Attributes_Variants:
 
 @dataclasses.dataclass
 class FlagResponse_Data_Attributes:
+    # The timestamp when the feature flag was archived.
+    archived_at: Any = None
+    # The timestamp when the feature flag was created.
+    created_at: Any = None
+    # The ID of the user who created the feature flag.
+    created_by: Any = None
     # The key of the default variant.
     default_variant_key: Any = None
     # The description of the feature flag.
     description: Any = None
+    # Distribution channel for the feature flag.
+    distribution_channel: Any = None
+    # Environment-specific settings for the feature flag.
+    feature_flag_environments: Any = None
     # JSON schema for validation when value_type is JSON.
     json_schema: Any = None
     # The unique key of the feature flag.
     key: Any = None
+    # The ID of the user who last updated the feature flag.
+    last_updated_by: Any = None
     # The name of the feature flag.
     name: Any = None
+    # Indicates whether this feature flag requires approval for changes.
+    require_approval: Any = None
+    # Indicates the whether a feature flag is stale or not.
+    staleness_status: Any = None
+    # Tags associated with the feature flag.
+    tags: Any = None
+    # The timestamp when the feature flag was last updated.
+    updated_at: Any = None
     # The type of values for the feature flag variants.
     value_type: Any = None
     # The variants of the feature flag.
@@ -33,8 +68,25 @@ class FlagResponse_Data_Attributes:
 class FlagResponse_Data:
     # Attributes for creating a new feature flag.
     attributes: Any = None
+    # The unique identifier of the feature flag.
+    id: Any = None
     # The resource type.
     type: Any = None
+
+_FlagResponse_Data_Attributes_FeatureFlagEnvironmentsFields = {
+    "allocations": ubx.FieldSpec(wire_name="allocations"),
+    "default_allocation_key": ubx.FieldSpec(wire_name="default_allocation_key"),
+    "default_variant_id": ubx.FieldSpec(wire_name="default_variant_id"),
+    "environment_id": ubx.FieldSpec(wire_name="environment_id"),
+    "environment_name": ubx.FieldSpec(wire_name="environment_name"),
+    "environment_queries": ubx.FieldSpec(wire_name="environment_queries"),
+    "is_production": ubx.FieldSpec(wire_name="is_production"),
+    "override_allocation_key": ubx.FieldSpec(wire_name="override_allocation_key"),
+    "override_variant_id": ubx.FieldSpec(wire_name="override_variant_id"),
+    "pending_suggestion_id": ubx.FieldSpec(wire_name="pending_suggestion_id"),
+    "require_feature_flag_approval": ubx.FieldSpec(wire_name="require_feature_flag_approval"),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
 
 _FlagResponse_Data_Attributes_VariantsFields = {
     "key": ubx.FieldSpec(wire_name="key"),
@@ -43,11 +95,25 @@ _FlagResponse_Data_Attributes_VariantsFields = {
 }
 
 _FlagResponse_Data_AttributesFields = {
+    "archived_at": ubx.FieldSpec(wire_name="archived_at"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
     "default_variant_key": ubx.FieldSpec(wire_name="default_variant_key"),
     "description": ubx.FieldSpec(wire_name="description"),
+    "distribution_channel": ubx.FieldSpec(wire_name="distribution_channel"),
+    "feature_flag_environments": ubx.FieldSpec(
+        wire_name="feature_flag_environments",
+        kind="list",
+        fields=_FlagResponse_Data_Attributes_FeatureFlagEnvironmentsFields,
+    ),
     "json_schema": ubx.FieldSpec(wire_name="json_schema"),
     "key": ubx.FieldSpec(wire_name="key"),
+    "last_updated_by": ubx.FieldSpec(wire_name="last_updated_by"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "require_approval": ubx.FieldSpec(wire_name="require_approval"),
+    "staleness_status": ubx.FieldSpec(wire_name="staleness_status"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
     "value_type": ubx.FieldSpec(wire_name="value_type"),
     "variants": ubx.FieldSpec(
         wire_name="variants",
@@ -62,6 +128,7 @@ _FlagResponse_DataFields = {
         kind="object",
         fields=_FlagResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

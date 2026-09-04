@@ -4,32 +4,32 @@ package rule
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BasedViewResponse_Data_Attributes_Rules_ComplianceFrameworks struct {
-	Control any
-	Framework any
-	IsDefault any
-	Message any
+	Control     any
+	Framework   any
+	IsDefault   any
+	Message     any
 	Requirement any
-	Version any
+	Version     any
 }
 
 type BasedViewResponse_Data_Attributes_Rules_Stats struct {
-	Fail any
+	Fail  any
 	Muted any
-	Pass any
+	Pass  any
 }
 
 type BasedViewResponse_Data_Attributes_Rules struct {
 	ComplianceFrameworks any
-	Enabled any
-	Id any
-	Name any
-	ResourceAttributes any
-	ResourceCategory any
-	ResourceType any
-	Stats any
-	Status any
-	Tags any
-	Type any
+	Enabled              any
+	Id                   any
+	Name                 any
+	ResourceAttributes   any
+	ResourceCategory     any
+	ResourceType         any
+	Stats                any
+	Status               any
+	Tags                 any
+	Type                 any
 }
 
 type BasedViewResponse_Data_Attributes struct {
@@ -49,36 +49,36 @@ type BasedViewResponse_Data struct {
 }
 
 type BasedViewResponseConfig struct {
-	Framework any
-	IncludeRulesWithoutFindings any
-	IsCustom any
-	Query any
+	Framework                            any
+	IncludeRulesWithoutFindings          any
+	IsCustom                             any
+	Query                                any
 	QueryFindingsWithoutFrameworkVersion any
-	To any
-	Version any
+	To                                   any
+	Version                              any
 }
 
 type BasedViewResponseAttrs struct {
 	// Data envelope for the rule-based view response.
-	Data any
-	Framework any
-	IncludeRulesWithoutFindings any
-	IsCustom any
-	Query any
+	Data                                 any
+	Framework                            any
+	IncludeRulesWithoutFindings          any
+	IsCustom                             any
+	Query                                any
 	QueryFindingsWithoutFrameworkVersion any
-	To any
-	Version any
+	To                                   any
+	Version                              any
 }
 
 var BasedViewResponse = ubx.DataSourceBinding{
 	WireType: "datadog_rule_based_view_response",
 	Fields: ubx.FieldMap{
-		"Framework": ubx.FieldSpec{WireName: "framework"},
-		"IncludeRulesWithoutFindings": ubx.FieldSpec{WireName: "include_rules_without_findings"},
-		"IsCustom": ubx.FieldSpec{WireName: "is_custom"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"Framework":                            ubx.FieldSpec{WireName: "framework"},
+		"IncludeRulesWithoutFindings":          ubx.FieldSpec{WireName: "include_rules_without_findings"},
+		"IsCustom":                             ubx.FieldSpec{WireName: "is_custom"},
+		"Query":                                ubx.FieldSpec{WireName: "query"},
 		"QueryFindingsWithoutFrameworkVersion": ubx.FieldSpec{WireName: "query_findings_without_framework_version"},
-		"To": ubx.FieldSpec{WireName: "to"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"To":                                   ubx.FieldSpec{WireName: "to"},
+		"Version":                              ubx.FieldSpec{WireName: "version"},
 	},
 }

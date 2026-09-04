@@ -4,6 +4,8 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ResourceResponse_Data_Attributes {
   /** Enable the `custom.consumer_lag_offset` metric, which contains extra metric tags. */
   enableCustomMetrics?: boolean | Computed<boolean>;
+  /** The ID associated with the Confluent resource. */
+  id?: string | Computed<string>;
   /** The resource type of the Resource. Can be `kafka`, `connector`, `ksql`, or `schema_registry`. */
   resourceType: string | Computed<string>;
   /** A list of strings representing tags. Can be a single key, or key-value pairs separated by a colon. */
@@ -21,6 +23,7 @@ export interface ResourceResponse_Data {
 
 const ResourceResponse_Data_AttributesFields: FieldMap = {
   enableCustomMetrics: "enable_custom_metrics",
+  id: "id",
   resourceType: "resource_type",
   tags: "tags",
 };

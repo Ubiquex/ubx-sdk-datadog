@@ -13,6 +13,5 @@ type PipelinesOrderAttrs struct {
 
 var PipelinesOrder = ubx.DataSourceBinding{
 	WireType: "datadog_logs_pipelines_order",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,23 +4,23 @@ package teams
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes struct {
-	Avatar any
-	Banner any
-	CreatedAt any
-	Description any
-	Handle any
-	HiddenModules any
-	IsManaged any
-	LinkCount any
-	ModifiedAt any
-	Name any
-	Summary any
-	UserCount any
+	Avatar         any
+	Banner         any
+	CreatedAt      any
+	Description    any
+	Handle         any
+	HiddenModules  any
+	IsManaged      any
+	LinkCount      any
+	ModifiedAt     any
+	Name           any
+	Summary        any
+	UserCount      any
 	VisibleModules any
 }
 
 type Response_Data_Relationships_TeamLinks_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -29,42 +29,42 @@ type Response_Data_Relationships_TeamLinks_Links struct {
 }
 
 type Response_Data_Relationships_TeamLinks struct {
-	Data any
+	Data  any
 	Links any
 }
 
 type Response_Data_Relationships_UserTeamPermissions struct {
-	Data any
+	Data  any
 	Links any
 }
 
 type Response_Data_Relationships struct {
-	TeamLinks any
+	TeamLinks           any
 	UserTeamPermissions any
 }
 
 type Response_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type Response_Included_Relationships_Org struct {
@@ -76,17 +76,17 @@ type Response_Included_Relationships_OtherOrgs struct {
 }
 
 type Response_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Links struct {
@@ -134,7 +134,7 @@ type ResponseConfig struct {
 
 type ResponseAttrs struct {
 	// Teams response data
-	Data any
+	Data    any
 	Include any
 	// Resources related to the team
 	Included any
@@ -150,6 +150,6 @@ var Response = ubx.DataSourceBinding{
 	WireType: "datadog_teams_response",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

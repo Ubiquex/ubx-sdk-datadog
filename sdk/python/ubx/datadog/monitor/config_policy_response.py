@@ -23,6 +23,8 @@ class ConfigPolicyResponse_Data_Attributes:
 class ConfigPolicyResponse_Data:
     # Policy and policy type for a monitor configuration policy.
     attributes: Any = None
+    # ID of this monitor configuration policy.
+    id: Any = None
     # Monitor configuration policy resource type.
     type: Any = None
 
@@ -47,6 +49,7 @@ _ConfigPolicyResponse_DataFields = {
         kind="object",
         fields=_ConfigPolicyResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

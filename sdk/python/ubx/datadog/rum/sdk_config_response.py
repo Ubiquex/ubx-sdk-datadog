@@ -38,6 +38,8 @@ class SdkConfigResponse_Data_Attributes_Rum:
     allowed_tracing_urls: Any = None
     # A list of origin patterns allowed for cross-origin session tracking.
     allowed_tracking_origins: Any = None
+    # The ID of the RUM application this configuration belongs to.
+    application_id: Any = None
     # A list of dynamic option key-value pairs.
     context: Any = None
     # The default privacy masking level applied to all RUM data.
@@ -67,11 +69,20 @@ class SdkConfigResponse_Data_Attributes:
     rum: Any = None
 
 @dataclasses.dataclass
+class SdkConfigResponse_Data_Meta:
+    # The timestamp of the last update to this configuration.
+    updated_at: Any = None
+    # The handle of the user who last updated this configuration.
+    updated_by: Any = None
+
+@dataclasses.dataclass
 class SdkConfigResponse_Data:
     # Attributes of the RUM SDK configuration to update.
     attributes: Any = None
     # The ID of the RUM SDK configuration to update.
     id: Any = None
+    # Metadata associated with a RUM SDK configuration.
+    meta: Any = None
     # The type of the resource. The value should always be `rum_sdk_config`.
     type: Any = None
 
@@ -124,6 +135,7 @@ _SdkConfigResponse_Data_Attributes_RumFields = {
         kind="list",
         fields=_SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_MatchFields,
     ),
+    "application_id": ubx.FieldSpec(wire_name="application_id"),
     "context": ubx.FieldSpec(
         wire_name="context",
         kind="list",
@@ -157,6 +169,11 @@ _SdkConfigResponse_Data_AttributesFields = {
     ),
 }
 
+_SdkConfigResponse_Data_MetaFields = {
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updated_by": ubx.FieldSpec(wire_name="updated_by"),
+}
+
 _SdkConfigResponse_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
@@ -164,6 +181,11 @@ _SdkConfigResponse_DataFields = {
         fields=_SdkConfigResponse_Data_AttributesFields,
     ),
     "id": ubx.FieldSpec(wire_name="id"),
+    "meta": ubx.FieldSpec(
+        wire_name="meta",
+        kind="object",
+        fields=_SdkConfigResponse_Data_MetaFields,
+    ),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

@@ -8,8 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MonitoringTerraformExportResponse_Data_Attributes:
+    # The Terraform configuration for the resource.
+    output: Any = None
+    # The ID of the exported resource.
+    resource_id: Any = None
     # The resource attributes as a JSON object, matching the structure returned by the corresponding Datadog API (for example, the attributes of a suppression rule).
     resource_json: Any = None
+    # The Terraform resource type name.
+    type_name: Any = None
 
 @dataclasses.dataclass
 class MonitoringTerraformExportResponse_Data:
@@ -21,7 +27,10 @@ class MonitoringTerraformExportResponse_Data:
     type: Any = None
 
 _MonitoringTerraformExportResponse_Data_AttributesFields = {
+    "output": ubx.FieldSpec(wire_name="output"),
+    "resource_id": ubx.FieldSpec(wire_name="resource_id"),
     "resource_json": ubx.FieldSpec(wire_name="resource_json"),
+    "type_name": ubx.FieldSpec(wire_name="type_name"),
 }
 
 _MonitoringTerraformExportResponse_DataFields = {

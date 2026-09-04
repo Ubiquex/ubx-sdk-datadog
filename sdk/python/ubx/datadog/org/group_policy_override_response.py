@@ -8,6 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupPolicyOverrideResponse_Data_Attributes:
+    # The override content as key-value pairs.
+    content: Any = None
+    # Timestamp when the override was created.
+    created_at: Any = None
+    # Timestamp when the override was last modified.
+    modified_at: Any = None
     # The site of the organization.
     org_site: Any = None
     # The UUID of the organization to grant the override.
@@ -36,12 +42,17 @@ class GroupPolicyOverrideResponse_Data_Relationships:
 class GroupPolicyOverrideResponse_Data:
     # Attributes for creating a policy override.
     attributes: Any = None
+    # The ID of the policy override.
+    id: Any = None
     # Relationships for creating a policy override.
     relationships: Any = None
     # Org group policy overrides resource type.
     type: Any = None
 
 _GroupPolicyOverrideResponse_Data_AttributesFields = {
+    "content": ubx.FieldSpec(wire_name="content"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "org_site": ubx.FieldSpec(wire_name="org_site"),
     "org_uuid": ubx.FieldSpec(wire_name="org_uuid"),
 }
@@ -78,6 +89,7 @@ _GroupPolicyOverrideResponse_DataFields = {
         kind="object",
         fields=_GroupPolicyOverrideResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

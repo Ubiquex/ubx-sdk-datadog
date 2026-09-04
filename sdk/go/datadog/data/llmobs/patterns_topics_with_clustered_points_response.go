@@ -21,28 +21,28 @@ type PatternsTopicsWithClusteredPointsResponse_Data_Attributes_ConfigSnapshot st
 }
 
 type PatternsTopicsWithClusteredPointsResponse_Data_Attributes_Topics_ClusterPoints struct {
-	Duration any
+	Duration           any
 	EstimatedTotalCost any
-	Evaluation any
-	InputTokens any
-	OutputTokens any
-	SpanId any
-	Status any
-	TotalTokens any
+	Evaluation         any
+	InputTokens        any
+	OutputTokens       any
+	SpanId             any
+	Status             any
+	TotalTokens        any
 }
 
 type PatternsTopicsWithClusteredPointsResponse_Data_Attributes_Topics struct {
-	ClusterPoints any
-	CreatedAt any
-	Description any
-	FirstSeenAt any
+	ClusterPoints  any
+	CreatedAt      any
+	Description    any
+	FirstSeenAt    any
 	HierarchyLevel any
-	Id any
-	IsValidated any
-	Name any
-	ParentTopicId any
-	PointCount any
-	RunId any
+	Id             any
+	IsValidated    any
+	Name           any
+	ParentTopicId  any
+	PointCount     any
+	RunId          any
 }
 
 type PatternsTopicsWithClusteredPointsResponse_Data_Attributes struct {
@@ -72,24 +72,24 @@ type PatternsTopicsWithClusteredPointsResponse_Data struct {
 }
 
 type PatternsTopicsWithClusteredPointsResponseConfig struct {
-	ConfigId any
+	ConfigId       any
 	IncludeMetrics any
-	RunId any
+	RunId          any
 }
 
 type PatternsTopicsWithClusteredPointsResponseAttrs struct {
 	ConfigId any
 	// Data object of an Agent Observability patterns topics-with-clustered-points response.
-	Data any
+	Data           any
 	IncludeMetrics any
-	RunId any
+	RunId          any
 }
 
 var PatternsTopicsWithClusteredPointsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_patterns_topics_with_clustered_points_response",
 	Fields: ubx.FieldMap{
-		"ConfigId": ubx.FieldSpec{WireName: "config_id"},
+		"ConfigId":       ubx.FieldSpec{WireName: "config_id"},
 		"IncludeMetrics": ubx.FieldSpec{WireName: "include_metrics"},
-		"RunId": ubx.FieldSpec{WireName: "run_id"},
+		"RunId":          ubx.FieldSpec{WireName: "run_id"},
 	},
 }

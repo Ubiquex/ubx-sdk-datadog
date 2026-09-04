@@ -7,9 +7,20 @@ export interface CloudIntegrationAccountResponse_Data_Attributes_Authentication 
   username?: string | Computed<string>;
 }
 
+export interface CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_Status {
+  /** Collection health of a single dataflow. */
+  health?: string | Computed<string>;
+  /** Human-readable detail, populated when the dataflow is not healthy. */
+  message?: string | Computed<string>;
+  /** Time the status was last computed. */
+  updatedAt?: string | Computed<string>;
+}
+
 export interface CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats {
   /** Whether the Elastic Cloud dataflow is enabled. */
   enabled?: boolean | Computed<boolean>;
+  /** Read-only collection status of a dataflow. */
+  status?: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_Status | Computed<CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_Status>;
 }
 
 export interface CloudIntegrationAccountResponse_Data_Attributes_Dataflows {
@@ -17,6 +28,8 @@ export interface CloudIntegrationAccountResponse_Data_Attributes_Dataflows {
   elasticCloudDetailedIndexStats?: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats | Computed<CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats>;
   /** The Elastic Cloud index stats dataflow. */
   elasticCloudIndexStats?: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats | Computed<CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats>;
+  /** The Elastic Cloud metrics dataflow. */
+  elasticCloudMetrics?: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats | Computed<CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats>;
   /** The Elastic Cloud pending task stats dataflow. */
   elasticCloudPendingTaskStats?: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats | Computed<CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats>;
   /** The Elastic Cloud primary shard graceful timeout dataflow. */
@@ -50,6 +63,8 @@ export interface CloudIntegrationAccountResponse_Data_Attributes {
 export interface CloudIntegrationAccountResponse_Data {
   /** Writable attributes used to create an Elastic Cloud integration account. */
   attributes: CloudIntegrationAccountResponse_Data_Attributes | Computed<CloudIntegrationAccountResponse_Data_Attributes>;
+  /** Server-generated unique identifier of the Elastic Cloud integration account. */
+  id?: string | Computed<string>;
   /** The type of the integration account resource. Always `integration-account`. */
   type: string | Computed<string>;
 }
@@ -60,8 +75,19 @@ const CloudIntegrationAccountResponse_Data_Attributes_AuthenticationFields: Fiel
   username: "username",
 };
 
+const CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_StatusFields: FieldMap = {
+  health: "health",
+  message: "message",
+  updatedAt: "updated_at",
+};
+
 const CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields: FieldMap = {
   enabled: "enabled",
+  status: {
+    wireName: "status",
+    kind: "object",
+    fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_StatusFields,
+  },
 };
 
 const CloudIntegrationAccountResponse_Data_Attributes_DataflowsFields: FieldMap = {
@@ -72,6 +98,11 @@ const CloudIntegrationAccountResponse_Data_Attributes_DataflowsFields: FieldMap 
   },
   elasticCloudIndexStats: {
     wireName: "elastic_cloud_index_stats",
+    kind: "object",
+    fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+  },
+  elasticCloudMetrics: {
+    wireName: "elastic_cloud_metrics",
     kind: "object",
     fields: CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
   },
@@ -132,6 +163,7 @@ const CloudIntegrationAccountResponse_DataFields: FieldMap = {
     kind: "object",
     fields: CloudIntegrationAccountResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

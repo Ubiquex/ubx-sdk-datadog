@@ -8,6 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ViewResponse_Data_Attributes:
+    # Timestamp when the view was created.
+    created_at: Any = None
+    # Timestamp when the view was last modified.
+    modified_at: Any = None
     # The name of the view.
     name: Any = None
     # The identifier of a notification rule linked to this view. When set, users subscribed to the view receive alerts for matching cases.
@@ -18,17 +22,75 @@ class ViewResponse_Data_Attributes:
     query: Any = None
 
 @dataclasses.dataclass
+class ViewResponse_Data_Relationships_CreatedBy_Data:
+    # A unique identifier that represents the user.
+    id: Any = None
+    # User resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class ViewResponse_Data_Relationships_CreatedBy:
+    # Relationship to user object.
+    data: Any = None
+
+@dataclasses.dataclass
+class ViewResponse_Data_Relationships:
+    # Relationship to user.
+    created_by: Any = None
+    # Relationship to user.
+    modified_by: Any = None
+    # Relationship to project.
+    project: Any = None
+
+@dataclasses.dataclass
 class ViewResponse_Data:
     # Attributes required to create a case view.
     attributes: Any = None
+    # The view's identifier.
+    id: Any = None
+    # Related resources for the case view, including the creator, last modifier, and associated project.
+    relationships: Any = None
     # JSON:API resource type for case views.
     type: Any = None
 
 _ViewResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
     "np_rule_id": ubx.FieldSpec(wire_name="np_rule_id"),
     "project_id": ubx.FieldSpec(wire_name="project_id"),
     "query": ubx.FieldSpec(wire_name="query"),
+}
+
+_ViewResponse_Data_Relationships_CreatedBy_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_ViewResponse_Data_Relationships_CreatedByFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_ViewResponse_Data_Relationships_CreatedBy_DataFields,
+    ),
+}
+
+_ViewResponse_Data_RelationshipsFields = {
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_ViewResponse_Data_Relationships_CreatedByFields,
+    ),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_ViewResponse_Data_Relationships_CreatedByFields,
+    ),
+    "project": ubx.FieldSpec(
+        wire_name="project",
+        kind="object",
+        fields=_ViewResponse_Data_Relationships_CreatedByFields,
+    ),
 }
 
 _ViewResponse_DataFields = {
@@ -36,6 +98,12 @@ _ViewResponse_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_ViewResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_ViewResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

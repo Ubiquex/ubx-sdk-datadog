@@ -4,17 +4,25 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface IntegrationConfigResponse_Data_Attributes {
   /** Integration-specific configuration payload. The shape of this object depends on the integration identified by the path parameter. For `github`, the object must contain an `enabled_repos` array. For `jira`, it must contain an `enabled_projects` array. For `pagerduty`, it must contain an `accounts` array. */
   config: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** The identifier of the integration this configuration applies to (for example, `github`, `jira`, or `pagerduty`). */
+  integrationId?: string | Computed<string>;
+  /** The Datadog organization identifier that owns this configuration. */
+  orgId?: number | Computed<number>;
 }
 
 export interface IntegrationConfigResponse_Data {
   /** Attributes used to create or update an entity integration configuration. */
   attributes: IntegrationConfigResponse_Data_Attributes | Computed<IntegrationConfigResponse_Data_Attributes>;
+  /** Unique identifier of the entity integration configuration. */
+  id?: string | Computed<string>;
   /** JSON:API resource type for the entity integration configuration create or update request. Always `entity_integration_config_requests`. */
   type: string | Computed<string>;
 }
 
 const IntegrationConfigResponse_Data_AttributesFields: FieldMap = {
   config: "config",
+  integrationId: "integration_id",
+  orgId: "org_id",
 };
 
 const IntegrationConfigResponse_DataFields: FieldMap = {
@@ -23,6 +31,7 @@ const IntegrationConfigResponse_DataFields: FieldMap = {
     kind: "object",
     fields: IntegrationConfigResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

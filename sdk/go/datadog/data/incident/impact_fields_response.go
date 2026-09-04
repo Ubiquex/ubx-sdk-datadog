@@ -6,19 +6,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ImpactFieldsResponse_Data_Attributes_FieldChoices struct {
 	Description any
 	DisplayName any
-	Value any
+	Value       any
 }
 
 type ImpactFieldsResponse_Data_Attributes struct {
-	DisplayName any
+	DisplayName  any
 	FieldChoices any
-	FieldType any
-	Name any
-	TagKey any
+	FieldType    any
+	Name         any
+	TagKey       any
 }
 
 type ImpactFieldsResponse_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -27,30 +27,30 @@ type ImpactFieldsResponse_Data_Relationships_CreatedByUser struct {
 }
 
 type ImpactFieldsResponse_Data_Relationships struct {
-	CreatedByUser any
-	IncidentType any
+	CreatedByUser      any
+	IncidentType       any
 	LastModifiedByUser any
 }
 
 type ImpactFieldsResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ImpactFieldsResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type ImpactFieldsResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ImpactFieldsResponseConfig struct {
@@ -65,6 +65,5 @@ type ImpactFieldsResponseAttrs struct {
 
 var ImpactFieldsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_incident_impact_fields_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

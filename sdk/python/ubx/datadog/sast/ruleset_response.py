@@ -7,13 +7,65 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RulesetResponse_Data_Attributes_Rules_Arguments:
+    description: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class RulesetResponse_Data_Attributes_Rules_Data:
+    id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class RulesetResponse_Data_Attributes_Rules_Tests:
+    annotation_count: Any = None
+    code: Any = None
+    filename: Any = None
+
+@dataclasses.dataclass
+class RulesetResponse_Data_Attributes_Rules:
+    arguments: Any = None
+    category: Any = None
+    checksum: Any = None
+    code: Any = None
+    created_at: Any = None
+    created_by: Any = None
+    cve: Any = None
+    cwe: Any = None
+    data: Any = None
+    description: Any = None
+    documentation_url: Any = None
+    entity_checked: Any = None
+    is_published: Any = None
+    is_testing: Any = None
+    language: Any = None
+    last_updated_at: Any = None
+    last_updated_by: Any = None
+    name: Any = None
+    regex: Any = None
+    severity: Any = None
+    short_description: Any = None
+    should_use_ai_fix: Any = None
+    tests: Any = None
+    tree_sitter_query: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class RulesetResponse_Data_Attributes:
+    # A detailed description of the ruleset's purpose and the types of issues it targets.
+    description: Any = None
     # When true, rules that are available in testing mode are included in the response.
     include_testing_rules: Any = None
     # When true, test cases associated with each rule are included in the response.
     include_tests: Any = None
+    # The unique name of the ruleset.
+    name: Any = None
+    # The list of static analysis rules included in this ruleset.
+    rules: Any = None
     # The list of ruleset names to retrieve.
     rulesets: Any = None
+    # A brief summary of the ruleset, suitable for display in listings.
+    short_description: Any = None
 
 @dataclasses.dataclass
 class RulesetResponse_Data:
@@ -24,10 +76,74 @@ class RulesetResponse_Data:
     # Get multiple rulesets request resource type.
     type: Any = None
 
+_RulesetResponse_Data_Attributes_Rules_ArgumentsFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
+_RulesetResponse_Data_Attributes_Rules_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_RulesetResponse_Data_Attributes_Rules_TestsFields = {
+    "annotation_count": ubx.FieldSpec(wire_name="annotation_count"),
+    "code": ubx.FieldSpec(wire_name="code"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
+}
+
+_RulesetResponse_Data_Attributes_RulesFields = {
+    "arguments": ubx.FieldSpec(
+        wire_name="arguments",
+        kind="list",
+        fields=_RulesetResponse_Data_Attributes_Rules_ArgumentsFields,
+    ),
+    "category": ubx.FieldSpec(wire_name="category"),
+    "checksum": ubx.FieldSpec(wire_name="checksum"),
+    "code": ubx.FieldSpec(wire_name="code"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "cve": ubx.FieldSpec(wire_name="cve"),
+    "cwe": ubx.FieldSpec(wire_name="cwe"),
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_RulesetResponse_Data_Attributes_Rules_DataFields,
+    ),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "documentation_url": ubx.FieldSpec(wire_name="documentation_url"),
+    "entity_checked": ubx.FieldSpec(wire_name="entity_checked"),
+    "is_published": ubx.FieldSpec(wire_name="is_published"),
+    "is_testing": ubx.FieldSpec(wire_name="is_testing"),
+    "language": ubx.FieldSpec(wire_name="language"),
+    "last_updated_at": ubx.FieldSpec(wire_name="last_updated_at"),
+    "last_updated_by": ubx.FieldSpec(wire_name="last_updated_by"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "regex": ubx.FieldSpec(wire_name="regex"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "short_description": ubx.FieldSpec(wire_name="short_description"),
+    "should_use_ai_fix": ubx.FieldSpec(wire_name="should_use_ai_fix"),
+    "tests": ubx.FieldSpec(
+        wire_name="tests",
+        kind="list",
+        fields=_RulesetResponse_Data_Attributes_Rules_TestsFields,
+    ),
+    "tree_sitter_query": ubx.FieldSpec(wire_name="tree_sitter_query"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
 _RulesetResponse_Data_AttributesFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
     "include_testing_rules": ubx.FieldSpec(wire_name="include_testing_rules"),
     "include_tests": ubx.FieldSpec(wire_name="include_tests"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "rules": ubx.FieldSpec(
+        wire_name="rules",
+        kind="list",
+        fields=_RulesetResponse_Data_Attributes_RulesFields,
+    ),
     "rulesets": ubx.FieldSpec(wire_name="rulesets"),
+    "short_description": ubx.FieldSpec(wire_name="short_description"),
 }
 
 _RulesetResponse_DataFields = {

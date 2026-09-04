@@ -29,14 +29,26 @@ class Page_Data_Attributes:
     company_logo: Any = None
     # The components displayed on the status page.
     components: Any = None
+    # Timestamp of when the status page was created.
+    created_at: Any = None
+    # If configured, the url that the status page is accessible at.
+    custom_domain: Any = None
+    # Whether the custom domain is configured.
+    custom_domain_enabled: Any = None
     # The subdomain of the status page's url taking the form `https://{domain_prefix}.statuspage.datadoghq.com`. Globally unique across Datadog Status Pages.
     domain_prefix: Any = None
     # Base64-encoded image data included in email notifications sent to status page subscribers.
     email_header_image: Any = None
+    # Whether the status page is enabled.
+    enabled: Any = None
     # Base64-encoded image data displayed in the browser tab.
     favicon: Any = None
+    # Timestamp of when the status page was last modified.
+    modified_at: Any = None
     # The name of the status page.
     name: Any = None
+    # The url that the status page is accessible at.
+    page_url: Any = None
     # The Slack app icon URL for the status page.
     slack_app_icon: Any = None
     # Whether Slack subscriptions are enabled for the status page.
@@ -49,9 +61,32 @@ class Page_Data_Attributes:
     visualization_type: Any = None
 
 @dataclasses.dataclass
+class Page_Data_Relationships_CreatedByUser_Data:
+    # The ID of the Datadog user who created the status page.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class Page_Data_Relationships_CreatedByUser:
+    # The data object identifying the Datadog user who created the status page.
+    data: Any = None
+
+@dataclasses.dataclass
+class Page_Data_Relationships:
+    # The Datadog user who created the status page.
+    created_by_user: Any = None
+    # The Datadog user who last modified the status page.
+    last_modified_by_user: Any = None
+
+@dataclasses.dataclass
 class Page_Data:
     # The supported attributes for creating a status page.
     attributes: Any = None
+    # The ID of the status page.
+    id: Any = None
+    # The relationships of a status page.
+    relationships: Any = None
     # Status pages resource type.
     type: Any = None
 
@@ -97,10 +132,16 @@ _Page_Data_AttributesFields = {
         kind="list",
         fields=_Page_Data_Attributes_ComponentsFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "custom_domain": ubx.FieldSpec(wire_name="custom_domain"),
+    "custom_domain_enabled": ubx.FieldSpec(wire_name="custom_domain_enabled"),
     "domain_prefix": ubx.FieldSpec(wire_name="domain_prefix"),
     "email_header_image": ubx.FieldSpec(wire_name="email_header_image"),
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
     "favicon": ubx.FieldSpec(wire_name="favicon"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "page_url": ubx.FieldSpec(wire_name="page_url"),
     "slack_app_icon": ubx.FieldSpec(wire_name="slack_app_icon"),
     "slack_subscriptions_enabled": ubx.FieldSpec(wire_name="slack_subscriptions_enabled"),
     "subscriptions_enabled": ubx.FieldSpec(wire_name="subscriptions_enabled"),
@@ -108,11 +149,43 @@ _Page_Data_AttributesFields = {
     "visualization_type": ubx.FieldSpec(wire_name="visualization_type"),
 }
 
+_Page_Data_Relationships_CreatedByUser_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Page_Data_Relationships_CreatedByUserFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_Page_Data_Relationships_CreatedByUser_DataFields,
+    ),
+}
+
+_Page_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_Page_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_Page_Data_Relationships_CreatedByUserFields,
+    ),
+}
+
 _Page_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
         kind="object",
         fields=_Page_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_Page_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

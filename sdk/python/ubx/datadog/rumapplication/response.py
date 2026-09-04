@@ -7,28 +7,102 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Response_Data_Attributes_ProductScales_ProductAnalyticsRetentionScale:
+    # Timestamp in milliseconds when this scale was last modified.
+    last_modified_at: Any = None
+    # Controls the retention policy for Product Analytics data derived from RUM events.
+    state: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_ProductScales:
+    # Product Analytics retention scale configuration.
+    product_analytics_retention_scale: Any = None
+    # RUM event processing scale configuration.
+    rum_event_processing_scale: Any = None
+
+@dataclasses.dataclass
 class Response_Data_Attributes:
+    # ID of the API key associated with the application.
+    api_key_id: Any = None
+    # ID of the RUM application.
+    application_id: Any = None
+    # Client token of the RUM application.
+    client_token: Any = None
+    # Timestamp in ms of the creation date.
+    created_at: Any = None
+    # Handle of the creator user.
+    created_by_handle: Any = None
+    # Hash of the RUM application. Optional.
+    hash: Any = None
+    # Indicates if the RUM application is active.
+    is_active: Any = None
     # Name of the RUM application.
     name: Any = None
+    # Org ID of the RUM application.
+    org_id: Any = None
     # Controls the retention policy for Product Analytics data derived from RUM events.
     product_analytics_retention_state: Any = None
+    # Product Scales configuration for the RUM application.
+    product_scales: Any = None
+    # ID of the RUM SDK remote configuration for the application, if one exists.
+    remote_config_id: Any = None
     # Configures which RUM events are processed and stored for the application.
     rum_event_processing_state: Any = None
     # Type of the RUM application. Supported values are `browser`, `ios`, `android`, `react-native`, `flutter`, `roku`, `electron`, `unity`, `kotlin-multiplatform`.
     type: Any = None
+    # Timestamp in ms of the last update date.
+    updated_at: Any = None
+    # Handle of the updater user.
+    updated_by_handle: Any = None
 
 @dataclasses.dataclass
 class Response_Data:
     # RUM application creation attributes.
     attributes: Any = None
+    # RUM application ID.
+    id: Any = None
     # RUM application creation type.
     type: Any = None
 
+_Response_Data_Attributes_ProductScales_ProductAnalyticsRetentionScaleFields = {
+    "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
+    "state": ubx.FieldSpec(wire_name="state"),
+}
+
+_Response_Data_Attributes_ProductScalesFields = {
+    "product_analytics_retention_scale": ubx.FieldSpec(
+        wire_name="product_analytics_retention_scale",
+        kind="object",
+        fields=_Response_Data_Attributes_ProductScales_ProductAnalyticsRetentionScaleFields,
+    ),
+    "rum_event_processing_scale": ubx.FieldSpec(
+        wire_name="rum_event_processing_scale",
+        kind="object",
+        fields=_Response_Data_Attributes_ProductScales_ProductAnalyticsRetentionScaleFields,
+    ),
+}
+
 _Response_Data_AttributesFields = {
+    "api_key_id": ubx.FieldSpec(wire_name="api_key_id"),
+    "application_id": ubx.FieldSpec(wire_name="application_id"),
+    "client_token": ubx.FieldSpec(wire_name="client_token"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by_handle": ubx.FieldSpec(wire_name="created_by_handle"),
+    "hash": ubx.FieldSpec(wire_name="hash"),
+    "is_active": ubx.FieldSpec(wire_name="is_active"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "org_id": ubx.FieldSpec(wire_name="org_id"),
     "product_analytics_retention_state": ubx.FieldSpec(wire_name="product_analytics_retention_state"),
+    "product_scales": ubx.FieldSpec(
+        wire_name="product_scales",
+        kind="object",
+        fields=_Response_Data_Attributes_ProductScalesFields,
+    ),
+    "remote_config_id": ubx.FieldSpec(wire_name="remote_config_id"),
     "rum_event_processing_state": ubx.FieldSpec(wire_name="rum_event_processing_state"),
     "type": ubx.FieldSpec(wire_name="type"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updated_by_handle": ubx.FieldSpec(wire_name="updated_by_handle"),
 }
 
 _Response_DataFields = {
@@ -37,6 +111,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

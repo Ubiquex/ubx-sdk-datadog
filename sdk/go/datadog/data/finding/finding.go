@@ -4,39 +4,39 @@ package finding
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Finding_Data_Attributes_Mute struct {
-	Description any
+	Description    any
 	ExpirationDate any
-	Muted any
-	Reason any
-	StartDate any
-	Uuid any
+	Muted          any
+	Reason         any
+	StartDate      any
+	Uuid           any
 }
 
 type Finding_Data_Attributes_Rule struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type Finding_Data_Attributes struct {
-	DatadogLink any
-	Description any
-	Evaluation any
-	EvaluationChangedAt any
-	ExternalId any
-	Mute any
-	Resource any
+	DatadogLink           any
+	Description           any
+	Evaluation            any
+	EvaluationChangedAt   any
+	ExternalId            any
+	Mute                  any
+	Resource              any
 	ResourceDiscoveryDate any
-	ResourceType any
-	Rule any
-	Status any
-	Tags any
-	VulnerabilityType any
+	ResourceType          any
+	Rule                  any
+	Status                any
+	Tags                  any
+	VulnerabilityType     any
 }
 
 type Finding_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Finding_Meta_Page struct {
@@ -54,23 +54,23 @@ type Finding_Meta struct {
 }
 
 type FindingConfig struct {
-	DetailedFindings any
+	DetailedFindings  any
 	SnapshotTimestamp any
 }
 
 type FindingAttrs struct {
 	// Array of findings.
-	Data any
+	Data             any
 	DetailedFindings any
 	// Metadata for pagination.
-	Meta any
+	Meta              any
 	SnapshotTimestamp any
 }
 
 var Finding = ubx.DataSourceBinding{
 	WireType: "datadog_finding",
 	Fields: ubx.FieldMap{
-		"DetailedFindings": ubx.FieldSpec{WireName: "detailed_findings"},
+		"DetailedFindings":  ubx.FieldSpec{WireName: "detailed_findings"},
 		"SnapshotTimestamp": ubx.FieldSpec{WireName: "snapshot_timestamp"},
 	},
 }

@@ -6,32 +6,42 @@ export interface NotificationTemplate_Data_Attributes {
   category: string | Computed<string>;
   /** The content body of the notification template. */
   content: string | Computed<string>;
+  /** Timestamp when the notification template was created. */
+  created?: string | Computed<string>;
+  /** Timestamp when the notification template was last modified. */
+  modified?: string | Computed<string>;
   /** The name of the notification template. */
   name: string | Computed<string>;
   /** The subject line of the notification template. */
   subject: string | Computed<string>;
 }
 
-export interface NotificationTemplate_Data_Relationships_IncidentType_Data {
-  /** The incident type's ID. */
+export interface NotificationTemplate_Data_Relationships_CreatedByUser_Data {
+  /** A unique identifier that represents the user. */
   id: string | Computed<string>;
-  /** Incident type resource type. */
+  /** Users resource type. */
   type: string | Computed<string>;
 }
 
-export interface NotificationTemplate_Data_Relationships_IncidentType {
-  /** Relationship to incident type object. */
-  data: NotificationTemplate_Data_Relationships_IncidentType_Data | Computed<NotificationTemplate_Data_Relationships_IncidentType_Data>;
+export interface NotificationTemplate_Data_Relationships_CreatedByUser {
+  /** Relationship to user object. */
+  data: NotificationTemplate_Data_Relationships_CreatedByUser_Data | Computed<NotificationTemplate_Data_Relationships_CreatedByUser_Data>;
 }
 
 export interface NotificationTemplate_Data_Relationships {
+  /** Relationship to user. */
+  createdByUser?: NotificationTemplate_Data_Relationships_CreatedByUser | Computed<NotificationTemplate_Data_Relationships_CreatedByUser>;
   /** Relationship to an incident type. */
-  incidentType?: NotificationTemplate_Data_Relationships_IncidentType | Computed<NotificationTemplate_Data_Relationships_IncidentType>;
+  incidentType?: NotificationTemplate_Data_Relationships_CreatedByUser | Computed<NotificationTemplate_Data_Relationships_CreatedByUser>;
+  /** Relationship to user. */
+  lastModifiedByUser?: NotificationTemplate_Data_Relationships_CreatedByUser | Computed<NotificationTemplate_Data_Relationships_CreatedByUser>;
 }
 
 export interface NotificationTemplate_Data {
   /** The attributes for creating a notification template. */
   attributes: NotificationTemplate_Data_Attributes | Computed<NotificationTemplate_Data_Attributes>;
+  /** The unique identifier of the notification template. */
+  id?: string | Computed<string>;
   /** The definition of `NotificationTemplateCreateDataRelationships` object. */
   relationships?: NotificationTemplate_Data_Relationships | Computed<NotificationTemplate_Data_Relationships>;
   /** Notification templates resource type. */
@@ -56,11 +66,11 @@ export interface NotificationTemplate_Included_Attributes {
 }
 
 export interface NotificationTemplate_Included_Relationships_OtherOrgs {
-  data?: NotificationTemplate_Data_Relationships_IncidentType_Data[] | Computed<NotificationTemplate_Data_Relationships_IncidentType_Data[]>;
+  data?: NotificationTemplate_Data_Relationships_CreatedByUser_Data[] | Computed<NotificationTemplate_Data_Relationships_CreatedByUser_Data[]>;
 }
 
 export interface NotificationTemplate_Included_Relationships {
-  org?: NotificationTemplate_Data_Relationships_IncidentType | Computed<NotificationTemplate_Data_Relationships_IncidentType>;
+  org?: NotificationTemplate_Data_Relationships_CreatedByUser | Computed<NotificationTemplate_Data_Relationships_CreatedByUser>;
   otherOrgs?: NotificationTemplate_Included_Relationships_OtherOrgs | Computed<NotificationTemplate_Included_Relationships_OtherOrgs>;
   otherUsers?: NotificationTemplate_Included_Relationships_OtherOrgs | Computed<NotificationTemplate_Included_Relationships_OtherOrgs>;
   roles?: NotificationTemplate_Included_Relationships_OtherOrgs | Computed<NotificationTemplate_Included_Relationships_OtherOrgs>;
@@ -76,28 +86,40 @@ export interface NotificationTemplate_Included {
 const NotificationTemplate_Data_AttributesFields: FieldMap = {
   category: "category",
   content: "content",
+  created: "created",
+  modified: "modified",
   name: "name",
   subject: "subject",
 };
 
-const NotificationTemplate_Data_Relationships_IncidentType_DataFields: FieldMap = {
+const NotificationTemplate_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
   id: "id",
   type: "type",
 };
 
-const NotificationTemplate_Data_Relationships_IncidentTypeFields: FieldMap = {
+const NotificationTemplate_Data_Relationships_CreatedByUserFields: FieldMap = {
   data: {
     wireName: "data",
     kind: "object",
-    fields: NotificationTemplate_Data_Relationships_IncidentType_DataFields,
+    fields: NotificationTemplate_Data_Relationships_CreatedByUser_DataFields,
   },
 };
 
 const NotificationTemplate_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: NotificationTemplate_Data_Relationships_CreatedByUserFields,
+  },
   incidentType: {
     wireName: "incident_type",
     kind: "object",
-    fields: NotificationTemplate_Data_Relationships_IncidentTypeFields,
+    fields: NotificationTemplate_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: NotificationTemplate_Data_Relationships_CreatedByUserFields,
   },
 };
 
@@ -107,6 +129,7 @@ const NotificationTemplate_DataFields: FieldMap = {
     kind: "object",
     fields: NotificationTemplate_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

@@ -5,36 +5,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScheduleV2_Data_Attributes_NotificationRule struct {
 	Handles any
-	Tags any
+	Tags    any
 }
 
 type ScheduleV2_Data_Attributes_Rule struct {
-	DaysOfWeek any
-	Interval any
+	DaysOfWeek                any
+	Interval                  any
 	MaintenanceWindowDuration any
-	StartMaintenanceWindow any
-	Timezone any
+	StartMaintenanceWindow    any
+	Timezone                  any
 }
 
 type ScheduleV2_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	IsDefault any
-	Name any
-	NextRun any
+	CreatedAt        any
+	CreatedBy        any
+	IsDefault        any
+	Name             any
+	NextRun          any
 	NotificationRule any
-	Query any
-	Rule any
-	Status any
-	UpdatedAt any
-	UpdatedBy any
-	VersionToLatest any
+	Query            any
+	Rule             any
+	Status           any
+	UpdatedAt        any
+	UpdatedBy        any
+	VersionToLatest  any
 }
 
 type ScheduleV2_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ScheduleV2_Meta_Page struct {
@@ -59,6 +59,5 @@ type ScheduleV2Attrs struct {
 
 var ScheduleV2 = ubx.DataSourceBinding{
 	WireType: "datadog_fleet_schedule_v2",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -17,25 +17,28 @@ type LinkResponse_Data_Attributes struct {
 type LinkResponse_Data struct {
 	// Team link attributes
 	Attributes any
+	// The team link's identifier
+	Id any
 	// Team link type
 	Type any
 }
 
 var LinkResponse_Data_AttributesFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Label":    ubx.FieldSpec{WireName: "label"},
+	"Position": ubx.FieldSpec{WireName: "position"},
+	"TeamId":   ubx.FieldSpec{WireName: "team_id"},
+	"Url":      ubx.FieldSpec{WireName: "url"},
+}
 
 var LinkResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: LinkResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   LinkResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type LinkResponseConfig struct {
 	// Team link create
@@ -60,8 +63,8 @@ var LinkResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: LinkResponse_DataFields,
+			Kind:     "object",
+			Fields:   LinkResponse_DataFields,
 		},
 		"TeamId": ubx.FieldSpec{WireName: "team_id"},
 		"LinkId": ubx.FieldSpec{WireName: "link_id"},

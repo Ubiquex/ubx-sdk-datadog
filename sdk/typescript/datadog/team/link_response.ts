@@ -15,6 +15,8 @@ export interface LinkResponse_Data_Attributes {
 export interface LinkResponse_Data {
   /** Team link attributes */
   attributes: LinkResponse_Data_Attributes | Computed<LinkResponse_Data_Attributes>;
+  /** The team link's identifier */
+  id?: string | Computed<string>;
   /** Team link type */
   type: string | Computed<string>;
 }
@@ -32,6 +34,7 @@ const LinkResponse_DataFields: FieldMap = {
     kind: "object",
     fields: LinkResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -6,6 +6,12 @@ export interface NmappingResponse_Data_Attributes {
   attributeKey?: string | Computed<string>;
   /** Value portion of a key/value pair of the attribute sent from the Identity Provider. */
   attributeValue?: string | Computed<string>;
+  /** Creation time of the AuthN Mapping. */
+  createdAt?: string | Computed<string>;
+  /** Time of last AuthN Mapping modification. */
+  modifiedAt?: string | Computed<string>;
+  /** The ID of the SAML assertion attribute. */
+  samlAssertionAttributeId?: string | Computed<string>;
 }
 
 export interface NmappingResponse_Data_Relationships_Role_Data {
@@ -25,10 +31,17 @@ export interface NmappingResponse_Data_Relationships {
 export interface NmappingResponse_Data {
   /** Key/Value pair of attributes used for create request. */
   attributes?: NmappingResponse_Data_Attributes | Computed<NmappingResponse_Data_Attributes>;
+  /** ID of the AuthN Mapping. */
+  id?: string | Computed<string>;
   /** Relationship of AuthN Mapping create object to a Role or Team. */
   relationships?: NmappingResponse_Data_Relationships | Computed<NmappingResponse_Data_Relationships>;
   /** AuthN Mappings resource type. */
   type: string | Computed<string>;
+}
+
+export interface NmappingResponse_Included_Attributes {
+  attributeKey?: string | Computed<string>;
+  attributeValue?: string | Computed<string>;
 }
 
 export interface NmappingResponse_Included_Relationships_Permissions {
@@ -40,7 +53,7 @@ export interface NmappingResponse_Included_Relationships {
 }
 
 export interface NmappingResponse_Included {
-  attributes?: NmappingResponse_Data_Attributes | Computed<NmappingResponse_Data_Attributes>;
+  attributes?: NmappingResponse_Included_Attributes | Computed<NmappingResponse_Included_Attributes>;
   id?: string | Computed<string>;
   relationships?: NmappingResponse_Included_Relationships | Computed<NmappingResponse_Included_Relationships>;
   type?: string | Computed<string>;
@@ -49,6 +62,9 @@ export interface NmappingResponse_Included {
 const NmappingResponse_Data_AttributesFields: FieldMap = {
   attributeKey: "attribute_key",
   attributeValue: "attribute_value",
+  createdAt: "created_at",
+  modifiedAt: "modified_at",
+  samlAssertionAttributeId: "saml_assertion_attribute_id",
 };
 
 const NmappingResponse_Data_Relationships_Role_DataFields: FieldMap = {
@@ -83,6 +99,7 @@ const NmappingResponse_DataFields: FieldMap = {
     kind: "object",
     fields: NmappingResponse_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

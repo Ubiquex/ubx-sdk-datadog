@@ -6,27 +6,39 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type OnDemandResponse_Data_Attributes struct {
 	// The arn of the resource to scan. Agentless supports the scan of EC2 instances, lambda functions, AMI, ECR, RDS and S3 buckets.
 	Arn any
+	// Specifies the assignment timestamp if the task has been already assigned to a scanner.
+	AssignedAt any
+	// The task submission timestamp.
+	CreatedAt any
+	// Indicates the status of the task. QUEUED: the task has been submitted successfully and the resource has not been assigned to a scanner yet. ASSIGNED: the task has been assigned. ABORTED: the scan has been aborted after a period of time due to technical reasons, such as resource not found, insufficient permissions, or the absence of a configured scanner.
+	Status any
 }
 
 type OnDemandResponse_Data struct {
 	// Attributes for the AWS on demand task.
 	Attributes any
+	// The UUID of the task.
+	Id any
 	// The type of the on demand task. The value should always be `aws_resource`.
 	Type any
 }
 
 var OnDemandResponse_Data_AttributesFields = ubx.FieldMap{
-		"Arn": ubx.FieldSpec{WireName: "arn"},
-	}
+	"Arn":        ubx.FieldSpec{WireName: "arn"},
+	"AssignedAt": ubx.FieldSpec{WireName: "assigned_at"},
+	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
+	"Status":     ubx.FieldSpec{WireName: "status"},
+}
 
 var OnDemandResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: OnDemandResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   OnDemandResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type OnDemandResponseConfig struct {
 	// Object for a single AWS on demand task.
@@ -47,8 +59,8 @@ var OnDemandResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: OnDemandResponse_DataFields,
+			Kind:     "object",
+			Fields:   OnDemandResponse_DataFields,
 		},
 		"TaskId": ubx.FieldSpec{WireName: "task_id"},
 	},

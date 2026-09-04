@@ -4,44 +4,44 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions_Annotations struct {
-	CreatedAt any
-	CreatedBy any
-	Id any
+	CreatedAt     any
+	CreatedBy     any
+	Id            any
 	InteractionId any
-	LabelValues any
-	ModifiedAt any
-	ModifiedBy any
+	LabelValues   any
+	ModifiedAt    any
+	ModifiedBy    any
 }
 
 type AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions_DisplayBlock_TimeFrame struct {
-	End any
+	End   any
 	Start any
 }
 
 type AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions_DisplayBlock struct {
-	Alt any
-	Content any
-	Height any
+	Alt             any
+	Content         any
+	Height          any
 	InteractionType any
-	Label any
-	Level any
-	TileDef any
-	TimeFrame any
-	TraceId any
-	Type any
-	Url any
+	Label           any
+	Level           any
+	TileDef         any
+	TimeFrame       any
+	TraceId         any
+	Type            any
+	Url             any
 }
 
 type AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions struct {
-	Annotations any
-	ContentId any
-	CreatedAt any
+	Annotations  any
+	ContentId    any
+	CreatedAt    any
 	DisplayBlock any
-	Id any
-	ModifiedAt any
-	QueueId any
-	QueueName any
-	Type any
+	Id           any
+	ModifiedAt   any
+	QueueId      any
+	QueueName    any
+	Type         any
 }
 
 type AnnotatedInteractionsByTraceResponse_Data_Attributes struct {
@@ -62,15 +62,15 @@ type AnnotatedInteractionsByTraceResponse_Data struct {
 
 type AnnotatedInteractionsByTraceResponseConfig struct {
 	ContentIds any
-	Limit any
-	Offset any
+	Limit      any
+	Offset     any
 }
 
 type AnnotatedInteractionsByTraceResponseAttrs struct {
 	ContentIds any
 	// Data object for the cross-queue annotated interactions response.
-	Data any
-	Limit any
+	Data   any
+	Limit  any
 	Offset any
 }
 
@@ -78,7 +78,7 @@ var AnnotatedInteractionsByTraceResponse = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_annotated_interactions_by_trace_response",
 	Fields: ubx.FieldMap{
 		"ContentIds": ubx.FieldSpec{WireName: "content_ids"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Offset":     ubx.FieldSpec{WireName: "offset"},
 	},
 }

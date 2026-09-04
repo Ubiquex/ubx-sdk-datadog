@@ -10,6 +10,8 @@ import ubx_sdk as ubx
 class ChatOrganizationHandleResponse_Data_Attributes:
     # Organization handle name.
     name: Any = None
+    # Google space display name.
+    space_display_name: Any = None
     # Google space resource name.
     space_resource_name: Any = None
 
@@ -17,9 +19,14 @@ class ChatOrganizationHandleResponse_Data_Attributes:
 class ChatOrganizationHandleResponse_Data:
     # Organization handle attributes for a create request.
     attributes: Any = None
+    # The ID of the organization handle.
+    id: Any = None
+    # Organization handle resource type.
+    type: Any = None
 
 _ChatOrganizationHandleResponse_Data_AttributesFields = {
     "name": ubx.FieldSpec(wire_name="name"),
+    "space_display_name": ubx.FieldSpec(wire_name="space_display_name"),
     "space_resource_name": ubx.FieldSpec(wire_name="space_resource_name"),
 }
 
@@ -29,6 +36,8 @@ _ChatOrganizationHandleResponse_DataFields = {
         kind="object",
         fields=_ChatOrganizationHandleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 @dataclasses.dataclass

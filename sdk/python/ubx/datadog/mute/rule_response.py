@@ -16,6 +16,15 @@ class RuleResponse_Data_Attributes_Action:
     reason_description: Any = None
 
 @dataclasses.dataclass
+class RuleResponse_Data_Attributes_CreatedBy:
+    # The actor's identifier (a user UUID or a system identifier).
+    id: Any = None
+    # The name of the actor.
+    name: Any = None
+    # Whether the actor is a user or the Datadog system.
+    type: Any = None
+
+@dataclasses.dataclass
 class RuleResponse_Data_Attributes_Rule:
     # The list of security finding types that the automation rule applies to.
     finding_types: Any = None
@@ -26,8 +35,16 @@ class RuleResponse_Data_Attributes_Rule:
 class RuleResponse_Data_Attributes:
     # The action to take when the mute rule matches a finding.
     action: Any = None
+    # The Unix timestamp in milliseconds when the rule was created.
+    created_at: Any = None
+    # The user or Datadog system who created the rule.
+    created_by: Any = None
     # Whether the mute rule is enabled.
     enabled: Any = None
+    # The Unix timestamp in milliseconds when the rule was last modified.
+    modified_at: Any = None
+    # The user or Datadog system who last modified the rule.
+    modified_by: Any = None
     # The name of the mute rule.
     name: Any = None
     # Defines the scope of findings to which the automation rule applies.
@@ -37,6 +54,8 @@ class RuleResponse_Data_Attributes:
 class RuleResponse_Data:
     # Attributes for creating or updating a mute rule.
     attributes: Any = None
+    # The ID of the mute rule.
+    id: Any = None
     # The JSON:API type for mute rules.
     type: Any = None
 
@@ -44,6 +63,12 @@ _RuleResponse_Data_Attributes_ActionFields = {
     "expire_at": ubx.FieldSpec(wire_name="expire_at"),
     "reason": ubx.FieldSpec(wire_name="reason"),
     "reason_description": ubx.FieldSpec(wire_name="reason_description"),
+}
+
+_RuleResponse_Data_Attributes_CreatedByFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _RuleResponse_Data_Attributes_RuleFields = {
@@ -57,7 +82,19 @@ _RuleResponse_Data_AttributesFields = {
         kind="object",
         fields=_RuleResponse_Data_Attributes_ActionFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_RuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_RuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
     "rule": ubx.FieldSpec(
         wire_name="rule",
@@ -72,6 +109,7 @@ _RuleResponse_DataFields = {
         kind="object",
         fields=_RuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

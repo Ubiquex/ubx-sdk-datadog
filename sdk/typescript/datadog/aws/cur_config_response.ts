@@ -19,17 +19,29 @@ export interface CurConfigResponse_Data_Attributes {
   bucketName: string | Computed<string>;
   /** The region the bucket is located in. */
   bucketRegion?: string | Computed<string>;
+  /** The `attributes` `created_at`. */
+  createdAt?: string | Computed<string>;
+  /** The `attributes` `error_messages`. */
+  errorMessages?: string[] | Computed<string[]>;
   /** The month of the report. */
   months?: number | Computed<number>;
   /** The name of the Cost and Usage Report. */
   reportName: string | Computed<string>;
   /** The report prefix used for the Cost and Usage Report. */
   reportPrefix: string | Computed<string>;
+  /** The `attributes` `status`. */
+  status?: string | Computed<string>;
+  /** The `attributes` `status_updated_at`. */
+  statusUpdatedAt?: string | Computed<string>;
+  /** The `attributes` `updated_at`. */
+  updatedAt?: string | Computed<string>;
 }
 
 export interface CurConfigResponse_Data {
   /** Attributes for AWS CUR config Post Request. */
   attributes?: CurConfigResponse_Data_Attributes | Computed<CurConfigResponse_Data_Attributes>;
+  /** The `AwsCurConfigResponseData` `id`. */
+  id?: string | Computed<string>;
   /** Type of AWS CUR config Post Request. */
   type: string | Computed<string>;
 }
@@ -49,9 +61,14 @@ const CurConfigResponse_Data_AttributesFields: FieldMap = {
   accountId: "account_id",
   bucketName: "bucket_name",
   bucketRegion: "bucket_region",
+  createdAt: "created_at",
+  errorMessages: "error_messages",
   months: "months",
   reportName: "report_name",
   reportPrefix: "report_prefix",
+  status: "status",
+  statusUpdatedAt: "status_updated_at",
+  updatedAt: "updated_at",
 };
 
 const CurConfigResponse_DataFields: FieldMap = {
@@ -60,6 +77,7 @@ const CurConfigResponse_DataFields: FieldMap = {
     kind: "object",
     fields: CurConfigResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

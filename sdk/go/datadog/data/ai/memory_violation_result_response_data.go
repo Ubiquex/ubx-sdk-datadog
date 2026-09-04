@@ -4,21 +4,21 @@ package ai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MemoryViolationResultResponseData_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	Line any
-	Message any
-	Name any
+	CreatedAt    any
+	CreatedBy    any
+	Line         any
+	Message      any
+	Name         any
 	RepositoryId any
-	Rule any
-	Sha any
-	Type any
+	Rule         any
+	Sha          any
+	Type         any
 }
 
 type MemoryViolationResultResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MemoryViolationResultResponseDataConfig struct {
@@ -31,6 +31,5 @@ type MemoryViolationResultResponseDataAttrs struct {
 
 var MemoryViolationResultResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_ai_memory_violation_result_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

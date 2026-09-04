@@ -12,6 +12,24 @@ export interface Pair_Data_Attributes_ActualBillConfig {
   storageContainer: string | Computed<string>;
 }
 
+export interface Pair_Data_Attributes_Configs {
+  accountId?: string | Computed<string>;
+  clientId?: string | Computed<string>;
+  createdAt?: string | Computed<string>;
+  datasetType?: string | Computed<string>;
+  errorMessages?: string[] | Computed<string[]>;
+  exportName?: string | Computed<string>;
+  exportPath?: string | Computed<string>;
+  id?: string | Computed<string>;
+  months?: number | Computed<number>;
+  scope?: string | Computed<string>;
+  status?: string | Computed<string>;
+  statusUpdatedAt?: string | Computed<string>;
+  storageAccount?: string | Computed<string>;
+  storageContainer?: string | Computed<string>;
+  updatedAt?: string | Computed<string>;
+}
+
 export interface Pair_Data_Attributes {
   /** The tenant ID of the Azure account. */
   accountId: string | Computed<string>;
@@ -21,6 +39,8 @@ export interface Pair_Data_Attributes {
   amortizedBillConfig: Pair_Data_Attributes_ActualBillConfig | Computed<Pair_Data_Attributes_ActualBillConfig>;
   /** The client ID of the Azure account. */
   clientId: string | Computed<string>;
+  /** The `attributes` `configs`. */
+  configs?: Pair_Data_Attributes_Configs[] | Computed<Pair_Data_Attributes_Configs[]>;
   /** The scope of your observed subscription. */
   scope: string | Computed<string>;
 }
@@ -28,6 +48,8 @@ export interface Pair_Data_Attributes {
 export interface Pair_Data {
   /** Attributes for Azure config Post Request. */
   attributes?: Pair_Data_Attributes | Computed<Pair_Data_Attributes>;
+  /** The `UCConfigPairData` `id`. */
+  id?: string | Computed<string>;
   /** Type of Azure config Post Request. */
   type: string | Computed<string>;
 }
@@ -37,6 +59,24 @@ const Pair_Data_Attributes_ActualBillConfigFields: FieldMap = {
   exportPath: "export_path",
   storageAccount: "storage_account",
   storageContainer: "storage_container",
+};
+
+const Pair_Data_Attributes_ConfigsFields: FieldMap = {
+  accountId: "account_id",
+  clientId: "client_id",
+  createdAt: "created_at",
+  datasetType: "dataset_type",
+  errorMessages: "error_messages",
+  exportName: "export_name",
+  exportPath: "export_path",
+  id: "id",
+  months: "months",
+  scope: "scope",
+  status: "status",
+  statusUpdatedAt: "status_updated_at",
+  storageAccount: "storage_account",
+  storageContainer: "storage_container",
+  updatedAt: "updated_at",
 };
 
 const Pair_Data_AttributesFields: FieldMap = {
@@ -52,6 +92,11 @@ const Pair_Data_AttributesFields: FieldMap = {
     fields: Pair_Data_Attributes_ActualBillConfigFields,
   },
   clientId: "client_id",
+  configs: {
+    wireName: "configs",
+    kind: "list",
+    fields: Pair_Data_Attributes_ConfigsFields,
+  },
   scope: "scope",
 };
 
@@ -61,6 +106,7 @@ const Pair_DataFields: FieldMap = {
     kind: "object",
     fields: Pair_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

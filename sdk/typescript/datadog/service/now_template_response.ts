@@ -21,6 +21,8 @@ export interface NowTemplateResponse_Data_Attributes {
 export interface NowTemplateResponse_Data {
   /** Attributes for creating a ServiceNow template */
   attributes: NowTemplateResponse_Data_Attributes | Computed<NowTemplateResponse_Data_Attributes>;
+  /** Unique identifier for the ServiceNow template */
+  id?: string | Computed<string>;
   /** Type identifier for ServiceNow template resources */
   type: string | Computed<string>;
 }
@@ -41,6 +43,7 @@ const NowTemplateResponse_DataFields: FieldMap = {
     kind: "object",
     fields: NowTemplateResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

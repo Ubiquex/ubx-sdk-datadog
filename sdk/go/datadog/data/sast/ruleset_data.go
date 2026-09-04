@@ -5,59 +5,59 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RulesetData_Data_Attributes_Rules_Arguments struct {
 	Description any
-	Name any
+	Name        any
 }
 
 type RulesetData_Data_Attributes_Rules_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type RulesetData_Data_Attributes_Rules_Tests struct {
 	AnnotationCount any
-	Code any
-	Filename any
+	Code            any
+	Filename        any
 }
 
 type RulesetData_Data_Attributes_Rules struct {
-	Arguments any
-	Category any
-	Checksum any
-	Code any
-	CreatedAt any
-	CreatedBy any
-	Cve any
-	Cwe any
-	Data any
-	Description any
+	Arguments        any
+	Category         any
+	Checksum         any
+	Code             any
+	CreatedAt        any
+	CreatedBy        any
+	Cve              any
+	Cwe              any
+	Data             any
+	Description      any
 	DocumentationUrl any
-	EntityChecked any
-	IsPublished any
-	IsTesting any
-	Language any
-	LastUpdatedAt any
-	LastUpdatedBy any
-	Name any
-	Regex any
-	Severity any
+	EntityChecked    any
+	IsPublished      any
+	IsTesting        any
+	Language         any
+	LastUpdatedAt    any
+	LastUpdatedBy    any
+	Name             any
+	Regex            any
+	Severity         any
 	ShortDescription any
-	ShouldUseAiFix any
-	Tests any
-	TreeSitterQuery any
-	Type any
+	ShouldUseAiFix   any
+	Tests            any
+	TreeSitterQuery  any
+	Type             any
 }
 
 type RulesetData_Data_Attributes struct {
-	Description any
-	Name any
-	Rules any
+	Description      any
+	Name             any
+	Rules            any
 	ShortDescription any
 }
 
 type RulesetData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RulesetDataConfig struct {
@@ -70,6 +70,5 @@ type RulesetDataAttrs struct {
 
 var RulesetData = ubx.DataSourceBinding{
 	WireType: "datadog_sast_ruleset_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

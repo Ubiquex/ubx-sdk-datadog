@@ -9,6 +9,8 @@ export interface Channel_Data_Attributes_Config {
 }
 
 export interface Channel_Data_Attributes {
+  /** Whether the notification channel is currently active. */
+  active?: boolean | Computed<boolean>;
   /** Defines the configuration for creating an On-Call notification channel */
   config?: Channel_Data_Attributes_Config | Computed<Channel_Data_Attributes_Config>;
 }
@@ -16,6 +18,8 @@ export interface Channel_Data_Attributes {
 export interface Channel_Data {
   /** Attributes for creating an on-call notification channel. */
   attributes?: Channel_Data_Attributes | Computed<Channel_Data_Attributes>;
+  /** Unique identifier for the channel */
+  id?: string | Computed<string>;
   /** Indicates that the resource is of type 'notification_channels'. */
   type: string | Computed<string>;
 }
@@ -28,6 +32,7 @@ const Channel_Data_Attributes_ConfigFields: FieldMap = {
 };
 
 const Channel_Data_AttributesFields: FieldMap = {
+  active: "active",
   config: {
     wireName: "config",
     kind: "object",
@@ -41,6 +46,7 @@ const Channel_DataFields: FieldMap = {
     kind: "object",
     fields: Channel_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

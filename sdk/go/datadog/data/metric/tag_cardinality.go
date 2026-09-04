@@ -9,8 +9,8 @@ type TagCardinality_Data_Attributes struct {
 
 type TagCardinality_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TagCardinality_Meta struct {
@@ -26,7 +26,7 @@ type TagCardinalityAttrs struct {
 	// A list of tag cardinalities associated with the given metric.
 	Data any
 	// Response metadata object.
-	Meta any
+	Meta       any
 	MetricName any
 }
 

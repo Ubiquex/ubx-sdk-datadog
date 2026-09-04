@@ -21,49 +21,67 @@ type CurConfigResponse_Data_Attributes struct {
 	BucketName any
 	// The region the bucket is located in.
 	BucketRegion any
+	// The `attributes` `created_at`.
+	CreatedAt any
+	// The `attributes` `error_messages`.
+	ErrorMessages any
 	// The month of the report.
 	Months any
 	// The name of the Cost and Usage Report.
 	ReportName any
 	// The report prefix used for the Cost and Usage Report.
 	ReportPrefix any
+	// The `attributes` `status`.
+	Status any
+	// The `attributes` `status_updated_at`.
+	StatusUpdatedAt any
+	// The `attributes` `updated_at`.
+	UpdatedAt any
 }
 
 type CurConfigResponse_Data struct {
 	// Attributes for AWS CUR config Post Request.
 	Attributes any
+	// The `AwsCurConfigResponseData` `id`.
+	Id any
 	// Type of AWS CUR config Post Request.
 	Type any
 }
 
 var CurConfigResponse_Data_Attributes_AccountFiltersFields = ubx.FieldMap{
-		"ExcludedAccounts": ubx.FieldSpec{WireName: "excluded_accounts"},
-		"IncludeNewAccounts": ubx.FieldSpec{WireName: "include_new_accounts"},
-		"IncludedAccounts": ubx.FieldSpec{WireName: "included_accounts"},
-	}
+	"ExcludedAccounts":   ubx.FieldSpec{WireName: "excluded_accounts"},
+	"IncludeNewAccounts": ubx.FieldSpec{WireName: "include_new_accounts"},
+	"IncludedAccounts":   ubx.FieldSpec{WireName: "included_accounts"},
+}
 
 var CurConfigResponse_Data_AttributesFields = ubx.FieldMap{
-		"AccountFilters": ubx.FieldSpec{
-			WireName: "account_filters",
-			Kind: "object",
-			Fields: CurConfigResponse_Data_Attributes_AccountFiltersFields,
-		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"BucketRegion": ubx.FieldSpec{WireName: "bucket_region"},
-		"Months": ubx.FieldSpec{WireName: "months"},
-		"ReportName": ubx.FieldSpec{WireName: "report_name"},
-		"ReportPrefix": ubx.FieldSpec{WireName: "report_prefix"},
-	}
+	"AccountFilters": ubx.FieldSpec{
+		WireName: "account_filters",
+		Kind:     "object",
+		Fields:   CurConfigResponse_Data_Attributes_AccountFiltersFields,
+	},
+	"AccountId":       ubx.FieldSpec{WireName: "account_id"},
+	"BucketName":      ubx.FieldSpec{WireName: "bucket_name"},
+	"BucketRegion":    ubx.FieldSpec{WireName: "bucket_region"},
+	"CreatedAt":       ubx.FieldSpec{WireName: "created_at"},
+	"ErrorMessages":   ubx.FieldSpec{WireName: "error_messages"},
+	"Months":          ubx.FieldSpec{WireName: "months"},
+	"ReportName":      ubx.FieldSpec{WireName: "report_name"},
+	"ReportPrefix":    ubx.FieldSpec{WireName: "report_prefix"},
+	"Status":          ubx.FieldSpec{WireName: "status"},
+	"StatusUpdatedAt": ubx.FieldSpec{WireName: "status_updated_at"},
+	"UpdatedAt":       ubx.FieldSpec{WireName: "updated_at"},
+}
 
 var CurConfigResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: CurConfigResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   CurConfigResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type CurConfigResponseConfig struct {
 	// AWS CUR config Post data.
@@ -84,8 +102,8 @@ var CurConfigResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: CurConfigResponse_DataFields,
+			Kind:     "object",
+			Fields:   CurConfigResponse_DataFields,
 		},
 		"CloudAccountId": ubx.FieldSpec{WireName: "cloud_account_id"},
 	},

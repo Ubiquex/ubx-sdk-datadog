@@ -8,27 +8,41 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Response_Data_Attributes:
+    # The timestamp when the environment was created.
+    created_at: Any = None
+    # The description of the environment.
+    description: Any = None
     # Indicates whether this is a production environment.
     is_production: Any = None
+    # The unique key of the environment.
+    key: Any = None
     # The name of the environment.
     name: Any = None
     # List of queries to define the environment scope.
     queries: Any = None
     # Indicates whether feature flag changes require approval in this environment.
     require_feature_flag_approval: Any = None
+    # The timestamp when the environment was last updated.
+    updated_at: Any = None
 
 @dataclasses.dataclass
 class Response_Data:
     # Attributes for creating a new environment.
     attributes: Any = None
+    # The unique identifier of the environment.
+    id: Any = None
     # The resource type.
     type: Any = None
 
 _Response_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "description": ubx.FieldSpec(wire_name="description"),
     "is_production": ubx.FieldSpec(wire_name="is_production"),
+    "key": ubx.FieldSpec(wire_name="key"),
     "name": ubx.FieldSpec(wire_name="name"),
     "queries": ubx.FieldSpec(wire_name="queries"),
     "require_feature_flag_approval": ubx.FieldSpec(wire_name="require_feature_flag_approval"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
 }
 
 _Response_DataFields = {
@@ -37,6 +51,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

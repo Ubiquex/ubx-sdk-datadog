@@ -9,8 +9,8 @@ type VolumesResponse_Data_Attributes struct {
 
 type VolumesResponse_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type VolumesResponseConfig struct {
@@ -19,7 +19,7 @@ type VolumesResponseConfig struct {
 
 type VolumesResponseAttrs struct {
 	// Possible response objects for a metric's volume.
-	Data any
+	Data       any
 	MetricName any
 }
 

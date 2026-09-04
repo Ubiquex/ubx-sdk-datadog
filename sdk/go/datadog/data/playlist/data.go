@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Data_Data_Attributes_CreatedBy struct {
 	Handle any
-	Icon any
-	Id any
-	Name any
-	Uuid any
+	Icon   any
+	Id     any
+	Name   any
+	Uuid   any
 }
 
 type Data_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	Description any
-	Name any
+	CreatedAt    any
+	CreatedBy    any
+	Description  any
+	Name         any
 	SessionCount any
-	UpdatedAt any
+	UpdatedAt    any
 }
 
 type Data_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataConfig struct {
@@ -36,6 +36,5 @@ type DataAttrs struct {
 
 var Data = ubx.DataSourceBinding{
 	WireType: "datadog_playlist_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

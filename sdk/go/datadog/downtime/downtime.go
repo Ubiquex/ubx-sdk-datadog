@@ -60,57 +60,19 @@ type Downtime_ActiveChild struct {
 }
 
 var Downtime_ActiveChild_RecurrenceFields = ubx.FieldMap{
-		"Period": ubx.FieldSpec{WireName: "period"},
-		"Rrule": ubx.FieldSpec{WireName: "rrule"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UntilDate": ubx.FieldSpec{WireName: "until_date"},
-		"UntilOccurrences": ubx.FieldSpec{WireName: "until_occurrences"},
-		"WeekDays": ubx.FieldSpec{WireName: "week_days"},
-	}
-
-var Downtime_ActiveChildFields = ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
-		"Canceled": ubx.FieldSpec{WireName: "canceled"},
-		"CreatorId": ubx.FieldSpec{WireName: "creator_id"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DowntimeType": ubx.FieldSpec{WireName: "downtime_type"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
-		"MonitorTags": ubx.FieldSpec{WireName: "monitor_tags"},
-		"MuteFirstRecoveryNotification": ubx.FieldSpec{WireName: "mute_first_recovery_notification"},
-		"NotifyEndStates": ubx.FieldSpec{WireName: "notify_end_states"},
-		"NotifyEndTypes": ubx.FieldSpec{WireName: "notify_end_types"},
-		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
-		"Recurrence": ubx.FieldSpec{
-			WireName: "recurrence",
-			Kind: "object",
-			Fields: Downtime_ActiveChild_RecurrenceFields,
-		},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-		"UpdaterId": ubx.FieldSpec{WireName: "updater_id"},
-	}
+	"Period":           ubx.FieldSpec{WireName: "period"},
+	"Rrule":            ubx.FieldSpec{WireName: "rrule"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+	"UntilDate":        ubx.FieldSpec{WireName: "until_date"},
+	"UntilOccurrences": ubx.FieldSpec{WireName: "until_occurrences"},
+	"WeekDays":         ubx.FieldSpec{WireName: "week_days"},
+}
 
 type DowntimeConfig struct {
-	// If a scheduled downtime currently exists.
-	Active any
-	// The downtime object definition of the active child for the original parent recurring downtime. This field will only exist on recurring downtimes.
-	ActiveChild any
-	// If a scheduled downtime is canceled.
-	Canceled any
-	// User ID of the downtime creator.
-	CreatorId any
 	// If a downtime has been disabled.
 	Disabled any
-	// `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts.
-	DowntimeType any
 	// POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it.
 	End any
-	// The downtime ID.
-	Id any
 	// A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.
 	Message any
 	// A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.
@@ -133,8 +95,6 @@ type DowntimeConfig struct {
 	Start any
 	// The timezone in which to display the downtime's start and end times in Datadog applications.
 	Timezone any
-	// ID of the last user that updated the downtime.
-	UpdaterId any
 	// path parameter, not part of the API's own resource representation
 	DowntimeId any
 }
@@ -187,34 +147,23 @@ type DowntimeAttrs struct {
 var Downtime = ubx.ResourceBinding{
 	WireType: "datadog_downtime",
 	Fields: ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
-		"ActiveChild": ubx.FieldSpec{
-			WireName: "active_child",
-			Kind: "object",
-			Fields: Downtime_ActiveChildFields,
-		},
-		"Canceled": ubx.FieldSpec{WireName: "canceled"},
-		"CreatorId": ubx.FieldSpec{WireName: "creator_id"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DowntimeType": ubx.FieldSpec{WireName: "downtime_type"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
-		"MonitorTags": ubx.FieldSpec{WireName: "monitor_tags"},
+		"Disabled":                      ubx.FieldSpec{WireName: "disabled"},
+		"End":                           ubx.FieldSpec{WireName: "end"},
+		"Message":                       ubx.FieldSpec{WireName: "message"},
+		"MonitorId":                     ubx.FieldSpec{WireName: "monitor_id"},
+		"MonitorTags":                   ubx.FieldSpec{WireName: "monitor_tags"},
 		"MuteFirstRecoveryNotification": ubx.FieldSpec{WireName: "mute_first_recovery_notification"},
-		"NotifyEndStates": ubx.FieldSpec{WireName: "notify_end_states"},
-		"NotifyEndTypes": ubx.FieldSpec{WireName: "notify_end_types"},
-		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
+		"NotifyEndStates":               ubx.FieldSpec{WireName: "notify_end_states"},
+		"NotifyEndTypes":                ubx.FieldSpec{WireName: "notify_end_types"},
+		"ParentId":                      ubx.FieldSpec{WireName: "parent_id"},
 		"Recurrence": ubx.FieldSpec{
 			WireName: "recurrence",
-			Kind: "object",
-			Fields: Downtime_ActiveChild_RecurrenceFields,
+			Kind:     "object",
+			Fields:   Downtime_ActiveChild_RecurrenceFields,
 		},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-		"UpdaterId": ubx.FieldSpec{WireName: "updater_id"},
+		"Scope":      ubx.FieldSpec{WireName: "scope"},
+		"Start":      ubx.FieldSpec{WireName: "start"},
+		"Timezone":   ubx.FieldSpec{WireName: "timezone"},
 		"DowntimeId": ubx.FieldSpec{WireName: "downtime_id"},
 	},
 }

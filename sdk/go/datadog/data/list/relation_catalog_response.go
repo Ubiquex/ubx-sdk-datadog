@@ -4,34 +4,34 @@ package list
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RelationCatalogResponse_Data_Attributes_From struct {
-	Kind any
-	Name any
+	Kind      any
+	Name      any
 	Namespace any
 }
 
 type RelationCatalogResponse_Data_Attributes struct {
 	From any
-	To any
+	To   any
 	Type any
 }
 
 type RelationCatalogResponse_Data_Meta struct {
-	CreatedAt any
-	DefinedBy any
+	CreatedAt  any
+	DefinedBy  any
 	ModifiedAt any
-	Source any
+	Source     any
 }
 
 type RelationCatalogResponse_Data_Relationships_FromEntity_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type RelationCatalogResponse_Data_Relationships_FromEntity_Meta struct {
-	CreatedAt any
+	CreatedAt       any
 	IngestionSource any
-	ModifiedAt any
-	Origin any
+	ModifiedAt      any
+	Origin          any
 }
 
 type RelationCatalogResponse_Data_Relationships_FromEntity struct {
@@ -41,27 +41,27 @@ type RelationCatalogResponse_Data_Relationships_FromEntity struct {
 
 type RelationCatalogResponse_Data_Relationships struct {
 	FromEntity any
-	ToEntity any
+	ToEntity   any
 }
 
 type RelationCatalogResponse_Data struct {
-	Attributes any
-	Id any
-	Meta any
+	Attributes    any
+	Id            any
+	Meta          any
 	Relationships any
-	Subtype any
-	Type any
+	Subtype       any
+	Type          any
 }
 
 type RelationCatalogResponse_Included_Attributes struct {
-	ApiVersion any
+	ApiVersion  any
 	Description any
 	DisplayName any
-	Kind any
-	Name any
-	Namespace any
-	Owner any
-	Tags any
+	Kind        any
+	Name        any
+	Namespace   any
+	Owner       any
+	Tags        any
 }
 
 type RelationCatalogResponse_Included_Relationships_Incidents struct {
@@ -73,19 +73,19 @@ type RelationCatalogResponse_Included_Relationships_RawSchema struct {
 }
 
 type RelationCatalogResponse_Included_Relationships struct {
-	Incidents any
-	Oncall any
-	RawSchema any
+	Incidents       any
+	Oncall          any
+	RawSchema       any
 	RelatedEntities any
-	Schema any
+	Schema          any
 }
 
 type RelationCatalogResponse_Included struct {
-	Attributes any
-	Id any
-	Meta any
+	Attributes    any
+	Id            any
+	Meta          any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type RelationCatalogResponse_Links struct {
@@ -106,7 +106,7 @@ type RelationCatalogResponse_Meta struct {
 
 type RelationCatalogResponseConfig struct {
 	// Supported include types for relations.
-	Include any
+	Include           any
 	IncludeDiscovered any
 }
 
@@ -114,7 +114,7 @@ type RelationCatalogResponseAttrs struct {
 	// Array of relation responses
 	Data any
 	// Supported include types for relations.
-	Include any
+	Include           any
 	IncludeDiscovered any
 	// List relation response included entities.
 	Included any
@@ -127,7 +127,7 @@ type RelationCatalogResponseAttrs struct {
 var RelationCatalogResponse = ubx.DataSourceBinding{
 	WireType: "datadog_list_relation_catalog_response",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":           ubx.FieldSpec{WireName: "include"},
 		"IncludeDiscovered": ubx.FieldSpec{WireName: "include_discovered"},
 	},
 }

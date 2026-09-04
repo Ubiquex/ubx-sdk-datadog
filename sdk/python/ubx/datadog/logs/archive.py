@@ -48,11 +48,15 @@ class Archive_Data_Attributes:
     rehydration_max_scan_size_in_gb: Any = None
     # An array of tags to add to rehydrated logs from an archive.
     rehydration_tags: Any = None
+    # The state of the archive.
+    state: Any = None
 
 @dataclasses.dataclass
 class Archive_Data:
     # The attributes associated with the archive.
     attributes: Any = None
+    # The archive ID.
+    id: Any = None
     # The type of the resource. The value should always be archives.
     type: Any = None
 
@@ -100,6 +104,7 @@ _Archive_Data_AttributesFields = {
     "query": ubx.FieldSpec(wire_name="query"),
     "rehydration_max_scan_size_in_gb": ubx.FieldSpec(wire_name="rehydration_max_scan_size_in_gb"),
     "rehydration_tags": ubx.FieldSpec(wire_name="rehydration_tags"),
+    "state": ubx.FieldSpec(wire_name="state"),
 }
 
 _Archive_DataFields = {
@@ -108,6 +113,7 @@ _Archive_DataFields = {
         kind="object",
         fields=_Archive_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

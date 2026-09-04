@@ -30,22 +30,22 @@ type WithEntries_Data_Attributes_CostsUnit struct {
 }
 
 type WithEntries_Data_Attributes_Entries_Costs struct {
-	Actual any
-	Amount any
+	Actual         any
+	Amount         any
 	CustomForecast any
-	Forecast any
-	OotbForecast any
+	Forecast       any
+	OotbForecast   any
 }
 
 type WithEntries_Data_Attributes_Entries_TagFilters struct {
-	TagKey any
+	TagKey   any
 	TagValue any
 }
 
 type WithEntries_Data_Attributes_Entries struct {
-	Amount any
-	Costs any
-	Month any
+	Amount     any
+	Costs      any
+	Month      any
 	TagFilters any
 }
 
@@ -92,88 +92,88 @@ type WithEntries_Data struct {
 }
 
 var WithEntries_Data_Attributes_CostsFields = ubx.FieldMap{
-		"Actual": ubx.FieldSpec{WireName: "actual"},
-		"Amount": ubx.FieldSpec{WireName: "amount"},
-		"Forecast": ubx.FieldSpec{WireName: "forecast"},
-		"OotbForecast": ubx.FieldSpec{WireName: "ootb_forecast"},
-	}
+	"Actual":       ubx.FieldSpec{WireName: "actual"},
+	"Amount":       ubx.FieldSpec{WireName: "amount"},
+	"Forecast":     ubx.FieldSpec{WireName: "forecast"},
+	"OotbForecast": ubx.FieldSpec{WireName: "ootb_forecast"},
+}
 
 var WithEntries_Data_Attributes_CostsUnitFields = ubx.FieldMap{
-		"Family": ubx.FieldSpec{WireName: "family"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Plural": ubx.FieldSpec{WireName: "plural"},
-		"ScaleFactor": ubx.FieldSpec{WireName: "scale_factor"},
-		"ShortName": ubx.FieldSpec{WireName: "short_name"},
-	}
+	"Family":      ubx.FieldSpec{WireName: "family"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Plural":      ubx.FieldSpec{WireName: "plural"},
+	"ScaleFactor": ubx.FieldSpec{WireName: "scale_factor"},
+	"ShortName":   ubx.FieldSpec{WireName: "short_name"},
+}
 
 var WithEntries_Data_Attributes_Entries_CostsFields = ubx.FieldMap{
-		"Actual": ubx.FieldSpec{WireName: "actual"},
-		"Amount": ubx.FieldSpec{WireName: "amount"},
-		"CustomForecast": ubx.FieldSpec{WireName: "custom_forecast"},
-		"Forecast": ubx.FieldSpec{WireName: "forecast"},
-		"OotbForecast": ubx.FieldSpec{WireName: "ootb_forecast"},
-	}
+	"Actual":         ubx.FieldSpec{WireName: "actual"},
+	"Amount":         ubx.FieldSpec{WireName: "amount"},
+	"CustomForecast": ubx.FieldSpec{WireName: "custom_forecast"},
+	"Forecast":       ubx.FieldSpec{WireName: "forecast"},
+	"OotbForecast":   ubx.FieldSpec{WireName: "ootb_forecast"},
+}
 
 var WithEntries_Data_Attributes_Entries_TagFiltersFields = ubx.FieldMap{
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"TagValue": ubx.FieldSpec{WireName: "tag_value"},
-	}
+	"TagKey":   ubx.FieldSpec{WireName: "tag_key"},
+	"TagValue": ubx.FieldSpec{WireName: "tag_value"},
+}
 
 var WithEntries_Data_Attributes_EntriesFields = ubx.FieldMap{
-		"Amount": ubx.FieldSpec{WireName: "amount"},
-		"Costs": ubx.FieldSpec{
-			WireName: "costs",
-			Kind: "object",
-			Fields: WithEntries_Data_Attributes_Entries_CostsFields,
-		},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"TagFilters": ubx.FieldSpec{
-			WireName: "tag_filters",
-			Kind: "list",
-			Fields: WithEntries_Data_Attributes_Entries_TagFiltersFields,
-		},
-	}
+	"Amount": ubx.FieldSpec{WireName: "amount"},
+	"Costs": ubx.FieldSpec{
+		WireName: "costs",
+		Kind:     "object",
+		Fields:   WithEntries_Data_Attributes_Entries_CostsFields,
+	},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"TagFilters": ubx.FieldSpec{
+		WireName: "tag_filters",
+		Kind:     "list",
+		Fields:   WithEntries_Data_Attributes_Entries_TagFiltersFields,
+	},
+}
 
 var WithEntries_Data_AttributesFields = ubx.FieldMap{
-		"Costs": ubx.FieldSpec{
-			WireName: "costs",
-			Kind: "object",
-			Fields: WithEntries_Data_Attributes_CostsFields,
-		},
-		"CostsPeriodEnd": ubx.FieldSpec{WireName: "costs_period_end"},
-		"CostsPeriodStart": ubx.FieldSpec{WireName: "costs_period_start"},
-		"CostsUnit": ubx.FieldSpec{
-			WireName: "costs_unit",
-			Kind: "object",
-			Fields: WithEntries_Data_Attributes_CostsUnitFields,
-		},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-		"EndMonth": ubx.FieldSpec{WireName: "end_month"},
-		"Entries": ubx.FieldSpec{
-			WireName: "entries",
-			Kind: "list",
-			Fields: WithEntries_Data_Attributes_EntriesFields,
-		},
-		"MetricsQuery": ubx.FieldSpec{WireName: "metrics_query"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OrgId": ubx.FieldSpec{WireName: "org_id"},
-		"StartMonth": ubx.FieldSpec{WireName: "start_month"},
-		"TotalAmount": ubx.FieldSpec{WireName: "total_amount"},
-		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-		"UpdatedBy": ubx.FieldSpec{WireName: "updated_by"},
-	}
+	"Costs": ubx.FieldSpec{
+		WireName: "costs",
+		Kind:     "object",
+		Fields:   WithEntries_Data_Attributes_CostsFields,
+	},
+	"CostsPeriodEnd":   ubx.FieldSpec{WireName: "costs_period_end"},
+	"CostsPeriodStart": ubx.FieldSpec{WireName: "costs_period_start"},
+	"CostsUnit": ubx.FieldSpec{
+		WireName: "costs_unit",
+		Kind:     "object",
+		Fields:   WithEntries_Data_Attributes_CostsUnitFields,
+	},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+	"EndMonth":  ubx.FieldSpec{WireName: "end_month"},
+	"Entries": ubx.FieldSpec{
+		WireName: "entries",
+		Kind:     "list",
+		Fields:   WithEntries_Data_Attributes_EntriesFields,
+	},
+	"MetricsQuery": ubx.FieldSpec{WireName: "metrics_query"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"OrgId":        ubx.FieldSpec{WireName: "org_id"},
+	"StartMonth":   ubx.FieldSpec{WireName: "start_month"},
+	"TotalAmount":  ubx.FieldSpec{WireName: "total_amount"},
+	"UpdatedAt":    ubx.FieldSpec{WireName: "updated_at"},
+	"UpdatedBy":    ubx.FieldSpec{WireName: "updated_by"},
+}
 
 var WithEntries_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: WithEntries_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   WithEntries_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type WithEntriesConfig struct {
 	// A budget and all its entries.
@@ -194,8 +194,8 @@ var WithEntries = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: WithEntries_DataFields,
+			Kind:     "object",
+			Fields:   WithEntries_DataFields,
 		},
 		"BudgetId": ubx.FieldSpec{WireName: "budget_id"},
 	},

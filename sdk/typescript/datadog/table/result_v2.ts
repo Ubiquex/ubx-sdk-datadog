@@ -47,23 +47,35 @@ export interface ResultV2_Data_Attributes_Schema {
 }
 
 export interface ResultV2_Data_Attributes {
+  /** UUID of the user who created the reference table. */
+  createdBy?: string | Computed<string>;
   /** Optional text describing the purpose or contents of this reference table. */
   description?: string | Computed<string>;
   /** Metadata specifying where and how to access the reference table's data file. */
   fileMetadata?: ResultV2_Data_Attributes_FileMetadata | Computed<ResultV2_Data_Attributes_FileMetadata>;
+  /** UUID of the user who last updated the reference table. */
+  lastUpdatedBy?: string | Computed<string>;
+  /** The number of successfully processed rows in the reference table. */
+  rowCount?: number | Computed<number>;
   /** Schema defining the structure and columns of the reference table. */
   schema: ResultV2_Data_Attributes_Schema | Computed<ResultV2_Data_Attributes_Schema>;
   /** The source type for creating reference table data. Only these source types can be created through this API. */
   source: string | Computed<string>;
+  /** The processing status of the table. */
+  status?: string | Computed<string>;
   /** Name to identify this reference table. */
   tableName: string | Computed<string>;
   /** Tags for organizing and filtering reference tables. */
   tags?: string[] | Computed<string[]>;
+  /** When the reference table was last updated, in ISO 8601 format. */
+  updatedAt?: string | Computed<string>;
 }
 
 export interface ResultV2_Data {
   /** Attributes that define the reference table's configuration and properties. */
   attributes?: ResultV2_Data_Attributes | Computed<ResultV2_Data_Attributes>;
+  /** Unique identifier for the reference table. */
+  id?: string | Computed<string>;
   /** Reference table resource type. */
   type: string | Computed<string>;
 }
@@ -132,20 +144,25 @@ const ResultV2_Data_Attributes_SchemaFields: FieldMap = {
 };
 
 const ResultV2_Data_AttributesFields: FieldMap = {
+  createdBy: "created_by",
   description: "description",
   fileMetadata: {
     wireName: "file_metadata",
     kind: "object",
     fields: ResultV2_Data_Attributes_FileMetadataFields,
   },
+  lastUpdatedBy: "last_updated_by",
+  rowCount: "row_count",
   schema: {
     wireName: "schema",
     kind: "object",
     fields: ResultV2_Data_Attributes_SchemaFields,
   },
   source: "source",
+  status: "status",
   tableName: "table_name",
   tags: "tags",
+  updatedAt: "updated_at",
 };
 
 const ResultV2_DataFields: FieldMap = {
@@ -154,6 +171,7 @@ const ResultV2_DataFields: FieldMap = {
     kind: "object",
     fields: ResultV2_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

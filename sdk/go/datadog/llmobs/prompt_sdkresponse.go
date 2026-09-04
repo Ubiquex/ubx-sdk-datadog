@@ -3,7 +3,14 @@ package llmobs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PromptSdkresponse_Data_Attributes_ChatTemplate struct {
+	Content any
+	Role    any
+}
+
 type PromptSdkresponse_Data_Attributes struct {
+	// Chat template for this prompt version, as a list of role and content messages. Omitted for text templates.
+	ChatTemplate any
 	// Optional description of the prompt.
 	Description any
 	// Optional feature-flag environment UUIDs the service attempts to enable and configure to use the first version as their default after creation.
@@ -12,39 +19,58 @@ type PromptSdkresponse_Data_Attributes struct {
 	Labels any
 	// Customer-provided identifier for the new prompt.
 	PromptId any
+	// Unique identifier of this prompt version.
+	PromptVersionUuid any
 	// A text template or a list of chat messages.
 	Template any
 	// Optional title of the prompt.
 	Title any
 	// Optional user-supplied version identifier for the first version.
 	UserVersion any
+	// Version identifier for this prompt version. This is the sequential version number unless a user-supplied version identifier was set, in which case that identifier is used instead.
+	Version any
 }
 
 type PromptSdkresponse_Data struct {
 	// Attributes for creating an Agent Observability prompt and its first version. `prompt_id` and `template` are required; all other attributes are optional.
 	Attributes any
+	// Unique identifier of the prompt.
+	Id any
 	// Resource type of an Agent Observability prompt.
 	Type any
 }
 
+var PromptSdkresponse_Data_Attributes_ChatTemplateFields = ubx.FieldMap{
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Role":    ubx.FieldSpec{WireName: "role"},
+}
+
 var PromptSdkresponse_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnvIds": ubx.FieldSpec{WireName: "env_ids"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"PromptId": ubx.FieldSpec{WireName: "prompt_id"},
-		"Template": ubx.FieldSpec{WireName: "template"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"UserVersion": ubx.FieldSpec{WireName: "user_version"},
-	}
+	"ChatTemplate": ubx.FieldSpec{
+		WireName: "chat_template",
+		Kind:     "list",
+		Fields:   PromptSdkresponse_Data_Attributes_ChatTemplateFields,
+	},
+	"Description":       ubx.FieldSpec{WireName: "description"},
+	"EnvIds":            ubx.FieldSpec{WireName: "env_ids"},
+	"Labels":            ubx.FieldSpec{WireName: "labels"},
+	"PromptId":          ubx.FieldSpec{WireName: "prompt_id"},
+	"PromptVersionUuid": ubx.FieldSpec{WireName: "prompt_version_uuid"},
+	"Template":          ubx.FieldSpec{WireName: "template"},
+	"Title":             ubx.FieldSpec{WireName: "title"},
+	"UserVersion":       ubx.FieldSpec{WireName: "user_version"},
+	"Version":           ubx.FieldSpec{WireName: "version"},
+}
 
 var PromptSdkresponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: PromptSdkresponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   PromptSdkresponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PromptSdkresponseConfig struct {
 	// Data object for creating an Agent Observability prompt.
@@ -65,8 +91,8 @@ var PromptSdkresponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: PromptSdkresponse_DataFields,
+			Kind:     "object",
+			Fields:   PromptSdkresponse_DataFields,
 		},
 		"PromptId": ubx.FieldSpec{WireName: "prompt_id"},
 	},

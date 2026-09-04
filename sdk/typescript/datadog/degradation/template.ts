@@ -15,17 +15,46 @@ export interface Template_Data_Attributes_Updates {
 export interface Template_Data_Attributes {
   /** The components affected by a degradation created from this template. */
   componentsAffected?: Template_Data_Attributes_ComponentsAffected[] | Computed<Template_Data_Attributes_ComponentsAffected[]>;
+  /** Timestamp of when the degradation template was created. */
+  createdAt?: string | Computed<string>;
   /** The title used for a degradation created from this template. */
   degradationTitle?: string | Computed<string>;
+  /** Timestamp of when the degradation template was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the degradation template. */
   name: string | Computed<string>;
   /** The pre-filled updates for a degradation created from this template. */
   updates?: Template_Data_Attributes_Updates[] | Computed<Template_Data_Attributes_Updates[]>;
 }
 
+export interface Template_Data_Relationships_CreatedByUser_Data {
+  /** The ID of the Datadog user who created the degradation template. */
+  id: string | Computed<string>;
+  /** Users resource type. */
+  type: string | Computed<string>;
+}
+
+export interface Template_Data_Relationships_CreatedByUser {
+  /** The data object identifying the Datadog user who created the degradation template. */
+  data: Template_Data_Relationships_CreatedByUser_Data | Computed<Template_Data_Relationships_CreatedByUser_Data>;
+}
+
+export interface Template_Data_Relationships {
+  /** The Datadog user who created the degradation template. */
+  createdByUser?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
+  /** The Datadog user who last modified the degradation template. */
+  lastModifiedByUser?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
+  /** The status page the degradation template belongs to. */
+  statusPage?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
+}
+
 export interface Template_Data {
   /** The attributes for creating a degradation template. */
   attributes?: Template_Data_Attributes | Computed<Template_Data_Attributes>;
+  /** The ID of the degradation template. */
+  id?: string | Computed<string>;
+  /** The relationships of a degradation template. */
+  relationships?: Template_Data_Relationships | Computed<Template_Data_Relationships>;
   /** Degradation templates resource type. */
   type: string | Computed<string>;
 }
@@ -38,18 +67,9 @@ export interface Template_Included_Attributes {
   uuid?: string | Computed<string>;
 }
 
-export interface Template_Included_Relationships_CreatedByUser_Data {
-  id?: string | Computed<string>;
-  type?: string | Computed<string>;
-}
-
-export interface Template_Included_Relationships_CreatedByUser {
-  data?: Template_Included_Relationships_CreatedByUser_Data | Computed<Template_Included_Relationships_CreatedByUser_Data>;
-}
-
 export interface Template_Included_Relationships {
-  createdByUser?: Template_Included_Relationships_CreatedByUser | Computed<Template_Included_Relationships_CreatedByUser>;
-  lastModifiedByUser?: Template_Included_Relationships_CreatedByUser | Computed<Template_Included_Relationships_CreatedByUser>;
+  createdByUser?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
+  lastModifiedByUser?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
 }
 
 export interface Template_Included {
@@ -76,7 +96,9 @@ const Template_Data_AttributesFields: FieldMap = {
     kind: "list",
     fields: Template_Data_Attributes_ComponentsAffectedFields,
   },
+  createdAt: "created_at",
   degradationTitle: "degradation_title",
+  modifiedAt: "modified_at",
   name: "name",
   updates: {
     wireName: "updates",
@@ -85,11 +107,48 @@ const Template_Data_AttributesFields: FieldMap = {
   },
 };
 
+const Template_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const Template_Data_Relationships_CreatedByUserFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: Template_Data_Relationships_CreatedByUser_DataFields,
+  },
+};
+
+const Template_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: Template_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: Template_Data_Relationships_CreatedByUserFields,
+  },
+  statusPage: {
+    wireName: "status_page",
+    kind: "object",
+    fields: Template_Data_Relationships_CreatedByUserFields,
+  },
+};
+
 const Template_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
     kind: "object",
     fields: Template_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: Template_Data_RelationshipsFields,
   },
   type: "type",
 };

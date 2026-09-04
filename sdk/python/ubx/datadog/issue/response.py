@@ -7,9 +7,79 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Response_Data:
+class Response_Data_Attributes_Regression:
+    # Timestamp when the issue was reopened (regressed).
+    regressed_at: Any = None
+    # Application version where the regression was observed.
+    regressed_at_version: Any = None
+    # Timestamp when the issue was resolved before the regression.
+    resolved_at: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes:
+    # Error message associated with the issue.
+    error_message: Any = None
+    # Type of the error that matches the issue.
+    error_type: Any = None
+    # Path of the file where the issue occurred.
+    file_path: Any = None
+    # Timestamp of the first seen error in milliseconds since the Unix epoch.
+    first_seen: Any = None
+    # The application version (for example, git commit hash) where the issue was first observed.
+    first_seen_version: Any = None
+    # Name of the function where the issue occurred.
+    function_name: Any = None
+    # Error is a crash.
+    is_crash: Any = None
+    # Array of programming languages associated with the issue.
+    languages: Any = None
+    # Timestamp of the last seen error in milliseconds since the Unix epoch.
+    last_seen: Any = None
+    # The application version (for example, git commit hash) where the issue was last observed.
+    last_seen_version: Any = None
+    # Platform associated with the issue.
+    platform: Any = None
+    # Regression information for an issue that was previously resolved and then reopened.
+    regression: Any = None
+    # Service name.
+    service: Any = None
+    # State of the issue
+    state: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_Assignee_Data:
     # User identifier.
     id: Any = None
+    # Type of the object
+    type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_Assignee:
+    # The user the issue is assigned to.
+    data: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_TeamOwners:
+    # Array of teams that are owners of the issue.
+    data: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships:
+    # Relationship between the issue and assignee.
+    assignee: Any = None
+    # Relationship between the issue and case.
+    case: Any = None
+    # Relationship between the issue and teams.
+    team_owners: Any = None
+
+@dataclasses.dataclass
+class Response_Data:
+    # Object containing the information of an issue.
+    attributes: Any = None
+    # User identifier.
+    id: Any = None
+    # Relationship between the issue and an assignee, case and/or teams.
+    relationships: Any = None
     # Type of the object.
     type: Any = None
 
@@ -67,10 +137,6 @@ class Response_Included_Attributes:
     type: Any = None
 
 @dataclasses.dataclass
-class Response_Included_Relationships_Assignee:
-    data: Any = None
-
-@dataclasses.dataclass
 class Response_Included_Relationships:
     assignee: Any = None
     created_by: Any = None
@@ -84,8 +150,84 @@ class Response_Included:
     relationships: Any = None
     type: Any = None
 
-_Response_DataFields = {
+_Response_Data_Attributes_RegressionFields = {
+    "regressed_at": ubx.FieldSpec(wire_name="regressed_at"),
+    "regressed_at_version": ubx.FieldSpec(wire_name="regressed_at_version"),
+    "resolved_at": ubx.FieldSpec(wire_name="resolved_at"),
+}
+
+_Response_Data_AttributesFields = {
+    "error_message": ubx.FieldSpec(wire_name="error_message"),
+    "error_type": ubx.FieldSpec(wire_name="error_type"),
+    "file_path": ubx.FieldSpec(wire_name="file_path"),
+    "first_seen": ubx.FieldSpec(wire_name="first_seen"),
+    "first_seen_version": ubx.FieldSpec(wire_name="first_seen_version"),
+    "function_name": ubx.FieldSpec(wire_name="function_name"),
+    "is_crash": ubx.FieldSpec(wire_name="is_crash"),
+    "languages": ubx.FieldSpec(wire_name="languages"),
+    "last_seen": ubx.FieldSpec(wire_name="last_seen"),
+    "last_seen_version": ubx.FieldSpec(wire_name="last_seen_version"),
+    "platform": ubx.FieldSpec(wire_name="platform"),
+    "regression": ubx.FieldSpec(
+        wire_name="regression",
+        kind="object",
+        fields=_Response_Data_Attributes_RegressionFields,
+    ),
+    "service": ubx.FieldSpec(wire_name="service"),
+    "state": ubx.FieldSpec(wire_name="state"),
+}
+
+_Response_Data_Relationships_Assignee_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Response_Data_Relationships_AssigneeFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_Response_Data_Relationships_Assignee_DataFields,
+    ),
+}
+
+_Response_Data_Relationships_TeamOwnersFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="list",
+        fields=_Response_Data_Relationships_Assignee_DataFields,
+    ),
+}
+
+_Response_Data_RelationshipsFields = {
+    "assignee": ubx.FieldSpec(
+        wire_name="assignee",
+        kind="object",
+        fields=_Response_Data_Relationships_AssigneeFields,
+    ),
+    "case": ubx.FieldSpec(
+        wire_name="case",
+        kind="object",
+        fields=_Response_Data_Relationships_AssigneeFields,
+    ),
+    "team_owners": ubx.FieldSpec(
+        wire_name="team_owners",
+        kind="object",
+        fields=_Response_Data_Relationships_TeamOwnersFields,
+    ),
+}
+
+_Response_DataFields = {
+    "attributes": ubx.FieldSpec(
+        wire_name="attributes",
+        kind="object",
+        fields=_Response_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_Response_Data_RelationshipsFields,
+    ),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

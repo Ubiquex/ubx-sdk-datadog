@@ -46,10 +46,30 @@ class MonitoringDatasetResponse_Data_Attributes_Definition:
 
 @dataclasses.dataclass
 class MonitoringDatasetResponse_Data_Attributes:
+    # The creation timestamp of the dataset, in ISO 8601 format.
+    created_at: Any = None
+    # The Datadog handle of the user who created the dataset.
+    created_by_handle: Any = None
+    # The display name of the user who created the dataset.
+    created_by_name: Any = None
     # The definition of the dataset. The shape depends on the value of `data_source`. Use `reference_table` or `managed_resource` for a referential dataset, or one of the event platform sources (for example `logs`, `audit`, `events`, `spans`, `rum`) for an event platform dataset.
     definition: Any = None
     # The description of the dataset. Maximum 255 characters.
     description: Any = None
+    # The UUID of the dataset.
+    id: Any = None
+    # Whether the dataset is an out-of-the-box dataset provided by Datadog.
+    is_default: Any = None
+    # Whether the dataset is marked as deprecated.
+    is_deprecated: Any = None
+    # The timestamp of the last modification of the dataset, in ISO 8601 format.
+    modified_at: Any = None
+    # The unique name of the dataset.
+    name: Any = None
+    # The Datadog handle of the user who last updated the dataset.
+    updated_by_handle: Any = None
+    # The display name of the user who last updated the dataset.
+    updated_by_name: Any = None
     # The expected current version of the dataset for optimistic concurrency control on updates. If the dataset's current version does not match, the request is rejected with a 409 Conflict.
     version: Any = None
 
@@ -57,6 +77,8 @@ class MonitoringDatasetResponse_Data_Attributes:
 class MonitoringDatasetResponse_Data:
     # The attributes of a dataset create or update request.
     attributes: Any = None
+    # The UUID of the dataset.
+    id: Any = None
     # The type of resource for a dataset create request.
     type: Any = None
 
@@ -99,12 +121,22 @@ _MonitoringDatasetResponse_Data_Attributes_DefinitionFields = {
 }
 
 _MonitoringDatasetResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by_handle": ubx.FieldSpec(wire_name="created_by_handle"),
+    "created_by_name": ubx.FieldSpec(wire_name="created_by_name"),
     "definition": ubx.FieldSpec(
         wire_name="definition",
         kind="object",
         fields=_MonitoringDatasetResponse_Data_Attributes_DefinitionFields,
     ),
     "description": ubx.FieldSpec(wire_name="description"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "is_default": ubx.FieldSpec(wire_name="is_default"),
+    "is_deprecated": ubx.FieldSpec(wire_name="is_deprecated"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "updated_by_handle": ubx.FieldSpec(wire_name="updated_by_handle"),
+    "updated_by_name": ubx.FieldSpec(wire_name="updated_by_name"),
     "version": ubx.FieldSpec(wire_name="version"),
 }
 
@@ -114,6 +146,7 @@ _MonitoringDatasetResponse_DataFields = {
         kind="object",
         fields=_MonitoringDatasetResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

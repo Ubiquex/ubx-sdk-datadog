@@ -46,6 +46,21 @@ class SecurityWafCustomRuleResponse_Data_Attributes_Conditions:
     parameters: Any = None
 
 @dataclasses.dataclass
+class SecurityWafCustomRuleResponse_Data_Attributes_Metadata:
+    # The date and time the WAF custom rule was created.
+    added_at: Any = None
+    # The handle of the user who created the WAF custom rule.
+    added_by: Any = None
+    # The name of the user who created the WAF custom rule.
+    added_by_name: Any = None
+    # The date and time the WAF custom rule was last updated.
+    modified_at: Any = None
+    # The handle of the user who last updated the WAF custom rule.
+    modified_by: Any = None
+    # The name of the user who last updated the WAF custom rule.
+    modified_by_name: Any = None
+
+@dataclasses.dataclass
 class SecurityWafCustomRuleResponse_Data_Attributes_Scope:
     env: Any = None
     service: Any = None
@@ -67,6 +82,8 @@ class SecurityWafCustomRuleResponse_Data_Attributes:
     conditions: Any = None
     # Indicates whether the WAF custom rule is enabled.
     enabled: Any = None
+    # Metadata associated with the WAF Custom Rule.
+    metadata: Any = None
     # The name of the WAF custom rule.
     name: Any = None
     # The path glob for the WAF custom rule.
@@ -80,6 +97,8 @@ class SecurityWafCustomRuleResponse_Data_Attributes:
 class SecurityWafCustomRuleResponse_Data:
     # Create a new WAF custom rule.
     attributes: Any = None
+    # The ID of the custom rule.
+    id: Any = None
     # The type of the resource. The value should always be `custom_rule`.
     type: Any = None
 
@@ -134,6 +153,15 @@ _SecurityWafCustomRuleResponse_Data_Attributes_ConditionsFields = {
     ),
 }
 
+_SecurityWafCustomRuleResponse_Data_Attributes_MetadataFields = {
+    "added_at": ubx.FieldSpec(wire_name="added_at"),
+    "added_by": ubx.FieldSpec(wire_name="added_by"),
+    "added_by_name": ubx.FieldSpec(wire_name="added_by_name"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(wire_name="modified_by"),
+    "modified_by_name": ubx.FieldSpec(wire_name="modified_by_name"),
+}
+
 _SecurityWafCustomRuleResponse_Data_Attributes_ScopeFields = {
     "env": ubx.FieldSpec(wire_name="env"),
     "service": ubx.FieldSpec(wire_name="service"),
@@ -157,6 +185,11 @@ _SecurityWafCustomRuleResponse_Data_AttributesFields = {
         fields=_SecurityWafCustomRuleResponse_Data_Attributes_ConditionsFields,
     ),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "metadata": ubx.FieldSpec(
+        wire_name="metadata",
+        kind="object",
+        fields=_SecurityWafCustomRuleResponse_Data_Attributes_MetadataFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
     "path_glob": ubx.FieldSpec(wire_name="path_glob"),
     "scope": ubx.FieldSpec(
@@ -177,6 +210,7 @@ _SecurityWafCustomRuleResponse_DataFields = {
         kind="object",
         fields=_SecurityWafCustomRuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

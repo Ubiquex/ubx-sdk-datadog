@@ -24,8 +24,8 @@ type TagsAttrs struct {
 var Tags = ubx.ResourceBinding{
 	WireType: "datadog_host_tags",
 	Fields: ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Host":     ubx.FieldSpec{WireName: "host"},
+		"Tags":     ubx.FieldSpec{WireName: "tags"},
 		"HostName": ubx.FieldSpec{WireName: "host_name"},
 	},
 }

@@ -4,6 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .dataset import Dataset, DatasetConfig
 from .report_schedule_list_response import ReportScheduleListResponse, ReportScheduleListResponseConfig
 from .response import Response, ResponseConfig

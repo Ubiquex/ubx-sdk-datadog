@@ -93,8 +93,6 @@ export interface GlobalVariableConfig {
   attributes?: GlobalVariable_Attributes | Computed<GlobalVariable_Attributes>;
   /** Description of the global variable. */
   description: string | Computed<string>;
-  /** Unique identifier of the global variable. */
-  id?: string | Computed<string>;
   /** Determines if the global variable is a FIDO variable. */
   isFido?: boolean | Computed<boolean>;
   /** Determines if the global variable is a TOTP/MFA variable. */
@@ -147,7 +145,6 @@ export const GlobalVariable: ResourceBinding<GlobalVariableConfig, GlobalVariabl
       fields: GlobalVariable_AttributesFields,
     },
     description: "description",
-    id: "id",
     isFido: "is_fido",
     isTotp: "is_totp",
     name: "name",

@@ -3,11 +3,26 @@ package incident
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type UserDefinedFieldResponse_Data_Attributes_Metadata struct {
+	// The category of the autocomplete source.
+	Category any
+	// The query parameter used to limit the number of autocomplete results.
+	SearchLimitParam any
+	// Additional query parameters to include in the search URL.
+	SearchParams any
+	// The query parameter used to pass typed input to the search URL.
+	SearchQueryParam any
+	// The JSON path to the results in the response body.
+	SearchResultPath any
+	// The URL used to populate autocomplete options.
+	SearchUrl any
+}
+
 type UserDefinedFieldResponse_Data_Attributes_ValidValues struct {
-	Description any
-	DisplayName any
+	Description      any
+	DisplayName      any
 	ShortDescription any
-	Value any
+	Value            any
 }
 
 type UserDefinedFieldResponse_Data_Attributes struct {
@@ -15,16 +30,26 @@ type UserDefinedFieldResponse_Data_Attributes struct {
 	Category any
 	// The lifecycle stage at which the app prompts users to fill out this field. Cannot be set on required fields.
 	Collected any
+	// Timestamp when the field was created.
+	Created any
 	// The default value for the field. Must be one of the valid values when valid_values is set.
 	DefaultValue any
+	// Timestamp when the field was soft-deleted, or null if not deleted.
+	Deleted any
 	// The human-readable name shown in the UI. Defaults to a formatted version of the name if not provided.
 	DisplayName any
+	// Metadata for autocomplete-type user-defined fields, describing how to populate autocomplete options.
+	Metadata any
+	// Timestamp when the field was last modified.
+	Modified any
 	// The unique identifier of the field. Must start with a letter or digit and contain only letters, digits, underscores, or periods.
 	Name any
 	// A decimal string representing the field's display order in the UI.
 	Ordinal any
 	// When true, users must fill out this field on incidents.
 	Required any
+	// When true, this field is reserved for system use and cannot be deleted.
+	Reserved any
 	// For metric tag-type fields only, the metric tag key that powers the autocomplete options.
 	TagKey any
 	// The data type of the field. 1=dropdown, 2=multiselect, 3=textbox, 4=textarray, 5=metrictag, 6=autocomplete, 7=number, 8=datetime.
@@ -33,90 +58,125 @@ type UserDefinedFieldResponse_Data_Attributes struct {
 	ValidValues any
 }
 
-type UserDefinedFieldResponse_Data_Relationships_IncidentType_Data struct {
-	// The incident type's ID.
+type UserDefinedFieldResponse_Data_Relationships_CreatedByUser_Data struct {
+	// A unique identifier that represents the user.
 	Id any
-	// Incident type resource type.
+	// Users resource type.
 	Type any
 }
 
-type UserDefinedFieldResponse_Data_Relationships_IncidentType struct {
-	// Relationship to incident type object.
+type UserDefinedFieldResponse_Data_Relationships_CreatedByUser struct {
+	// Relationship to user object.
 	Data any
 }
 
 type UserDefinedFieldResponse_Data_Relationships struct {
+	// Relationship to user.
+	CreatedByUser any
 	// Relationship to an incident type.
 	IncidentType any
+	// Relationship to user.
+	LastModifiedByUser any
 }
 
 type UserDefinedFieldResponse_Data struct {
 	// Attributes for creating an incident user-defined field.
 	Attributes any
+	// The unique identifier of the user-defined field.
+	Id any
 	// Relationships for creating an incident user-defined field.
 	Relationships any
 	// The incident user defined fields type.
 	Type any
 }
 
+var UserDefinedFieldResponse_Data_Attributes_MetadataFields = ubx.FieldMap{
+	"Category":         ubx.FieldSpec{WireName: "category"},
+	"SearchLimitParam": ubx.FieldSpec{WireName: "search_limit_param"},
+	"SearchParams":     ubx.FieldSpec{WireName: "search_params"},
+	"SearchQueryParam": ubx.FieldSpec{WireName: "search_query_param"},
+	"SearchResultPath": ubx.FieldSpec{WireName: "search_result_path"},
+	"SearchUrl":        ubx.FieldSpec{WireName: "search_url"},
+}
+
 var UserDefinedFieldResponse_Data_Attributes_ValidValuesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+	"Value":            ubx.FieldSpec{WireName: "value"},
+}
 
 var UserDefinedFieldResponse_Data_AttributesFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Collected": ubx.FieldSpec{WireName: "collected"},
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Ordinal": ubx.FieldSpec{WireName: "ordinal"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ValidValues": ubx.FieldSpec{
-			WireName: "valid_values",
-			Kind: "list",
-			Fields: UserDefinedFieldResponse_Data_Attributes_ValidValuesFields,
-		},
-	}
+	"Category":     ubx.FieldSpec{WireName: "category"},
+	"Collected":    ubx.FieldSpec{WireName: "collected"},
+	"Created":      ubx.FieldSpec{WireName: "created"},
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Deleted":      ubx.FieldSpec{WireName: "deleted"},
+	"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   UserDefinedFieldResponse_Data_Attributes_MetadataFields,
+	},
+	"Modified": ubx.FieldSpec{WireName: "modified"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Ordinal":  ubx.FieldSpec{WireName: "ordinal"},
+	"Required": ubx.FieldSpec{WireName: "required"},
+	"Reserved": ubx.FieldSpec{WireName: "reserved"},
+	"TagKey":   ubx.FieldSpec{WireName: "tag_key"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+	"ValidValues": ubx.FieldSpec{
+		WireName: "valid_values",
+		Kind:     "list",
+		Fields:   UserDefinedFieldResponse_Data_Attributes_ValidValuesFields,
+	},
+}
 
-var UserDefinedFieldResponse_Data_Relationships_IncidentType_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+var UserDefinedFieldResponse_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
-var UserDefinedFieldResponse_Data_Relationships_IncidentTypeFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: UserDefinedFieldResponse_Data_Relationships_IncidentType_DataFields,
-		},
-	}
+var UserDefinedFieldResponse_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   UserDefinedFieldResponse_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var UserDefinedFieldResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"IncidentType": ubx.FieldSpec{
-			WireName: "incident_type",
-			Kind: "object",
-			Fields: UserDefinedFieldResponse_Data_Relationships_IncidentTypeFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   UserDefinedFieldResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"IncidentType": ubx.FieldSpec{
+		WireName: "incident_type",
+		Kind:     "object",
+		Fields:   UserDefinedFieldResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   UserDefinedFieldResponse_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var UserDefinedFieldResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: UserDefinedFieldResponse_Data_AttributesFields,
-		},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: UserDefinedFieldResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   UserDefinedFieldResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   UserDefinedFieldResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type UserDefinedFieldResponseConfig struct {
 	// Data for creating an incident user-defined field.
@@ -137,8 +197,8 @@ var UserDefinedFieldResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: UserDefinedFieldResponse_DataFields,
+			Kind:     "object",
+			Fields:   UserDefinedFieldResponse_DataFields,
 		},
 		"FieldId": ubx.FieldSpec{WireName: "field_id"},
 	},

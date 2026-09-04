@@ -4,11 +4,11 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringEntraIdAzureAppRegistrationsResponse_Data_Attributes_AzureAppRegistrations struct {
-	ClientId any
-	ErrorCount any
+	ClientId                  any
+	ErrorCount                any
 	ResourceCollectionEnabled any
-	SubscriptionCount any
-	TenantId any
+	SubscriptionCount         any
+	TenantId                  any
 }
 
 type MonitoringEntraIdAzureAppRegistrationsResponse_Data_Attributes struct {
@@ -43,6 +43,5 @@ type MonitoringEntraIdAzureAppRegistrationsResponseAttrs struct {
 
 var MonitoringEntraIdAzureAppRegistrationsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_security_monitoring_entra_id_azure_app_registrations_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

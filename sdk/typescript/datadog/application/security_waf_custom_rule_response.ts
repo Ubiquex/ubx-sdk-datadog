@@ -40,6 +40,21 @@ export interface SecurityWafCustomRuleResponse_Data_Attributes_Conditions {
   parameters?: SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters | Computed<SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters>;
 }
 
+export interface SecurityWafCustomRuleResponse_Data_Attributes_Metadata {
+  /** The date and time the WAF custom rule was created. */
+  addedAt?: string | Computed<string>;
+  /** The handle of the user who created the WAF custom rule. */
+  addedBy?: string | Computed<string>;
+  /** The name of the user who created the WAF custom rule. */
+  addedByName?: string | Computed<string>;
+  /** The date and time the WAF custom rule was last updated. */
+  modifiedAt?: string | Computed<string>;
+  /** The handle of the user who last updated the WAF custom rule. */
+  modifiedBy?: string | Computed<string>;
+  /** The name of the user who last updated the WAF custom rule. */
+  modifiedByName?: string | Computed<string>;
+}
+
 export interface SecurityWafCustomRuleResponse_Data_Attributes_Scope {
   env?: string | Computed<string>;
   service?: string | Computed<string>;
@@ -61,6 +76,8 @@ export interface SecurityWafCustomRuleResponse_Data_Attributes {
   conditions: SecurityWafCustomRuleResponse_Data_Attributes_Conditions[] | Computed<SecurityWafCustomRuleResponse_Data_Attributes_Conditions[]>;
   /** Indicates whether the WAF custom rule is enabled. */
   enabled: boolean | Computed<boolean>;
+  /** Metadata associated with the WAF Custom Rule. */
+  metadata?: SecurityWafCustomRuleResponse_Data_Attributes_Metadata | Computed<SecurityWafCustomRuleResponse_Data_Attributes_Metadata>;
   /** The name of the WAF custom rule. */
   name: string | Computed<string>;
   /** The path glob for the WAF custom rule. */
@@ -74,6 +91,8 @@ export interface SecurityWafCustomRuleResponse_Data_Attributes {
 export interface SecurityWafCustomRuleResponse_Data {
   /** Create a new WAF custom rule. */
   attributes: SecurityWafCustomRuleResponse_Data_Attributes | Computed<SecurityWafCustomRuleResponse_Data_Attributes>;
+  /** The ID of the custom rule. */
+  id?: string | Computed<string>;
   /** The type of the resource. The value should always be `custom_rule`. */
   type: string | Computed<string>;
 }
@@ -129,6 +148,15 @@ const SecurityWafCustomRuleResponse_Data_Attributes_ConditionsFields: FieldMap =
   },
 };
 
+const SecurityWafCustomRuleResponse_Data_Attributes_MetadataFields: FieldMap = {
+  addedAt: "added_at",
+  addedBy: "added_by",
+  addedByName: "added_by_name",
+  modifiedAt: "modified_at",
+  modifiedBy: "modified_by",
+  modifiedByName: "modified_by_name",
+};
+
 const SecurityWafCustomRuleResponse_Data_Attributes_ScopeFields: FieldMap = {
   env: "env",
   service: "service",
@@ -152,6 +180,11 @@ const SecurityWafCustomRuleResponse_Data_AttributesFields: FieldMap = {
     fields: SecurityWafCustomRuleResponse_Data_Attributes_ConditionsFields,
   },
   enabled: "enabled",
+  metadata: {
+    wireName: "metadata",
+    kind: "object",
+    fields: SecurityWafCustomRuleResponse_Data_Attributes_MetadataFields,
+  },
   name: "name",
   pathGlob: "path_glob",
   scope: {
@@ -172,6 +205,7 @@ const SecurityWafCustomRuleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: SecurityWafCustomRuleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -4,47 +4,47 @@ package fleet
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentV2_Data_Attributes_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AgentV2_Data_Attributes struct {
-	AgentVersion any
-	ApiKeyName any
-	ApiKeyUuid any
-	CloudProvider any
-	ClusterName any
-	DatadogDataCenter any
-	EcsFargateClusterName any
-	EcsFargateTaskArn any
-	EnabledProducts any
-	Env any
-	FirstSeenAt any
-	FleetPolicies any
-	Hostname any
-	InstrumentationErrorCounts any
-	InstrumentationStatus any
-	Integrations any
-	IpAddresses any
+	AgentVersion                       any
+	ApiKeyName                         any
+	ApiKeyUuid                         any
+	CloudProvider                      any
+	ClusterName                        any
+	DatadogDataCenter                  any
+	EcsFargateClusterName              any
+	EcsFargateTaskArn                  any
+	EnabledProducts                    any
+	Env                                any
+	FirstSeenAt                        any
+	FleetPolicies                      any
+	Hostname                           any
+	InstrumentationErrorCounts         any
+	InstrumentationStatus              any
+	Integrations                       any
+	IpAddresses                        any
 	IsSingleStepInstrumentationEnabled any
-	LastRestartAt any
-	Os any
-	OtelCollectorDeploymentTypes any
-	OtelCollectorDistributions any
-	OtelCollectorVersions any
-	OtelResourceAttributes any
-	PodName any
-	RemoteAgentManagement any
-	RemoteConfigStatus any
-	Services any
-	Tags any
-	Team any
+	LastRestartAt                      any
+	Os                                 any
+	OtelCollectorDeploymentTypes       any
+	OtelCollectorDistributions         any
+	OtelCollectorVersions              any
+	OtelResourceAttributes             any
+	PodName                            any
+	RemoteAgentManagement              any
+	RemoteConfigStatus                 any
+	Services                           any
+	Tags                               any
+	Team                               any
 }
 
 type AgentV2_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AgentV2_Meta_Page struct {
@@ -60,35 +60,35 @@ type AgentV2_Meta struct {
 }
 
 type AgentV2Config struct {
-	Filter any
-	PageNumber any
-	PageSize any
-	SortAttribute any
+	Filter         any
+	PageNumber     any
+	PageSize       any
+	SortAttribute  any
 	SortDescending any
-	Tags any
+	Tags           any
 }
 
 type AgentV2Attrs struct {
 	// Array of agents matching the query criteria.
-	Data any
+	Data   any
 	Filter any
 	// Metadata for the v2 list of agents, including pagination information.
-	Meta any
-	PageNumber any
-	PageSize any
-	SortAttribute any
+	Meta           any
+	PageNumber     any
+	PageSize       any
+	SortAttribute  any
 	SortDescending any
-	Tags any
+	Tags           any
 }
 
 var AgentV2 = ubx.DataSourceBinding{
 	WireType: "datadog_fleet_agent_v2",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"PageNumber": ubx.FieldSpec{WireName: "page_number"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"SortAttribute": ubx.FieldSpec{WireName: "sort_attribute"},
+		"Filter":         ubx.FieldSpec{WireName: "filter"},
+		"PageNumber":     ubx.FieldSpec{WireName: "page_number"},
+		"PageSize":       ubx.FieldSpec{WireName: "page_size"},
+		"SortAttribute":  ubx.FieldSpec{WireName: "sort_attribute"},
 		"SortDescending": ubx.FieldSpec{WireName: "sort_descending"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":           ubx.FieldSpec{WireName: "tags"},
 	},
 }

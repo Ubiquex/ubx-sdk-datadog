@@ -33,7 +33,6 @@ class QueryMetadata_Series:
 @dataclasses.dataclass
 class QueryMetadataConfig:
     from_: Any = None
-    query: Any = None
     to: Any = None
 
 @dataclasses.dataclass
@@ -62,7 +61,6 @@ QueryMetadata = ubx.DataSourceBinding(
     wire_type="datadog_metrics_query_metadata",
     fields={
         "from_": ubx.FieldSpec(wire_name="from"),
-        "query": ubx.FieldSpec(wire_name="query"),
         "to": ubx.FieldSpec(wire_name="to"),
     },
 )

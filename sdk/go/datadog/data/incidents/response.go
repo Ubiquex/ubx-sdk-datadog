@@ -5,52 +5,52 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes_DeclaredBy struct {
 	Image48Px any
-	Name any
+	Name      any
 }
 
 type Response_Data_Attributes_Fields struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type Response_Data_Attributes_NotificationHandles struct {
 	DisplayName any
-	Handle any
+	Handle      any
 }
 
 type Response_Data_Attributes struct {
-	Archived any
-	CaseId any
-	Created any
+	Archived               any
+	CaseId                 any
+	Created                any
 	CustomerImpactDuration any
-	CustomerImpactEnd any
-	CustomerImpactScope any
-	CustomerImpactStart any
-	CustomerImpacted any
-	Declared any
-	DeclaredBy any
-	DeclaredByUuid any
-	Detected any
-	Fields any
-	IncidentTypeUuid any
-	IsTest any
-	Modified any
-	NonDatadogCreator any
-	NotificationHandles any
-	PublicId any
-	Resolved any
-	Severity any
-	State any
-	TimeToDetect any
+	CustomerImpactEnd      any
+	CustomerImpactScope    any
+	CustomerImpactStart    any
+	CustomerImpacted       any
+	Declared               any
+	DeclaredBy             any
+	DeclaredByUuid         any
+	Detected               any
+	Fields                 any
+	IncidentTypeUuid       any
+	IsTest                 any
+	Modified               any
+	NonDatadogCreator      any
+	NotificationHandles    any
+	PublicId               any
+	Resolved               any
+	Severity               any
+	State                  any
+	TimeToDetect           any
 	TimeToInternalResponse any
-	TimeToRepair any
-	TimeToResolve any
-	Title any
-	Visibility any
+	TimeToRepair           any
+	TimeToResolve          any
+	Title                  any
+	Visibility             any
 }
 
 type Response_Data_Relationships_Attachments_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -63,42 +63,42 @@ type Response_Data_Relationships_CommanderUser struct {
 }
 
 type Response_Data_Relationships struct {
-	Attachments any
-	CommanderUser any
-	CreatedByUser any
-	DeclaredByUser any
-	Impacts any
-	Integrations any
+	Attachments        any
+	CommanderUser      any
+	CreatedByUser      any
+	DeclaredByUser     any
+	Impacts            any
+	Integrations       any
 	LastModifiedByUser any
-	Responders any
-	UserDefinedFields any
+	Responders         any
+	UserDefinedFields  any
 }
 
 type Response_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type Response_Included_Relationships struct {
-	Incident any
+	Incident           any
 	LastModifiedByUser any
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Meta_Pagination struct {
@@ -121,7 +121,7 @@ type ResponseConfig struct {
 
 type ResponseAttrs struct {
 	// An array of incidents.
-	Data any
+	Data    any
 	Include any
 	// Included related resources that the user requested.
 	Included any

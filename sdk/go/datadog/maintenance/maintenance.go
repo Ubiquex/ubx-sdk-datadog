@@ -4,9 +4,20 @@ package maintenance
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Maintenance_Data_Attributes_ComponentsAffected struct {
-	Id any
-	Name any
+	Id     any
+	Name   any
 	Status any
+}
+
+type Maintenance_Data_Attributes_Updates struct {
+	ComponentsAffected any
+	CreatedAt          any
+	Description        any
+	Id                 any
+	ManualTransition   any
+	ModifiedAt         any
+	StartedAt          any
+	Status             any
 }
 
 type Maintenance_Data_Attributes struct {
@@ -18,27 +29,43 @@ type Maintenance_Data_Attributes struct {
 	ComponentsAffected any
 	// The description shown while the maintenance is in progress.
 	InProgressDescription any
+	// Whether the maintenance was backfilled.
+	IsBackfilled any
+	// Timestamp of when the maintenance was last modified.
+	ModifiedAt any
+	// Timestamp of when the maintenance was published.
+	PublishedDate any
 	// The description shown when the maintenance is scheduled.
 	ScheduledDescription any
 	// Timestamp of when the maintenance is scheduled to start.
 	StartDate any
+	// The status of the maintenance.
+	Status any
 	// The title of the maintenance.
 	Title any
+	// Past updates made to the maintenance.
+	Updates any
 }
 
-type Maintenance_Data_Relationships_Template_Data struct {
-	// The ID of the maintenance template.
+type Maintenance_Data_Relationships_CreatedByUser_Data struct {
+	// The ID of the Datadog user who created the maintenance.
 	Id any
-	// Maintenance templates resource type.
+	// Users resource type.
 	Type any
 }
 
-type Maintenance_Data_Relationships_Template struct {
-	// The data object identifying the template used to create the maintenance.
+type Maintenance_Data_Relationships_CreatedByUser struct {
+	// The data object identifying the Datadog user who created the maintenance.
 	Data any
 }
 
 type Maintenance_Data_Relationships struct {
+	// The Datadog user who created the maintenance.
+	CreatedByUser any
+	// The Datadog user who last modified the maintenance.
+	LastModifiedByUser any
+	// The status page the maintenance belongs to.
+	StatusPage any
 	// The template used to create the maintenance.
 	Template any
 }
@@ -46,6 +73,8 @@ type Maintenance_Data_Relationships struct {
 type Maintenance_Data struct {
 	// The supported attributes for creating a maintenance.
 	Attributes any
+	// The ID of the maintenance.
+	Id any
 	// The supported relationships for creating a maintenance.
 	Relationships any
 	// Maintenances resource type.
@@ -53,79 +82,119 @@ type Maintenance_Data struct {
 }
 
 type Maintenance_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type Maintenance_Included_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type Maintenance_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var Maintenance_Data_Attributes_ComponentsAffectedFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
+
+var Maintenance_Data_Attributes_UpdatesFields = ubx.FieldMap{
+	"ComponentsAffected": ubx.FieldSpec{
+		WireName: "components_affected",
+		Kind:     "list",
+		Fields:   Maintenance_Data_Attributes_ComponentsAffectedFields,
+	},
+	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"Id":               ubx.FieldSpec{WireName: "id"},
+	"ManualTransition": ubx.FieldSpec{WireName: "manual_transition"},
+	"ModifiedAt":       ubx.FieldSpec{WireName: "modified_at"},
+	"StartedAt":        ubx.FieldSpec{WireName: "started_at"},
+	"Status":           ubx.FieldSpec{WireName: "status"},
+}
 
 var Maintenance_Data_AttributesFields = ubx.FieldMap{
-		"CompletedDate": ubx.FieldSpec{WireName: "completed_date"},
-		"CompletedDescription": ubx.FieldSpec{WireName: "completed_description"},
-		"ComponentsAffected": ubx.FieldSpec{
-			WireName: "components_affected",
-			Kind: "list",
-			Fields: Maintenance_Data_Attributes_ComponentsAffectedFields,
-		},
-		"InProgressDescription": ubx.FieldSpec{WireName: "in_progress_description"},
-		"ScheduledDescription": ubx.FieldSpec{WireName: "scheduled_description"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"CompletedDate":        ubx.FieldSpec{WireName: "completed_date"},
+	"CompletedDescription": ubx.FieldSpec{WireName: "completed_description"},
+	"ComponentsAffected": ubx.FieldSpec{
+		WireName: "components_affected",
+		Kind:     "list",
+		Fields:   Maintenance_Data_Attributes_ComponentsAffectedFields,
+	},
+	"InProgressDescription": ubx.FieldSpec{WireName: "in_progress_description"},
+	"IsBackfilled":          ubx.FieldSpec{WireName: "is_backfilled"},
+	"ModifiedAt":            ubx.FieldSpec{WireName: "modified_at"},
+	"PublishedDate":         ubx.FieldSpec{WireName: "published_date"},
+	"ScheduledDescription":  ubx.FieldSpec{WireName: "scheduled_description"},
+	"StartDate":             ubx.FieldSpec{WireName: "start_date"},
+	"Status":                ubx.FieldSpec{WireName: "status"},
+	"Title":                 ubx.FieldSpec{WireName: "title"},
+	"Updates": ubx.FieldSpec{
+		WireName: "updates",
+		Kind:     "list",
+		Fields:   Maintenance_Data_Attributes_UpdatesFields,
+	},
+}
 
-var Maintenance_Data_Relationships_Template_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+var Maintenance_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
-var Maintenance_Data_Relationships_TemplateFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: Maintenance_Data_Relationships_Template_DataFields,
-		},
-	}
+var Maintenance_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Maintenance_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var Maintenance_Data_RelationshipsFields = ubx.FieldMap{
-		"Template": ubx.FieldSpec{
-			WireName: "template",
-			Kind: "object",
-			Fields: Maintenance_Data_Relationships_TemplateFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   Maintenance_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   Maintenance_Data_Relationships_CreatedByUserFields,
+	},
+	"StatusPage": ubx.FieldSpec{
+		WireName: "status_page",
+		Kind:     "object",
+		Fields:   Maintenance_Data_Relationships_CreatedByUserFields,
+	},
+	"Template": ubx.FieldSpec{
+		WireName: "template",
+		Kind:     "object",
+		Fields:   Maintenance_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var Maintenance_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Maintenance_Data_AttributesFields,
-		},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: Maintenance_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Maintenance_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Maintenance_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MaintenanceConfig struct {
 	// The data object for creating a maintenance.
@@ -152,10 +221,10 @@ var Maintenance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Maintenance_DataFields,
+			Kind:     "object",
+			Fields:   Maintenance_DataFields,
 		},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"PageId":        ubx.FieldSpec{WireName: "page_id"},
 		"MaintenanceId": ubx.FieldSpec{WireName: "maintenance_id"},
 	},
 }

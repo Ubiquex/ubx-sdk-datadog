@@ -3,88 +3,230 @@ package issue
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Response_Data struct {
+type Response_Data_Attributes_Regression struct {
+	// Timestamp when the issue was reopened (regressed).
+	RegressedAt any
+	// Application version where the regression was observed.
+	RegressedAtVersion any
+	// Timestamp when the issue was resolved before the regression.
+	ResolvedAt any
+}
+
+type Response_Data_Attributes struct {
+	// Error message associated with the issue.
+	ErrorMessage any
+	// Type of the error that matches the issue.
+	ErrorType any
+	// Path of the file where the issue occurred.
+	FilePath any
+	// Timestamp of the first seen error in milliseconds since the Unix epoch.
+	FirstSeen any
+	// The application version (for example, git commit hash) where the issue was first observed.
+	FirstSeenVersion any
+	// Name of the function where the issue occurred.
+	FunctionName any
+	// Error is a crash.
+	IsCrash any
+	// Array of programming languages associated with the issue.
+	Languages any
+	// Timestamp of the last seen error in milliseconds since the Unix epoch.
+	LastSeen any
+	// The application version (for example, git commit hash) where the issue was last observed.
+	LastSeenVersion any
+	// Platform associated with the issue.
+	Platform any
+	// Regression information for an issue that was previously resolved and then reopened.
+	Regression any
+	// Service name.
+	Service any
+	// State of the issue
+	State any
+}
+
+type Response_Data_Relationships_Assignee_Data struct {
 	// User identifier.
 	Id any
+	// Type of the object
+	Type any
+}
+
+type Response_Data_Relationships_Assignee struct {
+	// The user the issue is assigned to.
+	Data any
+}
+
+type Response_Data_Relationships_TeamOwners struct {
+	// Array of teams that are owners of the issue.
+	Data any
+}
+
+type Response_Data_Relationships struct {
+	// Relationship between the issue and assignee.
+	Assignee any
+	// Relationship between the issue and case.
+	Case any
+	// Relationship between the issue and teams.
+	TeamOwners any
+}
+
+type Response_Data struct {
+	// Object containing the information of an issue.
+	Attributes any
+	// User identifier.
+	Id any
+	// Relationship between the issue and an assignee, case and/or teams.
+	Relationships any
 	// Type of the object.
 	Type any
 }
 
 type Response_Included_Attributes_Insights struct {
-	Ref any
+	Ref        any
 	ResourceId any
-	Type any
+	Type       any
 }
 
 type Response_Included_Attributes_JiraIssue_Result struct {
-	AccountId any
-	IssueId any
-	IssueKey any
-	IssueUrl any
-	ProjectId any
+	AccountId  any
+	IssueId    any
+	IssueKey   any
+	IssueUrl   any
+	ProjectId  any
 	ProjectKey any
 }
 
 type Response_Included_Attributes_JiraIssue struct {
 	ErrorMessage any
-	Result any
-	Status any
+	Result       any
+	Status       any
 }
 
 type Response_Included_Attributes_LinearIssue_Result struct {
 	AccountId any
-	IssueId any
-	IssueKey any
-	IssueUrl any
-	TeamId any
+	IssueId   any
+	IssueKey  any
+	IssueUrl  any
+	TeamId    any
 }
 
 type Response_Included_Attributes_LinearIssue struct {
 	ErrorMessage any
-	Result any
-	Status any
+	Result       any
+	Status       any
 }
 
 type Response_Included_Attributes struct {
-	ArchivedAt any
-	ClosedAt any
-	CreatedAt any
+	ArchivedAt     any
+	ClosedAt       any
+	CreatedAt      any
 	CreationSource any
-	Description any
-	DueDate any
-	Insights any
-	JiraIssue any
-	Key any
-	LinearIssue any
-	ModifiedAt any
-	Priority any
-	Status any
-	Title any
-	Type any
-}
-
-type Response_Included_Relationships_Assignee struct {
-	Data any
+	Description    any
+	DueDate        any
+	Insights       any
+	JiraIssue      any
+	Key            any
+	LinearIssue    any
+	ModifiedAt     any
+	Priority       any
+	Status         any
+	Title          any
+	Type           any
 }
 
 type Response_Included_Relationships struct {
-	Assignee any
-	CreatedBy any
+	Assignee   any
+	CreatedBy  any
 	ModifiedBy any
-	Project any
+	Project    any
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
+}
+
+var Response_Data_Attributes_RegressionFields = ubx.FieldMap{
+	"RegressedAt":        ubx.FieldSpec{WireName: "regressed_at"},
+	"RegressedAtVersion": ubx.FieldSpec{WireName: "regressed_at_version"},
+	"ResolvedAt":         ubx.FieldSpec{WireName: "resolved_at"},
+}
+
+var Response_Data_AttributesFields = ubx.FieldMap{
+	"ErrorMessage":     ubx.FieldSpec{WireName: "error_message"},
+	"ErrorType":        ubx.FieldSpec{WireName: "error_type"},
+	"FilePath":         ubx.FieldSpec{WireName: "file_path"},
+	"FirstSeen":        ubx.FieldSpec{WireName: "first_seen"},
+	"FirstSeenVersion": ubx.FieldSpec{WireName: "first_seen_version"},
+	"FunctionName":     ubx.FieldSpec{WireName: "function_name"},
+	"IsCrash":          ubx.FieldSpec{WireName: "is_crash"},
+	"Languages":        ubx.FieldSpec{WireName: "languages"},
+	"LastSeen":         ubx.FieldSpec{WireName: "last_seen"},
+	"LastSeenVersion":  ubx.FieldSpec{WireName: "last_seen_version"},
+	"Platform":         ubx.FieldSpec{WireName: "platform"},
+	"Regression": ubx.FieldSpec{
+		WireName: "regression",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_RegressionFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"State":   ubx.FieldSpec{WireName: "state"},
+}
+
+var Response_Data_Relationships_Assignee_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var Response_Data_Relationships_AssigneeFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_Assignee_DataFields,
+	},
+}
+
+var Response_Data_Relationships_TeamOwnersFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   Response_Data_Relationships_Assignee_DataFields,
+	},
+}
+
+var Response_Data_RelationshipsFields = ubx.FieldMap{
+	"Assignee": ubx.FieldSpec{
+		WireName: "assignee",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AssigneeFields,
+	},
+	"Case": ubx.FieldSpec{
+		WireName: "case",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AssigneeFields,
+	},
+	"TeamOwners": ubx.FieldSpec{
+		WireName: "team_owners",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_TeamOwnersFields,
+	},
 }
 
 var Response_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Response_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Update issue assignee request.
@@ -107,8 +249,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"IssueId": ubx.FieldSpec{WireName: "issue_id"},
 	},

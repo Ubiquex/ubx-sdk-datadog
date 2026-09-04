@@ -10,8 +10,6 @@ import ubx_sdk as ubx
 class MetadataConfig:
     # Metric description.
     description: Any = None
-    # Name of the integration that sent the metric if applicable.
-    integration: Any = None
     # Per unit of the metric such as `second` in `bytes per second`.
     per_unit: Any = None
     # A more human-readable and abbreviated version of the metric name.
@@ -48,7 +46,6 @@ Metadata = ubx.ResourceBinding(
     wire_type="datadog_metric_metadata",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "integration": ubx.FieldSpec(wire_name="integration"),
         "per_unit": ubx.FieldSpec(wire_name="per_unit"),
         "short_name": ubx.FieldSpec(wire_name="short_name"),
         "statsd_interval": ubx.FieldSpec(wire_name="statsd_interval"),

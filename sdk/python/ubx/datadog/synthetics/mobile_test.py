@@ -8,15 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MobileTest_Config_Variables:
-    # Sample value for the variable, used as an example in the test configuration. (AI-inferred)
     example: Any = None
     id: Any = None
-    # The name of the variable, used to reference it within the test configuration. (AI-inferred)
     name: Any = None
     pattern: Any = None
-    # Whether the variable is a secure variable, meaning its value is encrypted and hidden in the UI. (AI-inferred)
     secure: Any = None
-    # The type of the Synthetics mobile test variable. Valid values are `global` (references a global variable), `text` (a literal text value), and `email` (a generated email address). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -28,9 +24,7 @@ class MobileTest_Config:
 
 @dataclasses.dataclass
 class MobileTest_Options_Bindings:
-    # List of principals (users, groups, or roles) that this binding applies to. Each principal is a string identifier such as a user email or a group ID. (AI-inferred)
     principals: Any = None
-    # The type of access granted to the bound role. Allowed values are `editor` (full edit access) and `viewer` (read-only access). (AI-inferred)
     relation: Any = None
 
 @dataclasses.dataclass
@@ -67,11 +61,8 @@ class MobileTest_Options_Retry:
 
 @dataclasses.dataclass
 class MobileTest_Options_Scheduling_Timeframes:
-    # The day of the week for this scheduling timeframe, where 1 is Monday and 7 is Sunday. Must be between 1 and 7. (AI-inferred)
     day: Any = None
-    # Start time of the time frame during which the test is scheduled to run. (AI-inferred)
     from_: Any = None
-    # The end time of the scheduling timeframe, formatted as HH:MM. (AI-inferred)
     to: Any = None
 
 @dataclasses.dataclass
@@ -120,38 +111,28 @@ class MobileTest_Options:
 
 @dataclasses.dataclass
 class MobileTest_Steps_Params_Element_RelativePosition:
-    # The x-coordinate of the element's relative position within the parent context, used to define the element's location for interaction in the mobile test step. (AI-inferred)
     x: Any = None
-    # The y-coordinate of the element's relative position, used to define the vertical offset from the reference element. (AI-inferred)
     y: Any = None
 
 @dataclasses.dataclass
 class MobileTest_Steps_Params_Element_UserLocator_Values:
-    # The type of locator used to identify a mobile element. Allowed values: accessibility-id, id, ios-predicate-string, ios-class-chain, xpath. (AI-inferred)
     type: Any = None
-    # A single string value in the user locator 'values' list, used to identify the mobile element during the test step. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class MobileTest_Steps_Params_Element_UserLocator:
-    # If true, the mobile test step is marked as failed when the specified user locator fails to locate the element. (AI-inferred)
     fail_test_on_cannot_locate: Any = None
     values: Any = None
 
 @dataclasses.dataclass
 class MobileTest_Steps_Params_Element:
     context: Any = None
-    # Specifies whether the element is in a native or web context. Allowed values are 'native' and 'web'. (AI-inferred)
     context_type: Any = None
-    # A description of the mobile UI element targeted by the step. (AI-inferred)
     element_description: Any = None
-    # A list of alternative locators for the element, allowing the synthetics mobile test to use any of these locators to find the element during test execution. (AI-inferred)
     multi_locator: Any = None
     relative_position: Any = None
-    # The text content of the on-screen element used to identify and interact with it in the mobile test step. (AI-inferred)
     text_content: Any = None
     user_locator: Any = None
-    # The name of the view (screen) in the mobile application where the element is located. (AI-inferred)
     view_name: Any = None
 
 @dataclasses.dataclass
@@ -161,43 +142,30 @@ class MobileTest_Steps_Params_Variable:
 
 @dataclasses.dataclass
 class MobileTest_Steps_Params:
-    # The type of check to perform on the target value. Allowed values: equals, notEquals, contains, notContains, startsWith, notStartsWith, greater, lower, greaterEquals, lowerEquals, matchRegex, between, isEmpty, notIsEmpty. (AI-inferred)
     check: Any = None
-    # Delay in milliseconds to wait before executing the step. Must be between 0 and 5000. (AI-inferred)
     delay: Any = None
-    # Specifies the direction of the mobile gesture (e.g., swipe), with allowed values: up, down, left, right. (AI-inferred)
     direction: Any = None
     element: Any = None
     enabled: Any = None
-    # The maximum number of scroll actions to perform during this mobile test step. (AI-inferred)
     max_scrolls: Any = None
     positions: Any = None
-    # The public ID of the subtest to run in this step. (AI-inferred)
     subtest_public_id: Any = None
-    # The value associated with a parameter for a step in the mobile test. The type is dynamic and can vary based on the specific step and parameter. (AI-inferred)
     value: Any = None
     variable: Any = None
-    # Whether to press the Enter key after inputting text in the step. (AI-inferred)
     with_enter: Any = None
-    # The horizontal (x) coordinate for the interaction point in the mobile test step. (AI-inferred)
     x: Any = None
     y: Any = None
 
 @dataclasses.dataclass
 class MobileTest_Steps:
-    # Determines if the mobile test step can fail without marking the entire test as failed. When set to true, a failure in this step will not fail the overall test. (AI-inferred)
     allow_failure: Any = None
     has_new_step_element: Any = None
-    # A boolean indicating whether this step is critical. If a critical step fails, the entire test is considered failed; non-critical steps do not cause failure on their own. (AI-inferred)
     is_critical: Any = None
-    # The name of the step in the Datadog Synthetics mobile test. Must be at most 1500 characters. (AI-inferred)
     name: Any = None
-    # Whether to disable the screenshot capture for this step. Set to true to prevent Datadog from taking a screenshot during this step. (AI-inferred)
     no_screenshot: Any = None
     params: Any = None
     public_id: Any = None
     timeout: Any = None
-    # The type of step to perform in the mobile test. Possible values include assertElementContent, assertScreenContains, assertScreenLacks, doubleTap, extractVariable, flick, openDeeplink, playSubTest, pressBack, restartApplication, rotate, scroll, scrollToElement, tap, toggleWiFi, typeText, and wait. (AI-inferred)
     type: Any = None
 
 _MobileTest_Config_VariablesFields = {
@@ -399,14 +367,10 @@ class MobileTestConfig:
     device_ids: Any = None
     # Notification message associated with the test.
     message: Any = None
-    # The associated monitor ID.
-    monitor_id: Any = None
     # Name of the test.
     name: Any = None
     # Object describing the extra options for a Synthetic test.
     options: Any = None
-    # The public ID of the test.
-    public_id: Any = None
     # Define whether you want to start (`live`) or pause (`paused`) a Synthetic test.
     status: Any = None
     # Array of steps for the test.
@@ -451,14 +415,12 @@ MobileTest = ubx.ResourceBinding(
         ),
         "device_ids": ubx.FieldSpec(wire_name="device_ids"),
         "message": ubx.FieldSpec(wire_name="message"),
-        "monitor_id": ubx.FieldSpec(wire_name="monitor_id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "options": ubx.FieldSpec(
             wire_name="options",
             kind="object",
             fields=_MobileTest_OptionsFields,
         ),
-        "public_id": ubx.FieldSpec(wire_name="public_id"),
         "status": ubx.FieldSpec(wire_name="status"),
         "steps": ubx.FieldSpec(
             wire_name="steps",

@@ -9,34 +9,44 @@ type UserDefinedRoleResponse_Data_Attributes_Policy struct {
 }
 
 type UserDefinedRoleResponse_Data_Attributes struct {
+	// Timestamp when the role was created.
+	Created any
 	// A description of the user-defined role.
 	Description any
+	// Timestamp when the role was last modified.
+	Modified any
 	// The name of the user-defined role.
 	Name any
 	// Policy configuration for a user-defined role.
 	Policy any
 }
 
-type UserDefinedRoleResponse_Data_Relationships_IncidentType_Data struct {
-	// The ID of the incident type.
+type UserDefinedRoleResponse_Data_Relationships_CreatedByUser_Data struct {
+	// A unique identifier that represents the user.
 	Id any
-	// The type of the resource.
+	// Users resource type.
 	Type any
 }
 
-type UserDefinedRoleResponse_Data_Relationships_IncidentType struct {
-	// Data for the incident type relationship of a user-defined role.
+type UserDefinedRoleResponse_Data_Relationships_CreatedByUser struct {
+	// Relationship to user object.
 	Data any
 }
 
 type UserDefinedRoleResponse_Data_Relationships struct {
+	// Relationship to user.
+	CreatedByUser any
 	// Relationship to an incident type for a user-defined role.
 	IncidentType any
+	// Relationship to user.
+	LastModifiedByUser any
 }
 
 type UserDefinedRoleResponse_Data struct {
 	// Attributes for creating an incident user-defined role.
 	Attributes any
+	// The ID of the user-defined role.
+	Id any
 	// Relationships for creating a user-defined role.
 	Relationships any
 	// Incident user-defined role resource type.
@@ -44,76 +54,89 @@ type UserDefinedRoleResponse_Data struct {
 }
 
 type UserDefinedRoleResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type UserDefinedRoleResponse_Included_Relationships struct {
-	CreatedByUser any
-	GoogleMeetConfiguration any
-	LastModifiedByUser any
+	CreatedByUser               any
+	GoogleMeetConfiguration     any
+	LastModifiedByUser          any
 	MicrosoftTeamsConfiguration any
-	ZoomConfiguration any
+	ZoomConfiguration           any
 }
 
 type UserDefinedRoleResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var UserDefinedRoleResponse_Data_Attributes_PolicyFields = ubx.FieldMap{
-		"IsSingle": ubx.FieldSpec{WireName: "is_single"},
-	}
+	"IsSingle": ubx.FieldSpec{WireName: "is_single"},
+}
 
 var UserDefinedRoleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Policy": ubx.FieldSpec{
-			WireName: "policy",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_Attributes_PolicyFields,
-		},
-	}
+	"Created":     ubx.FieldSpec{WireName: "created"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Modified":    ubx.FieldSpec{WireName: "modified"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Policy": ubx.FieldSpec{
+		WireName: "policy",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Attributes_PolicyFields,
+	},
+}
 
-var UserDefinedRoleResponse_Data_Relationships_IncidentType_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+var UserDefinedRoleResponse_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
-var UserDefinedRoleResponse_Data_Relationships_IncidentTypeFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_Relationships_IncidentType_DataFields,
-		},
-	}
+var UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var UserDefinedRoleResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"IncidentType": ubx.FieldSpec{
-			WireName: "incident_type",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_Relationships_IncidentTypeFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"IncidentType": ubx.FieldSpec{
+		WireName: "incident_type",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var UserDefinedRoleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_AttributesFields,
-		},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type UserDefinedRoleResponseConfig struct {
 	// Data for creating an incident user-defined role.
@@ -136,8 +159,8 @@ var UserDefinedRoleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_DataFields,
+			Kind:     "object",
+			Fields:   UserDefinedRoleResponse_DataFields,
 		},
 		"RoleId": ubx.FieldSpec{WireName: "role_id"},
 	},

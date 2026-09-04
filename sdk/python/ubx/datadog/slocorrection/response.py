@@ -7,15 +7,32 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Response_Data_Attributes_Creator:
+    # Email of the creator.
+    email: Any = None
+    # Handle of the creator.
+    handle: Any = None
+    # Name of the creator.
+    name: Any = None
+
+@dataclasses.dataclass
 class Response_Data_Attributes:
     # Category the SLO correction belongs to.
     category: Any = None
+    # The epoch timestamp of when the correction was created at.
+    created_at: Any = None
+    # Object describing the creator of the shared element.
+    creator: Any = None
     # Description of the correction being made.
     description: Any = None
     # Length of time (in seconds) for a specified `rrule` recurring SLO correction.
     duration: Any = None
     # Ending time of the correction in epoch seconds.
     end: Any = None
+    # The epoch timestamp of when the correction was modified at.
+    modified_at: Any = None
+    # Modifier of the object.
+    modifier: Any = None
     # The recurrence rules as defined in the iCalendar RFC 5545. The supported rules for SLO corrections are `FREQ`, `INTERVAL`, `COUNT`, `UNTIL` and `BYDAY`.
     rrule: Any = None
     # ID of the single SLO that this correction applies to.
@@ -31,14 +48,34 @@ class Response_Data_Attributes:
 class Response_Data:
     # The attribute object associated with the SLO correction to be created. Exactly one of `slo_id` or `slo_query` must be provided.
     attributes: Any = None
+    # The ID of the SLO correction.
+    id: Any = None
     # SLO correction resource type.
     type: Any = None
 
+_Response_Data_Attributes_CreatorFields = {
+    "email": ubx.FieldSpec(wire_name="email"),
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 _Response_Data_AttributesFields = {
     "category": ubx.FieldSpec(wire_name="category"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "creator": ubx.FieldSpec(
+        wire_name="creator",
+        kind="object",
+        fields=_Response_Data_Attributes_CreatorFields,
+    ),
     "description": ubx.FieldSpec(wire_name="description"),
     "duration": ubx.FieldSpec(wire_name="duration"),
     "end": ubx.FieldSpec(wire_name="end"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modifier": ubx.FieldSpec(
+        wire_name="modifier",
+        kind="object",
+        fields=_Response_Data_Attributes_CreatorFields,
+    ),
     "rrule": ubx.FieldSpec(wire_name="rrule"),
     "slo_id": ubx.FieldSpec(wire_name="slo_id"),
     "slo_query": ubx.FieldSpec(wire_name="slo_query"),
@@ -52,6 +89,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

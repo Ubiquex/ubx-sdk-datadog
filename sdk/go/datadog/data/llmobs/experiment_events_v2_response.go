@@ -4,51 +4,51 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperimentEventsV2Response_Data_Attributes_Spans_EvalMetrics struct {
-	Assessment any
-	BooleanValue any
+	Assessment       any
+	BooleanValue     any
 	CategoricalValue any
-	EvalSourceType any
-	Id any
-	JsonValue any
-	Label any
-	Metadata any
-	MetricSource any
-	MetricType any
-	Reasoning any
-	ScoreValue any
-	SpanId any
-	Tags any
-	TimestampMs any
-	TraceId any
+	EvalSourceType   any
+	Id               any
+	JsonValue        any
+	Label            any
+	Metadata         any
+	MetricSource     any
+	MetricType       any
+	Reasoning        any
+	ScoreValue       any
+	SpanId           any
+	Tags             any
+	TimestampMs      any
+	TraceId          any
 }
 
 type ExperimentEventsV2Response_Data_Attributes_Spans_Meta_Error struct {
 	Message any
-	Stack any
-	Type any
+	Stack   any
+	Type    any
 }
 
 type ExperimentEventsV2Response_Data_Attributes_Spans_Meta struct {
-	Error any
+	Error          any
 	ExpectedOutput any
-	Input any
-	Output any
+	Input          any
+	Output         any
 }
 
 type ExperimentEventsV2Response_Data_Attributes_Spans struct {
 	DatasetRecordId any
-	Duration any
-	EvalMetrics any
-	Id any
-	Meta any
-	Metrics any
-	Name any
-	ParentId any
-	SpanId any
-	StartNs any
-	Status any
-	Tags any
-	TraceId any
+	Duration        any
+	EvalMetrics     any
+	Id              any
+	Meta            any
+	Metrics         any
+	Name            any
+	ParentId        any
+	SpanId          any
+	StartNs         any
+	Status          any
+	Tags            any
+	TraceId         any
 }
 
 type ExperimentEventsV2Response_Data_Attributes struct {
@@ -78,7 +78,7 @@ type ExperimentEventsV2ResponseConfig struct {
 
 type ExperimentEventsV2ResponseAttrs struct {
 	// JSON:API data object for an experiment events response.
-	Data any
+	Data         any
 	ExperimentId any
 	// Pagination cursor metadata.
 	Meta any

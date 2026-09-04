@@ -29,6 +29,5 @@ type AllowlistResponseAttrs struct {
 
 var AllowlistResponse = ubx.DataSourceBinding{
 	WireType: "datadog_domain_allowlist_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -71,50 +71,12 @@ _Downtime_ActiveChild_RecurrenceFields = {
     "week_days": ubx.FieldSpec(wire_name="week_days"),
 }
 
-_Downtime_ActiveChildFields = {
-    "active": ubx.FieldSpec(wire_name="active"),
-    "canceled": ubx.FieldSpec(wire_name="canceled"),
-    "creator_id": ubx.FieldSpec(wire_name="creator_id"),
-    "disabled": ubx.FieldSpec(wire_name="disabled"),
-    "downtime_type": ubx.FieldSpec(wire_name="downtime_type"),
-    "end": ubx.FieldSpec(wire_name="end"),
-    "id": ubx.FieldSpec(wire_name="id"),
-    "message": ubx.FieldSpec(wire_name="message"),
-    "monitor_id": ubx.FieldSpec(wire_name="monitor_id"),
-    "monitor_tags": ubx.FieldSpec(wire_name="monitor_tags"),
-    "mute_first_recovery_notification": ubx.FieldSpec(wire_name="mute_first_recovery_notification"),
-    "notify_end_states": ubx.FieldSpec(wire_name="notify_end_states"),
-    "notify_end_types": ubx.FieldSpec(wire_name="notify_end_types"),
-    "parent_id": ubx.FieldSpec(wire_name="parent_id"),
-    "recurrence": ubx.FieldSpec(
-        wire_name="recurrence",
-        kind="object",
-        fields=_Downtime_ActiveChild_RecurrenceFields,
-    ),
-    "scope": ubx.FieldSpec(wire_name="scope"),
-    "start": ubx.FieldSpec(wire_name="start"),
-    "timezone": ubx.FieldSpec(wire_name="timezone"),
-    "updater_id": ubx.FieldSpec(wire_name="updater_id"),
-}
-
 @dataclasses.dataclass
 class DowntimeConfig:
-    # If a scheduled downtime currently exists.
-    active: Any = None
-    # The downtime object definition of the active child for the original parent recurring downtime. This field will only exist on recurring downtimes.
-    active_child: Any = None
-    # If a scheduled downtime is canceled.
-    canceled: Any = None
-    # User ID of the downtime creator.
-    creator_id: Any = None
     # If a downtime has been disabled.
     disabled: Any = None
-    # `0` for a downtime applied on `*` or all, `1` when the downtime is only scoped to hosts, or `2` when the downtime is scoped to anything but hosts.
-    downtime_type: Any = None
     # POSIX timestamp to end the downtime. If not provided, the downtime is in effect indefinitely until you cancel it.
     end: Any = None
-    # The downtime ID.
-    id: Any = None
     # A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.
     message: Any = None
     # A single monitor to which the downtime applies. If not provided, the downtime applies to all monitors.
@@ -137,8 +99,6 @@ class DowntimeConfig:
     start: Any = None
     # The timezone in which to display the downtime's start and end times in Datadog applications.
     timezone: Any = None
-    # ID of the last user that updated the downtime.
-    updater_id: Any = None
     # path parameter, not part of the API's own resource representation
     downtime_id: Any = None
 
@@ -190,18 +150,8 @@ class DowntimeAttrs:
 Downtime = ubx.ResourceBinding(
     wire_type="datadog_downtime",
     fields={
-        "active": ubx.FieldSpec(wire_name="active"),
-        "active_child": ubx.FieldSpec(
-            wire_name="active_child",
-            kind="object",
-            fields=_Downtime_ActiveChildFields,
-        ),
-        "canceled": ubx.FieldSpec(wire_name="canceled"),
-        "creator_id": ubx.FieldSpec(wire_name="creator_id"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
-        "downtime_type": ubx.FieldSpec(wire_name="downtime_type"),
         "end": ubx.FieldSpec(wire_name="end"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "message": ubx.FieldSpec(wire_name="message"),
         "monitor_id": ubx.FieldSpec(wire_name="monitor_id"),
         "monitor_tags": ubx.FieldSpec(wire_name="monitor_tags"),
@@ -217,7 +167,6 @@ Downtime = ubx.ResourceBinding(
         "scope": ubx.FieldSpec(wire_name="scope"),
         "start": ubx.FieldSpec(wire_name="start"),
         "timezone": ubx.FieldSpec(wire_name="timezone"),
-        "updater_id": ubx.FieldSpec(wire_name="updater_id"),
         "downtime_id": ubx.FieldSpec(wire_name="downtime_id"),
     },
 )

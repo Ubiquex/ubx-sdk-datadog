@@ -37,20 +37,20 @@ type Data_Data struct {
 }
 
 type Data_Included_Attributes struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Disabled any
-	ModifiedAt any
-	Name any
-	PublicId any
-	Sharing any
-	Url any
+	Disabled    any
+	ModifiedAt  any
+	Name        any
+	PublicId    any
+	Sharing     any
+	Url         any
 }
 
 type Data_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataConfig struct {
@@ -65,6 +65,5 @@ type DataAttrs struct {
 
 var Data = ubx.DataSourceBinding{
 	WireType: "datadog_org_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

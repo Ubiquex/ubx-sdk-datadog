@@ -19,26 +19,29 @@ type AccountResponse_Data_Attributes struct {
 type AccountResponse_Data struct {
 	// Attributes object for creating a Cloudflare account.
 	Attributes any
+	// The ID of the Cloudflare account, a hash of the account name.
+	Id any
 	// The JSON:API type for this API. Should always be `cloudflare-accounts`.
 	Type any
 }
 
 var AccountResponse_Data_AttributesFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"ApiKey":    ubx.FieldSpec{WireName: "api_key"},
+	"Email":     ubx.FieldSpec{WireName: "email"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Resources": ubx.FieldSpec{WireName: "resources"},
+	"Zones":     ubx.FieldSpec{WireName: "zones"},
+}
 
 var AccountResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: AccountResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   AccountResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type AccountResponseConfig struct {
 	// Data object for creating a Cloudflare account.
@@ -59,8 +62,8 @@ var AccountResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: AccountResponse_DataFields,
+			Kind:     "object",
+			Fields:   AccountResponse_DataFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

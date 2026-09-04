@@ -42,13 +42,32 @@ class WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions:
     set: Any = None
 
 @dataclasses.dataclass
+class WorkloadSecurityAgentRuleResponse_Data_Attributes_Creator:
+    # The handle of the user
+    handle: Any = None
+    # The name of the user
+    name: Any = None
+
+@dataclasses.dataclass
 class WorkloadSecurityAgentRuleResponse_Data_Attributes:
     # The array of actions the rule can perform if triggered
     actions: Any = None
+    # The version of the Agent
+    agent_constraint: Any = None
     # Constrain the rule to specific versions of the Datadog Agent.
     agent_version: Any = None
     # The blocking policies that the rule belongs to.
     blocking: Any = None
+    # The category of the Agent rule
+    category: Any = None
+    # The ID of the user who created the rule
+    creation_author_uu_id: Any = None
+    # When the Agent rule was created, timestamp in milliseconds
+    creation_date: Any = None
+    # The attributes of the user who created the Agent rule
+    creator: Any = None
+    # Whether the rule is included by default
+    default_rule: Any = None
     # The description of the Agent rule.
     description: Any = None
     # The disabled policies that the rule belongs to.
@@ -69,11 +88,23 @@ class WorkloadSecurityAgentRuleResponse_Data_Attributes:
     product_tags: Any = None
     # Whether the rule is silent.
     silent: Any = None
+    # The ID of the user who updated the rule
+    update_author_uu_id: Any = None
+    # Timestamp in milliseconds when the Agent rule was last updated
+    update_date: Any = None
+    # When the Agent rule was last updated, timestamp in milliseconds
+    updated_at: Any = None
+    # The attributes of the user who last updated the Agent rule
+    updater: Any = None
+    # The version of the Agent rule
+    version: Any = None
 
 @dataclasses.dataclass
 class WorkloadSecurityAgentRuleResponse_Data:
     # Create a new Cloud Workload Security Agent rule.
     attributes: Any = None
+    # The ID of the Agent rule
+    id: Any = None
     # The type of the resource, must always be `agent_rule`
     type: Any = None
 
@@ -128,14 +159,29 @@ _WorkloadSecurityAgentRuleResponse_Data_Attributes_ActionsFields = {
     ),
 }
 
+_WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields = {
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 _WorkloadSecurityAgentRuleResponse_Data_AttributesFields = {
     "actions": ubx.FieldSpec(
         wire_name="actions",
         kind="list",
         fields=_WorkloadSecurityAgentRuleResponse_Data_Attributes_ActionsFields,
     ),
+    "agent_constraint": ubx.FieldSpec(wire_name="agent_constraint"),
     "agent_version": ubx.FieldSpec(wire_name="agent_version"),
     "blocking": ubx.FieldSpec(wire_name="blocking"),
+    "category": ubx.FieldSpec(wire_name="category"),
+    "creation_author_uu_id": ubx.FieldSpec(wire_name="creation_author_uu_id"),
+    "creation_date": ubx.FieldSpec(wire_name="creation_date"),
+    "creator": ubx.FieldSpec(
+        wire_name="creator",
+        kind="object",
+        fields=_WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields,
+    ),
+    "default_rule": ubx.FieldSpec(wire_name="default_rule"),
     "description": ubx.FieldSpec(wire_name="description"),
     "disabled": ubx.FieldSpec(wire_name="disabled"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
@@ -146,6 +192,15 @@ _WorkloadSecurityAgentRuleResponse_Data_AttributesFields = {
     "policy_id": ubx.FieldSpec(wire_name="policy_id"),
     "product_tags": ubx.FieldSpec(wire_name="product_tags"),
     "silent": ubx.FieldSpec(wire_name="silent"),
+    "update_author_uu_id": ubx.FieldSpec(wire_name="update_author_uu_id"),
+    "update_date": ubx.FieldSpec(wire_name="update_date"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updater": ubx.FieldSpec(
+        wire_name="updater",
+        kind="object",
+        fields=_WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields,
+    ),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _WorkloadSecurityAgentRuleResponse_DataFields = {
@@ -154,6 +209,7 @@ _WorkloadSecurityAgentRuleResponse_DataFields = {
         kind="object",
         fields=_WorkloadSecurityAgentRuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

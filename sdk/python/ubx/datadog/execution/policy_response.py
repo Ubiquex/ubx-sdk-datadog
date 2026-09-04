@@ -59,6 +59,10 @@ class PolicyResponse_Data_Attributes_Targets:
 class PolicyResponse_Data_Attributes:
     # The set of actions this policy applies to.
     action_pattern: Any = None
+    # The date and time the execution policy was created.
+    created_at: Any = None
+    # The ID of the user who created the execution policy.
+    created_by: Any = None
     # Whether the policy allows or denies matching actions.
     effect: Any = None
     # The name of the execution policy.
@@ -67,11 +71,19 @@ class PolicyResponse_Data_Attributes:
     scope: Any = None
     # The targets this policy applies to.
     targets: Any = None
+    # The date and time the execution policy was last updated.
+    updated_at: Any = None
+    # The ID of the user who last updated the execution policy.
+    updated_by: Any = None
+    # The version of the execution policy. Incremented on every update.
+    version: Any = None
 
 @dataclasses.dataclass
 class PolicyResponse_Data:
     # Attributes used to create or update an execution policy.
     attributes: Any = None
+    # The ID of the execution policy.
+    id: Any = None
     # The type of the resource. The value should always be `execution_policy`.
     type: Any = None
 
@@ -146,6 +158,8 @@ _PolicyResponse_Data_AttributesFields = {
         kind="object",
         fields=_PolicyResponse_Data_Attributes_ActionPatternFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
     "effect": ubx.FieldSpec(wire_name="effect"),
     "name": ubx.FieldSpec(wire_name="name"),
     "scope": ubx.FieldSpec(
@@ -158,6 +172,9 @@ _PolicyResponse_Data_AttributesFields = {
         kind="list",
         fields=_PolicyResponse_Data_Attributes_TargetsFields,
     ),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updated_by": ubx.FieldSpec(wire_name="updated_by"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _PolicyResponse_DataFields = {
@@ -166,6 +183,7 @@ _PolicyResponse_DataFields = {
         kind="object",
         fields=_PolicyResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

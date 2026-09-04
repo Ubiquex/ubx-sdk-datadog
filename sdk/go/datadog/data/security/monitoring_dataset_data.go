@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringDatasetData_Data_Attributes_Definition_Columns struct {
 	Column any
-	Type any
+	Type   any
 }
 
 type MonitoringDatasetData_Data_Attributes_Definition_Search struct {
@@ -14,41 +14,41 @@ type MonitoringDatasetData_Data_Attributes_Definition_Search struct {
 
 type MonitoringDatasetData_Data_Attributes_Definition_TimeWindow struct {
 	From any
-	To any
+	To   any
 }
 
 type MonitoringDatasetData_Data_Attributes_Definition struct {
-	Columns any
-	DataSource any
-	Indexes any
-	Name any
+	Columns     any
+	DataSource  any
+	Indexes     any
+	Name        any
 	QueryFilter any
-	Search any
-	Storage any
-	TableName any
-	TimeWindow any
+	Search      any
+	Storage     any
+	TableName   any
+	TimeWindow  any
 }
 
 type MonitoringDatasetData_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt       any
 	CreatedByHandle any
-	CreatedByName any
-	Definition any
-	Description any
-	Id any
-	IsDefault any
-	IsDeprecated any
-	ModifiedAt any
-	Name any
+	CreatedByName   any
+	Definition      any
+	Description     any
+	Id              any
+	IsDefault       any
+	IsDeprecated    any
+	ModifiedAt      any
+	Name            any
 	UpdatedByHandle any
-	UpdatedByName any
-	Version any
+	UpdatedByName   any
+	Version         any
 }
 
 type MonitoringDatasetData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MonitoringDatasetData_Meta struct {

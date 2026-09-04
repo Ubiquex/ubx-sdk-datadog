@@ -28,42 +28,16 @@ type PrivateLocation_Secrets struct {
 }
 
 var PrivateLocation_MetadataFields = ubx.FieldMap{
-		"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
-	}
-
-var PrivateLocation_Secrets_AuthenticationFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
-
-var PrivateLocation_Secrets_ConfigDecryptionFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
-
-var PrivateLocation_SecretsFields = ubx.FieldMap{
-		"Authentication": ubx.FieldSpec{
-			WireName: "authentication",
-			Kind: "object",
-			Fields: PrivateLocation_Secrets_AuthenticationFields,
-		},
-		"ConfigDecryption": ubx.FieldSpec{
-			WireName: "config_decryption",
-			Kind: "object",
-			Fields: PrivateLocation_Secrets_ConfigDecryptionFields,
-		},
-	}
+	"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
+}
 
 type PrivateLocationConfig struct {
 	// Description of the private location.
 	Description any
-	// Unique identifier of the private location.
-	Id any
 	// Object containing metadata about the private location.
 	Metadata any
 	// Name of the private location.
 	Name any
-	// Secrets for the private location. Only present in the response when creating the private location.
-	Secrets any
 	// Array of tags attached to the private location.
 	Tags any
 	// path parameter, not part of the API's own resource representation
@@ -91,19 +65,13 @@ var PrivateLocation = ubx.ResourceBinding{
 	WireType: "datadog_synthetics_private_location",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: PrivateLocation_MetadataFields,
+			Kind:     "object",
+			Fields:   PrivateLocation_MetadataFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Secrets": ubx.FieldSpec{
-			WireName: "secrets",
-			Kind: "object",
-			Fields: PrivateLocation_SecretsFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Tags":       ubx.FieldSpec{WireName: "tags"},
 		"LocationId": ubx.FieldSpec{WireName: "location_id"},
 	},
 }

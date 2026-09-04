@@ -21,49 +21,107 @@ type IssueTemplateResponse_Data_Attributes struct {
 	ProjectId any
 }
 
+type IssueTemplateResponse_Data_Relationships_JiraAccount_Data_Attributes struct {
+	// The consumer key for the Jira account
+	ConsumerKey any
+	// The URL of the Jira instance
+	InstanceUrl any
+	// Timestamp of the last webhook received
+	LastWebhookTimestamp any
+}
+
+type IssueTemplateResponse_Data_Relationships_JiraAccount_Data struct {
+	// Attributes of a Jira account
+	Attributes any
+	// Unique identifier for the Jira account
+	Id any
+	// Type identifier for Jira account resources
+	Type any
+}
+
+type IssueTemplateResponse_Data_Relationships_JiraAccount struct {
+	// Data object for a Jira account
+	Data any
+}
+
+type IssueTemplateResponse_Data_Relationships struct {
+	// Relationship to a Jira account
+	JiraAccount any
+}
+
 type IssueTemplateResponse_Data struct {
 	// Attributes for creating a Jira issue template
 	Attributes any
+	// Unique identifier for the Jira issue template
+	Id any
+	// Relationships of a Jira issue template
+	Relationships any
 	// Type identifier for Jira issue template resources
 	Type any
 }
 
-type IssueTemplateResponse_Included_Attributes struct {
-	ConsumerKey any
-	InstanceUrl any
-	LastWebhookTimestamp any
-}
-
-type IssueTemplateResponse_Included struct {
-	Attributes any
-	Id any
-	Type any
-}
-
 var IssueTemplateResponse_Data_Attributes_JiraAccountFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var IssueTemplateResponse_Data_AttributesFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"IssueTypeId": ubx.FieldSpec{WireName: "issue_type_id"},
-		"JiraAccount": ubx.FieldSpec{
-			WireName: "jira_account",
-			Kind: "object",
-			Fields: IssueTemplateResponse_Data_Attributes_JiraAccountFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"Fields":      ubx.FieldSpec{WireName: "fields"},
+	"IssueTypeId": ubx.FieldSpec{WireName: "issue_type_id"},
+	"JiraAccount": ubx.FieldSpec{
+		WireName: "jira_account",
+		Kind:     "object",
+		Fields:   IssueTemplateResponse_Data_Attributes_JiraAccountFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
+
+var IssueTemplateResponse_Data_Relationships_JiraAccount_Data_AttributesFields = ubx.FieldMap{
+	"ConsumerKey":          ubx.FieldSpec{WireName: "consumer_key"},
+	"InstanceUrl":          ubx.FieldSpec{WireName: "instance_url"},
+	"LastWebhookTimestamp": ubx.FieldSpec{WireName: "last_webhook_timestamp"},
+}
+
+var IssueTemplateResponse_Data_Relationships_JiraAccount_DataFields = ubx.FieldMap{
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   IssueTemplateResponse_Data_Relationships_JiraAccount_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var IssueTemplateResponse_Data_Relationships_JiraAccountFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   IssueTemplateResponse_Data_Relationships_JiraAccount_DataFields,
+	},
+}
+
+var IssueTemplateResponse_Data_RelationshipsFields = ubx.FieldMap{
+	"JiraAccount": ubx.FieldSpec{
+		WireName: "jira_account",
+		Kind:     "object",
+		Fields:   IssueTemplateResponse_Data_Relationships_JiraAccountFields,
+	},
+}
 
 var IssueTemplateResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: IssueTemplateResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   IssueTemplateResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   IssueTemplateResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type IssueTemplateResponseConfig struct {
 	// Data object for creating a Jira issue template
@@ -86,8 +144,8 @@ var IssueTemplateResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: IssueTemplateResponse_DataFields,
+			Kind:     "object",
+			Fields:   IssueTemplateResponse_DataFields,
 		},
 		"IssueTemplateId": ubx.FieldSpec{WireName: "issue_template_id"},
 	},

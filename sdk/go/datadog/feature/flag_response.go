@@ -3,23 +3,58 @@ package feature
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type FlagResponse_Data_Attributes_FeatureFlagEnvironments struct {
+	Allocations                any
+	DefaultAllocationKey       any
+	DefaultVariantId           any
+	EnvironmentId              any
+	EnvironmentName            any
+	EnvironmentQueries         any
+	IsProduction               any
+	OverrideAllocationKey      any
+	OverrideVariantId          any
+	PendingSuggestionId        any
+	RequireFeatureFlagApproval any
+	Status                     any
+}
+
 type FlagResponse_Data_Attributes_Variants struct {
-	Key any
-	Name any
+	Key   any
+	Name  any
 	Value any
 }
 
 type FlagResponse_Data_Attributes struct {
+	// The timestamp when the feature flag was archived.
+	ArchivedAt any
+	// The timestamp when the feature flag was created.
+	CreatedAt any
+	// The ID of the user who created the feature flag.
+	CreatedBy any
 	// The key of the default variant.
 	DefaultVariantKey any
 	// The description of the feature flag.
 	Description any
+	// Distribution channel for the feature flag.
+	DistributionChannel any
+	// Environment-specific settings for the feature flag.
+	FeatureFlagEnvironments any
 	// JSON schema for validation when value_type is JSON.
 	JsonSchema any
 	// The unique key of the feature flag.
 	Key any
+	// The ID of the user who last updated the feature flag.
+	LastUpdatedBy any
 	// The name of the feature flag.
 	Name any
+	// Indicates whether this feature flag requires approval for changes.
+	RequireApproval any
+	// Indicates the whether a feature flag is stale or not.
+	StalenessStatus any
+	// Tags associated with the feature flag.
+	Tags any
+	// The timestamp when the feature flag was last updated.
+	UpdatedAt any
 	// The type of values for the feature flag variants.
 	ValueType any
 	// The variants of the feature flag.
@@ -29,38 +64,70 @@ type FlagResponse_Data_Attributes struct {
 type FlagResponse_Data struct {
 	// Attributes for creating a new feature flag.
 	Attributes any
+	// The unique identifier of the feature flag.
+	Id any
 	// The resource type.
 	Type any
 }
 
+var FlagResponse_Data_Attributes_FeatureFlagEnvironmentsFields = ubx.FieldMap{
+	"Allocations":                ubx.FieldSpec{WireName: "allocations"},
+	"DefaultAllocationKey":       ubx.FieldSpec{WireName: "default_allocation_key"},
+	"DefaultVariantId":           ubx.FieldSpec{WireName: "default_variant_id"},
+	"EnvironmentId":              ubx.FieldSpec{WireName: "environment_id"},
+	"EnvironmentName":            ubx.FieldSpec{WireName: "environment_name"},
+	"EnvironmentQueries":         ubx.FieldSpec{WireName: "environment_queries"},
+	"IsProduction":               ubx.FieldSpec{WireName: "is_production"},
+	"OverrideAllocationKey":      ubx.FieldSpec{WireName: "override_allocation_key"},
+	"OverrideVariantId":          ubx.FieldSpec{WireName: "override_variant_id"},
+	"PendingSuggestionId":        ubx.FieldSpec{WireName: "pending_suggestion_id"},
+	"RequireFeatureFlagApproval": ubx.FieldSpec{WireName: "require_feature_flag_approval"},
+	"Status":                     ubx.FieldSpec{WireName: "status"},
+}
+
 var FlagResponse_Data_Attributes_VariantsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var FlagResponse_Data_AttributesFields = ubx.FieldMap{
-		"DefaultVariantKey": ubx.FieldSpec{WireName: "default_variant_key"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-		"Variants": ubx.FieldSpec{
-			WireName: "variants",
-			Kind: "list",
-			Fields: FlagResponse_Data_Attributes_VariantsFields,
-		},
-	}
+	"ArchivedAt":          ubx.FieldSpec{WireName: "archived_at"},
+	"CreatedAt":           ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":           ubx.FieldSpec{WireName: "created_by"},
+	"DefaultVariantKey":   ubx.FieldSpec{WireName: "default_variant_key"},
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"DistributionChannel": ubx.FieldSpec{WireName: "distribution_channel"},
+	"FeatureFlagEnvironments": ubx.FieldSpec{
+		WireName: "feature_flag_environments",
+		Kind:     "list",
+		Fields:   FlagResponse_Data_Attributes_FeatureFlagEnvironmentsFields,
+	},
+	"JsonSchema":      ubx.FieldSpec{WireName: "json_schema"},
+	"Key":             ubx.FieldSpec{WireName: "key"},
+	"LastUpdatedBy":   ubx.FieldSpec{WireName: "last_updated_by"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"RequireApproval": ubx.FieldSpec{WireName: "require_approval"},
+	"StalenessStatus": ubx.FieldSpec{WireName: "staleness_status"},
+	"Tags":            ubx.FieldSpec{WireName: "tags"},
+	"UpdatedAt":       ubx.FieldSpec{WireName: "updated_at"},
+	"ValueType":       ubx.FieldSpec{WireName: "value_type"},
+	"Variants": ubx.FieldSpec{
+		WireName: "variants",
+		Kind:     "list",
+		Fields:   FlagResponse_Data_Attributes_VariantsFields,
+	},
+}
 
 var FlagResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: FlagResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   FlagResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type FlagResponseConfig struct {
 	// Data for creating a new feature flag.
@@ -81,8 +148,8 @@ var FlagResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: FlagResponse_DataFields,
+			Kind:     "object",
+			Fields:   FlagResponse_DataFields,
 		},
 		"FeatureFlagId": ubx.FieldSpec{WireName: "feature_flag_id"},
 	},

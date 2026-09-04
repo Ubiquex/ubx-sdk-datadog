@@ -4,20 +4,20 @@ package dashboard
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_DashboardLists_Author struct {
-	Email any
+	Email  any
 	Handle any
-	Name any
+	Name   any
 }
 
 type List_DashboardLists struct {
-	Author any
-	Created any
+	Author         any
+	Created        any
 	DashboardCount any
-	Id any
-	IsFavorite any
-	Modified any
-	Name any
-	Type any
+	Id             any
+	IsFavorite     any
+	Modified       any
+	Name           any
+	Type           any
 }
 
 type ListConfig struct {
@@ -30,6 +30,5 @@ type ListAttrs struct {
 
 var List = ubx.DataSourceBinding{
 	WireType: "datadog_dashboard_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,28 +4,28 @@ package ai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PromptResponseData_Data_Attributes struct {
-	Category any
-	Checksum any
-	Content any
-	Cwe any
-	Description any
-	Directories any
-	ExecutionMode any
-	FileSearchKeywords any
-	Globs any
-	IsDefault any
-	IsTesting any
-	Language any
+	Category              any
+	Checksum              any
+	Content               any
+	Cwe                   any
+	Description           any
+	Directories           any
+	ExecutionMode         any
+	FileSearchKeywords    any
+	Globs                 any
+	IsDefault             any
+	IsTesting             any
+	Language              any
 	ResultKeywordsExclude any
-	RuleVersion any
-	Severity any
-	ShortDescription any
+	RuleVersion           any
+	Severity              any
+	ShortDescription      any
 }
 
 type PromptResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type PromptResponseDataConfig struct {
@@ -38,6 +38,5 @@ type PromptResponseDataAttrs struct {
 
 var PromptResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_ai_prompt_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ListItem_Data_Attributes_Spec_Annotations_Display_Bounds struct {
 	Height any
-	Width any
-	X any
-	Y any
+	Width  any
+	X      any
+	Y      any
 }
 
 type ListItem_Data_Attributes_Spec_Annotations_Display struct {
@@ -19,36 +19,36 @@ type ListItem_Data_Attributes_Spec_Annotations_MarkdownTextAnnotation struct {
 }
 
 type ListItem_Data_Attributes_Spec_Annotations struct {
-	Display any
-	Id any
+	Display                any
+	Id                     any
 	MarkdownTextAnnotation any
 }
 
 type ListItem_Data_Attributes_Spec_ConnectionEnvs_ConnectionGroups struct {
 	ConnectionGroupId any
-	Label any
-	Tags any
+	Label             any
+	Tags              any
 }
 
 type ListItem_Data_Attributes_Spec_ConnectionEnvs_Connections struct {
 	ConnectionId any
-	Label any
+	Label        any
 }
 
 type ListItem_Data_Attributes_Spec_ConnectionEnvs struct {
 	ConnectionGroups any
-	Connections any
-	Env any
+	Connections      any
+	Env              any
 }
 
 type ListItem_Data_Attributes_Spec_InputSchema_Parameters struct {
 	AllowExtraValues any
-	AllowedValues any
-	DefaultValue any
-	Description any
-	Label any
-	Name any
-	Type any
+	AllowedValues    any
+	DefaultValue     any
+	Description      any
+	Label            any
+	Name             any
+	Type             any
 }
 
 type ListItem_Data_Attributes_Spec_InputSchema struct {
@@ -57,11 +57,11 @@ type ListItem_Data_Attributes_Spec_InputSchema struct {
 
 type ListItem_Data_Attributes_Spec_OutputSchema_Parameters struct {
 	DefaultValue any
-	Description any
-	Label any
-	Name any
-	Type any
-	Value any
+	Description  any
+	Label        any
+	Name         any
+	Type         any
+	Value        any
 }
 
 type ListItem_Data_Attributes_Spec_OutputSchema struct {
@@ -75,18 +75,18 @@ type ListItem_Data_Attributes_Spec_Steps_CompletionGate_CompletionCondition stru
 }
 
 type ListItem_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategy_Linear struct {
-	Interval any
+	Interval   any
 	MaxRetries any
 }
 
 type ListItem_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategy struct {
-	Kind any
+	Kind   any
 	Linear any
 }
 
 type ListItem_Data_Attributes_Spec_Steps_CompletionGate struct {
 	CompletionCondition any
-	RetryStrategy any
+	RetryStrategy       any
 }
 
 type ListItem_Data_Attributes_Spec_Steps_Display_Bounds struct {
@@ -100,16 +100,16 @@ type ListItem_Data_Attributes_Spec_Steps_Display struct {
 
 type ListItem_Data_Attributes_Spec_Steps_ErrorHandlers struct {
 	FallbackStepName any
-	RetryStrategy any
+	RetryStrategy    any
 }
 
 type ListItem_Data_Attributes_Spec_Steps_OutboundEdges struct {
-	BranchName any
+	BranchName   any
 	NextStepName any
 }
 
 type ListItem_Data_Attributes_Spec_Steps_Parameters struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -118,19 +118,19 @@ type ListItem_Data_Attributes_Spec_Steps_ReadinessGate struct {
 }
 
 type ListItem_Data_Attributes_Spec_Steps struct {
-	ActionId any
-	CompletionGate any
+	ActionId        any
+	CompletionGate  any
 	ConnectionLabel any
-	Display any
-	ErrorHandlers any
-	Name any
-	OutboundEdges any
-	Parameters any
-	ReadinessGate any
+	Display         any
+	ErrorHandlers   any
+	Name            any
+	OutboundEdges   any
+	Parameters      any
+	ReadinessGate   any
 }
 
 type ListItem_Data_Attributes_Spec_Triggers_AgentTrigger_RateLimit struct {
-	Count any
+	Count    any
 	Interval any
 }
 
@@ -148,51 +148,51 @@ type ListItem_Data_Attributes_Spec_Triggers_ScheduleTrigger struct {
 }
 
 type ListItem_Data_Attributes_Spec_Triggers struct {
-	AgentTrigger any
-	ApiTrigger any
-	AppTrigger any
-	CaseTrigger any
-	ChangeEventTrigger any
-	DashboardTrigger any
+	AgentTrigger              any
+	ApiTrigger                any
+	AppTrigger                any
+	CaseTrigger               any
+	ChangeEventTrigger        any
+	DashboardTrigger          any
 	DatabaseMonitoringTrigger any
-	DatastoreTrigger any
-	FormTrigger any
-	GithubWebhookTrigger any
-	IncidentTrigger any
-	MonitorTrigger any
-	NotebookTrigger any
-	OnCallTrigger any
-	ScheduleTrigger any
-	SecurityTrigger any
-	SelfServiceTrigger any
-	SlackTrigger any
-	SoftwareCatalogTrigger any
-	StartStepNames any
-	WorkflowTrigger any
+	DatastoreTrigger          any
+	FormTrigger               any
+	GithubWebhookTrigger      any
+	IncidentTrigger           any
+	MonitorTrigger            any
+	NotebookTrigger           any
+	OnCallTrigger             any
+	ScheduleTrigger           any
+	SecurityTrigger           any
+	SelfServiceTrigger        any
+	SlackTrigger              any
+	SoftwareCatalogTrigger    any
+	StartStepNames            any
+	WorkflowTrigger           any
 }
 
 type ListItem_Data_Attributes_Spec struct {
-	Annotations any
+	Annotations    any
 	ConnectionEnvs any
-	Handle any
-	InputSchema any
-	OutputSchema any
-	Steps any
-	Triggers any
+	Handle         any
+	InputSchema    any
+	OutputSchema   any
+	Steps          any
+	Triggers       any
 }
 
 type ListItem_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Name any
-	Published any
-	Spec any
-	Tags any
-	UpdatedAt any
+	Name        any
+	Published   any
+	Spec        any
+	Tags        any
+	UpdatedAt   any
 }
 
 type ListItem_Data_Relationships_Creator_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -202,14 +202,14 @@ type ListItem_Data_Relationships_Creator struct {
 
 type ListItem_Data_Relationships struct {
 	Creator any
-	Owner any
+	Owner   any
 }
 
 type ListItem_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ListItem_Meta_Page struct {
@@ -226,13 +226,13 @@ type ListItem_Meta struct {
 
 type ListItemConfig struct {
 	Limit any
-	Page any
-	Sort any
+	Page  any
+	Sort  any
 }
 
 type ListItemAttrs struct {
 	// A list of workflows.
-	Data any
+	Data  any
 	Limit any
 	// Metadata for a List Workflows response.
 	Meta any
@@ -244,7 +244,7 @@ var ListItem = ubx.DataSourceBinding{
 	WireType: "datadog_workflow_list_item",
 	Fields: ubx.FieldMap{
 		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Page":  ubx.FieldSpec{WireName: "page"},
+		"Sort":  ubx.FieldSpec{WireName: "sort"},
 	},
 }
