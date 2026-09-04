@@ -6,8 +6,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type CustomRuleRevisionResponse_Data_Attributes struct {
 	// Rule category
 	Category any
+	// Checksum of the revision content.
+	Checksum any
 	// Base64-encoded AI model content for this revision.
 	Content any
+	// The creation timestamp.
+	CreatedAt any
+	// The identifier of the user who created the revision.
+	CreatedBy any
 	// The associated CWE identifier.
 	Cwe any
 	// Base64-encoded full description.
@@ -18,6 +24,8 @@ type CustomRuleRevisionResponse_Data_Attributes struct {
 	ExecutionMode any
 	// File glob patterns this rule applies to.
 	Globs any
+	// Whether this is a default Datadog rule.
+	IsDefault any
 	// Whether this revision is published.
 	IsPublished any
 	// Whether this revision is for testing only.
@@ -40,29 +48,33 @@ type CustomRuleRevisionResponse_Data struct {
 }
 
 var CustomRuleRevisionResponse_Data_AttributesFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Cwe": ubx.FieldSpec{WireName: "cwe"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Directories": ubx.FieldSpec{WireName: "directories"},
-		"ExecutionMode": ubx.FieldSpec{WireName: "execution_mode"},
-		"Globs": ubx.FieldSpec{WireName: "globs"},
-		"IsPublished": ubx.FieldSpec{WireName: "is_published"},
-		"IsTesting": ubx.FieldSpec{WireName: "is_testing"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-	}
+	"Category":         ubx.FieldSpec{WireName: "category"},
+	"Checksum":         ubx.FieldSpec{WireName: "checksum"},
+	"Content":          ubx.FieldSpec{WireName: "content"},
+	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":        ubx.FieldSpec{WireName: "created_by"},
+	"Cwe":              ubx.FieldSpec{WireName: "cwe"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"Directories":      ubx.FieldSpec{WireName: "directories"},
+	"ExecutionMode":    ubx.FieldSpec{WireName: "execution_mode"},
+	"Globs":            ubx.FieldSpec{WireName: "globs"},
+	"IsDefault":        ubx.FieldSpec{WireName: "is_default"},
+	"IsPublished":      ubx.FieldSpec{WireName: "is_published"},
+	"IsTesting":        ubx.FieldSpec{WireName: "is_testing"},
+	"Severity":         ubx.FieldSpec{WireName: "severity"},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+	"VersionId":        ubx.FieldSpec{WireName: "version_id"},
+}
 
 var CustomRuleRevisionResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: CustomRuleRevisionResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   CustomRuleRevisionResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type CustomRuleRevisionResponseConfig struct {
 	// Request data for creating an AI custom rule revision.
@@ -91,11 +103,11 @@ var CustomRuleRevisionResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: CustomRuleRevisionResponse_DataFields,
+			Kind:     "object",
+			Fields:   CustomRuleRevisionResponse_DataFields,
 		},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"RuleName":    ubx.FieldSpec{WireName: "rule_name"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
 	},
 }

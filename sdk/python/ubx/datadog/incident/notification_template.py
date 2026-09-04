@@ -12,32 +12,42 @@ class NotificationTemplate_Data_Attributes:
     category: Any = None
     # The content body of the notification template.
     content: Any = None
+    # Timestamp when the notification template was created.
+    created: Any = None
+    # Timestamp when the notification template was last modified.
+    modified: Any = None
     # The name of the notification template.
     name: Any = None
     # The subject line of the notification template.
     subject: Any = None
 
 @dataclasses.dataclass
-class NotificationTemplate_Data_Relationships_IncidentType_Data:
-    # The incident type's ID.
+class NotificationTemplate_Data_Relationships_CreatedByUser_Data:
+    # A unique identifier that represents the user.
     id: Any = None
-    # Incident type resource type.
+    # Users resource type.
     type: Any = None
 
 @dataclasses.dataclass
-class NotificationTemplate_Data_Relationships_IncidentType:
-    # Relationship to incident type object.
+class NotificationTemplate_Data_Relationships_CreatedByUser:
+    # Relationship to user object.
     data: Any = None
 
 @dataclasses.dataclass
 class NotificationTemplate_Data_Relationships:
+    # Relationship to user.
+    created_by_user: Any = None
     # Relationship to an incident type.
     incident_type: Any = None
+    # Relationship to user.
+    last_modified_by_user: Any = None
 
 @dataclasses.dataclass
 class NotificationTemplate_Data:
     # The attributes for creating a notification template.
     attributes: Any = None
+    # The unique identifier of the notification template.
+    id: Any = None
     # The definition of `NotificationTemplateCreateDataRelationships` object.
     relationships: Any = None
     # Notification templates resource type.
@@ -81,28 +91,40 @@ class NotificationTemplate_Included:
 _NotificationTemplate_Data_AttributesFields = {
     "category": ubx.FieldSpec(wire_name="category"),
     "content": ubx.FieldSpec(wire_name="content"),
+    "created": ubx.FieldSpec(wire_name="created"),
+    "modified": ubx.FieldSpec(wire_name="modified"),
     "name": ubx.FieldSpec(wire_name="name"),
     "subject": ubx.FieldSpec(wire_name="subject"),
 }
 
-_NotificationTemplate_Data_Relationships_IncidentType_DataFields = {
+_NotificationTemplate_Data_Relationships_CreatedByUser_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_NotificationTemplate_Data_Relationships_IncidentTypeFields = {
+_NotificationTemplate_Data_Relationships_CreatedByUserFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_NotificationTemplate_Data_Relationships_IncidentType_DataFields,
+        fields=_NotificationTemplate_Data_Relationships_CreatedByUser_DataFields,
     ),
 }
 
 _NotificationTemplate_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_NotificationTemplate_Data_Relationships_CreatedByUserFields,
+    ),
     "incident_type": ubx.FieldSpec(
         wire_name="incident_type",
         kind="object",
-        fields=_NotificationTemplate_Data_Relationships_IncidentTypeFields,
+        fields=_NotificationTemplate_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_NotificationTemplate_Data_Relationships_CreatedByUserFields,
     ),
 }
 
@@ -112,6 +134,7 @@ _NotificationTemplate_DataFields = {
         kind="object",
         fields=_NotificationTemplate_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

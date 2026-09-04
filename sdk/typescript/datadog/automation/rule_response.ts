@@ -40,6 +40,10 @@ export interface RuleResponse_Data_Attributes_Trigger {
 export interface RuleResponse_Data_Attributes {
   /** Defines what happens when the rule triggers. Combines an action type with action-specific configuration data. */
   action: RuleResponse_Data_Attributes_Action | Computed<RuleResponse_Data_Attributes_Action>;
+  /** Timestamp when the automation rule was created. */
+  createdAt?: string | Computed<string>;
+  /** Timestamp when the automation rule was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** Name of the automation rule. */
   name: string | Computed<string>;
   /** Whether the automation rule is active. Enabled rules trigger on matching case events; disabled rules are inactive but preserve their configuration. */
@@ -48,9 +52,32 @@ export interface RuleResponse_Data_Attributes {
   trigger: RuleResponse_Data_Attributes_Trigger | Computed<RuleResponse_Data_Attributes_Trigger>;
 }
 
+export interface RuleResponse_Data_Relationships_CreatedBy_Data {
+  /** A unique identifier that represents the user. */
+  id: string | Computed<string>;
+  /** User resource type. */
+  type: string | Computed<string>;
+}
+
+export interface RuleResponse_Data_Relationships_CreatedBy {
+  /** Relationship to user object. */
+  data: RuleResponse_Data_Relationships_CreatedBy_Data | Computed<RuleResponse_Data_Relationships_CreatedBy_Data>;
+}
+
+export interface RuleResponse_Data_Relationships {
+  /** Relationship to user. */
+  createdBy?: RuleResponse_Data_Relationships_CreatedBy | Computed<RuleResponse_Data_Relationships_CreatedBy>;
+  /** Relationship to user. */
+  modifiedBy?: RuleResponse_Data_Relationships_CreatedBy | Computed<RuleResponse_Data_Relationships_CreatedBy>;
+}
+
 export interface RuleResponse_Data {
   /** Attributes required to create an automation rule. */
   attributes: RuleResponse_Data_Attributes | Computed<RuleResponse_Data_Attributes>;
+  /** Automation rule identifier. */
+  id?: string | Computed<string>;
+  /** Related resources for the automation rule, including the users who created and last modified it. */
+  relationships?: RuleResponse_Data_Relationships | Computed<RuleResponse_Data_Relationships>;
   /** JSON:API resource type for case automation rules. */
   type: string | Computed<string>;
 }
@@ -93,6 +120,8 @@ const RuleResponse_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: RuleResponse_Data_Attributes_ActionFields,
   },
+  createdAt: "created_at",
+  modifiedAt: "modified_at",
   name: "name",
   state: "state",
   trigger: {
@@ -102,11 +131,43 @@ const RuleResponse_Data_AttributesFields: FieldMap = {
   },
 };
 
+const RuleResponse_Data_Relationships_CreatedBy_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const RuleResponse_Data_Relationships_CreatedByFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: RuleResponse_Data_Relationships_CreatedBy_DataFields,
+  },
+};
+
+const RuleResponse_Data_RelationshipsFields: FieldMap = {
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: RuleResponse_Data_Relationships_CreatedByFields,
+  },
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: RuleResponse_Data_Relationships_CreatedByFields,
+  },
+};
+
 const RuleResponse_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
     kind: "object",
     fields: RuleResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: RuleResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

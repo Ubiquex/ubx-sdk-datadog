@@ -4,9 +4,9 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PatternsRunStatusResponse_Data_Attributes_Progress struct {
-	Name any
+	Name      any
 	StartedAt any
-	Status any
+	Status    any
 }
 
 type PatternsRunStatusResponse_Data_Attributes struct {

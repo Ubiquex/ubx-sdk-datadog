@@ -201,10 +201,26 @@ class JobResponse_Data_Attributes_JobDefinition:
 
 @dataclasses.dataclass
 class JobResponse_Data_Attributes:
+    # Time when the job was created.
+    created_at: Any = None
+    # The handle of the user who created the job.
+    created_by_handle: Any = None
+    # The name of the user who created the job.
+    created_by_name: Any = None
+    # ID of the rule used to create the job (if it is created from a rule).
+    created_from_rule_id: Any = None
     # Definition of a historical job based on a security monitoring rule.
     from_rule: Any = None
     # Definition of a historical job.
     job_definition: Any = None
+    # Job name.
+    job_name: Any = None
+    # Job status.
+    job_status: Any = None
+    # Last modification time of the job.
+    modified_at: Any = None
+    # Job execution progress as a value between 0 and 1. Available for ongoing jobs.
+    progress_rate: Any = None
     # Whether the job outputs signals when results are converted.
     signal_output: Any = None
 
@@ -212,6 +228,8 @@ class JobResponse_Data_Attributes:
 class JobResponse_Data:
     # Run a historical job request.
     attributes: Any = None
+    # ID of the job.
+    id: Any = None
     # Type of data.
     type: Any = None
 
@@ -426,6 +444,10 @@ _JobResponse_Data_Attributes_JobDefinitionFields = {
 }
 
 _JobResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by_handle": ubx.FieldSpec(wire_name="created_by_handle"),
+    "created_by_name": ubx.FieldSpec(wire_name="created_by_name"),
+    "created_from_rule_id": ubx.FieldSpec(wire_name="created_from_rule_id"),
     "from_rule": ubx.FieldSpec(
         wire_name="from_rule",
         kind="object",
@@ -436,6 +458,10 @@ _JobResponse_Data_AttributesFields = {
         kind="object",
         fields=_JobResponse_Data_Attributes_JobDefinitionFields,
     ),
+    "job_name": ubx.FieldSpec(wire_name="job_name"),
+    "job_status": ubx.FieldSpec(wire_name="job_status"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "progress_rate": ubx.FieldSpec(wire_name="progress_rate"),
     "signal_output": ubx.FieldSpec(wire_name="signal_output"),
 }
 
@@ -445,6 +471,7 @@ _JobResponse_DataFields = {
         kind="object",
         fields=_JobResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

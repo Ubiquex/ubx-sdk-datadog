@@ -31,6 +31,5 @@ type IncidentSettingsResponseAttrs struct {
 
 var IncidentSettingsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_global_incident_settings_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

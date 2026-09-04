@@ -4,54 +4,54 @@ package single
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AggregatedDnsResponseData_Data_Attributes_GroupBys struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AggregatedDnsResponseData_Data_Attributes_Metrics struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AggregatedDnsResponseData_Data_Attributes struct {
 	GroupBys any
-	Metrics any
+	Metrics  any
 }
 
 type AggregatedDnsResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AggregatedDnsResponseDataConfig struct {
-	From any
+	From    any
 	GroupBy any
-	Limit any
-	Query any
-	Tags any
-	To any
+	Limit   any
+	Query   any
+	Tags    any
+	To      any
 }
 
 type AggregatedDnsResponseDataAttrs struct {
 	// Array of aggregated DNS objects.
-	Data any
-	From any
+	Data    any
+	From    any
 	GroupBy any
-	Limit any
-	Query any
-	Tags any
-	To any
+	Limit   any
+	Query   any
+	Tags    any
+	To      any
 }
 
 var AggregatedDnsResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_single_aggregated_dns_response_data",
 	Fields: ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
+		"From":    ubx.FieldSpec{WireName: "from"},
 		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"Limit":   ubx.FieldSpec{WireName: "limit"},
+		"Query":   ubx.FieldSpec{WireName: "query"},
+		"Tags":    ubx.FieldSpec{WireName: "tags"},
+		"To":      ubx.FieldSpec{WireName: "to"},
 	},
 }

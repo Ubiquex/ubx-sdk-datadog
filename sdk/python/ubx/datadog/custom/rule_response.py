@@ -7,7 +7,76 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RuleResponse_Data_Attributes_LastRevision_Attributes_Arguments:
+    description: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
+class RuleResponse_Data_Attributes_LastRevision_Attributes_Tests:
+    annotation_count: Any = None
+    code: Any = None
+    filename: Any = None
+
+@dataclasses.dataclass
+class RuleResponse_Data_Attributes_LastRevision_Attributes:
+    # Rule arguments
+    arguments: Any = None
+    # Rule category
+    category: Any = None
+    # Code checksum
+    checksum: Any = None
+    # Rule code
+    code: Any = None
+    # Creation timestamp
+    created_at: Any = None
+    # Creator identifier
+    created_by: Any = None
+    # Revision creation message
+    creation_message: Any = None
+    # Associated CVE
+    cve: Any = None
+    # Associated CWE
+    cwe: Any = None
+    # Full description
+    description: Any = None
+    # Documentation URL
+    documentation_url: Any = None
+    # Whether the revision is published
+    is_published: Any = None
+    # Whether this is a testing revision
+    is_testing: Any = None
+    # Programming language
+    language: Any = None
+    # Rule severity
+    severity: Any = None
+    # Short description
+    short_description: Any = None
+    # Whether to use AI for fixes
+    should_use_ai_fix: Any = None
+    # Rule tags
+    tags: Any = None
+    # Rule tests
+    tests: Any = None
+    # Tree-sitter query
+    tree_sitter_query: Any = None
+
+@dataclasses.dataclass
+class RuleResponse_Data_Attributes_LastRevision:
+    # Attributes of a custom rule revision, including code, metadata, and test cases.
+    attributes: Any = None
+    # Revision identifier
+    id: Any = None
+    # Resource type
+    type: Any = None
+
+@dataclasses.dataclass
 class RuleResponse_Data_Attributes:
+    # Creation timestamp
+    created_at: Any = None
+    # Creator identifier
+    created_by: Any = None
+    # A specific revision of a custom static analysis rule.
+    last_revision: Any = None
     # Rule name
     name: Any = None
 
@@ -20,7 +89,66 @@ class RuleResponse_Data:
     # Resource type
     type: Any = None
 
+_RuleResponse_Data_Attributes_LastRevision_Attributes_ArgumentsFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
+_RuleResponse_Data_Attributes_LastRevision_Attributes_TestsFields = {
+    "annotation_count": ubx.FieldSpec(wire_name="annotation_count"),
+    "code": ubx.FieldSpec(wire_name="code"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
+}
+
+_RuleResponse_Data_Attributes_LastRevision_AttributesFields = {
+    "arguments": ubx.FieldSpec(
+        wire_name="arguments",
+        kind="list",
+        fields=_RuleResponse_Data_Attributes_LastRevision_Attributes_ArgumentsFields,
+    ),
+    "category": ubx.FieldSpec(wire_name="category"),
+    "checksum": ubx.FieldSpec(wire_name="checksum"),
+    "code": ubx.FieldSpec(wire_name="code"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "creation_message": ubx.FieldSpec(wire_name="creation_message"),
+    "cve": ubx.FieldSpec(wire_name="cve"),
+    "cwe": ubx.FieldSpec(wire_name="cwe"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "documentation_url": ubx.FieldSpec(wire_name="documentation_url"),
+    "is_published": ubx.FieldSpec(wire_name="is_published"),
+    "is_testing": ubx.FieldSpec(wire_name="is_testing"),
+    "language": ubx.FieldSpec(wire_name="language"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "short_description": ubx.FieldSpec(wire_name="short_description"),
+    "should_use_ai_fix": ubx.FieldSpec(wire_name="should_use_ai_fix"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+    "tests": ubx.FieldSpec(
+        wire_name="tests",
+        kind="list",
+        fields=_RuleResponse_Data_Attributes_LastRevision_Attributes_TestsFields,
+    ),
+    "tree_sitter_query": ubx.FieldSpec(wire_name="tree_sitter_query"),
+}
+
+_RuleResponse_Data_Attributes_LastRevisionFields = {
+    "attributes": ubx.FieldSpec(
+        wire_name="attributes",
+        kind="object",
+        fields=_RuleResponse_Data_Attributes_LastRevision_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
 _RuleResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "last_revision": ubx.FieldSpec(
+        wire_name="last_revision",
+        kind="object",
+        fields=_RuleResponse_Data_Attributes_LastRevisionFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
 }
 

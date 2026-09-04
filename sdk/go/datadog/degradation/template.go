@@ -4,97 +4,156 @@ package degradation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Template_Data_Attributes_ComponentsAffected struct {
-	Id any
-	Name any
+	Id     any
+	Name   any
 	Status any
 }
 
 type Template_Data_Attributes_Updates struct {
 	Message any
-	Status any
+	Status  any
 }
 
 type Template_Data_Attributes struct {
 	// The components affected by a degradation created from this template.
 	ComponentsAffected any
+	// Timestamp of when the degradation template was created.
+	CreatedAt any
 	// The title used for a degradation created from this template.
 	DegradationTitle any
+	// Timestamp of when the degradation template was last modified.
+	ModifiedAt any
 	// The name of the degradation template.
 	Name any
 	// The pre-filled updates for a degradation created from this template.
 	Updates any
 }
 
+type Template_Data_Relationships_CreatedByUser_Data struct {
+	// The ID of the Datadog user who created the degradation template.
+	Id any
+	// Users resource type.
+	Type any
+}
+
+type Template_Data_Relationships_CreatedByUser struct {
+	// The data object identifying the Datadog user who created the degradation template.
+	Data any
+}
+
+type Template_Data_Relationships struct {
+	// The Datadog user who created the degradation template.
+	CreatedByUser any
+	// The Datadog user who last modified the degradation template.
+	LastModifiedByUser any
+	// The status page the degradation template belongs to.
+	StatusPage any
+}
+
 type Template_Data struct {
 	// The attributes for creating a degradation template.
 	Attributes any
+	// The ID of the degradation template.
+	Id any
+	// The relationships of a degradation template.
+	Relationships any
 	// Degradation templates resource type.
 	Type any
 }
 
 type Template_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
-}
-
-type Template_Included_Relationships_CreatedByUser_Data struct {
-	Id any
-	Type any
-}
-
-type Template_Included_Relationships_CreatedByUser struct {
-	Data any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type Template_Included_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type Template_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var Template_Data_Attributes_ComponentsAffectedFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Template_Data_Attributes_UpdatesFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Message": ubx.FieldSpec{WireName: "message"},
+	"Status":  ubx.FieldSpec{WireName: "status"},
+}
 
 var Template_Data_AttributesFields = ubx.FieldMap{
-		"ComponentsAffected": ubx.FieldSpec{
-			WireName: "components_affected",
-			Kind: "list",
-			Fields: Template_Data_Attributes_ComponentsAffectedFields,
-		},
-		"DegradationTitle": ubx.FieldSpec{WireName: "degradation_title"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Updates": ubx.FieldSpec{
-			WireName: "updates",
-			Kind: "list",
-			Fields: Template_Data_Attributes_UpdatesFields,
-		},
-	}
+	"ComponentsAffected": ubx.FieldSpec{
+		WireName: "components_affected",
+		Kind:     "list",
+		Fields:   Template_Data_Attributes_ComponentsAffectedFields,
+	},
+	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
+	"DegradationTitle": ubx.FieldSpec{WireName: "degradation_title"},
+	"ModifiedAt":       ubx.FieldSpec{WireName: "modified_at"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Updates": ubx.FieldSpec{
+		WireName: "updates",
+		Kind:     "list",
+		Fields:   Template_Data_Attributes_UpdatesFields,
+	},
+}
+
+var Template_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var Template_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Template_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
+
+var Template_Data_RelationshipsFields = ubx.FieldMap{
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   Template_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   Template_Data_Relationships_CreatedByUserFields,
+	},
+	"StatusPage": ubx.FieldSpec{
+		WireName: "status_page",
+		Kind:     "object",
+		Fields:   Template_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var Template_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Template_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Template_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Template_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type TemplateConfig struct {
 	// The data object for creating a degradation template.
@@ -121,10 +180,10 @@ var Template = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Template_DataFields,
+			Kind:     "object",
+			Fields:   Template_DataFields,
 		},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"PageId":     ubx.FieldSpec{WireName: "page_id"},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
 	},
 }

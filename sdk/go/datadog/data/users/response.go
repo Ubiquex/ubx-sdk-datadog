@@ -4,24 +4,24 @@ package users
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type Response_Data_Relationships_Org_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -34,28 +34,28 @@ type Response_Data_Relationships_OtherOrgs struct {
 }
 
 type Response_Data_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type Response_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Included_Attributes struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Disabled any
-	ModifiedAt any
-	Name any
-	PublicId any
-	Sharing any
-	Url any
+	Disabled    any
+	ModifiedAt  any
+	Name        any
+	PublicId    any
+	Sharing     any
+	Url         any
 }
 
 type Response_Included_Relationships struct {
@@ -63,10 +63,10 @@ type Response_Included_Relationships struct {
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Meta_Page struct {
@@ -83,17 +83,17 @@ type Response_Meta struct {
 
 type ResponseConfig struct {
 	Filter any
-	IdpId any
-	Sort any
+	IdpId  any
+	Sort   any
 	// Direction of sort.
 	SortDir any
 }
 
 type ResponseAttrs struct {
 	// Array of returned users.
-	Data any
+	Data   any
 	Filter any
-	IdpId any
+	IdpId  any
 	// Array of objects related to the users.
 	Included any
 	// Object describing meta attributes of response.
@@ -106,9 +106,9 @@ type ResponseAttrs struct {
 var Response = ubx.DataSourceBinding{
 	WireType: "datadog_users_response",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"IdpId": ubx.FieldSpec{WireName: "idp_id"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Filter":  ubx.FieldSpec{WireName: "filter"},
+		"IdpId":   ubx.FieldSpec{WireName: "idp_id"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 		"SortDir": ubx.FieldSpec{WireName: "sort_dir"},
 	},
 }

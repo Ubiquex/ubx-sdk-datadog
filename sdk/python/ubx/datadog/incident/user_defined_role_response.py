@@ -13,34 +13,44 @@ class UserDefinedRoleResponse_Data_Attributes_Policy:
 
 @dataclasses.dataclass
 class UserDefinedRoleResponse_Data_Attributes:
+    # Timestamp when the role was created.
+    created: Any = None
     # A description of the user-defined role.
     description: Any = None
+    # Timestamp when the role was last modified.
+    modified: Any = None
     # The name of the user-defined role.
     name: Any = None
     # Policy configuration for a user-defined role.
     policy: Any = None
 
 @dataclasses.dataclass
-class UserDefinedRoleResponse_Data_Relationships_IncidentType_Data:
-    # The ID of the incident type.
+class UserDefinedRoleResponse_Data_Relationships_CreatedByUser_Data:
+    # A unique identifier that represents the user.
     id: Any = None
-    # The type of the resource.
+    # Users resource type.
     type: Any = None
 
 @dataclasses.dataclass
-class UserDefinedRoleResponse_Data_Relationships_IncidentType:
-    # Data for the incident type relationship of a user-defined role.
+class UserDefinedRoleResponse_Data_Relationships_CreatedByUser:
+    # Relationship to user object.
     data: Any = None
 
 @dataclasses.dataclass
 class UserDefinedRoleResponse_Data_Relationships:
+    # Relationship to user.
+    created_by_user: Any = None
     # Relationship to an incident type for a user-defined role.
     incident_type: Any = None
+    # Relationship to user.
+    last_modified_by_user: Any = None
 
 @dataclasses.dataclass
 class UserDefinedRoleResponse_Data:
     # Attributes for creating an incident user-defined role.
     attributes: Any = None
+    # The ID of the user-defined role.
+    id: Any = None
     # Relationships for creating a user-defined role.
     relationships: Any = None
     # Incident user-defined role resource type.
@@ -74,7 +84,9 @@ _UserDefinedRoleResponse_Data_Attributes_PolicyFields = {
 }
 
 _UserDefinedRoleResponse_Data_AttributesFields = {
+    "created": ubx.FieldSpec(wire_name="created"),
     "description": ubx.FieldSpec(wire_name="description"),
+    "modified": ubx.FieldSpec(wire_name="modified"),
     "name": ubx.FieldSpec(wire_name="name"),
     "policy": ubx.FieldSpec(
         wire_name="policy",
@@ -83,24 +95,34 @@ _UserDefinedRoleResponse_Data_AttributesFields = {
     ),
 }
 
-_UserDefinedRoleResponse_Data_Relationships_IncidentType_DataFields = {
+_UserDefinedRoleResponse_Data_Relationships_CreatedByUser_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_UserDefinedRoleResponse_Data_Relationships_IncidentTypeFields = {
+_UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_UserDefinedRoleResponse_Data_Relationships_IncidentType_DataFields,
+        fields=_UserDefinedRoleResponse_Data_Relationships_CreatedByUser_DataFields,
     ),
 }
 
 _UserDefinedRoleResponse_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+    ),
     "incident_type": ubx.FieldSpec(
         wire_name="incident_type",
         kind="object",
-        fields=_UserDefinedRoleResponse_Data_Relationships_IncidentTypeFields,
+        fields=_UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
     ),
 }
 
@@ -110,6 +132,7 @@ _UserDefinedRoleResponse_DataFields = {
         kind="object",
         fields=_UserDefinedRoleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

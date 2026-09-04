@@ -23,7 +23,7 @@ type StatusGetResponseConfig struct {
 
 type StatusGetResponseAttrs struct {
 	// The data portion of the SLO report status response.
-	Data any
+	Data     any
 	ReportId any
 }
 

@@ -4,40 +4,40 @@ package container
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImageItem_Data_Attributes_ImageFlavors struct {
-	BuiltAt any
+	BuiltAt        any
 	OsArchitecture any
-	OsName any
-	OsVersion any
-	Size any
+	OsName         any
+	OsVersion      any
+	Size           any
 }
 
 type ImageItem_Data_Attributes_VulnerabilityCount struct {
-	AssetId any
+	AssetId  any
 	Critical any
-	High any
-	Low any
-	Medium any
-	None any
-	Unknown any
+	High     any
+	Low      any
+	Medium   any
+	None     any
+	Unknown  any
 }
 
 type ImageItem_Data_Attributes struct {
-	ContainerCount any
-	ImageFlavors any
-	ImageTags any
-	ImagesBuiltAt any
-	Name any
-	OsArchitectures any
-	OsNames any
-	OsVersions any
-	PublishedAt any
-	Registry any
-	RepoDigest any
-	Repository any
-	ShortImage any
-	Sizes any
-	Sources any
-	Tags any
+	ContainerCount     any
+	ImageFlavors       any
+	ImageTags          any
+	ImagesBuiltAt      any
+	Name               any
+	OsArchitectures    any
+	OsNames            any
+	OsVersions         any
+	PublishedAt        any
+	Registry           any
+	RepoDigest         any
+	Repository         any
+	ShortImage         any
+	Sizes              any
+	Sources            any
+	Tags               any
 	VulnerabilityCount any
 }
 
@@ -46,7 +46,7 @@ type ImageItem_Data_Relationships_ContainerImages_Links struct {
 }
 
 type ImageItem_Data_Relationships_ContainerImages struct {
-	Data any
+	Data  any
 	Links any
 }
 
@@ -55,10 +55,10 @@ type ImageItem_Data_Relationships struct {
 }
 
 type ImageItem_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ImageItem_Links struct {
@@ -96,12 +96,12 @@ type ImageItem_Meta struct {
 
 type ImageItemConfig struct {
 	GroupBy any
-	Sort any
+	Sort    any
 }
 
 type ImageItemAttrs struct {
 	// Array of Container Image objects.
-	Data any
+	Data    any
 	GroupBy any
 	// Pagination links.
 	Links any
@@ -114,6 +114,6 @@ var ImageItem = ubx.DataSourceBinding{
 	WireType: "datadog_container_image_item",
 	Fields: ubx.FieldMap{
 		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

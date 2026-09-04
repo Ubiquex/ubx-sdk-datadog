@@ -3,24 +3,56 @@ package incident
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ResponderResponse_Data_Relationships_User_Data struct {
-	// The user identifier.
+type ResponderResponse_Data_Attributes struct {
+	// Timestamp when the responder was created.
+	Created any
+	// The external ID of the responder.
+	ExternalId any
+	// The external source of the responder.
+	ExternalSource any
+	// Whether this responder counts toward billing.
+	IsBillable any
+	// Timestamp when the responder was last active.
+	LastActive any
+	// Additional metadata for the responder.
+	Meta any
+	// Timestamp when the responder was last modified.
+	Modified any
+}
+
+type ResponderResponse_Data_Relationships_CreatedBy_Data struct {
+	// A unique identifier that represents the user.
 	Id any
-	// The user resource type.
+	// Users resource type.
 	Type any
 }
 
-type ResponderResponse_Data_Relationships_User struct {
-	// A user relationship data object for creating a responder.
+type ResponderResponse_Data_Relationships_CreatedBy struct {
+	// Relationship to user object.
+	Data any
+}
+
+type ResponderResponse_Data_Relationships_RoleAssignments struct {
+	// List of role assignment relationship data.
 	Data any
 }
 
 type ResponderResponse_Data_Relationships struct {
+	// Relationship to user.
+	CreatedBy any
+	// Relationship to user.
+	LastModifiedBy any
+	// Relationship to role assignments for a responder.
+	RoleAssignments any
 	// Relationship to a user for a responder create request.
 	User any
 }
 
 type ResponderResponse_Data struct {
+	// Attributes of an incident responder in a response.
+	Attributes any
+	// The responder identifier.
+	Id any
 	// Relationships for creating an incident responder.
 	Relationships any
 	// Incident responder resource type.
@@ -28,48 +60,87 @@ type ResponderResponse_Data struct {
 }
 
 type ResponderResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type ResponderResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
-var ResponderResponse_Data_Relationships_User_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+var ResponderResponse_Data_AttributesFields = ubx.FieldMap{
+	"Created":        ubx.FieldSpec{WireName: "created"},
+	"ExternalId":     ubx.FieldSpec{WireName: "external_id"},
+	"ExternalSource": ubx.FieldSpec{WireName: "external_source"},
+	"IsBillable":     ubx.FieldSpec{WireName: "is_billable"},
+	"LastActive":     ubx.FieldSpec{WireName: "last_active"},
+	"Meta":           ubx.FieldSpec{WireName: "meta"},
+	"Modified":       ubx.FieldSpec{WireName: "modified"},
+}
 
-var ResponderResponse_Data_Relationships_UserFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: ResponderResponse_Data_Relationships_User_DataFields,
-		},
-	}
+var ResponderResponse_Data_Relationships_CreatedBy_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var ResponderResponse_Data_Relationships_CreatedByFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   ResponderResponse_Data_Relationships_CreatedBy_DataFields,
+	},
+}
+
+var ResponderResponse_Data_Relationships_RoleAssignmentsFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   ResponderResponse_Data_Relationships_CreatedBy_DataFields,
+	},
+}
 
 var ResponderResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"User": ubx.FieldSpec{
-			WireName: "user",
-			Kind: "object",
-			Fields: ResponderResponse_Data_Relationships_UserFields,
-		},
-	}
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   ResponderResponse_Data_Relationships_CreatedByFields,
+	},
+	"LastModifiedBy": ubx.FieldSpec{
+		WireName: "last_modified_by",
+		Kind:     "object",
+		Fields:   ResponderResponse_Data_Relationships_CreatedByFields,
+	},
+	"RoleAssignments": ubx.FieldSpec{
+		WireName: "role_assignments",
+		Kind:     "object",
+		Fields:   ResponderResponse_Data_Relationships_RoleAssignmentsFields,
+	},
+	"User": ubx.FieldSpec{
+		WireName: "user",
+		Kind:     "object",
+		Fields:   ResponderResponse_Data_Relationships_CreatedByFields,
+	},
+}
 
 var ResponderResponse_DataFields = ubx.FieldMap{
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: ResponderResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ResponderResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   ResponderResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponderResponseConfig struct {
 	// Incident responder data in a create request.
@@ -96,10 +167,10 @@ var ResponderResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ResponderResponse_DataFields,
+			Kind:     "object",
+			Fields:   ResponderResponse_DataFields,
 		},
-		"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
+		"IncidentId":  ubx.FieldSpec{WireName: "incident_id"},
 		"ResponderId": ubx.FieldSpec{WireName: "responder_id"},
 	},
 }

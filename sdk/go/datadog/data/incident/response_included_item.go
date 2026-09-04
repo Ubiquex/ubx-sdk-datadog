@@ -4,11 +4,11 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponseIncludedItem_Data_Attributes_Facets_Commander struct {
-	Count any
-	Email any
+	Count  any
+	Email  any
 	Handle any
-	Name any
-	Uuid any
+	Name   any
+	Uuid   any
 }
 
 type ResponseIncludedItem_Data_Attributes_Facets_Fields_Aggregates struct {
@@ -18,18 +18,18 @@ type ResponseIncludedItem_Data_Attributes_Facets_Fields_Aggregates struct {
 
 type ResponseIncludedItem_Data_Attributes_Facets_Fields_Facets struct {
 	Count any
-	Name any
+	Name  any
 }
 
 type ResponseIncludedItem_Data_Attributes_Facets_Fields struct {
 	Aggregates any
-	Facets any
-	Name any
+	Facets     any
+	Name       any
 }
 
 type ResponseIncludedItem_Data_Attributes_Facets_TimeToRepair struct {
 	Aggregates any
-	Name any
+	Name       any
 }
 
 type ResponseIncludedItem_Data_Attributes_Facets struct {
@@ -59,52 +59,52 @@ type ResponseIncludedItem_Data_Attributes_Facets struct {
 
 type ResponseIncludedItem_Data_Attributes_Incidents_Data_Attributes_DeclaredBy struct {
 	Image48Px any
-	Name any
+	Name      any
 }
 
 type ResponseIncludedItem_Data_Attributes_Incidents_Data_Attributes_Fields struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type ResponseIncludedItem_Data_Attributes_Incidents_Data_Attributes_NotificationHandles struct {
 	DisplayName any
-	Handle any
+	Handle      any
 }
 
 type ResponseIncludedItem_Data_Attributes_Incidents_Data_Attributes struct {
-	Archived any
-	CaseId any
-	Created any
+	Archived               any
+	CaseId                 any
+	Created                any
 	CustomerImpactDuration any
-	CustomerImpactEnd any
-	CustomerImpactScope any
-	CustomerImpactStart any
-	CustomerImpacted any
-	Declared any
-	DeclaredBy any
-	DeclaredByUuid any
-	Detected any
-	Fields any
-	IncidentTypeUuid any
-	IsTest any
-	Modified any
-	NonDatadogCreator any
-	NotificationHandles any
-	PublicId any
-	Resolved any
-	Severity any
-	State any
-	TimeToDetect any
+	CustomerImpactEnd      any
+	CustomerImpactScope    any
+	CustomerImpactStart    any
+	CustomerImpacted       any
+	Declared               any
+	DeclaredBy             any
+	DeclaredByUuid         any
+	Detected               any
+	Fields                 any
+	IncidentTypeUuid       any
+	IsTest                 any
+	Modified               any
+	NonDatadogCreator      any
+	NotificationHandles    any
+	PublicId               any
+	Resolved               any
+	Severity               any
+	State                  any
+	TimeToDetect           any
 	TimeToInternalResponse any
-	TimeToRepair any
-	TimeToResolve any
-	Title any
-	Visibility any
+	TimeToRepair           any
+	TimeToResolve          any
+	Title                  any
+	Visibility             any
 }
 
 type ResponseIncludedItem_Data_Attributes_Incidents_Data_Relationships_Attachments_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -117,22 +117,22 @@ type ResponseIncludedItem_Data_Attributes_Incidents_Data_Relationships_Commander
 }
 
 type ResponseIncludedItem_Data_Attributes_Incidents_Data_Relationships struct {
-	Attachments any
-	CommanderUser any
-	CreatedByUser any
-	DeclaredByUser any
-	Impacts any
-	Integrations any
+	Attachments        any
+	CommanderUser      any
+	CreatedByUser      any
+	DeclaredByUser     any
+	Impacts            any
+	Integrations       any
 	LastModifiedByUser any
-	Responders any
-	UserDefinedFields any
+	Responders         any
+	UserDefinedFields  any
 }
 
 type ResponseIncludedItem_Data_Attributes_Incidents_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ResponseIncludedItem_Data_Attributes_Incidents struct {
@@ -156,23 +156,23 @@ type ResponseIncludedItem_Data struct {
 }
 
 type ResponseIncludedItem_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type ResponseIncludedItem_Included_Relationships struct {
-	Incident any
+	Incident           any
 	LastModifiedByUser any
 }
 
 type ResponseIncludedItem_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ResponseIncludedItem_Meta_Pagination struct {
@@ -192,7 +192,7 @@ type ResponseIncludedItem_Meta struct {
 type ResponseIncludedItemConfig struct {
 	// Object related to an incident.
 	Include any
-	Query any
+	Query   any
 	// The ways searched incidents can be sorted.
 	Sort any
 }
@@ -205,7 +205,7 @@ type ResponseIncludedItemAttrs struct {
 	// Included related resources that the user requested.
 	Included any
 	// The metadata object containing pagination metadata.
-	Meta any
+	Meta  any
 	Query any
 	// The ways searched incidents can be sorted.
 	Sort any
@@ -215,7 +215,7 @@ var ResponseIncludedItem = ubx.DataSourceBinding{
 	WireType: "datadog_incident_response_included_item",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Query":   ubx.FieldSpec{WireName: "query"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

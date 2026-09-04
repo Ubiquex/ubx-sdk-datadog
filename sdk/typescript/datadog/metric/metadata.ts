@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface MetadataConfig {
   /** Metric description. */
   description?: string | Computed<string>;
-  /** Name of the integration that sent the metric if applicable. */
-  integration?: string | Computed<string>;
   /** Per unit of the metric such as `second` in `bytes per second`. */
   perUnit?: string | Computed<string>;
   /** A more human-readable and abbreviated version of the metric name. */
@@ -43,7 +41,6 @@ export const Metadata: ResourceBinding<MetadataConfig, MetadataAttrs> = {
   wireType: "datadog_metric_metadata",
   fields: {
     description: "description",
-    integration: "integration",
     perUnit: "per_unit",
     shortName: "short_name",
     statsdInterval: "statsd_interval",

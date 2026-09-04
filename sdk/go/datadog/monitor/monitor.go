@@ -4,13 +4,11 @@ package monitor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Monitor_Assets struct {
-	// The category of the asset. Allowed value: `runbook`. (AI-inferred)
-	Category any
-	Name any
-	ResourceKey any
-	// The type of the asset associated with the monitor. The only supported value is 'notebook'. (AI-inferred)
+	Category     any
+	Name         any
+	ResourceKey  any
 	ResourceType any
-	Url any
+	Url          any
 }
 
 type Monitor_Creator struct {
@@ -23,13 +21,9 @@ type Monitor_Creator struct {
 }
 
 type Monitor_MatchingDowntimes struct {
-	// The timestamp (epoch seconds) when the downtime ends. (AI-inferred)
-	End any
-	// The unique identifier of the Datadog downtime that matches the monitor. (AI-inferred)
-	Id any
-	// The list of monitor scopes (such as host, service, or environment tags) to which the matching downtime applies. The downtime mutes monitors that match these scopes. (AI-inferred)
+	End   any
+	Id    any
 	Scope any
-	// The start time of the matching downtime, as a Unix timestamp in seconds. (AI-inferred)
 	Start any
 }
 
@@ -43,10 +37,8 @@ type Monitor_Options_Aggregation struct {
 }
 
 type Monitor_Options_SchedulingOptions_CustomSchedule_Recurrences struct {
-	// The RRULE expression, in RFC 5545 format, that defines the recurrence pattern for the custom schedule. For example, 'FREQ=DAILY;INTERVAL=2'. (AI-inferred)
-	Rrule any
-	Start any
-	// The IANA timezone in which the recurrence's start and end times are expressed. (AI-inferred)
+	Rrule    any
+	Start    any
 	Timezone any
 }
 
@@ -100,143 +92,101 @@ type Monitor_Options_Thresholds struct {
 }
 
 type Monitor_Options_Variables_AugmentQuery_Columns struct {
-	// The alias for the column, used to reference the column in the monitor's template variables and messages. (AI-inferred)
 	Alias any
-	// The name of the column to be added to the augmented query result. (AI-inferred)
-	Name any
+	Name  any
 }
 
 type Monitor_Options_Variables_AugmentQuery_Compute struct {
 	Aggregation any
-	// The time interval in seconds over which the compute aggregation is applied. (AI-inferred)
-	Interval any
-	// The name of the metric to use in the compute operation for the augmented query variable. (AI-inferred)
-	Metric any
-	Name any
-	Source any
+	Interval    any
+	Metric      any
+	Name        any
+	Source      any
 }
 
 type Monitor_Options_Variables_AugmentQuery_GroupBy_Sort struct {
-	// The aggregation method for the sort metric. (AI-inferred)
 	Aggregation any
-	// The metric name used to sort the groups in the augment query's group_by, combined with the aggregation and order to determine the sort order. For example, a metric like 'system.cpu.user'. (AI-inferred)
-	Metric any
-	Order any
+	Metric      any
+	Order       any
 }
 
 type Monitor_Options_Variables_AugmentQuery_GroupBy struct {
-	// The facet used to group query results within the monitor's variable augment query. It specifies the field by which the query is grouped. (AI-inferred)
-	Facet any
-	// The maximum number of groups to return from the group_by operation in the augment query. (AI-inferred)
-	Limit any
-	// This object specifies the sorting parameters for the groups created by the group_by, controlling their display order in the monitor. (AI-inferred)
-	Sort any
+	Facet  any
+	Limit  any
+	Sort   any
 	Source any
 }
 
 type Monitor_Options_Variables_AugmentQuery_Search struct {
-	// The search query used to augment a monitor variable. It specifies the query string that defines what data to include in the augmentation search. (AI-inferred)
 	Query any
 }
 
 type Monitor_Options_Variables_AugmentQuery struct {
-	Columns any
-	Compute any
-	DataSource any
-	GroupBy any
-	// A list of log index names used by the augment query to restrict the scope of the variable's search. If not specified, the query may use all available indexes. (AI-inferred)
-	Indexes any
-	// The name of the augment query, used to identify it within the monitor. (AI-inferred)
-	Name any
-	// The filter expression for the augment query. (AI-inferred)
+	Columns     any
+	Compute     any
+	DataSource  any
+	GroupBy     any
+	Indexes     any
+	Name        any
 	QueryFilter any
-	Search any
-	TableName any
+	Search      any
+	TableName   any
 }
 
 type Monitor_Options_Variables_BaseQuery struct {
-	// The aggregation method applied to the variable's base query, controlling how values are combined. (AI-inferred)
 	Aggregator any
-	// The compute object specifies the aggregation function and field used to transform the base query into a numeric value for the monitor variable. (AI-inferred)
-	Compute any
-	// The data source type for a monitor template variable, which determines where the variable's values are queried from (e.g., 'metrics', 'logs', 'rum', 'events'). (AI-inferred)
+	Compute    any
 	DataSource any
-	// A list of group-by definitions that determine the tag or attribute keys used to aggregate the base query results when populating the template variable's available values. (AI-inferred)
-	GroupBy any
-	// The list of log index names to search in the base query. If omitted, all log indexes are searched. (AI-inferred)
-	Indexes any
-	// The name of the template variable defined for the monitor. This name is used to reference the variable in the monitor's query or message. (AI-inferred)
-	Name any
-	// The base query string that defines the possible values for this template variable. (AI-inferred)
-	Query any
-	Search any
+	GroupBy    any
+	Indexes    any
+	Name       any
+	Query      any
+	Search     any
 }
 
 type Monitor_Options_Variables_Filters struct {
-	// The base attribute name used to filter the values available for the monitor variable. For example, when the filter's data source is 'logs', this could be a log facet like '@http.url'. (AI-inferred)
-	BaseAttribute any
-	// Whether the filter is an exclusion filter. When true, the specified tag values are excluded from the template variable's available values. (AI-inferred)
-	Exclude any
-	// The attribute name that the filter uses to narrow the template variable's available values. (AI-inferred)
+	BaseAttribute   any
+	Exclude         any
 	FilterAttribute any
 }
 
 type Monitor_Options_Variables_JoinCondition struct {
 	AugmentAttribute any
-	// The attribute from the base query used to join with the other query in the join condition. (AI-inferred)
-	BaseAttribute any
-	// The type of join to perform for the join condition. Valid values are 'inner' and 'left'. (AI-inferred)
-	JoinType any
+	BaseAttribute    any
+	JoinType         any
 }
 
 type Monitor_Options_Variables_MonitorOptions struct {
-	CrontabOverride any
-	CustomSql any
-	// A custom where clause used to filter the available values for the monitor template variable. For example, you can scope the variable by specifying a tag-based filter like 'availability-zone:us-east-1a'. (AI-inferred)
-	CustomWhere any
-	// A list of columns to group by for the variable's expression in the monitor query. (AI-inferred)
-	GroupByColumns any
-	// Override the model type for the monitor variable. Allowed values are 'freshness', 'percentage', or 'any'. (AI-inferred)
+	CrontabOverride   any
+	CustomSql         any
+	CustomWhere       any
+	GroupByColumns    any
 	ModelTypeOverride any
-	// The sensitivity of the anomaly detection monitor, from 1 (least sensitive) to 5 (most sensitive). This controls the width of the anomaly detection band. (AI-inferred)
-	Sensitivity any
+	Sensitivity       any
 }
 
 type Monitor_Options_Variables struct {
-	// The aggregation method used for the variable query. Valid values are avg, sum, max, min, last, area, l2norm, percentile, stddev. (AI-inferred)
-	Aggregator any
-	AugmentQuery any
-	BaseQuery any
-	// The compute block specifies the aggregation and facet used to calculate the value of the variable. It contains an `aggregation` field (required) and an optional `facet` field. (AI-inferred)
-	Compute any
-	// The data source type for the monitor variable. Allowed values are: rum, ci_pipelines, ci_tests, audit, events, logs, spans, database_queries, network, network_path. (AI-inferred)
-	DataSource any
-	// The filter query that restricts the possible values for this template variable in a Datadog monitor. (AI-inferred)
-	Filter any
-	// The filter query used to restrict the available values for this monitor template variable. (AI-inferred)
-	FilterQuery any
-	// Filters for the template variable, restricting the available values based on tag keys and values. (AI-inferred)
-	Filters any
-	// List of grouping conditions for the monitor variable. Each item contains a name and tag used to group the query results when resolving the variable's value. (AI-inferred)
-	GroupBy any
-	// A list of log indexes that this template variable will be restricted to. When set, the variable only uses these indexes when querying log data in log-based monitors. (AI-inferred)
-	Indexes any
-	JobType any
-	// The query used to populate the list of values for this monitor variable. (AI-inferred)
-	JobsQuery any
-	JoinCondition any
-	Measure any
-	// The options object for a monitor template variable. It contains a `values` attribute (a list of strings) that restricts the selectable values for the variable. (AI-inferred)
+	Aggregator     any
+	AugmentQuery   any
+	BaseQuery      any
+	Compute        any
+	DataSource     any
+	Filter         any
+	FilterQuery    any
+	Filters        any
+	GroupBy        any
+	Indexes        any
+	JobType        any
+	JobsQuery      any
+	JoinCondition  any
+	Measure        any
 	MonitorOptions any
-	// The name of the variable, which serves as the identifier used in the monitor's query or message for template variable substitution. (AI-inferred)
-	Name any
-	// The query string that defines the set of values for this monitor variable. It is used to populate the variable's available values, for example with a metric query or a list of hosts. (AI-inferred)
-	Query any
-	// The query language used for the variable's query. Valid values are `datadog` (default) for Datadog query syntax or `prometheus` for PromQL. (AI-inferred)
-	QueryDialect any
-	SchemaVersion any
-	Scope any
-	Search any
+	Name           any
+	Query          any
+	QueryDialect   any
+	SchemaVersion  any
+	Scope          any
+	Search         any
 }
 
 type Monitor_Options struct {
@@ -305,17 +255,12 @@ type Monitor_Options struct {
 }
 
 type Monitor_State_Groups struct {
-	// Unix timestamp of the last time the monitor group reported no data. (AI-inferred)
-	LastNodataTs any
-	// The timestamp of the last notification sent for this monitor group. (AI-inferred)
-	LastNotifiedTs any
-	// The Unix timestamp (in seconds) when the monitor group was last resolved. (AI-inferred)
-	LastResolvedTs any
-	// The timestamp (Unix epoch) when the monitor last triggered an alert for this group. (AI-inferred)
+	LastNodataTs    any
+	LastNotifiedTs  any
+	LastResolvedTs  any
 	LastTriggeredTs any
-	// The name of the monitor group, typically the combination of tag values that defines the group for multi-alert monitors. (AI-inferred)
-	Name any
-	Status any
+	Name            any
+	Status          any
 }
 
 type Monitor_State struct {
@@ -324,354 +269,315 @@ type Monitor_State struct {
 }
 
 var Monitor_AssetsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceKey": ubx.FieldSpec{WireName: "resource_key"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
-
-var Monitor_CreatorFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Category":     ubx.FieldSpec{WireName: "category"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"ResourceKey":  ubx.FieldSpec{WireName: "resource_key"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"Url":          ubx.FieldSpec{WireName: "url"},
+}
 
 var Monitor_MatchingDowntimesFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Id":    ubx.FieldSpec{WireName: "id"},
+	"Scope": ubx.FieldSpec{WireName: "scope"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var Monitor_Options_AggregationFields = ubx.FieldMap{
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"GroupBy": ubx.FieldSpec{WireName: "group_by"},
+	"Metric":  ubx.FieldSpec{WireName: "metric"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Monitor_Options_SchedulingOptions_CustomSchedule_RecurrencesFields = ubx.FieldMap{
-		"Rrule": ubx.FieldSpec{WireName: "rrule"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Rrule":    ubx.FieldSpec{WireName: "rrule"},
+	"Start":    ubx.FieldSpec{WireName: "start"},
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 var Monitor_Options_SchedulingOptions_CustomScheduleFields = ubx.FieldMap{
-		"Recurrences": ubx.FieldSpec{
-			WireName: "recurrences",
-			Kind: "list",
-			Fields: Monitor_Options_SchedulingOptions_CustomSchedule_RecurrencesFields,
-		},
-	}
+	"Recurrences": ubx.FieldSpec{
+		WireName: "recurrences",
+		Kind:     "list",
+		Fields:   Monitor_Options_SchedulingOptions_CustomSchedule_RecurrencesFields,
+	},
+}
 
 var Monitor_Options_SchedulingOptions_EvaluationWindowFields = ubx.FieldMap{
-		"DayStarts": ubx.FieldSpec{WireName: "day_starts"},
-		"HourStarts": ubx.FieldSpec{WireName: "hour_starts"},
-		"MonthStarts": ubx.FieldSpec{WireName: "month_starts"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"DayStarts":   ubx.FieldSpec{WireName: "day_starts"},
+	"HourStarts":  ubx.FieldSpec{WireName: "hour_starts"},
+	"MonthStarts": ubx.FieldSpec{WireName: "month_starts"},
+	"Timezone":    ubx.FieldSpec{WireName: "timezone"},
+}
 
 var Monitor_Options_SchedulingOptionsFields = ubx.FieldMap{
-		"CustomSchedule": ubx.FieldSpec{
-			WireName: "custom_schedule",
-			Kind: "object",
-			Fields: Monitor_Options_SchedulingOptions_CustomScheduleFields,
-		},
-		"EvaluationWindow": ubx.FieldSpec{
-			WireName: "evaluation_window",
-			Kind: "object",
-			Fields: Monitor_Options_SchedulingOptions_EvaluationWindowFields,
-		},
-	}
+	"CustomSchedule": ubx.FieldSpec{
+		WireName: "custom_schedule",
+		Kind:     "object",
+		Fields:   Monitor_Options_SchedulingOptions_CustomScheduleFields,
+	},
+	"EvaluationWindow": ubx.FieldSpec{
+		WireName: "evaluation_window",
+		Kind:     "object",
+		Fields:   Monitor_Options_SchedulingOptions_EvaluationWindowFields,
+	},
+}
 
 var Monitor_Options_ThresholdWindowsFields = ubx.FieldMap{
-		"RecoveryWindow": ubx.FieldSpec{WireName: "recovery_window"},
-		"TriggerWindow": ubx.FieldSpec{WireName: "trigger_window"},
-	}
+	"RecoveryWindow": ubx.FieldSpec{WireName: "recovery_window"},
+	"TriggerWindow":  ubx.FieldSpec{WireName: "trigger_window"},
+}
 
 var Monitor_Options_ThresholdsFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"CriticalQuery": ubx.FieldSpec{WireName: "critical_query"},
-		"CriticalRecovery": ubx.FieldSpec{WireName: "critical_recovery"},
-		"CriticalRecoveryQuery": ubx.FieldSpec{WireName: "critical_recovery_query"},
-		"Ok": ubx.FieldSpec{WireName: "ok"},
-		"Unknown": ubx.FieldSpec{WireName: "unknown"},
-		"Warning": ubx.FieldSpec{WireName: "warning"},
-		"WarningRecovery": ubx.FieldSpec{WireName: "warning_recovery"},
-	}
+	"Critical":              ubx.FieldSpec{WireName: "critical"},
+	"CriticalQuery":         ubx.FieldSpec{WireName: "critical_query"},
+	"CriticalRecovery":      ubx.FieldSpec{WireName: "critical_recovery"},
+	"CriticalRecoveryQuery": ubx.FieldSpec{WireName: "critical_recovery_query"},
+	"Ok":                    ubx.FieldSpec{WireName: "ok"},
+	"Unknown":               ubx.FieldSpec{WireName: "unknown"},
+	"Warning":               ubx.FieldSpec{WireName: "warning"},
+	"WarningRecovery":       ubx.FieldSpec{WireName: "warning_recovery"},
+}
 
 var Monitor_Options_Variables_AugmentQuery_ColumnsFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Alias": ubx.FieldSpec{WireName: "alias"},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+}
 
 var Monitor_Options_Variables_AugmentQuery_ComputeFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
+	"Interval":    ubx.FieldSpec{WireName: "interval"},
+	"Metric":      ubx.FieldSpec{WireName: "metric"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Source":      ubx.FieldSpec{WireName: "source"},
+}
 
 var Monitor_Options_Variables_AugmentQuery_GroupBy_SortFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-	}
+	"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
+	"Metric":      ubx.FieldSpec{WireName: "metric"},
+	"Order":       ubx.FieldSpec{WireName: "order"},
+}
 
 var Monitor_Options_Variables_AugmentQuery_GroupByFields = ubx.FieldMap{
-		"Facet": ubx.FieldSpec{WireName: "facet"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Sort": ubx.FieldSpec{
-			WireName: "sort",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_AugmentQuery_GroupBy_SortFields,
-		},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Facet": ubx.FieldSpec{WireName: "facet"},
+	"Limit": ubx.FieldSpec{WireName: "limit"},
+	"Sort": ubx.FieldSpec{
+		WireName: "sort",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_AugmentQuery_GroupBy_SortFields,
+	},
+	"Source": ubx.FieldSpec{WireName: "source"},
+}
 
 var Monitor_Options_Variables_AugmentQuery_SearchFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var Monitor_Options_Variables_AugmentQueryFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Monitor_Options_Variables_AugmentQuery_ColumnsFields,
-		},
-		"Compute": ubx.FieldSpec{
-			WireName: "compute",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_AugmentQuery_ComputeFields,
-		},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: Monitor_Options_Variables_AugmentQuery_GroupByFields,
-		},
-		"Indexes": ubx.FieldSpec{WireName: "indexes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"QueryFilter": ubx.FieldSpec{WireName: "query_filter"},
-		"Search": ubx.FieldSpec{
-			WireName: "search",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_AugmentQuery_SearchFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Monitor_Options_Variables_AugmentQuery_ColumnsFields,
+	},
+	"Compute": ubx.FieldSpec{
+		WireName: "compute",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_AugmentQuery_ComputeFields,
+	},
+	"DataSource": ubx.FieldSpec{WireName: "data_source"},
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   Monitor_Options_Variables_AugmentQuery_GroupByFields,
+	},
+	"Indexes":     ubx.FieldSpec{WireName: "indexes"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"QueryFilter": ubx.FieldSpec{WireName: "query_filter"},
+	"Search": ubx.FieldSpec{
+		WireName: "search",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_AugmentQuery_SearchFields,
+	},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+}
 
 var Monitor_Options_Variables_BaseQueryFields = ubx.FieldMap{
-		"Aggregator": ubx.FieldSpec{WireName: "aggregator"},
-		"Compute": ubx.FieldSpec{
-			WireName: "compute",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_AugmentQuery_ComputeFields,
-		},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: Monitor_Options_Variables_AugmentQuery_GroupByFields,
-		},
-		"Indexes": ubx.FieldSpec{WireName: "indexes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Search": ubx.FieldSpec{
-			WireName: "search",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_AugmentQuery_SearchFields,
-		},
-	}
+	"Aggregator": ubx.FieldSpec{WireName: "aggregator"},
+	"Compute": ubx.FieldSpec{
+		WireName: "compute",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_AugmentQuery_ComputeFields,
+	},
+	"DataSource": ubx.FieldSpec{WireName: "data_source"},
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   Monitor_Options_Variables_AugmentQuery_GroupByFields,
+	},
+	"Indexes": ubx.FieldSpec{WireName: "indexes"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Query":   ubx.FieldSpec{WireName: "query"},
+	"Search": ubx.FieldSpec{
+		WireName: "search",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_AugmentQuery_SearchFields,
+	},
+}
 
 var Monitor_Options_Variables_FiltersFields = ubx.FieldMap{
-		"BaseAttribute": ubx.FieldSpec{WireName: "base_attribute"},
-		"Exclude": ubx.FieldSpec{WireName: "exclude"},
-		"FilterAttribute": ubx.FieldSpec{WireName: "filter_attribute"},
-	}
+	"BaseAttribute":   ubx.FieldSpec{WireName: "base_attribute"},
+	"Exclude":         ubx.FieldSpec{WireName: "exclude"},
+	"FilterAttribute": ubx.FieldSpec{WireName: "filter_attribute"},
+}
 
 var Monitor_Options_Variables_JoinConditionFields = ubx.FieldMap{
-		"AugmentAttribute": ubx.FieldSpec{WireName: "augment_attribute"},
-		"BaseAttribute": ubx.FieldSpec{WireName: "base_attribute"},
-		"JoinType": ubx.FieldSpec{WireName: "join_type"},
-	}
+	"AugmentAttribute": ubx.FieldSpec{WireName: "augment_attribute"},
+	"BaseAttribute":    ubx.FieldSpec{WireName: "base_attribute"},
+	"JoinType":         ubx.FieldSpec{WireName: "join_type"},
+}
 
 var Monitor_Options_Variables_MonitorOptionsFields = ubx.FieldMap{
-		"CrontabOverride": ubx.FieldSpec{WireName: "crontab_override"},
-		"CustomSql": ubx.FieldSpec{WireName: "custom_sql"},
-		"CustomWhere": ubx.FieldSpec{WireName: "custom_where"},
-		"GroupByColumns": ubx.FieldSpec{WireName: "group_by_columns"},
-		"ModelTypeOverride": ubx.FieldSpec{WireName: "model_type_override"},
-		"Sensitivity": ubx.FieldSpec{WireName: "sensitivity"},
-	}
+	"CrontabOverride":   ubx.FieldSpec{WireName: "crontab_override"},
+	"CustomSql":         ubx.FieldSpec{WireName: "custom_sql"},
+	"CustomWhere":       ubx.FieldSpec{WireName: "custom_where"},
+	"GroupByColumns":    ubx.FieldSpec{WireName: "group_by_columns"},
+	"ModelTypeOverride": ubx.FieldSpec{WireName: "model_type_override"},
+	"Sensitivity":       ubx.FieldSpec{WireName: "sensitivity"},
+}
 
 var Monitor_Options_VariablesFields = ubx.FieldMap{
-		"Aggregator": ubx.FieldSpec{WireName: "aggregator"},
-		"AugmentQuery": ubx.FieldSpec{
-			WireName: "augment_query",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_AugmentQueryFields,
-		},
-		"BaseQuery": ubx.FieldSpec{
-			WireName: "base_query",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_BaseQueryFields,
-		},
-		"Compute": ubx.FieldSpec{
-			WireName: "compute",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_AugmentQuery_ComputeFields,
-		},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"FilterQuery": ubx.FieldSpec{
-			WireName: "filter_query",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_AugmentQueryFields,
-		},
-		"Filters": ubx.FieldSpec{
-			WireName: "filters",
-			Kind: "list",
-			Fields: Monitor_Options_Variables_FiltersFields,
-		},
-		"GroupBy": ubx.FieldSpec{
-			WireName: "group_by",
-			Kind: "list",
-			Fields: Monitor_Options_Variables_AugmentQuery_GroupByFields,
-		},
-		"Indexes": ubx.FieldSpec{WireName: "indexes"},
-		"JobType": ubx.FieldSpec{WireName: "job_type"},
-		"JobsQuery": ubx.FieldSpec{WireName: "jobs_query"},
-		"JoinCondition": ubx.FieldSpec{
-			WireName: "join_condition",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_JoinConditionFields,
-		},
-		"Measure": ubx.FieldSpec{WireName: "measure"},
-		"MonitorOptions": ubx.FieldSpec{
-			WireName: "monitor_options",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_MonitorOptionsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"QueryDialect": ubx.FieldSpec{WireName: "query_dialect"},
-		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Search": ubx.FieldSpec{
-			WireName: "search",
-			Kind: "object",
-			Fields: Monitor_Options_Variables_AugmentQuery_SearchFields,
-		},
-	}
+	"Aggregator": ubx.FieldSpec{WireName: "aggregator"},
+	"AugmentQuery": ubx.FieldSpec{
+		WireName: "augment_query",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_AugmentQueryFields,
+	},
+	"BaseQuery": ubx.FieldSpec{
+		WireName: "base_query",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_BaseQueryFields,
+	},
+	"Compute": ubx.FieldSpec{
+		WireName: "compute",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_AugmentQuery_ComputeFields,
+	},
+	"DataSource": ubx.FieldSpec{WireName: "data_source"},
+	"Filter":     ubx.FieldSpec{WireName: "filter"},
+	"FilterQuery": ubx.FieldSpec{
+		WireName: "filter_query",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_AugmentQueryFields,
+	},
+	"Filters": ubx.FieldSpec{
+		WireName: "filters",
+		Kind:     "list",
+		Fields:   Monitor_Options_Variables_FiltersFields,
+	},
+	"GroupBy": ubx.FieldSpec{
+		WireName: "group_by",
+		Kind:     "list",
+		Fields:   Monitor_Options_Variables_AugmentQuery_GroupByFields,
+	},
+	"Indexes":   ubx.FieldSpec{WireName: "indexes"},
+	"JobType":   ubx.FieldSpec{WireName: "job_type"},
+	"JobsQuery": ubx.FieldSpec{WireName: "jobs_query"},
+	"JoinCondition": ubx.FieldSpec{
+		WireName: "join_condition",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_JoinConditionFields,
+	},
+	"Measure": ubx.FieldSpec{WireName: "measure"},
+	"MonitorOptions": ubx.FieldSpec{
+		WireName: "monitor_options",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_MonitorOptionsFields,
+	},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Query":         ubx.FieldSpec{WireName: "query"},
+	"QueryDialect":  ubx.FieldSpec{WireName: "query_dialect"},
+	"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
+	"Scope":         ubx.FieldSpec{WireName: "scope"},
+	"Search": ubx.FieldSpec{
+		WireName: "search",
+		Kind:     "object",
+		Fields:   Monitor_Options_Variables_AugmentQuery_SearchFields,
+	},
+}
 
 var Monitor_OptionsFields = ubx.FieldMap{
-		"Aggregation": ubx.FieldSpec{
-			WireName: "aggregation",
-			Kind: "object",
-			Fields: Monitor_Options_AggregationFields,
-		},
-		"DeviceIds": ubx.FieldSpec{WireName: "device_ids"},
-		"EnableLogsSample": ubx.FieldSpec{WireName: "enable_logs_sample"},
-		"EnableSamples": ubx.FieldSpec{WireName: "enable_samples"},
-		"EscalationMessage": ubx.FieldSpec{WireName: "escalation_message"},
-		"EvaluationDelay": ubx.FieldSpec{WireName: "evaluation_delay"},
-		"GroupRetentionDuration": ubx.FieldSpec{WireName: "group_retention_duration"},
-		"GroupbySimpleMonitor": ubx.FieldSpec{WireName: "groupby_simple_monitor"},
-		"IncludeTags": ubx.FieldSpec{WireName: "include_tags"},
-		"Locked": ubx.FieldSpec{WireName: "locked"},
-		"MinFailureDuration": ubx.FieldSpec{WireName: "min_failure_duration"},
-		"MinLocationFailed": ubx.FieldSpec{WireName: "min_location_failed"},
-		"NewGroupDelay": ubx.FieldSpec{WireName: "new_group_delay"},
-		"NewHostDelay": ubx.FieldSpec{WireName: "new_host_delay"},
-		"NoDataTimeframe": ubx.FieldSpec{WireName: "no_data_timeframe"},
-		"NotificationPresetName": ubx.FieldSpec{WireName: "notification_preset_name"},
-		"NotifyAudit": ubx.FieldSpec{WireName: "notify_audit"},
-		"NotifyBy": ubx.FieldSpec{WireName: "notify_by"},
-		"NotifyNoData": ubx.FieldSpec{WireName: "notify_no_data"},
-		"OnMissingData": ubx.FieldSpec{WireName: "on_missing_data"},
-		"RenotifyInterval": ubx.FieldSpec{WireName: "renotify_interval"},
-		"RenotifyOccurrences": ubx.FieldSpec{WireName: "renotify_occurrences"},
-		"RenotifyStatuses": ubx.FieldSpec{WireName: "renotify_statuses"},
-		"RequireFullWindow": ubx.FieldSpec{WireName: "require_full_window"},
-		"SchedulingOptions": ubx.FieldSpec{
-			WireName: "scheduling_options",
-			Kind: "object",
-			Fields: Monitor_Options_SchedulingOptionsFields,
-		},
-		"Silenced": ubx.FieldSpec{WireName: "silenced"},
-		"SyntheticsCheckId": ubx.FieldSpec{WireName: "synthetics_check_id"},
-		"ThresholdWindows": ubx.FieldSpec{
-			WireName: "threshold_windows",
-			Kind: "object",
-			Fields: Monitor_Options_ThresholdWindowsFields,
-		},
-		"Thresholds": ubx.FieldSpec{
-			WireName: "thresholds",
-			Kind: "object",
-			Fields: Monitor_Options_ThresholdsFields,
-		},
-		"TimeoutH": ubx.FieldSpec{WireName: "timeout_h"},
-		"Variables": ubx.FieldSpec{
-			WireName: "variables",
-			Kind: "list",
-			Fields: Monitor_Options_VariablesFields,
-		},
-	}
-
-var Monitor_State_GroupsFields = ubx.FieldMap{
-		"LastNodataTs": ubx.FieldSpec{WireName: "last_nodata_ts"},
-		"LastNotifiedTs": ubx.FieldSpec{WireName: "last_notified_ts"},
-		"LastResolvedTs": ubx.FieldSpec{WireName: "last_resolved_ts"},
-		"LastTriggeredTs": ubx.FieldSpec{WireName: "last_triggered_ts"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
-
-var Monitor_StateFields = ubx.FieldMap{
-		"Groups": ubx.FieldSpec{
-			WireName: "groups",
-			Kind: "map",
-			Fields: Monitor_State_GroupsFields,
-		},
-	}
+	"Aggregation": ubx.FieldSpec{
+		WireName: "aggregation",
+		Kind:     "object",
+		Fields:   Monitor_Options_AggregationFields,
+	},
+	"DeviceIds":              ubx.FieldSpec{WireName: "device_ids"},
+	"EnableLogsSample":       ubx.FieldSpec{WireName: "enable_logs_sample"},
+	"EnableSamples":          ubx.FieldSpec{WireName: "enable_samples"},
+	"EscalationMessage":      ubx.FieldSpec{WireName: "escalation_message"},
+	"EvaluationDelay":        ubx.FieldSpec{WireName: "evaluation_delay"},
+	"GroupRetentionDuration": ubx.FieldSpec{WireName: "group_retention_duration"},
+	"GroupbySimpleMonitor":   ubx.FieldSpec{WireName: "groupby_simple_monitor"},
+	"IncludeTags":            ubx.FieldSpec{WireName: "include_tags"},
+	"Locked":                 ubx.FieldSpec{WireName: "locked"},
+	"MinFailureDuration":     ubx.FieldSpec{WireName: "min_failure_duration"},
+	"MinLocationFailed":      ubx.FieldSpec{WireName: "min_location_failed"},
+	"NewGroupDelay":          ubx.FieldSpec{WireName: "new_group_delay"},
+	"NewHostDelay":           ubx.FieldSpec{WireName: "new_host_delay"},
+	"NoDataTimeframe":        ubx.FieldSpec{WireName: "no_data_timeframe"},
+	"NotificationPresetName": ubx.FieldSpec{WireName: "notification_preset_name"},
+	"NotifyAudit":            ubx.FieldSpec{WireName: "notify_audit"},
+	"NotifyBy":               ubx.FieldSpec{WireName: "notify_by"},
+	"NotifyNoData":           ubx.FieldSpec{WireName: "notify_no_data"},
+	"OnMissingData":          ubx.FieldSpec{WireName: "on_missing_data"},
+	"RenotifyInterval":       ubx.FieldSpec{WireName: "renotify_interval"},
+	"RenotifyOccurrences":    ubx.FieldSpec{WireName: "renotify_occurrences"},
+	"RenotifyStatuses":       ubx.FieldSpec{WireName: "renotify_statuses"},
+	"RequireFullWindow":      ubx.FieldSpec{WireName: "require_full_window"},
+	"SchedulingOptions": ubx.FieldSpec{
+		WireName: "scheduling_options",
+		Kind:     "object",
+		Fields:   Monitor_Options_SchedulingOptionsFields,
+	},
+	"Silenced":          ubx.FieldSpec{WireName: "silenced"},
+	"SyntheticsCheckId": ubx.FieldSpec{WireName: "synthetics_check_id"},
+	"ThresholdWindows": ubx.FieldSpec{
+		WireName: "threshold_windows",
+		Kind:     "object",
+		Fields:   Monitor_Options_ThresholdWindowsFields,
+	},
+	"Thresholds": ubx.FieldSpec{
+		WireName: "thresholds",
+		Kind:     "object",
+		Fields:   Monitor_Options_ThresholdsFields,
+	},
+	"TimeoutH": ubx.FieldSpec{WireName: "timeout_h"},
+	"Variables": ubx.FieldSpec{
+		WireName: "variables",
+		Kind:     "list",
+		Fields:   Monitor_Options_VariablesFields,
+	},
+}
 
 type MonitorConfig struct {
 	// The list of monitor assets tied to a monitor, which represents key links for users to take action on monitor alerts (for example, runbooks).
 	Assets any
-	// Timestamp of the monitor creation.
-	Created any
-	// Object describing the creator of the shared element.
-	Creator any
-	// Whether or not the monitor is deleted. (Always `null`)
-	Deleted any
 	// Indicates whether the monitor is in a draft or published state. `draft`: The monitor appears as Draft and does not send notifications. `published`: The monitor is active and evaluates conditions and notify as configured. This field is in preview. The draft value is only available to customers with the feature enabled.
 	DraftStatus any
-	// ID of this monitor.
-	Id any
 	// A list of active v1 downtimes that match this monitor.
 	MatchingDowntimes any
 	// A message to include with notifications for this monitor.
 	Message any
-	// Last timestamp when the monitor was edited.
-	Modified any
-	// Whether or not the monitor is broken down on different groups.
-	Multi any
 	// The monitor name.
 	Name any
 	// List of options associated with your monitor.
 	Options any
-	// The different states your monitor can be in.
-	OverallState any
 	// Integer from 1 (high) to 5 (low) indicating alert severity.
 	Priority any
 	// The monitor query.
 	Query any
 	// A list of unique role identifiers to define which roles are allowed to edit the monitor. The unique identifiers for all roles can be pulled from the [Roles API](https://docs.datadoghq.com/api/latest/roles/#list-roles) and are located in the `data.id` field. Editing a monitor includes any updates to the monitor configuration, monitor deletion, and muting of the monitor for any amount of time. You can use the [Restriction Policies API](https://docs.datadoghq.com/api/latest/restriction-policies/) to manage write authorization for individual monitors by teams and users, in addition to roles.
 	RestrictedRoles any
-	// Wrapper object with the different monitor states.
-	State any
 	// Tags associated to your monitor.
 	Tags any
 	// The type of the monitor. For more information about `type`, see the [monitor options](https://docs.datadoghq.com/monitors/guide/monitor_api_options/) docs.
@@ -728,43 +634,27 @@ var Monitor = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Assets": ubx.FieldSpec{
 			WireName: "assets",
-			Kind: "list",
-			Fields: Monitor_AssetsFields,
+			Kind:     "list",
+			Fields:   Monitor_AssetsFields,
 		},
-		"Created": ubx.FieldSpec{WireName: "created"},
-		"Creator": ubx.FieldSpec{
-			WireName: "creator",
-			Kind: "object",
-			Fields: Monitor_CreatorFields,
-		},
-		"Deleted": ubx.FieldSpec{WireName: "deleted"},
 		"DraftStatus": ubx.FieldSpec{WireName: "draft_status"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"MatchingDowntimes": ubx.FieldSpec{
 			WireName: "matching_downtimes",
-			Kind: "list",
-			Fields: Monitor_MatchingDowntimesFields,
+			Kind:     "list",
+			Fields:   Monitor_MatchingDowntimesFields,
 		},
 		"Message": ubx.FieldSpec{WireName: "message"},
-		"Modified": ubx.FieldSpec{WireName: "modified"},
-		"Multi": ubx.FieldSpec{WireName: "multi"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: Monitor_OptionsFields,
+			Kind:     "object",
+			Fields:   Monitor_OptionsFields,
 		},
-		"OverallState": ubx.FieldSpec{WireName: "overall_state"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"Priority":        ubx.FieldSpec{WireName: "priority"},
+		"Query":           ubx.FieldSpec{WireName: "query"},
 		"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
-		"State": ubx.FieldSpec{
-			WireName: "state",
-			Kind: "object",
-			Fields: Monitor_StateFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
+		"MonitorId":       ubx.FieldSpec{WireName: "monitor_id"},
 	},
 }

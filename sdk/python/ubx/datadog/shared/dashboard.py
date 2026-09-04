@@ -22,19 +22,14 @@ class Dashboard_GlobalTime:
 class Dashboard_Invitees:
     access_expiration: Any = None
     created_at: Any = None
-    # The email address of the invitee granted access to the shared dashboard. (AI-inferred)
     email: Any = None
 
 @dataclasses.dataclass
 class Dashboard_SelectableTemplateVars:
-    # The default value for the template variable when the dashboard is shared. Viewers can override this value. (AI-inferred)
     default_value: Any = None
-    # The name of the template variable that will be selectable by viewers of the shared dashboard. Must correspond to a template variable defined on the dashboard. (AI-inferred)
     name: Any = None
-    # The tag key prefix associated with a selectable template variable in a shared dashboard, used to scope the variable's values (e.g., 'service' for service-specific filtering). (AI-inferred)
     prefix: Any = None
     type: Any = None
-    # List of tag values that are shown as selectable options for this template variable in the shared dashboard. (AI-inferred)
     visible_tags: Any = None
 
 @dataclasses.dataclass
@@ -43,11 +38,6 @@ class Dashboard_ViewingPreferences:
     high_density: Any = None
     # The theme of the shared dashboard view. "system" follows your system's default viewing theme.
     theme: Any = None
-
-_Dashboard_AuthorFields = {
-    "handle": ubx.FieldSpec(wire_name="handle"),
-    "name": ubx.FieldSpec(wire_name="name"),
-}
 
 _Dashboard_GlobalTimeFields = {
     "live_span": ubx.FieldSpec(wire_name="live_span"),
@@ -74,10 +64,6 @@ _Dashboard_ViewingPreferencesFields = {
 
 @dataclasses.dataclass
 class DashboardConfig:
-    # User who shared the dashboard.
-    author: Any = None
-    # Date the dashboard was shared.
-    created: Any = None
     # ID of the dashboard to share.
     dashboard_id: Any = None
     # The type of the associated private dashboard.
@@ -92,10 +78,6 @@ class DashboardConfig:
     global_time_selectable_enabled: Any = None
     # The `SharedDashboard` `invitees`.
     invitees: Any = None
-    # The last time the shared dashboard was accessed. Null if never accessed.
-    last_accessed: Any = None
-    # URL of the shared dashboard.
-    public_url: Any = None
     # List of objects representing template variables on the shared dashboard which can have selectable values.
     selectable_template_vars: Any = None
     # List of email addresses that can receive an invitation to access to the shared dashboard.
@@ -106,8 +88,6 @@ class DashboardConfig:
     status: Any = None
     # Title of the shared dashboard.
     title: Any = None
-    # A unique token assigned to the shared dashboard.
-    token: Any = None
     # The viewing preferences for a shared dashboard.
     viewing_preferences: Any = None
 
@@ -153,12 +133,6 @@ class DashboardAttrs:
 Dashboard = ubx.ResourceBinding(
     wire_type="datadog_shared_dashboard",
     fields={
-        "author": ubx.FieldSpec(
-            wire_name="author",
-            kind="object",
-            fields=_Dashboard_AuthorFields,
-        ),
-        "created": ubx.FieldSpec(wire_name="created"),
         "dashboard_id": ubx.FieldSpec(wire_name="dashboard_id"),
         "dashboard_type": ubx.FieldSpec(wire_name="dashboard_type"),
         "embeddable_domains": ubx.FieldSpec(wire_name="embeddable_domains"),
@@ -174,8 +148,6 @@ Dashboard = ubx.ResourceBinding(
             kind="list",
             fields=_Dashboard_InviteesFields,
         ),
-        "last_accessed": ubx.FieldSpec(wire_name="last_accessed"),
-        "public_url": ubx.FieldSpec(wire_name="public_url"),
         "selectable_template_vars": ubx.FieldSpec(
             wire_name="selectable_template_vars",
             kind="list",
@@ -185,7 +157,6 @@ Dashboard = ubx.ResourceBinding(
         "share_type": ubx.FieldSpec(wire_name="share_type"),
         "status": ubx.FieldSpec(wire_name="status"),
         "title": ubx.FieldSpec(wire_name="title"),
-        "token": ubx.FieldSpec(wire_name="token"),
         "viewing_preferences": ubx.FieldSpec(
             wire_name="viewing_preferences",
             kind="object",

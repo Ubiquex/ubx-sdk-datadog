@@ -8,33 +8,62 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UcConfigResponse_Data_Attributes:
+    # The `attributes` `account_id`.
+    account_id: Any = None
     # The Google Cloud account ID.
     billing_account_id: Any = None
     # The Google Cloud bucket name used to store the Usage Cost export.
     bucket_name: Any = None
+    # The `attributes` `created_at`.
+    created_at: Any = None
+    # The `attributes` `dataset`.
+    dataset: Any = None
+    # The `attributes` `error_messages`.
+    error_messages: Any = None
     # The export dataset name used for the Google Cloud Usage Cost report.
     export_dataset_name: Any = None
     # The export prefix used for the Google Cloud Usage Cost report.
     export_prefix: Any = None
     # The name of the Google Cloud Usage Cost report.
     export_project_name: Any = None
+    # The `attributes` `months`.
+    months: Any = None
+    # The `attributes` `project_id`.
+    project_id: Any = None
     # The unique Google Cloud service account email.
     service_account: Any = None
+    # The `attributes` `status`.
+    status: Any = None
+    # The `attributes` `status_updated_at`.
+    status_updated_at: Any = None
+    # The `attributes` `updated_at`.
+    updated_at: Any = None
 
 @dataclasses.dataclass
 class UcConfigResponse_Data:
     # Attributes for Google Cloud Usage Cost config post request.
     attributes: Any = None
+    # The `GcpUcConfigResponseData` `id`.
+    id: Any = None
     # Type of Google Cloud Usage Cost config post request.
     type: Any = None
 
 _UcConfigResponse_Data_AttributesFields = {
+    "account_id": ubx.FieldSpec(wire_name="account_id"),
     "billing_account_id": ubx.FieldSpec(wire_name="billing_account_id"),
     "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "dataset": ubx.FieldSpec(wire_name="dataset"),
+    "error_messages": ubx.FieldSpec(wire_name="error_messages"),
     "export_dataset_name": ubx.FieldSpec(wire_name="export_dataset_name"),
     "export_prefix": ubx.FieldSpec(wire_name="export_prefix"),
     "export_project_name": ubx.FieldSpec(wire_name="export_project_name"),
+    "months": ubx.FieldSpec(wire_name="months"),
+    "project_id": ubx.FieldSpec(wire_name="project_id"),
     "service_account": ubx.FieldSpec(wire_name="service_account"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "status_updated_at": ubx.FieldSpec(wire_name="status_updated_at"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
 }
 
 _UcConfigResponse_DataFields = {
@@ -43,6 +72,7 @@ _UcConfigResponse_DataFields = {
         kind="object",
         fields=_UcConfigResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

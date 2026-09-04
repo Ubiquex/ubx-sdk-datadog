@@ -25,22 +25,42 @@ class IssueTemplateResponse_Data_Attributes:
     project_id: Any = None
 
 @dataclasses.dataclass
-class IssueTemplateResponse_Data:
-    # Attributes for creating a Jira issue template
-    attributes: Any = None
-    # Type identifier for Jira issue template resources
-    type: Any = None
-
-@dataclasses.dataclass
-class IssueTemplateResponse_Included_Attributes:
+class IssueTemplateResponse_Data_Relationships_JiraAccount_Data_Attributes:
+    # The consumer key for the Jira account
     consumer_key: Any = None
+    # The URL of the Jira instance
     instance_url: Any = None
+    # Timestamp of the last webhook received
     last_webhook_timestamp: Any = None
 
 @dataclasses.dataclass
-class IssueTemplateResponse_Included:
+class IssueTemplateResponse_Data_Relationships_JiraAccount_Data:
+    # Attributes of a Jira account
     attributes: Any = None
+    # Unique identifier for the Jira account
     id: Any = None
+    # Type identifier for Jira account resources
+    type: Any = None
+
+@dataclasses.dataclass
+class IssueTemplateResponse_Data_Relationships_JiraAccount:
+    # Data object for a Jira account
+    data: Any = None
+
+@dataclasses.dataclass
+class IssueTemplateResponse_Data_Relationships:
+    # Relationship to a Jira account
+    jira_account: Any = None
+
+@dataclasses.dataclass
+class IssueTemplateResponse_Data:
+    # Attributes for creating a Jira issue template
+    attributes: Any = None
+    # Unique identifier for the Jira issue template
+    id: Any = None
+    # Relationships of a Jira issue template
+    relationships: Any = None
+    # Type identifier for Jira issue template resources
     type: Any = None
 
 _IssueTemplateResponse_Data_Attributes_JiraAccountFields = {
@@ -59,11 +79,49 @@ _IssueTemplateResponse_Data_AttributesFields = {
     "project_id": ubx.FieldSpec(wire_name="project_id"),
 }
 
+_IssueTemplateResponse_Data_Relationships_JiraAccount_Data_AttributesFields = {
+    "consumer_key": ubx.FieldSpec(wire_name="consumer_key"),
+    "instance_url": ubx.FieldSpec(wire_name="instance_url"),
+    "last_webhook_timestamp": ubx.FieldSpec(wire_name="last_webhook_timestamp"),
+}
+
+_IssueTemplateResponse_Data_Relationships_JiraAccount_DataFields = {
+    "attributes": ubx.FieldSpec(
+        wire_name="attributes",
+        kind="object",
+        fields=_IssueTemplateResponse_Data_Relationships_JiraAccount_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_IssueTemplateResponse_Data_Relationships_JiraAccountFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_IssueTemplateResponse_Data_Relationships_JiraAccount_DataFields,
+    ),
+}
+
+_IssueTemplateResponse_Data_RelationshipsFields = {
+    "jira_account": ubx.FieldSpec(
+        wire_name="jira_account",
+        kind="object",
+        fields=_IssueTemplateResponse_Data_Relationships_JiraAccountFields,
+    ),
+}
+
 _IssueTemplateResponse_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
         kind="object",
         fields=_IssueTemplateResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_IssueTemplateResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

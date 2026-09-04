@@ -15,6 +15,15 @@ export interface DateRuleResponse_Data_Attributes_Action {
   reasonDescription?: string | Computed<string>;
 }
 
+export interface DateRuleResponse_Data_Attributes_CreatedBy {
+  /** The actor's identifier (a user UUID or a system identifier). */
+  id: string | Computed<string>;
+  /** The name of the actor. */
+  name: string | Computed<string>;
+  /** Whether the actor is a user or the Datadog system. */
+  type: string | Computed<string>;
+}
+
 export interface DateRuleResponse_Data_Attributes_Rule {
   /** The list of security finding types that the automation rule applies to. */
   findingTypes: string[] | Computed<string[]>;
@@ -25,8 +34,16 @@ export interface DateRuleResponse_Data_Attributes_Rule {
 export interface DateRuleResponse_Data_Attributes {
   /** The action to take when the due date rule matches a finding. */
   action: DateRuleResponse_Data_Attributes_Action | Computed<DateRuleResponse_Data_Attributes_Action>;
+  /** The Unix timestamp in milliseconds when the rule was created. */
+  createdAt?: number | Computed<number>;
+  /** The user or Datadog system who created the rule. */
+  createdBy?: DateRuleResponse_Data_Attributes_CreatedBy | Computed<DateRuleResponse_Data_Attributes_CreatedBy>;
   /** Whether the due date rule is enabled. */
   enabled?: boolean | Computed<boolean>;
+  /** The Unix timestamp in milliseconds when the rule was last modified. */
+  modifiedAt?: number | Computed<number>;
+  /** The user or Datadog system who last modified the rule. */
+  modifiedBy?: DateRuleResponse_Data_Attributes_CreatedBy | Computed<DateRuleResponse_Data_Attributes_CreatedBy>;
   /** The name of the due date rule. */
   name: string | Computed<string>;
   /** Defines the scope of findings to which the automation rule applies. */
@@ -36,6 +53,8 @@ export interface DateRuleResponse_Data_Attributes {
 export interface DateRuleResponse_Data {
   /** Attributes for creating or updating a due date rule. */
   attributes: DateRuleResponse_Data_Attributes | Computed<DateRuleResponse_Data_Attributes>;
+  /** The ID of the due date rule. */
+  id?: string | Computed<string>;
   /** The JSON:API type for due date rules. */
   type: string | Computed<string>;
 }
@@ -55,6 +74,12 @@ const DateRuleResponse_Data_Attributes_ActionFields: FieldMap = {
   reasonDescription: "reason_description",
 };
 
+const DateRuleResponse_Data_Attributes_CreatedByFields: FieldMap = {
+  id: "id",
+  name: "name",
+  type: "type",
+};
+
 const DateRuleResponse_Data_Attributes_RuleFields: FieldMap = {
   findingTypes: "finding_types",
   query: "query",
@@ -66,7 +91,19 @@ const DateRuleResponse_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: DateRuleResponse_Data_Attributes_ActionFields,
   },
+  createdAt: "created_at",
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: DateRuleResponse_Data_Attributes_CreatedByFields,
+  },
   enabled: "enabled",
+  modifiedAt: "modified_at",
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: DateRuleResponse_Data_Attributes_CreatedByFields,
+  },
   name: "name",
   rule: {
     wireName: "rule",
@@ -81,6 +118,7 @@ const DateRuleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: DateRuleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

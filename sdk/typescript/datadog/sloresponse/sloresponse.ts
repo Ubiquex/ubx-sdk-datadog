@@ -18,64 +18,46 @@ export interface Sloresponse_Data_Query {
 }
 
 export interface Sloresponse_Data_SliSpecification_Count_BadEventsFormula {
-  /** The formula string used to define the count of bad events for the SLI, such as a Datadog query or mathematical expression. (AI-inferred) */
   formula?: string | Computed<string>;
 }
 
 export interface Sloresponse_Data_SliSpecification_Count_Queries {
-  /** The aggregation method used to combine query results into a single value. Allowed values are `avg`, `sum`, `min`, `max`, `last`, and `count`. (AI-inferred) */
   aggregator?: string | Computed<string>;
-  /** A list of organization UUIDs from which to include data in the SLI query, enabling cross-organization SLOs. If omitted, the query runs against the current organization only. (AI-inferred) */
   crossOrgUuids?: string[] | Computed<string[]>;
   dataSource?: string | Computed<string>;
   name?: string | Computed<string>;
-  /** The query string for a count query used in the SLI specification. (AI-inferred) */
   query?: string | Computed<string>;
-  /** The semantic_mode field specifies how the query result should be interpreted for a count query in a Datadog SLO. It can be set to 'count' for event counts or 'total' for summed numeric values, affecting the SLI calculation. (AI-inferred) */
   semanticMode?: string | Computed<string>;
 }
 
 export interface Sloresponse_Data_SliSpecification_Count {
   badEventsFormula?: Sloresponse_Data_SliSpecification_Count_BadEventsFormula | Computed<Sloresponse_Data_SliSpecification_Count_BadEventsFormula>;
-  /** Block defining a formula used to compute the good events count for a count-based SLI specification. This is used in place of a simple query when good events are derived from a formula. (AI-inferred) */
   goodEventsFormula?: Sloresponse_Data_SliSpecification_Count_BadEventsFormula | Computed<Sloresponse_Data_SliSpecification_Count_BadEventsFormula>;
-  /** List of query objects that define the metric queries for a count-based SLI specification. Each query includes the query string and formula used to calculate the count of events for the SLO. (AI-inferred) */
   queries?: Sloresponse_Data_SliSpecification_Count_Queries[] | Computed<Sloresponse_Data_SliSpecification_Count_Queries[]>;
-  /** The formula used to calculate the total number of events for a count-based Service Level Indicator (SLI). It defines a query or formula that supplies the total events count for SLO computations. (AI-inferred) */
   totalEventsFormula?: Sloresponse_Data_SliSpecification_Count_BadEventsFormula | Computed<Sloresponse_Data_SliSpecification_Count_BadEventsFormula>;
 }
 
 export interface Sloresponse_Data_SliSpecification_TimeSlice_Query {
-  /** List of formulas that compute the SLI from the time slice query's individual queries, using arithmetic expressions. (AI-inferred) */
   formulas?: Sloresponse_Data_SliSpecification_Count_BadEventsFormula[] | Computed<Sloresponse_Data_SliSpecification_Count_BadEventsFormula[]>;
   queries?: Sloresponse_Data_SliSpecification_Count_Queries[] | Computed<Sloresponse_Data_SliSpecification_Count_Queries[]>;
 }
 
 export interface Sloresponse_Data_SliSpecification_TimeSlice {
-  /** The comparison operator used to evaluate the time slice query against the threshold. Valid values are `>` (greater than), `>=` (greater than or equal), `<` (less than), and `<=` (less than or equal). (AI-inferred) */
   comparator?: string | Computed<string>;
-  /** The query object that defines the metric or formula used to calculate the SLI for this time slice. (AI-inferred) */
   query?: Sloresponse_Data_SliSpecification_TimeSlice_Query | Computed<Sloresponse_Data_SliSpecification_TimeSlice_Query>;
-  /** The interval, in seconds, at which query data is aggregated for the time-slice SLO. (AI-inferred) */
   queryIntervalSeconds?: number | Computed<number>;
-  /** The threshold value that the SLI time slice query result is compared against to determine whether the slice meets the SLO. (AI-inferred) */
   threshold?: number | Computed<number>;
 }
 
 export interface Sloresponse_Data_SliSpecification {
   count?: Sloresponse_Data_SliSpecification_Count | Computed<Sloresponse_Data_SliSpecification_Count>;
-  /** The time-slice configuration for the SLI, which defines the query and threshold used to evaluate each time slice for the SLO. (AI-inferred) */
   timeSlice?: Sloresponse_Data_SliSpecification_TimeSlice | Computed<Sloresponse_Data_SliSpecification_TimeSlice>;
 }
 
 export interface Sloresponse_Data_Thresholds {
-  /** The target percentage for the SLO threshold, e.g., 99.9. (AI-inferred) */
   target?: number | Computed<number>;
-  /** The human-readable display string for the target value of the SLO threshold, e.g., '99.9%'. (AI-inferred) */
   targetDisplay?: string | Computed<string>;
-  /** The rolling time window over which the SLO target is evaluated. Allowed values are 7d, 30d, 90d, or custom. (AI-inferred) */
   timeframe?: string | Computed<string>;
-  /** The warning threshold value for the SLO, typically expressed as a percentage (e.g., 99.9). This is the value at which the SLO is considered to be in a warning state. (AI-inferred) */
   warning?: number | Computed<number>;
   warningDisplay?: string | Computed<string>;
 }

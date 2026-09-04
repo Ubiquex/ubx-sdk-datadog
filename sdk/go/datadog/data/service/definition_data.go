@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DefinitionData_Data_Attributes_Meta_Warnings struct {
 	InstanceLocation any
-	KeywordLocation any
-	Message any
+	KeywordLocation  any
+	Message          any
 }
 
 type DefinitionData_Data_Attributes_Meta struct {
-	GithubHtmlUrl any
+	GithubHtmlUrl         any
 	IngestedSchemaVersion any
-	IngestionSource any
-	LastModifiedTime any
-	Origin any
-	OriginDetail any
-	Warnings any
+	IngestionSource       any
+	LastModifiedTime      any
+	Origin                any
+	OriginDetail          any
+	Warnings              any
 }
 
 type DefinitionData_Data_Attributes_Schema_Contact struct {
@@ -26,24 +26,24 @@ type DefinitionData_Data_Attributes_Schema_Contact struct {
 
 type DefinitionData_Data_Attributes_Schema_Contacts struct {
 	Contact any
-	Name any
-	Type any
+	Name    any
+	Type    any
 }
 
 type DefinitionData_Data_Attributes_Schema_Docs struct {
-	Name any
+	Name     any
 	Provider any
-	Url any
+	Url      any
 }
 
 type DefinitionData_Data_Attributes_Schema_ExternalResources struct {
 	Name any
 	Type any
-	Url any
+	Url  any
 }
 
 type DefinitionData_Data_Attributes_Schema_Info struct {
-	DdService any
+	DdService   any
 	Description any
 	DisplayName any
 	ServiceTier any
@@ -55,43 +55,43 @@ type DefinitionData_Data_Attributes_Schema_Integrations struct {
 
 type DefinitionData_Data_Attributes_Schema_Org struct {
 	Application any
-	Team any
+	Team        any
 }
 
 type DefinitionData_Data_Attributes_Schema struct {
-	Application any
+	Application            any
 	CiPipelineFingerprints any
-	Contact any
-	Contacts any
-	DdService any
-	DdTeam any
-	Description any
-	Docs any
-	Extensions any
-	ExternalResources any
-	Info any
-	Integrations any
-	Languages any
-	Lifecycle any
-	Links any
-	Org any
-	Repos any
-	SchemaVersion any
-	Tags any
-	Team any
-	Tier any
-	Type any
+	Contact                any
+	Contacts               any
+	DdService              any
+	DdTeam                 any
+	Description            any
+	Docs                   any
+	Extensions             any
+	ExternalResources      any
+	Info                   any
+	Integrations           any
+	Languages              any
+	Lifecycle              any
+	Links                  any
+	Org                    any
+	Repos                  any
+	SchemaVersion          any
+	Tags                   any
+	Team                   any
+	Tier                   any
+	Type                   any
 }
 
 type DefinitionData_Data_Attributes struct {
-	Meta any
+	Meta   any
 	Schema any
 }
 
 type DefinitionData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DefinitionDataConfig struct {

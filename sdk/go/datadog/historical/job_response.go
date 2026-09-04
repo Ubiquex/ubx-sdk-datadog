@@ -20,26 +20,26 @@ type JobResponse_Data_Attributes_FromRule struct {
 
 type JobResponse_Data_Attributes_JobDefinition_CalculatedFields struct {
 	Expression any
-	Name any
+	Name       any
 }
 
 type JobResponse_Data_Attributes_JobDefinition_Cases_Actions_Options struct {
-	Duration any
-	FlaggedIptype any
+	Duration         any
+	FlaggedIptype    any
 	UserBehaviorName any
 }
 
 type JobResponse_Data_Attributes_JobDefinition_Cases_Actions struct {
 	Options any
-	Type any
+	Type    any
 }
 
 type JobResponse_Data_Attributes_JobDefinition_Cases struct {
-	Actions any
-	Condition any
-	Name any
+	Actions       any
+	Condition     any
+	Name          any
 	Notifications any
-	Status any
+	Status        any
 }
 
 type JobResponse_Data_Attributes_JobDefinition_Options_AnomalyDetectionOptions struct {
@@ -76,15 +76,15 @@ type JobResponse_Data_Attributes_JobDefinition_Options_NewValueOptions struct {
 }
 
 type JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_StepTransitions struct {
-	Child any
+	Child            any
 	EvaluationWindow any
-	Parent any
+	Parent           any
 }
 
 type JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_Steps struct {
-	Condition any
+	Condition        any
 	EvaluationWindow any
-	Name any
+	Name             any
 }
 
 type JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions struct {
@@ -96,7 +96,7 @@ type JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions 
 
 type JobResponse_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptions_RootQueries struct {
 	GroupByFields any
-	Query any
+	Query         any
 }
 
 type JobResponse_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptions struct {
@@ -132,37 +132,37 @@ type JobResponse_Data_Attributes_JobDefinition_Options struct {
 }
 
 type JobResponse_Data_Attributes_JobDefinition_Queries struct {
-	AdditionalFilters any
-	Aggregation any
-	CorrelatedByFields any
-	CorrelatedQueryIndex any
-	CustomQueryExtension any
-	DataSource any
-	DatasetIds any
-	DistinctFields any
-	GroupByFields any
+	AdditionalFilters        any
+	Aggregation              any
+	CorrelatedByFields       any
+	CorrelatedQueryIndex     any
+	CustomQueryExtension     any
+	DataSource               any
+	DatasetIds               any
+	DistinctFields           any
+	GroupByFields            any
 	HasOptionalGroupByFields any
-	Index any
-	Indexes any
-	Metrics any
-	Name any
-	Query any
-	QueryLanguage any
+	Index                    any
+	Indexes                  any
+	Metrics                  any
+	Name                     any
+	Query                    any
+	QueryLanguage            any
 }
 
 type JobResponse_Data_Attributes_JobDefinition_ReferenceTables struct {
 	CheckPresence any
-	ColumnName any
-	LogFieldPath any
+	ColumnName    any
+	LogFieldPath  any
 	RuleQueryName any
-	TableName any
+	TableName     any
 }
 
 type JobResponse_Data_Attributes_JobDefinition_ThirdPartyCases struct {
-	Name any
+	Name          any
 	Notifications any
-	Query any
-	Status any
+	Query         any
+	Status        any
 }
 
 type JobResponse_Data_Attributes_JobDefinition struct {
@@ -197,10 +197,26 @@ type JobResponse_Data_Attributes_JobDefinition struct {
 }
 
 type JobResponse_Data_Attributes struct {
+	// Time when the job was created.
+	CreatedAt any
+	// The handle of the user who created the job.
+	CreatedByHandle any
+	// The name of the user who created the job.
+	CreatedByName any
+	// ID of the rule used to create the job (if it is created from a rule).
+	CreatedFromRuleId any
 	// Definition of a historical job based on a security monitoring rule.
 	FromRule any
 	// Definition of a historical job.
 	JobDefinition any
+	// Job name.
+	JobName any
+	// Job status.
+	JobStatus any
+	// Last modification time of the job.
+	ModifiedAt any
+	// Job execution progress as a value between 0 and 1. Available for ongoing jobs.
+	ProgressRate any
 	// Whether the job outputs signals when results are converted.
 	SignalOutput any
 }
@@ -208,242 +224,253 @@ type JobResponse_Data_Attributes struct {
 type JobResponse_Data struct {
 	// Run a historical job request.
 	Attributes any
+	// ID of the job.
+	Id any
 	// Type of data.
 	Type any
 }
 
 var JobResponse_Data_Attributes_FromRuleFields = ubx.FieldMap{
-		"CaseIndex": ubx.FieldSpec{WireName: "case_index"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"Notifications": ubx.FieldSpec{WireName: "notifications"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"CaseIndex":     ubx.FieldSpec{WireName: "case_index"},
+	"From":          ubx.FieldSpec{WireName: "from"},
+	"Id":            ubx.FieldSpec{WireName: "id"},
+	"Index":         ubx.FieldSpec{WireName: "index"},
+	"Notifications": ubx.FieldSpec{WireName: "notifications"},
+	"To":            ubx.FieldSpec{WireName: "to"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_CalculatedFieldsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Cases_Actions_OptionsFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"FlaggedIptype": ubx.FieldSpec{WireName: "flagged_iptype"},
-		"UserBehaviorName": ubx.FieldSpec{WireName: "user_behavior_name"},
-	}
+	"Duration":         ubx.FieldSpec{WireName: "duration"},
+	"FlaggedIptype":    ubx.FieldSpec{WireName: "flagged_iptype"},
+	"UserBehaviorName": ubx.FieldSpec{WireName: "user_behavior_name"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Cases_ActionsFields = ubx.FieldMap{
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Cases_Actions_OptionsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Cases_Actions_OptionsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_CasesFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Cases_ActionsFields,
-		},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Notifications": ubx.FieldSpec{WireName: "notifications"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Cases_ActionsFields,
+	},
+	"Condition":     ubx.FieldSpec{WireName: "condition"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Notifications": ubx.FieldSpec{WireName: "notifications"},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Options_AnomalyDetectionOptionsFields = ubx.FieldMap{
-		"BucketDuration": ubx.FieldSpec{WireName: "bucket_duration"},
-		"DetectionTolerance": ubx.FieldSpec{WireName: "detection_tolerance"},
-		"InstantaneousBaseline": ubx.FieldSpec{WireName: "instantaneous_baseline"},
-		"LearningDuration": ubx.FieldSpec{WireName: "learning_duration"},
-		"LearningPeriodBaseline": ubx.FieldSpec{WireName: "learning_period_baseline"},
-	}
+	"BucketDuration":         ubx.FieldSpec{WireName: "bucket_duration"},
+	"DetectionTolerance":     ubx.FieldSpec{WireName: "detection_tolerance"},
+	"InstantaneousBaseline":  ubx.FieldSpec{WireName: "instantaneous_baseline"},
+	"LearningDuration":       ubx.FieldSpec{WireName: "learning_duration"},
+	"LearningPeriodBaseline": ubx.FieldSpec{WireName: "learning_period_baseline"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Options_ImpossibleTravelOptionsFields = ubx.FieldMap{
-		"BaselineUserLocations": ubx.FieldSpec{WireName: "baseline_user_locations"},
-		"BaselineUserLocationsDuration": ubx.FieldSpec{WireName: "baseline_user_locations_duration"},
-	}
+	"BaselineUserLocations":         ubx.FieldSpec{WireName: "baseline_user_locations"},
+	"BaselineUserLocationsDuration": ubx.FieldSpec{WireName: "baseline_user_locations_duration"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Options_NewValueOptionsFields = ubx.FieldMap{
-		"ForgetAfter": ubx.FieldSpec{WireName: "forget_after"},
-		"InstantaneousBaseline": ubx.FieldSpec{WireName: "instantaneous_baseline"},
-		"LearningDuration": ubx.FieldSpec{WireName: "learning_duration"},
-		"LearningMethod": ubx.FieldSpec{WireName: "learning_method"},
-		"LearningThreshold": ubx.FieldSpec{WireName: "learning_threshold"},
-	}
+	"ForgetAfter":           ubx.FieldSpec{WireName: "forget_after"},
+	"InstantaneousBaseline": ubx.FieldSpec{WireName: "instantaneous_baseline"},
+	"LearningDuration":      ubx.FieldSpec{WireName: "learning_duration"},
+	"LearningMethod":        ubx.FieldSpec{WireName: "learning_method"},
+	"LearningThreshold":     ubx.FieldSpec{WireName: "learning_threshold"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_StepTransitionsFields = ubx.FieldMap{
-		"Child": ubx.FieldSpec{WireName: "child"},
-		"EvaluationWindow": ubx.FieldSpec{WireName: "evaluation_window"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
-	}
+	"Child":            ubx.FieldSpec{WireName: "child"},
+	"EvaluationWindow": ubx.FieldSpec{WireName: "evaluation_window"},
+	"Parent":           ubx.FieldSpec{WireName: "parent"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_StepsFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"EvaluationWindow": ubx.FieldSpec{WireName: "evaluation_window"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Condition":        ubx.FieldSpec{WireName: "condition"},
+	"EvaluationWindow": ubx.FieldSpec{WireName: "evaluation_window"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptionsFields = ubx.FieldMap{
-		"StepTransitions": ubx.FieldSpec{
-			WireName: "step_transitions",
-			Kind: "list",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_StepTransitionsFields,
-		},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_StepsFields,
-		},
-	}
+	"StepTransitions": ubx.FieldSpec{
+		WireName: "step_transitions",
+		Kind:     "list",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_StepTransitionsFields,
+	},
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_StepsFields,
+	},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptions_RootQueriesFields = ubx.FieldMap{
-		"GroupByFields": ubx.FieldSpec{WireName: "group_by_fields"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"GroupByFields": ubx.FieldSpec{WireName: "group_by_fields"},
+	"Query":         ubx.FieldSpec{WireName: "query"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptionsFields = ubx.FieldMap{
-		"DefaultNotifications": ubx.FieldSpec{WireName: "default_notifications"},
-		"DefaultStatus": ubx.FieldSpec{WireName: "default_status"},
-		"RootQueries": ubx.FieldSpec{
-			WireName: "root_queries",
-			Kind: "list",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptions_RootQueriesFields,
-		},
-		"SignalTitleTemplate": ubx.FieldSpec{WireName: "signal_title_template"},
-	}
+	"DefaultNotifications": ubx.FieldSpec{WireName: "default_notifications"},
+	"DefaultStatus":        ubx.FieldSpec{WireName: "default_status"},
+	"RootQueries": ubx.FieldSpec{
+		WireName: "root_queries",
+		Kind:     "list",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptions_RootQueriesFields,
+	},
+	"SignalTitleTemplate": ubx.FieldSpec{WireName: "signal_title_template"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_OptionsFields = ubx.FieldMap{
-		"AnomalyDetectionOptions": ubx.FieldSpec{
-			WireName: "anomaly_detection_options",
-			Kind: "object",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Options_AnomalyDetectionOptionsFields,
-		},
-		"DetectionMethod": ubx.FieldSpec{WireName: "detection_method"},
-		"EvaluationWindow": ubx.FieldSpec{WireName: "evaluation_window"},
-		"ImpossibleTravelOptions": ubx.FieldSpec{
-			WireName: "impossible_travel_options",
-			Kind: "object",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Options_ImpossibleTravelOptionsFields,
-		},
-		"KeepAlive": ubx.FieldSpec{WireName: "keep_alive"},
-		"MaxSignalDuration": ubx.FieldSpec{WireName: "max_signal_duration"},
-		"NewValueOptions": ubx.FieldSpec{
-			WireName: "new_value_options",
-			Kind: "object",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Options_NewValueOptionsFields,
-		},
-		"SequenceDetectionOptions": ubx.FieldSpec{
-			WireName: "sequence_detection_options",
-			Kind: "object",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptionsFields,
-		},
-		"ThirdPartyRuleOptions": ubx.FieldSpec{
-			WireName: "third_party_rule_options",
-			Kind: "object",
-			Fields: JobResponse_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptionsFields,
-		},
-	}
+	"AnomalyDetectionOptions": ubx.FieldSpec{
+		WireName: "anomaly_detection_options",
+		Kind:     "object",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Options_AnomalyDetectionOptionsFields,
+	},
+	"DetectionMethod":  ubx.FieldSpec{WireName: "detection_method"},
+	"EvaluationWindow": ubx.FieldSpec{WireName: "evaluation_window"},
+	"ImpossibleTravelOptions": ubx.FieldSpec{
+		WireName: "impossible_travel_options",
+		Kind:     "object",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Options_ImpossibleTravelOptionsFields,
+	},
+	"KeepAlive":         ubx.FieldSpec{WireName: "keep_alive"},
+	"MaxSignalDuration": ubx.FieldSpec{WireName: "max_signal_duration"},
+	"NewValueOptions": ubx.FieldSpec{
+		WireName: "new_value_options",
+		Kind:     "object",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Options_NewValueOptionsFields,
+	},
+	"SequenceDetectionOptions": ubx.FieldSpec{
+		WireName: "sequence_detection_options",
+		Kind:     "object",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Options_SequenceDetectionOptionsFields,
+	},
+	"ThirdPartyRuleOptions": ubx.FieldSpec{
+		WireName: "third_party_rule_options",
+		Kind:     "object",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptionsFields,
+	},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_QueriesFields = ubx.FieldMap{
-		"AdditionalFilters": ubx.FieldSpec{WireName: "additional_filters"},
-		"Aggregation": ubx.FieldSpec{WireName: "aggregation"},
-		"CorrelatedByFields": ubx.FieldSpec{WireName: "correlated_by_fields"},
-		"CorrelatedQueryIndex": ubx.FieldSpec{WireName: "correlated_query_index"},
-		"CustomQueryExtension": ubx.FieldSpec{WireName: "custom_query_extension"},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"DatasetIds": ubx.FieldSpec{WireName: "dataset_ids"},
-		"DistinctFields": ubx.FieldSpec{WireName: "distinct_fields"},
-		"GroupByFields": ubx.FieldSpec{WireName: "group_by_fields"},
-		"HasOptionalGroupByFields": ubx.FieldSpec{WireName: "has_optional_group_by_fields"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"Indexes": ubx.FieldSpec{WireName: "indexes"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"QueryLanguage": ubx.FieldSpec{WireName: "query_language"},
-	}
+	"AdditionalFilters":        ubx.FieldSpec{WireName: "additional_filters"},
+	"Aggregation":              ubx.FieldSpec{WireName: "aggregation"},
+	"CorrelatedByFields":       ubx.FieldSpec{WireName: "correlated_by_fields"},
+	"CorrelatedQueryIndex":     ubx.FieldSpec{WireName: "correlated_query_index"},
+	"CustomQueryExtension":     ubx.FieldSpec{WireName: "custom_query_extension"},
+	"DataSource":               ubx.FieldSpec{WireName: "data_source"},
+	"DatasetIds":               ubx.FieldSpec{WireName: "dataset_ids"},
+	"DistinctFields":           ubx.FieldSpec{WireName: "distinct_fields"},
+	"GroupByFields":            ubx.FieldSpec{WireName: "group_by_fields"},
+	"HasOptionalGroupByFields": ubx.FieldSpec{WireName: "has_optional_group_by_fields"},
+	"Index":                    ubx.FieldSpec{WireName: "index"},
+	"Indexes":                  ubx.FieldSpec{WireName: "indexes"},
+	"Metrics":                  ubx.FieldSpec{WireName: "metrics"},
+	"Name":                     ubx.FieldSpec{WireName: "name"},
+	"Query":                    ubx.FieldSpec{WireName: "query"},
+	"QueryLanguage":            ubx.FieldSpec{WireName: "query_language"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_ReferenceTablesFields = ubx.FieldMap{
-		"CheckPresence": ubx.FieldSpec{WireName: "check_presence"},
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"LogFieldPath": ubx.FieldSpec{WireName: "log_field_path"},
-		"RuleQueryName": ubx.FieldSpec{WireName: "rule_query_name"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"CheckPresence": ubx.FieldSpec{WireName: "check_presence"},
+	"ColumnName":    ubx.FieldSpec{WireName: "column_name"},
+	"LogFieldPath":  ubx.FieldSpec{WireName: "log_field_path"},
+	"RuleQueryName": ubx.FieldSpec{WireName: "rule_query_name"},
+	"TableName":     ubx.FieldSpec{WireName: "table_name"},
+}
 
 var JobResponse_Data_Attributes_JobDefinition_ThirdPartyCasesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Notifications": ubx.FieldSpec{WireName: "notifications"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Notifications": ubx.FieldSpec{WireName: "notifications"},
+	"Query":         ubx.FieldSpec{WireName: "query"},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+}
 
 var JobResponse_Data_Attributes_JobDefinitionFields = ubx.FieldMap{
-		"CalculatedFields": ubx.FieldSpec{
-			WireName: "calculated_fields",
-			Kind: "list",
-			Fields: JobResponse_Data_Attributes_JobDefinition_CalculatedFieldsFields,
-		},
-		"Cases": ubx.FieldSpec{
-			WireName: "cases",
-			Kind: "list",
-			Fields: JobResponse_Data_Attributes_JobDefinition_CasesFields,
-		},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"GroupSignalsBy": ubx.FieldSpec{WireName: "group_signals_by"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: JobResponse_Data_Attributes_JobDefinition_OptionsFields,
-		},
-		"Queries": ubx.FieldSpec{
-			WireName: "queries",
-			Kind: "list",
-			Fields: JobResponse_Data_Attributes_JobDefinition_QueriesFields,
-		},
-		"ReferenceTables": ubx.FieldSpec{
-			WireName: "reference_tables",
-			Kind: "list",
-			Fields: JobResponse_Data_Attributes_JobDefinition_ReferenceTablesFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"ThirdPartyCases": ubx.FieldSpec{
-			WireName: "third_party_cases",
-			Kind: "list",
-			Fields: JobResponse_Data_Attributes_JobDefinition_ThirdPartyCasesFields,
-		},
-		"To": ubx.FieldSpec{WireName: "to"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CalculatedFields": ubx.FieldSpec{
+		WireName: "calculated_fields",
+		Kind:     "list",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_CalculatedFieldsFields,
+	},
+	"Cases": ubx.FieldSpec{
+		WireName: "cases",
+		Kind:     "list",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_CasesFields,
+	},
+	"From":           ubx.FieldSpec{WireName: "from"},
+	"GroupSignalsBy": ubx.FieldSpec{WireName: "group_signals_by"},
+	"Index":          ubx.FieldSpec{WireName: "index"},
+	"Message":        ubx.FieldSpec{WireName: "message"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_OptionsFields,
+	},
+	"Queries": ubx.FieldSpec{
+		WireName: "queries",
+		Kind:     "list",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_QueriesFields,
+	},
+	"ReferenceTables": ubx.FieldSpec{
+		WireName: "reference_tables",
+		Kind:     "list",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_ReferenceTablesFields,
+	},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+	"ThirdPartyCases": ubx.FieldSpec{
+		WireName: "third_party_cases",
+		Kind:     "list",
+		Fields:   JobResponse_Data_Attributes_JobDefinition_ThirdPartyCasesFields,
+	},
+	"To":   ubx.FieldSpec{WireName: "to"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var JobResponse_Data_AttributesFields = ubx.FieldMap{
-		"FromRule": ubx.FieldSpec{
-			WireName: "from_rule",
-			Kind: "object",
-			Fields: JobResponse_Data_Attributes_FromRuleFields,
-		},
-		"JobDefinition": ubx.FieldSpec{
-			WireName: "job_definition",
-			Kind: "object",
-			Fields: JobResponse_Data_Attributes_JobDefinitionFields,
-		},
-		"SignalOutput": ubx.FieldSpec{WireName: "signal_output"},
-	}
+	"CreatedAt":         ubx.FieldSpec{WireName: "created_at"},
+	"CreatedByHandle":   ubx.FieldSpec{WireName: "created_by_handle"},
+	"CreatedByName":     ubx.FieldSpec{WireName: "created_by_name"},
+	"CreatedFromRuleId": ubx.FieldSpec{WireName: "created_from_rule_id"},
+	"FromRule": ubx.FieldSpec{
+		WireName: "from_rule",
+		Kind:     "object",
+		Fields:   JobResponse_Data_Attributes_FromRuleFields,
+	},
+	"JobDefinition": ubx.FieldSpec{
+		WireName: "job_definition",
+		Kind:     "object",
+		Fields:   JobResponse_Data_Attributes_JobDefinitionFields,
+	},
+	"JobName":      ubx.FieldSpec{WireName: "job_name"},
+	"JobStatus":    ubx.FieldSpec{WireName: "job_status"},
+	"ModifiedAt":   ubx.FieldSpec{WireName: "modified_at"},
+	"ProgressRate": ubx.FieldSpec{WireName: "progress_rate"},
+	"SignalOutput": ubx.FieldSpec{WireName: "signal_output"},
+}
 
 var JobResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: JobResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   JobResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type JobResponseConfig struct {
 	// Data for running a historical job request.
@@ -464,8 +491,8 @@ var JobResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: JobResponse_DataFields,
+			Kind:     "object",
+			Fields:   JobResponse_DataFields,
 		},
 		"JobId": ubx.FieldSpec{WireName: "job_id"},
 	},

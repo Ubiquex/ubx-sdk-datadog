@@ -8,9 +8,24 @@ export interface UserTemplateResponse_Data_Attributes_TemplateVariables {
   tagKey?: string | Computed<string>;
 }
 
+export interface UserTemplateResponse_Data_Attributes_Versions {
+  created?: string | Computed<string>;
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  monitorDefinition?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  tags?: string[] | Computed<string[]>;
+  templateVariables?: UserTemplateResponse_Data_Attributes_TemplateVariables[] | Computed<UserTemplateResponse_Data_Attributes_TemplateVariables[]>;
+  title?: string | Computed<string>;
+  version?: number | Computed<number>;
+}
+
 export interface UserTemplateResponse_Data_Attributes {
+  /** The created timestamp of the template. */
+  created?: string | Computed<string>;
   /** A brief description of the monitor user template. */
   description?: string | Computed<string>;
+  /** The last modified timestamp. When the template version was created. */
+  modified?: string | Computed<string>;
   /** A valid monitor definition in the same format as the [V1 Monitor API](https://docs.datadoghq.com/api/latest/monitors/#create-a-monitor). */
   monitorDefinition: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** The definition of `MonitorUserTemplateTags` object. */
@@ -19,6 +34,10 @@ export interface UserTemplateResponse_Data_Attributes {
   templateVariables?: UserTemplateResponse_Data_Attributes_TemplateVariables[] | Computed<UserTemplateResponse_Data_Attributes_TemplateVariables[]>;
   /** The title of the monitor user template. */
   title: string | Computed<string>;
+  /** The version of the monitor user template. */
+  version?: number | Computed<number>;
+  /** All versions of the monitor user template. */
+  versions?: UserTemplateResponse_Data_Attributes_Versions[] | Computed<UserTemplateResponse_Data_Attributes_Versions[]>;
 }
 
 export interface UserTemplateResponse_Data {
@@ -37,8 +56,10 @@ const UserTemplateResponse_Data_Attributes_TemplateVariablesFields: FieldMap = {
   tagKey: "tag_key",
 };
 
-const UserTemplateResponse_Data_AttributesFields: FieldMap = {
+const UserTemplateResponse_Data_Attributes_VersionsFields: FieldMap = {
+  created: "created",
   description: "description",
+  id: "id",
   monitorDefinition: "monitor_definition",
   tags: "tags",
   templateVariables: {
@@ -47,6 +68,27 @@ const UserTemplateResponse_Data_AttributesFields: FieldMap = {
     fields: UserTemplateResponse_Data_Attributes_TemplateVariablesFields,
   },
   title: "title",
+  version: "version",
+};
+
+const UserTemplateResponse_Data_AttributesFields: FieldMap = {
+  created: "created",
+  description: "description",
+  modified: "modified",
+  monitorDefinition: "monitor_definition",
+  tags: "tags",
+  templateVariables: {
+    wireName: "template_variables",
+    kind: "list",
+    fields: UserTemplateResponse_Data_Attributes_TemplateVariablesFields,
+  },
+  title: "title",
+  version: "version",
+  versions: {
+    wireName: "versions",
+    kind: "list",
+    fields: UserTemplateResponse_Data_Attributes_VersionsFields,
+  },
 };
 
 const UserTemplateResponse_DataFields: FieldMap = {

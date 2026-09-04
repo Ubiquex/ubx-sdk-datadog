@@ -4,15 +4,15 @@ package org
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupPolicyData_Data_Attributes struct {
-	Content any
+	Content         any
 	EnforcementTier any
-	ModifiedAt any
-	PolicyName any
-	PolicyType any
+	ModifiedAt      any
+	PolicyName      any
+	PolicyType      any
 }
 
 type GroupPolicyData_Data_Relationships_OrgGroup_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -25,10 +25,10 @@ type GroupPolicyData_Data_Relationships struct {
 }
 
 type GroupPolicyData_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type GroupPolicyData_Links struct {

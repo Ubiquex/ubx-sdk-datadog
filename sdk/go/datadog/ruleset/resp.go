@@ -3,54 +3,75 @@ package ruleset
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Resp_Data_Attributes_Created struct {
+	// The `created` `nanos`.
+	Nanos any
+	// The `created` `seconds`.
+	Seconds any
+}
+
 type Resp_Data_Attributes_Rules_Mapping struct {
 	DestinationKey any
-	IfNotExists any
-	IfTagExists any
-	SourceKeys any
+	IfNotExists    any
+	IfTagExists    any
+	SourceKeys     any
 }
 
 type Resp_Data_Attributes_Rules_Query_Addition struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Resp_Data_Attributes_Rules_Query struct {
-	Addition any
+	Addition          any
 	CaseInsensitivity any
-	IfNotExists any
-	IfTagExists any
-	Query any
+	IfNotExists       any
+	IfTagExists       any
+	Query             any
 }
 
 type Resp_Data_Attributes_Rules_ReferenceTable_FieldPairs struct {
 	InputColumn any
-	OutputKey any
+	OutputKey   any
 }
 
 type Resp_Data_Attributes_Rules_ReferenceTable struct {
 	CaseInsensitivity any
-	FieldPairs any
-	IfNotExists any
-	IfTagExists any
-	SourceKeys any
-	TableName any
+	FieldPairs        any
+	IfNotExists       any
+	IfTagExists       any
+	SourceKeys        any
+	TableName         any
 }
 
 type Resp_Data_Attributes_Rules struct {
-	Enabled any
-	Mapping any
-	Metadata any
-	Name any
-	Query any
+	Enabled        any
+	Mapping        any
+	Metadata       any
+	Name           any
+	Query          any
 	ReferenceTable any
 }
 
 type Resp_Data_Attributes struct {
+	// The definition of `RulesetRespDataAttributesCreated` object.
+	Created any
 	// The `attributes` `enabled`.
 	Enabled any
+	// The `attributes` `last_modified_user_uuid`.
+	LastModifiedUserUuid any
+	// The definition of `RulesetRespDataAttributesModified` object.
+	Modified any
+	// The `attributes` `name`.
+	Name any
+	// The `attributes` `position`.
+	Position any
+	// The `attributes` `processing_status`.
+	ProcessingStatus any
 	// The `attributes` `rules`.
 	Rules any
+	// The `attributes` `version`.
+	Version any
 }
 
 type Resp_Data struct {
@@ -62,87 +83,107 @@ type Resp_Data struct {
 	Type any
 }
 
+var Resp_Data_Attributes_CreatedFields = ubx.FieldMap{
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
+
 var Resp_Data_Attributes_Rules_MappingFields = ubx.FieldMap{
-		"DestinationKey": ubx.FieldSpec{WireName: "destination_key"},
-		"IfNotExists": ubx.FieldSpec{WireName: "if_not_exists"},
-		"IfTagExists": ubx.FieldSpec{WireName: "if_tag_exists"},
-		"SourceKeys": ubx.FieldSpec{WireName: "source_keys"},
-	}
+	"DestinationKey": ubx.FieldSpec{WireName: "destination_key"},
+	"IfNotExists":    ubx.FieldSpec{WireName: "if_not_exists"},
+	"IfTagExists":    ubx.FieldSpec{WireName: "if_tag_exists"},
+	"SourceKeys":     ubx.FieldSpec{WireName: "source_keys"},
+}
 
 var Resp_Data_Attributes_Rules_Query_AdditionFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Resp_Data_Attributes_Rules_QueryFields = ubx.FieldMap{
-		"Addition": ubx.FieldSpec{
-			WireName: "addition",
-			Kind: "object",
-			Fields: Resp_Data_Attributes_Rules_Query_AdditionFields,
-		},
-		"CaseInsensitivity": ubx.FieldSpec{WireName: "case_insensitivity"},
-		"IfNotExists": ubx.FieldSpec{WireName: "if_not_exists"},
-		"IfTagExists": ubx.FieldSpec{WireName: "if_tag_exists"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Addition": ubx.FieldSpec{
+		WireName: "addition",
+		Kind:     "object",
+		Fields:   Resp_Data_Attributes_Rules_Query_AdditionFields,
+	},
+	"CaseInsensitivity": ubx.FieldSpec{WireName: "case_insensitivity"},
+	"IfNotExists":       ubx.FieldSpec{WireName: "if_not_exists"},
+	"IfTagExists":       ubx.FieldSpec{WireName: "if_tag_exists"},
+	"Query":             ubx.FieldSpec{WireName: "query"},
+}
 
 var Resp_Data_Attributes_Rules_ReferenceTable_FieldPairsFields = ubx.FieldMap{
-		"InputColumn": ubx.FieldSpec{WireName: "input_column"},
-		"OutputKey": ubx.FieldSpec{WireName: "output_key"},
-	}
+	"InputColumn": ubx.FieldSpec{WireName: "input_column"},
+	"OutputKey":   ubx.FieldSpec{WireName: "output_key"},
+}
 
 var Resp_Data_Attributes_Rules_ReferenceTableFields = ubx.FieldMap{
-		"CaseInsensitivity": ubx.FieldSpec{WireName: "case_insensitivity"},
-		"FieldPairs": ubx.FieldSpec{
-			WireName: "field_pairs",
-			Kind: "list",
-			Fields: Resp_Data_Attributes_Rules_ReferenceTable_FieldPairsFields,
-		},
-		"IfNotExists": ubx.FieldSpec{WireName: "if_not_exists"},
-		"IfTagExists": ubx.FieldSpec{WireName: "if_tag_exists"},
-		"SourceKeys": ubx.FieldSpec{WireName: "source_keys"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"CaseInsensitivity": ubx.FieldSpec{WireName: "case_insensitivity"},
+	"FieldPairs": ubx.FieldSpec{
+		WireName: "field_pairs",
+		Kind:     "list",
+		Fields:   Resp_Data_Attributes_Rules_ReferenceTable_FieldPairsFields,
+	},
+	"IfNotExists": ubx.FieldSpec{WireName: "if_not_exists"},
+	"IfTagExists": ubx.FieldSpec{WireName: "if_tag_exists"},
+	"SourceKeys":  ubx.FieldSpec{WireName: "source_keys"},
+	"TableName":   ubx.FieldSpec{WireName: "table_name"},
+}
 
 var Resp_Data_Attributes_RulesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Mapping": ubx.FieldSpec{
-			WireName: "mapping",
-			Kind: "object",
-			Fields: Resp_Data_Attributes_Rules_MappingFields,
-		},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{
-			WireName: "query",
-			Kind: "object",
-			Fields: Resp_Data_Attributes_Rules_QueryFields,
-		},
-		"ReferenceTable": ubx.FieldSpec{
-			WireName: "reference_table",
-			Kind: "object",
-			Fields: Resp_Data_Attributes_Rules_ReferenceTableFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Mapping": ubx.FieldSpec{
+		WireName: "mapping",
+		Kind:     "object",
+		Fields:   Resp_Data_Attributes_Rules_MappingFields,
+	},
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Query": ubx.FieldSpec{
+		WireName: "query",
+		Kind:     "object",
+		Fields:   Resp_Data_Attributes_Rules_QueryFields,
+	},
+	"ReferenceTable": ubx.FieldSpec{
+		WireName: "reference_table",
+		Kind:     "object",
+		Fields:   Resp_Data_Attributes_Rules_ReferenceTableFields,
+	},
+}
 
 var Resp_Data_AttributesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Resp_Data_Attributes_RulesFields,
-		},
-	}
+	"Created": ubx.FieldSpec{
+		WireName: "created",
+		Kind:     "object",
+		Fields:   Resp_Data_Attributes_CreatedFields,
+	},
+	"Enabled":              ubx.FieldSpec{WireName: "enabled"},
+	"LastModifiedUserUuid": ubx.FieldSpec{WireName: "last_modified_user_uuid"},
+	"Modified": ubx.FieldSpec{
+		WireName: "modified",
+		Kind:     "object",
+		Fields:   Resp_Data_Attributes_CreatedFields,
+	},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Position":         ubx.FieldSpec{WireName: "position"},
+	"ProcessingStatus": ubx.FieldSpec{WireName: "processing_status"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Resp_Data_Attributes_RulesFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Resp_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Resp_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Resp_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RespConfig struct {
 	// The definition of `CreateRulesetRequestData` object.
@@ -163,8 +204,8 @@ var Resp = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Resp_DataFields,
+			Kind:     "object",
+			Fields:   Resp_DataFields,
 		},
 		"RulesetId": ubx.FieldSpec{WireName: "ruleset_id"},
 	},

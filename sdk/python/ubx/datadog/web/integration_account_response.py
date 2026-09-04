@@ -19,6 +19,8 @@ class IntegrationAccountResponse_Data_Attributes:
 class IntegrationAccountResponse_Data:
     # Attributes object for creating a web integration account.
     attributes: Any = None
+    # The unique identifier of the web integration account.
+    id: Any = None
     # Account resource type.
     type: Any = None
 
@@ -34,6 +36,7 @@ _IntegrationAccountResponse_DataFields = {
         kind="object",
         fields=_IntegrationAccountResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

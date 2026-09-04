@@ -4,17 +4,17 @@ package access
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TokenListItem_Data_Attributes struct {
-	CreatedAt any
-	ExpiresAt any
-	LastUsedAt any
-	ModifiedAt any
-	Name any
+	CreatedAt     any
+	ExpiresAt     any
+	LastUsedAt    any
+	ModifiedAt    any
+	Name          any
 	PublicPortion any
-	Scopes any
+	Scopes        any
 }
 
 type TokenListItem_Data_Relationships_OwnedBy_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -27,10 +27,10 @@ type TokenListItem_Data_Relationships struct {
 }
 
 type TokenListItem_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TokenListItem_Meta_Page struct {
@@ -51,7 +51,7 @@ type TokenListItemConfig struct {
 
 type TokenListItemAttrs struct {
 	// Array of access tokens. Includes both personal and service access tokens.
-	Data any
+	Data   any
 	Filter any
 	// Additional information related to the access token response.
 	Meta any
@@ -63,6 +63,6 @@ var TokenListItem = ubx.DataSourceBinding{
 	WireType: "datadog_access_token_list_item",
 	Fields: ubx.FieldMap{
 		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":   ubx.FieldSpec{WireName: "sort"},
 	},
 }

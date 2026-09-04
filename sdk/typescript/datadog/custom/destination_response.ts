@@ -44,6 +44,8 @@ export interface DestinationResponse_Data_Attributes {
 export interface DestinationResponse_Data {
   /** The attributes associated with the custom destination. */
   attributes: DestinationResponse_Data_Attributes | Computed<DestinationResponse_Data_Attributes>;
+  /** The custom destination ID. */
+  id?: string | Computed<string>;
   /** The type of the resource. The value should always be `custom_destination`. */
   type: string | Computed<string>;
 }
@@ -95,6 +97,7 @@ const DestinationResponse_DataFields: FieldMap = {
     kind: "object",
     fields: DestinationResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

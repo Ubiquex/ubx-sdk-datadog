@@ -17,6 +17,8 @@ class TeamsWorkflowsWebhookHandleResponse_Data_Attributes:
 class TeamsWorkflowsWebhookHandleResponse_Data:
     # Workflows Webhook handle attributes.
     attributes: Any = None
+    # The ID of the Workflows webhook handle.
+    id: Any = None
     # Specifies the Workflows webhook handle resource type.
     type: Any = None
 
@@ -31,6 +33,7 @@ _TeamsWorkflowsWebhookHandleResponse_DataFields = {
         kind="object",
         fields=_TeamsWorkflowsWebhookHandleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleResponse_Data_Attributes_CostsToAllocate struct {
 	Condition any
-	Tag any
-	Value any
-	Values any
+	Tag       any
+	Value     any
+	Values    any
 }
 
 type RuleResponse_Data_Attributes_Strategy_AllocatedBy_AllocatedTags struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type RuleResponse_Data_Attributes_Strategy_AllocatedBy struct {
 	AllocatedTags any
-	Percentage any
+	Percentage    any
 }
 
 type RuleResponse_Data_Attributes_Strategy struct {
@@ -44,10 +44,16 @@ type RuleResponse_Data_Attributes_Strategy struct {
 type RuleResponse_Data_Attributes struct {
 	// The `attributes` `costs_to_allocate`.
 	CostsToAllocate any
+	// The `attributes` `created`.
+	Created any
 	// The `attributes` `enabled`.
 	Enabled any
+	// The `attributes` `last_modified_user_uuid`.
+	LastModifiedUserUuid any
 	// The `attributes` `order_id`.
 	OrderId any
+	// The `attributes` `processing_status`.
+	ProcessingStatus any
 	// The `attributes` `provider`.
 	Provider any
 	// The `attributes` `rejected`.
@@ -58,6 +64,10 @@ type RuleResponse_Data_Attributes struct {
 	Strategy any
 	// The `attributes` `type`.
 	Type any
+	// The `attributes` `updated`.
+	Updated any
+	// The `attributes` `version`.
+	Version any
 }
 
 type RuleResponse_Data struct {
@@ -70,82 +80,87 @@ type RuleResponse_Data struct {
 }
 
 var RuleResponse_Data_Attributes_CostsToAllocateFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Tag":       ubx.FieldSpec{WireName: "tag"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 var RuleResponse_Data_Attributes_Strategy_AllocatedBy_AllocatedTagsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var RuleResponse_Data_Attributes_Strategy_AllocatedByFields = ubx.FieldMap{
-		"AllocatedTags": ubx.FieldSpec{
-			WireName: "allocated_tags",
-			Kind: "list",
-			Fields: RuleResponse_Data_Attributes_Strategy_AllocatedBy_AllocatedTagsFields,
-		},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-	}
+	"AllocatedTags": ubx.FieldSpec{
+		WireName: "allocated_tags",
+		Kind:     "list",
+		Fields:   RuleResponse_Data_Attributes_Strategy_AllocatedBy_AllocatedTagsFields,
+	},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+}
 
 var RuleResponse_Data_Attributes_StrategyFields = ubx.FieldMap{
-		"AllocatedBy": ubx.FieldSpec{
-			WireName: "allocated_by",
-			Kind: "list",
-			Fields: RuleResponse_Data_Attributes_Strategy_AllocatedByFields,
-		},
-		"AllocatedByFilters": ubx.FieldSpec{
-			WireName: "allocated_by_filters",
-			Kind: "list",
-			Fields: RuleResponse_Data_Attributes_CostsToAllocateFields,
-		},
-		"AllocatedByTagKeys": ubx.FieldSpec{WireName: "allocated_by_tag_keys"},
-		"BasedOnCosts": ubx.FieldSpec{
-			WireName: "based_on_costs",
-			Kind: "list",
-			Fields: RuleResponse_Data_Attributes_CostsToAllocateFields,
-		},
-		"BasedOnTimeseries": ubx.FieldSpec{WireName: "based_on_timeseries"},
-		"EvaluateGroupedByFilters": ubx.FieldSpec{
-			WireName: "evaluate_grouped_by_filters",
-			Kind: "list",
-			Fields: RuleResponse_Data_Attributes_CostsToAllocateFields,
-		},
-		"EvaluateGroupedByTagKeys": ubx.FieldSpec{WireName: "evaluate_grouped_by_tag_keys"},
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-	}
+	"AllocatedBy": ubx.FieldSpec{
+		WireName: "allocated_by",
+		Kind:     "list",
+		Fields:   RuleResponse_Data_Attributes_Strategy_AllocatedByFields,
+	},
+	"AllocatedByFilters": ubx.FieldSpec{
+		WireName: "allocated_by_filters",
+		Kind:     "list",
+		Fields:   RuleResponse_Data_Attributes_CostsToAllocateFields,
+	},
+	"AllocatedByTagKeys": ubx.FieldSpec{WireName: "allocated_by_tag_keys"},
+	"BasedOnCosts": ubx.FieldSpec{
+		WireName: "based_on_costs",
+		Kind:     "list",
+		Fields:   RuleResponse_Data_Attributes_CostsToAllocateFields,
+	},
+	"BasedOnTimeseries": ubx.FieldSpec{WireName: "based_on_timeseries"},
+	"EvaluateGroupedByFilters": ubx.FieldSpec{
+		WireName: "evaluate_grouped_by_filters",
+		Kind:     "list",
+		Fields:   RuleResponse_Data_Attributes_CostsToAllocateFields,
+	},
+	"EvaluateGroupedByTagKeys": ubx.FieldSpec{WireName: "evaluate_grouped_by_tag_keys"},
+	"Granularity":              ubx.FieldSpec{WireName: "granularity"},
+	"Method":                   ubx.FieldSpec{WireName: "method"},
+}
 
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"CostsToAllocate": ubx.FieldSpec{
-			WireName: "costs_to_allocate",
-			Kind: "list",
-			Fields: RuleResponse_Data_Attributes_CostsToAllocateFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"OrderId": ubx.FieldSpec{WireName: "order_id"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Rejected": ubx.FieldSpec{WireName: "rejected"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"Strategy": ubx.FieldSpec{
-			WireName: "strategy",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_StrategyFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CostsToAllocate": ubx.FieldSpec{
+		WireName: "costs_to_allocate",
+		Kind:     "list",
+		Fields:   RuleResponse_Data_Attributes_CostsToAllocateFields,
+	},
+	"Created":              ubx.FieldSpec{WireName: "created"},
+	"Enabled":              ubx.FieldSpec{WireName: "enabled"},
+	"LastModifiedUserUuid": ubx.FieldSpec{WireName: "last_modified_user_uuid"},
+	"OrderId":              ubx.FieldSpec{WireName: "order_id"},
+	"ProcessingStatus":     ubx.FieldSpec{WireName: "processing_status"},
+	"Provider":             ubx.FieldSpec{WireName: "provider"},
+	"Rejected":             ubx.FieldSpec{WireName: "rejected"},
+	"RuleName":             ubx.FieldSpec{WireName: "rule_name"},
+	"Strategy": ubx.FieldSpec{
+		WireName: "strategy",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_StrategyFields,
+	},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"Updated": ubx.FieldSpec{WireName: "updated"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var RuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RuleResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RuleResponseConfig struct {
 	// The definition of `ArbitraryCostUpsertRequestData` object.
@@ -166,8 +181,8 @@ var RuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   RuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

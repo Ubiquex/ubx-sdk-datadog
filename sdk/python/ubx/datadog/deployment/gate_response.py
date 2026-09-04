@@ -7,7 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class GateResponse_Data_Attributes_CreatedBy:
+    # The handle of the user who created the deployment rule.
+    handle: Any = None
+    # The ID of the user who created the deployment rule.
+    id: Any = None
+    # The name of the user who created the deployment rule.
+    name: Any = None
+
+@dataclasses.dataclass
 class GateResponse_Data_Attributes:
+    # The timestamp when the deployment gate was created.
+    created_at: Any = None
+    # Information about the user who created the deployment gate.
+    created_by: Any = None
     # Whether this gate is run in dry-run mode.
     dry_run: Any = None
     # The environment of the deployment gate.
@@ -16,19 +29,43 @@ class GateResponse_Data_Attributes:
     identifier: Any = None
     # The service of the deployment gate.
     service: Any = None
+    # The timestamp when the deployment gate was last updated.
+    updated_at: Any = None
+    # Information about the user who updated the deployment gate.
+    updated_by: Any = None
 
 @dataclasses.dataclass
 class GateResponse_Data:
     # Parameters for creating a deployment gate.
     attributes: Any = None
+    # Unique identifier of the deployment gate.
+    id: Any = None
     # Deployment gate resource type.
     type: Any = None
 
+_GateResponse_Data_Attributes_CreatedByFields = {
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 _GateResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_GateResponse_Data_Attributes_CreatedByFields,
+    ),
     "dry_run": ubx.FieldSpec(wire_name="dry_run"),
     "env": ubx.FieldSpec(wire_name="env"),
     "identifier": ubx.FieldSpec(wire_name="identifier"),
     "service": ubx.FieldSpec(wire_name="service"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updated_by": ubx.FieldSpec(
+        wire_name="updated_by",
+        kind="object",
+        fields=_GateResponse_Data_Attributes_CreatedByFields,
+    ),
 }
 
 _GateResponse_DataFields = {
@@ -37,6 +74,7 @@ _GateResponse_DataFields = {
         kind="object",
         fields=_GateResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

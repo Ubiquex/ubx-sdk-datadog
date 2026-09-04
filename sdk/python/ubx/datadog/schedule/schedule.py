@@ -43,21 +43,25 @@ class Schedule_Data_Attributes:
     layers: Any = None
     # A human-readable name for the new schedule.
     name: Any = None
+    # A list of tags associated with the schedule.
+    tags: Any = None
     # The time zone in which the schedule is defined.
     time_zone: Any = None
 
 @dataclasses.dataclass
-class Schedule_Data_Relationships_Teams_Data:
+class Schedule_Data_Relationships_Layers_Data:
     id: Any = None
     type: Any = None
 
 @dataclasses.dataclass
-class Schedule_Data_Relationships_Teams:
-    # An array of team references for this schedule.
+class Schedule_Data_Relationships_Layers:
+    # An array of layer references for this schedule.
     data: Any = None
 
 @dataclasses.dataclass
 class Schedule_Data_Relationships:
+    # Associates layers with this schedule in a data structure.
+    layers: Any = None
     # Associates teams with this schedule in a data structure.
     teams: Any = None
 
@@ -65,6 +69,8 @@ class Schedule_Data_Relationships:
 class Schedule_Data:
     # Describes the main attributes for creating a new schedule, including name, layers, and time zone.
     attributes: Any = None
+    # The schedule's unique identifier.
+    id: Any = None
     # Gathers relationship objects for the schedule creation request, including the teams to associate.
     relationships: Any = None
     # Schedules resource type.
@@ -142,27 +148,33 @@ _Schedule_Data_AttributesFields = {
         fields=_Schedule_Data_Attributes_LayersFields,
     ),
     "name": ubx.FieldSpec(wire_name="name"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
     "time_zone": ubx.FieldSpec(wire_name="time_zone"),
 }
 
-_Schedule_Data_Relationships_Teams_DataFields = {
+_Schedule_Data_Relationships_Layers_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_Schedule_Data_Relationships_TeamsFields = {
+_Schedule_Data_Relationships_LayersFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="list",
-        fields=_Schedule_Data_Relationships_Teams_DataFields,
+        fields=_Schedule_Data_Relationships_Layers_DataFields,
     ),
 }
 
 _Schedule_Data_RelationshipsFields = {
+    "layers": ubx.FieldSpec(
+        wire_name="layers",
+        kind="object",
+        fields=_Schedule_Data_Relationships_LayersFields,
+    ),
     "teams": ubx.FieldSpec(
         wire_name="teams",
         kind="object",
-        fields=_Schedule_Data_Relationships_TeamsFields,
+        fields=_Schedule_Data_Relationships_LayersFields,
     ),
 }
 
@@ -172,6 +184,7 @@ _Schedule_DataFields = {
         kind="object",
         fields=_Schedule_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

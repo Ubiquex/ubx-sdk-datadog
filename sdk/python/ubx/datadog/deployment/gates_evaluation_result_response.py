@@ -26,15 +26,34 @@ class GatesEvaluationResultResponse_Data_Attributes_Configuration:
     rules: Any = None
 
 @dataclasses.dataclass
+class GatesEvaluationResultResponse_Data_Attributes_Rules:
+    dry_run: Any = None
+    name: Any = None
+    reason: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class GatesEvaluationResultResponse_Data_Attributes:
     # Inline rule definitions for a deployment gate evaluation. When provided, rules are evaluated directly from this configuration instead of using the preconfigured gate rules. At least one rule is required.
     configuration: Any = None
+    # Whether the gate was evaluated in dry-run mode.
+    dry_run: Any = None
     # The environment of the deployment.
     env: Any = None
+    # The unique identifier of the gate evaluation.
+    evaluation_id: Any = None
+    # A URL to view the evaluation details in the Datadog UI.
+    evaluation_url: Any = None
+    # The unique identifier of the deployment gate.
+    gate_id: Any = None
+    # The overall status of the gate evaluation. - `in_progress`: The evaluation is still running. - `pass`: All rules passed successfully and the deployment is allowed to proceed. - `fail`: One or more rules did not pass; the deployment should not proceed.
+    gate_status: Any = None
     # The identifier of the deployment gate. Defaults to "default".
     identifier: Any = None
     # A primary tag to scope APM Faulty Deployment Detection rules.
     primary_tag: Any = None
+    # The results of individual rule evaluations.
+    rules: Any = None
     # The service being deployed.
     service: Any = None
     # The version of the deployment. Required for APM Faulty Deployment Detection rules.
@@ -44,6 +63,8 @@ class GatesEvaluationResultResponse_Data_Attributes:
 class GatesEvaluationResultResponse_Data:
     # Attributes for a deployment gate evaluation request. When `configuration` is provided, rules are evaluated inline from that configuration. When omitted, rules are resolved from the preconfigured gate for the given service and environment.
     attributes: Any = None
+    # The unique identifier of the evaluation.
+    id: Any = None
     # JSON:API type for a deployment gate evaluation request.
     type: Any = None
 
@@ -72,15 +93,32 @@ _GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields = {
     ),
 }
 
+_GatesEvaluationResultResponse_Data_Attributes_RulesFields = {
+    "dry_run": ubx.FieldSpec(wire_name="dry_run"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "reason": ubx.FieldSpec(wire_name="reason"),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
 _GatesEvaluationResultResponse_Data_AttributesFields = {
     "configuration": ubx.FieldSpec(
         wire_name="configuration",
         kind="object",
         fields=_GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields,
     ),
+    "dry_run": ubx.FieldSpec(wire_name="dry_run"),
     "env": ubx.FieldSpec(wire_name="env"),
+    "evaluation_id": ubx.FieldSpec(wire_name="evaluation_id"),
+    "evaluation_url": ubx.FieldSpec(wire_name="evaluation_url"),
+    "gate_id": ubx.FieldSpec(wire_name="gate_id"),
+    "gate_status": ubx.FieldSpec(wire_name="gate_status"),
     "identifier": ubx.FieldSpec(wire_name="identifier"),
     "primary_tag": ubx.FieldSpec(wire_name="primary_tag"),
+    "rules": ubx.FieldSpec(
+        wire_name="rules",
+        kind="list",
+        fields=_GatesEvaluationResultResponse_Data_Attributes_RulesFields,
+    ),
     "service": ubx.FieldSpec(wire_name="service"),
     "version": ubx.FieldSpec(wire_name="version"),
 }
@@ -91,6 +129,7 @@ _GatesEvaluationResultResponse_DataFields = {
         kind="object",
         fields=_GatesEvaluationResultResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

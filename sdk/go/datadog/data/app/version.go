@@ -4,21 +4,21 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Version_Data_Attributes struct {
-	AppId any
-	CreatedAt any
+	AppId                any
+	CreatedAt            any
 	HasEverBeenPublished any
-	Name any
-	UpdatedAt any
-	UserId any
-	UserName any
-	UserUuid any
-	Version any
+	Name                 any
+	UpdatedAt            any
+	UserId               any
+	UserName             any
+	UserUuid             any
+	Version              any
 }
 
 type Version_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Version_Meta_Page struct {
@@ -36,13 +36,13 @@ type Version_Meta struct {
 type VersionConfig struct {
 	AppId any
 	Limit any
-	Page any
+	Page  any
 }
 
 type VersionAttrs struct {
 	AppId any
 	// The list of app versions.
-	Data any
+	Data  any
 	Limit any
 	// Pagination metadata.
 	Meta any
@@ -54,6 +54,6 @@ var Version = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AppId": ubx.FieldSpec{WireName: "app_id"},
 		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":  ubx.FieldSpec{WireName: "page"},
 	},
 }

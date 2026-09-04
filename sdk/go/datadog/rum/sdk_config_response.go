@@ -5,27 +5,27 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_Match struct {
 	RcSerializedType any
-	Value any
+	Value            any
 }
 
 type SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls struct {
-	Match any
+	Match           any
 	PropagatorTypes any
 }
 
 type SdkConfigResponse_Data_Attributes_Rum_Context_Value struct {
-	Attribute any
-	Extractor any
-	Key any
-	Name any
-	Path any
+	Attribute        any
+	Extractor        any
+	Key              any
+	Name             any
+	Path             any
 	RcSerializedType any
-	Selector any
-	Strategy any
+	Selector         any
+	Strategy         any
 }
 
 type SdkConfigResponse_Data_Attributes_Rum_Context struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -34,6 +34,8 @@ type SdkConfigResponse_Data_Attributes_Rum struct {
 	AllowedTracingUrls any
 	// A list of origin patterns allowed for cross-origin session tracking.
 	AllowedTrackingOrigins any
+	// The ID of the RUM application this configuration belongs to.
+	ApplicationId any
 	// A list of dynamic option key-value pairs.
 	Context any
 	// The default privacy masking level applied to all RUM data.
@@ -63,106 +65,126 @@ type SdkConfigResponse_Data_Attributes struct {
 	Rum any
 }
 
+type SdkConfigResponse_Data_Meta struct {
+	// The timestamp of the last update to this configuration.
+	UpdatedAt any
+	// The handle of the user who last updated this configuration.
+	UpdatedBy any
+}
+
 type SdkConfigResponse_Data struct {
 	// Attributes of the RUM SDK configuration to update.
 	Attributes any
 	// The ID of the RUM SDK configuration to update.
 	Id any
+	// Metadata associated with a RUM SDK configuration.
+	Meta any
 	// The type of the resource. The value should always be `rum_sdk_config`.
 	Type any
 }
 
 var SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_MatchFields = ubx.FieldMap{
-		"RcSerializedType": ubx.FieldSpec{WireName: "rc_serialized_type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"RcSerializedType": ubx.FieldSpec{WireName: "rc_serialized_type"},
+	"Value":            ubx.FieldSpec{WireName: "value"},
+}
 
 var SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrlsFields = ubx.FieldMap{
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_MatchFields,
-		},
-		"PropagatorTypes": ubx.FieldSpec{WireName: "propagator_types"},
-	}
+	"Match": ubx.FieldSpec{
+		WireName: "match",
+		Kind:     "object",
+		Fields:   SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_MatchFields,
+	},
+	"PropagatorTypes": ubx.FieldSpec{WireName: "propagator_types"},
+}
 
 var SdkConfigResponse_Data_Attributes_Rum_Context_ValueFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Extractor": ubx.FieldSpec{
-			WireName: "extractor",
-			Kind: "object",
-			Fields: SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_MatchFields,
-		},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"RcSerializedType": ubx.FieldSpec{WireName: "rc_serialized_type"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Extractor": ubx.FieldSpec{
+		WireName: "extractor",
+		Kind:     "object",
+		Fields:   SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_MatchFields,
+	},
+	"Key":              ubx.FieldSpec{WireName: "key"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Path":             ubx.FieldSpec{WireName: "path"},
+	"RcSerializedType": ubx.FieldSpec{WireName: "rc_serialized_type"},
+	"Selector":         ubx.FieldSpec{WireName: "selector"},
+	"Strategy":         ubx.FieldSpec{WireName: "strategy"},
+}
 
 var SdkConfigResponse_Data_Attributes_Rum_ContextFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: SdkConfigResponse_Data_Attributes_Rum_Context_ValueFields,
-		},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   SdkConfigResponse_Data_Attributes_Rum_Context_ValueFields,
+	},
+}
 
 var SdkConfigResponse_Data_Attributes_RumFields = ubx.FieldMap{
-		"AllowedTracingUrls": ubx.FieldSpec{
-			WireName: "allowed_tracing_urls",
-			Kind: "list",
-			Fields: SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrlsFields,
-		},
-		"AllowedTrackingOrigins": ubx.FieldSpec{
-			WireName: "allowed_tracking_origins",
-			Kind: "list",
-			Fields: SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_MatchFields,
-		},
-		"Context": ubx.FieldSpec{
-			WireName: "context",
-			Kind: "list",
-			Fields: SdkConfigResponse_Data_Attributes_Rum_ContextFields,
-		},
-		"DefaultPrivacyLevel": ubx.FieldSpec{WireName: "default_privacy_level"},
-		"EnablePrivacyForActionName": ubx.FieldSpec{WireName: "enable_privacy_for_action_name"},
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"SessionReplaySampleRate": ubx.FieldSpec{WireName: "session_replay_sample_rate"},
-		"SessionSampleRate": ubx.FieldSpec{WireName: "session_sample_rate"},
-		"TraceSampleRate": ubx.FieldSpec{WireName: "trace_sample_rate"},
-		"TrackSessionAcrossSubdomains": ubx.FieldSpec{WireName: "track_session_across_subdomains"},
-		"User": ubx.FieldSpec{
-			WireName: "user",
-			Kind: "list",
-			Fields: SdkConfigResponse_Data_Attributes_Rum_ContextFields,
-		},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: SdkConfigResponse_Data_Attributes_Rum_Context_ValueFields,
-		},
-	}
+	"AllowedTracingUrls": ubx.FieldSpec{
+		WireName: "allowed_tracing_urls",
+		Kind:     "list",
+		Fields:   SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrlsFields,
+	},
+	"AllowedTrackingOrigins": ubx.FieldSpec{
+		WireName: "allowed_tracking_origins",
+		Kind:     "list",
+		Fields:   SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_MatchFields,
+	},
+	"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+	"Context": ubx.FieldSpec{
+		WireName: "context",
+		Kind:     "list",
+		Fields:   SdkConfigResponse_Data_Attributes_Rum_ContextFields,
+	},
+	"DefaultPrivacyLevel":          ubx.FieldSpec{WireName: "default_privacy_level"},
+	"EnablePrivacyForActionName":   ubx.FieldSpec{WireName: "enable_privacy_for_action_name"},
+	"Env":                          ubx.FieldSpec{WireName: "env"},
+	"Service":                      ubx.FieldSpec{WireName: "service"},
+	"SessionReplaySampleRate":      ubx.FieldSpec{WireName: "session_replay_sample_rate"},
+	"SessionSampleRate":            ubx.FieldSpec{WireName: "session_sample_rate"},
+	"TraceSampleRate":              ubx.FieldSpec{WireName: "trace_sample_rate"},
+	"TrackSessionAcrossSubdomains": ubx.FieldSpec{WireName: "track_session_across_subdomains"},
+	"User": ubx.FieldSpec{
+		WireName: "user",
+		Kind:     "list",
+		Fields:   SdkConfigResponse_Data_Attributes_Rum_ContextFields,
+	},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   SdkConfigResponse_Data_Attributes_Rum_Context_ValueFields,
+	},
+}
 
 var SdkConfigResponse_Data_AttributesFields = ubx.FieldMap{
-		"Rum": ubx.FieldSpec{
-			WireName: "rum",
-			Kind: "object",
-			Fields: SdkConfigResponse_Data_Attributes_RumFields,
-		},
-	}
+	"Rum": ubx.FieldSpec{
+		WireName: "rum",
+		Kind:     "object",
+		Fields:   SdkConfigResponse_Data_Attributes_RumFields,
+	},
+}
+
+var SdkConfigResponse_Data_MetaFields = ubx.FieldMap{
+	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+	"UpdatedBy": ubx.FieldSpec{WireName: "updated_by"},
+}
 
 var SdkConfigResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: SdkConfigResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   SdkConfigResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Meta": ubx.FieldSpec{
+		WireName: "meta",
+		Kind:     "object",
+		Fields:   SdkConfigResponse_Data_MetaFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type SdkConfigResponseConfig struct {
 	// The data object for updating a RUM SDK configuration.
@@ -183,8 +205,8 @@ var SdkConfigResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: SdkConfigResponse_DataFields,
+			Kind:     "object",
+			Fields:   SdkConfigResponse_DataFields,
 		},
 		"ConfigId": ubx.FieldSpec{WireName: "config_id"},
 	},

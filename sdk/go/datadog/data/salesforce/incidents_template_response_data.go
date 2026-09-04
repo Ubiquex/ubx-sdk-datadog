@@ -4,18 +4,18 @@ package salesforce
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IncidentsTemplateResponseData_Data_Attributes struct {
-	Description any
-	Name any
-	OwnerId any
-	Priority any
+	Description     any
+	Name            any
+	OwnerId         any
+	Priority        any
 	SalesforceOrgId any
-	Subject any
+	Subject         any
 }
 
 type IncidentsTemplateResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type IncidentsTemplateResponseDataConfig struct {
@@ -28,6 +28,5 @@ type IncidentsTemplateResponseDataAttrs struct {
 
 var IncidentsTemplateResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_salesforce_incidents_template_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

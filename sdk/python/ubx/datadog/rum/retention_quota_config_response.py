@@ -25,6 +25,12 @@ class RetentionQuotaConfigResponse_Data_Attributes:
     custom: Any = None
     # The retention quota mode. `custom` enforces a fixed session limit. `custom` is the only supported mode.
     mode: Any = None
+    # The ID of the organization the retention quota configuration belongs to.
+    org_id: Any = None
+    # The date the retention quota configuration was last updated.
+    updated_at: Any = None
+    # The handle of the user who last updated the retention quota configuration.
+    updated_by: Any = None
 
 @dataclasses.dataclass
 class RetentionQuotaConfigResponse_Data:
@@ -50,6 +56,9 @@ _RetentionQuotaConfigResponse_Data_AttributesFields = {
         fields=_RetentionQuotaConfigResponse_Data_Attributes_CustomFields,
     ),
     "mode": ubx.FieldSpec(wire_name="mode"),
+    "org_id": ubx.FieldSpec(wire_name="org_id"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updated_by": ubx.FieldSpec(wire_name="updated_by"),
 }
 
 _RetentionQuotaConfigResponse_DataFields = {

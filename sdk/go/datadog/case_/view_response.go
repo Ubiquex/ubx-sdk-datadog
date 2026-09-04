@@ -4,6 +4,10 @@ package case_
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ViewResponse_Data_Attributes struct {
+	// Timestamp when the view was created.
+	CreatedAt any
+	// Timestamp when the view was last modified.
+	ModifiedAt any
 	// The name of the view.
 	Name any
 	// The identifier of a notification rule linked to this view. When set, users subscribed to the view receive alerts for matching cases.
@@ -14,28 +18,92 @@ type ViewResponse_Data_Attributes struct {
 	Query any
 }
 
+type ViewResponse_Data_Relationships_CreatedBy_Data struct {
+	// A unique identifier that represents the user.
+	Id any
+	// User resource type.
+	Type any
+}
+
+type ViewResponse_Data_Relationships_CreatedBy struct {
+	// Relationship to user object.
+	Data any
+}
+
+type ViewResponse_Data_Relationships struct {
+	// Relationship to user.
+	CreatedBy any
+	// Relationship to user.
+	ModifiedBy any
+	// Relationship to project.
+	Project any
+}
+
 type ViewResponse_Data struct {
 	// Attributes required to create a case view.
 	Attributes any
+	// The view's identifier.
+	Id any
+	// Related resources for the case view, including the creator, last modifier, and associated project.
+	Relationships any
 	// JSON:API resource type for case views.
 	Type any
 }
 
 var ViewResponse_Data_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NpRuleId": ubx.FieldSpec{WireName: "np_rule_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"NpRuleId":   ubx.FieldSpec{WireName: "np_rule_id"},
+	"ProjectId":  ubx.FieldSpec{WireName: "project_id"},
+	"Query":      ubx.FieldSpec{WireName: "query"},
+}
+
+var ViewResponse_Data_Relationships_CreatedBy_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var ViewResponse_Data_Relationships_CreatedByFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   ViewResponse_Data_Relationships_CreatedBy_DataFields,
+	},
+}
+
+var ViewResponse_Data_RelationshipsFields = ubx.FieldMap{
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   ViewResponse_Data_Relationships_CreatedByFields,
+	},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   ViewResponse_Data_Relationships_CreatedByFields,
+	},
+	"Project": ubx.FieldSpec{
+		WireName: "project",
+		Kind:     "object",
+		Fields:   ViewResponse_Data_Relationships_CreatedByFields,
+	},
+}
 
 var ViewResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ViewResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ViewResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   ViewResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ViewResponseConfig struct {
 	// Data object for creating a case view.
@@ -56,8 +124,8 @@ var ViewResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ViewResponse_DataFields,
+			Kind:     "object",
+			Fields:   ViewResponse_DataFields,
 		},
 		"ViewId": ubx.FieldSpec{WireName: "view_id"},
 	},

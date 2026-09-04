@@ -4,7 +4,7 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArchiveDefinition_Data_Attributes_Destination_Encryption struct {
-	Key any
+	Key  any
 	Type any
 }
 
@@ -14,34 +14,34 @@ type ArchiveDefinition_Data_Attributes_Destination_Integration struct {
 }
 
 type ArchiveDefinition_Data_Attributes_Destination struct {
-	Bucket any
-	Container any
-	Encryption any
-	Integration any
-	Path any
-	Region any
+	Bucket         any
+	Container      any
+	Encryption     any
+	Integration    any
+	Path           any
+	Region         any
 	StorageAccount any
-	StorageClass any
-	Type any
+	StorageClass   any
+	Type           any
 }
 
 type ArchiveDefinition_Data_Attributes struct {
-	CompressionMethod any
-	Destination any
-	IncludeTags any
-	LookupAttributes any
-	Name any
-	PartitioningAttributes any
-	Query any
+	CompressionMethod          any
+	Destination                any
+	IncludeTags                any
+	LookupAttributes           any
+	Name                       any
+	PartitioningAttributes     any
+	Query                      any
 	RehydrationMaxScanSizeInGb any
-	RehydrationTags any
-	State any
+	RehydrationTags            any
+	State                      any
 }
 
 type ArchiveDefinition_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ArchiveDefinitionConfig struct {
@@ -54,6 +54,5 @@ type ArchiveDefinitionAttrs struct {
 
 var ArchiveDefinition = ubx.DataSourceBinding{
 	WireType: "datadog_logs_archive_definition",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

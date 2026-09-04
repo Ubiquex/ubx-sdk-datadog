@@ -13,12 +13,24 @@ class FilterResponse_Data_Attributes_Filter:
 
 @dataclasses.dataclass
 class FilterResponse_Data_Attributes:
+    # The creation timestamp of the retention filter.
+    created_at: Any = None
+    # The creator of the retention filter.
+    created_by: Any = None
+    # Shows whether the filter can be edited.
+    editable: Any = None
     # Enable/Disable the retention filter.
     enabled: Any = None
+    # The execution order of the retention filter.
+    execution_order: Any = None
     # The spans filter. Spans matching this filter will be indexed and stored.
     filter: Any = None
     # The type of retention filter.
     filter_type: Any = None
+    # The modification timestamp of the retention filter.
+    modified_at: Any = None
+    # The modifier of the retention filter.
+    modified_by: Any = None
     # The name of the retention filter.
     name: Any = None
     # Sample rate to apply to spans going through this retention filter. A value of 1.0 keeps all spans matching the query.
@@ -40,13 +52,19 @@ _FilterResponse_Data_Attributes_FilterFields = {
 }
 
 _FilterResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
+    "editable": ubx.FieldSpec(wire_name="editable"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "execution_order": ubx.FieldSpec(wire_name="execution_order"),
     "filter": ubx.FieldSpec(
         wire_name="filter",
         kind="object",
         fields=_FilterResponse_Data_Attributes_FilterFields,
     ),
     "filter_type": ubx.FieldSpec(wire_name="filter_type"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(wire_name="modified_by"),
     "name": ubx.FieldSpec(wire_name="name"),
     "rate": ubx.FieldSpec(wire_name="rate"),
     "trace_rate": ubx.FieldSpec(wire_name="trace_rate"),

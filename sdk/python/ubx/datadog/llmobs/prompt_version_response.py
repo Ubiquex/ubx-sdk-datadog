@@ -7,31 +7,80 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PromptVersionResponse_Data_Attributes_Datasets:
+    id: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class PromptVersionResponse_Data_Attributes:
+    # UUID of the user who authored this version.
+    author: Any = None
+    # Timestamp stored on this prompt version.
+    created_at: Any = None
+    # Datasets observed in runs associated with this prompt version.
+    datasets: Any = None
     # Optional description of this version.
     description: Any = None
     # Optional feature-flag environment UUIDs the service attempts to enable and configure to use this version as their default after creation.
     env_ids: Any = None
     # Optional labels to attach to this version. Do not use this attribute for new integrations.
     labels: Any = None
+    # Timestamp of the most recent observed run of this prompt version.
+    last_seen_at: Any = None
+    # The ML application this prompt is associated with.
+    ml_app: Any = None
+    # ML applications observed running this prompt version.
+    ml_apps: Any = None
+    # Customer-provided identifier of the parent prompt.
+    prompt_id: Any = None
+    # Unique identifier of the parent prompt.
+    prompt_uuid: Any = None
+    # Tags observed on runs of this prompt version.
+    tags: Any = None
     # A text template or a list of chat messages.
     template: Any = None
     # Optional user-supplied version identifier for this version.
     user_version: Any = None
+    # Sequential version number.
+    version: Any = None
+    # Timestamp when this version was created.
+    version_created_at: Any = None
 
 @dataclasses.dataclass
 class PromptVersionResponse_Data:
     # Attributes for creating a new version of an Agent Observability prompt. `template` is required; all other attributes are optional.
     attributes: Any = None
+    # Unique identifier of the prompt version.
+    id: Any = None
     # Resource type of an Agent Observability prompt version.
     type: Any = None
 
+_PromptVersionResponse_Data_Attributes_DatasetsFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 _PromptVersionResponse_Data_AttributesFields = {
+    "author": ubx.FieldSpec(wire_name="author"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "datasets": ubx.FieldSpec(
+        wire_name="datasets",
+        kind="list",
+        fields=_PromptVersionResponse_Data_Attributes_DatasetsFields,
+    ),
     "description": ubx.FieldSpec(wire_name="description"),
     "env_ids": ubx.FieldSpec(wire_name="env_ids"),
     "labels": ubx.FieldSpec(wire_name="labels"),
+    "last_seen_at": ubx.FieldSpec(wire_name="last_seen_at"),
+    "ml_app": ubx.FieldSpec(wire_name="ml_app"),
+    "ml_apps": ubx.FieldSpec(wire_name="ml_apps"),
+    "prompt_id": ubx.FieldSpec(wire_name="prompt_id"),
+    "prompt_uuid": ubx.FieldSpec(wire_name="prompt_uuid"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
     "template": ubx.FieldSpec(wire_name="template"),
     "user_version": ubx.FieldSpec(wire_name="user_version"),
+    "version": ubx.FieldSpec(wire_name="version"),
+    "version_created_at": ubx.FieldSpec(wire_name="version_created_at"),
 }
 
 _PromptVersionResponse_DataFields = {
@@ -40,6 +89,7 @@ _PromptVersionResponse_DataFields = {
         kind="object",
         fields=_PromptVersionResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

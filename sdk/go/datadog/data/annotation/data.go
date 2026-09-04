@@ -4,46 +4,46 @@ package annotation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Data_Data_Attributes struct {
-	AuthorId any
-	Color any
-	CreatedAt any
+	AuthorId    any
+	Color       any
+	CreatedAt   any
 	Description any
-	EndTime any
-	ModifiedAt any
-	PageId any
-	StartTime any
-	Type any
-	WidgetIds any
+	EndTime     any
+	ModifiedAt  any
+	PageId      any
+	StartTime   any
+	Type        any
+	WidgetIds   any
 }
 
 type Data_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataConfig struct {
-	EndTime any
-	PageId any
+	EndTime   any
+	PageId    any
 	StartTime any
-	WidgetId any
+	WidgetId  any
 }
 
 type DataAttrs struct {
 	// List of annotation resources.
-	Data any
-	EndTime any
-	PageId any
+	Data      any
+	EndTime   any
+	PageId    any
 	StartTime any
-	WidgetId any
+	WidgetId  any
 }
 
 var Data = ubx.DataSourceBinding{
 	WireType: "datadog_annotation_data",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+		"PageId":    ubx.FieldSpec{WireName: "page_id"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"WidgetId": ubx.FieldSpec{WireName: "widget_id"},
+		"WidgetId":  ubx.FieldSpec{WireName: "widget_id"},
 	},
 }

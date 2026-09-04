@@ -28,6 +28,8 @@ class AccountResponse_Data_Attributes:
 class AccountResponse_Data:
     # Attributes associated with the account creation request.
     attributes: Any = None
+    # A randomly generated ID associated with a Confluent account.
+    id: Any = None
     # The JSON:API type for this API. Should always be `confluent-cloud-accounts`.
     type: Any = None
 
@@ -55,6 +57,7 @@ _AccountResponse_DataFields = {
         kind="object",
         fields=_AccountResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

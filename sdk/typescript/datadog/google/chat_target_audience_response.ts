@@ -11,6 +11,8 @@ export interface ChatTargetAudienceResponse_Data_Attributes {
 export interface ChatTargetAudienceResponse_Data {
   /** Attributes for creating a Google Chat target audience. */
   attributes: ChatTargetAudienceResponse_Data_Attributes | Computed<ChatTargetAudienceResponse_Data_Attributes>;
+  /** The ID of the target audience. */
+  id?: string | Computed<string>;
   /** Google Chat target audience resource type. */
   type: string | Computed<string>;
 }
@@ -26,6 +28,7 @@ const ChatTargetAudienceResponse_DataFields: FieldMap = {
     kind: "object",
     fields: ChatTargetAudienceResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

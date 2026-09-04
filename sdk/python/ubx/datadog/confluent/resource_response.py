@@ -10,6 +10,8 @@ import ubx_sdk as ubx
 class ResourceResponse_Data_Attributes:
     # Enable the `custom.consumer_lag_offset` metric, which contains extra metric tags.
     enable_custom_metrics: Any = None
+    # The ID associated with the Confluent resource.
+    id: Any = None
     # The resource type of the Resource. Can be `kafka`, `connector`, `ksql`, or `schema_registry`.
     resource_type: Any = None
     # A list of strings representing tags. Can be a single key, or key-value pairs separated by a colon.
@@ -26,6 +28,7 @@ class ResourceResponse_Data:
 
 _ResourceResponse_Data_AttributesFields = {
     "enable_custom_metrics": ubx.FieldSpec(wire_name="enable_custom_metrics"),
+    "id": ubx.FieldSpec(wire_name="id"),
     "resource_type": ubx.FieldSpec(wire_name="resource_type"),
     "tags": ubx.FieldSpec(wire_name="tags"),
 }

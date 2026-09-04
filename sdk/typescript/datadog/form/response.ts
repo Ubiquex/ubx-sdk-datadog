@@ -14,29 +14,110 @@ export interface Response_Data_Attributes_DataDefinition {
   type?: string | Computed<string>;
 }
 
+export interface Response_Data_Attributes_DatastoreConfig {
+  /** The ID of the datastore. */
+  datastoreId: string | Computed<string>;
+  /** The name of the primary column in the datastore. */
+  primaryColumnName: string | Computed<string>;
+  /** The strategy used to generate primary keys in the datastore. */
+  primaryKeyGenerationStrategy: string | Computed<string>;
+}
+
+export interface Response_Data_Attributes_Publication {
+  /** The time at which the publication was created. */
+  createdAt: string | Computed<string>;
+  /** The ID of the form. */
+  formId: string | Computed<string>;
+  /** The version number that was published. */
+  formVersion: number | Computed<number>;
+  /** The ID of the form publication. */
+  id?: string | Computed<string>;
+  /** The time at which the publication was last modified. */
+  modifiedAt: string | Computed<string>;
+  /** The ID of the organization that owns this publication. */
+  orgId: number | Computed<number>;
+  /** The sequential publication number for this form. */
+  publishSeq: number | Computed<number>;
+  /** The ID of the user who created this publication. */
+  userId: number | Computed<number>;
+  /** The UUID of the user who created this publication. */
+  userUuid: string | Computed<string>;
+}
+
 export interface Response_Data_Attributes_UiDefinition {
 }
 
-export interface Response_Data_Attributes {
-  /** Whether the form accepts anonymous submissions. */
-  anonymous?: boolean | Computed<boolean>;
+export interface Response_Data_Attributes_Version {
+  /** The time at which the version was created. */
+  createdAt: string | Computed<string>;
   /** A JSON Schema definition that describes the form's data fields. */
   dataDefinition: Response_Data_Attributes_DataDefinition | Computed<Response_Data_Attributes_DataDefinition>;
+  /** The signature of the version definition. */
+  definitionSignature: string | Computed<string>;
+  /** The ETag for optimistic concurrency control. */
+  etag: string | Computed<string>;
+  /** The ID of the form version. */
+  id?: string | Computed<string>;
+  /** The time at which the version was last modified. */
+  modifiedAt: string | Computed<string>;
+  /** The state of a form version. */
+  state: string | Computed<string>;
+  /** UI configuration for rendering form fields, including widget overrides, field ordering, and themes. */
+  uiDefinition: Response_Data_Attributes_UiDefinition | Computed<Response_Data_Attributes_UiDefinition>;
+  /** The ID of the user who created this version. */
+  userId: number | Computed<number>;
+  /** The UUID of the user who created this version. */
+  userUuid: string | Computed<string>;
+  /** The sequential version number. */
+  version: number | Computed<number>;
+}
+
+export interface Response_Data_Attributes {
+  /** Whether the form is currently active. */
+  active?: boolean | Computed<boolean>;
+  /** Whether the form accepts anonymous submissions. */
+  anonymous?: boolean | Computed<boolean>;
+  /** The time at which the form was created. */
+  createdAt?: string | Computed<string>;
+  /** A JSON Schema definition that describes the form's data fields. */
+  dataDefinition: Response_Data_Attributes_DataDefinition | Computed<Response_Data_Attributes_DataDefinition>;
+  /** The datastore configuration for a form. */
+  datastoreConfig?: Response_Data_Attributes_DatastoreConfig | Computed<Response_Data_Attributes_DatastoreConfig>;
   /** The description of the form. */
   description?: string | Computed<string>;
+  /** The date and time at which the form stops accepting responses. */
+  endDate?: string | Computed<string>;
+  /** Whether the current user has already submitted this form. Only present for forms with `single_response` set to `true`. */
+  hasSubmitted?: boolean | Computed<boolean>;
   /** Whether the form is an IDP survey. */
   idpSurvey?: boolean | Computed<boolean>;
+  /** The time at which the form was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the form. */
   name: string | Computed<string>;
+  /** The ID of the organization that owns this form. */
+  orgId?: number | Computed<number>;
+  /** The attributes of a form publication. */
+  publication?: Response_Data_Attributes_Publication | Computed<Response_Data_Attributes_Publication>;
+  /** Whether the form is available in the self-service catalog. */
+  selfService?: boolean | Computed<boolean>;
   /** Whether each user can only submit one response. */
   singleResponse?: boolean | Computed<boolean>;
   /** UI configuration for rendering form fields, including widget overrides, field ordering, and themes. */
   uiDefinition: Response_Data_Attributes_UiDefinition | Computed<Response_Data_Attributes_UiDefinition>;
+  /** The ID of the user who created this form. */
+  userId?: number | Computed<number>;
+  /** The UUID of the user who created this form. */
+  userUuid?: string | Computed<string>;
+  /** The attributes of a form version. */
+  version?: Response_Data_Attributes_Version | Computed<Response_Data_Attributes_Version>;
 }
 
 export interface Response_Data {
   /** The attributes for creating a form. */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** The ID of the form. */
+  id?: string | Computed<string>;
   /** The resource type for a form. */
   type: string | Computed<string>;
 }
@@ -49,24 +130,88 @@ const Response_Data_Attributes_DataDefinitionFields: FieldMap = {
   type: "type",
 };
 
+const Response_Data_Attributes_DatastoreConfigFields: FieldMap = {
+  datastoreId: "datastore_id",
+  primaryColumnName: "primary_column_name",
+  primaryKeyGenerationStrategy: "primary_key_generation_strategy",
+};
+
+const Response_Data_Attributes_PublicationFields: FieldMap = {
+  createdAt: "created_at",
+  formId: "form_id",
+  formVersion: "form_version",
+  id: "id",
+  modifiedAt: "modified_at",
+  orgId: "org_id",
+  publishSeq: "publish_seq",
+  userId: "user_id",
+  userUuid: "user_uuid",
+};
+
 const Response_Data_Attributes_UiDefinitionFields: FieldMap = {
 };
 
-const Response_Data_AttributesFields: FieldMap = {
-  anonymous: "anonymous",
+const Response_Data_Attributes_VersionFields: FieldMap = {
+  createdAt: "created_at",
   dataDefinition: {
     wireName: "data_definition",
     kind: "object",
     fields: Response_Data_Attributes_DataDefinitionFields,
   },
+  definitionSignature: "definition_signature",
+  etag: "etag",
+  id: "id",
+  modifiedAt: "modified_at",
+  state: "state",
+  uiDefinition: {
+    wireName: "ui_definition",
+    kind: "object",
+    fields: Response_Data_Attributes_UiDefinitionFields,
+  },
+  userId: "user_id",
+  userUuid: "user_uuid",
+  version: "version",
+};
+
+const Response_Data_AttributesFields: FieldMap = {
+  active: "active",
+  anonymous: "anonymous",
+  createdAt: "created_at",
+  dataDefinition: {
+    wireName: "data_definition",
+    kind: "object",
+    fields: Response_Data_Attributes_DataDefinitionFields,
+  },
+  datastoreConfig: {
+    wireName: "datastore_config",
+    kind: "object",
+    fields: Response_Data_Attributes_DatastoreConfigFields,
+  },
   description: "description",
+  endDate: "end_date",
+  hasSubmitted: "has_submitted",
   idpSurvey: "idp_survey",
+  modifiedAt: "modified_at",
   name: "name",
+  orgId: "org_id",
+  publication: {
+    wireName: "publication",
+    kind: "object",
+    fields: Response_Data_Attributes_PublicationFields,
+  },
+  selfService: "self_service",
   singleResponse: "single_response",
   uiDefinition: {
     wireName: "ui_definition",
     kind: "object",
     fields: Response_Data_Attributes_UiDefinitionFields,
+  },
+  userId: "user_id",
+  userUuid: "user_uuid",
+  version: {
+    wireName: "version",
+    kind: "object",
+    fields: Response_Data_Attributes_VersionFields,
   },
 };
 
@@ -76,6 +221,7 @@ const Response_DataFields: FieldMap = {
     kind: "object",
     fields: Response_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

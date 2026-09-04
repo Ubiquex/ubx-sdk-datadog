@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SecurityWafExclusionFilterResponse_Data_Attributes_Metadata:
+    # The creation date of the exclusion filter.
+    added_at: Any = None
+    # The handle of the user who created the exclusion filter.
+    added_by: Any = None
+    # The name of the user who created the exclusion filter.
+    added_by_name: Any = None
+    # The last modification date of the exclusion filter.
+    modified_at: Any = None
+    # The handle of the user who last modified the exclusion filter.
+    modified_by: Any = None
+    # The name of the user who last modified the exclusion filter.
+    modified_by_name: Any = None
+
+@dataclasses.dataclass
 class SecurityWafExclusionFilterResponse_Data_Attributes_RulesTarget_Tags:
     category: Any = None
     type: Any = None
@@ -27,8 +42,12 @@ class SecurityWafExclusionFilterResponse_Data_Attributes:
     description: Any = None
     # Indicates whether the exclusion filter is enabled.
     enabled: Any = None
+    # The event query matched by the legacy exclusion filter. Cannot be created nor updated.
+    event_query: Any = None
     # The client IP addresses matched by the exclusion filter (CIDR notation is supported).
     ip_list: Any = None
+    # Extra information about the exclusion filter.
+    metadata: Any = None
     # The action taken when the exclusion filter matches. When set to `monitor`, security traces are emitted but the requests are not blocked. By default, security traces are not emitted and the requests are not blocked.
     on_match: Any = None
     # A list of parameters matched by the exclusion filter in the HTTP query string and HTTP request body. Nested parameters can be matched by joining fields with a dot character.
@@ -39,13 +58,26 @@ class SecurityWafExclusionFilterResponse_Data_Attributes:
     rules_target: Any = None
     # The services where the exclusion filter is deployed.
     scope: Any = None
+    # Generated event search query for traces matching the exclusion filter.
+    search_query: Any = None
 
 @dataclasses.dataclass
 class SecurityWafExclusionFilterResponse_Data:
     # Attributes for creating a WAF exclusion filter.
     attributes: Any = None
+    # The identifier of the WAF exclusion filter.
+    id: Any = None
     # Type of the resource. The value should always be `exclusion_filter`.
     type: Any = None
+
+_SecurityWafExclusionFilterResponse_Data_Attributes_MetadataFields = {
+    "added_at": ubx.FieldSpec(wire_name="added_at"),
+    "added_by": ubx.FieldSpec(wire_name="added_by"),
+    "added_by_name": ubx.FieldSpec(wire_name="added_by_name"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(wire_name="modified_by"),
+    "modified_by_name": ubx.FieldSpec(wire_name="modified_by_name"),
+}
 
 _SecurityWafExclusionFilterResponse_Data_Attributes_RulesTarget_TagsFields = {
     "category": ubx.FieldSpec(wire_name="category"),
@@ -69,7 +101,13 @@ _SecurityWafExclusionFilterResponse_Data_Attributes_ScopeFields = {
 _SecurityWafExclusionFilterResponse_Data_AttributesFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "event_query": ubx.FieldSpec(wire_name="event_query"),
     "ip_list": ubx.FieldSpec(wire_name="ip_list"),
+    "metadata": ubx.FieldSpec(
+        wire_name="metadata",
+        kind="object",
+        fields=_SecurityWafExclusionFilterResponse_Data_Attributes_MetadataFields,
+    ),
     "on_match": ubx.FieldSpec(wire_name="on_match"),
     "parameters": ubx.FieldSpec(wire_name="parameters"),
     "path_glob": ubx.FieldSpec(wire_name="path_glob"),
@@ -83,6 +121,7 @@ _SecurityWafExclusionFilterResponse_Data_AttributesFields = {
         kind="list",
         fields=_SecurityWafExclusionFilterResponse_Data_Attributes_ScopeFields,
     ),
+    "search_query": ubx.FieldSpec(wire_name="search_query"),
 }
 
 _SecurityWafExclusionFilterResponse_DataFields = {
@@ -91,6 +130,7 @@ _SecurityWafExclusionFilterResponse_DataFields = {
         kind="object",
         fields=_SecurityWafExclusionFilterResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

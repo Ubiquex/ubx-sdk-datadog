@@ -4,35 +4,73 @@ package degradation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Degradation_Data_Attributes_ComponentsAffected struct {
-	Id any
-	Name any
+	Id     any
+	Name   any
 	Status any
+}
+
+type Degradation_Data_Attributes_Source struct {
+	// Timestamp of when the source was created.
+	CreatedAt any
+	// The ID of the source.
+	SourceId any
+	// The type of the source.
+	Type any
+}
+
+type Degradation_Data_Attributes_Updates struct {
+	ComponentsAffected     any
+	CreatedAt              any
+	DeletedAt              any
+	DeletedByUserUuid      any
+	Description            any
+	Id                     any
+	LastModifiedByUserUuid any
+	ModifiedAt             any
+	StartedAt              any
+	Status                 any
 }
 
 type Degradation_Data_Attributes struct {
 	// The components affected by the degradation.
 	ComponentsAffected any
+	// Timestamp of when the degradation was created.
+	CreatedAt any
 	// The description of the degradation.
 	Description any
+	// Whether the degradation was backfilled.
+	IsBackfilled any
+	// Timestamp of when the degradation was last modified.
+	ModifiedAt any
+	// The source of the degradation.
+	Source any
 	// The status of the degradation.
 	Status any
 	// The title of the degradation.
 	Title any
+	// Past updates made to the degradation.
+	Updates any
 }
 
-type Degradation_Data_Relationships_Template_Data struct {
-	// The ID of the degradation template.
+type Degradation_Data_Relationships_CreatedByUser_Data struct {
+	// The ID of the Datadog user who created the degradation.
 	Id any
-	// Degradation templates resource type.
+	// Users resource type.
 	Type any
 }
 
-type Degradation_Data_Relationships_Template struct {
-	// The data object identifying the template used to create the degradation.
+type Degradation_Data_Relationships_CreatedByUser struct {
+	// The data object identifying the Datadog user who created the degradation.
 	Data any
 }
 
 type Degradation_Data_Relationships struct {
+	// The Datadog user who created the degradation.
+	CreatedByUser any
+	// The Datadog user who last modified the degradation.
+	LastModifiedByUser any
+	// The status page the degradation belongs to.
+	StatusPage any
 	// The template used to create the degradation.
 	Template any
 }
@@ -40,6 +78,8 @@ type Degradation_Data_Relationships struct {
 type Degradation_Data struct {
 	// The supported attributes for creating a degradation.
 	Attributes any
+	// The ID of the degradation.
+	Id any
 	// The supported relationships for creating a degradation.
 	Relationships any
 	// Degradations resource type.
@@ -47,23 +87,23 @@ type Degradation_Data struct {
 }
 
 type Degradation_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type Degradation_Included_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type Degradation_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Degradation_Meta struct {
@@ -72,60 +112,112 @@ type Degradation_Meta struct {
 }
 
 var Degradation_Data_Attributes_ComponentsAffectedFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
+
+var Degradation_Data_Attributes_SourceFields = ubx.FieldMap{
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"SourceId":  ubx.FieldSpec{WireName: "source_id"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
+
+var Degradation_Data_Attributes_UpdatesFields = ubx.FieldMap{
+	"ComponentsAffected": ubx.FieldSpec{
+		WireName: "components_affected",
+		Kind:     "list",
+		Fields:   Degradation_Data_Attributes_ComponentsAffectedFields,
+	},
+	"CreatedAt":              ubx.FieldSpec{WireName: "created_at"},
+	"DeletedAt":              ubx.FieldSpec{WireName: "deleted_at"},
+	"DeletedByUserUuid":      ubx.FieldSpec{WireName: "deleted_by_user_uuid"},
+	"Description":            ubx.FieldSpec{WireName: "description"},
+	"Id":                     ubx.FieldSpec{WireName: "id"},
+	"LastModifiedByUserUuid": ubx.FieldSpec{WireName: "last_modified_by_user_uuid"},
+	"ModifiedAt":             ubx.FieldSpec{WireName: "modified_at"},
+	"StartedAt":              ubx.FieldSpec{WireName: "started_at"},
+	"Status":                 ubx.FieldSpec{WireName: "status"},
+}
 
 var Degradation_Data_AttributesFields = ubx.FieldMap{
-		"ComponentsAffected": ubx.FieldSpec{
-			WireName: "components_affected",
-			Kind: "list",
-			Fields: Degradation_Data_Attributes_ComponentsAffectedFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"ComponentsAffected": ubx.FieldSpec{
+		WireName: "components_affected",
+		Kind:     "list",
+		Fields:   Degradation_Data_Attributes_ComponentsAffectedFields,
+	},
+	"CreatedAt":    ubx.FieldSpec{WireName: "created_at"},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"IsBackfilled": ubx.FieldSpec{WireName: "is_backfilled"},
+	"ModifiedAt":   ubx.FieldSpec{WireName: "modified_at"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   Degradation_Data_Attributes_SourceFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+	"Title":  ubx.FieldSpec{WireName: "title"},
+	"Updates": ubx.FieldSpec{
+		WireName: "updates",
+		Kind:     "list",
+		Fields:   Degradation_Data_Attributes_UpdatesFields,
+	},
+}
 
-var Degradation_Data_Relationships_Template_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+var Degradation_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
-var Degradation_Data_Relationships_TemplateFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: Degradation_Data_Relationships_Template_DataFields,
-		},
-	}
+var Degradation_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Degradation_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var Degradation_Data_RelationshipsFields = ubx.FieldMap{
-		"Template": ubx.FieldSpec{
-			WireName: "template",
-			Kind: "object",
-			Fields: Degradation_Data_Relationships_TemplateFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   Degradation_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   Degradation_Data_Relationships_CreatedByUserFields,
+	},
+	"StatusPage": ubx.FieldSpec{
+		WireName: "status_page",
+		Kind:     "object",
+		Fields:   Degradation_Data_Relationships_CreatedByUserFields,
+	},
+	"Template": ubx.FieldSpec{
+		WireName: "template",
+		Kind:     "object",
+		Fields:   Degradation_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var Degradation_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Degradation_Data_AttributesFields,
-		},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: Degradation_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Degradation_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Degradation_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Degradation_MetaFields = ubx.FieldMap{
-		"IdempotencyKey": ubx.FieldSpec{WireName: "idempotency_key"},
-	}
+	"IdempotencyKey": ubx.FieldSpec{WireName: "idempotency_key"},
+}
 
 type DegradationConfig struct {
 	// The data object for creating a degradation.
@@ -156,15 +248,15 @@ var Degradation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Degradation_DataFields,
+			Kind:     "object",
+			Fields:   Degradation_DataFields,
 		},
 		"Meta": ubx.FieldSpec{
 			WireName: "meta",
-			Kind: "object",
-			Fields: Degradation_MetaFields,
+			Kind:     "object",
+			Fields:   Degradation_MetaFields,
 		},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"PageId":        ubx.FieldSpec{WireName: "page_id"},
 		"DegradationId": ubx.FieldSpec{WireName: "degradation_id"},
 	},
 }

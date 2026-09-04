@@ -4,16 +4,16 @@ package monitor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DowntimeMatchResponseData_Data_Attributes struct {
-	End any
+	End    any
 	Groups any
-	Scope any
-	Start any
+	Scope  any
+	Start  any
 }
 
 type DowntimeMatchResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DowntimeMatchResponseData_Meta_Page struct {
@@ -34,7 +34,7 @@ type DowntimeMatchResponseDataAttrs struct {
 	// An array of downtime matches.
 	Data any
 	// Pagination metadata returned by the API.
-	Meta any
+	Meta      any
 	MonitorId any
 }
 

@@ -5,44 +5,44 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SharedDashboardsResponse_Data_Attributes_Invitees struct {
 	AccessExpiration any
-	CreatedAt any
-	Email any
+	CreatedAt        any
+	Email            any
 }
 
 type SharedDashboardsResponse_Data_Attributes_SelectableTemplateVars struct {
 	AllowAnyValue any
 	DefaultValues any
-	Name any
-	Prefix any
-	Type any
-	VisibleTags any
+	Name          any
+	Prefix        any
+	Type          any
+	VisibleTags   any
 }
 
 type SharedDashboardsResponse_Data_Attributes_ViewingPreferences struct {
 	HighDensity any
-	Theme any
+	Theme       any
 }
 
 type SharedDashboardsResponse_Data_Attributes struct {
-	CreatedAt any
-	EmbeddableDomains any
-	Expiration any
-	GlobalTime any
-	GlobalTimeSelectable any
-	Invitees any
-	LastAccessed any
+	CreatedAt              any
+	EmbeddableDomains      any
+	Expiration             any
+	GlobalTime             any
+	GlobalTimeSelectable   any
+	Invitees               any
+	LastAccessed           any
 	SelectableTemplateVars any
-	ShareType any
-	SharerDisabled any
-	Status any
-	Title any
-	Token any
-	Url any
-	ViewingPreferences any
+	ShareType              any
+	SharerDisabled         any
+	Status                 any
+	Title                  any
+	Token                  any
+	Url                    any
+	ViewingPreferences     any
 }
 
 type SharedDashboardsResponse_Data_Relationships_Dashboard_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -52,14 +52,14 @@ type SharedDashboardsResponse_Data_Relationships_Dashboard struct {
 
 type SharedDashboardsResponse_Data_Relationships struct {
 	Dashboard any
-	Sharer any
+	Sharer    any
 }
 
 type SharedDashboardsResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type SharedDashboardsResponse_Included_Attributes struct {
@@ -68,8 +68,8 @@ type SharedDashboardsResponse_Included_Attributes struct {
 
 type SharedDashboardsResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type SharedDashboardsResponseConfig struct {

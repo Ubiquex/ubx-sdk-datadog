@@ -5,34 +5,34 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AppsResponse_Data_Attributes struct {
 	Description any
-	Favorite any
-	Name any
+	Favorite    any
+	Name        any
 	SelfService any
-	Tags any
+	Tags        any
 }
 
 type AppsResponse_Data_Meta struct {
-	CreatedAt any
-	DeletedAt any
-	OrgId any
-	UpdatedAt any
+	CreatedAt              any
+	DeletedAt              any
+	OrgId                  any
+	UpdatedAt              any
 	UpdatedSinceDeployment any
-	UserId any
-	UserName any
-	UserUuid any
-	Version any
+	UserId                 any
+	UserName               any
+	UserUuid               any
+	Version                any
 }
 
 type AppsResponse_Data_Relationships_Deployment_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
 type AppsResponse_Data_Relationships_Deployment_Meta struct {
 	CreatedAt any
-	UserId any
-	UserName any
-	UserUuid any
+	UserId    any
+	UserName  any
+	UserUuid  any
 }
 
 type AppsResponse_Data_Relationships_Deployment struct {
@@ -45,11 +45,11 @@ type AppsResponse_Data_Relationships struct {
 }
 
 type AppsResponse_Data struct {
-	Attributes any
-	Id any
-	Meta any
+	Attributes    any
+	Id            any
+	Meta          any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type AppsResponse_Included_Attributes struct {
@@ -58,9 +58,9 @@ type AppsResponse_Included_Attributes struct {
 
 type AppsResponse_Included struct {
 	Attributes any
-	Id any
-	Meta any
-	Type any
+	Id         any
+	Meta       any
+	Type       any
 }
 
 type AppsResponse_Meta_Page struct {
@@ -77,8 +77,8 @@ type AppsResponse_Meta struct {
 
 type AppsResponseConfig struct {
 	Limit any
-	Page any
-	Sort any
+	Page  any
+	Sort  any
 }
 
 type AppsResponseAttrs struct {
@@ -86,7 +86,7 @@ type AppsResponseAttrs struct {
 	Data any
 	// Data on the version of the app that was published.
 	Included any
-	Limit any
+	Limit    any
 	// Pagination metadata.
 	Meta any
 	Page any
@@ -97,7 +97,7 @@ var AppsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_list_apps_response",
 	Fields: ubx.FieldMap{
 		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Page":  ubx.FieldSpec{WireName: "page"},
+		"Sort":  ubx.FieldSpec{WireName: "sort"},
 	},
 }

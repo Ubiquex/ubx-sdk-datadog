@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringCriticalAsset_Data_Attributes_Creator struct {
 	Handle any
-	Name any
+	Name   any
 }
 
 type MonitoringCriticalAsset_Data_Attributes struct {
 	CreationAuthorId any
-	CreationDate any
-	Creator any
-	Description any
-	Editable any
-	Enabled any
-	Query any
-	RuleQuery any
-	Severity any
-	Tags any
-	UpdateAuthorId any
-	UpdateDate any
-	Updater any
-	Version any
+	CreationDate     any
+	Creator          any
+	Description      any
+	Editable         any
+	Enabled          any
+	Query            any
+	RuleQuery        any
+	Severity         any
+	Tags             any
+	UpdateAuthorId   any
+	UpdateDate       any
+	Updater          any
+	Version          any
 }
 
 type MonitoringCriticalAsset_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MonitoringCriticalAssetConfig struct {
@@ -41,6 +41,5 @@ type MonitoringCriticalAssetAttrs struct {
 
 var MonitoringCriticalAsset = ubx.DataSourceBinding{
 	WireType: "datadog_security_monitoring_critical_asset",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

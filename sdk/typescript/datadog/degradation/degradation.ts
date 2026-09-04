@@ -7,37 +7,77 @@ export interface Degradation_Data_Attributes_ComponentsAffected {
   status?: string | Computed<string>;
 }
 
+export interface Degradation_Data_Attributes_Source {
+  /** Timestamp of when the source was created. */
+  createdAt: string | Computed<string>;
+  /** The ID of the source. */
+  sourceId: string | Computed<string>;
+  /** The type of the source. */
+  type: string | Computed<string>;
+}
+
+export interface Degradation_Data_Attributes_Updates {
+  componentsAffected?: Degradation_Data_Attributes_ComponentsAffected[] | Computed<Degradation_Data_Attributes_ComponentsAffected[]>;
+  createdAt?: string | Computed<string>;
+  deletedAt?: string | Computed<string>;
+  deletedByUserUuid?: string | Computed<string>;
+  description?: string | Computed<string>;
+  id?: string | Computed<string>;
+  lastModifiedByUserUuid?: string | Computed<string>;
+  modifiedAt?: string | Computed<string>;
+  startedAt?: string | Computed<string>;
+  status?: string | Computed<string>;
+}
+
 export interface Degradation_Data_Attributes {
   /** The components affected by the degradation. */
   componentsAffected: Degradation_Data_Attributes_ComponentsAffected[] | Computed<Degradation_Data_Attributes_ComponentsAffected[]>;
+  /** Timestamp of when the degradation was created. */
+  createdAt?: string | Computed<string>;
   /** The description of the degradation. */
   description?: string | Computed<string>;
+  /** Whether the degradation was backfilled. */
+  isBackfilled?: boolean | Computed<boolean>;
+  /** Timestamp of when the degradation was last modified. */
+  modifiedAt?: string | Computed<string>;
+  /** The source of the degradation. */
+  source?: Degradation_Data_Attributes_Source | Computed<Degradation_Data_Attributes_Source>;
   /** The status of the degradation. */
   status: string | Computed<string>;
   /** The title of the degradation. */
   title: string | Computed<string>;
+  /** Past updates made to the degradation. */
+  updates?: Degradation_Data_Attributes_Updates[] | Computed<Degradation_Data_Attributes_Updates[]>;
 }
 
-export interface Degradation_Data_Relationships_Template_Data {
-  /** The ID of the degradation template. */
+export interface Degradation_Data_Relationships_CreatedByUser_Data {
+  /** The ID of the Datadog user who created the degradation. */
   id: string | Computed<string>;
-  /** Degradation templates resource type. */
+  /** Users resource type. */
   type: string | Computed<string>;
 }
 
-export interface Degradation_Data_Relationships_Template {
-  /** The data object identifying the template used to create the degradation. */
-  data: Degradation_Data_Relationships_Template_Data | Computed<Degradation_Data_Relationships_Template_Data>;
+export interface Degradation_Data_Relationships_CreatedByUser {
+  /** The data object identifying the Datadog user who created the degradation. */
+  data: Degradation_Data_Relationships_CreatedByUser_Data | Computed<Degradation_Data_Relationships_CreatedByUser_Data>;
 }
 
 export interface Degradation_Data_Relationships {
+  /** The Datadog user who created the degradation. */
+  createdByUser?: Degradation_Data_Relationships_CreatedByUser | Computed<Degradation_Data_Relationships_CreatedByUser>;
+  /** The Datadog user who last modified the degradation. */
+  lastModifiedByUser?: Degradation_Data_Relationships_CreatedByUser | Computed<Degradation_Data_Relationships_CreatedByUser>;
+  /** The status page the degradation belongs to. */
+  statusPage?: Degradation_Data_Relationships_CreatedByUser | Computed<Degradation_Data_Relationships_CreatedByUser>;
   /** The template used to create the degradation. */
-  template?: Degradation_Data_Relationships_Template | Computed<Degradation_Data_Relationships_Template>;
+  template?: Degradation_Data_Relationships_CreatedByUser | Computed<Degradation_Data_Relationships_CreatedByUser>;
 }
 
 export interface Degradation_Data {
   /** The supported attributes for creating a degradation. */
   attributes: Degradation_Data_Attributes | Computed<Degradation_Data_Attributes>;
+  /** The ID of the degradation. */
+  id?: string | Computed<string>;
   /** The supported relationships for creating a degradation. */
   relationships?: Degradation_Data_Relationships | Computed<Degradation_Data_Relationships>;
   /** Degradations resource type. */
@@ -53,8 +93,8 @@ export interface Degradation_Included_Attributes {
 }
 
 export interface Degradation_Included_Relationships {
-  createdByUser?: Degradation_Data_Relationships_Template | Computed<Degradation_Data_Relationships_Template>;
-  lastModifiedByUser?: Degradation_Data_Relationships_Template | Computed<Degradation_Data_Relationships_Template>;
+  createdByUser?: Degradation_Data_Relationships_CreatedByUser | Computed<Degradation_Data_Relationships_CreatedByUser>;
+  lastModifiedByUser?: Degradation_Data_Relationships_CreatedByUser | Computed<Degradation_Data_Relationships_CreatedByUser>;
 }
 
 export interface Degradation_Included {
@@ -75,35 +115,86 @@ const Degradation_Data_Attributes_ComponentsAffectedFields: FieldMap = {
   status: "status",
 };
 
+const Degradation_Data_Attributes_SourceFields: FieldMap = {
+  createdAt: "created_at",
+  sourceId: "source_id",
+  type: "type",
+};
+
+const Degradation_Data_Attributes_UpdatesFields: FieldMap = {
+  componentsAffected: {
+    wireName: "components_affected",
+    kind: "list",
+    fields: Degradation_Data_Attributes_ComponentsAffectedFields,
+  },
+  createdAt: "created_at",
+  deletedAt: "deleted_at",
+  deletedByUserUuid: "deleted_by_user_uuid",
+  description: "description",
+  id: "id",
+  lastModifiedByUserUuid: "last_modified_by_user_uuid",
+  modifiedAt: "modified_at",
+  startedAt: "started_at",
+  status: "status",
+};
+
 const Degradation_Data_AttributesFields: FieldMap = {
   componentsAffected: {
     wireName: "components_affected",
     kind: "list",
     fields: Degradation_Data_Attributes_ComponentsAffectedFields,
   },
+  createdAt: "created_at",
   description: "description",
+  isBackfilled: "is_backfilled",
+  modifiedAt: "modified_at",
+  source: {
+    wireName: "source",
+    kind: "object",
+    fields: Degradation_Data_Attributes_SourceFields,
+  },
   status: "status",
   title: "title",
+  updates: {
+    wireName: "updates",
+    kind: "list",
+    fields: Degradation_Data_Attributes_UpdatesFields,
+  },
 };
 
-const Degradation_Data_Relationships_Template_DataFields: FieldMap = {
+const Degradation_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
   id: "id",
   type: "type",
 };
 
-const Degradation_Data_Relationships_TemplateFields: FieldMap = {
+const Degradation_Data_Relationships_CreatedByUserFields: FieldMap = {
   data: {
     wireName: "data",
     kind: "object",
-    fields: Degradation_Data_Relationships_Template_DataFields,
+    fields: Degradation_Data_Relationships_CreatedByUser_DataFields,
   },
 };
 
 const Degradation_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: Degradation_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: Degradation_Data_Relationships_CreatedByUserFields,
+  },
+  statusPage: {
+    wireName: "status_page",
+    kind: "object",
+    fields: Degradation_Data_Relationships_CreatedByUserFields,
+  },
   template: {
     wireName: "template",
     kind: "object",
-    fields: Degradation_Data_Relationships_TemplateFields,
+    fields: Degradation_Data_Relationships_CreatedByUserFields,
   },
 };
 
@@ -113,6 +204,7 @@ const Degradation_DataFields: FieldMap = {
     kind: "object",
     fields: Degradation_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

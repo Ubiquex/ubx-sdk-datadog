@@ -17,6 +17,8 @@ class ChatTargetAudienceResponse_Data_Attributes:
 class ChatTargetAudienceResponse_Data:
     # Attributes for creating a Google Chat target audience.
     attributes: Any = None
+    # The ID of the target audience.
+    id: Any = None
     # Google Chat target audience resource type.
     type: Any = None
 
@@ -31,6 +33,7 @@ _ChatTargetAudienceResponse_DataFields = {
         kind="object",
         fields=_ChatTargetAudienceResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

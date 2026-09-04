@@ -8,14 +8,14 @@ type HandlesResponse_Data_Attributes_Fields struct {
 }
 
 type HandlesResponse_Data_Attributes struct {
-	CreatedAt any
-	Fields any
+	CreatedAt  any
+	Fields     any
 	ModifiedAt any
-	Name any
+	Name       any
 }
 
 type HandlesResponse_Data_Relationships_CommanderUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -24,40 +24,40 @@ type HandlesResponse_Data_Relationships_CommanderUser struct {
 }
 
 type HandlesResponse_Data_Relationships struct {
-	CommanderUser any
-	CreatedByUser any
-	IncidentType any
+	CommanderUser      any
+	CreatedByUser      any
+	IncidentType       any
 	LastModifiedByUser any
 }
 
 type HandlesResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type HandlesResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type HandlesResponse_Included_Relationships struct {
-	CreatedByUser any
-	GoogleMeetConfiguration any
-	LastModifiedByUser any
+	CreatedByUser               any
+	GoogleMeetConfiguration     any
+	LastModifiedByUser          any
 	MicrosoftTeamsConfiguration any
-	ZoomConfiguration any
+	ZoomConfiguration           any
 }
 
 type HandlesResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type HandlesResponseConfig struct {
@@ -66,7 +66,7 @@ type HandlesResponseConfig struct {
 
 type HandlesResponseAttrs struct {
 	// Array of incident handle data objects returned in a list response.
-	Data any
+	Data    any
 	Include any
 	// Included related resources
 	Included any

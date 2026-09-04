@@ -2,6 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RequestResponse_Data_Attributes {
+  /** Timestamp of when the change request was archived. */
+  archivedAt?: string | Computed<string>;
+  /** Custom attributes of the change request as key-value pairs. */
+  attributes?: Record<string, string[]> | Computed<Record<string, string[]>>;
   /** The UUID of an incident to link to the change request. */
   changeRequestLinkedIncidentUuid?: string | Computed<string>;
   /** The maintenance window query for the change request. */
@@ -12,23 +16,69 @@ export interface RequestResponse_Data_Attributes {
   changeRequestRisk?: string | Computed<string>;
   /** The type of the change request. */
   changeRequestType?: string | Computed<string>;
+  /** Timestamp of when the change request was closed. */
+  closedAt?: string | Computed<string>;
+  /** Timestamp of when the change request was created. */
+  createdAt?: string | Computed<string>;
+  /** The source from which the change request was created. */
+  creationSource?: string | Computed<string>;
   /** The description of the change request. */
   description?: string | Computed<string>;
   /** The planned end date of the change request. */
   endDate?: string | Computed<string>;
+  /** The human-readable key of the change request. */
+  key?: string | Computed<string>;
+  /** Timestamp of when the change request was last modified. */
+  modifiedAt?: string | Computed<string>;
+  /** The notebook ID associated with the change request plan. */
+  planNotebookId?: number | Computed<number>;
+  /** The priority of the change request. */
+  priority?: string | Computed<string>;
   /** The project UUID to associate with the change request. */
   projectId?: string | Computed<string>;
   /** A list of team handles to request decisions from. */
   requestedTeams?: string[] | Computed<string[]>;
   /** The planned start date of the change request. */
   startDate?: string | Computed<string>;
+  /** The current status of the change request. */
+  status?: string | Computed<string>;
   /** The title of the change request. */
   title: string | Computed<string>;
+  /** The case type. */
+  type?: string | Computed<string>;
+}
+
+export interface RequestResponse_Data_Relationships_ChangeRequestDecisions_Data {
+  id?: string | Computed<string>;
+  type?: string | Computed<string>;
+}
+
+export interface RequestResponse_Data_Relationships_ChangeRequestDecisions {
+  /** Array of decision relationship data. */
+  data: RequestResponse_Data_Relationships_ChangeRequestDecisions_Data[] | Computed<RequestResponse_Data_Relationships_ChangeRequestDecisions_Data[]>;
+}
+
+export interface RequestResponse_Data_Relationships_CreatedBy {
+  /** User relationship data. */
+  data: RequestResponse_Data_Relationships_ChangeRequestDecisions_Data | Computed<RequestResponse_Data_Relationships_ChangeRequestDecisions_Data>;
+}
+
+export interface RequestResponse_Data_Relationships {
+  /** Relationship to change request decisions. */
+  changeRequestDecisions: RequestResponse_Data_Relationships_ChangeRequestDecisions | Computed<RequestResponse_Data_Relationships_ChangeRequestDecisions>;
+  /** Relationship to a user. */
+  createdBy: RequestResponse_Data_Relationships_CreatedBy | Computed<RequestResponse_Data_Relationships_CreatedBy>;
+  /** Relationship to a user. */
+  modifiedBy: RequestResponse_Data_Relationships_CreatedBy | Computed<RequestResponse_Data_Relationships_CreatedBy>;
 }
 
 export interface RequestResponse_Data {
   /** Attributes for creating a change request. */
   attributes: RequestResponse_Data_Attributes | Computed<RequestResponse_Data_Attributes>;
+  /** The identifier of the change request. */
+  id?: string | Computed<string>;
+  /** Relationships of a change request. */
+  relationships?: RequestResponse_Data_Relationships | Computed<RequestResponse_Data_Relationships>;
   /** Change request resource type. */
   type: string | Computed<string>;
 }
@@ -39,19 +89,10 @@ export interface RequestResponse_Included_Attributes {
   name?: string | Computed<string>;
 }
 
-export interface RequestResponse_Included_Relationships_ModifiedBy_Data {
-  id?: string | Computed<string>;
-  type?: string | Computed<string>;
-}
-
-export interface RequestResponse_Included_Relationships_ModifiedBy {
-  data?: RequestResponse_Included_Relationships_ModifiedBy_Data | Computed<RequestResponse_Included_Relationships_ModifiedBy_Data>;
-}
-
 export interface RequestResponse_Included_Relationships {
-  modifiedBy?: RequestResponse_Included_Relationships_ModifiedBy | Computed<RequestResponse_Included_Relationships_ModifiedBy>;
-  requestedByUser?: RequestResponse_Included_Relationships_ModifiedBy | Computed<RequestResponse_Included_Relationships_ModifiedBy>;
-  requestedUser?: RequestResponse_Included_Relationships_ModifiedBy | Computed<RequestResponse_Included_Relationships_ModifiedBy>;
+  modifiedBy?: RequestResponse_Data_Relationships_CreatedBy | Computed<RequestResponse_Data_Relationships_CreatedBy>;
+  requestedByUser?: RequestResponse_Data_Relationships_CreatedBy | Computed<RequestResponse_Data_Relationships_CreatedBy>;
+  requestedUser?: RequestResponse_Data_Relationships_CreatedBy | Computed<RequestResponse_Data_Relationships_CreatedBy>;
 }
 
 export interface RequestResponse_Included {
@@ -62,17 +103,67 @@ export interface RequestResponse_Included {
 }
 
 const RequestResponse_Data_AttributesFields: FieldMap = {
+  archivedAt: "archived_at",
+  attributes: "attributes",
   changeRequestLinkedIncidentUuid: "change_request_linked_incident_uuid",
   changeRequestMaintenanceWindowQuery: "change_request_maintenance_window_query",
   changeRequestPlan: "change_request_plan",
   changeRequestRisk: "change_request_risk",
   changeRequestType: "change_request_type",
+  closedAt: "closed_at",
+  createdAt: "created_at",
+  creationSource: "creation_source",
   description: "description",
   endDate: "end_date",
+  key: "key",
+  modifiedAt: "modified_at",
+  planNotebookId: "plan_notebook_id",
+  priority: "priority",
   projectId: "project_id",
   requestedTeams: "requested_teams",
   startDate: "start_date",
+  status: "status",
   title: "title",
+  type: "type",
+};
+
+const RequestResponse_Data_Relationships_ChangeRequestDecisions_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const RequestResponse_Data_Relationships_ChangeRequestDecisionsFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "list",
+    fields: RequestResponse_Data_Relationships_ChangeRequestDecisions_DataFields,
+  },
+};
+
+const RequestResponse_Data_Relationships_CreatedByFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: RequestResponse_Data_Relationships_ChangeRequestDecisions_DataFields,
+  },
+};
+
+const RequestResponse_Data_RelationshipsFields: FieldMap = {
+  changeRequestDecisions: {
+    wireName: "change_request_decisions",
+    kind: "object",
+    fields: RequestResponse_Data_Relationships_ChangeRequestDecisionsFields,
+  },
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: RequestResponse_Data_Relationships_CreatedByFields,
+  },
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: RequestResponse_Data_Relationships_CreatedByFields,
+  },
 };
 
 const RequestResponse_DataFields: FieldMap = {
@@ -80,6 +171,12 @@ const RequestResponse_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: RequestResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: RequestResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

@@ -18,6 +18,24 @@ class Pair_Data_Attributes_ActualBillConfig:
     storage_container: Any = None
 
 @dataclasses.dataclass
+class Pair_Data_Attributes_Configs:
+    account_id: Any = None
+    client_id: Any = None
+    created_at: Any = None
+    dataset_type: Any = None
+    error_messages: Any = None
+    export_name: Any = None
+    export_path: Any = None
+    id: Any = None
+    months: Any = None
+    scope: Any = None
+    status: Any = None
+    status_updated_at: Any = None
+    storage_account: Any = None
+    storage_container: Any = None
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class Pair_Data_Attributes:
     # The tenant ID of the Azure account.
     account_id: Any = None
@@ -27,6 +45,8 @@ class Pair_Data_Attributes:
     amortized_bill_config: Any = None
     # The client ID of the Azure account.
     client_id: Any = None
+    # The `attributes` `configs`.
+    configs: Any = None
     # The scope of your observed subscription.
     scope: Any = None
 
@@ -34,6 +54,8 @@ class Pair_Data_Attributes:
 class Pair_Data:
     # Attributes for Azure config Post Request.
     attributes: Any = None
+    # The `UCConfigPairData` `id`.
+    id: Any = None
     # Type of Azure config Post Request.
     type: Any = None
 
@@ -42,6 +64,24 @@ _Pair_Data_Attributes_ActualBillConfigFields = {
     "export_path": ubx.FieldSpec(wire_name="export_path"),
     "storage_account": ubx.FieldSpec(wire_name="storage_account"),
     "storage_container": ubx.FieldSpec(wire_name="storage_container"),
+}
+
+_Pair_Data_Attributes_ConfigsFields = {
+    "account_id": ubx.FieldSpec(wire_name="account_id"),
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "dataset_type": ubx.FieldSpec(wire_name="dataset_type"),
+    "error_messages": ubx.FieldSpec(wire_name="error_messages"),
+    "export_name": ubx.FieldSpec(wire_name="export_name"),
+    "export_path": ubx.FieldSpec(wire_name="export_path"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "months": ubx.FieldSpec(wire_name="months"),
+    "scope": ubx.FieldSpec(wire_name="scope"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "status_updated_at": ubx.FieldSpec(wire_name="status_updated_at"),
+    "storage_account": ubx.FieldSpec(wire_name="storage_account"),
+    "storage_container": ubx.FieldSpec(wire_name="storage_container"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
 }
 
 _Pair_Data_AttributesFields = {
@@ -57,6 +97,11 @@ _Pair_Data_AttributesFields = {
         fields=_Pair_Data_Attributes_ActualBillConfigFields,
     ),
     "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "configs": ubx.FieldSpec(
+        wire_name="configs",
+        kind="list",
+        fields=_Pair_Data_Attributes_ConfigsFields,
+    ),
     "scope": ubx.FieldSpec(wire_name="scope"),
 }
 
@@ -66,6 +111,7 @@ _Pair_DataFields = {
         kind="object",
         fields=_Pair_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

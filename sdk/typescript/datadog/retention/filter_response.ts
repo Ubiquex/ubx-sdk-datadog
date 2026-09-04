@@ -7,12 +7,24 @@ export interface FilterResponse_Data_Attributes_Filter {
 }
 
 export interface FilterResponse_Data_Attributes {
+  /** The creation timestamp of the retention filter. */
+  createdAt?: number | Computed<number>;
+  /** The creator of the retention filter. */
+  createdBy?: string | Computed<string>;
+  /** Shows whether the filter can be edited. */
+  editable?: boolean | Computed<boolean>;
   /** Enable/Disable the retention filter. */
   enabled: boolean | Computed<boolean>;
+  /** The execution order of the retention filter. */
+  executionOrder?: number | Computed<number>;
   /** The spans filter. Spans matching this filter will be indexed and stored. */
   filter: FilterResponse_Data_Attributes_Filter | Computed<FilterResponse_Data_Attributes_Filter>;
   /** The type of retention filter. */
   filterType: string | Computed<string>;
+  /** The modification timestamp of the retention filter. */
+  modifiedAt?: number | Computed<number>;
+  /** The modifier of the retention filter. */
+  modifiedBy?: string | Computed<string>;
   /** The name of the retention filter. */
   name: string | Computed<string>;
   /** Sample rate to apply to spans going through this retention filter. A value of 1.0 keeps all spans matching the query. */
@@ -35,13 +47,19 @@ const FilterResponse_Data_Attributes_FilterFields: FieldMap = {
 };
 
 const FilterResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  createdBy: "created_by",
+  editable: "editable",
   enabled: "enabled",
+  executionOrder: "execution_order",
   filter: {
     wireName: "filter",
     kind: "object",
     fields: FilterResponse_Data_Attributes_FilterFields,
   },
   filterType: "filter_type",
+  modifiedAt: "modified_at",
+  modifiedBy: "modified_by",
   name: "name",
   rate: "rate",
   traceRate: "trace_rate",

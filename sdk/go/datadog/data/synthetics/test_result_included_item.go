@@ -118,16 +118,16 @@ type TestResultIncludedItem_Data_Attributes_Location struct {
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Assertions struct {
-	Actual any
-	ErrorMessage any
-	Expected any
-	Operator any
-	Property any
-	Target any
-	TargetPath any
+	Actual             any
+	ErrorMessage       any
+	Expected           any
+	Operator           any
+	Property           any
+	Target             any
+	TargetPath         any
 	TargetPathOperator any
-	Type any
-	Valid any
+	Type               any
+	Valid              any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_BucketKeys struct {
@@ -213,10 +213,10 @@ type TestResultIncludedItem_Data_Attributes_Result_Failure struct {
 
 type TestResultIncludedItem_Data_Attributes_Result_Handshake_Request_Files struct {
 	BucketKey any
-	Encoding any
-	Name any
-	Size any
-	Type any
+	Encoding  any
+	Name      any
+	Size      any
+	Type      any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Handshake_Request struct {
@@ -293,12 +293,12 @@ type TestResultIncludedItem_Data_Attributes_Result_Handshake_Response_Healthchec
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Handshake_Response_Records struct {
-	Type any
+	Type   any
 	Values any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Handshake_Response_Redirects struct {
-	Location any
+	Location   any
 	StatusCode any
 }
 
@@ -358,11 +358,11 @@ type TestResultIncludedItem_Data_Attributes_Result_Netpath_Destination struct {
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Netpath_Hops struct {
-	Hostname any
+	Hostname  any
 	IpAddress any
 	Reachable any
-	Rtt any
-	Ttl any
+	Rtt       any
+	Ttl       any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Netpath_Source struct {
@@ -441,7 +441,7 @@ type TestResultIncludedItem_Data_Attributes_Result_Ocsp struct {
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Ping_Routers struct {
-	Ip any
+	Ip           any
 	ResolvedHost any
 }
 
@@ -465,52 +465,52 @@ type TestResultIncludedItem_Data_Attributes_Result_Ping struct {
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_AssertionResult struct {
-	Actual any
-	CheckType any
-	Expected any
+	Actual             any
+	CheckType          any
+	Expected           any
 	HasSecureVariables any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_Bounds struct {
 	Height any
-	Width any
-	X any
-	Y any
+	Width  any
+	X      any
+	Y      any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_BrowserErrors struct {
 	Description any
-	Method any
-	Name any
-	Status any
-	Type any
-	Url any
+	Method      any
+	Name        any
+	Status      any
+	Type        any
+	Url         any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_CdnResources struct {
-	Cdn any
+	Cdn        any
 	ResolvedIp any
-	Timestamp any
-	Timings any
+	Timestamp  any
+	Timings    any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_ElementUpdates struct {
-	MultiLocator any
+	MultiLocator    any
 	TargetOuterHtml any
-	Version any
+	Version         any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_ExtractedValue struct {
-	Err any
+	Err          any
 	ErrorMessage any
-	Example any
-	Id any
-	Name any
-	Pattern any
-	Secure any
-	Type any
-	Val any
-	Value any
+	Example      any
+	Id           any
+	Name         any
+	Pattern      any
+	Secure       any
+	Type         any
+	Val          any
+	Value        any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_Retries struct {
@@ -518,92 +518,92 @@ type TestResultIncludedItem_Data_Attributes_Result_Steps_Retries struct {
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_RumContext struct {
 	ApplicationId any
-	SessionId any
-	ViewId any
+	SessionId     any
+	ViewId        any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_SubStep struct {
-	Level any
+	Level      any
 	ParentStep any
 	ParentTest any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_SubTest struct {
-	Id any
+	Id         any
 	PlayingTab any
 	RumContext any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_Tabs struct {
 	Focused any
-	Title any
-	Url any
+	Title   any
+	Url     any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_Variables struct {
-	Config any
+	Config    any
 	Extracted any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_VitalsMetrics struct {
-	Cls any
-	Fcp any
-	Inp any
-	Lcp any
+	Cls  any
+	Fcp  any
+	Inp  any
+	Lcp  any
 	Ttfb any
-	Url any
+	Url  any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps_Warnings struct {
 	ElementBounds any
-	Message any
-	Type any
+	Message       any
+	Type          any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Steps struct {
-	AllowFailure any
-	ApiTest any
-	AssertionResult any
-	Assertions any
-	BlockedRequestsUrls any
-	Bounds any
-	BrowserErrors any
-	BucketKeys any
-	CdnResources any
-	ClickType any
-	CompressedJsonDescriptor any
-	Config any
-	Description any
-	Duration any
-	ElementDescription any
-	ElementUpdates any
-	ExtractedValue any
-	Failure any
-	HttpResults any
-	Id any
-	IsCritical any
+	AllowFailure                  any
+	ApiTest                       any
+	AssertionResult               any
+	Assertions                    any
+	BlockedRequestsUrls           any
+	Bounds                        any
+	BrowserErrors                 any
+	BucketKeys                    any
+	CdnResources                  any
+	ClickType                     any
+	CompressedJsonDescriptor      any
+	Config                        any
+	Description                   any
+	Duration                      any
+	ElementDescription            any
+	ElementUpdates                any
+	ExtractedValue                any
+	Failure                       any
+	HttpResults                   any
+	Id                            any
+	IsCritical                    any
 	JavascriptCustomAssertionCode any
-	LocateElementDuration any
-	Name any
-	Request any
-	Response any
-	Retries any
-	RetryCount any
-	RumContext any
-	StartedAt any
-	Status any
-	SubStep any
-	SubTest any
-	Subtype any
-	Tabs any
-	Timings any
-	Tunnel any
-	Type any
-	Url any
-	Value any
-	Variables any
-	VitalsMetrics any
-	Warnings any
+	LocateElementDuration         any
+	Name                          any
+	Request                       any
+	Response                      any
+	Retries                       any
+	RetryCount                    any
+	RumContext                    any
+	StartedAt                     any
+	Status                        any
+	SubStep                       any
+	SubTest                       any
+	Subtype                       any
+	Tabs                          any
+	Timings                       any
+	Tunnel                        any
+	Type                          any
+	Url                           any
+	Value                         any
+	Variables                     any
+	VitalsMetrics                 any
+	Warnings                      any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Trace struct {
@@ -615,17 +615,17 @@ type TestResultIncludedItem_Data_Attributes_Result_Trace struct {
 
 type TestResultIncludedItem_Data_Attributes_Result_Turns_Steps struct {
 	BucketKeys any
-	Config any
+	Config     any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result_Turns struct {
-	BucketKeys any
-	Name any
-	Reasoning any
-	Status any
-	Steps any
+	BucketKeys     any
+	Name           any
+	Reasoning      any
+	Status         any
+	Steps          any
 	TurnFinishedAt any
-	TurnStartedAt any
+	TurnStartedAt  any
 }
 
 type TestResultIncludedItem_Data_Attributes_Result struct {
@@ -762,34 +762,34 @@ type TestResultIncludedItem_Data struct {
 
 type TestResultIncludedItem_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TestResultIncludedItemConfig struct {
-	EventId any
-	PublicId any
-	ResultId any
+	EventId   any
+	PublicId  any
+	ResultId  any
 	Timestamp any
 }
 
 type TestResultIncludedItemAttrs struct {
 	// Wrapper object for a Synthetic test result.
-	Data any
+	Data    any
 	EventId any
 	// Array of included related resources, such as the test definition.
-	Included any
-	PublicId any
-	ResultId any
+	Included  any
+	PublicId  any
+	ResultId  any
 	Timestamp any
 }
 
 var TestResultIncludedItem = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_test_result_included_item",
 	Fields: ubx.FieldMap{
-		"EventId": ubx.FieldSpec{WireName: "event_id"},
-		"PublicId": ubx.FieldSpec{WireName: "public_id"},
-		"ResultId": ubx.FieldSpec{WireName: "result_id"},
+		"EventId":   ubx.FieldSpec{WireName: "event_id"},
+		"PublicId":  ubx.FieldSpec{WireName: "public_id"},
+		"ResultId":  ubx.FieldSpec{WireName: "result_id"},
 		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
 	},
 }

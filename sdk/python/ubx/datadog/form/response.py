@@ -20,30 +20,111 @@ class Response_Data_Attributes_DataDefinition:
     type: Any = None
 
 @dataclasses.dataclass
+class Response_Data_Attributes_DatastoreConfig:
+    # The ID of the datastore.
+    datastore_id: Any = None
+    # The name of the primary column in the datastore.
+    primary_column_name: Any = None
+    # The strategy used to generate primary keys in the datastore.
+    primary_key_generation_strategy: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes_Publication:
+    # The time at which the publication was created.
+    created_at: Any = None
+    # The ID of the form.
+    form_id: Any = None
+    # The version number that was published.
+    form_version: Any = None
+    # The ID of the form publication.
+    id: Any = None
+    # The time at which the publication was last modified.
+    modified_at: Any = None
+    # The ID of the organization that owns this publication.
+    org_id: Any = None
+    # The sequential publication number for this form.
+    publish_seq: Any = None
+    # The ID of the user who created this publication.
+    user_id: Any = None
+    # The UUID of the user who created this publication.
+    user_uuid: Any = None
+
+@dataclasses.dataclass
 class Response_Data_Attributes_UiDefinition:
     pass
 
 @dataclasses.dataclass
-class Response_Data_Attributes:
-    # Whether the form accepts anonymous submissions.
-    anonymous: Any = None
+class Response_Data_Attributes_Version:
+    # The time at which the version was created.
+    created_at: Any = None
     # A JSON Schema definition that describes the form's data fields.
     data_definition: Any = None
+    # The signature of the version definition.
+    definition_signature: Any = None
+    # The ETag for optimistic concurrency control.
+    etag: Any = None
+    # The ID of the form version.
+    id: Any = None
+    # The time at which the version was last modified.
+    modified_at: Any = None
+    # The state of a form version.
+    state: Any = None
+    # UI configuration for rendering form fields, including widget overrides, field ordering, and themes.
+    ui_definition: Any = None
+    # The ID of the user who created this version.
+    user_id: Any = None
+    # The UUID of the user who created this version.
+    user_uuid: Any = None
+    # The sequential version number.
+    version: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Attributes:
+    # Whether the form is currently active.
+    active: Any = None
+    # Whether the form accepts anonymous submissions.
+    anonymous: Any = None
+    # The time at which the form was created.
+    created_at: Any = None
+    # A JSON Schema definition that describes the form's data fields.
+    data_definition: Any = None
+    # The datastore configuration for a form.
+    datastore_config: Any = None
     # The description of the form.
     description: Any = None
+    # The date and time at which the form stops accepting responses.
+    end_date: Any = None
+    # Whether the current user has already submitted this form. Only present for forms with `single_response` set to `true`.
+    has_submitted: Any = None
     # Whether the form is an IDP survey.
     idp_survey: Any = None
+    # The time at which the form was last modified.
+    modified_at: Any = None
     # The name of the form.
     name: Any = None
+    # The ID of the organization that owns this form.
+    org_id: Any = None
+    # The attributes of a form publication.
+    publication: Any = None
+    # Whether the form is available in the self-service catalog.
+    self_service: Any = None
     # Whether each user can only submit one response.
     single_response: Any = None
     # UI configuration for rendering form fields, including widget overrides, field ordering, and themes.
     ui_definition: Any = None
+    # The ID of the user who created this form.
+    user_id: Any = None
+    # The UUID of the user who created this form.
+    user_uuid: Any = None
+    # The attributes of a form version.
+    version: Any = None
 
 @dataclasses.dataclass
 class Response_Data:
     # The attributes for creating a form.
     attributes: Any = None
+    # The ID of the form.
+    id: Any = None
     # The resource type for a form.
     type: Any = None
 
@@ -55,24 +136,88 @@ _Response_Data_Attributes_DataDefinitionFields = {
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
+_Response_Data_Attributes_DatastoreConfigFields = {
+    "datastore_id": ubx.FieldSpec(wire_name="datastore_id"),
+    "primary_column_name": ubx.FieldSpec(wire_name="primary_column_name"),
+    "primary_key_generation_strategy": ubx.FieldSpec(wire_name="primary_key_generation_strategy"),
+}
+
+_Response_Data_Attributes_PublicationFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "form_id": ubx.FieldSpec(wire_name="form_id"),
+    "form_version": ubx.FieldSpec(wire_name="form_version"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "org_id": ubx.FieldSpec(wire_name="org_id"),
+    "publish_seq": ubx.FieldSpec(wire_name="publish_seq"),
+    "user_id": ubx.FieldSpec(wire_name="user_id"),
+    "user_uuid": ubx.FieldSpec(wire_name="user_uuid"),
+}
+
 _Response_Data_Attributes_UiDefinitionFields = {
 }
 
-_Response_Data_AttributesFields = {
-    "anonymous": ubx.FieldSpec(wire_name="anonymous"),
+_Response_Data_Attributes_VersionFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "data_definition": ubx.FieldSpec(
         wire_name="data_definition",
         kind="object",
         fields=_Response_Data_Attributes_DataDefinitionFields,
     ),
+    "definition_signature": ubx.FieldSpec(wire_name="definition_signature"),
+    "etag": ubx.FieldSpec(wire_name="etag"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "state": ubx.FieldSpec(wire_name="state"),
+    "ui_definition": ubx.FieldSpec(
+        wire_name="ui_definition",
+        kind="object",
+        fields=_Response_Data_Attributes_UiDefinitionFields,
+    ),
+    "user_id": ubx.FieldSpec(wire_name="user_id"),
+    "user_uuid": ubx.FieldSpec(wire_name="user_uuid"),
+    "version": ubx.FieldSpec(wire_name="version"),
+}
+
+_Response_Data_AttributesFields = {
+    "active": ubx.FieldSpec(wire_name="active"),
+    "anonymous": ubx.FieldSpec(wire_name="anonymous"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "data_definition": ubx.FieldSpec(
+        wire_name="data_definition",
+        kind="object",
+        fields=_Response_Data_Attributes_DataDefinitionFields,
+    ),
+    "datastore_config": ubx.FieldSpec(
+        wire_name="datastore_config",
+        kind="object",
+        fields=_Response_Data_Attributes_DatastoreConfigFields,
+    ),
     "description": ubx.FieldSpec(wire_name="description"),
+    "end_date": ubx.FieldSpec(wire_name="end_date"),
+    "has_submitted": ubx.FieldSpec(wire_name="has_submitted"),
     "idp_survey": ubx.FieldSpec(wire_name="idp_survey"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "org_id": ubx.FieldSpec(wire_name="org_id"),
+    "publication": ubx.FieldSpec(
+        wire_name="publication",
+        kind="object",
+        fields=_Response_Data_Attributes_PublicationFields,
+    ),
+    "self_service": ubx.FieldSpec(wire_name="self_service"),
     "single_response": ubx.FieldSpec(wire_name="single_response"),
     "ui_definition": ubx.FieldSpec(
         wire_name="ui_definition",
         kind="object",
         fields=_Response_Data_Attributes_UiDefinitionFields,
+    ),
+    "user_id": ubx.FieldSpec(wire_name="user_id"),
+    "user_uuid": ubx.FieldSpec(wire_name="user_uuid"),
+    "version": ubx.FieldSpec(
+        wire_name="version",
+        kind="object",
+        fields=_Response_Data_Attributes_VersionFields,
     ),
 }
 
@@ -82,6 +227,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

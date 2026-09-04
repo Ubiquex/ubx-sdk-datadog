@@ -5,30 +5,30 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Account_Data_Attributes_MetricNamespaceConfigs struct {
 	Disabled any
-	Filters any
-	Id any
+	Filters  any
+	Id       any
 }
 
 type Account_Data_Attributes_MonitoredResourceConfigs struct {
 	Filters any
-	Type any
+	Type    any
 }
 
 type Account_Data_Attributes struct {
-	AccountTags any
-	Automute any
-	ClientEmail any
-	CloudRunRevisionFilters any
-	HostFilters any
-	IsCspmEnabled any
-	IsGlobalLocationEnabled any
-	IsPerProjectQuotaEnabled any
+	AccountTags                       any
+	Automute                          any
+	ClientEmail                       any
+	CloudRunRevisionFilters           any
+	HostFilters                       any
+	IsCspmEnabled                     any
+	IsGlobalLocationEnabled           any
+	IsPerProjectQuotaEnabled          any
 	IsResourceChangeCollectionEnabled any
-	IsSecurityCommandCenterEnabled any
-	MetricNamespaceConfigs any
-	MonitoredResourceConfigs any
-	RegionFilterConfigs any
-	ResourceCollectionEnabled any
+	IsSecurityCommandCenterEnabled    any
+	MetricNamespaceConfigs            any
+	MonitoredResourceConfigs          any
+	RegionFilterConfigs               any
+	ResourceCollectionEnabled         any
 }
 
 type Account_Data_Meta struct {
@@ -37,9 +37,9 @@ type Account_Data_Meta struct {
 
 type Account_Data struct {
 	Attributes any
-	Id any
-	Meta any
-	Type any
+	Id         any
+	Meta       any
+	Type       any
 }
 
 type AccountConfig struct {
@@ -52,6 +52,5 @@ type AccountAttrs struct {
 
 var Account = ubx.DataSourceBinding{
 	WireType: "datadog_gcpstsservice_account",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

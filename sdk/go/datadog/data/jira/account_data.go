@@ -4,15 +4,15 @@ package jira
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountData_Data_Attributes struct {
-	ConsumerKey any
-	InstanceUrl any
+	ConsumerKey          any
+	InstanceUrl          any
 	LastWebhookTimestamp any
 }
 
 type AccountData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AccountData_Meta struct {
@@ -32,6 +32,5 @@ type AccountDataAttrs struct {
 
 var AccountData = ubx.DataSourceBinding{
 	WireType: "datadog_jira_account_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

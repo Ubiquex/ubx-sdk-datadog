@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes struct {
 	AssertionConsumerService any
-	CreatedAt any
-	EntityId any
-	ExpiresAt any
-	IdpInitiated any
-	JitDomains any
-	ModifiedAt any
-	SsoUrl any
+	CreatedAt                any
+	EntityId                 any
+	ExpiresAt                any
+	IdpInitiated             any
+	JitDomains               any
+	ModifiedAt               any
+	SsoUrl                   any
 }
 
 type Response_Data_Relationships_DefaultRoles_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -28,18 +28,18 @@ type Response_Data_Relationships struct {
 }
 
 type Response_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Included_Attributes struct {
-	CreatedAt any
-	ModifiedAt any
-	Name any
+	CreatedAt               any
+	ModifiedAt              any
+	Name                    any
 	ReceivesPermissionsFrom any
-	UserCount any
+	UserCount               any
 }
 
 type Response_Included_Relationships struct {
@@ -47,10 +47,10 @@ type Response_Included_Relationships struct {
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ResponseConfig struct {
@@ -65,6 +65,5 @@ type ResponseAttrs struct {
 
 var Response = ubx.DataSourceBinding{
 	WireType: "datadog_samlconfigurations_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Sloresponse_Data_Attributes_Facets_AllTags struct {
 	Count any
-	Name any
+	Name  any
 }
 
 type Sloresponse_Data_Attributes_Facets_SloType struct {
 	Count any
-	Name any
+	Name  any
 }
 
 type Sloresponse_Data_Attributes_Facets struct {
@@ -34,74 +34,74 @@ type Sloresponse_Data_Attributes_Facets struct {
 
 type Sloresponse_Data_Attributes_Slos_Data_Attributes_Creator struct {
 	Email any
-	Id any
-	Name any
+	Id    any
+	Name  any
 }
 
 type Sloresponse_Data_Attributes_Slos_Data_Attributes_OverallStatus_RawErrorBudgetRemaining struct {
-	Unit any
+	Unit  any
 	Value any
 }
 
 type Sloresponse_Data_Attributes_Slos_Data_Attributes_OverallStatus struct {
-	Error any
-	ErrorBudgetRemaining any
-	IndexedAt any
+	Error                   any
+	ErrorBudgetRemaining    any
+	IndexedAt               any
 	RawErrorBudgetRemaining any
-	SpanPrecision any
-	State any
-	Status any
-	Target any
-	Timeframe any
+	SpanPrecision           any
+	State                   any
+	Status                  any
+	Target                  any
+	Timeframe               any
 }
 
 type Sloresponse_Data_Attributes_Slos_Data_Attributes_Query struct {
 	Denominator any
-	Metrics any
-	Numerator any
+	Metrics     any
+	Numerator   any
 }
 
 type Sloresponse_Data_Attributes_Slos_Data_Attributes_Status struct {
-	CalculationError any
-	ErrorBudgetRemaining any
-	IndexedAt any
+	CalculationError        any
+	ErrorBudgetRemaining    any
+	IndexedAt               any
 	RawErrorBudgetRemaining any
-	Sli any
-	SpanPrecision any
-	State any
+	Sli                     any
+	SpanPrecision           any
+	State                   any
 }
 
 type Sloresponse_Data_Attributes_Slos_Data_Attributes_Thresholds struct {
-	Target any
-	TargetDisplay any
-	Timeframe any
-	Warning any
+	Target         any
+	TargetDisplay  any
+	Timeframe      any
+	Warning        any
 	WarningDisplay any
 }
 
 type Sloresponse_Data_Attributes_Slos_Data_Attributes struct {
-	AllTags any
-	CreatedAt any
-	Creator any
-	Description any
-	EnvTags any
-	Groups any
-	ModifiedAt any
-	MonitorIds any
-	Name any
+	AllTags       any
+	CreatedAt     any
+	Creator       any
+	Description   any
+	EnvTags       any
+	Groups        any
+	ModifiedAt    any
+	MonitorIds    any
+	Name          any
 	OverallStatus any
-	Query any
-	ServiceTags any
-	SloType any
-	Status any
-	TeamTags any
-	Thresholds any
+	Query         any
+	ServiceTags   any
+	SloType       any
+	Status        any
+	TeamTags      any
+	Thresholds    any
 }
 
 type Sloresponse_Data_Attributes_Slos_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Sloresponse_Data_Attributes_Slos struct {
@@ -161,17 +161,17 @@ type Sloresponse_Meta struct {
 
 type SloresponseConfig struct {
 	IncludeFacets any
-	Query any
+	Query         any
 }
 
 type SloresponseAttrs struct {
 	// Data from search SLO response.
-	Data any
+	Data          any
 	IncludeFacets any
 	// Pagination links.
 	Links any
 	// Searches metadata returned by the API.
-	Meta any
+	Meta  any
 	Query any
 }
 
@@ -179,6 +179,6 @@ var Sloresponse = ubx.DataSourceBinding{
 	WireType: "datadog_search_sloresponse",
 	Fields: ubx.FieldMap{
 		"IncludeFacets": ubx.FieldSpec{WireName: "include_facets"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"Query":         ubx.FieldSpec{WireName: "query"},
 	},
 }

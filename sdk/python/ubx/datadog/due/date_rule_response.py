@@ -21,6 +21,15 @@ class DateRuleResponse_Data_Attributes_Action:
     reason_description: Any = None
 
 @dataclasses.dataclass
+class DateRuleResponse_Data_Attributes_CreatedBy:
+    # The actor's identifier (a user UUID or a system identifier).
+    id: Any = None
+    # The name of the actor.
+    name: Any = None
+    # Whether the actor is a user or the Datadog system.
+    type: Any = None
+
+@dataclasses.dataclass
 class DateRuleResponse_Data_Attributes_Rule:
     # The list of security finding types that the automation rule applies to.
     finding_types: Any = None
@@ -31,8 +40,16 @@ class DateRuleResponse_Data_Attributes_Rule:
 class DateRuleResponse_Data_Attributes:
     # The action to take when the due date rule matches a finding.
     action: Any = None
+    # The Unix timestamp in milliseconds when the rule was created.
+    created_at: Any = None
+    # The user or Datadog system who created the rule.
+    created_by: Any = None
     # Whether the due date rule is enabled.
     enabled: Any = None
+    # The Unix timestamp in milliseconds when the rule was last modified.
+    modified_at: Any = None
+    # The user or Datadog system who last modified the rule.
+    modified_by: Any = None
     # The name of the due date rule.
     name: Any = None
     # Defines the scope of findings to which the automation rule applies.
@@ -42,6 +59,8 @@ class DateRuleResponse_Data_Attributes:
 class DateRuleResponse_Data:
     # Attributes for creating or updating a due date rule.
     attributes: Any = None
+    # The ID of the due date rule.
+    id: Any = None
     # The JSON:API type for due date rules.
     type: Any = None
 
@@ -60,6 +79,12 @@ _DateRuleResponse_Data_Attributes_ActionFields = {
     "reason_description": ubx.FieldSpec(wire_name="reason_description"),
 }
 
+_DateRuleResponse_Data_Attributes_CreatedByFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
 _DateRuleResponse_Data_Attributes_RuleFields = {
     "finding_types": ubx.FieldSpec(wire_name="finding_types"),
     "query": ubx.FieldSpec(wire_name="query"),
@@ -71,7 +96,19 @@ _DateRuleResponse_Data_AttributesFields = {
         kind="object",
         fields=_DateRuleResponse_Data_Attributes_ActionFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_DateRuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_DateRuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
     "rule": ubx.FieldSpec(
         wire_name="rule",
@@ -86,6 +123,7 @@ _DateRuleResponse_DataFields = {
         kind="object",
         fields=_DateRuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

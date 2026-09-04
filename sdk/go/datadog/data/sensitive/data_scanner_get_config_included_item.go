@@ -4,7 +4,7 @@ package sensitive
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataScannerGetConfigIncludedItem_Data_Relationships_Groups_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -30,36 +30,36 @@ type DataScannerGetConfigIncludedItem_Data struct {
 }
 
 type DataScannerGetConfigIncludedItem_Included_Attributes_IncludedKeywordConfiguration struct {
-	CharacterCount any
-	Keywords any
+	CharacterCount         any
+	Keywords               any
 	UseRecommendedKeywords any
 }
 
 type DataScannerGetConfigIncludedItem_Included_Attributes_Suppressions struct {
-	EndsWith any
+	EndsWith   any
 	ExactMatch any
 	StartsWith any
 }
 
 type DataScannerGetConfigIncludedItem_Included_Attributes_TextReplacement struct {
-	NumberOfChars any
+	NumberOfChars     any
 	ReplacementString any
-	ShouldSaveMatch any
-	Type any
+	ShouldSaveMatch   any
+	Type              any
 }
 
 type DataScannerGetConfigIncludedItem_Included_Attributes struct {
-	Description any
-	ExcludedNamespaces any
+	Description                  any
+	ExcludedNamespaces           any
 	IncludedKeywordConfiguration any
-	IsEnabled any
-	Name any
-	Namespaces any
-	Pattern any
-	Priority any
-	Suppressions any
-	Tags any
-	TextReplacement any
+	IsEnabled                    any
+	Name                         any
+	Namespaces                   any
+	Pattern                      any
+	Priority                     any
+	Suppressions                 any
+	Tags                         any
+	TextReplacement              any
 }
 
 type DataScannerGetConfigIncludedItem_Included_Relationships_Group struct {
@@ -67,15 +67,15 @@ type DataScannerGetConfigIncludedItem_Included_Relationships_Group struct {
 }
 
 type DataScannerGetConfigIncludedItem_Included_Relationships struct {
-	Group any
+	Group           any
 	StandardPattern any
 }
 
 type DataScannerGetConfigIncludedItem_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type DataScannerGetConfigIncludedItem_Meta struct {
@@ -107,6 +107,5 @@ type DataScannerGetConfigIncludedItemAttrs struct {
 
 var DataScannerGetConfigIncludedItem = ubx.DataSourceBinding{
 	WireType: "datadog_sensitive_data_scanner_get_config_included_item",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

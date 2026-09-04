@@ -2,8 +2,20 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RuleResponse_Data_Attributes {
+  /** The RFC 3339 timestamp at which the rule was created. */
+  createdAt?: string | Computed<string>;
+  /** The identifier of the user who created the rule. */
+  createdBy?: string | Computed<string>;
+  /** The RFC 3339 timestamp at which the rule was soft-deleted. `null` if the rule has not been deleted. Only present when `include_deleted=true` is requested. */
+  deletedAt?: string | Computed<string>;
+  /** The identifier of the user who soft-deleted the rule. `null` if the rule has not been deleted. */
+  deletedBy?: string | Computed<string>;
   /** Whether the rule is currently enforced. Defaults to `true` for newly created rules. */
   enabled?: boolean | Computed<boolean>;
+  /** The RFC 3339 timestamp at which the rule was last modified. */
+  modifiedAt?: string | Computed<string>;
+  /** The identifier of the user who last modified the rule. */
+  modifiedBy?: string | Computed<string>;
   /** Human-readable name for the tag rule. */
   name: string | Computed<string>;
   /** When `true`, the rule matches tag values that do NOT match any of the supplied patterns. Defaults to `false`. */
@@ -20,11 +32,34 @@ export interface RuleResponse_Data_Attributes {
   tagKey: string | Computed<string>;
   /** One or more patterns that valid values for the tag key must match. At least one pattern is required. */
   tagValuePatterns: string[] | Computed<string[]>;
+  /** A monotonically increasing version counter that is incremented on each update. */
+  version?: number | Computed<number>;
+}
+
+export interface RuleResponse_Data_Relationships_Score_Data {
+  /** The unique identifier of the related compliance score resource. */
+  id: string | Computed<string>;
+  /** JSON:API resource type for a tag rule compliance score. */
+  type: string | Computed<string>;
+}
+
+export interface RuleResponse_Data_Relationships_Score {
+  /** Identifier of the related compliance score resource. */
+  data: RuleResponse_Data_Relationships_Score_Data | Computed<RuleResponse_Data_Relationships_Score_Data>;
+}
+
+export interface RuleResponse_Data_Relationships {
+  /** A relationship to the compliance score resource for this rule. */
+  score?: RuleResponse_Data_Relationships_Score | Computed<RuleResponse_Data_Relationships_Score>;
 }
 
 export interface RuleResponse_Data {
   /** Attributes that can be supplied when creating a tag rule. */
   attributes: RuleResponse_Data_Attributes | Computed<RuleResponse_Data_Attributes>;
+  /** The unique identifier of the tag rule. */
+  id?: string | Computed<string>;
+  /** Related resources for a tag rule. Only present when the corresponding `include` query parameter is supplied. */
+  relationships?: RuleResponse_Data_Relationships | Computed<RuleResponse_Data_Relationships>;
   /** JSON:API resource type for a tag rule. */
   type: string | Computed<string>;
 }
@@ -43,7 +78,13 @@ export interface RuleResponse_Included {
 }
 
 const RuleResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  createdBy: "created_by",
+  deletedAt: "deleted_at",
+  deletedBy: "deleted_by",
   enabled: "enabled",
+  modifiedAt: "modified_at",
+  modifiedBy: "modified_by",
   name: "name",
   negated: "negated",
   required: "required",
@@ -52,6 +93,28 @@ const RuleResponse_Data_AttributesFields: FieldMap = {
   source: "source",
   tagKey: "tag_key",
   tagValuePatterns: "tag_value_patterns",
+  version: "version",
+};
+
+const RuleResponse_Data_Relationships_Score_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const RuleResponse_Data_Relationships_ScoreFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: RuleResponse_Data_Relationships_Score_DataFields,
+  },
+};
+
+const RuleResponse_Data_RelationshipsFields: FieldMap = {
+  score: {
+    wireName: "score",
+    kind: "object",
+    fields: RuleResponse_Data_Relationships_ScoreFields,
+  },
 };
 
 const RuleResponse_DataFields: FieldMap = {
@@ -59,6 +122,12 @@ const RuleResponse_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: RuleResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: RuleResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

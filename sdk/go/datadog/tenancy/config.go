@@ -40,6 +40,8 @@ type Config_Data_Attributes_RegionsConfig struct {
 type Config_Data_Attributes struct {
 	// OCI API signing key credentials used to authenticate the Datadog integration with the OCI tenancy.
 	AuthCredentials any
+	// The identifier of the billing plan associated with the OCI tenancy.
+	BillingPlanId any
 	// Version number of the integration the tenancy is integrated with
 	ConfigVersion any
 	// Whether cost data collection from OCI is enabled for the tenancy.
@@ -54,10 +56,14 @@ type Config_Data_Attributes struct {
 	LogsConfig any
 	// Metrics collection configuration for an OCI tenancy, controlling which compartments and services are included or excluded.
 	MetricsConfig any
+	// The name of the parent OCI tenancy, if applicable.
+	ParentTenancyName any
 	// Region configuration for an OCI tenancy, specifying which regions are available, enabled, or disabled for data collection.
 	RegionsConfig any
 	// Whether resource collection from OCI is enabled for the tenancy.
 	ResourceCollectionEnabled any
+	// The human-readable name of the OCI tenancy.
+	TenancyName any
 	// The OCID of the OCI user used by the Datadog integration for authentication.
 	UserOcid any
 }
@@ -72,67 +78,70 @@ type Config_Data struct {
 }
 
 var Config_Data_Attributes_AuthCredentialsFields = ubx.FieldMap{
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-	}
+	"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+	"PrivateKey":  ubx.FieldSpec{WireName: "private_key"},
+}
 
 var Config_Data_Attributes_LogsConfigFields = ubx.FieldMap{
-		"CompartmentTagFilters": ubx.FieldSpec{WireName: "compartment_tag_filters"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EnabledServices": ubx.FieldSpec{WireName: "enabled_services"},
-	}
+	"CompartmentTagFilters": ubx.FieldSpec{WireName: "compartment_tag_filters"},
+	"Enabled":               ubx.FieldSpec{WireName: "enabled"},
+	"EnabledServices":       ubx.FieldSpec{WireName: "enabled_services"},
+}
 
 var Config_Data_Attributes_MetricsConfigFields = ubx.FieldMap{
-		"CompartmentTagFilters": ubx.FieldSpec{WireName: "compartment_tag_filters"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExcludedServices": ubx.FieldSpec{WireName: "excluded_services"},
-	}
+	"CompartmentTagFilters": ubx.FieldSpec{WireName: "compartment_tag_filters"},
+	"Enabled":               ubx.FieldSpec{WireName: "enabled"},
+	"ExcludedServices":      ubx.FieldSpec{WireName: "excluded_services"},
+}
 
 var Config_Data_Attributes_RegionsConfigFields = ubx.FieldMap{
-		"Available": ubx.FieldSpec{WireName: "available"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Available": ubx.FieldSpec{WireName: "available"},
+	"Disabled":  ubx.FieldSpec{WireName: "disabled"},
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Config_Data_AttributesFields = ubx.FieldMap{
-		"AuthCredentials": ubx.FieldSpec{
-			WireName: "auth_credentials",
-			Kind: "object",
-			Fields: Config_Data_Attributes_AuthCredentialsFields,
-		},
-		"ConfigVersion": ubx.FieldSpec{WireName: "config_version"},
-		"CostCollectionEnabled": ubx.FieldSpec{WireName: "cost_collection_enabled"},
-		"DdCompartmentId": ubx.FieldSpec{WireName: "dd_compartment_id"},
-		"DdStackId": ubx.FieldSpec{WireName: "dd_stack_id"},
-		"HomeRegion": ubx.FieldSpec{WireName: "home_region"},
-		"LogsConfig": ubx.FieldSpec{
-			WireName: "logs_config",
-			Kind: "object",
-			Fields: Config_Data_Attributes_LogsConfigFields,
-		},
-		"MetricsConfig": ubx.FieldSpec{
-			WireName: "metrics_config",
-			Kind: "object",
-			Fields: Config_Data_Attributes_MetricsConfigFields,
-		},
-		"RegionsConfig": ubx.FieldSpec{
-			WireName: "regions_config",
-			Kind: "object",
-			Fields: Config_Data_Attributes_RegionsConfigFields,
-		},
-		"ResourceCollectionEnabled": ubx.FieldSpec{WireName: "resource_collection_enabled"},
-		"UserOcid": ubx.FieldSpec{WireName: "user_ocid"},
-	}
+	"AuthCredentials": ubx.FieldSpec{
+		WireName: "auth_credentials",
+		Kind:     "object",
+		Fields:   Config_Data_Attributes_AuthCredentialsFields,
+	},
+	"BillingPlanId":         ubx.FieldSpec{WireName: "billing_plan_id"},
+	"ConfigVersion":         ubx.FieldSpec{WireName: "config_version"},
+	"CostCollectionEnabled": ubx.FieldSpec{WireName: "cost_collection_enabled"},
+	"DdCompartmentId":       ubx.FieldSpec{WireName: "dd_compartment_id"},
+	"DdStackId":             ubx.FieldSpec{WireName: "dd_stack_id"},
+	"HomeRegion":            ubx.FieldSpec{WireName: "home_region"},
+	"LogsConfig": ubx.FieldSpec{
+		WireName: "logs_config",
+		Kind:     "object",
+		Fields:   Config_Data_Attributes_LogsConfigFields,
+	},
+	"MetricsConfig": ubx.FieldSpec{
+		WireName: "metrics_config",
+		Kind:     "object",
+		Fields:   Config_Data_Attributes_MetricsConfigFields,
+	},
+	"ParentTenancyName": ubx.FieldSpec{WireName: "parent_tenancy_name"},
+	"RegionsConfig": ubx.FieldSpec{
+		WireName: "regions_config",
+		Kind:     "object",
+		Fields:   Config_Data_Attributes_RegionsConfigFields,
+	},
+	"ResourceCollectionEnabled": ubx.FieldSpec{WireName: "resource_collection_enabled"},
+	"TenancyName":               ubx.FieldSpec{WireName: "tenancy_name"},
+	"UserOcid":                  ubx.FieldSpec{WireName: "user_ocid"},
+}
 
 var Config_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Config_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Config_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ConfigConfig struct {
 	// The data object for creating a new OCI tenancy integration configuration, including the tenancy ID, type, and configuration attributes.
@@ -153,8 +162,8 @@ var Config = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Config_DataFields,
+			Kind:     "object",
+			Fields:   Config_DataFields,
 		},
 		"TenancyOcid": ubx.FieldSpec{WireName: "tenancy_ocid"},
 	},

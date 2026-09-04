@@ -4,27 +4,27 @@ package global
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrgData_Data_Attributes_Org struct {
-	Name any
-	PublicId any
+	Name      any
+	PublicId  any
 	Subdomain any
-	Uuid any
+	Uuid      any
 }
 
 type OrgData_Data_Attributes_User struct {
 	Handle any
-	Uuid any
+	Uuid   any
 }
 
 type OrgData_Data_Attributes struct {
-	Org any
-	RedirectUrl any
+	Org          any
+	RedirectUrl  any
 	SourceRegion any
-	User any
+	User         any
 }
 
 type OrgData_Data struct {
 	Attributes any
-	Type any
+	Type       any
 }
 
 type OrgData_Links struct {
@@ -64,7 +64,7 @@ type OrgDataAttrs struct {
 	// Pagination links.
 	Links any
 	// Response metadata object.
-	Meta any
+	Meta       any
 	UserHandle any
 }
 

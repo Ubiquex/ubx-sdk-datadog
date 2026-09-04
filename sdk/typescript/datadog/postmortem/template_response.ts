@@ -22,12 +22,16 @@ export interface TemplateResponse_Data_Attributes {
   confluencePostmortemSettings?: TemplateResponse_Data_Attributes_ConfluencePostmortemSettings | Computed<TemplateResponse_Data_Attributes_ConfluencePostmortemSettings>;
   /** The templated content of the postmortem, supporting Markdown and incident template variables. */
   content?: string | Computed<string>;
+  /** When the template was created. */
+  createdAt?: string | Computed<string>;
   /** Settings for a postmortem template stored in Google Docs. Required when `location` is `google_docs`. */
   googleDocsPostmortemSettings?: TemplateResponse_Data_Attributes_GoogleDocsPostmortemSettings | Computed<TemplateResponse_Data_Attributes_GoogleDocsPostmortemSettings>;
   /** When set, marks this template as a default. The effective default for an incident type is the template with the most recent `is_default` timestamp. Set to `null` to unset. */
   isDefault?: string | Computed<string>;
   /** The location where the postmortem is created and stored. */
   location?: string | Computed<string>;
+  /** When the template was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the template. */
   name: string | Computed<string>;
 }
@@ -47,6 +51,8 @@ export interface TemplateResponse_Data_Relationships_IncidentType {
 export interface TemplateResponse_Data_Relationships {
   /** Relationship to the incident type this template belongs to. */
   incidentType?: TemplateResponse_Data_Relationships_IncidentType | Computed<TemplateResponse_Data_Relationships_IncidentType>;
+  /** Relationship to a user. */
+  lastModifiedByUser?: TemplateResponse_Data_Relationships_IncidentType | Computed<TemplateResponse_Data_Relationships_IncidentType>;
 }
 
 export interface TemplateResponse_Data {
@@ -78,6 +84,7 @@ const TemplateResponse_Data_AttributesFields: FieldMap = {
     fields: TemplateResponse_Data_Attributes_ConfluencePostmortemSettingsFields,
   },
   content: "content",
+  createdAt: "created_at",
   googleDocsPostmortemSettings: {
     wireName: "google_docs_postmortem_settings",
     kind: "object",
@@ -85,6 +92,7 @@ const TemplateResponse_Data_AttributesFields: FieldMap = {
   },
   isDefault: "is_default",
   location: "location",
+  modifiedAt: "modified_at",
   name: "name",
 };
 
@@ -104,6 +112,11 @@ const TemplateResponse_Data_Relationships_IncidentTypeFields: FieldMap = {
 const TemplateResponse_Data_RelationshipsFields: FieldMap = {
   incidentType: {
     wireName: "incident_type",
+    kind: "object",
+    fields: TemplateResponse_Data_Relationships_IncidentTypeFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
     kind: "object",
     fields: TemplateResponse_Data_Relationships_IncidentTypeFields,
   },

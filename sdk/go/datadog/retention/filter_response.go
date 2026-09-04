@@ -9,12 +9,24 @@ type FilterResponse_Data_Attributes_Filter struct {
 }
 
 type FilterResponse_Data_Attributes struct {
+	// The creation timestamp of the retention filter.
+	CreatedAt any
+	// The creator of the retention filter.
+	CreatedBy any
+	// Shows whether the filter can be edited.
+	Editable any
 	// Enable/Disable the retention filter.
 	Enabled any
+	// The execution order of the retention filter.
+	ExecutionOrder any
 	// The spans filter. Spans matching this filter will be indexed and stored.
 	Filter any
 	// The type of retention filter.
 	FilterType any
+	// The modification timestamp of the retention filter.
+	ModifiedAt any
+	// The modifier of the retention filter.
+	ModifiedBy any
 	// The name of the retention filter.
 	Name any
 	// Sample rate to apply to spans going through this retention filter. A value of 1.0 keeps all spans matching the query.
@@ -33,31 +45,37 @@ type FilterResponse_Data struct {
 }
 
 var FilterResponse_Data_Attributes_FilterFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var FilterResponse_Data_AttributesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: FilterResponse_Data_Attributes_FilterFields,
-		},
-		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rate": ubx.FieldSpec{WireName: "rate"},
-		"TraceRate": ubx.FieldSpec{WireName: "trace_rate"},
-	}
+	"CreatedAt":      ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":      ubx.FieldSpec{WireName: "created_by"},
+	"Editable":       ubx.FieldSpec{WireName: "editable"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"ExecutionOrder": ubx.FieldSpec{WireName: "execution_order"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   FilterResponse_Data_Attributes_FilterFields,
+	},
+	"FilterType": ubx.FieldSpec{WireName: "filter_type"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy": ubx.FieldSpec{WireName: "modified_by"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Rate":       ubx.FieldSpec{WireName: "rate"},
+	"TraceRate":  ubx.FieldSpec{WireName: "trace_rate"},
+}
 
 var FilterResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: FilterResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   FilterResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type FilterResponseConfig struct {
 	// The body of the retention filter to be updated.
@@ -78,8 +96,8 @@ var FilterResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: FilterResponse_DataFields,
+			Kind:     "object",
+			Fields:   FilterResponse_DataFields,
 		},
 		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
 	},

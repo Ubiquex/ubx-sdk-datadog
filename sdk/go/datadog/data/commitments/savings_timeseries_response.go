@@ -28,12 +28,12 @@ type SavingsTimeseriesResponse_ActualCost struct {
 }
 
 type SavingsTimeseriesResponseConfig struct {
-	End any
+	End      any
 	FilterBy any
-	Product any
+	Product  any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 }
 
 type SavingsTimeseriesResponseAttrs struct {
@@ -41,25 +41,25 @@ type SavingsTimeseriesResponseAttrs struct {
 	ActualCost any
 	// A timeseries metric containing timestamps, series values, and optional unit metadata.
 	EffectiveSavingsRate any
-	End any
-	FilterBy any
+	End                  any
+	FilterBy             any
 	// A timeseries metric containing timestamps, series values, and optional unit metadata.
 	OnDemandEquivalentCost any
-	Product any
+	Product                any
 	// Cloud provider for commitment programs.
 	Provider any
 	// A timeseries metric containing timestamps, series values, and optional unit metadata.
 	RealizedSavings any
-	Start any
+	Start           any
 }
 
 var SavingsTimeseriesResponse = ubx.DataSourceBinding{
 	WireType: "datadog_commitments_savings_timeseries_response",
 	Fields: ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
+		"End":      ubx.FieldSpec{WireName: "end"},
 		"FilterBy": ubx.FieldSpec{WireName: "filter_by"},
-		"Product": ubx.FieldSpec{WireName: "product"},
+		"Product":  ubx.FieldSpec{WireName: "product"},
 		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Start": ubx.FieldSpec{WireName: "start"},
+		"Start":    ubx.FieldSpec{WireName: "start"},
 	},
 }

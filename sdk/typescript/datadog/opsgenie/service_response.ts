@@ -15,6 +15,8 @@ export interface ServiceResponse_Data_Attributes {
 export interface ServiceResponse_Data {
   /** The Opsgenie service attributes for a create request. */
   attributes: ServiceResponse_Data_Attributes | Computed<ServiceResponse_Data_Attributes>;
+  /** The ID of the Opsgenie service. */
+  id?: string | Computed<string>;
   /** Opsgenie service resource type. */
   type: string | Computed<string>;
 }
@@ -32,6 +34,7 @@ const ServiceResponse_DataFields: FieldMap = {
     kind: "object",
     fields: ServiceResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

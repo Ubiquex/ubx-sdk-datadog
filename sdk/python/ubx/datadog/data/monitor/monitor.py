@@ -8,15 +8,36 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class MonitorConfig:
-    monitor_id: Any = None
+    group_states: Any = None
+    id_offset: Any = None
+    monitor_tags: Any = None
+    name: Any = None
+    page: Any = None
+    page_size: Any = None
+    tags: Any = None
+    with_downtimes: Any = None
 
 @dataclasses.dataclass
 class MonitorAttrs:
-    monitor_id: Any = None
+    group_states: Any = None
+    id_offset: Any = None
+    monitor_tags: Any = None
+    name: Any = None
+    page: Any = None
+    page_size: Any = None
+    tags: Any = None
+    with_downtimes: Any = None
 
 Monitor = ubx.DataSourceBinding(
     wire_type="datadog_monitor",
     fields={
-        "monitor_id": ubx.FieldSpec(wire_name="monitor_id"),
+        "group_states": ubx.FieldSpec(wire_name="group_states"),
+        "id_offset": ubx.FieldSpec(wire_name="id_offset"),
+        "monitor_tags": ubx.FieldSpec(wire_name="monitor_tags"),
+        "name": ubx.FieldSpec(wire_name="name"),
+        "page": ubx.FieldSpec(wire_name="page"),
+        "page_size": ubx.FieldSpec(wire_name="page_size"),
+        "tags": ubx.FieldSpec(wire_name="tags"),
+        "with_downtimes": ubx.FieldSpec(wire_name="with_downtimes"),
     },
 )

@@ -12,21 +12,52 @@ class Response_Data_Attributes:
     avatar: Any = None
     # Banner selection for the team
     banner: Any = None
+    # Creation date of the team
+    created_at: Any = None
     # Free-form markdown description/content for the team's homepage
     description: Any = None
     # The team's identifier
     handle: Any = None
     # Collection of hidden modules for the team
     hidden_modules: Any = None
+    # Whether the team is managed from an external source
+    is_managed: Any = None
+    # The number of links belonging to the team
+    link_count: Any = None
+    # Modification date of the team
+    modified_at: Any = None
     # The name of the team
     name: Any = None
+    # A brief summary of the team, derived from the `description`
+    summary: Any = None
+    # The number of users belonging to the team
+    user_count: Any = None
     # Collection of visible modules for the team
     visible_modules: Any = None
 
 @dataclasses.dataclass
-class Response_Data_Relationships_Users_Data:
+class Response_Data_Relationships_TeamLinks_Data:
     id: Any = None
     type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_TeamLinks_Links:
+    # Related link.
+    related: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_TeamLinks:
+    # Related team links
+    data: Any = None
+    # Links attributes.
+    links: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_UserTeamPermissions:
+    # Related user team permission data
+    data: Any = None
+    # Links attributes.
+    links: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Relationships_Users:
@@ -35,6 +66,10 @@ class Response_Data_Relationships_Users:
 
 @dataclasses.dataclass
 class Response_Data_Relationships:
+    # Relationship between a team and a team link
+    team_links: Any = None
+    # Relationship between a user team permission and a team
+    user_team_permissions: Any = None
     # Relationship to users.
     users: Any = None
 
@@ -42,6 +77,8 @@ class Response_Data_Relationships:
 class Response_Data:
     # Team creation attributes
     attributes: Any = None
+    # The team's identifier
+    id: Any = None
     # Relationships formed with the team on creation
     relationships: Any = None
     # Team type
@@ -50,27 +87,73 @@ class Response_Data:
 _Response_Data_AttributesFields = {
     "avatar": ubx.FieldSpec(wire_name="avatar"),
     "banner": ubx.FieldSpec(wire_name="banner"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "description": ubx.FieldSpec(wire_name="description"),
     "handle": ubx.FieldSpec(wire_name="handle"),
     "hidden_modules": ubx.FieldSpec(wire_name="hidden_modules"),
+    "is_managed": ubx.FieldSpec(wire_name="is_managed"),
+    "link_count": ubx.FieldSpec(wire_name="link_count"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "summary": ubx.FieldSpec(wire_name="summary"),
+    "user_count": ubx.FieldSpec(wire_name="user_count"),
     "visible_modules": ubx.FieldSpec(wire_name="visible_modules"),
 }
 
-_Response_Data_Relationships_Users_DataFields = {
+_Response_Data_Relationships_TeamLinks_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Response_Data_Relationships_TeamLinks_LinksFields = {
+    "related": ubx.FieldSpec(wire_name="related"),
+}
+
+_Response_Data_Relationships_TeamLinksFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="list",
+        fields=_Response_Data_Relationships_TeamLinks_DataFields,
+    ),
+    "links": ubx.FieldSpec(
+        wire_name="links",
+        kind="object",
+        fields=_Response_Data_Relationships_TeamLinks_LinksFields,
+    ),
+}
+
+_Response_Data_Relationships_UserTeamPermissionsFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_Response_Data_Relationships_TeamLinks_DataFields,
+    ),
+    "links": ubx.FieldSpec(
+        wire_name="links",
+        kind="object",
+        fields=_Response_Data_Relationships_TeamLinks_LinksFields,
+    ),
 }
 
 _Response_Data_Relationships_UsersFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="list",
-        fields=_Response_Data_Relationships_Users_DataFields,
+        fields=_Response_Data_Relationships_TeamLinks_DataFields,
     ),
 }
 
 _Response_Data_RelationshipsFields = {
+    "team_links": ubx.FieldSpec(
+        wire_name="team_links",
+        kind="object",
+        fields=_Response_Data_Relationships_TeamLinksFields,
+    ),
+    "user_team_permissions": ubx.FieldSpec(
+        wire_name="user_team_permissions",
+        kind="object",
+        fields=_Response_Data_Relationships_UserTeamPermissionsFields,
+    ),
     "users": ubx.FieldSpec(
         wire_name="users",
         kind="object",
@@ -84,6 +167,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

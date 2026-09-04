@@ -2,6 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GroupPolicyOverrideResponse_Data_Attributes {
+  /** The override content as key-value pairs. */
+  content?: Record<string, unknown> | Computed<Record<string, unknown>>;
+  /** Timestamp when the override was created. */
+  createdAt?: string | Computed<string>;
+  /** Timestamp when the override was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The site of the organization. */
   orgSite: string | Computed<string>;
   /** The UUID of the organization to grant the override. */
@@ -30,6 +36,8 @@ export interface GroupPolicyOverrideResponse_Data_Relationships {
 export interface GroupPolicyOverrideResponse_Data {
   /** Attributes for creating a policy override. */
   attributes: GroupPolicyOverrideResponse_Data_Attributes | Computed<GroupPolicyOverrideResponse_Data_Attributes>;
+  /** The ID of the policy override. */
+  id?: string | Computed<string>;
   /** Relationships for creating a policy override. */
   relationships: GroupPolicyOverrideResponse_Data_Relationships | Computed<GroupPolicyOverrideResponse_Data_Relationships>;
   /** Org group policy overrides resource type. */
@@ -37,6 +45,9 @@ export interface GroupPolicyOverrideResponse_Data {
 }
 
 const GroupPolicyOverrideResponse_Data_AttributesFields: FieldMap = {
+  content: "content",
+  createdAt: "created_at",
+  modifiedAt: "modified_at",
   orgSite: "org_site",
   orgUuid: "org_uuid",
 };
@@ -73,6 +84,7 @@ const GroupPolicyOverrideResponse_DataFields: FieldMap = {
     kind: "object",
     fields: GroupPolicyOverrideResponse_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

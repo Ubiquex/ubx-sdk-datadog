@@ -4,43 +4,61 @@ package partial
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationKeyResponse_Data_Attributes struct {
+	// Creation date of the application key.
+	CreatedAt any
+	// The last four characters of the application key.
+	Last4 any
+	// Last usage timestamp of the application key.
+	LastUsedAt any
 	// Name of the application key.
 	Name any
 	// Array of scopes to grant the application key.
 	Scopes any
 }
 
+type ApplicationKeyResponse_Data_Relationships_OwnedBy_Data struct {
+	// A unique identifier that represents the user.
+	Id any
+	// Users resource type.
+	Type any
+}
+
+type ApplicationKeyResponse_Data_Relationships_OwnedBy struct {
+	// Relationship to user object.
+	Data any
+}
+
+type ApplicationKeyResponse_Data_Relationships struct {
+	// Relationship to user.
+	OwnedBy any
+}
+
 type ApplicationKeyResponse_Data struct {
 	// Attributes used to create an application Key.
 	Attributes any
+	// ID of the application key.
+	Id any
+	// Resources related to the application key.
+	Relationships any
 	// Application Keys resource type.
 	Type any
 }
 
 type ApplicationKeyResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
-}
-
-type ApplicationKeyResponse_Included_Relationships_Org_Data struct {
-	Id any
-	Type any
-}
-
-type ApplicationKeyResponse_Included_Relationships_Org struct {
-	Data any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type ApplicationKeyResponse_Included_Relationships_OtherOrgs struct {
@@ -48,32 +66,62 @@ type ApplicationKeyResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type ApplicationKeyResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type ApplicationKeyResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var ApplicationKeyResponse_Data_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
+	"Last4":      ubx.FieldSpec{WireName: "last4"},
+	"LastUsedAt": ubx.FieldSpec{WireName: "last_used_at"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Scopes":     ubx.FieldSpec{WireName: "scopes"},
+}
+
+var ApplicationKeyResponse_Data_Relationships_OwnedBy_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var ApplicationKeyResponse_Data_Relationships_OwnedByFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   ApplicationKeyResponse_Data_Relationships_OwnedBy_DataFields,
+	},
+}
+
+var ApplicationKeyResponse_Data_RelationshipsFields = ubx.FieldMap{
+	"OwnedBy": ubx.FieldSpec{
+		WireName: "owned_by",
+		Kind:     "object",
+		Fields:   ApplicationKeyResponse_Data_Relationships_OwnedByFields,
+	},
+}
 
 var ApplicationKeyResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ApplicationKeyResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ApplicationKeyResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   ApplicationKeyResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ApplicationKeyResponseConfig struct {
 	// Object used to create an application key.
@@ -100,10 +148,10 @@ var ApplicationKeyResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ApplicationKeyResponse_DataFields,
+			Kind:     "object",
+			Fields:   ApplicationKeyResponse_DataFields,
 		},
 		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-		"AppKeyId": ubx.FieldSpec{WireName: "app_key_id"},
+		"AppKeyId":         ubx.FieldSpec{WireName: "app_key_id"},
 	},
 }

@@ -4,22 +4,22 @@ package jira
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IssueTemplatesResponse_Data_Attributes struct {
-	Fields any
+	Fields      any
 	IssueTypeId any
-	Name any
-	ProjectId any
+	Name        any
+	ProjectId   any
 }
 
 type IssueTemplatesResponse_Data_Relationships_JiraAccount_Data_Attributes struct {
-	ConsumerKey any
-	InstanceUrl any
+	ConsumerKey          any
+	InstanceUrl          any
 	LastWebhookTimestamp any
 }
 
 type IssueTemplatesResponse_Data_Relationships_JiraAccount_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type IssueTemplatesResponse_Data_Relationships_JiraAccount struct {
@@ -31,10 +31,10 @@ type IssueTemplatesResponse_Data_Relationships struct {
 }
 
 type IssueTemplatesResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type IssueTemplatesResponseConfig struct {
@@ -49,6 +49,5 @@ type IssueTemplatesResponseAttrs struct {
 
 var IssueTemplatesResponse = ubx.DataSourceBinding{
 	WireType: "datadog_jira_issue_templates_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

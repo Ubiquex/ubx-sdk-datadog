@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PolicyResponse_Data_Attributes_Bindings struct {
 	Principals any
-	Relation any
+	Relation   any
 }
 
 type PolicyResponse_Data_Attributes struct {
@@ -23,27 +23,27 @@ type PolicyResponse_Data struct {
 }
 
 var PolicyResponse_Data_Attributes_BindingsFields = ubx.FieldMap{
-		"Principals": ubx.FieldSpec{WireName: "principals"},
-		"Relation": ubx.FieldSpec{WireName: "relation"},
-	}
+	"Principals": ubx.FieldSpec{WireName: "principals"},
+	"Relation":   ubx.FieldSpec{WireName: "relation"},
+}
 
 var PolicyResponse_Data_AttributesFields = ubx.FieldMap{
-		"Bindings": ubx.FieldSpec{
-			WireName: "bindings",
-			Kind: "list",
-			Fields: PolicyResponse_Data_Attributes_BindingsFields,
-		},
-	}
+	"Bindings": ubx.FieldSpec{
+		WireName: "bindings",
+		Kind:     "list",
+		Fields:   PolicyResponse_Data_Attributes_BindingsFields,
+	},
+}
 
 var PolicyResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: PolicyResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   PolicyResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PolicyResponseConfig struct {
 	// Restriction policy object.
@@ -64,8 +64,8 @@ var PolicyResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: PolicyResponse_DataFields,
+			Kind:     "object",
+			Fields:   PolicyResponse_DataFields,
 		},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
 	},

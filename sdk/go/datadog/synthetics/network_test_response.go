@@ -6,8 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type NetworkTestResponse_Data_Attributes_Config_Assertions struct {
 	Operator any
 	Property any
-	Target any
-	Type any
+	Target   any
+	Type     any
 }
 
 type NetworkTestResponse_Data_Attributes_Config_Request struct {
@@ -57,9 +57,9 @@ type NetworkTestResponse_Data_Attributes_Options_Retry struct {
 }
 
 type NetworkTestResponse_Data_Attributes_Options_Scheduling_Timeframes struct {
-	Day any
+	Day  any
 	From any
-	To any
+	To   any
 }
 
 type NetworkTestResponse_Data_Attributes_Options_Scheduling struct {
@@ -118,123 +118,126 @@ type NetworkTestResponse_Data_Attributes struct {
 type NetworkTestResponse_Data struct {
 	// Object containing details about a Network Path test.
 	Attributes any
+	// The public ID of the Network Path test.
+	Id any
 	// Type of the Synthetic test, `network`.
 	Type any
 }
 
 var NetworkTestResponse_Data_Attributes_Config_AssertionsFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Property": ubx.FieldSpec{WireName: "property"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Property": ubx.FieldSpec{WireName: "property"},
+	"Target":   ubx.FieldSpec{WireName: "target"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var NetworkTestResponse_Data_Attributes_Config_RequestFields = ubx.FieldMap{
-		"DestinationService": ubx.FieldSpec{WireName: "destination_service"},
-		"E2eQueries": ubx.FieldSpec{WireName: "e2e_queries"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"MaxTtl": ubx.FieldSpec{WireName: "max_ttl"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SourceService": ubx.FieldSpec{WireName: "source_service"},
-		"TcpMethod": ubx.FieldSpec{WireName: "tcp_method"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"TracerouteQueries": ubx.FieldSpec{WireName: "traceroute_queries"},
-	}
+	"DestinationService": ubx.FieldSpec{WireName: "destination_service"},
+	"E2eQueries":         ubx.FieldSpec{WireName: "e2e_queries"},
+	"Host":               ubx.FieldSpec{WireName: "host"},
+	"MaxTtl":             ubx.FieldSpec{WireName: "max_ttl"},
+	"Port":               ubx.FieldSpec{WireName: "port"},
+	"SourceService":      ubx.FieldSpec{WireName: "source_service"},
+	"TcpMethod":          ubx.FieldSpec{WireName: "tcp_method"},
+	"Timeout":            ubx.FieldSpec{WireName: "timeout"},
+	"TracerouteQueries":  ubx.FieldSpec{WireName: "traceroute_queries"},
+}
 
 var NetworkTestResponse_Data_Attributes_ConfigFields = ubx.FieldMap{
-		"Assertions": ubx.FieldSpec{
-			WireName: "assertions",
-			Kind: "list",
-			Fields: NetworkTestResponse_Data_Attributes_Config_AssertionsFields,
-		},
-		"Request": ubx.FieldSpec{
-			WireName: "request",
-			Kind: "object",
-			Fields: NetworkTestResponse_Data_Attributes_Config_RequestFields,
-		},
-	}
+	"Assertions": ubx.FieldSpec{
+		WireName: "assertions",
+		Kind:     "list",
+		Fields:   NetworkTestResponse_Data_Attributes_Config_AssertionsFields,
+	},
+	"Request": ubx.FieldSpec{
+		WireName: "request",
+		Kind:     "object",
+		Fields:   NetworkTestResponse_Data_Attributes_Config_RequestFields,
+	},
+}
 
 var NetworkTestResponse_Data_Attributes_Options_MonitorOptionsFields = ubx.FieldMap{
-		"EscalationMessage": ubx.FieldSpec{WireName: "escalation_message"},
-		"NotificationPresetName": ubx.FieldSpec{WireName: "notification_preset_name"},
-		"RenotifyInterval": ubx.FieldSpec{WireName: "renotify_interval"},
-		"RenotifyOccurrences": ubx.FieldSpec{WireName: "renotify_occurrences"},
-	}
+	"EscalationMessage":      ubx.FieldSpec{WireName: "escalation_message"},
+	"NotificationPresetName": ubx.FieldSpec{WireName: "notification_preset_name"},
+	"RenotifyInterval":       ubx.FieldSpec{WireName: "renotify_interval"},
+	"RenotifyOccurrences":    ubx.FieldSpec{WireName: "renotify_occurrences"},
+}
 
 var NetworkTestResponse_Data_Attributes_Options_RetryFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-	}
+	"Count":    ubx.FieldSpec{WireName: "count"},
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+}
 
 var NetworkTestResponse_Data_Attributes_Options_Scheduling_TimeframesFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"Day":  ubx.FieldSpec{WireName: "day"},
+	"From": ubx.FieldSpec{WireName: "from"},
+	"To":   ubx.FieldSpec{WireName: "to"},
+}
 
 var NetworkTestResponse_Data_Attributes_Options_SchedulingFields = ubx.FieldMap{
-		"Timeframes": ubx.FieldSpec{
-			WireName: "timeframes",
-			Kind: "list",
-			Fields: NetworkTestResponse_Data_Attributes_Options_Scheduling_TimeframesFields,
-		},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Timeframes": ubx.FieldSpec{
+		WireName: "timeframes",
+		Kind:     "list",
+		Fields:   NetworkTestResponse_Data_Attributes_Options_Scheduling_TimeframesFields,
+	},
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 var NetworkTestResponse_Data_Attributes_OptionsFields = ubx.FieldMap{
-		"MinFailureDuration": ubx.FieldSpec{WireName: "min_failure_duration"},
-		"MinLocationFailed": ubx.FieldSpec{WireName: "min_location_failed"},
-		"MonitorName": ubx.FieldSpec{WireName: "monitor_name"},
-		"MonitorOptions": ubx.FieldSpec{
-			WireName: "monitor_options",
-			Kind: "object",
-			Fields: NetworkTestResponse_Data_Attributes_Options_MonitorOptionsFields,
-		},
-		"MonitorPriority": ubx.FieldSpec{WireName: "monitor_priority"},
-		"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
-		"Retry": ubx.FieldSpec{
-			WireName: "retry",
-			Kind: "object",
-			Fields: NetworkTestResponse_Data_Attributes_Options_RetryFields,
-		},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: NetworkTestResponse_Data_Attributes_Options_SchedulingFields,
-		},
-		"TickEvery": ubx.FieldSpec{WireName: "tick_every"},
-	}
+	"MinFailureDuration": ubx.FieldSpec{WireName: "min_failure_duration"},
+	"MinLocationFailed":  ubx.FieldSpec{WireName: "min_location_failed"},
+	"MonitorName":        ubx.FieldSpec{WireName: "monitor_name"},
+	"MonitorOptions": ubx.FieldSpec{
+		WireName: "monitor_options",
+		Kind:     "object",
+		Fields:   NetworkTestResponse_Data_Attributes_Options_MonitorOptionsFields,
+	},
+	"MonitorPriority": ubx.FieldSpec{WireName: "monitor_priority"},
+	"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
+	"Retry": ubx.FieldSpec{
+		WireName: "retry",
+		Kind:     "object",
+		Fields:   NetworkTestResponse_Data_Attributes_Options_RetryFields,
+	},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   NetworkTestResponse_Data_Attributes_Options_SchedulingFields,
+	},
+	"TickEvery": ubx.FieldSpec{WireName: "tick_every"},
+}
 
 var NetworkTestResponse_Data_AttributesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: NetworkTestResponse_Data_Attributes_ConfigFields,
-		},
-		"Locations": ubx.FieldSpec{WireName: "locations"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: NetworkTestResponse_Data_Attributes_OptionsFields,
-		},
-		"PublicId": ubx.FieldSpec{WireName: "public_id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Subtype": ubx.FieldSpec{WireName: "subtype"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   NetworkTestResponse_Data_Attributes_ConfigFields,
+	},
+	"Locations": ubx.FieldSpec{WireName: "locations"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   NetworkTestResponse_Data_Attributes_OptionsFields,
+	},
+	"PublicId": ubx.FieldSpec{WireName: "public_id"},
+	"Status":   ubx.FieldSpec{WireName: "status"},
+	"Subtype":  ubx.FieldSpec{WireName: "subtype"},
+	"Tags":     ubx.FieldSpec{WireName: "tags"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var NetworkTestResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: NetworkTestResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   NetworkTestResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type NetworkTestResponseConfig struct {
 	// Data object for creating or editing a Network Path test.
@@ -255,8 +258,8 @@ var NetworkTestResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: NetworkTestResponse_DataFields,
+			Kind:     "object",
+			Fields:   NetworkTestResponse_DataFields,
 		},
 		"PublicId": ubx.FieldSpec{WireName: "public_id"},
 	},

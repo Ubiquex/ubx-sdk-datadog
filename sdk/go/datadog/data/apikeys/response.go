@@ -4,17 +4,17 @@ package apikeys
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes struct {
-	Category any
-	CreatedAt any
-	DateLastUsed any
-	Last4 any
-	ModifiedAt any
-	Name any
+	Category                any
+	CreatedAt               any
+	DateLastUsed            any
+	Last4                   any
+	ModifiedAt              any
+	Name                    any
 	RemoteConfigReadEnabled any
 }
 
 type Response_Data_Relationships_CreatedBy_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -23,32 +23,32 @@ type Response_Data_Relationships_CreatedBy struct {
 }
 
 type Response_Data_Relationships struct {
-	CreatedBy any
+	CreatedBy  any
 	ModifiedBy any
 }
 
 type Response_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type Response_Included_Relationships_OtherOrgs struct {
@@ -56,17 +56,17 @@ type Response_Included_Relationships_OtherOrgs struct {
 }
 
 type Response_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Meta_Page struct {
@@ -82,7 +82,7 @@ type Response_Meta struct {
 }
 
 type ResponseConfig struct {
-	Filter any
+	Filter  any
 	Include any
 	// Sorting options
 	Sort any
@@ -90,8 +90,8 @@ type ResponseConfig struct {
 
 type ResponseAttrs struct {
 	// Array of API keys.
-	Data any
-	Filter any
+	Data    any
+	Filter  any
 	Include any
 	// Array of objects related to the API key.
 	Included any
@@ -104,8 +104,8 @@ type ResponseAttrs struct {
 var Response = ubx.DataSourceBinding{
 	WireType: "datadog_apikeys_response",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":  ubx.FieldSpec{WireName: "filter"},
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

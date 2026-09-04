@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Dashboard_DefaultTimeframe:
-    # The start of the default time range for the dashboard, in epoch milliseconds. (AI-inferred)
     from_: Any = None
-    # The end time of the default time range for the dashboard, expressed as a Unix timestamp. (AI-inferred)
     to: Any = None
-    # The type of default timeframe for the dashboard, indicating whether it is a rolling time window or a fixed date range (e.g., 'rolling' or 'fixed'). (AI-inferred)
     type: Any = None
     unit: Any = None
     value: Any = None
@@ -20,60 +17,41 @@ class Dashboard_DefaultTimeframe:
 @dataclasses.dataclass
 class Dashboard_Tabs:
     id: Any = None
-    # The name of the tab, which serves as its title. The name must be between 1 and 100 characters. (AI-inferred)
     name: Any = None
-    # The list of widget IDs contained within this tab. (AI-inferred)
     widget_ids: Any = None
 
 @dataclasses.dataclass
 class Dashboard_TemplateVariablePresets_TemplateVariables:
-    # The name of the template variable to override, matching a template variable defined on the dashboard. (AI-inferred)
     name: Any = None
-    # The value to assign to the template variable when this preset is applied. (AI-inferred)
     value: Any = None
-    # The list of values assigned to the template variable when this preset is applied. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class Dashboard_TemplateVariablePresets:
-    # The name of the template variable preset. (AI-inferred)
     name: Any = None
-    # List of template variable assignments for this preset. Each object defines a template variable name and the value to apply when the preset is selected. (AI-inferred)
     template_variables: Any = None
 
 @dataclasses.dataclass
 class Dashboard_TemplateVariables:
-    # List of values available for selection for this template variable. If not specified, all possible values are shown in the dropdown. (AI-inferred)
     available_values: Any = None
-    # The default value assigned to the template variable when the dashboard is loaded. This value is used unless the viewer changes it. (AI-inferred)
     default: Any = None
-    # Default value(s) used for this template variable when the dashboard is loaded. Provide a list of strings to support multi-select variables. (AI-inferred)
     defaults: Any = None
-    # The name of the template variable, used to reference it in dashboard queries and widgets. (AI-inferred)
     name: Any = None
-    # The prefix used to filter the available values for the template variable, typically a tag key followed by a colon (e.g., 'env:'). (AI-inferred)
     prefix: Any = None
     type: Any = None
 
 @dataclasses.dataclass
 class Dashboard_Widgets_Layout:
-    # The height of the widget in grid units. The minimum allowed value is 0. (AI-inferred)
     height: Any = None
-    # Set to true to treat this widget as a column break, which forces the next widget to start a new column in the structured layout. (AI-inferred)
     is_column_break: Any = None
-    # The width of the widget in grid units (columns) within the dashboard layout. The minimum allowed value is 0. (AI-inferred)
     width: Any = None
-    # The horizontal position (column) of the widget in the dashboard grid. Must be greater than or equal to 0. (AI-inferred)
     x: Any = None
-    # The vertical position of the widget on the dashboard grid, measured from the top. The value must be greater than or equal to 0. (AI-inferred)
     y: Any = None
 
 @dataclasses.dataclass
 class Dashboard_Widgets:
-    # The definition block that specifies the configuration for the widget, including the widget type and type-specific settings (e.g., requests, title, layout). The exact structure varies by widget type. (AI-inferred)
     definition: Any = None
     id: Any = None
-    # Layout of the widget within the dashboard, specifying its position and size on the grid. (AI-inferred)
     layout: Any = None
 
 _Dashboard_DefaultTimeframeFields = {
@@ -134,24 +112,14 @@ _Dashboard_WidgetsFields = {
 
 @dataclasses.dataclass
 class DashboardConfig:
-    # Identifier of the dashboard author.
-    author_handle: Any = None
-    # Name of the dashboard author.
-    author_name: Any = None
-    # Creation date of the dashboard.
-    created_at: Any = None
     # The default timeframe applied when opening the dashboard. Set to `null` to clear the dashboard's default timeframe.
     default_timeframe: Any = None
     # Description of the dashboard.
     description: Any = None
-    # ID of the dashboard.
-    id: Any = None
     # Whether this dashboard is read-only. If True, only the author and admins can make changes to it. This property is deprecated; please use the [Restriction Policies API](https://docs.datadoghq.com/api/latest/restriction-policies/) instead to manage write authorization for individual dashboards.
     is_read_only: Any = None
     # Layout type of the dashboard.
     layout_type: Any = None
-    # Modification date of the dashboard.
-    modified_at: Any = None
     # List of handles of users to notify when changes are made to this dashboard.
     notify_list: Any = None
     # Reflow type for a **new dashboard layout** dashboard. Set this only when layout type is 'ordered'. If set to 'fixed', the dashboard expects all widgets to have a layout, and if it's set to 'auto', widgets should not have layouts.
@@ -168,8 +136,6 @@ class DashboardConfig:
     template_variables: Any = None
     # Title of the dashboard.
     title: Any = None
-    # The URL of the dashboard.
-    url: Any = None
     # List of widgets to display on the dashboard.
     widgets: Any = None
     # path parameter, not part of the API's own resource representation
@@ -221,19 +187,14 @@ class DashboardAttrs:
 Dashboard = ubx.ResourceBinding(
     wire_type="datadog_dashboard",
     fields={
-        "author_handle": ubx.FieldSpec(wire_name="author_handle"),
-        "author_name": ubx.FieldSpec(wire_name="author_name"),
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "default_timeframe": ubx.FieldSpec(
             wire_name="default_timeframe",
             kind="object",
             fields=_Dashboard_DefaultTimeframeFields,
         ),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "is_read_only": ubx.FieldSpec(wire_name="is_read_only"),
         "layout_type": ubx.FieldSpec(wire_name="layout_type"),
-        "modified_at": ubx.FieldSpec(wire_name="modified_at"),
         "notify_list": ubx.FieldSpec(wire_name="notify_list"),
         "reflow_type": ubx.FieldSpec(wire_name="reflow_type"),
         "restricted_roles": ubx.FieldSpec(wire_name="restricted_roles"),
@@ -254,7 +215,6 @@ Dashboard = ubx.ResourceBinding(
             fields=_Dashboard_TemplateVariablesFields,
         ),
         "title": ubx.FieldSpec(wire_name="title"),
-        "url": ubx.FieldSpec(wire_name="url"),
         "widgets": ubx.FieldSpec(
             wire_name="widgets",
             kind="list",

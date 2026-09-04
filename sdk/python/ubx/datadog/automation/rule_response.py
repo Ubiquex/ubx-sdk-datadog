@@ -46,6 +46,10 @@ class RuleResponse_Data_Attributes_Trigger:
 class RuleResponse_Data_Attributes:
     # Defines what happens when the rule triggers. Combines an action type with action-specific configuration data.
     action: Any = None
+    # Timestamp when the automation rule was created.
+    created_at: Any = None
+    # Timestamp when the automation rule was last modified.
+    modified_at: Any = None
     # Name of the automation rule.
     name: Any = None
     # Whether the automation rule is active. Enabled rules trigger on matching case events; disabled rules are inactive but preserve their configuration.
@@ -54,9 +58,32 @@ class RuleResponse_Data_Attributes:
     trigger: Any = None
 
 @dataclasses.dataclass
+class RuleResponse_Data_Relationships_CreatedBy_Data:
+    # A unique identifier that represents the user.
+    id: Any = None
+    # User resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class RuleResponse_Data_Relationships_CreatedBy:
+    # Relationship to user object.
+    data: Any = None
+
+@dataclasses.dataclass
+class RuleResponse_Data_Relationships:
+    # Relationship to user.
+    created_by: Any = None
+    # Relationship to user.
+    modified_by: Any = None
+
+@dataclasses.dataclass
 class RuleResponse_Data:
     # Attributes required to create an automation rule.
     attributes: Any = None
+    # Automation rule identifier.
+    id: Any = None
+    # Related resources for the automation rule, including the users who created and last modified it.
+    relationships: Any = None
     # JSON:API resource type for case automation rules.
     type: Any = None
 
@@ -98,6 +125,8 @@ _RuleResponse_Data_AttributesFields = {
         kind="object",
         fields=_RuleResponse_Data_Attributes_ActionFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
     "state": ubx.FieldSpec(wire_name="state"),
     "trigger": ubx.FieldSpec(
@@ -107,11 +136,43 @@ _RuleResponse_Data_AttributesFields = {
     ),
 }
 
+_RuleResponse_Data_Relationships_CreatedBy_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_RuleResponse_Data_Relationships_CreatedByFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_RuleResponse_Data_Relationships_CreatedBy_DataFields,
+    ),
+}
+
+_RuleResponse_Data_RelationshipsFields = {
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_RuleResponse_Data_Relationships_CreatedByFields,
+    ),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_RuleResponse_Data_Relationships_CreatedByFields,
+    ),
+}
+
 _RuleResponse_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
         kind="object",
         fields=_RuleResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_RuleResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

@@ -4,30 +4,30 @@ package aws
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Curconfig_Data_Attributes_AccountFilters struct {
-	ExcludedAccounts any
+	ExcludedAccounts   any
 	IncludeNewAccounts any
-	IncludedAccounts any
+	IncludedAccounts   any
 }
 
 type Curconfig_Data_Attributes struct {
-	AccountFilters any
-	AccountId any
-	BucketName any
-	BucketRegion any
-	CreatedAt any
-	ErrorMessages any
-	Months any
-	ReportName any
-	ReportPrefix any
-	Status any
+	AccountFilters  any
+	AccountId       any
+	BucketName      any
+	BucketRegion    any
+	CreatedAt       any
+	ErrorMessages   any
+	Months          any
+	ReportName      any
+	ReportPrefix    any
+	Status          any
 	StatusUpdatedAt any
-	UpdatedAt any
+	UpdatedAt       any
 }
 
 type Curconfig_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type CurconfigConfig struct {
@@ -40,6 +40,5 @@ type CurconfigAttrs struct {
 
 var Curconfig = ubx.DataSourceBinding{
 	WireType: "datadog_aws_curconfig",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

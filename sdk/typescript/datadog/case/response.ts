@@ -7,17 +7,69 @@ export interface Response_Data_Attributes_CustomAttributes {
   value?: unknown | Computed<unknown>;
 }
 
+export interface Response_Data_Attributes_JiraIssue_Result {
+  /** Jira issue ID */
+  issueId?: string | Computed<string>;
+  /** Jira issue key */
+  issueKey?: string | Computed<string>;
+  /** Jira issue URL */
+  issueUrl?: string | Computed<string>;
+  /** Jira project key */
+  projectKey?: string | Computed<string>;
+}
+
+export interface Response_Data_Attributes_JiraIssue {
+  /** Jira issue information */
+  result?: Response_Data_Attributes_JiraIssue_Result | Computed<Response_Data_Attributes_JiraIssue_Result>;
+  /** Case status */
+  status?: string | Computed<string>;
+}
+
+export interface Response_Data_Attributes_ServiceNowTicket_Result {
+  /** Link to the Incident created on ServiceNow */
+  sysTargetLink?: string | Computed<string>;
+}
+
+export interface Response_Data_Attributes_ServiceNowTicket {
+  /** ServiceNow ticket information */
+  result?: Response_Data_Attributes_ServiceNowTicket_Result | Computed<Response_Data_Attributes_ServiceNowTicket_Result>;
+  /** Case status */
+  status?: string | Computed<string>;
+}
+
 export interface Response_Data_Attributes {
+  /** Timestamp of when the case was archived */
+  archivedAt?: string | Computed<string>;
+  /** Key-value pairs of case attributes. Each key maps to an array of string values, used for flexible metadata such as labels or tags. */
+  attributes?: Record<string, string[]> | Computed<Record<string, string[]>>;
+  /** Timestamp of when the case was closed */
+  closedAt?: string | Computed<string>;
+  /** Timestamp of when the case was created */
+  createdAt?: string | Computed<string>;
   /** Case custom attributes */
   customAttributes?: Record<string, Response_Data_Attributes_CustomAttributes> | Computed<Record<string, Response_Data_Attributes_CustomAttributes>>;
   /** Description */
   description?: string | Computed<string>;
+  /** Jira issue attached to case */
+  jiraIssue?: Response_Data_Attributes_JiraIssue | Computed<Response_Data_Attributes_JiraIssue>;
+  /** Key */
+  key?: string | Computed<string>;
+  /** Timestamp of when the case was last modified */
+  modifiedAt?: string | Computed<string>;
   /** Case priority */
   priority?: string | Computed<string>;
+  /** ServiceNow ticket attached to case */
+  serviceNowTicket?: Response_Data_Attributes_ServiceNowTicket | Computed<Response_Data_Attributes_ServiceNowTicket>;
+  /** Deprecated way of representing the case status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use `status_name` instead. */
+  status?: string | Computed<string>;
+  /** Status group of the case. */
+  statusGroup?: string | Computed<string>;
   /** Status of the case. Must be one of the existing statuses for the case's type. */
   statusName?: string | Computed<string>;
   /** Title */
   title: string | Computed<string>;
+  /** Case type */
+  type?: string | Computed<string>;
   /** Case type UUID */
   typeId: string | Computed<string>;
 }
@@ -37,6 +89,10 @@ export interface Response_Data_Relationships_Assignee {
 export interface Response_Data_Relationships {
   /** Relationship to user. */
   assignee?: Response_Data_Relationships_Assignee | Computed<Response_Data_Relationships_Assignee>;
+  /** Relationship to user. */
+  createdBy?: Response_Data_Relationships_Assignee | Computed<Response_Data_Relationships_Assignee>;
+  /** Relationship to user. */
+  modifiedBy?: Response_Data_Relationships_Assignee | Computed<Response_Data_Relationships_Assignee>;
   /** Relationship to project. */
   project: Response_Data_Relationships_Assignee | Computed<Response_Data_Relationships_Assignee>;
 }
@@ -44,6 +100,8 @@ export interface Response_Data_Relationships {
 export interface Response_Data {
   /** Case creation attributes */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** Case's identifier */
+  id?: string | Computed<string>;
   /** Relationships formed with the case on creation */
   relationships?: Response_Data_Relationships | Computed<Response_Data_Relationships>;
   /** JSON:API resource type for cases. */
@@ -56,16 +114,64 @@ const Response_Data_Attributes_CustomAttributesFields: FieldMap = {
   value: "value",
 };
 
+const Response_Data_Attributes_JiraIssue_ResultFields: FieldMap = {
+  issueId: "issue_id",
+  issueKey: "issue_key",
+  issueUrl: "issue_url",
+  projectKey: "project_key",
+};
+
+const Response_Data_Attributes_JiraIssueFields: FieldMap = {
+  result: {
+    wireName: "result",
+    kind: "object",
+    fields: Response_Data_Attributes_JiraIssue_ResultFields,
+  },
+  status: "status",
+};
+
+const Response_Data_Attributes_ServiceNowTicket_ResultFields: FieldMap = {
+  sysTargetLink: "sys_target_link",
+};
+
+const Response_Data_Attributes_ServiceNowTicketFields: FieldMap = {
+  result: {
+    wireName: "result",
+    kind: "object",
+    fields: Response_Data_Attributes_ServiceNowTicket_ResultFields,
+  },
+  status: "status",
+};
+
 const Response_Data_AttributesFields: FieldMap = {
+  archivedAt: "archived_at",
+  attributes: "attributes",
+  closedAt: "closed_at",
+  createdAt: "created_at",
   customAttributes: {
     wireName: "custom_attributes",
     kind: "map",
     fields: Response_Data_Attributes_CustomAttributesFields,
   },
   description: "description",
+  jiraIssue: {
+    wireName: "jira_issue",
+    kind: "object",
+    fields: Response_Data_Attributes_JiraIssueFields,
+  },
+  key: "key",
+  modifiedAt: "modified_at",
   priority: "priority",
+  serviceNowTicket: {
+    wireName: "service_now_ticket",
+    kind: "object",
+    fields: Response_Data_Attributes_ServiceNowTicketFields,
+  },
+  status: "status",
+  statusGroup: "status_group",
   statusName: "status_name",
   title: "title",
+  type: "type",
   typeId: "type_id",
 };
 
@@ -88,6 +194,16 @@ const Response_Data_RelationshipsFields: FieldMap = {
     kind: "object",
     fields: Response_Data_Relationships_AssigneeFields,
   },
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: Response_Data_Relationships_AssigneeFields,
+  },
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: Response_Data_Relationships_AssigneeFields,
+  },
   project: {
     wireName: "project",
     kind: "object",
@@ -101,6 +217,7 @@ const Response_DataFields: FieldMap = {
     kind: "object",
     fields: Response_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

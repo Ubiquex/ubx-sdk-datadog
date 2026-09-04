@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TagConfigurationResponse_Data_Attributes_Aggregations struct {
 	Space any
-	Time any
+	Time  any
 }
 
 type TagConfigurationResponse_Data_Attributes struct {
@@ -59,7 +59,7 @@ type TagConfigurationResponseConfig struct {
 
 type TagConfigurationResponseAttrs struct {
 	// Object for a single metric tag configuration.
-	Data any
+	Data       any
 	MetricName any
 }
 

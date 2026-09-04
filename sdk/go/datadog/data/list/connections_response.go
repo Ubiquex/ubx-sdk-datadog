@@ -6,25 +6,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ConnectionsResponse_Data_Attributes_Connections_Fields struct {
 	Description any
 	DisplayName any
-	Groups any
-	Id any
-	SourceName any
-	Type any
+	Groups      any
+	Id          any
+	SourceName  any
+	Type        any
 }
 
 type ConnectionsResponse_Data_Attributes_Connections_Join struct {
 	Attribute any
-	Type any
+	Type      any
 }
 
 type ConnectionsResponse_Data_Attributes_Connections struct {
 	CreatedAt any
 	CreatedBy any
-	Fields any
-	Id any
-	Join any
-	Metadata any
-	Type any
+	Fields    any
+	Id        any
+	Join      any
+	Metadata  any
+	Type      any
 	UpdatedAt any
 	UpdatedBy any
 }
@@ -49,7 +49,7 @@ type ConnectionsResponseConfig struct {
 
 type ConnectionsResponseAttrs struct {
 	// The data object containing the resource type and attributes for the list connections response.
-	Data any
+	Data   any
 	Entity any
 }
 

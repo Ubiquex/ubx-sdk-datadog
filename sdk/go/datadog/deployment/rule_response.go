@@ -3,57 +3,98 @@ package deployment
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RuleResponse_Data_Attributes_CreatedBy struct {
+	// The handle of the user who created the deployment rule.
+	Handle any
+	// The ID of the user who created the deployment rule.
+	Id any
+	// The name of the user who created the deployment rule.
+	Name any
+}
+
 type RuleResponse_Data_Attributes_Options struct {
-	AllowedResources any
-	Duration any
+	AllowedResources  any
+	Duration          any
 	ExcludedResources any
-	Query any
+	Query             any
 }
 
 type RuleResponse_Data_Attributes struct {
+	// The timestamp when the deployment rule was created.
+	CreatedAt any
+	// Information about the user who created the deployment rule.
+	CreatedBy any
 	// Whether this rule is run in dry-run mode.
 	DryRun any
+	// The ID of the deployment gate.
+	GateId any
 	// The name of the deployment rule.
 	Name any
 	// Options for deployment rule response representing either faulty deployment detection or monitor options.
 	Options any
 	// The type of the deployment rule (faulty_deployment_detection or monitor).
 	Type any
+	// The timestamp when the deployment rule was last updated.
+	UpdatedAt any
+	// Information about the user who updated the deployment rule.
+	UpdatedBy any
 }
 
 type RuleResponse_Data struct {
 	// Parameters for creating a deployment rule.
 	Attributes any
+	// Unique identifier of the deployment rule.
+	Id any
 	// Deployment rule resource type.
 	Type any
 }
 
+var RuleResponse_Data_Attributes_CreatedByFields = ubx.FieldMap{
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
+
 var RuleResponse_Data_Attributes_OptionsFields = ubx.FieldMap{
-		"AllowedResources": ubx.FieldSpec{WireName: "allowed_resources"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"ExcludedResources": ubx.FieldSpec{WireName: "excluded_resources"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"AllowedResources":  ubx.FieldSpec{WireName: "allowed_resources"},
+	"Duration":          ubx.FieldSpec{WireName: "duration"},
+	"ExcludedResources": ubx.FieldSpec{WireName: "excluded_resources"},
+	"Query":             ubx.FieldSpec{WireName: "query"},
+}
 
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_OptionsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+	"GateId": ubx.FieldSpec{WireName: "gate_id"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_OptionsFields,
+	},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+	"UpdatedBy": ubx.FieldSpec{
+		WireName: "updated_by",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_CreatedByFields,
+	},
+}
 
 var RuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RuleResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RuleResponseConfig struct {
 	// Parameters for creating a deployment rule.
@@ -78,10 +119,10 @@ var RuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   RuleResponse_DataFields,
 		},
 		"GateId": ubx.FieldSpec{WireName: "gate_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":     ubx.FieldSpec{WireName: "id"},
 	},
 }

@@ -24,24 +24,24 @@ type RuleScoreResponse_Data struct {
 }
 
 type RuleScoreResponseConfig struct {
-	RuleId any
-	TsEnd any
+	RuleId  any
+	TsEnd   any
 	TsStart any
 }
 
 type RuleScoreResponseAttrs struct {
 	// A compliance score resource for a tag rule.
-	Data any
-	RuleId any
-	TsEnd any
+	Data    any
+	RuleId  any
+	TsEnd   any
 	TsStart any
 }
 
 var RuleScoreResponse = ubx.DataSourceBinding{
 	WireType: "datadog_tag_rule_score_response",
 	Fields: ubx.FieldMap{
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
-		"TsEnd": ubx.FieldSpec{WireName: "ts_end"},
+		"RuleId":  ubx.FieldSpec{WireName: "rule_id"},
+		"TsEnd":   ubx.FieldSpec{WireName: "ts_end"},
 		"TsStart": ubx.FieldSpec{WireName: "ts_start"},
 	},
 }

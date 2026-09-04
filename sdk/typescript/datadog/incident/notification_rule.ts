@@ -9,10 +9,14 @@ export interface NotificationRule_Data_Attributes_Conditions {
 export interface NotificationRule_Data_Attributes {
   /** The conditions that trigger this notification rule. */
   conditions: NotificationRule_Data_Attributes_Conditions[] | Computed<NotificationRule_Data_Attributes_Conditions[]>;
+  /** Timestamp when the notification rule was created. */
+  created?: string | Computed<string>;
   /** Whether the notification rule is enabled. */
   enabled?: boolean | Computed<boolean>;
   /** The notification handles (targets) for this rule. */
   handles: string[] | Computed<string[]>;
+  /** Timestamp when the notification rule was last modified. */
+  modified?: string | Computed<string>;
   /** List of incident fields that trigger re-notification when changed. */
   renotifyOn?: string[] | Computed<string[]>;
   /** The trigger event for this notification rule. */
@@ -21,28 +25,34 @@ export interface NotificationRule_Data_Attributes {
   visibility?: string | Computed<string>;
 }
 
-export interface NotificationRule_Data_Relationships_IncidentType_Data {
-  /** The incident type's ID. */
+export interface NotificationRule_Data_Relationships_CreatedByUser_Data {
+  /** A unique identifier that represents the user. */
   id: string | Computed<string>;
-  /** Incident type resource type. */
+  /** Users resource type. */
   type: string | Computed<string>;
 }
 
-export interface NotificationRule_Data_Relationships_IncidentType {
-  /** Relationship to incident type object. */
-  data: NotificationRule_Data_Relationships_IncidentType_Data | Computed<NotificationRule_Data_Relationships_IncidentType_Data>;
+export interface NotificationRule_Data_Relationships_CreatedByUser {
+  /** Relationship to user object. */
+  data: NotificationRule_Data_Relationships_CreatedByUser_Data | Computed<NotificationRule_Data_Relationships_CreatedByUser_Data>;
 }
 
 export interface NotificationRule_Data_Relationships {
+  /** Relationship to user. */
+  createdByUser?: NotificationRule_Data_Relationships_CreatedByUser | Computed<NotificationRule_Data_Relationships_CreatedByUser>;
   /** Relationship to an incident type. */
-  incidentType?: NotificationRule_Data_Relationships_IncidentType | Computed<NotificationRule_Data_Relationships_IncidentType>;
+  incidentType?: NotificationRule_Data_Relationships_CreatedByUser | Computed<NotificationRule_Data_Relationships_CreatedByUser>;
+  /** Relationship to user. */
+  lastModifiedByUser?: NotificationRule_Data_Relationships_CreatedByUser | Computed<NotificationRule_Data_Relationships_CreatedByUser>;
   /** A relationship reference to a notification template. */
-  notificationTemplate?: NotificationRule_Data_Relationships_IncidentType | Computed<NotificationRule_Data_Relationships_IncidentType>;
+  notificationTemplate?: NotificationRule_Data_Relationships_CreatedByUser | Computed<NotificationRule_Data_Relationships_CreatedByUser>;
 }
 
 export interface NotificationRule_Data {
   /** The attributes for creating a notification rule. */
   attributes: NotificationRule_Data_Attributes | Computed<NotificationRule_Data_Attributes>;
+  /** The unique identifier of the notification rule. */
+  id?: string | Computed<string>;
   /** The definition of `NotificationRuleCreateDataRelationships` object. */
   relationships?: NotificationRule_Data_Relationships | Computed<NotificationRule_Data_Relationships>;
   /** Notification rules resource type. */
@@ -67,11 +77,11 @@ export interface NotificationRule_Included_Attributes {
 }
 
 export interface NotificationRule_Included_Relationships_OtherOrgs {
-  data?: NotificationRule_Data_Relationships_IncidentType_Data[] | Computed<NotificationRule_Data_Relationships_IncidentType_Data[]>;
+  data?: NotificationRule_Data_Relationships_CreatedByUser_Data[] | Computed<NotificationRule_Data_Relationships_CreatedByUser_Data[]>;
 }
 
 export interface NotificationRule_Included_Relationships {
-  org?: NotificationRule_Data_Relationships_IncidentType | Computed<NotificationRule_Data_Relationships_IncidentType>;
+  org?: NotificationRule_Data_Relationships_CreatedByUser | Computed<NotificationRule_Data_Relationships_CreatedByUser>;
   otherOrgs?: NotificationRule_Included_Relationships_OtherOrgs | Computed<NotificationRule_Included_Relationships_OtherOrgs>;
   otherUsers?: NotificationRule_Included_Relationships_OtherOrgs | Computed<NotificationRule_Included_Relationships_OtherOrgs>;
   roles?: NotificationRule_Included_Relationships_OtherOrgs | Computed<NotificationRule_Included_Relationships_OtherOrgs>;
@@ -95,36 +105,48 @@ const NotificationRule_Data_AttributesFields: FieldMap = {
     kind: "list",
     fields: NotificationRule_Data_Attributes_ConditionsFields,
   },
+  created: "created",
   enabled: "enabled",
   handles: "handles",
+  modified: "modified",
   renotifyOn: "renotify_on",
   trigger: "trigger",
   visibility: "visibility",
 };
 
-const NotificationRule_Data_Relationships_IncidentType_DataFields: FieldMap = {
+const NotificationRule_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
   id: "id",
   type: "type",
 };
 
-const NotificationRule_Data_Relationships_IncidentTypeFields: FieldMap = {
+const NotificationRule_Data_Relationships_CreatedByUserFields: FieldMap = {
   data: {
     wireName: "data",
     kind: "object",
-    fields: NotificationRule_Data_Relationships_IncidentType_DataFields,
+    fields: NotificationRule_Data_Relationships_CreatedByUser_DataFields,
   },
 };
 
 const NotificationRule_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: NotificationRule_Data_Relationships_CreatedByUserFields,
+  },
   incidentType: {
     wireName: "incident_type",
     kind: "object",
-    fields: NotificationRule_Data_Relationships_IncidentTypeFields,
+    fields: NotificationRule_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: NotificationRule_Data_Relationships_CreatedByUserFields,
   },
   notificationTemplate: {
     wireName: "notification_template",
     kind: "object",
-    fields: NotificationRule_Data_Relationships_IncidentTypeFields,
+    fields: NotificationRule_Data_Relationships_CreatedByUserFields,
   },
 };
 
@@ -134,6 +156,7 @@ const NotificationRule_DataFields: FieldMap = {
     kind: "object",
     fields: NotificationRule_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

@@ -28,36 +28,39 @@ type RetentionFilterResponse_Data_Attributes struct {
 type RetentionFilterResponse_Data struct {
 	// The object describing attributes of a RUM retention filter to create.
 	Attributes any
+	// ID of retention filter in UUID.
+	Id any
 	// The type of the resource. The value should always be retention_filters.
 	Type any
 }
 
 var RetentionFilterResponse_Data_Attributes_CrossProductSamplingFields = ubx.FieldMap{
-		"TraceEnabled": ubx.FieldSpec{WireName: "trace_enabled"},
-		"TraceSampleRate": ubx.FieldSpec{WireName: "trace_sample_rate"},
-	}
+	"TraceEnabled":    ubx.FieldSpec{WireName: "trace_enabled"},
+	"TraceSampleRate": ubx.FieldSpec{WireName: "trace_sample_rate"},
+}
 
 var RetentionFilterResponse_Data_AttributesFields = ubx.FieldMap{
-		"CrossProductSampling": ubx.FieldSpec{
-			WireName: "cross_product_sampling",
-			Kind: "object",
-			Fields: RetentionFilterResponse_Data_Attributes_CrossProductSamplingFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"CrossProductSampling": ubx.FieldSpec{
+		WireName: "cross_product_sampling",
+		Kind:     "object",
+		Fields:   RetentionFilterResponse_Data_Attributes_CrossProductSamplingFields,
+	},
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+	"EventType":  ubx.FieldSpec{WireName: "event_type"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Query":      ubx.FieldSpec{WireName: "query"},
+	"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var RetentionFilterResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RetentionFilterResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RetentionFilterResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RetentionFilterResponseConfig struct {
 	// The new RUM retention filter properties to create.
@@ -82,10 +85,10 @@ var RetentionFilterResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RetentionFilterResponse_DataFields,
+			Kind:     "object",
+			Fields:   RetentionFilterResponse_DataFields,
 		},
 		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"RfId": ubx.FieldSpec{WireName: "rf_id"},
+		"RfId":  ubx.FieldSpec{WireName: "rf_id"},
 	},
 }

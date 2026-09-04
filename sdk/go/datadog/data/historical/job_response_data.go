@@ -5,158 +5,158 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type JobResponseData_Data_Attributes_JobDefinition_CalculatedFields struct {
 	Expression any
-	Name any
+	Name       any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Cases_Actions_Options struct {
-	Duration any
-	FlaggedIptype any
+	Duration         any
+	FlaggedIptype    any
 	UserBehaviorName any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Cases_Actions struct {
 	Options any
-	Type any
+	Type    any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Cases struct {
-	Actions any
-	Condition any
-	Name any
+	Actions       any
+	Condition     any
+	Name          any
 	Notifications any
-	Status any
+	Status        any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Options_AnomalyDetectionOptions struct {
-	BucketDuration any
-	DetectionTolerance any
-	InstantaneousBaseline any
-	LearningDuration any
+	BucketDuration         any
+	DetectionTolerance     any
+	InstantaneousBaseline  any
+	LearningDuration       any
 	LearningPeriodBaseline any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Options_ImpossibleTravelOptions struct {
-	BaselineUserLocations any
+	BaselineUserLocations         any
 	BaselineUserLocationsDuration any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Options_NewValueOptions struct {
-	ForgetAfter any
+	ForgetAfter           any
 	InstantaneousBaseline any
-	LearningDuration any
-	LearningMethod any
-	LearningThreshold any
+	LearningDuration      any
+	LearningMethod        any
+	LearningThreshold     any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_StepTransitions struct {
-	Child any
+	Child            any
 	EvaluationWindow any
-	Parent any
+	Parent           any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions_Steps struct {
-	Condition any
+	Condition        any
 	EvaluationWindow any
-	Name any
+	Name             any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Options_SequenceDetectionOptions struct {
 	StepTransitions any
-	Steps any
+	Steps           any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptions_RootQueries struct {
 	GroupByFields any
-	Query any
+	Query         any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Options_ThirdPartyRuleOptions struct {
 	DefaultNotifications any
-	DefaultStatus any
-	RootQueries any
-	SignalTitleTemplate any
+	DefaultStatus        any
+	RootQueries          any
+	SignalTitleTemplate  any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Options struct {
-	AnomalyDetectionOptions any
-	DetectionMethod any
-	EvaluationWindow any
-	ImpossibleTravelOptions any
-	KeepAlive any
-	MaxSignalDuration any
-	NewValueOptions any
+	AnomalyDetectionOptions  any
+	DetectionMethod          any
+	EvaluationWindow         any
+	ImpossibleTravelOptions  any
+	KeepAlive                any
+	MaxSignalDuration        any
+	NewValueOptions          any
 	SequenceDetectionOptions any
-	ThirdPartyRuleOptions any
+	ThirdPartyRuleOptions    any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_Queries struct {
-	AdditionalFilters any
-	Aggregation any
-	CorrelatedByFields any
-	CorrelatedQueryIndex any
-	CustomQueryExtension any
-	DataSource any
-	DatasetIds any
-	DistinctFields any
-	GroupByFields any
+	AdditionalFilters        any
+	Aggregation              any
+	CorrelatedByFields       any
+	CorrelatedQueryIndex     any
+	CustomQueryExtension     any
+	DataSource               any
+	DatasetIds               any
+	DistinctFields           any
+	GroupByFields            any
 	HasOptionalGroupByFields any
-	Index any
-	Indexes any
-	Metrics any
-	Name any
-	Query any
-	QueryLanguage any
+	Index                    any
+	Indexes                  any
+	Metrics                  any
+	Name                     any
+	Query                    any
+	QueryLanguage            any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_ReferenceTables struct {
 	CheckPresence any
-	ColumnName any
-	LogFieldPath any
+	ColumnName    any
+	LogFieldPath  any
 	RuleQueryName any
-	TableName any
+	TableName     any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition_ThirdPartyCases struct {
-	Name any
+	Name          any
 	Notifications any
-	Query any
-	Status any
+	Query         any
+	Status        any
 }
 
 type JobResponseData_Data_Attributes_JobDefinition struct {
 	CalculatedFields any
-	Cases any
-	From any
-	GroupSignalsBy any
-	Index any
-	Message any
-	Name any
-	Options any
-	Queries any
-	ReferenceTables any
-	Tags any
-	ThirdPartyCases any
-	To any
-	Type any
+	Cases            any
+	From             any
+	GroupSignalsBy   any
+	Index            any
+	Message          any
+	Name             any
+	Options          any
+	Queries          any
+	ReferenceTables  any
+	Tags             any
+	ThirdPartyCases  any
+	To               any
+	Type             any
 }
 
 type JobResponseData_Data_Attributes struct {
-	CreatedAt any
-	CreatedByHandle any
-	CreatedByName any
+	CreatedAt         any
+	CreatedByHandle   any
+	CreatedByName     any
 	CreatedFromRuleId any
-	JobDefinition any
-	JobName any
-	JobStatus any
-	ModifiedAt any
-	ProgressRate any
-	SignalOutput any
+	JobDefinition     any
+	JobName           any
+	JobStatus         any
+	ModifiedAt        any
+	ProgressRate      any
+	SignalOutput      any
 }
 
 type JobResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type JobResponseData_Meta struct {

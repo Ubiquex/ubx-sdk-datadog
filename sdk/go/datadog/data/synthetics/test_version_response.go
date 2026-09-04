@@ -16,26 +16,26 @@ type TestVersionResponse_Data_Attributes_Author struct {
 
 type TestVersionResponse_Data_Attributes_ChangeMetadata_ActionMetadata_DiffPatches_Diffs struct {
 	ChangeText any
-	Operation any
+	Operation  any
 }
 
 type TestVersionResponse_Data_Attributes_ChangeMetadata_ActionMetadata_DiffPatches struct {
-	Diffs any
+	Diffs   any
 	Length1 any
 	Length2 any
-	Start1 any
-	Start2 any
+	Start1  any
+	Start2  any
 }
 
 type TestVersionResponse_Data_Attributes_ChangeMetadata_ActionMetadata struct {
-	AfterValue any
-	BeforeValue any
-	DiffPatches any
+	AfterValue   any
+	BeforeValue  any
+	DiffPatches  any
 	PropertyPath any
 }
 
 type TestVersionResponse_Data_Attributes_ChangeMetadata struct {
-	Action any
+	Action         any
 	ActionMetadata any
 }
 
@@ -61,26 +61,26 @@ type TestVersionResponse_Data struct {
 
 type TestVersionResponseConfig struct {
 	IncludeChangeMetadata any
-	OnlyCheckExistence any
-	PublicId any
-	VersionNumber any
+	OnlyCheckExistence    any
+	PublicId              any
+	VersionNumber         any
 }
 
 type TestVersionResponseAttrs struct {
 	// Data object for a specific Synthetic test version.
-	Data any
+	Data                  any
 	IncludeChangeMetadata any
-	OnlyCheckExistence any
-	PublicId any
-	VersionNumber any
+	OnlyCheckExistence    any
+	PublicId              any
+	VersionNumber         any
 }
 
 var TestVersionResponse = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_test_version_response",
 	Fields: ubx.FieldMap{
 		"IncludeChangeMetadata": ubx.FieldSpec{WireName: "include_change_metadata"},
-		"OnlyCheckExistence": ubx.FieldSpec{WireName: "only_check_existence"},
-		"PublicId": ubx.FieldSpec{WireName: "public_id"},
-		"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
+		"OnlyCheckExistence":    ubx.FieldSpec{WireName: "only_check_existence"},
+		"PublicId":              ubx.FieldSpec{WireName: "public_id"},
+		"VersionNumber":         ubx.FieldSpec{WireName: "version_number"},
 	},
 }

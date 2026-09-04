@@ -46,6 +46,5 @@ type HostsAndContainersCoverageAnalysisResponseAttrs struct {
 
 var HostsAndContainersCoverageAnalysisResponse = ubx.DataSourceBinding{
 	WireType: "datadog_csm_hosts_and_containers_coverage_analysis_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,15 +4,15 @@ package user
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthorizedClientData_Data_Attributes struct {
-	CreatedAt any
-	Disabled any
+	CreatedAt     any
+	Disabled      any
 	LastExercised any
-	ModifiedAt any
-	OrgDisabled any
+	ModifiedAt    any
+	OrgDisabled   any
 }
 
 type AuthorizedClientData_Data_Relationships_Oauth2Client_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -26,15 +26,15 @@ type AuthorizedClientData_Data_Relationships_Scopes struct {
 
 type AuthorizedClientData_Data_Relationships struct {
 	Oauth2Client any
-	Scopes any
-	User any
+	Scopes       any
+	User         any
 }
 
 type AuthorizedClientData_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type AuthorizedClientData_Meta_Page struct {
@@ -59,7 +59,7 @@ type AuthorizedClientDataAttrs struct {
 	// List of user authorized client data objects.
 	Data any
 	// Object describing meta attributes of response.
-	Meta any
+	Meta                  any
 	OrgAuthorizedClientId any
 	// Field to sort user authorizations by.
 	Sort any
@@ -69,6 +69,6 @@ var AuthorizedClientData = ubx.DataSourceBinding{
 	WireType: "datadog_user_authorized_client_data",
 	Fields: ubx.FieldMap{
 		"OrgAuthorizedClientId": ubx.FieldSpec{WireName: "org_authorized_client_id"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":                  ubx.FieldSpec{WireName: "sort"},
 	},
 }

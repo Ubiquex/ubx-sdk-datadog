@@ -4,16 +4,16 @@ package aws
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OnDemandData_Data_Attributes struct {
-	Arn any
+	Arn        any
 	AssignedAt any
-	CreatedAt any
-	Status any
+	CreatedAt  any
+	Status     any
 }
 
 type OnDemandData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type OnDemandDataConfig struct {
@@ -26,6 +26,5 @@ type OnDemandDataAttrs struct {
 
 var OnDemandData = ubx.DataSourceBinding{
 	WireType: "datadog_aws_on_demand_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

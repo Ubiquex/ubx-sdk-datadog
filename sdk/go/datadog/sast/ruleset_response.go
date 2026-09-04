@@ -3,13 +3,65 @@ package sast
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RulesetResponse_Data_Attributes_Rules_Arguments struct {
+	Description any
+	Name        any
+}
+
+type RulesetResponse_Data_Attributes_Rules_Data struct {
+	Id   any
+	Type any
+}
+
+type RulesetResponse_Data_Attributes_Rules_Tests struct {
+	AnnotationCount any
+	Code            any
+	Filename        any
+}
+
+type RulesetResponse_Data_Attributes_Rules struct {
+	Arguments        any
+	Category         any
+	Checksum         any
+	Code             any
+	CreatedAt        any
+	CreatedBy        any
+	Cve              any
+	Cwe              any
+	Data             any
+	Description      any
+	DocumentationUrl any
+	EntityChecked    any
+	IsPublished      any
+	IsTesting        any
+	Language         any
+	LastUpdatedAt    any
+	LastUpdatedBy    any
+	Name             any
+	Regex            any
+	Severity         any
+	ShortDescription any
+	ShouldUseAiFix   any
+	Tests            any
+	TreeSitterQuery  any
+	Type             any
+}
+
 type RulesetResponse_Data_Attributes struct {
+	// A detailed description of the ruleset's purpose and the types of issues it targets.
+	Description any
 	// When true, rules that are available in testing mode are included in the response.
 	IncludeTestingRules any
 	// When true, test cases associated with each rule are included in the response.
 	IncludeTests any
+	// The unique name of the ruleset.
+	Name any
+	// The list of static analysis rules included in this ruleset.
+	Rules any
 	// The list of ruleset names to retrieve.
 	Rulesets any
+	// A brief summary of the ruleset, suitable for display in listings.
+	ShortDescription any
 }
 
 type RulesetResponse_Data struct {
@@ -21,21 +73,85 @@ type RulesetResponse_Data struct {
 	Type any
 }
 
+var RulesetResponse_Data_Attributes_Rules_ArgumentsFields = ubx.FieldMap{
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
+
+var RulesetResponse_Data_Attributes_Rules_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var RulesetResponse_Data_Attributes_Rules_TestsFields = ubx.FieldMap{
+	"AnnotationCount": ubx.FieldSpec{WireName: "annotation_count"},
+	"Code":            ubx.FieldSpec{WireName: "code"},
+	"Filename":        ubx.FieldSpec{WireName: "filename"},
+}
+
+var RulesetResponse_Data_Attributes_RulesFields = ubx.FieldMap{
+	"Arguments": ubx.FieldSpec{
+		WireName: "arguments",
+		Kind:     "list",
+		Fields:   RulesetResponse_Data_Attributes_Rules_ArgumentsFields,
+	},
+	"Category":  ubx.FieldSpec{WireName: "category"},
+	"Checksum":  ubx.FieldSpec{WireName: "checksum"},
+	"Code":      ubx.FieldSpec{WireName: "code"},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+	"Cve":       ubx.FieldSpec{WireName: "cve"},
+	"Cwe":       ubx.FieldSpec{WireName: "cwe"},
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   RulesetResponse_Data_Attributes_Rules_DataFields,
+	},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"DocumentationUrl": ubx.FieldSpec{WireName: "documentation_url"},
+	"EntityChecked":    ubx.FieldSpec{WireName: "entity_checked"},
+	"IsPublished":      ubx.FieldSpec{WireName: "is_published"},
+	"IsTesting":        ubx.FieldSpec{WireName: "is_testing"},
+	"Language":         ubx.FieldSpec{WireName: "language"},
+	"LastUpdatedAt":    ubx.FieldSpec{WireName: "last_updated_at"},
+	"LastUpdatedBy":    ubx.FieldSpec{WireName: "last_updated_by"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Regex":            ubx.FieldSpec{WireName: "regex"},
+	"Severity":         ubx.FieldSpec{WireName: "severity"},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+	"ShouldUseAiFix":   ubx.FieldSpec{WireName: "should_use_ai_fix"},
+	"Tests": ubx.FieldSpec{
+		WireName: "tests",
+		Kind:     "list",
+		Fields:   RulesetResponse_Data_Attributes_Rules_TestsFields,
+	},
+	"TreeSitterQuery": ubx.FieldSpec{WireName: "tree_sitter_query"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
+
 var RulesetResponse_Data_AttributesFields = ubx.FieldMap{
-		"IncludeTestingRules": ubx.FieldSpec{WireName: "include_testing_rules"},
-		"IncludeTests": ubx.FieldSpec{WireName: "include_tests"},
-		"Rulesets": ubx.FieldSpec{WireName: "rulesets"},
-	}
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"IncludeTestingRules": ubx.FieldSpec{WireName: "include_testing_rules"},
+	"IncludeTests":        ubx.FieldSpec{WireName: "include_tests"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   RulesetResponse_Data_Attributes_RulesFields,
+	},
+	"Rulesets":         ubx.FieldSpec{WireName: "rulesets"},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+}
 
 var RulesetResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RulesetResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RulesetResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RulesetResponseConfig struct {
 	// The primary data object in the get-multiple-rulesets request, containing request attributes and resource type.
@@ -56,8 +172,8 @@ var RulesetResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RulesetResponse_DataFields,
+			Kind:     "object",
+			Fields:   RulesetResponse_DataFields,
 		},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
 	},

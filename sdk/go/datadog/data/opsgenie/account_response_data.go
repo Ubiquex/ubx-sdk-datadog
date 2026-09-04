@@ -9,8 +9,8 @@ type AccountResponseData_Data_Attributes struct {
 
 type AccountResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AccountResponseDataConfig struct {
@@ -23,6 +23,5 @@ type AccountResponseDataAttrs struct {
 
 var AccountResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_opsgenie_account_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

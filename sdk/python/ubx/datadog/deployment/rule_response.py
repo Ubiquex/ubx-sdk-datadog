@@ -7,6 +7,15 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class RuleResponse_Data_Attributes_CreatedBy:
+    # The handle of the user who created the deployment rule.
+    handle: Any = None
+    # The ID of the user who created the deployment rule.
+    id: Any = None
+    # The name of the user who created the deployment rule.
+    name: Any = None
+
+@dataclasses.dataclass
 class RuleResponse_Data_Attributes_Options:
     allowed_resources: Any = None
     duration: Any = None
@@ -15,21 +24,39 @@ class RuleResponse_Data_Attributes_Options:
 
 @dataclasses.dataclass
 class RuleResponse_Data_Attributes:
+    # The timestamp when the deployment rule was created.
+    created_at: Any = None
+    # Information about the user who created the deployment rule.
+    created_by: Any = None
     # Whether this rule is run in dry-run mode.
     dry_run: Any = None
+    # The ID of the deployment gate.
+    gate_id: Any = None
     # The name of the deployment rule.
     name: Any = None
     # Options for deployment rule response representing either faulty deployment detection or monitor options.
     options: Any = None
     # The type of the deployment rule (faulty_deployment_detection or monitor).
     type: Any = None
+    # The timestamp when the deployment rule was last updated.
+    updated_at: Any = None
+    # Information about the user who updated the deployment rule.
+    updated_by: Any = None
 
 @dataclasses.dataclass
 class RuleResponse_Data:
     # Parameters for creating a deployment rule.
     attributes: Any = None
+    # Unique identifier of the deployment rule.
+    id: Any = None
     # Deployment rule resource type.
     type: Any = None
+
+_RuleResponse_Data_Attributes_CreatedByFields = {
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
 
 _RuleResponse_Data_Attributes_OptionsFields = {
     "allowed_resources": ubx.FieldSpec(wire_name="allowed_resources"),
@@ -39,7 +66,14 @@ _RuleResponse_Data_Attributes_OptionsFields = {
 }
 
 _RuleResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_RuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "dry_run": ubx.FieldSpec(wire_name="dry_run"),
+    "gate_id": ubx.FieldSpec(wire_name="gate_id"),
     "name": ubx.FieldSpec(wire_name="name"),
     "options": ubx.FieldSpec(
         wire_name="options",
@@ -47,6 +81,12 @@ _RuleResponse_Data_AttributesFields = {
         fields=_RuleResponse_Data_Attributes_OptionsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updated_by": ubx.FieldSpec(
+        wire_name="updated_by",
+        kind="object",
+        fields=_RuleResponse_Data_Attributes_CreatedByFields,
+    ),
 }
 
 _RuleResponse_DataFields = {
@@ -55,6 +95,7 @@ _RuleResponse_DataFields = {
         kind="object",
         fields=_RuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

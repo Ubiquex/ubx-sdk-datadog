@@ -60,10 +60,10 @@ var Response = ubx.ResourceBinding{
 	WireType: "datadog_user_response",
 	Fields: ubx.FieldMap{
 		"AccessRole": ubx.FieldSpec{WireName: "access_role"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Disabled":   ubx.FieldSpec{WireName: "disabled"},
+		"Email":      ubx.FieldSpec{WireName: "email"},
+		"Handle":     ubx.FieldSpec{WireName: "handle"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"UserHandle": ubx.FieldSpec{WireName: "user_handle"},
 	},
 }

@@ -4,18 +4,18 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnnotationQueueLabelSchemaResponse_Data_Attributes_AnnotationSchema_LabelSchemas struct {
-	Description any
+	Description   any
 	HasAssessment any
-	HasReasoning any
-	Id any
-	IsAssessment any
-	IsInteger any
-	IsRequired any
-	Max any
-	Min any
-	Name any
-	Type any
-	Values any
+	HasReasoning  any
+	Id            any
+	IsAssessment  any
+	IsInteger     any
+	IsRequired    any
+	Max           any
+	Min           any
+	Name          any
+	Type          any
+	Values        any
 }
 
 type AnnotationQueueLabelSchemaResponse_Data_Attributes_AnnotationSchema struct {
@@ -43,7 +43,7 @@ type AnnotationQueueLabelSchemaResponseConfig struct {
 
 type AnnotationQueueLabelSchemaResponseAttrs struct {
 	// Data object for an annotation queue label schema.
-	Data any
+	Data    any
 	QueueId any
 }
 

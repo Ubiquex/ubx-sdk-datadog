@@ -7,6 +7,12 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class InvestigationResponse_Data_Attributes_Conclusions:
+    description: Any = None
+    summary: Any = None
+    title: Any = None
+
+@dataclasses.dataclass
 class InvestigationResponse_Data_Attributes_Trigger_MonitorAlertTrigger:
     # The event ID associated with the monitor alert.
     event_id: Any = None
@@ -24,6 +30,12 @@ class InvestigationResponse_Data_Attributes_Trigger:
 
 @dataclasses.dataclass
 class InvestigationResponse_Data_Attributes:
+    # The conclusions drawn from the investigation.
+    conclusions: Any = None
+    # The current status of the investigation.
+    status: Any = None
+    # The title of the investigation.
+    title: Any = None
     # The trigger definition for starting an investigation.
     trigger: Any = None
 
@@ -31,6 +43,8 @@ class InvestigationResponse_Data_Attributes:
 class InvestigationResponse_Data:
     # Attributes for the trigger investigation request.
     attributes: Any = None
+    # The unique identifier of the investigation.
+    id: Any = None
     # The resource type for trigger investigation requests.
     type: Any = None
 
@@ -38,6 +52,12 @@ class InvestigationResponse_Data:
 class InvestigationResponse_Links:
     # The URL to the investigation in the Datadog app.
     self: Any = None
+
+_InvestigationResponse_Data_Attributes_ConclusionsFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "summary": ubx.FieldSpec(wire_name="summary"),
+    "title": ubx.FieldSpec(wire_name="title"),
+}
 
 _InvestigationResponse_Data_Attributes_Trigger_MonitorAlertTriggerFields = {
     "event_id": ubx.FieldSpec(wire_name="event_id"),
@@ -55,6 +75,13 @@ _InvestigationResponse_Data_Attributes_TriggerFields = {
 }
 
 _InvestigationResponse_Data_AttributesFields = {
+    "conclusions": ubx.FieldSpec(
+        wire_name="conclusions",
+        kind="list",
+        fields=_InvestigationResponse_Data_Attributes_ConclusionsFields,
+    ),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "title": ubx.FieldSpec(wire_name="title"),
     "trigger": ubx.FieldSpec(
         wire_name="trigger",
         kind="object",
@@ -68,6 +95,7 @@ _InvestigationResponse_DataFields = {
         kind="object",
         fields=_InvestigationResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

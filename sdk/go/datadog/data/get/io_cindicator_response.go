@@ -17,14 +17,14 @@ type IoCindicatorResponse_Data_Attributes_Data_BenignSources struct {
 }
 
 type IoCindicatorResponse_Data_Attributes_Data_SignalSeverity struct {
-	Count any
+	Count    any
 	Severity any
 }
 
 type IoCindicatorResponse_Data_Attributes_Data_TriageHistory struct {
 	TriageState any
-	TriagedAt any
-	TriagedBy any
+	TriagedAt   any
+	TriagedBy   any
 }
 
 type IoCindicatorResponse_Data_Attributes_Data struct {
@@ -116,29 +116,29 @@ type IoCindicatorResponse_Data struct {
 
 type IoCindicatorResponseConfig struct {
 	IncludeTriageHistory any
-	Indicator any
-	Ocsf any
-	TriageHistoryLimit any
-	TriageHistoryOffset any
+	Indicator            any
+	Ocsf                 any
+	TriageHistoryLimit   any
+	TriageHistoryOffset  any
 }
 
 type IoCindicatorResponseAttrs struct {
 	// IoC indicator response data object.
-	Data any
+	Data                 any
 	IncludeTriageHistory any
-	Indicator any
-	Ocsf any
-	TriageHistoryLimit any
-	TriageHistoryOffset any
+	Indicator            any
+	Ocsf                 any
+	TriageHistoryLimit   any
+	TriageHistoryOffset  any
 }
 
 var IoCindicatorResponse = ubx.DataSourceBinding{
 	WireType: "datadog_get_io_cindicator_response",
 	Fields: ubx.FieldMap{
 		"IncludeTriageHistory": ubx.FieldSpec{WireName: "include_triage_history"},
-		"Indicator": ubx.FieldSpec{WireName: "indicator"},
-		"Ocsf": ubx.FieldSpec{WireName: "ocsf"},
-		"TriageHistoryLimit": ubx.FieldSpec{WireName: "triage_history_limit"},
-		"TriageHistoryOffset": ubx.FieldSpec{WireName: "triage_history_offset"},
+		"Indicator":            ubx.FieldSpec{WireName: "indicator"},
+		"Ocsf":                 ubx.FieldSpec{WireName: "ocsf"},
+		"TriageHistoryLimit":   ubx.FieldSpec{WireName: "triage_history_limit"},
+		"TriageHistoryOffset":  ubx.FieldSpec{WireName: "triage_history_offset"},
 	},
 }

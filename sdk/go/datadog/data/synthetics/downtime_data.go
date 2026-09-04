@@ -4,49 +4,49 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DowntimeData_Data_Attributes_TimeSlots_Recurrence_Until struct {
-	Day any
-	Hour any
+	Day    any
+	Hour   any
 	Minute any
-	Month any
-	Year any
+	Month  any
+	Year   any
 }
 
 type DowntimeData_Data_Attributes_TimeSlots_Recurrence struct {
-	Frequency any
-	Interval any
-	Until any
+	Frequency        any
+	Interval         any
+	Until            any
 	WeekdayPositions any
-	Weekdays any
+	Weekdays         any
 }
 
 type DowntimeData_Data_Attributes_TimeSlots struct {
-	Duration any
-	Id any
-	Name any
+	Duration   any
+	Id         any
+	Name       any
 	Recurrence any
-	Start any
-	Timezone any
+	Start      any
+	Timezone   any
 }
 
 type DowntimeData_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
+	CreatedAt     any
+	CreatedBy     any
 	CreatedByName any
-	Description any
-	IsEnabled any
-	Name any
-	Tags any
-	TestIds any
-	TimeSlots any
-	UpdatedAt any
-	UpdatedBy any
+	Description   any
+	IsEnabled     any
+	Name          any
+	Tags          any
+	TestIds       any
+	TimeSlots     any
+	UpdatedAt     any
+	UpdatedBy     any
 	UpdatedByName any
 }
 
 type DowntimeData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DowntimeDataConfig struct {
@@ -59,6 +59,5 @@ type DowntimeDataAttrs struct {
 
 var DowntimeData = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_downtime_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

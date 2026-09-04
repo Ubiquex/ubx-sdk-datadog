@@ -34,17 +34,42 @@ class NotificationRuleResponse_Data_Attributes:
     bundle_config: Any = None
     # Use conditional recipients to define different recipients for different situations. Cannot be used with `recipients`.
     conditional_recipients: Any = None
+    # Creation time of the monitor notification rule.
+    created: Any = None
     # Specifies the matching criteria for monitor notifications.
     filter: Any = None
+    # Time the monitor notification rule was last modified.
+    modified: Any = None
     # The name of the monitor notification rule.
     name: Any = None
     # A list of recipients to notify. Uses the same format as the monitor `message` field. Must not start with an '@'. Cannot be used with `conditional_recipients`.
     recipients: Any = None
 
 @dataclasses.dataclass
+class NotificationRuleResponse_Data_Relationships_CreatedBy_Data:
+    # User ID of the monitor notification rule creator.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class NotificationRuleResponse_Data_Relationships_CreatedBy:
+    # Data for the user who created the monitor notification rule.
+    data: Any = None
+
+@dataclasses.dataclass
+class NotificationRuleResponse_Data_Relationships:
+    # The user who created the monitor notification rule.
+    created_by: Any = None
+
+@dataclasses.dataclass
 class NotificationRuleResponse_Data:
     # Attributes of the monitor notification rule.
     attributes: Any = None
+    # The ID of the monitor notification rule.
+    id: Any = None
+    # All relationships associated with monitor notification rule.
+    relationships: Any = None
     # Monitor notification rule resource type.
     type: Any = None
 
@@ -64,15 +89,6 @@ class NotificationRuleResponse_Included_Attributes:
     title: Any = None
     uuid: Any = None
     verified: Any = None
-
-@dataclasses.dataclass
-class NotificationRuleResponse_Included_Relationships_Org_Data:
-    id: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class NotificationRuleResponse_Included_Relationships_Org:
-    data: Any = None
 
 @dataclasses.dataclass
 class NotificationRuleResponse_Included_Relationships_OtherOrgs:
@@ -126,13 +142,36 @@ _NotificationRuleResponse_Data_AttributesFields = {
         kind="object",
         fields=_NotificationRuleResponse_Data_Attributes_ConditionalRecipientsFields,
     ),
+    "created": ubx.FieldSpec(wire_name="created"),
     "filter": ubx.FieldSpec(
         wire_name="filter",
         kind="object",
         fields=_NotificationRuleResponse_Data_Attributes_FilterFields,
     ),
+    "modified": ubx.FieldSpec(wire_name="modified"),
     "name": ubx.FieldSpec(wire_name="name"),
     "recipients": ubx.FieldSpec(wire_name="recipients"),
+}
+
+_NotificationRuleResponse_Data_Relationships_CreatedBy_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_NotificationRuleResponse_Data_Relationships_CreatedByFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_NotificationRuleResponse_Data_Relationships_CreatedBy_DataFields,
+    ),
+}
+
+_NotificationRuleResponse_Data_RelationshipsFields = {
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_NotificationRuleResponse_Data_Relationships_CreatedByFields,
+    ),
 }
 
 _NotificationRuleResponse_DataFields = {
@@ -140,6 +179,12 @@ _NotificationRuleResponse_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_NotificationRuleResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_NotificationRuleResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

@@ -7,6 +7,34 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class IntegrationMetadataResponse_Data_Attributes_Metadata_Channels:
+    channel_id: Any = None
+    channel_name: Any = None
+    redirect_url: Any = None
+    team_id: Any = None
+
+@dataclasses.dataclass
+class IntegrationMetadataResponse_Data_Attributes_Metadata_Issues:
+    account: Any = None
+    issue_key: Any = None
+    issuetype_id: Any = None
+    project_key: Any = None
+    redirect_url: Any = None
+
+@dataclasses.dataclass
+class IntegrationMetadataResponse_Data_Attributes_Metadata_Teams:
+    ms_channel_id: Any = None
+    ms_channel_name: Any = None
+    ms_tenant_id: Any = None
+    redirect_url: Any = None
+
+@dataclasses.dataclass
+class IntegrationMetadataResponse_Data_Attributes_Metadata:
+    channels: Any = None
+    issues: Any = None
+    teams: Any = None
+
+@dataclasses.dataclass
 class IntegrationMetadataResponse_Data_Attributes_PageTarget:
     # The identifier of the page target.
     identifier: Any = None
@@ -15,12 +43,43 @@ class IntegrationMetadataResponse_Data_Attributes_PageTarget:
 
 @dataclasses.dataclass
 class IntegrationMetadataResponse_Data_Attributes:
+    # Timestamp when the incident todo was created.
+    created: Any = None
+    # UUID of the incident this integration metadata is connected to.
+    incident_id: Any = None
+    # A number indicating the type of integration this metadata is for. 1 indicates Slack; 7 indicates Microsoft Teams; 8 indicates Jira.
+    integration_type: Any = None
     # The key of the on-call page.
     key: Any = None
+    # Incident integration metadata's metadata attribute.
+    metadata: Any = None
+    # Timestamp when the incident todo was last modified.
+    modified: Any = None
     # The target of an on-call page.
     page_target: Any = None
+    # A number indicating the status of this integration metadata. 0 indicates unknown; 1 indicates pending; 2 indicates complete; 3 indicates manually created; 4 indicates manually updated; 5 indicates failed.
+    status: Any = None
     # The team ID associated with the page (deprecated, use page_target instead).
     team_id: Any = None
+
+@dataclasses.dataclass
+class IntegrationMetadataResponse_Data_Relationships_CreatedByUser_Data:
+    # A unique identifier that represents the user.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class IntegrationMetadataResponse_Data_Relationships_CreatedByUser:
+    # Relationship to user object.
+    data: Any = None
+
+@dataclasses.dataclass
+class IntegrationMetadataResponse_Data_Relationships:
+    # Relationship to user.
+    created_by_user: Any = None
+    # Relationship to user.
+    last_modified_by_user: Any = None
 
 @dataclasses.dataclass
 class IntegrationMetadataResponse_Data:
@@ -28,6 +87,8 @@ class IntegrationMetadataResponse_Data:
     attributes: Any = None
     # The ID of the on-call page to link.
     id: Any = None
+    # The incident's integration relationships from a response.
+    relationships: Any = None
     # On-call page resource type.
     type: Any = None
 
@@ -49,15 +110,6 @@ class IntegrationMetadataResponse_Included_Attributes:
     verified: Any = None
 
 @dataclasses.dataclass
-class IntegrationMetadataResponse_Included_Relationships_Org_Data:
-    id: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class IntegrationMetadataResponse_Included_Relationships_Org:
-    data: Any = None
-
-@dataclasses.dataclass
 class IntegrationMetadataResponse_Included_Relationships_OtherOrgs:
     data: Any = None
 
@@ -75,19 +127,95 @@ class IntegrationMetadataResponse_Included:
     relationships: Any = None
     type: Any = None
 
+_IntegrationMetadataResponse_Data_Attributes_Metadata_ChannelsFields = {
+    "channel_id": ubx.FieldSpec(wire_name="channel_id"),
+    "channel_name": ubx.FieldSpec(wire_name="channel_name"),
+    "redirect_url": ubx.FieldSpec(wire_name="redirect_url"),
+    "team_id": ubx.FieldSpec(wire_name="team_id"),
+}
+
+_IntegrationMetadataResponse_Data_Attributes_Metadata_IssuesFields = {
+    "account": ubx.FieldSpec(wire_name="account"),
+    "issue_key": ubx.FieldSpec(wire_name="issue_key"),
+    "issuetype_id": ubx.FieldSpec(wire_name="issuetype_id"),
+    "project_key": ubx.FieldSpec(wire_name="project_key"),
+    "redirect_url": ubx.FieldSpec(wire_name="redirect_url"),
+}
+
+_IntegrationMetadataResponse_Data_Attributes_Metadata_TeamsFields = {
+    "ms_channel_id": ubx.FieldSpec(wire_name="ms_channel_id"),
+    "ms_channel_name": ubx.FieldSpec(wire_name="ms_channel_name"),
+    "ms_tenant_id": ubx.FieldSpec(wire_name="ms_tenant_id"),
+    "redirect_url": ubx.FieldSpec(wire_name="redirect_url"),
+}
+
+_IntegrationMetadataResponse_Data_Attributes_MetadataFields = {
+    "channels": ubx.FieldSpec(
+        wire_name="channels",
+        kind="list",
+        fields=_IntegrationMetadataResponse_Data_Attributes_Metadata_ChannelsFields,
+    ),
+    "issues": ubx.FieldSpec(
+        wire_name="issues",
+        kind="list",
+        fields=_IntegrationMetadataResponse_Data_Attributes_Metadata_IssuesFields,
+    ),
+    "teams": ubx.FieldSpec(
+        wire_name="teams",
+        kind="list",
+        fields=_IntegrationMetadataResponse_Data_Attributes_Metadata_TeamsFields,
+    ),
+}
+
 _IntegrationMetadataResponse_Data_Attributes_PageTargetFields = {
     "identifier": ubx.FieldSpec(wire_name="identifier"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _IntegrationMetadataResponse_Data_AttributesFields = {
+    "created": ubx.FieldSpec(wire_name="created"),
+    "incident_id": ubx.FieldSpec(wire_name="incident_id"),
+    "integration_type": ubx.FieldSpec(wire_name="integration_type"),
     "key": ubx.FieldSpec(wire_name="key"),
+    "metadata": ubx.FieldSpec(
+        wire_name="metadata",
+        kind="object",
+        fields=_IntegrationMetadataResponse_Data_Attributes_MetadataFields,
+    ),
+    "modified": ubx.FieldSpec(wire_name="modified"),
     "page_target": ubx.FieldSpec(
         wire_name="page_target",
         kind="object",
         fields=_IntegrationMetadataResponse_Data_Attributes_PageTargetFields,
     ),
+    "status": ubx.FieldSpec(wire_name="status"),
     "team_id": ubx.FieldSpec(wire_name="team_id"),
+}
+
+_IntegrationMetadataResponse_Data_Relationships_CreatedByUser_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_IntegrationMetadataResponse_Data_Relationships_CreatedByUserFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_IntegrationMetadataResponse_Data_Relationships_CreatedByUser_DataFields,
+    ),
+}
+
+_IntegrationMetadataResponse_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_IntegrationMetadataResponse_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_IntegrationMetadataResponse_Data_Relationships_CreatedByUserFields,
+    ),
 }
 
 _IntegrationMetadataResponse_DataFields = {
@@ -97,6 +225,11 @@ _IntegrationMetadataResponse_DataFields = {
         fields=_IntegrationMetadataResponse_Data_AttributesFields,
     ),
     "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_IntegrationMetadataResponse_Data_RelationshipsFields,
+    ),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

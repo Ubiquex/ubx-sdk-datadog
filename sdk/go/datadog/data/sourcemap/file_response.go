@@ -33,23 +33,23 @@ type FileResponse_Data struct {
 
 type FileResponseConfig struct {
 	Filename any
-	Service any
-	Version any
+	Service  any
+	Version  any
 }
 
 type FileResponseAttrs struct {
 	// JavaScript source map file data object.
-	Data any
+	Data     any
 	Filename any
-	Service any
-	Version any
+	Service  any
+	Version  any
 }
 
 var FileResponse = ubx.DataSourceBinding{
 	WireType: "datadog_sourcemap_file_response",
 	Fields: ubx.FieldMap{
 		"Filename": ubx.FieldSpec{WireName: "filename"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Service":  ubx.FieldSpec{WireName: "service"},
+		"Version":  ubx.FieldSpec{WireName: "version"},
 	},
 }

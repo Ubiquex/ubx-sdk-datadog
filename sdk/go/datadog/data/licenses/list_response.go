@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ListResponse_Data_Attributes_Licenses struct {
 	DisplayName any
-	Identifier any
-	ShortName any
+	Identifier  any
+	ShortName   any
 }
 
 type ListResponse_Data_Attributes struct {
@@ -33,6 +33,5 @@ type ListResponseAttrs struct {
 
 var ListResponse = ubx.DataSourceBinding{
 	WireType: "datadog_licenses_list_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

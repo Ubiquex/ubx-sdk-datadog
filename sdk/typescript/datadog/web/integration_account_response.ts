@@ -13,6 +13,8 @@ export interface IntegrationAccountResponse_Data_Attributes {
 export interface IntegrationAccountResponse_Data {
   /** Attributes object for creating a web integration account. */
   attributes: IntegrationAccountResponse_Data_Attributes | Computed<IntegrationAccountResponse_Data_Attributes>;
+  /** The unique identifier of the web integration account. */
+  id?: string | Computed<string>;
   /** Account resource type. */
   type: string | Computed<string>;
 }
@@ -29,6 +31,7 @@ const IntegrationAccountResponse_DataFields: FieldMap = {
     kind: "object",
     fields: IntegrationAccountResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

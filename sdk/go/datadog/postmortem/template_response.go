@@ -24,12 +24,16 @@ type TemplateResponse_Data_Attributes struct {
 	ConfluencePostmortemSettings any
 	// The templated content of the postmortem, supporting Markdown and incident template variables.
 	Content any
+	// When the template was created.
+	CreatedAt any
 	// Settings for a postmortem template stored in Google Docs. Required when `location` is `google_docs`.
 	GoogleDocsPostmortemSettings any
 	// When set, marks this template as a default. The effective default for an incident type is the template with the most recent `is_default` timestamp. Set to `null` to unset.
 	IsDefault any
 	// The location where the postmortem is created and stored.
 	Location any
+	// When the template was last modified.
+	ModifiedAt any
 	// The name of the template.
 	Name any
 }
@@ -49,6 +53,8 @@ type TemplateResponse_Data_Relationships_IncidentType struct {
 type TemplateResponse_Data_Relationships struct {
 	// Relationship to the incident type this template belongs to.
 	IncidentType any
+	// Relationship to a user.
+	LastModifiedByUser any
 }
 
 type TemplateResponse_Data struct {
@@ -63,68 +69,75 @@ type TemplateResponse_Data struct {
 }
 
 var TemplateResponse_Data_Attributes_ConfluencePostmortemSettingsFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
-		"SpaceId": ubx.FieldSpec{WireName: "space_id"},
-	}
+	"AccountId": ubx.FieldSpec{WireName: "account_id"},
+	"ParentId":  ubx.FieldSpec{WireName: "parent_id"},
+	"SpaceId":   ubx.FieldSpec{WireName: "space_id"},
+}
 
 var TemplateResponse_Data_Attributes_GoogleDocsPostmortemSettingsFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ParentFolderId": ubx.FieldSpec{WireName: "parent_folder_id"},
-	}
+	"AccountId":      ubx.FieldSpec{WireName: "account_id"},
+	"ParentFolderId": ubx.FieldSpec{WireName: "parent_folder_id"},
+}
 
 var TemplateResponse_Data_AttributesFields = ubx.FieldMap{
-		"ConfluencePostmortemSettings": ubx.FieldSpec{
-			WireName: "confluence_postmortem_settings",
-			Kind: "object",
-			Fields: TemplateResponse_Data_Attributes_ConfluencePostmortemSettingsFields,
-		},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"GoogleDocsPostmortemSettings": ubx.FieldSpec{
-			WireName: "google_docs_postmortem_settings",
-			Kind: "object",
-			Fields: TemplateResponse_Data_Attributes_GoogleDocsPostmortemSettingsFields,
-		},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ConfluencePostmortemSettings": ubx.FieldSpec{
+		WireName: "confluence_postmortem_settings",
+		Kind:     "object",
+		Fields:   TemplateResponse_Data_Attributes_ConfluencePostmortemSettingsFields,
+	},
+	"Content":   ubx.FieldSpec{WireName: "content"},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"GoogleDocsPostmortemSettings": ubx.FieldSpec{
+		WireName: "google_docs_postmortem_settings",
+		Kind:     "object",
+		Fields:   TemplateResponse_Data_Attributes_GoogleDocsPostmortemSettingsFields,
+	},
+	"IsDefault":  ubx.FieldSpec{WireName: "is_default"},
+	"Location":   ubx.FieldSpec{WireName: "location"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var TemplateResponse_Data_Relationships_IncidentType_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var TemplateResponse_Data_Relationships_IncidentTypeFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: TemplateResponse_Data_Relationships_IncidentType_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   TemplateResponse_Data_Relationships_IncidentType_DataFields,
+	},
+}
 
 var TemplateResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"IncidentType": ubx.FieldSpec{
-			WireName: "incident_type",
-			Kind: "object",
-			Fields: TemplateResponse_Data_Relationships_IncidentTypeFields,
-		},
-	}
+	"IncidentType": ubx.FieldSpec{
+		WireName: "incident_type",
+		Kind:     "object",
+		Fields:   TemplateResponse_Data_Relationships_IncidentTypeFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   TemplateResponse_Data_Relationships_IncidentTypeFields,
+	},
+}
 
 var TemplateResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: TemplateResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: TemplateResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   TemplateResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   TemplateResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type TemplateResponseConfig struct {
 	// Data object for creating or updating a postmortem template.
@@ -145,8 +158,8 @@ var TemplateResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: TemplateResponse_DataFields,
+			Kind:     "object",
+			Fields:   TemplateResponse_DataFields,
 		},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
 	},

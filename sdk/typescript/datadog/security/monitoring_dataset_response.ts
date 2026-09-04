@@ -40,10 +40,30 @@ export interface MonitoringDatasetResponse_Data_Attributes_Definition {
 }
 
 export interface MonitoringDatasetResponse_Data_Attributes {
+  /** The creation timestamp of the dataset, in ISO 8601 format. */
+  createdAt?: string | Computed<string>;
+  /** The Datadog handle of the user who created the dataset. */
+  createdByHandle?: string | Computed<string>;
+  /** The display name of the user who created the dataset. */
+  createdByName?: string | Computed<string>;
   /** The definition of the dataset. The shape depends on the value of `data_source`. Use `reference_table` or `managed_resource` for a referential dataset, or one of the event platform sources (for example `logs`, `audit`, `events`, `spans`, `rum`) for an event platform dataset. */
   definition: MonitoringDatasetResponse_Data_Attributes_Definition | Computed<MonitoringDatasetResponse_Data_Attributes_Definition>;
   /** The description of the dataset. Maximum 255 characters. */
   description?: string | Computed<string>;
+  /** The UUID of the dataset. */
+  id?: string | Computed<string>;
+  /** Whether the dataset is an out-of-the-box dataset provided by Datadog. */
+  isDefault?: boolean | Computed<boolean>;
+  /** Whether the dataset is marked as deprecated. */
+  isDeprecated?: boolean | Computed<boolean>;
+  /** The timestamp of the last modification of the dataset, in ISO 8601 format. */
+  modifiedAt?: string | Computed<string>;
+  /** The unique name of the dataset. */
+  name?: string | Computed<string>;
+  /** The Datadog handle of the user who last updated the dataset. */
+  updatedByHandle?: string | Computed<string>;
+  /** The display name of the user who last updated the dataset. */
+  updatedByName?: string | Computed<string>;
   /** The expected current version of the dataset for optimistic concurrency control on updates. If the dataset's current version does not match, the request is rejected with a 409 Conflict. */
   version?: number | Computed<number>;
 }
@@ -51,6 +71,8 @@ export interface MonitoringDatasetResponse_Data_Attributes {
 export interface MonitoringDatasetResponse_Data {
   /** The attributes of a dataset create or update request. */
   attributes: MonitoringDatasetResponse_Data_Attributes | Computed<MonitoringDatasetResponse_Data_Attributes>;
+  /** The UUID of the dataset. */
+  id?: string | Computed<string>;
   /** The type of resource for a dataset create request. */
   type: string | Computed<string>;
 }
@@ -94,12 +116,22 @@ const MonitoringDatasetResponse_Data_Attributes_DefinitionFields: FieldMap = {
 };
 
 const MonitoringDatasetResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  createdByHandle: "created_by_handle",
+  createdByName: "created_by_name",
   definition: {
     wireName: "definition",
     kind: "object",
     fields: MonitoringDatasetResponse_Data_Attributes_DefinitionFields,
   },
   description: "description",
+  id: "id",
+  isDefault: "is_default",
+  isDeprecated: "is_deprecated",
+  modifiedAt: "modified_at",
+  name: "name",
+  updatedByHandle: "updated_by_handle",
+  updatedByName: "updated_by_name",
   version: "version",
 };
 
@@ -109,6 +141,7 @@ const MonitoringDatasetResponse_DataFields: FieldMap = {
     kind: "object",
     fields: MonitoringDatasetResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

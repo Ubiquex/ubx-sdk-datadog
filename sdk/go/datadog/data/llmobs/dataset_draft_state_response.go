@@ -39,7 +39,7 @@ type DatasetDraftStateResponseConfig struct {
 
 type DatasetDraftStateResponseAttrs struct {
 	// Data object for an Agent Observability dataset draft state.
-	Data any
+	Data      any
 	DatasetId any
 	ProjectId any
 }

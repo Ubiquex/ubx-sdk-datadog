@@ -7,31 +7,102 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WorkloadSecurityAgentPolicyResponse_Data_Attributes_Updater:
+    # The handle of the user
+    handle: Any = None
+    # The name of the user
+    name: Any = None
+
+@dataclasses.dataclass
+class WorkloadSecurityAgentPolicyResponse_Data_Attributes_Versions:
+    date: Any = None
+    name: Any = None
+
+@dataclasses.dataclass
 class WorkloadSecurityAgentPolicyResponse_Data_Attributes:
+    # The number of rules with the blocking feature in this policy
+    blocking_rules_count: Any = None
+    # Whether the policy is managed by Datadog
+    datadog_managed: Any = None
     # The description of the policy
     description: Any = None
+    # The number of rules that are disabled in this policy
+    disabled_rules_count: Any = None
     # Whether the policy is enabled
     enabled: Any = None
     # The host tags defining where this policy is deployed
     host_tags: Any = None
     # The host tags defining where this policy is deployed, the inner values are linked with AND, the outer values are linked with OR
     host_tags_lists: Any = None
+    # The number of rules in the monitoring state in this policy
+    monitoring_rules_count: Any = None
     # The name of the policy
     name: Any = None
+    # Whether the policy is pinned
+    pinned: Any = None
+    # The type of the policy
+    policy_type: Any = None
+    # The version of the policy
+    policy_version: Any = None
+    # The priority of the policy
+    priority: Any = None
+    # The number of rules in this policy
+    rule_count: Any = None
+    # Timestamp in milliseconds when the policy was last updated
+    update_date: Any = None
+    # When the policy was last updated, timestamp in milliseconds
+    updated_at: Any = None
+    # The attributes of the user who last updated the policy
+    updater: Any = None
+    # The versions of the policy
+    versions: Any = None
 
 @dataclasses.dataclass
 class WorkloadSecurityAgentPolicyResponse_Data:
     # Create a new Cloud Workload Security Agent policy
     attributes: Any = None
+    # The ID of the Agent policy
+    id: Any = None
     # The type of the resource, must always be `policy`
     type: Any = None
 
+_WorkloadSecurityAgentPolicyResponse_Data_Attributes_UpdaterFields = {
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
+_WorkloadSecurityAgentPolicyResponse_Data_Attributes_VersionsFields = {
+    "date": ubx.FieldSpec(wire_name="date"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 _WorkloadSecurityAgentPolicyResponse_Data_AttributesFields = {
+    "blocking_rules_count": ubx.FieldSpec(wire_name="blocking_rules_count"),
+    "datadog_managed": ubx.FieldSpec(wire_name="datadog_managed"),
     "description": ubx.FieldSpec(wire_name="description"),
+    "disabled_rules_count": ubx.FieldSpec(wire_name="disabled_rules_count"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
     "host_tags": ubx.FieldSpec(wire_name="host_tags"),
     "host_tags_lists": ubx.FieldSpec(wire_name="host_tags_lists"),
+    "monitoring_rules_count": ubx.FieldSpec(wire_name="monitoring_rules_count"),
     "name": ubx.FieldSpec(wire_name="name"),
+    "pinned": ubx.FieldSpec(wire_name="pinned"),
+    "policy_type": ubx.FieldSpec(wire_name="policy_type"),
+    "policy_version": ubx.FieldSpec(wire_name="policy_version"),
+    "priority": ubx.FieldSpec(wire_name="priority"),
+    "rule_count": ubx.FieldSpec(wire_name="rule_count"),
+    "update_date": ubx.FieldSpec(wire_name="update_date"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+    "updater": ubx.FieldSpec(
+        wire_name="updater",
+        kind="object",
+        fields=_WorkloadSecurityAgentPolicyResponse_Data_Attributes_UpdaterFields,
+    ),
+    "versions": ubx.FieldSpec(
+        wire_name="versions",
+        kind="list",
+        fields=_WorkloadSecurityAgentPolicyResponse_Data_Attributes_VersionsFields,
+    ),
 }
 
 _WorkloadSecurityAgentPolicyResponse_DataFields = {
@@ -40,6 +111,7 @@ _WorkloadSecurityAgentPolicyResponse_DataFields = {
         kind="object",
         fields=_WorkloadSecurityAgentPolicyResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

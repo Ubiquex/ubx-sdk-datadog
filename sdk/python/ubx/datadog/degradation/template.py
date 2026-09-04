@@ -21,17 +21,46 @@ class Template_Data_Attributes_Updates:
 class Template_Data_Attributes:
     # The components affected by a degradation created from this template.
     components_affected: Any = None
+    # Timestamp of when the degradation template was created.
+    created_at: Any = None
     # The title used for a degradation created from this template.
     degradation_title: Any = None
+    # Timestamp of when the degradation template was last modified.
+    modified_at: Any = None
     # The name of the degradation template.
     name: Any = None
     # The pre-filled updates for a degradation created from this template.
     updates: Any = None
 
 @dataclasses.dataclass
+class Template_Data_Relationships_CreatedByUser_Data:
+    # The ID of the Datadog user who created the degradation template.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class Template_Data_Relationships_CreatedByUser:
+    # The data object identifying the Datadog user who created the degradation template.
+    data: Any = None
+
+@dataclasses.dataclass
+class Template_Data_Relationships:
+    # The Datadog user who created the degradation template.
+    created_by_user: Any = None
+    # The Datadog user who last modified the degradation template.
+    last_modified_by_user: Any = None
+    # The status page the degradation template belongs to.
+    status_page: Any = None
+
+@dataclasses.dataclass
 class Template_Data:
     # The attributes for creating a degradation template.
     attributes: Any = None
+    # The ID of the degradation template.
+    id: Any = None
+    # The relationships of a degradation template.
+    relationships: Any = None
     # Degradation templates resource type.
     type: Any = None
 
@@ -42,15 +71,6 @@ class Template_Included_Attributes:
     icon: Any = None
     name: Any = None
     uuid: Any = None
-
-@dataclasses.dataclass
-class Template_Included_Relationships_CreatedByUser_Data:
-    id: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class Template_Included_Relationships_CreatedByUser:
-    data: Any = None
 
 @dataclasses.dataclass
 class Template_Included_Relationships:
@@ -81,7 +101,9 @@ _Template_Data_AttributesFields = {
         kind="list",
         fields=_Template_Data_Attributes_ComponentsAffectedFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "degradation_title": ubx.FieldSpec(wire_name="degradation_title"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
     "updates": ubx.FieldSpec(
         wire_name="updates",
@@ -90,11 +112,48 @@ _Template_Data_AttributesFields = {
     ),
 }
 
+_Template_Data_Relationships_CreatedByUser_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Template_Data_Relationships_CreatedByUserFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_Template_Data_Relationships_CreatedByUser_DataFields,
+    ),
+}
+
+_Template_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_Template_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_Template_Data_Relationships_CreatedByUserFields,
+    ),
+    "status_page": ubx.FieldSpec(
+        wire_name="status_page",
+        kind="object",
+        fields=_Template_Data_Relationships_CreatedByUserFields,
+    ),
+}
+
 _Template_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
         kind="object",
         fields=_Template_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_Template_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

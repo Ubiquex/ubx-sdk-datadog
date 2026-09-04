@@ -13,30 +13,68 @@ class Degradation_Data_Attributes_ComponentsAffected:
     status: Any = None
 
 @dataclasses.dataclass
+class Degradation_Data_Attributes_Source:
+    # Timestamp of when the source was created.
+    created_at: Any = None
+    # The ID of the source.
+    source_id: Any = None
+    # The type of the source.
+    type: Any = None
+
+@dataclasses.dataclass
+class Degradation_Data_Attributes_Updates:
+    components_affected: Any = None
+    created_at: Any = None
+    deleted_at: Any = None
+    deleted_by_user_uuid: Any = None
+    description: Any = None
+    id: Any = None
+    last_modified_by_user_uuid: Any = None
+    modified_at: Any = None
+    started_at: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
 class Degradation_Data_Attributes:
     # The components affected by the degradation.
     components_affected: Any = None
+    # Timestamp of when the degradation was created.
+    created_at: Any = None
     # The description of the degradation.
     description: Any = None
+    # Whether the degradation was backfilled.
+    is_backfilled: Any = None
+    # Timestamp of when the degradation was last modified.
+    modified_at: Any = None
+    # The source of the degradation.
+    source: Any = None
     # The status of the degradation.
     status: Any = None
     # The title of the degradation.
     title: Any = None
+    # Past updates made to the degradation.
+    updates: Any = None
 
 @dataclasses.dataclass
-class Degradation_Data_Relationships_Template_Data:
-    # The ID of the degradation template.
+class Degradation_Data_Relationships_CreatedByUser_Data:
+    # The ID of the Datadog user who created the degradation.
     id: Any = None
-    # Degradation templates resource type.
+    # Users resource type.
     type: Any = None
 
 @dataclasses.dataclass
-class Degradation_Data_Relationships_Template:
-    # The data object identifying the template used to create the degradation.
+class Degradation_Data_Relationships_CreatedByUser:
+    # The data object identifying the Datadog user who created the degradation.
     data: Any = None
 
 @dataclasses.dataclass
 class Degradation_Data_Relationships:
+    # The Datadog user who created the degradation.
+    created_by_user: Any = None
+    # The Datadog user who last modified the degradation.
+    last_modified_by_user: Any = None
+    # The status page the degradation belongs to.
+    status_page: Any = None
     # The template used to create the degradation.
     template: Any = None
 
@@ -44,6 +82,8 @@ class Degradation_Data_Relationships:
 class Degradation_Data:
     # The supported attributes for creating a degradation.
     attributes: Any = None
+    # The ID of the degradation.
+    id: Any = None
     # The supported relationships for creating a degradation.
     relationships: Any = None
     # Degradations resource type.
@@ -80,35 +120,86 @@ _Degradation_Data_Attributes_ComponentsAffectedFields = {
     "status": ubx.FieldSpec(wire_name="status"),
 }
 
+_Degradation_Data_Attributes_SourceFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "source_id": ubx.FieldSpec(wire_name="source_id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Degradation_Data_Attributes_UpdatesFields = {
+    "components_affected": ubx.FieldSpec(
+        wire_name="components_affected",
+        kind="list",
+        fields=_Degradation_Data_Attributes_ComponentsAffectedFields,
+    ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "deleted_at": ubx.FieldSpec(wire_name="deleted_at"),
+    "deleted_by_user_uuid": ubx.FieldSpec(wire_name="deleted_by_user_uuid"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "last_modified_by_user_uuid": ubx.FieldSpec(wire_name="last_modified_by_user_uuid"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "started_at": ubx.FieldSpec(wire_name="started_at"),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
 _Degradation_Data_AttributesFields = {
     "components_affected": ubx.FieldSpec(
         wire_name="components_affected",
         kind="list",
         fields=_Degradation_Data_Attributes_ComponentsAffectedFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "description": ubx.FieldSpec(wire_name="description"),
+    "is_backfilled": ubx.FieldSpec(wire_name="is_backfilled"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "source": ubx.FieldSpec(
+        wire_name="source",
+        kind="object",
+        fields=_Degradation_Data_Attributes_SourceFields,
+    ),
     "status": ubx.FieldSpec(wire_name="status"),
     "title": ubx.FieldSpec(wire_name="title"),
+    "updates": ubx.FieldSpec(
+        wire_name="updates",
+        kind="list",
+        fields=_Degradation_Data_Attributes_UpdatesFields,
+    ),
 }
 
-_Degradation_Data_Relationships_Template_DataFields = {
+_Degradation_Data_Relationships_CreatedByUser_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_Degradation_Data_Relationships_TemplateFields = {
+_Degradation_Data_Relationships_CreatedByUserFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_Degradation_Data_Relationships_Template_DataFields,
+        fields=_Degradation_Data_Relationships_CreatedByUser_DataFields,
     ),
 }
 
 _Degradation_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_Degradation_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_Degradation_Data_Relationships_CreatedByUserFields,
+    ),
+    "status_page": ubx.FieldSpec(
+        wire_name="status_page",
+        kind="object",
+        fields=_Degradation_Data_Relationships_CreatedByUserFields,
+    ),
     "template": ubx.FieldSpec(
         wire_name="template",
         kind="object",
-        fields=_Degradation_Data_Relationships_TemplateFields,
+        fields=_Degradation_Data_Relationships_CreatedByUserFields,
     ),
 }
 
@@ -118,6 +209,7 @@ _Degradation_DataFields = {
         kind="object",
         fields=_Degradation_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

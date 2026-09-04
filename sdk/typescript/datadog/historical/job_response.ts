@@ -195,10 +195,26 @@ export interface JobResponse_Data_Attributes_JobDefinition {
 }
 
 export interface JobResponse_Data_Attributes {
+  /** Time when the job was created. */
+  createdAt?: string | Computed<string>;
+  /** The handle of the user who created the job. */
+  createdByHandle?: string | Computed<string>;
+  /** The name of the user who created the job. */
+  createdByName?: string | Computed<string>;
+  /** ID of the rule used to create the job (if it is created from a rule). */
+  createdFromRuleId?: string | Computed<string>;
   /** Definition of a historical job based on a security monitoring rule. */
   fromRule?: JobResponse_Data_Attributes_FromRule | Computed<JobResponse_Data_Attributes_FromRule>;
   /** Definition of a historical job. */
   jobDefinition?: JobResponse_Data_Attributes_JobDefinition | Computed<JobResponse_Data_Attributes_JobDefinition>;
+  /** Job name. */
+  jobName?: string | Computed<string>;
+  /** Job status. */
+  jobStatus?: string | Computed<string>;
+  /** Last modification time of the job. */
+  modifiedAt?: string | Computed<string>;
+  /** Job execution progress as a value between 0 and 1. Available for ongoing jobs. */
+  progressRate?: number | Computed<number>;
   /** Whether the job outputs signals when results are converted. */
   signalOutput?: boolean | Computed<boolean>;
 }
@@ -206,6 +222,8 @@ export interface JobResponse_Data_Attributes {
 export interface JobResponse_Data {
   /** Run a historical job request. */
   attributes?: JobResponse_Data_Attributes | Computed<JobResponse_Data_Attributes>;
+  /** ID of the job. */
+  id?: string | Computed<string>;
   /** Type of data. */
   type?: string | Computed<string>;
 }
@@ -421,6 +439,10 @@ const JobResponse_Data_Attributes_JobDefinitionFields: FieldMap = {
 };
 
 const JobResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  createdByHandle: "created_by_handle",
+  createdByName: "created_by_name",
+  createdFromRuleId: "created_from_rule_id",
   fromRule: {
     wireName: "from_rule",
     kind: "object",
@@ -431,6 +453,10 @@ const JobResponse_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: JobResponse_Data_Attributes_JobDefinitionFields,
   },
+  jobName: "job_name",
+  jobStatus: "job_status",
+  modifiedAt: "modified_at",
+  progressRate: "progress_rate",
   signalOutput: "signal_output",
 };
 
@@ -440,6 +466,7 @@ const JobResponse_DataFields: FieldMap = {
     kind: "object",
     fields: JobResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

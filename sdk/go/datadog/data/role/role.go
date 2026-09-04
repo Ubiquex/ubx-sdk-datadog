@@ -4,15 +4,15 @@ package role
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Role_Data_Attributes struct {
-	CreatedAt any
-	ModifiedAt any
-	Name any
+	CreatedAt               any
+	ModifiedAt              any
+	Name                    any
 	ReceivesPermissionsFrom any
-	UserCount any
+	UserCount               any
 }
 
 type Role_Data_Relationships_Permissions_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -25,10 +25,10 @@ type Role_Data_Relationships struct {
 }
 
 type Role_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Role_Meta_Page struct {

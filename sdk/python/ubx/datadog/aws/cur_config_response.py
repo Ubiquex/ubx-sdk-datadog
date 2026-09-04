@@ -25,17 +25,29 @@ class CurConfigResponse_Data_Attributes:
     bucket_name: Any = None
     # The region the bucket is located in.
     bucket_region: Any = None
+    # The `attributes` `created_at`.
+    created_at: Any = None
+    # The `attributes` `error_messages`.
+    error_messages: Any = None
     # The month of the report.
     months: Any = None
     # The name of the Cost and Usage Report.
     report_name: Any = None
     # The report prefix used for the Cost and Usage Report.
     report_prefix: Any = None
+    # The `attributes` `status`.
+    status: Any = None
+    # The `attributes` `status_updated_at`.
+    status_updated_at: Any = None
+    # The `attributes` `updated_at`.
+    updated_at: Any = None
 
 @dataclasses.dataclass
 class CurConfigResponse_Data:
     # Attributes for AWS CUR config Post Request.
     attributes: Any = None
+    # The `AwsCurConfigResponseData` `id`.
+    id: Any = None
     # Type of AWS CUR config Post Request.
     type: Any = None
 
@@ -54,9 +66,14 @@ _CurConfigResponse_Data_AttributesFields = {
     "account_id": ubx.FieldSpec(wire_name="account_id"),
     "bucket_name": ubx.FieldSpec(wire_name="bucket_name"),
     "bucket_region": ubx.FieldSpec(wire_name="bucket_region"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "error_messages": ubx.FieldSpec(wire_name="error_messages"),
     "months": ubx.FieldSpec(wire_name="months"),
     "report_name": ubx.FieldSpec(wire_name="report_name"),
     "report_prefix": ubx.FieldSpec(wire_name="report_prefix"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "status_updated_at": ubx.FieldSpec(wire_name="status_updated_at"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
 }
 
 _CurConfigResponse_DataFields = {
@@ -65,6 +82,7 @@ _CurConfigResponse_DataFields = {
         kind="object",
         fields=_CurConfigResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

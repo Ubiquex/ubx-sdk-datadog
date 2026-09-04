@@ -4,17 +4,28 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface OnDemandResponse_Data_Attributes {
   /** The arn of the resource to scan. Agentless supports the scan of EC2 instances, lambda functions, AMI, ECR, RDS and S3 buckets. */
   arn: string | Computed<string>;
+  /** Specifies the assignment timestamp if the task has been already assigned to a scanner. */
+  assignedAt?: string | Computed<string>;
+  /** The task submission timestamp. */
+  createdAt?: string | Computed<string>;
+  /** Indicates the status of the task. QUEUED: the task has been submitted successfully and the resource has not been assigned to a scanner yet. ASSIGNED: the task has been assigned. ABORTED: the scan has been aborted after a period of time due to technical reasons, such as resource not found, insufficient permissions, or the absence of a configured scanner. */
+  status?: string | Computed<string>;
 }
 
 export interface OnDemandResponse_Data {
   /** Attributes for the AWS on demand task. */
   attributes: OnDemandResponse_Data_Attributes | Computed<OnDemandResponse_Data_Attributes>;
+  /** The UUID of the task. */
+  id?: string | Computed<string>;
   /** The type of the on demand task. The value should always be `aws_resource`. */
   type: string | Computed<string>;
 }
 
 const OnDemandResponse_Data_AttributesFields: FieldMap = {
   arn: "arn",
+  assignedAt: "assigned_at",
+  createdAt: "created_at",
+  status: "status",
 };
 
 const OnDemandResponse_DataFields: FieldMap = {
@@ -23,6 +34,7 @@ const OnDemandResponse_DataFields: FieldMap = {
     kind: "object",
     fields: OnDemandResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -10,16 +10,24 @@ import ubx_sdk as ubx
 class IntegrationConfigResponse_Data_Attributes:
     # Integration-specific configuration payload. The shape of this object depends on the integration identified by the path parameter. For `github`, the object must contain an `enabled_repos` array. For `jira`, it must contain an `enabled_projects` array. For `pagerduty`, it must contain an `accounts` array.
     config: Any = None
+    # The identifier of the integration this configuration applies to (for example, `github`, `jira`, or `pagerduty`).
+    integration_id: Any = None
+    # The Datadog organization identifier that owns this configuration.
+    org_id: Any = None
 
 @dataclasses.dataclass
 class IntegrationConfigResponse_Data:
     # Attributes used to create or update an entity integration configuration.
     attributes: Any = None
+    # Unique identifier of the entity integration configuration.
+    id: Any = None
     # JSON:API resource type for the entity integration configuration create or update request. Always `entity_integration_config_requests`.
     type: Any = None
 
 _IntegrationConfigResponse_Data_AttributesFields = {
     "config": ubx.FieldSpec(wire_name="config"),
+    "integration_id": ubx.FieldSpec(wire_name="integration_id"),
+    "org_id": ubx.FieldSpec(wire_name="org_id"),
 }
 
 _IntegrationConfigResponse_DataFields = {
@@ -28,6 +36,7 @@ _IntegrationConfigResponse_DataFields = {
         kind="object",
         fields=_IntegrationConfigResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

@@ -4,41 +4,41 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserDefinedFieldResponseData_Data_Attributes_Metadata struct {
-	Category any
+	Category         any
 	SearchLimitParam any
-	SearchParams any
+	SearchParams     any
 	SearchQueryParam any
 	SearchResultPath any
-	SearchUrl any
+	SearchUrl        any
 }
 
 type UserDefinedFieldResponseData_Data_Attributes_ValidValues struct {
-	Description any
-	DisplayName any
+	Description      any
+	DisplayName      any
 	ShortDescription any
-	Value any
+	Value            any
 }
 
 type UserDefinedFieldResponseData_Data_Attributes struct {
-	Category any
-	Collected any
-	Created any
+	Category     any
+	Collected    any
+	Created      any
 	DefaultValue any
-	Deleted any
-	DisplayName any
-	Metadata any
-	Modified any
-	Name any
-	Ordinal any
-	Required any
-	Reserved any
-	TagKey any
-	Type any
-	ValidValues any
+	Deleted      any
+	DisplayName  any
+	Metadata     any
+	Modified     any
+	Name         any
+	Ordinal      any
+	Required     any
+	Reserved     any
+	TagKey       any
+	Type         any
+	ValidValues  any
 }
 
 type UserDefinedFieldResponseData_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -47,16 +47,16 @@ type UserDefinedFieldResponseData_Data_Relationships_CreatedByUser struct {
 }
 
 type UserDefinedFieldResponseData_Data_Relationships struct {
-	CreatedByUser any
-	IncidentType any
+	CreatedByUser      any
+	IncidentType       any
 	LastModifiedByUser any
 }
 
 type UserDefinedFieldResponseData_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type UserDefinedFieldResponseData_Meta struct {
@@ -67,14 +67,14 @@ type UserDefinedFieldResponseData_Meta struct {
 }
 
 type UserDefinedFieldResponseDataConfig struct {
-	Include any
+	Include        any
 	IncludeDeleted any
 }
 
 type UserDefinedFieldResponseDataAttrs struct {
 	// An array of user-defined field objects.
-	Data any
-	Include any
+	Data           any
+	Include        any
 	IncludeDeleted any
 	// Pagination metadata for the user-defined field list response.
 	Meta any
@@ -83,7 +83,7 @@ type UserDefinedFieldResponseDataAttrs struct {
 var UserDefinedFieldResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_incident_user_defined_field_response_data",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":        ubx.FieldSpec{WireName: "include"},
 		"IncludeDeleted": ubx.FieldSpec{WireName: "include_deleted"},
 	},
 }

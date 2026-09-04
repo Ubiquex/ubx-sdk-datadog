@@ -41,6 +41,8 @@ class CallNotificationRule_Data_Relationships:
 class CallNotificationRule_Data:
     # Attributes for creating or modifying an on-call notification rule.
     attributes: Any = None
+    # Unique identifier for the rule
+    id: Any = None
     # Relationship object for creating a notification rule
     relationships: Any = None
     # Indicates that the resource is of type 'notification_rules'.
@@ -112,6 +114,7 @@ _CallNotificationRule_DataFields = {
         kind="object",
         fields=_CallNotificationRule_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

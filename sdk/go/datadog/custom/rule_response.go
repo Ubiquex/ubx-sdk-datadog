@@ -3,7 +3,76 @@ package custom
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type RuleResponse_Data_Attributes_LastRevision_Attributes_Arguments struct {
+	Description any
+	Name        any
+}
+
+type RuleResponse_Data_Attributes_LastRevision_Attributes_Tests struct {
+	AnnotationCount any
+	Code            any
+	Filename        any
+}
+
+type RuleResponse_Data_Attributes_LastRevision_Attributes struct {
+	// Rule arguments
+	Arguments any
+	// Rule category
+	Category any
+	// Code checksum
+	Checksum any
+	// Rule code
+	Code any
+	// Creation timestamp
+	CreatedAt any
+	// Creator identifier
+	CreatedBy any
+	// Revision creation message
+	CreationMessage any
+	// Associated CVE
+	Cve any
+	// Associated CWE
+	Cwe any
+	// Full description
+	Description any
+	// Documentation URL
+	DocumentationUrl any
+	// Whether the revision is published
+	IsPublished any
+	// Whether this is a testing revision
+	IsTesting any
+	// Programming language
+	Language any
+	// Rule severity
+	Severity any
+	// Short description
+	ShortDescription any
+	// Whether to use AI for fixes
+	ShouldUseAiFix any
+	// Rule tags
+	Tags any
+	// Rule tests
+	Tests any
+	// Tree-sitter query
+	TreeSitterQuery any
+}
+
+type RuleResponse_Data_Attributes_LastRevision struct {
+	// Attributes of a custom rule revision, including code, metadata, and test cases.
+	Attributes any
+	// Revision identifier
+	Id any
+	// Resource type
+	Type any
+}
+
 type RuleResponse_Data_Attributes struct {
+	// Creation timestamp
+	CreatedAt any
+	// Creator identifier
+	CreatedBy any
+	// A specific revision of a custom static analysis rule.
+	LastRevision any
 	// Rule name
 	Name any
 }
@@ -17,19 +86,78 @@ type RuleResponse_Data struct {
 	Type any
 }
 
+var RuleResponse_Data_Attributes_LastRevision_Attributes_ArgumentsFields = ubx.FieldMap{
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
+
+var RuleResponse_Data_Attributes_LastRevision_Attributes_TestsFields = ubx.FieldMap{
+	"AnnotationCount": ubx.FieldSpec{WireName: "annotation_count"},
+	"Code":            ubx.FieldSpec{WireName: "code"},
+	"Filename":        ubx.FieldSpec{WireName: "filename"},
+}
+
+var RuleResponse_Data_Attributes_LastRevision_AttributesFields = ubx.FieldMap{
+	"Arguments": ubx.FieldSpec{
+		WireName: "arguments",
+		Kind:     "list",
+		Fields:   RuleResponse_Data_Attributes_LastRevision_Attributes_ArgumentsFields,
+	},
+	"Category":         ubx.FieldSpec{WireName: "category"},
+	"Checksum":         ubx.FieldSpec{WireName: "checksum"},
+	"Code":             ubx.FieldSpec{WireName: "code"},
+	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":        ubx.FieldSpec{WireName: "created_by"},
+	"CreationMessage":  ubx.FieldSpec{WireName: "creation_message"},
+	"Cve":              ubx.FieldSpec{WireName: "cve"},
+	"Cwe":              ubx.FieldSpec{WireName: "cwe"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"DocumentationUrl": ubx.FieldSpec{WireName: "documentation_url"},
+	"IsPublished":      ubx.FieldSpec{WireName: "is_published"},
+	"IsTesting":        ubx.FieldSpec{WireName: "is_testing"},
+	"Language":         ubx.FieldSpec{WireName: "language"},
+	"Severity":         ubx.FieldSpec{WireName: "severity"},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+	"ShouldUseAiFix":   ubx.FieldSpec{WireName: "should_use_ai_fix"},
+	"Tags":             ubx.FieldSpec{WireName: "tags"},
+	"Tests": ubx.FieldSpec{
+		WireName: "tests",
+		Kind:     "list",
+		Fields:   RuleResponse_Data_Attributes_LastRevision_Attributes_TestsFields,
+	},
+	"TreeSitterQuery": ubx.FieldSpec{WireName: "tree_sitter_query"},
+}
+
+var RuleResponse_Data_Attributes_LastRevisionFields = ubx.FieldMap{
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_LastRevision_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+	"LastRevision": ubx.FieldSpec{
+		WireName: "last_revision",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_LastRevisionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var RuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RuleResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RuleResponseConfig struct {
 	// Data object for a custom rule create or update request.
@@ -54,10 +182,10 @@ var RuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   RuleResponse_DataFields,
 		},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"RuleName":    ubx.FieldSpec{WireName: "rule_name"},
 	},
 }

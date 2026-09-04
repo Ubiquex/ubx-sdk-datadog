@@ -6,19 +6,48 @@ export interface Template_Data_Attributes {
   completedDescription?: string | Computed<string>;
   /** The IDs of the components affected by a maintenance created from this template. */
   componentIds?: string[] | Computed<string[]>;
+  /** Timestamp of when the maintenance template was created. */
+  createdAt?: string | Computed<string>;
   /** The description shown while a maintenance created from this template is in progress. */
   inProgressDescription?: string | Computed<string>;
   /** The title used for a maintenance created from this template. */
   maintenanceTitle?: string | Computed<string>;
+  /** Timestamp of when the maintenance template was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the maintenance template. */
   name: string | Computed<string>;
   /** The description shown when a maintenance created from this template is scheduled. */
   scheduledDescription?: string | Computed<string>;
 }
 
+export interface Template_Data_Relationships_CreatedByUser_Data {
+  /** The ID of the Datadog user who created the maintenance template. */
+  id: string | Computed<string>;
+  /** Users resource type. */
+  type: string | Computed<string>;
+}
+
+export interface Template_Data_Relationships_CreatedByUser {
+  /** The data object identifying the Datadog user who created the maintenance template. */
+  data: Template_Data_Relationships_CreatedByUser_Data | Computed<Template_Data_Relationships_CreatedByUser_Data>;
+}
+
+export interface Template_Data_Relationships {
+  /** The Datadog user who created the maintenance template. */
+  createdByUser?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
+  /** The Datadog user who last modified the maintenance template. */
+  lastModifiedByUser?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
+  /** The status page the maintenance template belongs to. */
+  statusPage?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
+}
+
 export interface Template_Data {
   /** The attributes for creating a maintenance template. */
   attributes?: Template_Data_Attributes | Computed<Template_Data_Attributes>;
+  /** The ID of the maintenance template. */
+  id?: string | Computed<string>;
+  /** The relationships of a maintenance template. */
+  relationships?: Template_Data_Relationships | Computed<Template_Data_Relationships>;
   /** Maintenance templates resource type. */
   type: string | Computed<string>;
 }
@@ -31,18 +60,9 @@ export interface Template_Included_Attributes {
   uuid?: string | Computed<string>;
 }
 
-export interface Template_Included_Relationships_CreatedByUser_Data {
-  id?: string | Computed<string>;
-  type?: string | Computed<string>;
-}
-
-export interface Template_Included_Relationships_CreatedByUser {
-  data?: Template_Included_Relationships_CreatedByUser_Data | Computed<Template_Included_Relationships_CreatedByUser_Data>;
-}
-
 export interface Template_Included_Relationships {
-  createdByUser?: Template_Included_Relationships_CreatedByUser | Computed<Template_Included_Relationships_CreatedByUser>;
-  lastModifiedByUser?: Template_Included_Relationships_CreatedByUser | Computed<Template_Included_Relationships_CreatedByUser>;
+  createdByUser?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
+  lastModifiedByUser?: Template_Data_Relationships_CreatedByUser | Computed<Template_Data_Relationships_CreatedByUser>;
 }
 
 export interface Template_Included {
@@ -55,10 +75,43 @@ export interface Template_Included {
 const Template_Data_AttributesFields: FieldMap = {
   completedDescription: "completed_description",
   componentIds: "component_ids",
+  createdAt: "created_at",
   inProgressDescription: "in_progress_description",
   maintenanceTitle: "maintenance_title",
+  modifiedAt: "modified_at",
   name: "name",
   scheduledDescription: "scheduled_description",
+};
+
+const Template_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const Template_Data_Relationships_CreatedByUserFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: Template_Data_Relationships_CreatedByUser_DataFields,
+  },
+};
+
+const Template_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: Template_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: Template_Data_Relationships_CreatedByUserFields,
+  },
+  statusPage: {
+    wireName: "status_page",
+    kind: "object",
+    fields: Template_Data_Relationships_CreatedByUserFields,
+  },
 };
 
 const Template_DataFields: FieldMap = {
@@ -66,6 +119,12 @@ const Template_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: Template_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: Template_Data_RelationshipsFields,
   },
   type: "type",
 };

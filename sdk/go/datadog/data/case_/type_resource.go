@@ -4,16 +4,16 @@ package case_
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TypeResource_Data_Attributes struct {
-	DeletedAt any
+	DeletedAt   any
 	Description any
-	Emoji any
-	Name any
+	Emoji       any
+	Name        any
 }
 
 type TypeResource_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TypeResourceConfig struct {
@@ -26,6 +26,5 @@ type TypeResourceAttrs struct {
 
 var TypeResource = ubx.DataSourceBinding{
 	WireType: "datadog_case_type_resource",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -11,6 +11,8 @@ export interface ScheduleResponse_Data_Attributes {
   deliveryFormat?: string | Computed<string>;
   /** A description of the report, up to 4096 characters. */
   description: string | Computed<string>;
+  /** The Unix timestamp, in milliseconds, of the next scheduled delivery, or `null` if none is scheduled. */
+  nextRecurrence?: number | Computed<number>;
   /** The recipients of the report. Each entry is an email address, a Slack channel reference in the form `slack:{team_id}.{channel_id}.{channel_name}`, or a Microsoft Teams channel reference in the form `teams:{tenant_id}|{team_id}|{channel_id}`. */
   recipients: string[] | Computed<string[]>;
   /** The identifier of the dashboard or integration dashboard to render in the report. */
@@ -19,6 +21,8 @@ export interface ScheduleResponse_Data_Attributes {
   resourceType: string | Computed<string>;
   /** The recurrence rule for the schedule, expressed as an iCalendar `RRULE` string. */
   rrule: string | Computed<string>;
+  /** Whether the schedule is currently delivering reports (`active`) or paused (`inactive`). */
+  status?: string | Computed<string>;
   /** The identifier of the dashboard tab to render, when the dashboard has tabs. */
   tabId?: string | Computed<string>;
   /** The dashboard template variables applied when rendering the report. */
@@ -31,9 +35,30 @@ export interface ScheduleResponse_Data_Attributes {
   title: string | Computed<string>;
 }
 
+export interface ScheduleResponse_Data_Relationships_Author_Data {
+  /** The user UUID of the report schedule author. */
+  id: string | Computed<string>;
+  /** JSON:API resource type for the included report author. */
+  type: string | Computed<string>;
+}
+
+export interface ScheduleResponse_Data_Relationships_Author {
+  /** Relationship data for the author of the report schedule. */
+  data: ScheduleResponse_Data_Relationships_Author_Data | Computed<ScheduleResponse_Data_Relationships_Author_Data>;
+}
+
+export interface ScheduleResponse_Data_Relationships {
+  /** Relationship to the author of the report schedule. */
+  author: ScheduleResponse_Data_Relationships_Author | Computed<ScheduleResponse_Data_Relationships_Author>;
+}
+
 export interface ScheduleResponse_Data {
   /** The configuration of the report schedule to create. */
   attributes: ScheduleResponse_Data_Attributes | Computed<ScheduleResponse_Data_Attributes>;
+  /** The unique identifier of the report schedule. */
+  id?: string | Computed<string>;
+  /** Relationships for the report schedule. */
+  relationships?: ScheduleResponse_Data_Relationships | Computed<ScheduleResponse_Data_Relationships>;
   /** JSON:API resource type for report schedules. */
   type: string | Computed<string>;
 }
@@ -57,10 +82,12 @@ const ScheduleResponse_Data_Attributes_TemplateVariablesFields: FieldMap = {
 const ScheduleResponse_Data_AttributesFields: FieldMap = {
   deliveryFormat: "delivery_format",
   description: "description",
+  nextRecurrence: "next_recurrence",
   recipients: "recipients",
   resourceId: "resource_id",
   resourceType: "resource_type",
   rrule: "rrule",
+  status: "status",
   tabId: "tab_id",
   templateVariables: {
     wireName: "template_variables",
@@ -72,11 +99,38 @@ const ScheduleResponse_Data_AttributesFields: FieldMap = {
   title: "title",
 };
 
+const ScheduleResponse_Data_Relationships_Author_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const ScheduleResponse_Data_Relationships_AuthorFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: ScheduleResponse_Data_Relationships_Author_DataFields,
+  },
+};
+
+const ScheduleResponse_Data_RelationshipsFields: FieldMap = {
+  author: {
+    wireName: "author",
+    kind: "object",
+    fields: ScheduleResponse_Data_Relationships_AuthorFields,
+  },
+};
+
 const ScheduleResponse_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
     kind: "object",
     fields: ScheduleResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: ScheduleResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

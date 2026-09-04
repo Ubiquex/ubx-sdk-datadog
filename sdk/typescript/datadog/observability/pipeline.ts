@@ -415,6 +415,8 @@ export interface Pipeline_Data_Attributes {
 export interface Pipeline_Data {
   /** Defines the pipeline’s name and its components (sources, processors, and destinations). */
   attributes: Pipeline_Data_Attributes | Computed<Pipeline_Data_Attributes>;
+  /** Unique identifier for the pipeline. */
+  id?: string | Computed<string>;
   /** The resource type identifier. For pipeline resources, this should always be set to `pipelines`. */
   type: string | Computed<string>;
 }
@@ -1040,6 +1042,7 @@ const Pipeline_DataFields: FieldMap = {
     kind: "object",
     fields: Pipeline_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

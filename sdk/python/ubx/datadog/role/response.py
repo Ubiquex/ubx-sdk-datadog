@@ -8,21 +8,70 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Response_Data_Attributes:
+    # Creation time of the role.
+    created_at: Any = None
+    # Time of last role modification.
+    modified_at: Any = None
     # Name of the new role that is cloned.
     name: Any = None
     # The managed role from which this role automatically inherits new permissions. Specify one of the following: "Datadog Admin Role", "Datadog Standard Role", or "Datadog Read Only Role". If empty or not specified, the role does not automatically inherit permissions from any managed role.
     receives_permissions_from: Any = None
+    # Number of users with that role.
+    user_count: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_Permissions_Data:
+    id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_Permissions:
+    # Relationships to permission objects.
+    data: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships:
+    # Relationship to multiple permissions objects.
+    permissions: Any = None
 
 @dataclasses.dataclass
 class Response_Data:
     # Attributes required to create a new role by cloning an existing one.
     attributes: Any = None
+    # The unique identifier of the role.
+    id: Any = None
+    # Relationships of the role object returned by the API.
+    relationships: Any = None
     # Roles type.
     type: Any = None
 
 _Response_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
     "receives_permissions_from": ubx.FieldSpec(wire_name="receives_permissions_from"),
+    "user_count": ubx.FieldSpec(wire_name="user_count"),
+}
+
+_Response_Data_Relationships_Permissions_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Response_Data_Relationships_PermissionsFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="list",
+        fields=_Response_Data_Relationships_Permissions_DataFields,
+    ),
+}
+
+_Response_Data_RelationshipsFields = {
+    "permissions": ubx.FieldSpec(
+        wire_name="permissions",
+        kind="object",
+        fields=_Response_Data_Relationships_PermissionsFields,
+    ),
 }
 
 _Response_DataFields = {
@@ -30,6 +79,12 @@ _Response_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_Response_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_Response_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

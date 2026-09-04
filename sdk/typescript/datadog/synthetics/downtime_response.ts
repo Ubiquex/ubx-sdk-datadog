@@ -26,6 +26,12 @@ export interface DowntimeResponse_Data_Attributes_TimeSlots {
 }
 
 export interface DowntimeResponse_Data_Attributes {
+  /** The timestamp when the downtime was created. */
+  createdAt?: string | Computed<string>;
+  /** The UUID of the user who created the downtime. */
+  createdBy?: string | Computed<string>;
+  /** The display name of the user who created the downtime. */
+  createdByName?: string | Computed<string>;
   /** An optional description of the downtime. */
   description?: string | Computed<string>;
   /** Whether the downtime is enabled. */
@@ -38,11 +44,19 @@ export interface DowntimeResponse_Data_Attributes {
   testIds: string[] | Computed<string[]>;
   /** List of time slots for a Synthetics downtime create or update request. */
   timeSlots: DowntimeResponse_Data_Attributes_TimeSlots[] | Computed<DowntimeResponse_Data_Attributes_TimeSlots[]>;
+  /** The timestamp when the downtime was last updated. */
+  updatedAt?: string | Computed<string>;
+  /** The UUID of the user who last updated the downtime. */
+  updatedBy?: string | Computed<string>;
+  /** The display name of the user who last updated the downtime. */
+  updatedByName?: string | Computed<string>;
 }
 
 export interface DowntimeResponse_Data {
   /** Attributes for creating or updating a Synthetics downtime. */
   attributes: DowntimeResponse_Data_Attributes | Computed<DowntimeResponse_Data_Attributes>;
+  /** The unique identifier of the downtime. */
+  id?: string | Computed<string>;
   /** The resource type for a Synthetics downtime. */
   type: string | Computed<string>;
 }
@@ -84,6 +98,9 @@ const DowntimeResponse_Data_Attributes_TimeSlotsFields: FieldMap = {
 };
 
 const DowntimeResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  createdBy: "created_by",
+  createdByName: "created_by_name",
   description: "description",
   isEnabled: "is_enabled",
   name: "name",
@@ -94,6 +111,9 @@ const DowntimeResponse_Data_AttributesFields: FieldMap = {
     kind: "list",
     fields: DowntimeResponse_Data_Attributes_TimeSlotsFields,
   },
+  updatedAt: "updated_at",
+  updatedBy: "updated_by",
+  updatedByName: "updated_by_name",
 };
 
 const DowntimeResponse_DataFields: FieldMap = {
@@ -102,6 +122,7 @@ const DowntimeResponse_DataFields: FieldMap = {
     kind: "object",
     fields: DowntimeResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

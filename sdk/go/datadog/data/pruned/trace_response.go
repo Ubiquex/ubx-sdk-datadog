@@ -63,39 +63,39 @@ type TraceResponse_Data struct {
 }
 
 type TraceResponseConfig struct {
-	ExpandSpanId any
-	ForceSource any
-	IncludePath any
+	ExpandSpanId          any
+	ForceSource           any
+	IncludePath           any
 	OnlyServiceEntrySpans any
-	TagExclude any
-	TagInclude any
-	TimeHint any
-	TraceId any
+	TagExclude            any
+	TagInclude            any
+	TimeHint              any
+	TraceId               any
 }
 
 type TraceResponseAttrs struct {
 	// A pruned trace resource document.
-	Data any
-	ExpandSpanId any
-	ForceSource any
-	IncludePath any
+	Data                  any
+	ExpandSpanId          any
+	ForceSource           any
+	IncludePath           any
 	OnlyServiceEntrySpans any
-	TagExclude any
-	TagInclude any
-	TimeHint any
-	TraceId any
+	TagExclude            any
+	TagInclude            any
+	TimeHint              any
+	TraceId               any
 }
 
 var TraceResponse = ubx.DataSourceBinding{
 	WireType: "datadog_pruned_trace_response",
 	Fields: ubx.FieldMap{
-		"ExpandSpanId": ubx.FieldSpec{WireName: "expand_span_id"},
-		"ForceSource": ubx.FieldSpec{WireName: "force_source"},
-		"IncludePath": ubx.FieldSpec{WireName: "include_path"},
+		"ExpandSpanId":          ubx.FieldSpec{WireName: "expand_span_id"},
+		"ForceSource":           ubx.FieldSpec{WireName: "force_source"},
+		"IncludePath":           ubx.FieldSpec{WireName: "include_path"},
 		"OnlyServiceEntrySpans": ubx.FieldSpec{WireName: "only_service_entry_spans"},
-		"TagExclude": ubx.FieldSpec{WireName: "tag_exclude"},
-		"TagInclude": ubx.FieldSpec{WireName: "tag_include"},
-		"TimeHint": ubx.FieldSpec{WireName: "time_hint"},
-		"TraceId": ubx.FieldSpec{WireName: "trace_id"},
+		"TagExclude":            ubx.FieldSpec{WireName: "tag_exclude"},
+		"TagInclude":            ubx.FieldSpec{WireName: "tag_include"},
+		"TimeHint":              ubx.FieldSpec{WireName: "time_hint"},
+		"TraceId":               ubx.FieldSpec{WireName: "trace_id"},
 	},
 }

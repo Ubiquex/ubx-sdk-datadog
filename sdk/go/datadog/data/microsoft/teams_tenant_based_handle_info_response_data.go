@@ -4,37 +4,37 @@ package microsoft
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TeamsTenantBasedHandleInfoResponseData_Data_Attributes struct {
-	ChannelId any
+	ChannelId   any
 	ChannelName any
-	Name any
-	TeamId any
-	TeamName any
-	TenantId any
-	TenantName any
+	Name        any
+	TeamId      any
+	TeamName    any
+	TenantId    any
+	TenantName  any
 }
 
 type TeamsTenantBasedHandleInfoResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TeamsTenantBasedHandleInfoResponseDataConfig struct {
-	Name any
+	Name     any
 	TenantId any
 }
 
 type TeamsTenantBasedHandleInfoResponseDataAttrs struct {
 	// An array of tenant-based handles.
-	Data any
-	Name any
+	Data     any
+	Name     any
 	TenantId any
 }
 
 var TeamsTenantBasedHandleInfoResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_microsoft_teams_tenant_based_handle_info_response_data",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
 	},
 }

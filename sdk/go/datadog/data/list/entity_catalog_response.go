@@ -4,25 +4,25 @@ package list
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntityCatalogResponse_Data_Attributes struct {
-	ApiVersion any
+	ApiVersion  any
 	Description any
 	DisplayName any
-	Kind any
-	Name any
-	Namespace any
-	Owner any
-	Tags any
+	Kind        any
+	Name        any
+	Namespace   any
+	Owner       any
+	Tags        any
 }
 
 type EntityCatalogResponse_Data_Meta struct {
-	CreatedAt any
+	CreatedAt       any
 	IngestionSource any
-	ModifiedAt any
-	Origin any
+	ModifiedAt      any
+	Origin          any
 }
 
 type EntityCatalogResponse_Data_Relationships_Incidents_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -35,28 +35,28 @@ type EntityCatalogResponse_Data_Relationships_RawSchema struct {
 }
 
 type EntityCatalogResponse_Data_Relationships struct {
-	Incidents any
-	Oncall any
-	RawSchema any
+	Incidents       any
+	Oncall          any
+	RawSchema       any
 	RelatedEntities any
-	Schema any
+	Schema          any
 }
 
 type EntityCatalogResponse_Data struct {
-	Attributes any
-	Id any
-	Meta any
+	Attributes    any
+	Id            any
+	Meta          any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type EntityCatalogResponse_Included_Attributes_Schema_Datadog_CodeLocations struct {
-	Paths any
+	Paths         any
 	RepositoryUrl any
 }
 
 type EntityCatalogResponse_Included_Attributes_Schema_Datadog_Events struct {
-	Name any
+	Name  any
 	Query any
 }
 
@@ -69,15 +69,15 @@ type EntityCatalogResponse_Included_Attributes_Schema_Datadog_Pipelines struct {
 }
 
 type EntityCatalogResponse_Included_Attributes_Schema_Datadog struct {
-	CodeLocations any
-	Events any
-	Logs any
+	CodeLocations   any
+	Events          any
+	Logs            any
 	PerformanceData any
-	Pipelines any
+	Pipelines       any
 }
 
 type EntityCatalogResponse_Included_Attributes_Schema_Integrations_Opsgenie struct {
-	Region any
+	Region     any
 	ServiceUrl any
 }
 
@@ -86,7 +86,7 @@ type EntityCatalogResponse_Included_Attributes_Schema_Integrations_Pagerduty str
 }
 
 type EntityCatalogResponse_Included_Attributes_Schema_Integrations struct {
-	Opsgenie any
+	Opsgenie  any
 	Pagerduty any
 }
 
@@ -97,49 +97,49 @@ type EntityCatalogResponse_Included_Attributes_Schema_Metadata_AdditionalOwners 
 
 type EntityCatalogResponse_Included_Attributes_Schema_Metadata_Contacts struct {
 	Contact any
-	Name any
-	Type any
+	Name    any
+	Type    any
 }
 
 type EntityCatalogResponse_Included_Attributes_Schema_Metadata_Links struct {
-	Name any
+	Name     any
 	Provider any
-	Type any
-	Url any
+	Type     any
+	Url      any
 }
 
 type EntityCatalogResponse_Included_Attributes_Schema_Metadata struct {
 	AdditionalOwners any
-	Contacts any
-	Description any
-	DisplayName any
-	Id any
-	InheritFrom any
-	Links any
-	Managed any
-	Name any
-	Namespace any
-	Owner any
-	Tags any
+	Contacts         any
+	Description      any
+	DisplayName      any
+	Id               any
+	InheritFrom      any
+	Links            any
+	Managed          any
+	Name             any
+	Namespace        any
+	Owner            any
+	Tags             any
 }
 
 type EntityCatalogResponse_Included_Attributes_Schema_Spec struct {
 	ComponentOf any
-	DependsOn any
-	Languages any
-	Lifecycle any
-	Tier any
-	Type any
+	DependsOn   any
+	Languages   any
+	Lifecycle   any
+	Tier        any
+	Type        any
 }
 
 type EntityCatalogResponse_Included_Attributes_Schema struct {
-	ApiVersion any
-	Datadog any
-	Extensions any
+	ApiVersion   any
+	Datadog      any
+	Extensions   any
 	Integrations any
-	Kind any
-	Metadata any
-	Spec any
+	Kind         any
+	Metadata     any
+	Spec         any
 }
 
 type EntityCatalogResponse_Included_Attributes struct {
@@ -147,17 +147,17 @@ type EntityCatalogResponse_Included_Attributes struct {
 }
 
 type EntityCatalogResponse_Included_Meta struct {
-	CreatedAt any
-	DefinedBy any
+	CreatedAt  any
+	DefinedBy  any
 	ModifiedAt any
-	Source any
+	Source     any
 }
 
 type EntityCatalogResponse_Included struct {
 	Attributes any
-	Id any
-	Meta any
-	Type any
+	Id         any
+	Meta       any
+	Type       any
 }
 
 type EntityCatalogResponse_Links struct {
@@ -178,7 +178,7 @@ type EntityCatalogResponse_Meta struct {
 
 type EntityCatalogResponseConfig struct {
 	// Supported include types.
-	Include any
+	Include           any
 	IncludeDiscovered any
 }
 
@@ -186,7 +186,7 @@ type EntityCatalogResponseAttrs struct {
 	// List of entity data.
 	Data any
 	// Supported include types.
-	Include any
+	Include           any
 	IncludeDiscovered any
 	// List entity response included.
 	Included any
@@ -199,7 +199,7 @@ type EntityCatalogResponseAttrs struct {
 var EntityCatalogResponse = ubx.DataSourceBinding{
 	WireType: "datadog_list_entity_catalog_response",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":           ubx.FieldSpec{WireName: "include"},
 		"IncludeDiscovered": ubx.FieldSpec{WireName: "include_discovered"},
 	},
 }

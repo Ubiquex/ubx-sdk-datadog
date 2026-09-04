@@ -9,17 +9,17 @@ type Response_Data_Attributes_ProductFilters struct {
 }
 
 type Response_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	Name any
-	Principals any
+	CreatedAt      any
+	CreatedBy      any
+	Name           any
+	Principals     any
 	ProductFilters any
 }
 
 type Response_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ResponseConfig struct {
@@ -32,6 +32,5 @@ type ResponseAttrs struct {
 
 var Response = ubx.DataSourceBinding{
 	WireType: "datadog_dataset_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

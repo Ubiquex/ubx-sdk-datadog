@@ -4,9 +4,9 @@ package automation
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rule_Data_Attributes_Action_Data struct {
-	AgentType any
+	AgentType       any
 	AssignedAgentId any
-	Handle any
+	Handle          any
 }
 
 type Rule_Data_Attributes_Action struct {
@@ -15,11 +15,11 @@ type Rule_Data_Attributes_Action struct {
 }
 
 type Rule_Data_Attributes_Trigger_Data struct {
-	ApprovalType any
-	ChangeType any
-	Field any
+	ApprovalType   any
+	ChangeType     any
+	Field          any
 	FromStatusName any
-	ToStatusName any
+	ToStatusName   any
 }
 
 type Rule_Data_Attributes_Trigger struct {
@@ -28,16 +28,16 @@ type Rule_Data_Attributes_Trigger struct {
 }
 
 type Rule_Data_Attributes struct {
-	Action any
-	CreatedAt any
+	Action     any
+	CreatedAt  any
 	ModifiedAt any
-	Name any
-	State any
-	Trigger any
+	Name       any
+	State      any
+	Trigger    any
 }
 
 type Rule_Data_Relationships_CreatedBy_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -46,15 +46,15 @@ type Rule_Data_Relationships_CreatedBy struct {
 }
 
 type Rule_Data_Relationships struct {
-	CreatedBy any
+	CreatedBy  any
 	ModifiedBy any
 }
 
 type Rule_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type RuleConfig struct {
@@ -63,7 +63,7 @@ type RuleConfig struct {
 
 type RuleAttrs struct {
 	// List of automation rules.
-	Data any
+	Data      any
 	ProjectId any
 }
 

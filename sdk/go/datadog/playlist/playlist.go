@@ -41,35 +41,35 @@ type Playlist_Data struct {
 }
 
 var Playlist_Data_Attributes_CreatedByFields = ubx.FieldMap{
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uuid": ubx.FieldSpec{WireName: "uuid"},
-	}
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Icon":   ubx.FieldSpec{WireName: "icon"},
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Uuid":   ubx.FieldSpec{WireName: "uuid"},
+}
 
 var Playlist_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{
-			WireName: "created_by",
-			Kind: "object",
-			Fields: Playlist_Data_Attributes_CreatedByFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SessionCount": ubx.FieldSpec{WireName: "session_count"},
-		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   Playlist_Data_Attributes_CreatedByFields,
+	},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"SessionCount": ubx.FieldSpec{WireName: "session_count"},
+	"UpdatedAt":    ubx.FieldSpec{WireName: "updated_at"},
+}
 
 var Playlist_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Playlist_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Playlist_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PlaylistConfig struct {
 	// Data object representing a RUM replay playlist, including its identifier, type, and attributes.
@@ -90,8 +90,8 @@ var Playlist = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Playlist_DataFields,
+			Kind:     "object",
+			Fields:   Playlist_DataFields,
 		},
 		"PlaylistId": ubx.FieldSpec{WireName: "playlist_id"},
 	},

@@ -25,7 +25,7 @@ type DataObservabilityMonitorRunStatusResponseConfig struct {
 
 type DataObservabilityMonitorRunStatusResponseAttrs struct {
 	// The data object for a data observability monitor run status response.
-	Data any
+	Data  any
 	RunId any
 }
 

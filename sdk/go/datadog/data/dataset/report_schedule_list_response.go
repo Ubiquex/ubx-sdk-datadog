@@ -4,25 +4,25 @@ package dataset
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReportScheduleListResponse_Data_Attributes struct {
-	CellId any
-	DatasetId any
-	Description any
-	FileRowLimit any
+	CellId         any
+	DatasetId      any
+	Description    any
+	FileRowLimit   any
 	InlineRowLimit any
 	NextRecurrence any
-	NotebookId any
-	Recipients any
-	ResourceId any
-	ResourceType any
-	Rrule any
-	Status any
-	Timeframe any
-	Timezone any
-	Title any
+	NotebookId     any
+	Recipients     any
+	ResourceId     any
+	ResourceType   any
+	Rrule          any
+	Status         any
+	Timeframe      any
+	Timezone       any
+	Title          any
 }
 
 type ReportScheduleListResponse_Data_Relationships_Author_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -35,21 +35,21 @@ type ReportScheduleListResponse_Data_Relationships struct {
 }
 
 type ReportScheduleListResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ReportScheduleListResponse_Included_Attributes struct {
 	Email any
-	Name any
+	Name  any
 }
 
 type ReportScheduleListResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ReportScheduleListResponseConfig struct {
@@ -58,7 +58,7 @@ type ReportScheduleListResponseConfig struct {
 
 type ReportScheduleListResponseAttrs struct {
 	// A list of report schedules for the dataset.
-	Data any
+	Data      any
 	DatasetId any
 	// Related resources included with the report schedules, such as authors.
 	Included any

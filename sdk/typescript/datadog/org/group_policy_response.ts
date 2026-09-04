@@ -6,6 +6,8 @@ export interface GroupPolicyResponse_Data_Attributes {
   content: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** The enforcement tier of the policy. `OVERRIDE_ALLOWED` means the policy is set but member orgs may mutate it. `GROUP_MANAGED` means the policy is strictly controlled and mutations are blocked for affected orgs. `DELEGATE` means each member org controls its own value. */
   enforcementTier?: string | Computed<string>;
+  /** Timestamp when the policy was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the policy. */
   policyName: string | Computed<string>;
   /** The type of the policy. Only `org_config` is supported, indicating a policy backed by an organization configuration setting. */
@@ -32,6 +34,8 @@ export interface GroupPolicyResponse_Data_Relationships {
 export interface GroupPolicyResponse_Data {
   /** Attributes for creating an org group policy. If `policy_type` or `enforcement_tier` are not provided, they default to `org_config` and `DEFAULT` respectively. */
   attributes: GroupPolicyResponse_Data_Attributes | Computed<GroupPolicyResponse_Data_Attributes>;
+  /** The ID of the org group policy. */
+  id?: string | Computed<string>;
   /** Relationships for creating a policy. */
   relationships: GroupPolicyResponse_Data_Relationships | Computed<GroupPolicyResponse_Data_Relationships>;
   /** Org group policies resource type. */
@@ -41,6 +45,7 @@ export interface GroupPolicyResponse_Data {
 const GroupPolicyResponse_Data_AttributesFields: FieldMap = {
   content: "content",
   enforcementTier: "enforcement_tier",
+  modifiedAt: "modified_at",
   policyName: "policy_name",
   policyType: "policy_type",
 };
@@ -72,6 +77,7 @@ const GroupPolicyResponse_DataFields: FieldMap = {
     kind: "object",
     fields: GroupPolicyResponse_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

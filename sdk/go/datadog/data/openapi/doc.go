@@ -2,7 +2,7 @@
 // This file is committed to git like any other reviewable generated code
 // (docs/sdk.md — "ubx sdk gen: local, pinned, offline-after-generation") --
 // re-run `ubx sdk gen` to regenerate after a provider version bump.
-package artifact
+package openapi
 
 var SourceProvenance = struct {
 	Source  string

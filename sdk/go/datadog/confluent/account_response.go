@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountResponse_Data_Attributes_Resources struct {
 	EnableCustomMetrics any
-	Id any
-	ResourceType any
-	Tags any
+	Id                  any
+	ResourceType        any
+	Tags                any
 }
 
 type AccountResponse_Data_Attributes struct {
@@ -24,36 +24,39 @@ type AccountResponse_Data_Attributes struct {
 type AccountResponse_Data struct {
 	// Attributes associated with the account creation request.
 	Attributes any
+	// A randomly generated ID associated with a Confluent account.
+	Id any
 	// The JSON:API type for this API. Should always be `confluent-cloud-accounts`.
 	Type any
 }
 
 var AccountResponse_Data_Attributes_ResourcesFields = ubx.FieldMap{
-		"EnableCustomMetrics": ubx.FieldSpec{WireName: "enable_custom_metrics"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"EnableCustomMetrics": ubx.FieldSpec{WireName: "enable_custom_metrics"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"ResourceType":        ubx.FieldSpec{WireName: "resource_type"},
+	"Tags":                ubx.FieldSpec{WireName: "tags"},
+}
 
 var AccountResponse_Data_AttributesFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"ApiSecret": ubx.FieldSpec{WireName: "api_secret"},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "list",
-			Fields: AccountResponse_Data_Attributes_ResourcesFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"ApiKey":    ubx.FieldSpec{WireName: "api_key"},
+	"ApiSecret": ubx.FieldSpec{WireName: "api_secret"},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "list",
+		Fields:   AccountResponse_Data_Attributes_ResourcesFields,
+	},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 var AccountResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: AccountResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   AccountResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type AccountResponseConfig struct {
 	// The data body for adding a Confluent account.
@@ -74,8 +77,8 @@ var AccountResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: AccountResponse_DataFields,
+			Kind:     "object",
+			Fields:   AccountResponse_DataFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

@@ -38,6 +38,8 @@ export interface Config_Data_Attributes_RegionsConfig {
 export interface Config_Data_Attributes {
   /** OCI API signing key credentials used to authenticate the Datadog integration with the OCI tenancy. */
   authCredentials: Config_Data_Attributes_AuthCredentials | Computed<Config_Data_Attributes_AuthCredentials>;
+  /** The identifier of the billing plan associated with the OCI tenancy. */
+  billingPlanId?: number | Computed<number>;
   /** Version number of the integration the tenancy is integrated with */
   configVersion?: number | Computed<number>;
   /** Whether cost data collection from OCI is enabled for the tenancy. */
@@ -52,10 +54,14 @@ export interface Config_Data_Attributes {
   logsConfig?: Config_Data_Attributes_LogsConfig | Computed<Config_Data_Attributes_LogsConfig>;
   /** Metrics collection configuration for an OCI tenancy, controlling which compartments and services are included or excluded. */
   metricsConfig?: Config_Data_Attributes_MetricsConfig | Computed<Config_Data_Attributes_MetricsConfig>;
+  /** The name of the parent OCI tenancy, if applicable. */
+  parentTenancyName?: string | Computed<string>;
   /** Region configuration for an OCI tenancy, specifying which regions are available, enabled, or disabled for data collection. */
   regionsConfig?: Config_Data_Attributes_RegionsConfig | Computed<Config_Data_Attributes_RegionsConfig>;
   /** Whether resource collection from OCI is enabled for the tenancy. */
   resourceCollectionEnabled?: boolean | Computed<boolean>;
+  /** The human-readable name of the OCI tenancy. */
+  tenancyName?: string | Computed<string>;
   /** The OCID of the OCI user used by the Datadog integration for authentication. */
   userOcid: string | Computed<string>;
 }
@@ -98,6 +104,7 @@ const Config_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: Config_Data_Attributes_AuthCredentialsFields,
   },
+  billingPlanId: "billing_plan_id",
   configVersion: "config_version",
   costCollectionEnabled: "cost_collection_enabled",
   ddCompartmentId: "dd_compartment_id",
@@ -113,12 +120,14 @@ const Config_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: Config_Data_Attributes_MetricsConfigFields,
   },
+  parentTenancyName: "parent_tenancy_name",
   regionsConfig: {
     wireName: "regions_config",
     kind: "object",
     fields: Config_Data_Attributes_RegionsConfigFields,
   },
   resourceCollectionEnabled: "resource_collection_enabled",
+  tenancyName: "tenancy_name",
   userOcid: "user_ocid",
 };
 

@@ -4,7 +4,7 @@ package user
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InvitationResponse_Data_Relationships_User_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -18,38 +18,38 @@ type InvitationResponse_Data_Relationships struct {
 
 type InvitationResponse_Data struct {
 	Relationships any
-	Type any
+	Type          any
 }
 
 var InvitationResponse_Data_Relationships_User_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var InvitationResponse_Data_Relationships_UserFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: InvitationResponse_Data_Relationships_User_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   InvitationResponse_Data_Relationships_User_DataFields,
+	},
+}
 
 var InvitationResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"User": ubx.FieldSpec{
-			WireName: "user",
-			Kind: "object",
-			Fields: InvitationResponse_Data_Relationships_UserFields,
-		},
-	}
+	"User": ubx.FieldSpec{
+		WireName: "user",
+		Kind:     "object",
+		Fields:   InvitationResponse_Data_Relationships_UserFields,
+	},
+}
 
 var InvitationResponse_DataFields = ubx.FieldMap{
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: InvitationResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   InvitationResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type InvitationResponseConfig struct {
 	// List of user invitations.
@@ -70,8 +70,8 @@ var InvitationResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "list",
-			Fields: InvitationResponse_DataFields,
+			Kind:     "list",
+			Fields:   InvitationResponse_DataFields,
 		},
 		"UserInvitationUuid": ubx.FieldSpec{WireName: "user_invitation_uuid"},
 	},

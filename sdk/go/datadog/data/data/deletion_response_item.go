@@ -4,28 +4,28 @@ package data
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeletionResponseItem_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	CustomerMessage any
-	DisplayedTotal any
-	ErrorCategory any
-	FromTime any
-	Indexes any
-	IsCreated any
-	OrgId any
-	Product any
-	Query any
-	StartingAt any
-	Status any
-	ToTime any
+	CreatedAt         any
+	CreatedBy         any
+	CustomerMessage   any
+	DisplayedTotal    any
+	ErrorCategory     any
+	FromTime          any
+	Indexes           any
+	IsCreated         any
+	OrgId             any
+	Product           any
+	Query             any
+	StartingAt        any
+	Status            any
+	ToTime            any
 	TotalUnrestricted any
-	UpdatedAt any
+	UpdatedAt         any
 }
 
 type DeletionResponseItem_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DeletionResponseItem_Meta struct {
@@ -44,21 +44,21 @@ type DeletionResponseItem_Meta struct {
 type DeletionResponseItemConfig struct {
 	NextPage any
 	PageSize any
-	Product any
-	Query any
-	Status any
+	Product  any
+	Query    any
+	Status   any
 }
 
 type DeletionResponseItemAttrs struct {
 	// The list of data deletion requests that matches the query.
 	Data any
 	// The metadata of the data deletion response.
-	Meta any
+	Meta     any
 	NextPage any
 	PageSize any
-	Product any
-	Query any
-	Status any
+	Product  any
+	Query    any
+	Status   any
 }
 
 var DeletionResponseItem = ubx.DataSourceBinding{
@@ -66,8 +66,8 @@ var DeletionResponseItem = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"NextPage": ubx.FieldSpec{WireName: "next_page"},
 		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Product": ubx.FieldSpec{WireName: "product"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Product":  ubx.FieldSpec{WireName: "product"},
+		"Query":    ubx.FieldSpec{WireName: "query"},
+		"Status":   ubx.FieldSpec{WireName: "status"},
 	},
 }

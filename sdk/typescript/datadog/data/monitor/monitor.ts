@@ -2,16 +2,37 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface MonitorConfig {
-  monitorId: number | Computed<number>;
+  groupStates?: string | Computed<string>;
+  idOffset?: number | Computed<number>;
+  monitorTags?: string | Computed<string>;
+  name?: string | Computed<string>;
+  page?: number | Computed<number>;
+  pageSize?: number | Computed<number>;
+  tags?: string | Computed<string>;
+  withDowntimes?: boolean | Computed<boolean>;
 }
 
 export interface MonitorAttrs {
-  monitorId: number;
+  groupStates: string;
+  idOffset: number;
+  monitorTags: string;
+  name: string;
+  page: number;
+  pageSize: number;
+  tags: string;
+  withDowntimes: boolean;
 }
 
 export const Monitor: DataSourceBinding<MonitorConfig, MonitorAttrs> = {
   wireType: "datadog_monitor",
   fields: {
-    monitorId: "monitor_id",
+    groupStates: "group_states",
+    idOffset: "id_offset",
+    monitorTags: "monitor_tags",
+    name: "name",
+    page: "page",
+    pageSize: "page_size",
+    tags: "tags",
+    withDowntimes: "with_downtimes",
   },
 };

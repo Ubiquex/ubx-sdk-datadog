@@ -44,16 +44,26 @@ export interface IndexingRuleResponse_Data_Attributes_Options {
 }
 
 export interface IndexingRuleResponse_Data_Attributes {
+  /** Timestamp when the rule was created. */
+  createdAt?: string | Computed<string>;
+  /** Handle of the user who created the rule. */
+  createdByHandle?: string | Computed<string>;
   /** When true, the rule excludes the listed tags and indexes all others. When false (default), the rule includes only the listed tags. */
   excludeTagsMode?: boolean | Computed<boolean>;
   /** Metric name prefixes excluded from the rule's scope. */
   ignoredMetricNameMatches?: string[] | Computed<string[]>;
   /** Metric name prefixes (glob patterns) this rule applies to. */
   metricNameMatches: string[] | Computed<string[]>;
+  /** Timestamp when the rule was last modified. */
+  modifiedAt?: string | Computed<string>;
+  /** Handle of the user who last modified the rule. */
+  modifiedByHandle?: string | Computed<string>;
   /** Human-readable name for the rule. */
   name: string | Computed<string>;
   /** Versioned configuration options for a tag indexing rule. */
   options?: IndexingRuleResponse_Data_Attributes_Options | Computed<IndexingRuleResponse_Data_Attributes_Options>;
+  /** Evaluation order within the org. Lower values are evaluated first. Assigned server-side on create (max+1); pass on update to change the rule's position. */
+  ruleOrder?: number | Computed<number>;
   /** Tag keys managed by this rule. */
   tags?: string[] | Computed<string[]>;
 }
@@ -61,6 +71,8 @@ export interface IndexingRuleResponse_Data_Attributes {
 export interface IndexingRuleResponse_Data {
   /** Attributes for creating a tag indexing rule. */
   attributes: IndexingRuleResponse_Data_Attributes | Computed<IndexingRuleResponse_Data_Attributes>;
+  /** The unique identifier (UUID) of the tag indexing rule. */
+  id?: string | Computed<string>;
   /** The tag indexing rule resource type. */
   type: string | Computed<string>;
 }
@@ -105,15 +117,20 @@ const IndexingRuleResponse_Data_Attributes_OptionsFields: FieldMap = {
 };
 
 const IndexingRuleResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  createdByHandle: "created_by_handle",
   excludeTagsMode: "exclude_tags_mode",
   ignoredMetricNameMatches: "ignored_metric_name_matches",
   metricNameMatches: "metric_name_matches",
+  modifiedAt: "modified_at",
+  modifiedByHandle: "modified_by_handle",
   name: "name",
   options: {
     wireName: "options",
     kind: "object",
     fields: IndexingRuleResponse_Data_Attributes_OptionsFields,
   },
+  ruleOrder: "rule_order",
   tags: "tags",
 };
 
@@ -123,6 +140,7 @@ const IndexingRuleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: IndexingRuleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

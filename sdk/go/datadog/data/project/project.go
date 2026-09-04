@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Project_Data_Attributes_ColumnsConfig_Columns_Sort struct {
 	Ascending any
-	Priority any
+	Priority  any
 }
 
 type Project_Data_Attributes_ColumnsConfig_Columns struct {
-	Sort any
+	Sort      any
 	SortField any
-	Type any
+	Type      any
 }
 
 type Project_Data_Attributes_ColumnsConfig struct {
@@ -19,7 +19,7 @@ type Project_Data_Attributes_ColumnsConfig struct {
 }
 
 type Project_Data_Attributes_Settings_AutoCloseInactiveCases struct {
-	Enabled any
+	Enabled               any
 	MaxInactiveTimeInSecs any
 }
 
@@ -28,7 +28,7 @@ type Project_Data_Attributes_Settings_AutoTransitionAssignedCases struct {
 }
 
 type Project_Data_Attributes_Settings_IntegrationIncident_FieldMappings struct {
-	CaseField any
+	CaseField                  any
 	IncidentUserDefinedFieldId any
 }
 
@@ -37,12 +37,12 @@ type Project_Data_Attributes_Settings_IntegrationIncident_SeverityConfig struct 
 }
 
 type Project_Data_Attributes_Settings_IntegrationIncident struct {
-	AutoEscalationQuery any
+	AutoEscalationQuery      any
 	DefaultIncidentCommander any
-	Enabled any
-	FieldMappings any
-	IncidentType any
-	SeverityConfig any
+	Enabled                  any
+	FieldMappings            any
+	IncidentType             any
+	SeverityConfig           any
 }
 
 type Project_Data_Attributes_Settings_IntegrationJira_AutoCreation struct {
@@ -50,9 +50,9 @@ type Project_Data_Attributes_Settings_IntegrationJira_AutoCreation struct {
 }
 
 type Project_Data_Attributes_Settings_IntegrationJira_Metadata struct {
-	AccountId any
+	AccountId   any
 	IssueTypeId any
-	ProjectId any
+	ProjectId   any
 }
 
 type Project_Data_Attributes_Settings_IntegrationJira_Sync_Properties_Assignee struct {
@@ -61,128 +61,128 @@ type Project_Data_Attributes_Settings_IntegrationJira_Sync_Properties_Assignee s
 
 type Project_Data_Attributes_Settings_IntegrationJira_Sync_Properties_CustomFields struct {
 	SyncType any
-	Value any
+	Value    any
 }
 
 type Project_Data_Attributes_Settings_IntegrationJira_Sync_Properties_DueDate struct {
 	JiraFieldId any
-	SyncType any
+	SyncType    any
 }
 
 type Project_Data_Attributes_Settings_IntegrationJira_Sync_Properties_Priority struct {
-	Mapping any
+	Mapping     any
 	NameMapping any
-	SyncType any
+	SyncType    any
 }
 
 type Project_Data_Attributes_Settings_IntegrationJira_Sync_Properties struct {
-	Assignee any
-	Comments any
+	Assignee     any
+	Comments     any
 	CustomFields any
-	Description any
-	DueDate any
-	Priority any
-	Status any
-	Title any
+	Description  any
+	DueDate      any
+	Priority     any
+	Status       any
+	Title        any
 }
 
 type Project_Data_Attributes_Settings_IntegrationJira_Sync struct {
-	Enabled any
+	Enabled    any
 	Properties any
 }
 
 type Project_Data_Attributes_Settings_IntegrationJira struct {
 	AutoCreation any
-	Enabled any
-	Metadata any
-	Sync any
+	Enabled      any
+	Metadata     any
+	Sync         any
 }
 
 type Project_Data_Attributes_Settings_IntegrationMonitor struct {
 	AutoResolveEnabled any
-	CaseTypeId any
-	Enabled any
-	Handle any
+	CaseTypeId         any
+	Enabled            any
+	Handle             any
 }
 
 type Project_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries_Target struct {
 	DynamicTeamPaging any
-	TeamId any
-	UserId any
+	TeamId            any
+	UserId            any
 }
 
 type Project_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries struct {
 	Enabled any
-	Id any
-	Query any
-	Target any
+	Id      any
+	Query   any
+	Target  any
 }
 
 type Project_Data_Attributes_Settings_IntegrationOnCall struct {
-	AutoAssignOnCall any
-	Enabled any
+	AutoAssignOnCall  any
+	Enabled           any
 	EscalationQueries any
 }
 
 type Project_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_Properties_Priority struct {
-	ImpactMapping any
-	SyncType any
+	ImpactMapping  any
+	SyncType       any
 	UrgencyMapping any
 }
 
 type Project_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_Properties struct {
 	Comments any
 	Priority any
-	Status any
+	Status   any
 }
 
 type Project_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig struct {
-	Enabled any
+	Enabled    any
 	Properties any
 }
 
 type Project_Data_Attributes_Settings_IntegrationServiceNow struct {
 	AssignmentGroup any
-	AutoCreation any
-	Enabled any
-	InstanceName any
-	SyncConfig any
+	AutoCreation    any
+	Enabled         any
+	InstanceName    any
+	SyncConfig      any
 }
 
 type Project_Data_Attributes_Settings_Notification struct {
-	Destinations any
-	Enabled any
-	NotifyOnCaseAssignment any
-	NotifyOnCaseClosed any
-	NotifyOnCaseComment any
+	Destinations               any
+	Enabled                    any
+	NotifyOnCaseAssignment     any
+	NotifyOnCaseClosed         any
+	NotifyOnCaseComment        any
 	NotifyOnCaseCommentMention any
 	NotifyOnCasePriorityChange any
-	NotifyOnCaseStatusChange any
-	NotifyOnCaseUnassignment any
+	NotifyOnCaseStatusChange   any
+	NotifyOnCaseUnassignment   any
 }
 
 type Project_Data_Attributes_Settings struct {
-	AutoCloseInactiveCases any
+	AutoCloseInactiveCases      any
 	AutoTransitionAssignedCases any
-	IntegrationIncident any
-	IntegrationJira any
-	IntegrationMonitor any
-	IntegrationOnCall any
-	IntegrationServiceNow any
-	Notification any
+	IntegrationIncident         any
+	IntegrationJira             any
+	IntegrationMonitor          any
+	IntegrationOnCall           any
+	IntegrationServiceNow       any
+	Notification                any
 }
 
 type Project_Data_Attributes struct {
-	ColumnsConfig any
+	ColumnsConfig          any
 	EnabledCustomCaseTypes any
-	Key any
-	Name any
-	Restricted any
-	Settings any
+	Key                    any
+	Name                   any
+	Restricted             any
+	Settings               any
 }
 
 type Project_Data_Relationships_MemberTeam_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -191,7 +191,7 @@ type Project_Data_Relationships_MemberTeam_Links struct {
 }
 
 type Project_Data_Relationships_MemberTeam struct {
-	Data any
+	Data  any
 	Links any
 }
 
@@ -205,10 +205,10 @@ type Project_Data_Relationships struct {
 }
 
 type Project_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ProjectConfig struct {
@@ -221,6 +221,5 @@ type ProjectAttrs struct {
 
 var Project = ubx.DataSourceBinding{
 	WireType: "datadog_project",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

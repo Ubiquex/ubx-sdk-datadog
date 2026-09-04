@@ -7,45 +7,53 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Response_Data_Attributes_Author:
+    # Creation time of the user.
+    created_at: Any = None
+    # Whether the user is disabled.
+    disabled: Any = None
+    # Email of the user.
+    email: Any = None
+    # Handle of the user.
+    handle: Any = None
+    # URL of the user's icon.
+    icon: Any = None
+    # Name of the user.
+    name: Any = None
+    # Status of the user.
+    status: Any = None
+    # Title of the user.
+    title: Any = None
+    # Whether the user is verified.
+    verified: Any = None
+
+@dataclasses.dataclass
 class Response_Data_Attributes_Cells_Attributes_Definition:
-    # The Markdown text displayed in the notebook cell. (AI-inferred)
     text: Any = None
-    # The type of notebook cell this definition represents, determining how the cell content is interpreted and rendered. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Attributes_Cells_Attributes_SplitBy:
-    # The list of tag keys used to split the graph into multiple series. (AI-inferred)
     keys: Any = None
-    # The list of tags used to split the data in this notebook cell. (AI-inferred)
     tags: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Attributes_Cells_Attributes_Time:
-    # The end of the time range for the notebook cell, in ISO 8601 format (e.g., '2023-01-01T00:00:00Z'). (AI-inferred)
     end: Any = None
-    # Boolean flag indicating whether the time range is live (auto-refreshing) as opposed to a fixed time range. (AI-inferred)
     live: Any = None
-    # The live time span for the notebook cell's time range, such as '5m', '1h', or '1d'. (AI-inferred)
     live_span: Any = None
-    # The start timestamp of the time range for the notebook cell, represented as a string (e.g., ISO 8601 format). (AI-inferred)
     start: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Attributes_Cells_Attributes:
-    # An object that contains the content and configuration for the notebook cell. Its structure depends on the cell type (e.g., markdown, timeseries). (AI-inferred)
     definition: Any = None
-    # The size of the graph in the notebook cell, controlling its display dimensions. (AI-inferred)
     graph_size: Any = None
-    # Configuration for splitting the widget's data by one or more tag keys, including a limit on the number of groups. (AI-inferred)
     split_by: Any = None
-    # The time range for the notebook cell, specifying the period over which data is displayed. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Attributes_Cells:
     attributes: Any = None
-    # The type of notebook cell. The only allowed value is "notebook_cells". (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -59,50 +67,43 @@ class Response_Data_Attributes_Metadata:
 
 @dataclasses.dataclass
 class Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_GroupBy:
-    # The name of the facet (attribute) used to group the results in the available values query for template variables. (AI-inferred)
     facet: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Attributes_TemplateVariables_AvailableValuesQuery_Search:
-    # The search query string used to retrieve the available values for the template variable. (AI-inferred)
     query: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Attributes_TemplateVariables_AvailableValuesQuery:
-    # Specifies the data source (such as metrics or logs) from which the available values for the template variable are retrieved. (AI-inferred)
     data_source: Any = None
-    # Groups the metric query results by one or more tags or attributes, using the distinct values of those groupings to populate the template variable's available values. (AI-inferred)
     group_by: Any = None
-    # The query string that defines the set of available values for the template variable. (AI-inferred)
     query: Any = None
     search: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Attributes_TemplateVariables:
-    # The list of possible values that can be assigned to the template variable in a Datadog notebook. (AI-inferred)
     available_values: Any = None
-    # An object that configures a query to determine the list of available values for this template variable. (AI-inferred)
     available_values_query: Any = None
-    # A map from data source types (e.g., 'metrics', 'logs') to template variable values, allowing the variable to resolve to different values depending on the data source used by a panel. (AI-inferred)
     data_source_mappings: Any = None
-    # The default value for the template variable, used when no other value is selected. (AI-inferred)
     default: Any = None
-    # List of default values for the template variable. These are used when the notebook is loaded and no other value is specified. (AI-inferred)
     defaults: Any = None
-    # The name of the template variable, used to reference it in notebook queries. (AI-inferred)
     name: Any = None
     placement: Any = None
-    # The text prefix that is prepended to the template variable's value when used in notebook queries. For example, a prefix of 'env:' with a selected value of 'prod' would produce 'env:prod'. (AI-inferred)
     prefix: Any = None
-    # The type of the template variable, either 'tag' for tag keys or 'host' for host names. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Response_Data_Attributes:
+    # Attributes of user object returned by the API.
+    author: Any = None
     # List of cells to display in the notebook.
     cells: Any = None
+    # UTC time stamp for when the notebook was created.
+    created: Any = None
     # Metadata associated with the notebook.
     metadata: Any = None
+    # UTC time stamp for when the notebook was last modified.
+    modified: Any = None
     # The name of the notebook.
     name: Any = None
     # Publication status of the notebook. For now, always "published".
@@ -116,8 +117,22 @@ class Response_Data_Attributes:
 class Response_Data:
     # The data attributes of a notebook.
     attributes: Any = None
+    # Unique notebook ID, assigned when you create the notebook.
+    id: Any = None
     # Type of the Notebook resource.
     type: Any = None
+
+_Response_Data_Attributes_AuthorFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "disabled": ubx.FieldSpec(wire_name="disabled"),
+    "email": ubx.FieldSpec(wire_name="email"),
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "icon": ubx.FieldSpec(wire_name="icon"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "title": ubx.FieldSpec(wire_name="title"),
+    "verified": ubx.FieldSpec(wire_name="verified"),
+}
 
 _Response_Data_Attributes_Cells_Attributes_DefinitionFields = {
     "text": ubx.FieldSpec(wire_name="text"),
@@ -210,16 +225,23 @@ _Response_Data_Attributes_TemplateVariablesFields = {
 }
 
 _Response_Data_AttributesFields = {
+    "author": ubx.FieldSpec(
+        wire_name="author",
+        kind="object",
+        fields=_Response_Data_Attributes_AuthorFields,
+    ),
     "cells": ubx.FieldSpec(
         wire_name="cells",
         kind="list",
         fields=_Response_Data_Attributes_CellsFields,
     ),
+    "created": ubx.FieldSpec(wire_name="created"),
     "metadata": ubx.FieldSpec(
         wire_name="metadata",
         kind="object",
         fields=_Response_Data_Attributes_MetadataFields,
     ),
+    "modified": ubx.FieldSpec(wire_name="modified"),
     "name": ubx.FieldSpec(wire_name="name"),
     "status": ubx.FieldSpec(wire_name="status"),
     "template_variables": ubx.FieldSpec(
@@ -240,6 +262,7 @@ _Response_DataFields = {
         kind="object",
         fields=_Response_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

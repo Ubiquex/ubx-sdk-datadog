@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DestinationResponseDefinition_Data_Attributes_ForwarderDestination_Auth struct {
 	HeaderName any
-	Type any
+	Type       any
 }
 
 type DestinationResponseDefinition_Data_Attributes_ForwarderDestination struct {
-	Auth any
-	ClientId any
+	Auth                   any
+	ClientId               any
 	DataCollectionEndpoint any
-	DataCollectionRuleId any
-	Endpoint any
-	IndexName any
-	IndexRotation any
-	Sourcetype any
-	StreamName any
-	TenantId any
-	Type any
+	DataCollectionRuleId   any
+	Endpoint               any
+	IndexName              any
+	IndexRotation          any
+	Sourcetype             any
+	StreamName             any
+	TenantId               any
+	Type                   any
 }
 
 type DestinationResponseDefinition_Data_Attributes struct {
-	Enabled any
-	ForwardTags any
-	ForwardTagsRestrictionList any
+	Enabled                        any
+	ForwardTags                    any
+	ForwardTagsRestrictionList     any
 	ForwardTagsRestrictionListType any
-	ForwarderDestination any
-	Name any
-	Query any
+	ForwarderDestination           any
+	Name                           any
+	Query                          any
 }
 
 type DestinationResponseDefinition_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DestinationResponseDefinitionConfig struct {
@@ -48,6 +48,5 @@ type DestinationResponseDefinitionAttrs struct {
 
 var DestinationResponseDefinition = ubx.DataSourceBinding{
 	WireType: "datadog_custom_destination_response_definition",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

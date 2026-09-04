@@ -4,15 +4,15 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NowAssignmentGroupData_Data_Attributes struct {
-	AssignmentGroupName any
+	AssignmentGroupName  any
 	AssignmentGroupSysId any
-	InstanceId any
+	InstanceId           any
 }
 
 type NowAssignmentGroupData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type NowAssignmentGroupDataConfig struct {
@@ -21,7 +21,7 @@ type NowAssignmentGroupDataConfig struct {
 
 type NowAssignmentGroupDataAttrs struct {
 	// Array of ServiceNow assignment group data objects
-	Data any
+	Data       any
 	InstanceId any
 }
 

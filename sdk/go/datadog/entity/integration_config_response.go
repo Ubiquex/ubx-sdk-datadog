@@ -6,27 +6,36 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IntegrationConfigResponse_Data_Attributes struct {
 	// Integration-specific configuration payload. The shape of this object depends on the integration identified by the path parameter. For `github`, the object must contain an `enabled_repos` array. For `jira`, it must contain an `enabled_projects` array. For `pagerduty`, it must contain an `accounts` array.
 	Config any
+	// The identifier of the integration this configuration applies to (for example, `github`, `jira`, or `pagerduty`).
+	IntegrationId any
+	// The Datadog organization identifier that owns this configuration.
+	OrgId any
 }
 
 type IntegrationConfigResponse_Data struct {
 	// Attributes used to create or update an entity integration configuration.
 	Attributes any
+	// Unique identifier of the entity integration configuration.
+	Id any
 	// JSON:API resource type for the entity integration configuration create or update request. Always `entity_integration_config_requests`.
 	Type any
 }
 
 var IntegrationConfigResponse_Data_AttributesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{WireName: "config"},
-	}
+	"Config":        ubx.FieldSpec{WireName: "config"},
+	"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
+	"OrgId":         ubx.FieldSpec{WireName: "org_id"},
+}
 
 var IntegrationConfigResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: IntegrationConfigResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   IntegrationConfigResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type IntegrationConfigResponseConfig struct {
 	// JSON:API resource object used in a request to create or update an entity integration configuration.
@@ -47,8 +56,8 @@ var IntegrationConfigResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: IntegrationConfigResponse_DataFields,
+			Kind:     "object",
+			Fields:   IntegrationConfigResponse_DataFields,
 		},
 		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
 	},

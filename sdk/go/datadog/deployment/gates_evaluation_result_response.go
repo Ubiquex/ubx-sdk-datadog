@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules_Options struct {
 	Duration any
-	Query any
+	Query    any
 }
 
 type GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules struct {
-	DryRun any
-	Name any
+	DryRun  any
+	Name    any
 	Options any
-	Type any
+	Type    any
 }
 
 type GatesEvaluationResultResponse_Data_Attributes_Configuration struct {
@@ -22,15 +22,34 @@ type GatesEvaluationResultResponse_Data_Attributes_Configuration struct {
 	Rules any
 }
 
+type GatesEvaluationResultResponse_Data_Attributes_Rules struct {
+	DryRun any
+	Name   any
+	Reason any
+	Status any
+}
+
 type GatesEvaluationResultResponse_Data_Attributes struct {
 	// Inline rule definitions for a deployment gate evaluation. When provided, rules are evaluated directly from this configuration instead of using the preconfigured gate rules. At least one rule is required.
 	Configuration any
+	// Whether the gate was evaluated in dry-run mode.
+	DryRun any
 	// The environment of the deployment.
 	Env any
+	// The unique identifier of the gate evaluation.
+	EvaluationId any
+	// A URL to view the evaluation details in the Datadog UI.
+	EvaluationUrl any
+	// The unique identifier of the deployment gate.
+	GateId any
+	// The overall status of the gate evaluation. - `in_progress`: The evaluation is still running. - `pass`: All rules passed successfully and the deployment is allowed to proceed. - `fail`: One or more rules did not pass; the deployment should not proceed.
+	GateStatus any
 	// The identifier of the deployment gate. Defaults to "default".
 	Identifier any
 	// A primary tag to scope APM Faulty Deployment Detection rules.
 	PrimaryTag any
+	// The results of individual rule evaluations.
+	Rules any
 	// The service being deployed.
 	Service any
 	// The version of the deployment. Required for APM Faulty Deployment Detection rules.
@@ -40,56 +59,76 @@ type GatesEvaluationResultResponse_Data_Attributes struct {
 type GatesEvaluationResultResponse_Data struct {
 	// Attributes for a deployment gate evaluation request. When `configuration` is provided, rules are evaluated inline from that configuration. When omitted, rules are resolved from the preconfigured gate for the given service and environment.
 	Attributes any
+	// The unique identifier of the evaluation.
+	Id any
 	// JSON:API type for a deployment gate evaluation request.
 	Type any
 }
 
 var GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules_OptionsFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"Query":    ubx.FieldSpec{WireName: "query"},
+}
 
 var GatesEvaluationResultResponse_Data_Attributes_Configuration_RulesFields = ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules_OptionsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules_OptionsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields = ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: GatesEvaluationResultResponse_Data_Attributes_Configuration_RulesFields,
-		},
-	}
+	"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   GatesEvaluationResultResponse_Data_Attributes_Configuration_RulesFields,
+	},
+}
+
+var GatesEvaluationResultResponse_Data_Attributes_RulesFields = ubx.FieldMap{
+	"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Reason": ubx.FieldSpec{WireName: "reason"},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var GatesEvaluationResultResponse_Data_AttributesFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields,
-		},
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"PrimaryTag": ubx.FieldSpec{WireName: "primary_tag"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields,
+	},
+	"DryRun":        ubx.FieldSpec{WireName: "dry_run"},
+	"Env":           ubx.FieldSpec{WireName: "env"},
+	"EvaluationId":  ubx.FieldSpec{WireName: "evaluation_id"},
+	"EvaluationUrl": ubx.FieldSpec{WireName: "evaluation_url"},
+	"GateId":        ubx.FieldSpec{WireName: "gate_id"},
+	"GateStatus":    ubx.FieldSpec{WireName: "gate_status"},
+	"Identifier":    ubx.FieldSpec{WireName: "identifier"},
+	"PrimaryTag":    ubx.FieldSpec{WireName: "primary_tag"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   GatesEvaluationResultResponse_Data_Attributes_RulesFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var GatesEvaluationResultResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: GatesEvaluationResultResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   GatesEvaluationResultResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type GatesEvaluationResultResponseConfig struct {
 	// Data for a deployment gate evaluation request.
@@ -110,8 +149,8 @@ var GatesEvaluationResultResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: GatesEvaluationResultResponse_DataFields,
+			Kind:     "object",
+			Fields:   GatesEvaluationResultResponse_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

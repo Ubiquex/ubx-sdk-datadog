@@ -4,7 +4,7 @@ package project
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Favorite_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -18,6 +18,5 @@ type FavoriteAttrs struct {
 
 var Favorite = ubx.DataSourceBinding{
 	WireType: "datadog_project_favorite",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

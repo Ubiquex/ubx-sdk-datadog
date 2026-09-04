@@ -26,13 +26,13 @@ type ListResponse_Data struct {
 
 type ListResponse_Included_Attributes struct {
 	Handle any
-	Name any
+	Name   any
 }
 
 type ListResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ListResponse_Meta struct {
@@ -47,27 +47,27 @@ type ListResponse_Meta struct {
 }
 
 var ListResponse_Data_Attributes_DefinitionFields = ubx.FieldMap{
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Title": ubx.FieldSpec{WireName: "title"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var ListResponse_Data_AttributesFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{
-			WireName: "definition",
-			Kind: "object",
-			Fields: ListResponse_Data_Attributes_DefinitionFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Definition": ubx.FieldSpec{
+		WireName: "definition",
+		Kind:     "object",
+		Fields:   ListResponse_Data_Attributes_DefinitionFields,
+	},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 var ListResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ListResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ListResponse_Data_AttributesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ListResponseConfig struct {
 	// Data for creating or updating a widget.
@@ -92,8 +92,8 @@ var ListResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ListResponse_DataFields,
+			Kind:     "object",
+			Fields:   ListResponse_DataFields,
 		},
 		"ExperienceType": ubx.FieldSpec{WireName: "experience_type"},
 	},

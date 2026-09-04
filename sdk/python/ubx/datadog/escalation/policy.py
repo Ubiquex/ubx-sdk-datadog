@@ -38,17 +38,19 @@ class Policy_Data_Attributes:
     steps: Any = None
 
 @dataclasses.dataclass
-class Policy_Data_Relationships_Teams_Data:
+class Policy_Data_Relationships_Steps_Data:
     id: Any = None
     type: Any = None
 
 @dataclasses.dataclass
-class Policy_Data_Relationships_Teams:
-    # An array of team references for this schedule.
+class Policy_Data_Relationships_Steps:
+    # An array of references to the steps defined in this escalation policy.
     data: Any = None
 
 @dataclasses.dataclass
 class Policy_Data_Relationships:
+    # Defines the relationship to a collection of steps within an escalation policy. Contains an array of step data references.
+    steps: Any = None
     # Associates teams with this schedule in a data structure.
     teams: Any = None
 
@@ -56,6 +58,8 @@ class Policy_Data_Relationships:
 class Policy_Data:
     # Defines the attributes for creating an escalation policy, including its description, name, resolution behavior, retries, and steps.
     attributes: Any = None
+    # Specifies the unique identifier of the escalation policy.
+    id: Any = None
     # Represents relationships in an escalation policy creation request, including references to teams.
     relationships: Any = None
     # Indicates that the resource is of type `policies`.
@@ -120,24 +124,29 @@ _Policy_Data_AttributesFields = {
     ),
 }
 
-_Policy_Data_Relationships_Teams_DataFields = {
+_Policy_Data_Relationships_Steps_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_Policy_Data_Relationships_TeamsFields = {
+_Policy_Data_Relationships_StepsFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="list",
-        fields=_Policy_Data_Relationships_Teams_DataFields,
+        fields=_Policy_Data_Relationships_Steps_DataFields,
     ),
 }
 
 _Policy_Data_RelationshipsFields = {
+    "steps": ubx.FieldSpec(
+        wire_name="steps",
+        kind="object",
+        fields=_Policy_Data_Relationships_StepsFields,
+    ),
     "teams": ubx.FieldSpec(
         wire_name="teams",
         kind="object",
-        fields=_Policy_Data_Relationships_TeamsFields,
+        fields=_Policy_Data_Relationships_StepsFields,
     ),
 }
 
@@ -147,6 +156,7 @@ _Policy_DataFields = {
         kind="object",
         fields=_Policy_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

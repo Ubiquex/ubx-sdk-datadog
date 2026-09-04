@@ -26,10 +26,16 @@ class Response_Data_Attributes_Schedule:
 
 @dataclasses.dataclass
 class Response_Data_Attributes:
+    # Time that the downtime was canceled.
+    canceled: Any = None
+    # Creation time of the downtime.
+    created: Any = None
     # The timezone in which to display the downtime's start and end times in Datadog applications. This is not used as an offset for scheduling.
     display_timezone: Any = None
     # A message to include with notifications for this downtime. Email notifications can be sent to specific users by using the same `@username` notation as events.
     message: Any = None
+    # Time that the downtime was last modified.
+    modified: Any = None
     # Monitor identifier for the downtime.
     monitor_identifier: Any = None
     # If the first recovery notification during a downtime should be muted.
@@ -42,11 +48,36 @@ class Response_Data_Attributes:
     schedule: Any = None
     # The scope to which the downtime applies. Must follow the [common search syntax](https://docs.datadoghq.com/logs/explorer/search_syntax/).
     scope: Any = None
+    # The current status of the downtime.
+    status: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_CreatedBy_Data:
+    # User ID of the downtime creator.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_CreatedBy:
+    # Data for the user who created the downtime.
+    data: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships:
+    # The user who created the downtime.
+    created_by: Any = None
+    # The monitor identified by the downtime.
+    monitor: Any = None
 
 @dataclasses.dataclass
 class Response_Data:
     # Downtime details.
     attributes: Any = None
+    # The downtime ID.
+    id: Any = None
+    # All relationships associated with downtime.
+    relationships: Any = None
     # Downtime resource type.
     type: Any = None
 
@@ -66,15 +97,6 @@ class Response_Included_Attributes:
     title: Any = None
     uuid: Any = None
     verified: Any = None
-
-@dataclasses.dataclass
-class Response_Included_Relationships_Org_Data:
-    id: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class Response_Included_Relationships_Org:
-    data: Any = None
 
 @dataclasses.dataclass
 class Response_Included_Relationships_OtherOrgs:
@@ -117,8 +139,11 @@ _Response_Data_Attributes_ScheduleFields = {
 }
 
 _Response_Data_AttributesFields = {
+    "canceled": ubx.FieldSpec(wire_name="canceled"),
+    "created": ubx.FieldSpec(wire_name="created"),
     "display_timezone": ubx.FieldSpec(wire_name="display_timezone"),
     "message": ubx.FieldSpec(wire_name="message"),
+    "modified": ubx.FieldSpec(wire_name="modified"),
     "monitor_identifier": ubx.FieldSpec(
         wire_name="monitor_identifier",
         kind="object",
@@ -133,6 +158,33 @@ _Response_Data_AttributesFields = {
         fields=_Response_Data_Attributes_ScheduleFields,
     ),
     "scope": ubx.FieldSpec(wire_name="scope"),
+    "status": ubx.FieldSpec(wire_name="status"),
+}
+
+_Response_Data_Relationships_CreatedBy_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Response_Data_Relationships_CreatedByFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_Response_Data_Relationships_CreatedBy_DataFields,
+    ),
+}
+
+_Response_Data_RelationshipsFields = {
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_Response_Data_Relationships_CreatedByFields,
+    ),
+    "monitor": ubx.FieldSpec(
+        wire_name="monitor",
+        kind="object",
+        fields=_Response_Data_Relationships_CreatedByFields,
+    ),
 }
 
 _Response_DataFields = {
@@ -140,6 +192,12 @@ _Response_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_Response_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_Response_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

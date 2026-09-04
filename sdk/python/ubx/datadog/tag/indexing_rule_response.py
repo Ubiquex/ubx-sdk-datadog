@@ -50,16 +50,26 @@ class IndexingRuleResponse_Data_Attributes_Options:
 
 @dataclasses.dataclass
 class IndexingRuleResponse_Data_Attributes:
+    # Timestamp when the rule was created.
+    created_at: Any = None
+    # Handle of the user who created the rule.
+    created_by_handle: Any = None
     # When true, the rule excludes the listed tags and indexes all others. When false (default), the rule includes only the listed tags.
     exclude_tags_mode: Any = None
     # Metric name prefixes excluded from the rule's scope.
     ignored_metric_name_matches: Any = None
     # Metric name prefixes (glob patterns) this rule applies to.
     metric_name_matches: Any = None
+    # Timestamp when the rule was last modified.
+    modified_at: Any = None
+    # Handle of the user who last modified the rule.
+    modified_by_handle: Any = None
     # Human-readable name for the rule.
     name: Any = None
     # Versioned configuration options for a tag indexing rule.
     options: Any = None
+    # Evaluation order within the org. Lower values are evaluated first. Assigned server-side on create (max+1); pass on update to change the rule's position.
+    rule_order: Any = None
     # Tag keys managed by this rule.
     tags: Any = None
 
@@ -67,6 +77,8 @@ class IndexingRuleResponse_Data_Attributes:
 class IndexingRuleResponse_Data:
     # Attributes for creating a tag indexing rule.
     attributes: Any = None
+    # The unique identifier (UUID) of the tag indexing rule.
+    id: Any = None
     # The tag indexing rule resource type.
     type: Any = None
 
@@ -110,15 +122,20 @@ _IndexingRuleResponse_Data_Attributes_OptionsFields = {
 }
 
 _IndexingRuleResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by_handle": ubx.FieldSpec(wire_name="created_by_handle"),
     "exclude_tags_mode": ubx.FieldSpec(wire_name="exclude_tags_mode"),
     "ignored_metric_name_matches": ubx.FieldSpec(wire_name="ignored_metric_name_matches"),
     "metric_name_matches": ubx.FieldSpec(wire_name="metric_name_matches"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by_handle": ubx.FieldSpec(wire_name="modified_by_handle"),
     "name": ubx.FieldSpec(wire_name="name"),
     "options": ubx.FieldSpec(
         wire_name="options",
         kind="object",
         fields=_IndexingRuleResponse_Data_Attributes_OptionsFields,
     ),
+    "rule_order": ubx.FieldSpec(wire_name="rule_order"),
     "tags": ubx.FieldSpec(wire_name="tags"),
 }
 
@@ -128,6 +145,7 @@ _IndexingRuleResponse_DataFields = {
         kind="object",
         fields=_IndexingRuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

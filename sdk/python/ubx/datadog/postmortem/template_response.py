@@ -28,12 +28,16 @@ class TemplateResponse_Data_Attributes:
     confluence_postmortem_settings: Any = None
     # The templated content of the postmortem, supporting Markdown and incident template variables.
     content: Any = None
+    # When the template was created.
+    created_at: Any = None
     # Settings for a postmortem template stored in Google Docs. Required when `location` is `google_docs`.
     google_docs_postmortem_settings: Any = None
     # When set, marks this template as a default. The effective default for an incident type is the template with the most recent `is_default` timestamp. Set to `null` to unset.
     is_default: Any = None
     # The location where the postmortem is created and stored.
     location: Any = None
+    # When the template was last modified.
+    modified_at: Any = None
     # The name of the template.
     name: Any = None
 
@@ -53,6 +57,8 @@ class TemplateResponse_Data_Relationships_IncidentType:
 class TemplateResponse_Data_Relationships:
     # Relationship to the incident type this template belongs to.
     incident_type: Any = None
+    # Relationship to a user.
+    last_modified_by_user: Any = None
 
 @dataclasses.dataclass
 class TemplateResponse_Data:
@@ -83,6 +89,7 @@ _TemplateResponse_Data_AttributesFields = {
         fields=_TemplateResponse_Data_Attributes_ConfluencePostmortemSettingsFields,
     ),
     "content": ubx.FieldSpec(wire_name="content"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
     "google_docs_postmortem_settings": ubx.FieldSpec(
         wire_name="google_docs_postmortem_settings",
         kind="object",
@@ -90,6 +97,7 @@ _TemplateResponse_Data_AttributesFields = {
     ),
     "is_default": ubx.FieldSpec(wire_name="is_default"),
     "location": ubx.FieldSpec(wire_name="location"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
 }
 
@@ -109,6 +117,11 @@ _TemplateResponse_Data_Relationships_IncidentTypeFields = {
 _TemplateResponse_Data_RelationshipsFields = {
     "incident_type": ubx.FieldSpec(
         wire_name="incident_type",
+        kind="object",
+        fields=_TemplateResponse_Data_Relationships_IncidentTypeFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
         kind="object",
         fields=_TemplateResponse_Data_Relationships_IncidentTypeFields,
     ),

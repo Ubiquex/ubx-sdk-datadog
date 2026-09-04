@@ -7,9 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MonitoringCriticalAssetResponse_Data_Attributes_Creator:
+    # The handle of the user.
+    handle: Any = None
+    # The name of the user.
+    name: Any = None
+
+@dataclasses.dataclass
 class MonitoringCriticalAssetResponse_Data_Attributes:
+    # ID of user who created the critical asset.
+    creation_author_id: Any = None
+    # A Unix millisecond timestamp given the creation date of the critical asset.
+    creation_date: Any = None
+    # A user.
+    creator: Any = None
     # A description of the critical asset.
     description: Any = None
+    # Whether the critical asset is editable.
+    editable: Any = None
     # Whether the critical asset is enabled. Defaults to `true` if not specified.
     enabled: Any = None
     # The query for the critical asset. It uses the same syntax as the queries to search signals in the Signals Explorer.
@@ -20,21 +35,52 @@ class MonitoringCriticalAssetResponse_Data_Attributes:
     severity: Any = None
     # List of tags associated with the critical asset.
     tags: Any = None
+    # ID of user who updated the critical asset.
+    update_author_id: Any = None
+    # A Unix millisecond timestamp given the update date of the critical asset.
+    update_date: Any = None
+    # A user.
+    updater: Any = None
+    # The version of the critical asset; it starts at 1, and is incremented at each update.
+    version: Any = None
 
 @dataclasses.dataclass
 class MonitoringCriticalAssetResponse_Data:
     # Object containing the attributes of the critical asset to be created.
     attributes: Any = None
+    # The ID of the critical asset.
+    id: Any = None
     # The type of the resource. The value should always be `critical_assets`.
     type: Any = None
 
+_MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields = {
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 _MonitoringCriticalAssetResponse_Data_AttributesFields = {
+    "creation_author_id": ubx.FieldSpec(wire_name="creation_author_id"),
+    "creation_date": ubx.FieldSpec(wire_name="creation_date"),
+    "creator": ubx.FieldSpec(
+        wire_name="creator",
+        kind="object",
+        fields=_MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields,
+    ),
     "description": ubx.FieldSpec(wire_name="description"),
+    "editable": ubx.FieldSpec(wire_name="editable"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
     "query": ubx.FieldSpec(wire_name="query"),
     "rule_query": ubx.FieldSpec(wire_name="rule_query"),
     "severity": ubx.FieldSpec(wire_name="severity"),
     "tags": ubx.FieldSpec(wire_name="tags"),
+    "update_author_id": ubx.FieldSpec(wire_name="update_author_id"),
+    "update_date": ubx.FieldSpec(wire_name="update_date"),
+    "updater": ubx.FieldSpec(
+        wire_name="updater",
+        kind="object",
+        fields=_MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields,
+    ),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _MonitoringCriticalAssetResponse_DataFields = {
@@ -43,6 +89,7 @@ _MonitoringCriticalAssetResponse_DataFields = {
         kind="object",
         fields=_MonitoringCriticalAssetResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

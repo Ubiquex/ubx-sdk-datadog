@@ -24,9 +24,32 @@ class TodoResponse_Data_Attributes:
     modified: Any = None
 
 @dataclasses.dataclass
+class TodoResponse_Data_Relationships_CreatedByUser_Data:
+    # A unique identifier that represents the user.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class TodoResponse_Data_Relationships_CreatedByUser:
+    # Relationship to user object.
+    data: Any = None
+
+@dataclasses.dataclass
+class TodoResponse_Data_Relationships:
+    # Relationship to user.
+    created_by_user: Any = None
+    # Relationship to user.
+    last_modified_by_user: Any = None
+
+@dataclasses.dataclass
 class TodoResponse_Data:
     # Incident todo's attributes.
     attributes: Any = None
+    # The incident todo's ID.
+    id: Any = None
+    # The incident's relationships from a response.
+    relationships: Any = None
     # Todo resource type.
     type: Any = None
 
@@ -46,15 +69,6 @@ class TodoResponse_Included_Attributes:
     title: Any = None
     uuid: Any = None
     verified: Any = None
-
-@dataclasses.dataclass
-class TodoResponse_Included_Relationships_Org_Data:
-    id: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class TodoResponse_Included_Relationships_Org:
-    data: Any = None
 
 @dataclasses.dataclass
 class TodoResponse_Included_Relationships_OtherOrgs:
@@ -84,11 +98,43 @@ _TodoResponse_Data_AttributesFields = {
     "modified": ubx.FieldSpec(wire_name="modified"),
 }
 
+_TodoResponse_Data_Relationships_CreatedByUser_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_TodoResponse_Data_Relationships_CreatedByUserFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_TodoResponse_Data_Relationships_CreatedByUser_DataFields,
+    ),
+}
+
+_TodoResponse_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_TodoResponse_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_TodoResponse_Data_Relationships_CreatedByUserFields,
+    ),
+}
+
 _TodoResponse_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
         kind="object",
         fields=_TodoResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_TodoResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

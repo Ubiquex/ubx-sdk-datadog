@@ -5,38 +5,38 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Asset_Data_Attributes_OperatingSystem struct {
 	Description any
-	Name any
-	Version any
+	Name        any
+	Version     any
 }
 
 type Asset_Data_Attributes_Risks struct {
 	HasAccessToSensitiveData any
-	HasPrivilegedAccess any
-	InProduction any
-	IsPubliclyAccessible any
-	UnderAttack any
+	HasPrivilegedAccess      any
+	InProduction             any
+	IsPubliclyAccessible     any
+	UnderAttack              any
 }
 
 type Asset_Data_Attributes_Version struct {
 	First any
-	Last any
+	Last  any
 }
 
 type Asset_Data_Attributes struct {
-	Arch any
-	Environments any
-	Name any
+	Arch            any
+	Environments    any
+	Name            any
 	OperatingSystem any
-	Risks any
-	Teams any
-	Type any
-	Version any
+	Risks           any
+	Teams           any
+	Type            any
+	Version         any
 }
 
 type Asset_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Asset_Links struct {
@@ -75,6 +75,5 @@ type AssetAttrs struct {
 
 var Asset = ubx.DataSourceBinding{
 	WireType: "datadog_asset",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

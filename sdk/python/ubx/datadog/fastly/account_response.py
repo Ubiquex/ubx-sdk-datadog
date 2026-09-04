@@ -24,6 +24,8 @@ class AccountResponse_Data_Attributes:
 class AccountResponse_Data:
     # Attributes object for creating a Fastly account.
     attributes: Any = None
+    # The ID of the Fastly account, a hash of the account name.
+    id: Any = None
     # The JSON:API type for this API. Should always be `fastly-accounts`.
     type: Any = None
 
@@ -48,6 +50,7 @@ _AccountResponse_DataFields = {
         kind="object",
         fields=_AccountResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

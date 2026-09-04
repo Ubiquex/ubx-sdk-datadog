@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LogGenerationSubscriptionData_Data_Attributes struct {
 	ContentPackId any
-	CreatedAt any
-	ExpiresAt any
-	IsActive any
-	Status any
+	CreatedAt     any
+	ExpiresAt     any
+	IsActive      any
+	Status        any
 }
 
 type LogGenerationSubscriptionData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type LogGenerationSubscriptionData_Meta struct {
@@ -23,7 +23,7 @@ type LogGenerationSubscriptionData_Meta struct {
 }
 
 type LogGenerationSubscriptionDataConfig struct {
-	EndTimestamp any
+	EndTimestamp   any
 	StartTimestamp any
 	// Filter that controls whether to return only active subscriptions or every subscription on record.
 	Status any
@@ -31,10 +31,10 @@ type LogGenerationSubscriptionDataConfig struct {
 
 type LogGenerationSubscriptionDataAttrs struct {
 	// The list of sample log generation subscriptions.
-	Data any
+	Data         any
 	EndTimestamp any
 	// Metadata returned alongside a list of sample log generation subscriptions.
-	Meta any
+	Meta           any
 	StartTimestamp any
 	// Filter that controls whether to return only active subscriptions or every subscription on record.
 	Status any
@@ -43,8 +43,8 @@ type LogGenerationSubscriptionDataAttrs struct {
 var LogGenerationSubscriptionData = ubx.DataSourceBinding{
 	WireType: "datadog_sample_log_generation_subscription_data",
 	Fields: ubx.FieldMap{
-		"EndTimestamp": ubx.FieldSpec{WireName: "end_timestamp"},
+		"EndTimestamp":   ubx.FieldSpec{WireName: "end_timestamp"},
 		"StartTimestamp": ubx.FieldSpec{WireName: "start_timestamp"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":         ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -48,10 +48,16 @@ class RuleResponse_Data_Attributes_Strategy:
 class RuleResponse_Data_Attributes:
     # The `attributes` `costs_to_allocate`.
     costs_to_allocate: Any = None
+    # The `attributes` `created`.
+    created: Any = None
     # The `attributes` `enabled`.
     enabled: Any = None
+    # The `attributes` `last_modified_user_uuid`.
+    last_modified_user_uuid: Any = None
     # The `attributes` `order_id`.
     order_id: Any = None
+    # The `attributes` `processing_status`.
+    processing_status: Any = None
     # The `attributes` `provider`.
     provider: Any = None
     # The `attributes` `rejected`.
@@ -62,6 +68,10 @@ class RuleResponse_Data_Attributes:
     strategy: Any = None
     # The `attributes` `type`.
     type: Any = None
+    # The `attributes` `updated`.
+    updated: Any = None
+    # The `attributes` `version`.
+    version: Any = None
 
 @dataclasses.dataclass
 class RuleResponse_Data:
@@ -127,8 +137,11 @@ _RuleResponse_Data_AttributesFields = {
         kind="list",
         fields=_RuleResponse_Data_Attributes_CostsToAllocateFields,
     ),
+    "created": ubx.FieldSpec(wire_name="created"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "last_modified_user_uuid": ubx.FieldSpec(wire_name="last_modified_user_uuid"),
     "order_id": ubx.FieldSpec(wire_name="order_id"),
+    "processing_status": ubx.FieldSpec(wire_name="processing_status"),
     "provider": ubx.FieldSpec(wire_name="provider"),
     "rejected": ubx.FieldSpec(wire_name="rejected"),
     "rule_name": ubx.FieldSpec(wire_name="rule_name"),
@@ -138,6 +151,8 @@ _RuleResponse_Data_AttributesFields = {
         fields=_RuleResponse_Data_Attributes_StrategyFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
+    "updated": ubx.FieldSpec(wire_name="updated"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _RuleResponse_DataFields = {

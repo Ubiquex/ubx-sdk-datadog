@@ -4,16 +4,16 @@ package gcp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScanOptionsData_Data_Attributes struct {
-	CloudFunction any
-	ComplianceHost any
+	CloudFunction    any
+	ComplianceHost   any
 	VulnContainersOs any
-	VulnHostOs any
+	VulnHostOs       any
 }
 
 type ScanOptionsData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ScanOptionsDataConfig struct {
@@ -26,6 +26,5 @@ type ScanOptionsDataAttrs struct {
 
 var ScanOptionsData = ubx.DataSourceBinding{
 	WireType: "datadog_gcp_scan_options_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

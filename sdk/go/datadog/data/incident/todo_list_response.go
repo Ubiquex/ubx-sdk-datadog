@@ -4,17 +4,17 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TodoListResponse_Data_Attributes struct {
-	Assignees any
-	Completed any
-	Content any
-	Created any
-	DueDate any
+	Assignees  any
+	Completed  any
+	Content    any
+	Created    any
+	DueDate    any
 	IncidentId any
-	Modified any
+	Modified   any
 }
 
 type TodoListResponse_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -23,32 +23,32 @@ type TodoListResponse_Data_Relationships_CreatedByUser struct {
 }
 
 type TodoListResponse_Data_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type TodoListResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TodoListResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type TodoListResponse_Included_Relationships_OtherOrgs struct {
@@ -56,17 +56,17 @@ type TodoListResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type TodoListResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type TodoListResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TodoListResponse_Meta_Pagination struct {
@@ -89,7 +89,7 @@ type TodoListResponseConfig struct {
 
 type TodoListResponseAttrs struct {
 	// An array of incident todos.
-	Data any
+	Data       any
 	IncidentId any
 	// Included related resources that the user requested.
 	Included any

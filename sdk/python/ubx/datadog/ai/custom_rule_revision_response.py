@@ -10,8 +10,14 @@ import ubx_sdk as ubx
 class CustomRuleRevisionResponse_Data_Attributes:
     # Rule category
     category: Any = None
+    # Checksum of the revision content.
+    checksum: Any = None
     # Base64-encoded AI model content for this revision.
     content: Any = None
+    # The creation timestamp.
+    created_at: Any = None
+    # The identifier of the user who created the revision.
+    created_by: Any = None
     # The associated CWE identifier.
     cwe: Any = None
     # Base64-encoded full description.
@@ -22,6 +28,8 @@ class CustomRuleRevisionResponse_Data_Attributes:
     execution_mode: Any = None
     # File glob patterns this rule applies to.
     globs: Any = None
+    # Whether this is a default Datadog rule.
+    is_default: Any = None
     # Whether this revision is published.
     is_published: Any = None
     # Whether this revision is for testing only.
@@ -44,12 +52,16 @@ class CustomRuleRevisionResponse_Data:
 
 _CustomRuleRevisionResponse_Data_AttributesFields = {
     "category": ubx.FieldSpec(wire_name="category"),
+    "checksum": ubx.FieldSpec(wire_name="checksum"),
     "content": ubx.FieldSpec(wire_name="content"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
     "cwe": ubx.FieldSpec(wire_name="cwe"),
     "description": ubx.FieldSpec(wire_name="description"),
     "directories": ubx.FieldSpec(wire_name="directories"),
     "execution_mode": ubx.FieldSpec(wire_name="execution_mode"),
     "globs": ubx.FieldSpec(wire_name="globs"),
+    "is_default": ubx.FieldSpec(wire_name="is_default"),
     "is_published": ubx.FieldSpec(wire_name="is_published"),
     "is_testing": ubx.FieldSpec(wire_name="is_testing"),
     "severity": ubx.FieldSpec(wire_name="severity"),

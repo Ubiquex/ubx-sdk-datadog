@@ -20,7 +20,7 @@ type DutyServiceNameAttrs struct {
 var DutyServiceName = ubx.ResourceBinding{
 	WireType: "datadog_pager_duty_service_name",
 	Fields: ubx.FieldMap{
-		"ServiceKey": ubx.FieldSpec{WireName: "service_key"},
+		"ServiceKey":  ubx.FieldSpec{WireName: "service_key"},
 		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
 	},
 }

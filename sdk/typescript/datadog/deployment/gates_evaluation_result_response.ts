@@ -20,15 +20,34 @@ export interface GatesEvaluationResultResponse_Data_Attributes_Configuration {
   rules: GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules[] | Computed<GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules[]>;
 }
 
+export interface GatesEvaluationResultResponse_Data_Attributes_Rules {
+  dryRun?: boolean | Computed<boolean>;
+  name?: string | Computed<string>;
+  reason?: string | Computed<string>;
+  status?: string | Computed<string>;
+}
+
 export interface GatesEvaluationResultResponse_Data_Attributes {
   /** Inline rule definitions for a deployment gate evaluation. When provided, rules are evaluated directly from this configuration instead of using the preconfigured gate rules. At least one rule is required. */
   configuration?: GatesEvaluationResultResponse_Data_Attributes_Configuration | Computed<GatesEvaluationResultResponse_Data_Attributes_Configuration>;
+  /** Whether the gate was evaluated in dry-run mode. */
+  dryRun?: boolean | Computed<boolean>;
   /** The environment of the deployment. */
   env: string | Computed<string>;
+  /** The unique identifier of the gate evaluation. */
+  evaluationId?: string | Computed<string>;
+  /** A URL to view the evaluation details in the Datadog UI. */
+  evaluationUrl?: string | Computed<string>;
+  /** The unique identifier of the deployment gate. */
+  gateId?: string | Computed<string>;
+  /** The overall status of the gate evaluation. - `in_progress`: The evaluation is still running. - `pass`: All rules passed successfully and the deployment is allowed to proceed. - `fail`: One or more rules did not pass; the deployment should not proceed. */
+  gateStatus?: string | Computed<string>;
   /** The identifier of the deployment gate. Defaults to "default". */
   identifier?: string | Computed<string>;
   /** A primary tag to scope APM Faulty Deployment Detection rules. */
   primaryTag?: string | Computed<string>;
+  /** The results of individual rule evaluations. */
+  rules?: GatesEvaluationResultResponse_Data_Attributes_Rules[] | Computed<GatesEvaluationResultResponse_Data_Attributes_Rules[]>;
   /** The service being deployed. */
   service: string | Computed<string>;
   /** The version of the deployment. Required for APM Faulty Deployment Detection rules. */
@@ -38,6 +57,8 @@ export interface GatesEvaluationResultResponse_Data_Attributes {
 export interface GatesEvaluationResultResponse_Data {
   /** Attributes for a deployment gate evaluation request. When `configuration` is provided, rules are evaluated inline from that configuration. When omitted, rules are resolved from the preconfigured gate for the given service and environment. */
   attributes: GatesEvaluationResultResponse_Data_Attributes | Computed<GatesEvaluationResultResponse_Data_Attributes>;
+  /** The unique identifier of the evaluation. */
+  id?: string | Computed<string>;
   /** JSON:API type for a deployment gate evaluation request. */
   type: string | Computed<string>;
 }
@@ -67,15 +88,32 @@ const GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields: FieldMa
   },
 };
 
+const GatesEvaluationResultResponse_Data_Attributes_RulesFields: FieldMap = {
+  dryRun: "dry_run",
+  name: "name",
+  reason: "reason",
+  status: "status",
+};
+
 const GatesEvaluationResultResponse_Data_AttributesFields: FieldMap = {
   configuration: {
     wireName: "configuration",
     kind: "object",
     fields: GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields,
   },
+  dryRun: "dry_run",
   env: "env",
+  evaluationId: "evaluation_id",
+  evaluationUrl: "evaluation_url",
+  gateId: "gate_id",
+  gateStatus: "gate_status",
   identifier: "identifier",
   primaryTag: "primary_tag",
+  rules: {
+    wireName: "rules",
+    kind: "list",
+    fields: GatesEvaluationResultResponse_Data_Attributes_RulesFields,
+  },
   service: "service",
   version: "version",
 };
@@ -86,6 +124,7 @@ const GatesEvaluationResultResponse_DataFields: FieldMap = {
     kind: "object",
     fields: GatesEvaluationResultResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

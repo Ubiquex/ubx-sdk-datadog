@@ -2,12 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Datastore_Data_Attributes {
+  /** Timestamp when the datastore was created. */
+  createdAt?: string | Computed<string>;
+  /** The numeric ID of the user who created the datastore. */
+  creatorUserId?: number | Computed<number>;
+  /** The UUID of the user who created the datastore. */
+  creatorUserUuid?: string | Computed<string>;
   /** A human-readable description about the datastore. */
   description?: string | Computed<string>;
+  /** Timestamp when the datastore was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The display name for the new datastore. */
   name: string | Computed<string>;
   /** The organization access level for the datastore. For example, 'contributor'. */
   orgAccess?: string | Computed<string>;
+  /** The ID of the organization that owns this datastore. */
+  orgId?: number | Computed<number>;
   /** The name of the primary key column for this datastore. Primary column names: - Must abide by both [PostgreSQL naming conventions](https://www.postgresql.org/docs/7.0/syntax525.htm) - Cannot exceed 63 characters */
   primaryColumnName: string | Computed<string>;
   /** Can be set to `uuid` to automatically generate primary keys when new items are added. Default value is `none`, which requires you to supply a primary key for each new item. */
@@ -24,9 +34,14 @@ export interface Datastore_Data {
 }
 
 const Datastore_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  creatorUserId: "creator_user_id",
+  creatorUserUuid: "creator_user_uuid",
   description: "description",
+  modifiedAt: "modified_at",
   name: "name",
   orgAccess: "org_access",
+  orgId: "org_id",
   primaryColumnName: "primary_column_name",
   primaryKeyGenerationStrategy: "primary_key_generation_strategy",
 };

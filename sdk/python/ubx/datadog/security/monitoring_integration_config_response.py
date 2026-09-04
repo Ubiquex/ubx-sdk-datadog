@@ -30,6 +30,8 @@ class MonitoringIntegrationConfigResponse_Data_Attributes:
 class MonitoringIntegrationConfigResponse_Data:
     # The attributes of the entity context sync configuration to create.
     attributes: Any = None
+    # The unique identifier of the integration configuration.
+    id: Any = None
     # The type of the resource. The value should always be `integration_config`.
     type: Any = None
 
@@ -67,6 +69,7 @@ _MonitoringIntegrationConfigResponse_DataFields = {
         kind="object",
         fields=_MonitoringIntegrationConfigResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

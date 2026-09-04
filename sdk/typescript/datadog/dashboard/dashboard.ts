@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Dashboard_DefaultTimeframe {
-  /** The start of the default time range for the dashboard, in epoch milliseconds. (AI-inferred) */
   from?: number | Computed<number>;
-  /** The end time of the default time range for the dashboard, expressed as a Unix timestamp. (AI-inferred) */
   to?: number | Computed<number>;
-  /** The type of default timeframe for the dashboard, indicating whether it is a rolling time window or a fixed date range (e.g., 'rolling' or 'fixed'). (AI-inferred) */
   type?: string | Computed<string>;
   unit?: string | Computed<string>;
   value?: number | Computed<number>;
@@ -14,60 +11,41 @@ export interface Dashboard_DefaultTimeframe {
 
 export interface Dashboard_Tabs {
   id?: string | Computed<string>;
-  /** The name of the tab, which serves as its title. The name must be between 1 and 100 characters. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The list of widget IDs contained within this tab. (AI-inferred) */
   widgetIds?: number[] | Computed<number[]>;
 }
 
 export interface Dashboard_TemplateVariablePresets_TemplateVariables {
-  /** The name of the template variable to override, matching a template variable defined on the dashboard. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value to assign to the template variable when this preset is applied. (AI-inferred) */
   value?: string | Computed<string>;
-  /** The list of values assigned to the template variable when this preset is applied. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface Dashboard_TemplateVariablePresets {
-  /** The name of the template variable preset. (AI-inferred) */
   name?: string | Computed<string>;
-  /** List of template variable assignments for this preset. Each object defines a template variable name and the value to apply when the preset is selected. (AI-inferred) */
   templateVariables?: Dashboard_TemplateVariablePresets_TemplateVariables[] | Computed<Dashboard_TemplateVariablePresets_TemplateVariables[]>;
 }
 
 export interface Dashboard_TemplateVariables {
-  /** List of values available for selection for this template variable. If not specified, all possible values are shown in the dropdown. (AI-inferred) */
   availableValues?: string[] | Computed<string[]>;
-  /** The default value assigned to the template variable when the dashboard is loaded. This value is used unless the viewer changes it. (AI-inferred) */
   default?: string | Computed<string>;
-  /** Default value(s) used for this template variable when the dashboard is loaded. Provide a list of strings to support multi-select variables. (AI-inferred) */
   defaults?: string[] | Computed<string[]>;
-  /** The name of the template variable, used to reference it in dashboard queries and widgets. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The prefix used to filter the available values for the template variable, typically a tag key followed by a colon (e.g., 'env:'). (AI-inferred) */
   prefix?: string | Computed<string>;
   type?: string | Computed<string>;
 }
 
 export interface Dashboard_Widgets_Layout {
-  /** The height of the widget in grid units. The minimum allowed value is 0. (AI-inferred) */
   height?: number | Computed<number>;
-  /** Set to true to treat this widget as a column break, which forces the next widget to start a new column in the structured layout. (AI-inferred) */
   isColumnBreak?: boolean | Computed<boolean>;
-  /** The width of the widget in grid units (columns) within the dashboard layout. The minimum allowed value is 0. (AI-inferred) */
   width?: number | Computed<number>;
-  /** The horizontal position (column) of the widget in the dashboard grid. Must be greater than or equal to 0. (AI-inferred) */
   x?: number | Computed<number>;
-  /** The vertical position of the widget on the dashboard grid, measured from the top. The value must be greater than or equal to 0. (AI-inferred) */
   y?: number | Computed<number>;
 }
 
 export interface Dashboard_Widgets {
-  /** The definition block that specifies the configuration for the widget, including the widget type and type-specific settings (e.g., requests, title, layout). The exact structure varies by widget type. (AI-inferred) */
   definition?: unknown | Computed<unknown>;
   id?: number | Computed<number>;
-  /** Layout of the widget within the dashboard, specifying its position and size on the grid. (AI-inferred) */
   layout?: Dashboard_Widgets_Layout | Computed<Dashboard_Widgets_Layout>;
 }
 
@@ -128,24 +106,14 @@ const Dashboard_WidgetsFields: FieldMap = {
 };
 
 export interface DashboardConfig {
-  /** Identifier of the dashboard author. */
-  authorHandle?: string | Computed<string>;
-  /** Name of the dashboard author. */
-  authorName?: string | Computed<string>;
-  /** Creation date of the dashboard. */
-  createdAt?: string | Computed<string>;
   /** The default timeframe applied when opening the dashboard. Set to `null` to clear the dashboard's default timeframe. */
   defaultTimeframe?: Dashboard_DefaultTimeframe | Computed<Dashboard_DefaultTimeframe>;
   /** Description of the dashboard. */
   description?: string | Computed<string>;
-  /** ID of the dashboard. */
-  id?: string | Computed<string>;
   /** Whether this dashboard is read-only. If True, only the author and admins can make changes to it. This property is deprecated; please use the [Restriction Policies API](https://docs.datadoghq.com/api/latest/restriction-policies/) instead to manage write authorization for individual dashboards. */
   isReadOnly?: boolean | Computed<boolean>;
   /** Layout type of the dashboard. */
   layoutType: string | Computed<string>;
-  /** Modification date of the dashboard. */
-  modifiedAt?: string | Computed<string>;
   /** List of handles of users to notify when changes are made to this dashboard. */
   notifyList?: string[] | Computed<string[]>;
   /** Reflow type for a **new dashboard layout** dashboard. Set this only when layout type is 'ordered'. If set to 'fixed', the dashboard expects all widgets to have a layout, and if it's set to 'auto', widgets should not have layouts. */
@@ -162,8 +130,6 @@ export interface DashboardConfig {
   templateVariables?: Dashboard_TemplateVariables[] | Computed<Dashboard_TemplateVariables[]>;
   /** Title of the dashboard. */
   title: string | Computed<string>;
-  /** The URL of the dashboard. */
-  url?: string | Computed<string>;
   /** List of widgets to display on the dashboard. */
   widgets: Dashboard_Widgets[] | Computed<Dashboard_Widgets[]>;
   /** path parameter, not part of the API's own resource representation */
@@ -216,19 +182,14 @@ export interface DashboardAttrs {
 export const Dashboard: ResourceBinding<DashboardConfig, DashboardAttrs> = {
   wireType: "datadog_dashboard",
   fields: {
-    authorHandle: "author_handle",
-    authorName: "author_name",
-    createdAt: "created_at",
     defaultTimeframe: {
       wireName: "default_timeframe",
       kind: "object",
       fields: Dashboard_DefaultTimeframeFields,
     },
     description: "description",
-    id: "id",
     isReadOnly: "is_read_only",
     layoutType: "layout_type",
-    modifiedAt: "modified_at",
     notifyList: "notify_list",
     reflowType: "reflow_type",
     restrictedRoles: "restricted_roles",
@@ -249,7 +210,6 @@ export const Dashboard: ResourceBinding<DashboardConfig, DashboardAttrs> = {
       fields: Dashboard_TemplateVariablesFields,
     },
     title: "title",
-    url: "url",
     widgets: {
       wireName: "widgets",
       kind: "list",

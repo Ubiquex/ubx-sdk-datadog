@@ -4,29 +4,44 @@ package org
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupResponse_Data_Attributes struct {
+	// Timestamp when the org group was created.
+	CreatedAt any
+	// Timestamp when the org group was last modified.
+	ModifiedAt any
 	// The name of the org group.
 	Name any
+	// The site of the organization that owns this org group.
+	OwnerOrgSite any
+	// The UUID of the organization that owns this org group.
+	OwnerOrgUuid any
 }
 
 type GroupResponse_Data struct {
 	// Attributes for creating an org group.
 	Attributes any
+	// The ID of the org group.
+	Id any
 	// Org groups resource type.
 	Type any
 }
 
 var GroupResponse_Data_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CreatedAt":    ubx.FieldSpec{WireName: "created_at"},
+	"ModifiedAt":   ubx.FieldSpec{WireName: "modified_at"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"OwnerOrgSite": ubx.FieldSpec{WireName: "owner_org_site"},
+	"OwnerOrgUuid": ubx.FieldSpec{WireName: "owner_org_uuid"},
+}
 
 var GroupResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: GroupResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   GroupResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type GroupResponseConfig struct {
 	// Data for creating an org group.
@@ -47,8 +62,8 @@ var GroupResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: GroupResponse_DataFields,
+			Kind:     "object",
+			Fields:   GroupResponse_DataFields,
 		},
 		"OrgGroupId": ubx.FieldSpec{WireName: "org_group_id"},
 	},

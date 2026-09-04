@@ -34,40 +34,14 @@ _PrivateLocation_MetadataFields = {
     "restricted_roles": ubx.FieldSpec(wire_name="restricted_roles"),
 }
 
-_PrivateLocation_Secrets_AuthenticationFields = {
-    "id": ubx.FieldSpec(wire_name="id"),
-    "key": ubx.FieldSpec(wire_name="key"),
-}
-
-_PrivateLocation_Secrets_ConfigDecryptionFields = {
-    "key": ubx.FieldSpec(wire_name="key"),
-}
-
-_PrivateLocation_SecretsFields = {
-    "authentication": ubx.FieldSpec(
-        wire_name="authentication",
-        kind="object",
-        fields=_PrivateLocation_Secrets_AuthenticationFields,
-    ),
-    "config_decryption": ubx.FieldSpec(
-        wire_name="config_decryption",
-        kind="object",
-        fields=_PrivateLocation_Secrets_ConfigDecryptionFields,
-    ),
-}
-
 @dataclasses.dataclass
 class PrivateLocationConfig:
     # Description of the private location.
     description: Any = None
-    # Unique identifier of the private location.
-    id: Any = None
     # Object containing metadata about the private location.
     metadata: Any = None
     # Name of the private location.
     name: Any = None
-    # Secrets for the private location. Only present in the response when creating the private location.
-    secrets: Any = None
     # Array of tags attached to the private location.
     tags: Any = None
     # path parameter, not part of the API's own resource representation
@@ -94,18 +68,12 @@ PrivateLocation = ubx.ResourceBinding(
     wire_type="datadog_synthetics_private_location",
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "metadata": ubx.FieldSpec(
             wire_name="metadata",
             kind="object",
             fields=_PrivateLocation_MetadataFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "secrets": ubx.FieldSpec(
-            wire_name="secrets",
-            kind="object",
-            fields=_PrivateLocation_SecretsFields,
-        ),
         "tags": ubx.FieldSpec(wire_name="tags"),
         "location_id": ubx.FieldSpec(wire_name="location_id"),
     },

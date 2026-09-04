@@ -13,9 +13,20 @@ class IntegrationAccountResponse_Data_Attributes_Authentication:
     username: Any = None
 
 @dataclasses.dataclass
+class IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_Status:
+    # Collection health of a single dataflow.
+    health: Any = None
+    # Human-readable detail, populated when the dataflow is not healthy.
+    message: Any = None
+    # Time the status was last computed.
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs:
     # Whether the Twilio dataflow is enabled.
     enabled: Any = None
+    # Read-only collection status of a dataflow.
+    status: Any = None
 
 @dataclasses.dataclass
 class IntegrationAccountResponse_Data_Attributes_Dataflows:
@@ -52,6 +63,8 @@ class IntegrationAccountResponse_Data_Attributes:
 class IntegrationAccountResponse_Data:
     # Writable attributes used to create a Twilio integration account.
     attributes: Any = None
+    # Server-generated unique identifier of the Twilio integration account.
+    id: Any = None
     # The type of the integration account resource. Always `integration-account`.
     type: Any = None
 
@@ -61,8 +74,19 @@ _IntegrationAccountResponse_Data_Attributes_AuthenticationFields = {
     "username": ubx.FieldSpec(wire_name="username"),
 }
 
+_IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_StatusFields = {
+    "health": ubx.FieldSpec(wire_name="health"),
+    "message": ubx.FieldSpec(wire_name="message"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+}
+
 _IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields = {
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "status": ubx.FieldSpec(
+        wire_name="status",
+        kind="object",
+        fields=_IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_StatusFields,
+    ),
 }
 
 _IntegrationAccountResponse_Data_Attributes_DataflowsFields = {
@@ -123,6 +147,7 @@ _IntegrationAccountResponse_DataFields = {
         kind="object",
         fields=_IntegrationAccountResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

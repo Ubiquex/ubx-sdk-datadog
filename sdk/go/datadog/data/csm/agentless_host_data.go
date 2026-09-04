@@ -4,17 +4,17 @@ package csm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentlessHostData_Data_Attributes struct {
-	AccountId any
-	CloudProvider any
-	HasPostureManagement any
+	AccountId                any
+	CloudProvider            any
+	HasPostureManagement     any
 	HasVulnerabilityScanning any
-	ResourceType any
+	ResourceType             any
 }
 
 type AgentlessHostData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AgentlessHostData_Meta struct {
@@ -27,26 +27,26 @@ type AgentlessHostData_Meta struct {
 }
 
 type AgentlessHostDataConfig struct {
-	Page any
+	Page  any
 	Query any
-	Size any
+	Size  any
 }
 
 type AgentlessHostDataAttrs struct {
 	// The list of agentless hosts for the current page.
 	Data any
 	// Pagination metadata for a CSM settings list response.
-	Meta any
-	Page any
+	Meta  any
+	Page  any
 	Query any
-	Size any
+	Size  any
 }
 
 var AgentlessHostData = ubx.DataSourceBinding{
 	WireType: "datadog_csm_agentless_host_data",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":  ubx.FieldSpec{WireName: "page"},
 		"Query": ubx.FieldSpec{WireName: "query"},
-		"Size": ubx.FieldSpec{WireName: "size"},
+		"Size":  ubx.FieldSpec{WireName: "size"},
 	},
 }

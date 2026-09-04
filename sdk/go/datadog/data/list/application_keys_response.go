@@ -4,15 +4,15 @@ package list
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApplicationKeysResponse_Data_Attributes struct {
-	CreatedAt any
-	Last4 any
+	CreatedAt  any
+	Last4      any
 	LastUsedAt any
-	Name any
-	Scopes any
+	Name       any
+	Scopes     any
 }
 
 type ApplicationKeysResponse_Data_Relationships_OwnedBy_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -25,27 +25,27 @@ type ApplicationKeysResponse_Data_Relationships struct {
 }
 
 type ApplicationKeysResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ApplicationKeysResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type ApplicationKeysResponse_Included_Relationships_OtherOrgs struct {
@@ -53,17 +53,17 @@ type ApplicationKeysResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type ApplicationKeysResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type ApplicationKeysResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ApplicationKeysResponse_Meta_Page struct {
@@ -79,7 +79,7 @@ type ApplicationKeysResponse_Meta struct {
 }
 
 type ApplicationKeysResponseConfig struct {
-	Filter any
+	Filter  any
 	Include any
 	// Sorting options
 	Sort any
@@ -87,8 +87,8 @@ type ApplicationKeysResponseConfig struct {
 
 type ApplicationKeysResponseAttrs struct {
 	// Array of application keys.
-	Data any
-	Filter any
+	Data    any
+	Filter  any
 	Include any
 	// Array of objects related to the application key.
 	Included any
@@ -101,8 +101,8 @@ type ApplicationKeysResponseAttrs struct {
 var ApplicationKeysResponse = ubx.DataSourceBinding{
 	WireType: "datadog_list_application_keys_response",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":  ubx.FieldSpec{WireName: "filter"},
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

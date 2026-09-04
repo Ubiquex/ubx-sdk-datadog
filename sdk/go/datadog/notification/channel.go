@@ -6,11 +6,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Channel_Data_Attributes_Config struct {
 	Address any
 	Formats any
-	Number any
-	Type any
+	Number  any
+	Type    any
 }
 
 type Channel_Data_Attributes struct {
+	// Whether the notification channel is currently active.
+	Active any
 	// Defines the configuration for creating an On-Call notification channel
 	Config any
 }
@@ -18,33 +20,37 @@ type Channel_Data_Attributes struct {
 type Channel_Data struct {
 	// Attributes for creating an on-call notification channel.
 	Attributes any
+	// Unique identifier for the channel
+	Id any
 	// Indicates that the resource is of type 'notification_channels'.
 	Type any
 }
 
 var Channel_Data_Attributes_ConfigFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Formats": ubx.FieldSpec{WireName: "formats"},
-		"Number": ubx.FieldSpec{WireName: "number"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+	"Formats": ubx.FieldSpec{WireName: "formats"},
+	"Number":  ubx.FieldSpec{WireName: "number"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Channel_Data_AttributesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Channel_Data_Attributes_ConfigFields,
-		},
-	}
+	"Active": ubx.FieldSpec{WireName: "active"},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Channel_Data_Attributes_ConfigFields,
+	},
+}
 
 var Channel_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Channel_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Channel_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ChannelConfig struct {
 	// Data for creating an on-call notification channel
@@ -69,10 +75,10 @@ var Channel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Channel_DataFields,
+			Kind:     "object",
+			Fields:   Channel_DataFields,
 		},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":    ubx.FieldSpec{WireName: "user_id"},
 		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
 	},
 }

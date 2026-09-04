@@ -10,15 +10,48 @@ import ubx_sdk as ubx
 class Response_Data_Attributes:
     # The APIKeyCreateAttributes category.
     category: Any = None
+    # Creation date of the API key.
+    created_at: Any = None
+    # Date the API Key was last used
+    date_last_used: Any = None
+    # The API key.
+    key: Any = None
+    # The last four characters of the API key.
+    last4: Any = None
+    # Date the API key was last modified.
+    modified_at: Any = None
     # Name of the API key.
     name: Any = None
     # The APIKeyCreateAttributes remote_config_read_enabled.
     remote_config_read_enabled: Any = None
 
 @dataclasses.dataclass
+class Response_Data_Relationships_CreatedBy_Data:
+    # A unique identifier that represents the user.
+    id: Any = None
+    # Users resource type.
+    type: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships_CreatedBy:
+    # Relationship to user object.
+    data: Any = None
+
+@dataclasses.dataclass
+class Response_Data_Relationships:
+    # Relationship to user.
+    created_by: Any = None
+    # Relationship to user.
+    modified_by: Any = None
+
+@dataclasses.dataclass
 class Response_Data:
     # Attributes used to create an API Key.
     attributes: Any = None
+    # ID of the API key.
+    id: Any = None
+    # Resources related to the API key.
+    relationships: Any = None
     # API Keys resource type.
     type: Any = None
 
@@ -40,15 +73,6 @@ class Response_Included_Attributes:
     verified: Any = None
 
 @dataclasses.dataclass
-class Response_Included_Relationships_Org_Data:
-    id: Any = None
-    type: Any = None
-
-@dataclasses.dataclass
-class Response_Included_Relationships_Org:
-    data: Any = None
-
-@dataclasses.dataclass
 class Response_Included_Relationships_OtherOrgs:
     data: Any = None
 
@@ -68,8 +92,39 @@ class Response_Included:
 
 _Response_Data_AttributesFields = {
     "category": ubx.FieldSpec(wire_name="category"),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "date_last_used": ubx.FieldSpec(wire_name="date_last_used"),
+    "key": ubx.FieldSpec(wire_name="key"),
+    "last4": ubx.FieldSpec(wire_name="last4"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
     "remote_config_read_enabled": ubx.FieldSpec(wire_name="remote_config_read_enabled"),
+}
+
+_Response_Data_Relationships_CreatedBy_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_Response_Data_Relationships_CreatedByFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="object",
+        fields=_Response_Data_Relationships_CreatedBy_DataFields,
+    ),
+}
+
+_Response_Data_RelationshipsFields = {
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_Response_Data_Relationships_CreatedByFields,
+    ),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_Response_Data_Relationships_CreatedByFields,
+    ),
 }
 
 _Response_DataFields = {
@@ -77,6 +132,12 @@ _Response_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_Response_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_Response_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

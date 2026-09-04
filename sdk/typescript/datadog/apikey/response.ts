@@ -4,15 +4,48 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface Response_Data_Attributes {
   /** The APIKeyCreateAttributes category. */
   category?: string | Computed<string>;
+  /** Creation date of the API key. */
+  createdAt?: string | Computed<string>;
+  /** Date the API Key was last used */
+  dateLastUsed?: string | Computed<string>;
+  /** The API key. */
+  key?: string | Computed<string>;
+  /** The last four characters of the API key. */
+  last4?: string | Computed<string>;
+  /** Date the API key was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** Name of the API key. */
   name: string | Computed<string>;
   /** The APIKeyCreateAttributes remote_config_read_enabled. */
   remoteConfigReadEnabled?: boolean | Computed<boolean>;
 }
 
+export interface Response_Data_Relationships_CreatedBy_Data {
+  /** A unique identifier that represents the user. */
+  id: string | Computed<string>;
+  /** Users resource type. */
+  type: string | Computed<string>;
+}
+
+export interface Response_Data_Relationships_CreatedBy {
+  /** Relationship to user object. */
+  data: Response_Data_Relationships_CreatedBy_Data | Computed<Response_Data_Relationships_CreatedBy_Data>;
+}
+
+export interface Response_Data_Relationships {
+  /** Relationship to user. */
+  createdBy?: Response_Data_Relationships_CreatedBy | Computed<Response_Data_Relationships_CreatedBy>;
+  /** Relationship to user. */
+  modifiedBy?: Response_Data_Relationships_CreatedBy | Computed<Response_Data_Relationships_CreatedBy>;
+}
+
 export interface Response_Data {
   /** Attributes used to create an API Key. */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** ID of the API key. */
+  id?: string | Computed<string>;
+  /** Resources related to the API key. */
+  relationships?: Response_Data_Relationships | Computed<Response_Data_Relationships>;
   /** API Keys resource type. */
   type: string | Computed<string>;
 }
@@ -34,21 +67,12 @@ export interface Response_Included_Attributes {
   verified?: boolean | Computed<boolean>;
 }
 
-export interface Response_Included_Relationships_Org_Data {
-  id?: string | Computed<string>;
-  type?: string | Computed<string>;
-}
-
-export interface Response_Included_Relationships_Org {
-  data?: Response_Included_Relationships_Org_Data | Computed<Response_Included_Relationships_Org_Data>;
-}
-
 export interface Response_Included_Relationships_OtherOrgs {
-  data?: Response_Included_Relationships_Org_Data[] | Computed<Response_Included_Relationships_Org_Data[]>;
+  data?: Response_Data_Relationships_CreatedBy_Data[] | Computed<Response_Data_Relationships_CreatedBy_Data[]>;
 }
 
 export interface Response_Included_Relationships {
-  org?: Response_Included_Relationships_Org | Computed<Response_Included_Relationships_Org>;
+  org?: Response_Data_Relationships_CreatedBy | Computed<Response_Data_Relationships_CreatedBy>;
   otherOrgs?: Response_Included_Relationships_OtherOrgs | Computed<Response_Included_Relationships_OtherOrgs>;
   otherUsers?: Response_Included_Relationships_OtherOrgs | Computed<Response_Included_Relationships_OtherOrgs>;
   roles?: Response_Included_Relationships_OtherOrgs | Computed<Response_Included_Relationships_OtherOrgs>;
@@ -63,8 +87,39 @@ export interface Response_Included {
 
 const Response_Data_AttributesFields: FieldMap = {
   category: "category",
+  createdAt: "created_at",
+  dateLastUsed: "date_last_used",
+  key: "key",
+  last4: "last4",
+  modifiedAt: "modified_at",
   name: "name",
   remoteConfigReadEnabled: "remote_config_read_enabled",
+};
+
+const Response_Data_Relationships_CreatedBy_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const Response_Data_Relationships_CreatedByFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: Response_Data_Relationships_CreatedBy_DataFields,
+  },
+};
+
+const Response_Data_RelationshipsFields: FieldMap = {
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: Response_Data_Relationships_CreatedByFields,
+  },
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: Response_Data_Relationships_CreatedByFields,
+  },
 };
 
 const Response_DataFields: FieldMap = {
@@ -72,6 +127,12 @@ const Response_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: Response_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: Response_Data_RelationshipsFields,
   },
   type: "type",
 };

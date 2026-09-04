@@ -12,6 +12,8 @@ class GroupPolicyResponse_Data_Attributes:
     content: Any = None
     # The enforcement tier of the policy. `OVERRIDE_ALLOWED` means the policy is set but member orgs may mutate it. `GROUP_MANAGED` means the policy is strictly controlled and mutations are blocked for affected orgs. `DELEGATE` means each member org controls its own value.
     enforcement_tier: Any = None
+    # Timestamp when the policy was last modified.
+    modified_at: Any = None
     # The name of the policy.
     policy_name: Any = None
     # The type of the policy. Only `org_config` is supported, indicating a policy backed by an organization configuration setting.
@@ -38,6 +40,8 @@ class GroupPolicyResponse_Data_Relationships:
 class GroupPolicyResponse_Data:
     # Attributes for creating an org group policy. If `policy_type` or `enforcement_tier` are not provided, they default to `org_config` and `DEFAULT` respectively.
     attributes: Any = None
+    # The ID of the org group policy.
+    id: Any = None
     # Relationships for creating a policy.
     relationships: Any = None
     # Org group policies resource type.
@@ -46,6 +50,7 @@ class GroupPolicyResponse_Data:
 _GroupPolicyResponse_Data_AttributesFields = {
     "content": ubx.FieldSpec(wire_name="content"),
     "enforcement_tier": ubx.FieldSpec(wire_name="enforcement_tier"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "policy_name": ubx.FieldSpec(wire_name="policy_name"),
     "policy_type": ubx.FieldSpec(wire_name="policy_type"),
 }
@@ -77,6 +82,7 @@ _GroupPolicyResponse_DataFields = {
         kind="object",
         fields=_GroupPolicyResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

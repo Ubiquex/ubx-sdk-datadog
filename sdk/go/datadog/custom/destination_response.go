@@ -4,26 +4,26 @@ package custom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DestinationResponse_Data_Attributes_ForwarderDestination_Auth struct {
-	HeaderName any
+	HeaderName  any
 	HeaderValue any
-	Password any
-	Type any
-	Username any
+	Password    any
+	Type        any
+	Username    any
 }
 
 type DestinationResponse_Data_Attributes_ForwarderDestination struct {
-	AccessToken any
-	Auth any
-	ClientId any
+	AccessToken            any
+	Auth                   any
+	ClientId               any
 	DataCollectionEndpoint any
-	DataCollectionRuleId any
-	Endpoint any
-	IndexName any
-	IndexRotation any
-	Sourcetype any
-	StreamName any
-	TenantId any
-	Type any
+	DataCollectionRuleId   any
+	Endpoint               any
+	IndexName              any
+	IndexRotation          any
+	Sourcetype             any
+	StreamName             any
+	TenantId               any
+	Type                   any
 }
 
 type DestinationResponse_Data_Attributes struct {
@@ -46,59 +46,62 @@ type DestinationResponse_Data_Attributes struct {
 type DestinationResponse_Data struct {
 	// The attributes associated with the custom destination.
 	Attributes any
+	// The custom destination ID.
+	Id any
 	// The type of the resource. The value should always be `custom_destination`.
 	Type any
 }
 
 var DestinationResponse_Data_Attributes_ForwarderDestination_AuthFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"HeaderName":  ubx.FieldSpec{WireName: "header_name"},
+	"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
+	"Password":    ubx.FieldSpec{WireName: "password"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+	"Username":    ubx.FieldSpec{WireName: "username"},
+}
 
 var DestinationResponse_Data_Attributes_ForwarderDestinationFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"Auth": ubx.FieldSpec{
-			WireName: "auth",
-			Kind: "object",
-			Fields: DestinationResponse_Data_Attributes_ForwarderDestination_AuthFields,
-		},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"DataCollectionEndpoint": ubx.FieldSpec{WireName: "data_collection_endpoint"},
-		"DataCollectionRuleId": ubx.FieldSpec{WireName: "data_collection_rule_id"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"IndexRotation": ubx.FieldSpec{WireName: "index_rotation"},
-		"Sourcetype": ubx.FieldSpec{WireName: "sourcetype"},
-		"StreamName": ubx.FieldSpec{WireName: "stream_name"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AccessToken": ubx.FieldSpec{WireName: "access_token"},
+	"Auth": ubx.FieldSpec{
+		WireName: "auth",
+		Kind:     "object",
+		Fields:   DestinationResponse_Data_Attributes_ForwarderDestination_AuthFields,
+	},
+	"ClientId":               ubx.FieldSpec{WireName: "client_id"},
+	"DataCollectionEndpoint": ubx.FieldSpec{WireName: "data_collection_endpoint"},
+	"DataCollectionRuleId":   ubx.FieldSpec{WireName: "data_collection_rule_id"},
+	"Endpoint":               ubx.FieldSpec{WireName: "endpoint"},
+	"IndexName":              ubx.FieldSpec{WireName: "index_name"},
+	"IndexRotation":          ubx.FieldSpec{WireName: "index_rotation"},
+	"Sourcetype":             ubx.FieldSpec{WireName: "sourcetype"},
+	"StreamName":             ubx.FieldSpec{WireName: "stream_name"},
+	"TenantId":               ubx.FieldSpec{WireName: "tenant_id"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+}
 
 var DestinationResponse_Data_AttributesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ForwardTags": ubx.FieldSpec{WireName: "forward_tags"},
-		"ForwardTagsRestrictionList": ubx.FieldSpec{WireName: "forward_tags_restriction_list"},
-		"ForwardTagsRestrictionListType": ubx.FieldSpec{WireName: "forward_tags_restriction_list_type"},
-		"ForwarderDestination": ubx.FieldSpec{
-			WireName: "forwarder_destination",
-			Kind: "object",
-			Fields: DestinationResponse_Data_Attributes_ForwarderDestinationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Enabled":                        ubx.FieldSpec{WireName: "enabled"},
+	"ForwardTags":                    ubx.FieldSpec{WireName: "forward_tags"},
+	"ForwardTagsRestrictionList":     ubx.FieldSpec{WireName: "forward_tags_restriction_list"},
+	"ForwardTagsRestrictionListType": ubx.FieldSpec{WireName: "forward_tags_restriction_list_type"},
+	"ForwarderDestination": ubx.FieldSpec{
+		WireName: "forwarder_destination",
+		Kind:     "object",
+		Fields:   DestinationResponse_Data_Attributes_ForwarderDestinationFields,
+	},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var DestinationResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: DestinationResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   DestinationResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type DestinationResponseConfig struct {
 	// The definition of a custom destination.
@@ -119,8 +122,8 @@ var DestinationResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: DestinationResponse_DataFields,
+			Kind:     "object",
+			Fields:   DestinationResponse_DataFields,
 		},
 		"CustomDestinationId": ubx.FieldSpec{WireName: "custom_destination_id"},
 	},

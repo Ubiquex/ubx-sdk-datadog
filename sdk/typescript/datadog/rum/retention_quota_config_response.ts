@@ -19,6 +19,12 @@ export interface RetentionQuotaConfigResponse_Data_Attributes {
   custom?: RetentionQuotaConfigResponse_Data_Attributes_Custom | Computed<RetentionQuotaConfigResponse_Data_Attributes_Custom>;
   /** The retention quota mode. `custom` enforces a fixed session limit. `custom` is the only supported mode. */
   mode: string | Computed<string>;
+  /** The ID of the organization the retention quota configuration belongs to. */
+  orgId?: number | Computed<number>;
+  /** The date the retention quota configuration was last updated. */
+  updatedAt?: string | Computed<string>;
+  /** The handle of the user who last updated the retention quota configuration. */
+  updatedBy?: string | Computed<string>;
 }
 
 export interface RetentionQuotaConfigResponse_Data {
@@ -45,6 +51,9 @@ const RetentionQuotaConfigResponse_Data_AttributesFields: FieldMap = {
     fields: RetentionQuotaConfigResponse_Data_Attributes_CustomFields,
   },
   mode: "mode",
+  orgId: "org_id",
+  updatedAt: "updated_at",
+  updatedBy: "updated_by",
 };
 
 const RetentionQuotaConfigResponse_DataFields: FieldMap = {

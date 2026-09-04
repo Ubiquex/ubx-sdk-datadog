@@ -17,21 +17,16 @@ type Dashboard_GlobalTime struct {
 
 type Dashboard_Invitees struct {
 	AccessExpiration any
-	CreatedAt any
-	// The email address of the invitee granted access to the shared dashboard. (AI-inferred)
-	Email any
+	CreatedAt        any
+	Email            any
 }
 
 type Dashboard_SelectableTemplateVars struct {
-	// The default value for the template variable when the dashboard is shared. Viewers can override this value. (AI-inferred)
 	DefaultValue any
-	// The name of the template variable that will be selectable by viewers of the shared dashboard. Must correspond to a template variable defined on the dashboard. (AI-inferred)
-	Name any
-	// The tag key prefix associated with a selectable template variable in a shared dashboard, used to scope the variable's values (e.g., 'service' for service-specific filtering). (AI-inferred)
-	Prefix any
-	Type any
-	// List of tag values that are shown as selectable options for this template variable in the shared dashboard. (AI-inferred)
-	VisibleTags any
+	Name         any
+	Prefix       any
+	Type         any
+	VisibleTags  any
 }
 
 type Dashboard_ViewingPreferences struct {
@@ -41,39 +36,30 @@ type Dashboard_ViewingPreferences struct {
 	Theme any
 }
 
-var Dashboard_AuthorFields = ubx.FieldMap{
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
-
 var Dashboard_GlobalTimeFields = ubx.FieldMap{
-		"LiveSpan": ubx.FieldSpec{WireName: "live_span"},
-	}
+	"LiveSpan": ubx.FieldSpec{WireName: "live_span"},
+}
 
 var Dashboard_InviteesFields = ubx.FieldMap{
-		"AccessExpiration": ubx.FieldSpec{WireName: "access_expiration"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"AccessExpiration": ubx.FieldSpec{WireName: "access_expiration"},
+	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
+	"Email":            ubx.FieldSpec{WireName: "email"},
+}
 
 var Dashboard_SelectableTemplateVarsFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VisibleTags": ubx.FieldSpec{WireName: "visible_tags"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Prefix":       ubx.FieldSpec{WireName: "prefix"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+	"VisibleTags":  ubx.FieldSpec{WireName: "visible_tags"},
+}
 
 var Dashboard_ViewingPreferencesFields = ubx.FieldMap{
-		"HighDensity": ubx.FieldSpec{WireName: "high_density"},
-		"Theme": ubx.FieldSpec{WireName: "theme"},
-	}
+	"HighDensity": ubx.FieldSpec{WireName: "high_density"},
+	"Theme":       ubx.FieldSpec{WireName: "theme"},
+}
 
 type DashboardConfig struct {
-	// User who shared the dashboard.
-	Author any
-	// Date the dashboard was shared.
-	Created any
 	// ID of the dashboard to share.
 	DashboardId any
 	// The type of the associated private dashboard.
@@ -88,10 +74,6 @@ type DashboardConfig struct {
 	GlobalTimeSelectableEnabled any
 	// The `SharedDashboard` `invitees`.
 	Invitees any
-	// The last time the shared dashboard was accessed. Null if never accessed.
-	LastAccessed any
-	// URL of the shared dashboard.
-	PublicUrl any
 	// List of objects representing template variables on the shared dashboard which can have selectable values.
 	SelectableTemplateVars any
 	// List of email addresses that can receive an invitation to access to the shared dashboard.
@@ -102,8 +84,6 @@ type DashboardConfig struct {
 	Status any
 	// Title of the shared dashboard.
 	Title any
-	// A unique token assigned to the shared dashboard.
-	Token any
 	// The viewing preferences for a shared dashboard.
 	ViewingPreferences any
 }
@@ -150,43 +130,34 @@ type DashboardAttrs struct {
 var Dashboard = ubx.ResourceBinding{
 	WireType: "datadog_shared_dashboard",
 	Fields: ubx.FieldMap{
-		"Author": ubx.FieldSpec{
-			WireName: "author",
-			Kind: "object",
-			Fields: Dashboard_AuthorFields,
-		},
-		"Created": ubx.FieldSpec{WireName: "created"},
-		"DashboardId": ubx.FieldSpec{WireName: "dashboard_id"},
-		"DashboardType": ubx.FieldSpec{WireName: "dashboard_type"},
+		"DashboardId":       ubx.FieldSpec{WireName: "dashboard_id"},
+		"DashboardType":     ubx.FieldSpec{WireName: "dashboard_type"},
 		"EmbeddableDomains": ubx.FieldSpec{WireName: "embeddable_domains"},
-		"Expiration": ubx.FieldSpec{WireName: "expiration"},
+		"Expiration":        ubx.FieldSpec{WireName: "expiration"},
 		"GlobalTime": ubx.FieldSpec{
 			WireName: "global_time",
-			Kind: "object",
-			Fields: Dashboard_GlobalTimeFields,
+			Kind:     "object",
+			Fields:   Dashboard_GlobalTimeFields,
 		},
 		"GlobalTimeSelectableEnabled": ubx.FieldSpec{WireName: "global_time_selectable_enabled"},
 		"Invitees": ubx.FieldSpec{
 			WireName: "invitees",
-			Kind: "list",
-			Fields: Dashboard_InviteesFields,
+			Kind:     "list",
+			Fields:   Dashboard_InviteesFields,
 		},
-		"LastAccessed": ubx.FieldSpec{WireName: "last_accessed"},
-		"PublicUrl": ubx.FieldSpec{WireName: "public_url"},
 		"SelectableTemplateVars": ubx.FieldSpec{
 			WireName: "selectable_template_vars",
-			Kind: "list",
-			Fields: Dashboard_SelectableTemplateVarsFields,
+			Kind:     "list",
+			Fields:   Dashboard_SelectableTemplateVarsFields,
 		},
 		"ShareList": ubx.FieldSpec{WireName: "share_list"},
 		"ShareType": ubx.FieldSpec{WireName: "share_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Token": ubx.FieldSpec{WireName: "token"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
+		"Title":     ubx.FieldSpec{WireName: "title"},
 		"ViewingPreferences": ubx.FieldSpec{
 			WireName: "viewing_preferences",
-			Kind: "object",
-			Fields: Dashboard_ViewingPreferencesFields,
+			Kind:     "object",
+			Fields:   Dashboard_ViewingPreferencesFields,
 		},
 	},
 }

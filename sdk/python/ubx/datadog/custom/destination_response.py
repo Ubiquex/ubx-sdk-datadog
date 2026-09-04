@@ -50,6 +50,8 @@ class DestinationResponse_Data_Attributes:
 class DestinationResponse_Data:
     # The attributes associated with the custom destination.
     attributes: Any = None
+    # The custom destination ID.
+    id: Any = None
     # The type of the resource. The value should always be `custom_destination`.
     type: Any = None
 
@@ -100,6 +102,7 @@ _DestinationResponse_DataFields = {
         kind="object",
         fields=_DestinationResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

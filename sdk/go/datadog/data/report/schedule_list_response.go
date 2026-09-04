@@ -4,27 +4,27 @@ package report
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScheduleListResponse_Data_Attributes_TemplateVariables struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type ScheduleListResponse_Data_Attributes struct {
-	DeliveryFormat any
-	Description any
-	NextRecurrence any
-	Recipients any
-	ResourceId any
-	ResourceType any
-	Rrule any
-	Status any
+	DeliveryFormat    any
+	Description       any
+	NextRecurrence    any
+	Recipients        any
+	ResourceId        any
+	ResourceType      any
+	Rrule             any
+	Status            any
 	TemplateVariables any
-	Timeframe any
-	Timezone any
-	Title any
+	Timeframe         any
+	Timezone          any
+	Title             any
 }
 
 type ScheduleListResponse_Data_Relationships_Author_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -33,26 +33,26 @@ type ScheduleListResponse_Data_Relationships_Author struct {
 }
 
 type ScheduleListResponse_Data_Relationships struct {
-	Author any
+	Author   any
 	Resource any
 }
 
 type ScheduleListResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ScheduleListResponse_Included_Attributes struct {
 	Email any
-	Name any
+	Name  any
 }
 
 type ScheduleListResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ScheduleListResponse_Links struct {
@@ -108,6 +108,5 @@ type ScheduleListResponseAttrs struct {
 
 var ScheduleListResponse = ubx.DataSourceBinding{
 	WireType: "datadog_report_schedule_list_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

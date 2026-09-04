@@ -21,6 +21,8 @@ class LinkResponse_Data_Attributes:
 class LinkResponse_Data:
     # Team link attributes
     attributes: Any = None
+    # The team link's identifier
+    id: Any = None
     # Team link type
     type: Any = None
 
@@ -37,6 +39,7 @@ _LinkResponse_DataFields = {
         kind="object",
         fields=_LinkResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

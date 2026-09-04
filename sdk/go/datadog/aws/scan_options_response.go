@@ -26,22 +26,22 @@ type ScanOptionsResponse_Data struct {
 }
 
 var ScanOptionsResponse_Data_AttributesFields = ubx.FieldMap{
-		"ComplianceHost": ubx.FieldSpec{WireName: "compliance_host"},
-		"Lambda": ubx.FieldSpec{WireName: "lambda"},
-		"SensitiveData": ubx.FieldSpec{WireName: "sensitive_data"},
-		"VulnContainersOs": ubx.FieldSpec{WireName: "vuln_containers_os"},
-		"VulnHostOs": ubx.FieldSpec{WireName: "vuln_host_os"},
-	}
+	"ComplianceHost":   ubx.FieldSpec{WireName: "compliance_host"},
+	"Lambda":           ubx.FieldSpec{WireName: "lambda"},
+	"SensitiveData":    ubx.FieldSpec{WireName: "sensitive_data"},
+	"VulnContainersOs": ubx.FieldSpec{WireName: "vuln_containers_os"},
+	"VulnHostOs":       ubx.FieldSpec{WireName: "vuln_host_os"},
+}
 
 var ScanOptionsResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ScanOptionsResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ScanOptionsResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ScanOptionsResponseConfig struct {
 	// Object for the scan options of a single AWS account.
@@ -62,8 +62,8 @@ var ScanOptionsResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ScanOptionsResponse_DataFields,
+			Kind:     "object",
+			Fields:   ScanOptionsResponse_DataFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

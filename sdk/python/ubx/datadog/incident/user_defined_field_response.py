@@ -7,6 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class UserDefinedFieldResponse_Data_Attributes_Metadata:
+    # The category of the autocomplete source.
+    category: Any = None
+    # The query parameter used to limit the number of autocomplete results.
+    search_limit_param: Any = None
+    # Additional query parameters to include in the search URL.
+    search_params: Any = None
+    # The query parameter used to pass typed input to the search URL.
+    search_query_param: Any = None
+    # The JSON path to the results in the response body.
+    search_result_path: Any = None
+    # The URL used to populate autocomplete options.
+    search_url: Any = None
+
+@dataclasses.dataclass
 class UserDefinedFieldResponse_Data_Attributes_ValidValues:
     description: Any = None
     display_name: Any = None
@@ -19,16 +34,26 @@ class UserDefinedFieldResponse_Data_Attributes:
     category: Any = None
     # The lifecycle stage at which the app prompts users to fill out this field. Cannot be set on required fields.
     collected: Any = None
+    # Timestamp when the field was created.
+    created: Any = None
     # The default value for the field. Must be one of the valid values when valid_values is set.
     default_value: Any = None
+    # Timestamp when the field was soft-deleted, or null if not deleted.
+    deleted: Any = None
     # The human-readable name shown in the UI. Defaults to a formatted version of the name if not provided.
     display_name: Any = None
+    # Metadata for autocomplete-type user-defined fields, describing how to populate autocomplete options.
+    metadata: Any = None
+    # Timestamp when the field was last modified.
+    modified: Any = None
     # The unique identifier of the field. Must start with a letter or digit and contain only letters, digits, underscores, or periods.
     name: Any = None
     # A decimal string representing the field's display order in the UI.
     ordinal: Any = None
     # When true, users must fill out this field on incidents.
     required: Any = None
+    # When true, this field is reserved for system use and cannot be deleted.
+    reserved: Any = None
     # For metric tag-type fields only, the metric tag key that powers the autocomplete options.
     tag_key: Any = None
     # The data type of the field. 1=dropdown, 2=multiselect, 3=textbox, 4=textarray, 5=metrictag, 6=autocomplete, 7=number, 8=datetime.
@@ -37,30 +62,45 @@ class UserDefinedFieldResponse_Data_Attributes:
     valid_values: Any = None
 
 @dataclasses.dataclass
-class UserDefinedFieldResponse_Data_Relationships_IncidentType_Data:
-    # The incident type's ID.
+class UserDefinedFieldResponse_Data_Relationships_CreatedByUser_Data:
+    # A unique identifier that represents the user.
     id: Any = None
-    # Incident type resource type.
+    # Users resource type.
     type: Any = None
 
 @dataclasses.dataclass
-class UserDefinedFieldResponse_Data_Relationships_IncidentType:
-    # Relationship to incident type object.
+class UserDefinedFieldResponse_Data_Relationships_CreatedByUser:
+    # Relationship to user object.
     data: Any = None
 
 @dataclasses.dataclass
 class UserDefinedFieldResponse_Data_Relationships:
+    # Relationship to user.
+    created_by_user: Any = None
     # Relationship to an incident type.
     incident_type: Any = None
+    # Relationship to user.
+    last_modified_by_user: Any = None
 
 @dataclasses.dataclass
 class UserDefinedFieldResponse_Data:
     # Attributes for creating an incident user-defined field.
     attributes: Any = None
+    # The unique identifier of the user-defined field.
+    id: Any = None
     # Relationships for creating an incident user-defined field.
     relationships: Any = None
     # The incident user defined fields type.
     type: Any = None
+
+_UserDefinedFieldResponse_Data_Attributes_MetadataFields = {
+    "category": ubx.FieldSpec(wire_name="category"),
+    "search_limit_param": ubx.FieldSpec(wire_name="search_limit_param"),
+    "search_params": ubx.FieldSpec(wire_name="search_params"),
+    "search_query_param": ubx.FieldSpec(wire_name="search_query_param"),
+    "search_result_path": ubx.FieldSpec(wire_name="search_result_path"),
+    "search_url": ubx.FieldSpec(wire_name="search_url"),
+}
 
 _UserDefinedFieldResponse_Data_Attributes_ValidValuesFields = {
     "description": ubx.FieldSpec(wire_name="description"),
@@ -72,11 +112,20 @@ _UserDefinedFieldResponse_Data_Attributes_ValidValuesFields = {
 _UserDefinedFieldResponse_Data_AttributesFields = {
     "category": ubx.FieldSpec(wire_name="category"),
     "collected": ubx.FieldSpec(wire_name="collected"),
+    "created": ubx.FieldSpec(wire_name="created"),
     "default_value": ubx.FieldSpec(wire_name="default_value"),
+    "deleted": ubx.FieldSpec(wire_name="deleted"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
+    "metadata": ubx.FieldSpec(
+        wire_name="metadata",
+        kind="object",
+        fields=_UserDefinedFieldResponse_Data_Attributes_MetadataFields,
+    ),
+    "modified": ubx.FieldSpec(wire_name="modified"),
     "name": ubx.FieldSpec(wire_name="name"),
     "ordinal": ubx.FieldSpec(wire_name="ordinal"),
     "required": ubx.FieldSpec(wire_name="required"),
+    "reserved": ubx.FieldSpec(wire_name="reserved"),
     "tag_key": ubx.FieldSpec(wire_name="tag_key"),
     "type": ubx.FieldSpec(wire_name="type"),
     "valid_values": ubx.FieldSpec(
@@ -86,24 +135,34 @@ _UserDefinedFieldResponse_Data_AttributesFields = {
     ),
 }
 
-_UserDefinedFieldResponse_Data_Relationships_IncidentType_DataFields = {
+_UserDefinedFieldResponse_Data_Relationships_CreatedByUser_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_UserDefinedFieldResponse_Data_Relationships_IncidentTypeFields = {
+_UserDefinedFieldResponse_Data_Relationships_CreatedByUserFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_UserDefinedFieldResponse_Data_Relationships_IncidentType_DataFields,
+        fields=_UserDefinedFieldResponse_Data_Relationships_CreatedByUser_DataFields,
     ),
 }
 
 _UserDefinedFieldResponse_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_UserDefinedFieldResponse_Data_Relationships_CreatedByUserFields,
+    ),
     "incident_type": ubx.FieldSpec(
         wire_name="incident_type",
         kind="object",
-        fields=_UserDefinedFieldResponse_Data_Relationships_IncidentTypeFields,
+        fields=_UserDefinedFieldResponse_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_UserDefinedFieldResponse_Data_Relationships_CreatedByUserFields,
     ),
 }
 
@@ -113,6 +172,7 @@ _UserDefinedFieldResponse_DataFields = {
         kind="object",
         fields=_UserDefinedFieldResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

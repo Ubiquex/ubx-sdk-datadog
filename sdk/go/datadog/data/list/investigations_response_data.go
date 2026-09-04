@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InvestigationsResponseData_Data_Attributes struct {
 	Status any
-	Title any
+	Title  any
 }
 
 type InvestigationsResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type InvestigationsResponseData_Links struct {
@@ -55,6 +55,5 @@ type InvestigationsResponseDataAttrs struct {
 
 var InvestigationsResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_list_investigations_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

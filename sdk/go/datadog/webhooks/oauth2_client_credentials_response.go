@@ -14,6 +14,8 @@ type Oauth2ClientCredentialsResponse_Data_Attributes struct {
 	ClientSecret any
 	// Human-readable name for this auth method. Must be unique within your organization.
 	Name any
+	// Authentication protocol used by the auth method.
+	Protocol any
 	// Space-separated list of OAuth2 scopes to request.
 	Scope any
 }
@@ -21,27 +23,31 @@ type Oauth2ClientCredentialsResponse_Data_Attributes struct {
 type Oauth2ClientCredentialsResponse_Data struct {
 	// OAuth2 client credentials attributes for a create request.
 	Attributes any
+	// The ID of the OAuth2 client credentials auth method.
+	Id any
 	// OAuth2 client credentials resource type.
 	Type any
 }
 
 var Oauth2ClientCredentialsResponse_Data_AttributesFields = ubx.FieldMap{
-		"AccessTokenUrl": ubx.FieldSpec{WireName: "access_token_url"},
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"AccessTokenUrl": ubx.FieldSpec{WireName: "access_token_url"},
+	"Audience":       ubx.FieldSpec{WireName: "audience"},
+	"ClientId":       ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":   ubx.FieldSpec{WireName: "client_secret"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"Protocol":       ubx.FieldSpec{WireName: "protocol"},
+	"Scope":          ubx.FieldSpec{WireName: "scope"},
+}
 
 var Oauth2ClientCredentialsResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Oauth2ClientCredentialsResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Oauth2ClientCredentialsResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type Oauth2ClientCredentialsResponseConfig struct {
 	// OAuth2 client credentials data for a create request.
@@ -62,8 +68,8 @@ var Oauth2ClientCredentialsResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Oauth2ClientCredentialsResponse_DataFields,
+			Kind:     "object",
+			Fields:   Oauth2ClientCredentialsResponse_DataFields,
 		},
 		"AuthMethodId": ubx.FieldSpec{WireName: "auth_method_id"},
 	},

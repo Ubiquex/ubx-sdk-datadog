@@ -23,6 +23,8 @@ class AccountResponse_Data_Attributes:
 class AccountResponse_Data:
     # Attributes object for creating a Cloudflare account.
     attributes: Any = None
+    # The ID of the Cloudflare account, a hash of the account name.
+    id: Any = None
     # The JSON:API type for this API. Should always be `cloudflare-accounts`.
     type: Any = None
 
@@ -40,6 +42,7 @@ _AccountResponse_DataFields = {
         kind="object",
         fields=_AccountResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

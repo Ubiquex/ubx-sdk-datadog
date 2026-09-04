@@ -46,9 +46,28 @@ class SecurityPolicyResponse_Data_Attributes:
     version: Any = None
 
 @dataclasses.dataclass
+class SecurityPolicyResponse_Data_Meta:
+    # The date and time the WAF policy was created.
+    added_at: Any = None
+    # The handle of the user who created the WAF policy.
+    added_by: Any = None
+    # The name of the user who created the WAF policy.
+    added_by_name: Any = None
+    # The date and time the WAF policy was last updated.
+    modified_at: Any = None
+    # The handle of the user who last updated the WAF policy.
+    modified_by: Any = None
+    # The name of the user who last updated the WAF policy.
+    modified_by_name: Any = None
+
+@dataclasses.dataclass
 class SecurityPolicyResponse_Data:
     # Create a new WAF policy.
     attributes: Any = None
+    # The ID of the policy.
+    id: Any = None
+    # Metadata associated with the WAF policy.
+    meta: Any = None
     # The type of the resource. The value should always be `policy`.
     type: Any = None
 
@@ -94,11 +113,26 @@ _SecurityPolicyResponse_Data_AttributesFields = {
     "version": ubx.FieldSpec(wire_name="version"),
 }
 
+_SecurityPolicyResponse_Data_MetaFields = {
+    "added_at": ubx.FieldSpec(wire_name="added_at"),
+    "added_by": ubx.FieldSpec(wire_name="added_by"),
+    "added_by_name": ubx.FieldSpec(wire_name="added_by_name"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(wire_name="modified_by"),
+    "modified_by_name": ubx.FieldSpec(wire_name="modified_by_name"),
+}
+
 _SecurityPolicyResponse_DataFields = {
     "attributes": ubx.FieldSpec(
         wire_name="attributes",
         kind="object",
         fields=_SecurityPolicyResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "meta": ubx.FieldSpec(
+        wire_name="meta",
+        kind="object",
+        fields=_SecurityPolicyResponse_Data_MetaFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

@@ -4,42 +4,56 @@ package status
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PagesComponent_Data_Attributes_Components struct {
-	Name any
+	Name     any
 	Position any
-	Type any
+	Type     any
 }
 
 type PagesComponent_Data_Attributes struct {
 	// If creating a component of type `group`, the components to create within the group.
 	Components any
+	// Timestamp of when the component was created.
+	CreatedAt any
+	// Timestamp of when the component was last modified.
+	ModifiedAt any
 	// The name of the component.
 	Name any
 	// The zero-indexed position of the component.
 	Position any
+	// The status of the component.
+	Status any
 	// The type of the component.
 	Type any
 }
 
-type PagesComponent_Data_Relationships_Group_Data struct {
-	// The ID of the group.
+type PagesComponent_Data_Relationships_CreatedByUser_Data struct {
+	// The ID of the Datadog user who created the component.
 	Id any
-	// Components resource type.
+	// Users resource type.
 	Type any
 }
 
-type PagesComponent_Data_Relationships_Group struct {
-	// The data object identifying the group to create the component within.
+type PagesComponent_Data_Relationships_CreatedByUser struct {
+	// The data object identifying the Datadog user who created the component.
 	Data any
 }
 
 type PagesComponent_Data_Relationships struct {
+	// The Datadog user who created the component.
+	CreatedByUser any
 	// The group to create the component within.
 	Group any
+	// The Datadog user who last modified the component.
+	LastModifiedByUser any
+	// The status page the component belongs to.
+	StatusPage any
 }
 
 type PagesComponent_Data struct {
 	// The supported attributes for creating a component.
 	Attributes any
+	// The ID of the component.
+	Id any
 	// The supported relationships for creating a component.
 	Relationships any
 	// Components resource type.
@@ -47,76 +61,95 @@ type PagesComponent_Data struct {
 }
 
 type PagesComponent_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type PagesComponent_Included_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type PagesComponent_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var PagesComponent_Data_Attributes_ComponentsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Position": ubx.FieldSpec{WireName: "position"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var PagesComponent_Data_AttributesFields = ubx.FieldMap{
-		"Components": ubx.FieldSpec{
-			WireName: "components",
-			Kind: "list",
-			Fields: PagesComponent_Data_Attributes_ComponentsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Position": ubx.FieldSpec{WireName: "position"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Components": ubx.FieldSpec{
+		WireName: "components",
+		Kind:     "list",
+		Fields:   PagesComponent_Data_Attributes_ComponentsFields,
+	},
+	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Position":   ubx.FieldSpec{WireName: "position"},
+	"Status":     ubx.FieldSpec{WireName: "status"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
-var PagesComponent_Data_Relationships_Group_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+var PagesComponent_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
-var PagesComponent_Data_Relationships_GroupFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: PagesComponent_Data_Relationships_Group_DataFields,
-		},
-	}
+var PagesComponent_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   PagesComponent_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var PagesComponent_Data_RelationshipsFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{
-			WireName: "group",
-			Kind: "object",
-			Fields: PagesComponent_Data_Relationships_GroupFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   PagesComponent_Data_Relationships_CreatedByUserFields,
+	},
+	"Group": ubx.FieldSpec{
+		WireName: "group",
+		Kind:     "object",
+		Fields:   PagesComponent_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   PagesComponent_Data_Relationships_CreatedByUserFields,
+	},
+	"StatusPage": ubx.FieldSpec{
+		WireName: "status_page",
+		Kind:     "object",
+		Fields:   PagesComponent_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var PagesComponent_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: PagesComponent_Data_AttributesFields,
-		},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: PagesComponent_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   PagesComponent_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   PagesComponent_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PagesComponentConfig struct {
 	// The data object for creating a component.
@@ -143,10 +176,10 @@ var PagesComponent = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: PagesComponent_DataFields,
+			Kind:     "object",
+			Fields:   PagesComponent_DataFields,
 		},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"PageId":      ubx.FieldSpec{WireName: "page_id"},
 		"ComponentId": ubx.FieldSpec{WireName: "component_id"},
 	},
 }

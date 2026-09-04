@@ -10,6 +10,15 @@ export interface RuleResponse_Data_Attributes_Action {
   reasonDescription?: string | Computed<string>;
 }
 
+export interface RuleResponse_Data_Attributes_CreatedBy {
+  /** The actor's identifier (a user UUID or a system identifier). */
+  id: string | Computed<string>;
+  /** The name of the actor. */
+  name: string | Computed<string>;
+  /** Whether the actor is a user or the Datadog system. */
+  type: string | Computed<string>;
+}
+
 export interface RuleResponse_Data_Attributes_Rule {
   /** The list of security finding types that the automation rule applies to. */
   findingTypes: string[] | Computed<string[]>;
@@ -20,8 +29,16 @@ export interface RuleResponse_Data_Attributes_Rule {
 export interface RuleResponse_Data_Attributes {
   /** The action to take when the mute rule matches a finding. */
   action: RuleResponse_Data_Attributes_Action | Computed<RuleResponse_Data_Attributes_Action>;
+  /** The Unix timestamp in milliseconds when the rule was created. */
+  createdAt?: number | Computed<number>;
+  /** The user or Datadog system who created the rule. */
+  createdBy?: RuleResponse_Data_Attributes_CreatedBy | Computed<RuleResponse_Data_Attributes_CreatedBy>;
   /** Whether the mute rule is enabled. */
   enabled?: boolean | Computed<boolean>;
+  /** The Unix timestamp in milliseconds when the rule was last modified. */
+  modifiedAt?: number | Computed<number>;
+  /** The user or Datadog system who last modified the rule. */
+  modifiedBy?: RuleResponse_Data_Attributes_CreatedBy | Computed<RuleResponse_Data_Attributes_CreatedBy>;
   /** The name of the mute rule. */
   name: string | Computed<string>;
   /** Defines the scope of findings to which the automation rule applies. */
@@ -31,6 +48,8 @@ export interface RuleResponse_Data_Attributes {
 export interface RuleResponse_Data {
   /** Attributes for creating or updating a mute rule. */
   attributes: RuleResponse_Data_Attributes | Computed<RuleResponse_Data_Attributes>;
+  /** The ID of the mute rule. */
+  id?: string | Computed<string>;
   /** The JSON:API type for mute rules. */
   type: string | Computed<string>;
 }
@@ -39,6 +58,12 @@ const RuleResponse_Data_Attributes_ActionFields: FieldMap = {
   expireAt: "expire_at",
   reason: "reason",
   reasonDescription: "reason_description",
+};
+
+const RuleResponse_Data_Attributes_CreatedByFields: FieldMap = {
+  id: "id",
+  name: "name",
+  type: "type",
 };
 
 const RuleResponse_Data_Attributes_RuleFields: FieldMap = {
@@ -52,7 +77,19 @@ const RuleResponse_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: RuleResponse_Data_Attributes_ActionFields,
   },
+  createdAt: "created_at",
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: RuleResponse_Data_Attributes_CreatedByFields,
+  },
   enabled: "enabled",
+  modifiedAt: "modified_at",
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: RuleResponse_Data_Attributes_CreatedByFields,
+  },
   name: "name",
   rule: {
     wireName: "rule",
@@ -67,6 +104,7 @@ const RuleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: RuleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -7,7 +7,14 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class PromptSdkresponse_Data_Attributes_ChatTemplate:
+    content: Any = None
+    role: Any = None
+
+@dataclasses.dataclass
 class PromptSdkresponse_Data_Attributes:
+    # Chat template for this prompt version, as a list of role and content messages. Omitted for text templates.
+    chat_template: Any = None
     # Optional description of the prompt.
     description: Any = None
     # Optional feature-flag environment UUIDs the service attempts to enable and configure to use the first version as their default after creation.
@@ -16,28 +23,46 @@ class PromptSdkresponse_Data_Attributes:
     labels: Any = None
     # Customer-provided identifier for the new prompt.
     prompt_id: Any = None
+    # Unique identifier of this prompt version.
+    prompt_version_uuid: Any = None
     # A text template or a list of chat messages.
     template: Any = None
     # Optional title of the prompt.
     title: Any = None
     # Optional user-supplied version identifier for the first version.
     user_version: Any = None
+    # Version identifier for this prompt version. This is the sequential version number unless a user-supplied version identifier was set, in which case that identifier is used instead.
+    version: Any = None
 
 @dataclasses.dataclass
 class PromptSdkresponse_Data:
     # Attributes for creating an Agent Observability prompt and its first version. `prompt_id` and `template` are required; all other attributes are optional.
     attributes: Any = None
+    # Unique identifier of the prompt.
+    id: Any = None
     # Resource type of an Agent Observability prompt.
     type: Any = None
 
+_PromptSdkresponse_Data_Attributes_ChatTemplateFields = {
+    "content": ubx.FieldSpec(wire_name="content"),
+    "role": ubx.FieldSpec(wire_name="role"),
+}
+
 _PromptSdkresponse_Data_AttributesFields = {
+    "chat_template": ubx.FieldSpec(
+        wire_name="chat_template",
+        kind="list",
+        fields=_PromptSdkresponse_Data_Attributes_ChatTemplateFields,
+    ),
     "description": ubx.FieldSpec(wire_name="description"),
     "env_ids": ubx.FieldSpec(wire_name="env_ids"),
     "labels": ubx.FieldSpec(wire_name="labels"),
     "prompt_id": ubx.FieldSpec(wire_name="prompt_id"),
+    "prompt_version_uuid": ubx.FieldSpec(wire_name="prompt_version_uuid"),
     "template": ubx.FieldSpec(wire_name="template"),
     "title": ubx.FieldSpec(wire_name="title"),
     "user_version": ubx.FieldSpec(wire_name="user_version"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _PromptSdkresponse_DataFields = {
@@ -46,6 +71,7 @@ _PromptSdkresponse_DataFields = {
         kind="object",
         fields=_PromptSdkresponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

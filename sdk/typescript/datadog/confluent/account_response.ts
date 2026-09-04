@@ -22,6 +22,8 @@ export interface AccountResponse_Data_Attributes {
 export interface AccountResponse_Data {
   /** Attributes associated with the account creation request. */
   attributes: AccountResponse_Data_Attributes | Computed<AccountResponse_Data_Attributes>;
+  /** A randomly generated ID associated with a Confluent account. */
+  id?: string | Computed<string>;
   /** The JSON:API type for this API. Should always be `confluent-cloud-accounts`. */
   type: string | Computed<string>;
 }
@@ -50,6 +52,7 @@ const AccountResponse_DataFields: FieldMap = {
     kind: "object",
     fields: AccountResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

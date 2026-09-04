@@ -21,6 +21,8 @@ class TeamsTenantBasedHandleResponse_Data_Attributes:
 class TeamsTenantBasedHandleResponse_Data:
     # Tenant-based handle attributes.
     attributes: Any = None
+    # The ID of the tenant-based handle.
+    id: Any = None
     # Specifies the tenant-based handle resource type.
     type: Any = None
 
@@ -37,6 +39,7 @@ _TeamsTenantBasedHandleResponse_DataFields = {
         kind="object",
         fields=_TeamsTenantBasedHandleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

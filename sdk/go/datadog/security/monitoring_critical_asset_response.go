@@ -3,9 +3,24 @@ package security
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type MonitoringCriticalAssetResponse_Data_Attributes_Creator struct {
+	// The handle of the user.
+	Handle any
+	// The name of the user.
+	Name any
+}
+
 type MonitoringCriticalAssetResponse_Data_Attributes struct {
+	// ID of user who created the critical asset.
+	CreationAuthorId any
+	// A Unix millisecond timestamp given the creation date of the critical asset.
+	CreationDate any
+	// A user.
+	Creator any
 	// A description of the critical asset.
 	Description any
+	// Whether the critical asset is editable.
+	Editable any
 	// Whether the critical asset is enabled. Defaults to `true` if not specified.
 	Enabled any
 	// The query for the critical asset. It uses the same syntax as the queries to search signals in the Signals Explorer.
@@ -16,32 +31,64 @@ type MonitoringCriticalAssetResponse_Data_Attributes struct {
 	Severity any
 	// List of tags associated with the critical asset.
 	Tags any
+	// ID of user who updated the critical asset.
+	UpdateAuthorId any
+	// A Unix millisecond timestamp given the update date of the critical asset.
+	UpdateDate any
+	// A user.
+	Updater any
+	// The version of the critical asset; it starts at 1, and is incremented at each update.
+	Version any
 }
 
 type MonitoringCriticalAssetResponse_Data struct {
 	// Object containing the attributes of the critical asset to be created.
 	Attributes any
+	// The ID of the critical asset.
+	Id any
 	// The type of the resource. The value should always be `critical_assets`.
 	Type any
 }
 
+var MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields = ubx.FieldMap{
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
+
 var MonitoringCriticalAssetResponse_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"RuleQuery": ubx.FieldSpec{WireName: "rule_query"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"CreationAuthorId": ubx.FieldSpec{WireName: "creation_author_id"},
+	"CreationDate":     ubx.FieldSpec{WireName: "creation_date"},
+	"Creator": ubx.FieldSpec{
+		WireName: "creator",
+		Kind:     "object",
+		Fields:   MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields,
+	},
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"Editable":       ubx.FieldSpec{WireName: "editable"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"Query":          ubx.FieldSpec{WireName: "query"},
+	"RuleQuery":      ubx.FieldSpec{WireName: "rule_query"},
+	"Severity":       ubx.FieldSpec{WireName: "severity"},
+	"Tags":           ubx.FieldSpec{WireName: "tags"},
+	"UpdateAuthorId": ubx.FieldSpec{WireName: "update_author_id"},
+	"UpdateDate":     ubx.FieldSpec{WireName: "update_date"},
+	"Updater": ubx.FieldSpec{
+		WireName: "updater",
+		Kind:     "object",
+		Fields:   MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var MonitoringCriticalAssetResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: MonitoringCriticalAssetResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   MonitoringCriticalAssetResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MonitoringCriticalAssetResponseConfig struct {
 	// Object for a single critical asset.
@@ -62,8 +109,8 @@ var MonitoringCriticalAssetResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: MonitoringCriticalAssetResponse_DataFields,
+			Kind:     "object",
+			Fields:   MonitoringCriticalAssetResponse_DataFields,
 		},
 		"CriticalAssetId": ubx.FieldSpec{WireName: "critical_asset_id"},
 	},

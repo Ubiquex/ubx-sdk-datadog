@@ -18,9 +18,32 @@ export interface TodoResponse_Data_Attributes {
   modified?: string | Computed<string>;
 }
 
+export interface TodoResponse_Data_Relationships_CreatedByUser_Data {
+  /** A unique identifier that represents the user. */
+  id: string | Computed<string>;
+  /** Users resource type. */
+  type: string | Computed<string>;
+}
+
+export interface TodoResponse_Data_Relationships_CreatedByUser {
+  /** Relationship to user object. */
+  data: TodoResponse_Data_Relationships_CreatedByUser_Data | Computed<TodoResponse_Data_Relationships_CreatedByUser_Data>;
+}
+
+export interface TodoResponse_Data_Relationships {
+  /** Relationship to user. */
+  createdByUser?: TodoResponse_Data_Relationships_CreatedByUser | Computed<TodoResponse_Data_Relationships_CreatedByUser>;
+  /** Relationship to user. */
+  lastModifiedByUser?: TodoResponse_Data_Relationships_CreatedByUser | Computed<TodoResponse_Data_Relationships_CreatedByUser>;
+}
+
 export interface TodoResponse_Data {
   /** Incident todo's attributes. */
   attributes: TodoResponse_Data_Attributes | Computed<TodoResponse_Data_Attributes>;
+  /** The incident todo's ID. */
+  id?: string | Computed<string>;
+  /** The incident's relationships from a response. */
+  relationships?: TodoResponse_Data_Relationships | Computed<TodoResponse_Data_Relationships>;
   /** Todo resource type. */
   type: string | Computed<string>;
 }
@@ -42,21 +65,12 @@ export interface TodoResponse_Included_Attributes {
   verified?: boolean | Computed<boolean>;
 }
 
-export interface TodoResponse_Included_Relationships_Org_Data {
-  id?: string | Computed<string>;
-  type?: string | Computed<string>;
-}
-
-export interface TodoResponse_Included_Relationships_Org {
-  data?: TodoResponse_Included_Relationships_Org_Data | Computed<TodoResponse_Included_Relationships_Org_Data>;
-}
-
 export interface TodoResponse_Included_Relationships_OtherOrgs {
-  data?: TodoResponse_Included_Relationships_Org_Data[] | Computed<TodoResponse_Included_Relationships_Org_Data[]>;
+  data?: TodoResponse_Data_Relationships_CreatedByUser_Data[] | Computed<TodoResponse_Data_Relationships_CreatedByUser_Data[]>;
 }
 
 export interface TodoResponse_Included_Relationships {
-  org?: TodoResponse_Included_Relationships_Org | Computed<TodoResponse_Included_Relationships_Org>;
+  org?: TodoResponse_Data_Relationships_CreatedByUser | Computed<TodoResponse_Data_Relationships_CreatedByUser>;
   otherOrgs?: TodoResponse_Included_Relationships_OtherOrgs | Computed<TodoResponse_Included_Relationships_OtherOrgs>;
   otherUsers?: TodoResponse_Included_Relationships_OtherOrgs | Computed<TodoResponse_Included_Relationships_OtherOrgs>;
   roles?: TodoResponse_Included_Relationships_OtherOrgs | Computed<TodoResponse_Included_Relationships_OtherOrgs>;
@@ -79,11 +93,43 @@ const TodoResponse_Data_AttributesFields: FieldMap = {
   modified: "modified",
 };
 
+const TodoResponse_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const TodoResponse_Data_Relationships_CreatedByUserFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: TodoResponse_Data_Relationships_CreatedByUser_DataFields,
+  },
+};
+
+const TodoResponse_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: TodoResponse_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: TodoResponse_Data_Relationships_CreatedByUserFields,
+  },
+};
+
 const TodoResponse_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
     kind: "object",
     fields: TodoResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: TodoResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

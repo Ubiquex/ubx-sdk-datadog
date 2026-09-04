@@ -14,9 +14,24 @@ class UserTemplateResponse_Data_Attributes_TemplateVariables:
     tag_key: Any = None
 
 @dataclasses.dataclass
+class UserTemplateResponse_Data_Attributes_Versions:
+    created: Any = None
+    description: Any = None
+    id: Any = None
+    monitor_definition: Any = None
+    tags: Any = None
+    template_variables: Any = None
+    title: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class UserTemplateResponse_Data_Attributes:
+    # The created timestamp of the template.
+    created: Any = None
     # A brief description of the monitor user template.
     description: Any = None
+    # The last modified timestamp. When the template version was created.
+    modified: Any = None
     # A valid monitor definition in the same format as the [V1 Monitor API](https://docs.datadoghq.com/api/latest/monitors/#create-a-monitor).
     monitor_definition: Any = None
     # The definition of `MonitorUserTemplateTags` object.
@@ -25,6 +40,10 @@ class UserTemplateResponse_Data_Attributes:
     template_variables: Any = None
     # The title of the monitor user template.
     title: Any = None
+    # The version of the monitor user template.
+    version: Any = None
+    # All versions of the monitor user template.
+    versions: Any = None
 
 @dataclasses.dataclass
 class UserTemplateResponse_Data:
@@ -42,8 +61,10 @@ _UserTemplateResponse_Data_Attributes_TemplateVariablesFields = {
     "tag_key": ubx.FieldSpec(wire_name="tag_key"),
 }
 
-_UserTemplateResponse_Data_AttributesFields = {
+_UserTemplateResponse_Data_Attributes_VersionsFields = {
+    "created": ubx.FieldSpec(wire_name="created"),
     "description": ubx.FieldSpec(wire_name="description"),
+    "id": ubx.FieldSpec(wire_name="id"),
     "monitor_definition": ubx.FieldSpec(wire_name="monitor_definition"),
     "tags": ubx.FieldSpec(wire_name="tags"),
     "template_variables": ubx.FieldSpec(
@@ -52,6 +73,27 @@ _UserTemplateResponse_Data_AttributesFields = {
         fields=_UserTemplateResponse_Data_Attributes_TemplateVariablesFields,
     ),
     "title": ubx.FieldSpec(wire_name="title"),
+    "version": ubx.FieldSpec(wire_name="version"),
+}
+
+_UserTemplateResponse_Data_AttributesFields = {
+    "created": ubx.FieldSpec(wire_name="created"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "modified": ubx.FieldSpec(wire_name="modified"),
+    "monitor_definition": ubx.FieldSpec(wire_name="monitor_definition"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+    "template_variables": ubx.FieldSpec(
+        wire_name="template_variables",
+        kind="list",
+        fields=_UserTemplateResponse_Data_Attributes_TemplateVariablesFields,
+    ),
+    "title": ubx.FieldSpec(wire_name="title"),
+    "version": ubx.FieldSpec(wire_name="version"),
+    "versions": ubx.FieldSpec(
+        wire_name="versions",
+        kind="list",
+        fields=_UserTemplateResponse_Data_Attributes_VersionsFields,
+    ),
 }
 
 _UserTemplateResponse_DataFields = {

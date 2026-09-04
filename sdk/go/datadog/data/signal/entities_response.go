@@ -18,21 +18,21 @@ type EntitiesResponse_Data struct {
 }
 
 type EntitiesResponseConfig struct {
-	Limit any
+	Limit    any
 	SignalId any
 }
 
 type EntitiesResponseAttrs struct {
 	// Entities related to a security signal.
-	Data any
-	Limit any
+	Data     any
+	Limit    any
 	SignalId any
 }
 
 var EntitiesResponse = ubx.DataSourceBinding{
 	WireType: "datadog_signal_entities_response",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":    ubx.FieldSpec{WireName: "limit"},
 		"SignalId": ubx.FieldSpec{WireName: "signal_id"},
 	},
 }

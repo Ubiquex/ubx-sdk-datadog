@@ -13,9 +13,20 @@ class CloudIntegrationAccountResponse_Data_Attributes_Authentication:
     username: Any = None
 
 @dataclasses.dataclass
+class CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_Status:
+    # Collection health of a single dataflow.
+    health: Any = None
+    # Human-readable detail, populated when the dataflow is not healthy.
+    message: Any = None
+    # Time the status was last computed.
+    updated_at: Any = None
+
+@dataclasses.dataclass
 class CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats:
     # Whether the Elastic Cloud dataflow is enabled.
     enabled: Any = None
+    # Read-only collection status of a dataflow.
+    status: Any = None
 
 @dataclasses.dataclass
 class CloudIntegrationAccountResponse_Data_Attributes_Dataflows:
@@ -23,6 +34,8 @@ class CloudIntegrationAccountResponse_Data_Attributes_Dataflows:
     elastic_cloud_detailed_index_stats: Any = None
     # The Elastic Cloud index stats dataflow.
     elastic_cloud_index_stats: Any = None
+    # The Elastic Cloud metrics dataflow.
+    elastic_cloud_metrics: Any = None
     # The Elastic Cloud pending task stats dataflow.
     elastic_cloud_pending_task_stats: Any = None
     # The Elastic Cloud primary shard graceful timeout dataflow.
@@ -56,6 +69,8 @@ class CloudIntegrationAccountResponse_Data_Attributes:
 class CloudIntegrationAccountResponse_Data:
     # Writable attributes used to create an Elastic Cloud integration account.
     attributes: Any = None
+    # Server-generated unique identifier of the Elastic Cloud integration account.
+    id: Any = None
     # The type of the integration account resource. Always `integration-account`.
     type: Any = None
 
@@ -65,8 +80,19 @@ _CloudIntegrationAccountResponse_Data_Attributes_AuthenticationFields = {
     "username": ubx.FieldSpec(wire_name="username"),
 }
 
+_CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_StatusFields = {
+    "health": ubx.FieldSpec(wire_name="health"),
+    "message": ubx.FieldSpec(wire_name="message"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
+}
+
 _CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields = {
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "status": ubx.FieldSpec(
+        wire_name="status",
+        kind="object",
+        fields=_CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_StatusFields,
+    ),
 }
 
 _CloudIntegrationAccountResponse_Data_Attributes_DataflowsFields = {
@@ -77,6 +103,11 @@ _CloudIntegrationAccountResponse_Data_Attributes_DataflowsFields = {
     ),
     "elastic_cloud_index_stats": ubx.FieldSpec(
         wire_name="elastic_cloud_index_stats",
+        kind="object",
+        fields=_CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
+    ),
+    "elastic_cloud_metrics": ubx.FieldSpec(
+        wire_name="elastic_cloud_metrics",
         kind="object",
         fields=_CloudIntegrationAccountResponse_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStatsFields,
     ),
@@ -137,6 +168,7 @@ _CloudIntegrationAccountResponse_DataFields = {
         kind="object",
         fields=_CloudIntegrationAccountResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

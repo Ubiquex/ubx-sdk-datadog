@@ -6,43 +6,67 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Response_Data_Attributes struct {
 	// The APIKeyCreateAttributes category.
 	Category any
+	// Creation date of the API key.
+	CreatedAt any
+	// Date the API Key was last used
+	DateLastUsed any
+	// The API key.
+	Key any
+	// The last four characters of the API key.
+	Last4 any
+	// Date the API key was last modified.
+	ModifiedAt any
 	// Name of the API key.
 	Name any
 	// The APIKeyCreateAttributes remote_config_read_enabled.
 	RemoteConfigReadEnabled any
 }
 
+type Response_Data_Relationships_CreatedBy_Data struct {
+	// A unique identifier that represents the user.
+	Id any
+	// Users resource type.
+	Type any
+}
+
+type Response_Data_Relationships_CreatedBy struct {
+	// Relationship to user object.
+	Data any
+}
+
+type Response_Data_Relationships struct {
+	// Relationship to user.
+	CreatedBy any
+	// Relationship to user.
+	ModifiedBy any
+}
+
 type Response_Data struct {
 	// Attributes used to create an API Key.
 	Attributes any
+	// ID of the API key.
+	Id any
+	// Resources related to the API key.
+	Relationships any
 	// API Keys resource type.
 	Type any
 }
 
 type Response_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
-}
-
-type Response_Included_Relationships_Org_Data struct {
-	Id any
-	Type any
-}
-
-type Response_Included_Relationships_Org struct {
-	Data any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type Response_Included_Relationships_OtherOrgs struct {
@@ -50,33 +74,70 @@ type Response_Included_Relationships_OtherOrgs struct {
 }
 
 type Response_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RemoteConfigReadEnabled": ubx.FieldSpec{WireName: "remote_config_read_enabled"},
-	}
+	"Category":                ubx.FieldSpec{WireName: "category"},
+	"CreatedAt":               ubx.FieldSpec{WireName: "created_at"},
+	"DateLastUsed":            ubx.FieldSpec{WireName: "date_last_used"},
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"Last4":                   ubx.FieldSpec{WireName: "last4"},
+	"ModifiedAt":              ubx.FieldSpec{WireName: "modified_at"},
+	"Name":                    ubx.FieldSpec{WireName: "name"},
+	"RemoteConfigReadEnabled": ubx.FieldSpec{WireName: "remote_config_read_enabled"},
+}
+
+var Response_Data_Relationships_CreatedBy_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var Response_Data_Relationships_CreatedByFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CreatedBy_DataFields,
+	},
+}
+
+var Response_Data_RelationshipsFields = ubx.FieldMap{
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CreatedByFields,
+	},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CreatedByFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Response_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Object used to create an API key.
@@ -99,8 +160,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"ApiKeyId": ubx.FieldSpec{WireName: "api_key_id"},
 	},

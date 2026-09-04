@@ -4,44 +4,44 @@ package application
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityServiceResource_Data_Attributes struct {
-	AgentVersions any
-	AppType any
-	AsmThreatCompatible any
-	BackendWafEventCount any
-	BusinessLogic any
-	Color any
-	Env any
-	EventCount any
-	EventTrend any
-	HasAppsecEnabled any
-	Hits any
-	IastProductActivation any
-	IastProductCompatibility any
+	AgentVersions                   any
+	AppType                         any
+	AsmThreatCompatible             any
+	BackendWafEventCount            any
+	BusinessLogic                   any
+	Color                           any
+	Env                             any
+	EventCount                      any
+	EventTrend                      any
+	HasAppsecEnabled                any
+	Hits                            any
+	IastProductActivation           any
+	IastProductCompatibility        any
 	IastProductCompatibilityReasons any
-	Languages any
-	LastIngestedSpans any
-	RcCapabilities any
-	RecommendedBusinessLogic any
-	RiskProductActivation any
-	RiskProductCompatibility any
+	Languages                       any
+	LastIngestedSpans               any
+	RcCapabilities                  any
+	RecommendedBusinessLogic        any
+	RiskProductActivation           any
+	RiskProductCompatibility        any
 	RiskProductCompatibilityReasons any
-	RulesVersion any
-	Service any
-	SignalCount any
-	SignalTrend any
-	Source any
-	Teams any
-	TracerVersions any
-	VmActivation any
-	VulnCriticalCount any
-	VulnHighCount any
-	WithoutFilterServices any
+	RulesVersion                    any
+	Service                         any
+	SignalCount                     any
+	SignalTrend                     any
+	Source                          any
+	Teams                           any
+	TracerVersions                  any
+	VmActivation                    any
+	VulnCriticalCount               any
+	VulnHighCount                   any
+	WithoutFilterServices           any
 }
 
 type SecurityServiceResource_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type SecurityServiceResource_Meta struct {
@@ -57,7 +57,7 @@ type SecurityServiceResourceAttrs struct {
 	// The list of services matching the requested name.
 	Data any
 	// Metadata returned alongside the list of services.
-	Meta any
+	Meta          any
 	ServiceFilter any
 }
 

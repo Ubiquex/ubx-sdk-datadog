@@ -29,39 +29,13 @@ const PrivateLocation_MetadataFields: FieldMap = {
   restrictedRoles: "restricted_roles",
 };
 
-const PrivateLocation_Secrets_AuthenticationFields: FieldMap = {
-  id: "id",
-  key: "key",
-};
-
-const PrivateLocation_Secrets_ConfigDecryptionFields: FieldMap = {
-  key: "key",
-};
-
-const PrivateLocation_SecretsFields: FieldMap = {
-  authentication: {
-    wireName: "authentication",
-    kind: "object",
-    fields: PrivateLocation_Secrets_AuthenticationFields,
-  },
-  configDecryption: {
-    wireName: "config_decryption",
-    kind: "object",
-    fields: PrivateLocation_Secrets_ConfigDecryptionFields,
-  },
-};
-
 export interface PrivateLocationConfig {
   /** Description of the private location. */
   description: string | Computed<string>;
-  /** Unique identifier of the private location. */
-  id?: string | Computed<string>;
   /** Object containing metadata about the private location. */
   metadata?: PrivateLocation_Metadata | Computed<PrivateLocation_Metadata>;
   /** Name of the private location. */
   name: string | Computed<string>;
-  /** Secrets for the private location. Only present in the response when creating the private location. */
-  secrets?: PrivateLocation_Secrets | Computed<PrivateLocation_Secrets>;
   /** Array of tags attached to the private location. */
   tags: string[] | Computed<string[]>;
   /** path parameter, not part of the API's own resource representation */
@@ -89,18 +63,12 @@ export const PrivateLocation: ResourceBinding<PrivateLocationConfig, PrivateLoca
   wireType: "datadog_synthetics_private_location",
   fields: {
     description: "description",
-    id: "id",
     metadata: {
       wireName: "metadata",
       kind: "object",
       fields: PrivateLocation_MetadataFields,
     },
     name: "name",
-    secrets: {
-      wireName: "secrets",
-      kind: "object",
-      fields: PrivateLocation_SecretsFields,
-    },
     tags: "tags",
     locationId: "location_id",
   },

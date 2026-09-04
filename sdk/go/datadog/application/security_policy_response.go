@@ -4,20 +4,20 @@ package application
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityPolicyResponse_Data_Attributes_Rules struct {
-	Blocking any
-	Enabled any
+	Blocking               any
+	Enabled                any
 	ExtendedDataCollection any
-	Id any
+	Id                     any
 }
 
 type SecurityPolicyResponse_Data_Attributes_Rulesets struct {
 	Blocking any
-	Enabled any
-	Id any
+	Enabled  any
+	Id       any
 }
 
 type SecurityPolicyResponse_Data_Attributes_Scope struct {
-	Env any
+	Env     any
 	Service any
 }
 
@@ -42,63 +42,97 @@ type SecurityPolicyResponse_Data_Attributes struct {
 	Version any
 }
 
+type SecurityPolicyResponse_Data_Meta struct {
+	// The date and time the WAF policy was created.
+	AddedAt any
+	// The handle of the user who created the WAF policy.
+	AddedBy any
+	// The name of the user who created the WAF policy.
+	AddedByName any
+	// The date and time the WAF policy was last updated.
+	ModifiedAt any
+	// The handle of the user who last updated the WAF policy.
+	ModifiedBy any
+	// The name of the user who last updated the WAF policy.
+	ModifiedByName any
+}
+
 type SecurityPolicyResponse_Data struct {
 	// Create a new WAF policy.
 	Attributes any
+	// The ID of the policy.
+	Id any
+	// Metadata associated with the WAF policy.
+	Meta any
 	// The type of the resource. The value should always be `policy`.
 	Type any
 }
 
 var SecurityPolicyResponse_Data_Attributes_RulesFields = ubx.FieldMap{
-		"Blocking": ubx.FieldSpec{WireName: "blocking"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExtendedDataCollection": ubx.FieldSpec{WireName: "extended_data_collection"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Blocking":               ubx.FieldSpec{WireName: "blocking"},
+	"Enabled":                ubx.FieldSpec{WireName: "enabled"},
+	"ExtendedDataCollection": ubx.FieldSpec{WireName: "extended_data_collection"},
+	"Id":                     ubx.FieldSpec{WireName: "id"},
+}
 
 var SecurityPolicyResponse_Data_Attributes_RulesetsFields = ubx.FieldMap{
-		"Blocking": ubx.FieldSpec{WireName: "blocking"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Blocking": ubx.FieldSpec{WireName: "blocking"},
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+}
 
 var SecurityPolicyResponse_Data_Attributes_ScopeFields = ubx.FieldMap{
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Env":     ubx.FieldSpec{WireName: "env"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var SecurityPolicyResponse_Data_AttributesFields = ubx.FieldMap{
-		"BasedOn": ubx.FieldSpec{WireName: "based_on"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProtectionPresets": ubx.FieldSpec{WireName: "protection_presets"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: SecurityPolicyResponse_Data_Attributes_RulesFields,
-		},
-		"Rulesets": ubx.FieldSpec{
-			WireName: "rulesets",
-			Kind: "list",
-			Fields: SecurityPolicyResponse_Data_Attributes_RulesetsFields,
-		},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
-			Kind: "list",
-			Fields: SecurityPolicyResponse_Data_Attributes_ScopeFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"BasedOn":           ubx.FieldSpec{WireName: "based_on"},
+	"Description":       ubx.FieldSpec{WireName: "description"},
+	"IsDefault":         ubx.FieldSpec{WireName: "is_default"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"ProtectionPresets": ubx.FieldSpec{WireName: "protection_presets"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   SecurityPolicyResponse_Data_Attributes_RulesFields,
+	},
+	"Rulesets": ubx.FieldSpec{
+		WireName: "rulesets",
+		Kind:     "list",
+		Fields:   SecurityPolicyResponse_Data_Attributes_RulesetsFields,
+	},
+	"Scope": ubx.FieldSpec{
+		WireName: "scope",
+		Kind:     "list",
+		Fields:   SecurityPolicyResponse_Data_Attributes_ScopeFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
+
+var SecurityPolicyResponse_Data_MetaFields = ubx.FieldMap{
+	"AddedAt":        ubx.FieldSpec{WireName: "added_at"},
+	"AddedBy":        ubx.FieldSpec{WireName: "added_by"},
+	"AddedByName":    ubx.FieldSpec{WireName: "added_by_name"},
+	"ModifiedAt":     ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy":     ubx.FieldSpec{WireName: "modified_by"},
+	"ModifiedByName": ubx.FieldSpec{WireName: "modified_by_name"},
+}
 
 var SecurityPolicyResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: SecurityPolicyResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   SecurityPolicyResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Meta": ubx.FieldSpec{
+		WireName: "meta",
+		Kind:     "object",
+		Fields:   SecurityPolicyResponse_Data_MetaFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type SecurityPolicyResponseConfig struct {
 	// Object for a single WAF policy.
@@ -119,8 +153,8 @@ var SecurityPolicyResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: SecurityPolicyResponse_DataFields,
+			Kind:     "object",
+			Fields:   SecurityPolicyResponse_DataFields,
 		},
 		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
 	},

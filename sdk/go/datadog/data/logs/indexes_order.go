@@ -13,6 +13,5 @@ type IndexesOrderAttrs struct {
 
 var IndexesOrder = ubx.DataSourceBinding{
 	WireType: "datadog_logs_indexes_order",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -2,6 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Response_Data_Attributes {
+  /** Creation time of the campaign. */
+  createdAt?: string | Computed<string>;
   /** The description of the campaign. */
   description?: string | Computed<string>;
   /** The due date of the campaign. */
@@ -12,8 +14,12 @@ export interface Response_Data_Attributes {
   guidance?: string | Computed<string>;
   /** The unique key for the campaign. */
   key: string | Computed<string>;
+  /** Time of last campaign modification. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the campaign. */
   name: string | Computed<string>;
+  /** The UUID of the campaign owner. */
+  owner?: string | Computed<string>;
   /** The UUID of the campaign owner. */
   ownerId: string | Computed<string>;
   /** Array of rule IDs associated with this campaign. */
@@ -27,17 +33,22 @@ export interface Response_Data_Attributes {
 export interface Response_Data {
   /** Attributes for creating a new campaign. */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** The unique ID of the campaign. */
+  id?: string | Computed<string>;
   /** The JSON:API type for campaigns. */
   type: string | Computed<string>;
 }
 
 const Response_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
   description: "description",
   dueDate: "due_date",
   entityScope: "entity_scope",
   guidance: "guidance",
   key: "key",
+  modifiedAt: "modified_at",
   name: "name",
+  owner: "owner",
   ownerId: "owner_id",
   ruleIds: "rule_ids",
   startDate: "start_date",
@@ -50,6 +61,7 @@ const Response_DataFields: FieldMap = {
     kind: "object",
     fields: Response_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

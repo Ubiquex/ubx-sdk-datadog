@@ -8,6 +8,15 @@ export interface ModifierRuleResponse_Data_Attributes_Action {
   type?: string | Computed<string>;
 }
 
+export interface ModifierRuleResponse_Data_Attributes_CreatedBy {
+  /** The actor's identifier (a user UUID or a system identifier). */
+  id: string | Computed<string>;
+  /** The name of the actor. */
+  name: string | Computed<string>;
+  /** Whether the actor is a user or the Datadog system. */
+  type: string | Computed<string>;
+}
+
 export interface ModifierRuleResponse_Data_Attributes_Rule {
   /** The list of security finding types that the automation rule applies to. */
   findingTypes: string[] | Computed<string[]>;
@@ -18,8 +27,16 @@ export interface ModifierRuleResponse_Data_Attributes_Rule {
 export interface ModifierRuleResponse_Data_Attributes {
   /** The action to take when a severity modifier rule matches a finding. This is a discriminated union on `type`: `set` assigns a fixed severity, while `shift` moves the severity up or down by one rank. A severity modifier rule's `rule.query` must not filter on `@severity` or on the `@severity_details.user_adjusted.*` namespace. Use `@severity_details.adjusted.value` instead, which reflects the severity before user-defined adjustments. */
   action: ModifierRuleResponse_Data_Attributes_Action | Computed<ModifierRuleResponse_Data_Attributes_Action>;
+  /** The Unix timestamp in milliseconds when the rule was created. */
+  createdAt?: number | Computed<number>;
+  /** The user or Datadog system who created the rule. */
+  createdBy?: ModifierRuleResponse_Data_Attributes_CreatedBy | Computed<ModifierRuleResponse_Data_Attributes_CreatedBy>;
   /** Whether the severity modifier rule is enabled. */
   enabled?: boolean | Computed<boolean>;
+  /** The Unix timestamp in milliseconds when the rule was last modified. */
+  modifiedAt?: number | Computed<number>;
+  /** The user or Datadog system who last modified the rule. */
+  modifiedBy?: ModifierRuleResponse_Data_Attributes_CreatedBy | Computed<ModifierRuleResponse_Data_Attributes_CreatedBy>;
   /** The name of the severity modifier rule. */
   name: string | Computed<string>;
   /** Defines the scope of findings to which the automation rule applies. */
@@ -29,6 +46,8 @@ export interface ModifierRuleResponse_Data_Attributes {
 export interface ModifierRuleResponse_Data {
   /** Attributes for creating or updating a severity modifier rule. */
   attributes: ModifierRuleResponse_Data_Attributes | Computed<ModifierRuleResponse_Data_Attributes>;
+  /** The ID of the severity modifier rule. */
+  id?: string | Computed<string>;
   /** The JSON:API type for severity modifier rules. */
   type: string | Computed<string>;
 }
@@ -37,6 +56,12 @@ const ModifierRuleResponse_Data_Attributes_ActionFields: FieldMap = {
   description: "description",
   severity: "severity",
   severityDelta: "severity_delta",
+  type: "type",
+};
+
+const ModifierRuleResponse_Data_Attributes_CreatedByFields: FieldMap = {
+  id: "id",
+  name: "name",
   type: "type",
 };
 
@@ -51,7 +76,19 @@ const ModifierRuleResponse_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: ModifierRuleResponse_Data_Attributes_ActionFields,
   },
+  createdAt: "created_at",
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: ModifierRuleResponse_Data_Attributes_CreatedByFields,
+  },
   enabled: "enabled",
+  modifiedAt: "modified_at",
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: ModifierRuleResponse_Data_Attributes_CreatedByFields,
+  },
   name: "name",
   rule: {
     wireName: "rule",
@@ -66,6 +103,7 @@ const ModifierRuleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: ModifierRuleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

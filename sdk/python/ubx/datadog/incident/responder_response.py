@@ -7,24 +7,56 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class ResponderResponse_Data_Relationships_User_Data:
-    # The user identifier.
+class ResponderResponse_Data_Attributes:
+    # Timestamp when the responder was created.
+    created: Any = None
+    # The external ID of the responder.
+    external_id: Any = None
+    # The external source of the responder.
+    external_source: Any = None
+    # Whether this responder counts toward billing.
+    is_billable: Any = None
+    # Timestamp when the responder was last active.
+    last_active: Any = None
+    # Additional metadata for the responder.
+    meta: Any = None
+    # Timestamp when the responder was last modified.
+    modified: Any = None
+
+@dataclasses.dataclass
+class ResponderResponse_Data_Relationships_CreatedBy_Data:
+    # A unique identifier that represents the user.
     id: Any = None
-    # The user resource type.
+    # Users resource type.
     type: Any = None
 
 @dataclasses.dataclass
-class ResponderResponse_Data_Relationships_User:
-    # A user relationship data object for creating a responder.
+class ResponderResponse_Data_Relationships_CreatedBy:
+    # Relationship to user object.
+    data: Any = None
+
+@dataclasses.dataclass
+class ResponderResponse_Data_Relationships_RoleAssignments:
+    # List of role assignment relationship data.
     data: Any = None
 
 @dataclasses.dataclass
 class ResponderResponse_Data_Relationships:
+    # Relationship to user.
+    created_by: Any = None
+    # Relationship to user.
+    last_modified_by: Any = None
+    # Relationship to role assignments for a responder.
+    role_assignments: Any = None
     # Relationship to a user for a responder create request.
     user: Any = None
 
 @dataclasses.dataclass
 class ResponderResponse_Data:
+    # Attributes of an incident responder in a response.
+    attributes: Any = None
+    # The responder identifier.
+    id: Any = None
     # Relationships for creating an incident responder.
     relationships: Any = None
     # Incident responder resource type.
@@ -44,28 +76,67 @@ class ResponderResponse_Included:
     id: Any = None
     type: Any = None
 
-_ResponderResponse_Data_Relationships_User_DataFields = {
+_ResponderResponse_Data_AttributesFields = {
+    "created": ubx.FieldSpec(wire_name="created"),
+    "external_id": ubx.FieldSpec(wire_name="external_id"),
+    "external_source": ubx.FieldSpec(wire_name="external_source"),
+    "is_billable": ubx.FieldSpec(wire_name="is_billable"),
+    "last_active": ubx.FieldSpec(wire_name="last_active"),
+    "meta": ubx.FieldSpec(wire_name="meta"),
+    "modified": ubx.FieldSpec(wire_name="modified"),
+}
+
+_ResponderResponse_Data_Relationships_CreatedBy_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_ResponderResponse_Data_Relationships_UserFields = {
+_ResponderResponse_Data_Relationships_CreatedByFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_ResponderResponse_Data_Relationships_User_DataFields,
+        fields=_ResponderResponse_Data_Relationships_CreatedBy_DataFields,
+    ),
+}
+
+_ResponderResponse_Data_Relationships_RoleAssignmentsFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="list",
+        fields=_ResponderResponse_Data_Relationships_CreatedBy_DataFields,
     ),
 }
 
 _ResponderResponse_Data_RelationshipsFields = {
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_ResponderResponse_Data_Relationships_CreatedByFields,
+    ),
+    "last_modified_by": ubx.FieldSpec(
+        wire_name="last_modified_by",
+        kind="object",
+        fields=_ResponderResponse_Data_Relationships_CreatedByFields,
+    ),
+    "role_assignments": ubx.FieldSpec(
+        wire_name="role_assignments",
+        kind="object",
+        fields=_ResponderResponse_Data_Relationships_RoleAssignmentsFields,
+    ),
     "user": ubx.FieldSpec(
         wire_name="user",
         kind="object",
-        fields=_ResponderResponse_Data_Relationships_UserFields,
+        fields=_ResponderResponse_Data_Relationships_CreatedByFields,
     ),
 }
 
 _ResponderResponse_DataFields = {
+    "attributes": ubx.FieldSpec(
+        wire_name="attributes",
+        kind="object",
+        fields=_ResponderResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

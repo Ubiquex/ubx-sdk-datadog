@@ -12,9 +12,22 @@ export interface ExclusionFilterResponse_Data_Attributes {
   query?: string | Computed<string>;
 }
 
+export interface ExclusionFilterResponse_Data_Meta {
+  /** Unix epoch (in milliseconds) when the exclusion filter was last enabled. */
+  enabledAt?: number | Computed<number>;
+  /** Unix epoch (in milliseconds) of the last update. */
+  updatedAt?: number | Computed<number>;
+  /** Handle of the user who last updated the exclusion filter. */
+  updatedByHandle?: string | Computed<string>;
+}
+
 export interface ExclusionFilterResponse_Data {
   /** The attributes of an exclusion filter to create. */
   attributes: ExclusionFilterResponse_Data_Attributes | Computed<ExclusionFilterResponse_Data_Attributes>;
+  /** The ID of the exclusion filter. */
+  id?: string | Computed<string>;
+  /** Metadata about the exclusion filter. */
+  meta?: ExclusionFilterResponse_Data_Meta | Computed<ExclusionFilterResponse_Data_Meta>;
   /** The resource type. The value must be `exclusion_filters`. */
   type: string | Computed<string>;
 }
@@ -26,11 +39,23 @@ const ExclusionFilterResponse_Data_AttributesFields: FieldMap = {
   query: "query",
 };
 
+const ExclusionFilterResponse_Data_MetaFields: FieldMap = {
+  enabledAt: "enabled_at",
+  updatedAt: "updated_at",
+  updatedByHandle: "updated_by_handle",
+};
+
 const ExclusionFilterResponse_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
     kind: "object",
     fields: ExclusionFilterResponse_Data_AttributesFields,
+  },
+  id: "id",
+  meta: {
+    wireName: "meta",
+    kind: "object",
+    fields: ExclusionFilterResponse_Data_MetaFields,
   },
   type: "type",
 };

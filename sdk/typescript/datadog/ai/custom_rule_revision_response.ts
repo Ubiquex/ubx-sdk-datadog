@@ -4,8 +4,14 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface CustomRuleRevisionResponse_Data_Attributes {
   /** Rule category */
   category: string | Computed<string>;
+  /** Checksum of the revision content. */
+  checksum?: string | Computed<string>;
   /** Base64-encoded AI model content for this revision. */
   content: string | Computed<string>;
+  /** The creation timestamp. */
+  createdAt?: string | Computed<string>;
+  /** The identifier of the user who created the revision. */
+  createdBy?: string | Computed<string>;
   /** The associated CWE identifier. */
   cwe?: string | Computed<string>;
   /** Base64-encoded full description. */
@@ -16,6 +22,8 @@ export interface CustomRuleRevisionResponse_Data_Attributes {
   executionMode: string | Computed<string>;
   /** File glob patterns this rule applies to. */
   globs: string[] | Computed<string[]>;
+  /** Whether this is a default Datadog rule. */
+  isDefault?: boolean | Computed<boolean>;
   /** Whether this revision is published. */
   isPublished: boolean | Computed<boolean>;
   /** Whether this revision is for testing only. */
@@ -39,12 +47,16 @@ export interface CustomRuleRevisionResponse_Data {
 
 const CustomRuleRevisionResponse_Data_AttributesFields: FieldMap = {
   category: "category",
+  checksum: "checksum",
   content: "content",
+  createdAt: "created_at",
+  createdBy: "created_by",
   cwe: "cwe",
   description: "description",
   directories: "directories",
   executionMode: "execution_mode",
   globs: "globs",
+  isDefault: "is_default",
   isPublished: "is_published",
   isTesting: "is_testing",
   severity: "severity",

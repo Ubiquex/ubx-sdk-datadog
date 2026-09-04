@@ -11,20 +11,15 @@ type Index_DailyLimitReset struct {
 }
 
 type Index_ExclusionFilters_Filter struct {
-	// The query string to filter logs that should be excluded from the index. It follows the Datadog log search syntax. (AI-inferred)
-	Query any
+	Query           any
 	SampleAttribute any
-	// The fraction of logs matching the exclusion filter query that will be excluded. Must be a number between 0 and 1, where 1.0 excludes all matching logs. (AI-inferred)
-	SampleRate any
+	SampleRate      any
 }
 
 type Index_ExclusionFilters struct {
-	// The filter object defines the query criteria that determine which logs are excluded from the index based on the exclusion filter's configuration. (AI-inferred)
-	Filter any
-	// Whether the exclusion filter is enabled. When true, logs matching the filter's query are excluded from the index. (AI-inferred)
+	Filter    any
 	IsEnabled any
-	// Name of the exclusion filter. This is a user-defined label used to identify the filter within the logs index. (AI-inferred)
-	Name any
+	Name      any
 }
 
 type Index_Filter struct {
@@ -33,29 +28,29 @@ type Index_Filter struct {
 }
 
 var Index_DailyLimitResetFields = ubx.FieldMap{
-		"ResetTime": ubx.FieldSpec{WireName: "reset_time"},
-		"ResetUtcOffset": ubx.FieldSpec{WireName: "reset_utc_offset"},
-	}
+	"ResetTime":      ubx.FieldSpec{WireName: "reset_time"},
+	"ResetUtcOffset": ubx.FieldSpec{WireName: "reset_utc_offset"},
+}
 
 var Index_ExclusionFilters_FilterFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"SampleAttribute": ubx.FieldSpec{WireName: "sample_attribute"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"Query":           ubx.FieldSpec{WireName: "query"},
+	"SampleAttribute": ubx.FieldSpec{WireName: "sample_attribute"},
+	"SampleRate":      ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var Index_ExclusionFiltersFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: Index_ExclusionFilters_FilterFields,
-		},
-		"IsEnabled": ubx.FieldSpec{WireName: "is_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   Index_ExclusionFilters_FilterFields,
+	},
+	"IsEnabled": ubx.FieldSpec{WireName: "is_enabled"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+}
 
 var Index_FilterFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 type IndexConfig struct {
 	// The number of log events you can send in this index per day before you are rate-limited.
@@ -68,8 +63,6 @@ type IndexConfig struct {
 	ExclusionFilters any
 	// Filter for logs.
 	Filter any
-	// A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent. Rate limit is reset every-day at 2pm UTC.
-	IsRateLimited any
 	// The name of the index.
 	Name any
 	// The total number of days logs are stored in Standard and Flex Tier before being deleted from the index. If Standard Tier is enabled on this index, logs are first retained in Standard Tier for the number of days specified through `num_retention_days`, and then stored in Flex Tier until the number of days specified in `num_flex_logs_retention_days` is reached. The available values depend on retention plans specified in your organization's contract/subscriptions.
@@ -109,24 +102,23 @@ var Index = ubx.ResourceBinding{
 		"DailyLimit": ubx.FieldSpec{WireName: "daily_limit"},
 		"DailyLimitReset": ubx.FieldSpec{
 			WireName: "daily_limit_reset",
-			Kind: "object",
-			Fields: Index_DailyLimitResetFields,
+			Kind:     "object",
+			Fields:   Index_DailyLimitResetFields,
 		},
 		"DailyLimitWarningThresholdPercentage": ubx.FieldSpec{WireName: "daily_limit_warning_threshold_percentage"},
 		"ExclusionFilters": ubx.FieldSpec{
 			WireName: "exclusion_filters",
-			Kind: "list",
-			Fields: Index_ExclusionFiltersFields,
+			Kind:     "list",
+			Fields:   Index_ExclusionFiltersFields,
 		},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: Index_FilterFields,
+			Kind:     "object",
+			Fields:   Index_FilterFields,
 		},
-		"IsRateLimited": ubx.FieldSpec{WireName: "is_rate_limited"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"NumFlexLogsRetentionDays": ubx.FieldSpec{WireName: "num_flex_logs_retention_days"},
-		"NumRetentionDays": ubx.FieldSpec{WireName: "num_retention_days"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"NumRetentionDays":         ubx.FieldSpec{WireName: "num_retention_days"},
+		"Tags":                     ubx.FieldSpec{WireName: "tags"},
 	},
 }

@@ -10,6 +10,8 @@ import ubx_sdk as ubx
 class AuthPersonaMappingResponse_Data_Attributes:
     # Datadog account identifier (email or handle) mapped to the AWS principal
     account_identifier: Any = None
+    # Datadog account UUID
+    account_uuid: Any = None
     # AWS IAM ARN pattern to match for authentication
     arn_pattern: Any = None
 
@@ -17,11 +19,14 @@ class AuthPersonaMappingResponse_Data_Attributes:
 class AuthPersonaMappingResponse_Data:
     # Attributes for creating an AWS cloud authentication persona mapping
     attributes: Any = None
+    # Unique identifier for the persona mapping
+    id: Any = None
     # Type identifier for AWS cloud authentication persona mapping
     type: Any = None
 
 _AuthPersonaMappingResponse_Data_AttributesFields = {
     "account_identifier": ubx.FieldSpec(wire_name="account_identifier"),
+    "account_uuid": ubx.FieldSpec(wire_name="account_uuid"),
     "arn_pattern": ubx.FieldSpec(wire_name="arn_pattern"),
 }
 
@@ -31,6 +36,7 @@ _AuthPersonaMappingResponse_DataFields = {
         kind="object",
         fields=_AuthPersonaMappingResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

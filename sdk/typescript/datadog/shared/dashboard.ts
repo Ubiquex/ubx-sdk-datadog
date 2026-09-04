@@ -16,19 +16,14 @@ export interface Dashboard_GlobalTime {
 export interface Dashboard_Invitees {
   accessExpiration?: string | Computed<string>;
   createdAt?: string | Computed<string>;
-  /** The email address of the invitee granted access to the shared dashboard. (AI-inferred) */
   email?: string | Computed<string>;
 }
 
 export interface Dashboard_SelectableTemplateVars {
-  /** The default value for the template variable when the dashboard is shared. Viewers can override this value. (AI-inferred) */
   defaultValue?: string | Computed<string>;
-  /** The name of the template variable that will be selectable by viewers of the shared dashboard. Must correspond to a template variable defined on the dashboard. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The tag key prefix associated with a selectable template variable in a shared dashboard, used to scope the variable's values (e.g., 'service' for service-specific filtering). (AI-inferred) */
   prefix?: string | Computed<string>;
   type?: string | Computed<string>;
-  /** List of tag values that are shown as selectable options for this template variable in the shared dashboard. (AI-inferred) */
   visibleTags?: string[] | Computed<string[]>;
 }
 
@@ -38,11 +33,6 @@ export interface Dashboard_ViewingPreferences {
   /** The theme of the shared dashboard view. "system" follows your system's default viewing theme. */
   theme?: string | Computed<string>;
 }
-
-const Dashboard_AuthorFields: FieldMap = {
-  handle: "handle",
-  name: "name",
-};
 
 const Dashboard_GlobalTimeFields: FieldMap = {
   liveSpan: "live_span",
@@ -68,10 +58,6 @@ const Dashboard_ViewingPreferencesFields: FieldMap = {
 };
 
 export interface DashboardConfig {
-  /** User who shared the dashboard. */
-  author?: Dashboard_Author | Computed<Dashboard_Author>;
-  /** Date the dashboard was shared. */
-  created?: string | Computed<string>;
   /** ID of the dashboard to share. */
   dashboardId: string | Computed<string>;
   /** The type of the associated private dashboard. */
@@ -86,10 +72,6 @@ export interface DashboardConfig {
   globalTimeSelectableEnabled?: boolean | Computed<boolean>;
   /** The `SharedDashboard` `invitees`. */
   invitees?: Dashboard_Invitees[] | Computed<Dashboard_Invitees[]>;
-  /** The last time the shared dashboard was accessed. Null if never accessed. */
-  lastAccessed?: string | Computed<string>;
-  /** URL of the shared dashboard. */
-  publicUrl?: string | Computed<string>;
   /** List of objects representing template variables on the shared dashboard which can have selectable values. */
   selectableTemplateVars?: Dashboard_SelectableTemplateVars[] | Computed<Dashboard_SelectableTemplateVars[]>;
   /** List of email addresses that can receive an invitation to access to the shared dashboard. */
@@ -100,8 +82,6 @@ export interface DashboardConfig {
   status?: string | Computed<string>;
   /** Title of the shared dashboard. */
   title?: string | Computed<string>;
-  /** A unique token assigned to the shared dashboard. */
-  token?: string | Computed<string>;
   /** The viewing preferences for a shared dashboard. */
   viewingPreferences?: Dashboard_ViewingPreferences | Computed<Dashboard_ViewingPreferences>;
 }
@@ -148,12 +128,6 @@ export interface DashboardAttrs {
 export const Dashboard: ResourceBinding<DashboardConfig, DashboardAttrs> = {
   wireType: "datadog_shared_dashboard",
   fields: {
-    author: {
-      wireName: "author",
-      kind: "object",
-      fields: Dashboard_AuthorFields,
-    },
-    created: "created",
     dashboardId: "dashboard_id",
     dashboardType: "dashboard_type",
     embeddableDomains: "embeddable_domains",
@@ -169,8 +143,6 @@ export const Dashboard: ResourceBinding<DashboardConfig, DashboardAttrs> = {
       kind: "list",
       fields: Dashboard_InviteesFields,
     },
-    lastAccessed: "last_accessed",
-    publicUrl: "public_url",
     selectableTemplateVars: {
       wireName: "selectable_template_vars",
       kind: "list",
@@ -180,7 +152,6 @@ export const Dashboard: ResourceBinding<DashboardConfig, DashboardAttrs> = {
     shareType: "share_type",
     status: "status",
     title: "title",
-    token: "token",
     viewingPreferences: {
       wireName: "viewing_preferences",
       kind: "object",

@@ -4,29 +4,29 @@ package awsaccount
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Awsaccount_Accounts struct {
-	AccessKeyId any
-	AccountId any
-	AccountSpecificNamespaceRules any
-	CspmResourceCollectionEnabled any
-	ExcludedRegions any
+	AccessKeyId                       any
+	AccountId                         any
+	AccountSpecificNamespaceRules     any
+	CspmResourceCollectionEnabled     any
+	ExcludedRegions                   any
 	ExtendedResourceCollectionEnabled any
-	FilterTags any
-	HostTags any
-	MetricsCollectionEnabled any
-	ResourceCollectionEnabled any
-	RoleName any
-	SecretAccessKey any
+	FilterTags                        any
+	HostTags                          any
+	MetricsCollectionEnabled          any
+	ResourceCollectionEnabled         any
+	RoleName                          any
+	SecretAccessKey                   any
 }
 
 type AwsaccountConfig struct {
 	AccessKeyId any
-	AccountId any
-	RoleName any
+	AccountId   any
+	RoleName    any
 }
 
 type AwsaccountAttrs struct {
 	AccessKeyId any
-	AccountId any
+	AccountId   any
 	// List of enabled AWS accounts.
 	Accounts any
 	RoleName any
@@ -36,7 +36,7 @@ var Awsaccount = ubx.DataSourceBinding{
 	WireType: "datadog_awsaccount",
 	Fields: ubx.FieldMap{
 		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"RoleName": ubx.FieldSpec{WireName: "role_name"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+		"RoleName":    ubx.FieldSpec{WireName: "role_name"},
 	},
 }

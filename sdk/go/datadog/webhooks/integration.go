@@ -37,10 +37,10 @@ var Integration = ubx.ResourceBinding{
 	WireType: "datadog_webhooks_integration",
 	Fields: ubx.FieldMap{
 		"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
-		"EncodeAs": ubx.FieldSpec{WireName: "encode_as"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"WebhookName": ubx.FieldSpec{WireName: "webhook_name"},
+		"EncodeAs":      ubx.FieldSpec{WireName: "encode_as"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Payload":       ubx.FieldSpec{WireName: "payload"},
+		"Url":           ubx.FieldSpec{WireName: "url"},
+		"WebhookName":   ubx.FieldSpec{WireName: "webhook_name"},
 	},
 }

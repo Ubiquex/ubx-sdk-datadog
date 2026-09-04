@@ -50,7 +50,7 @@ type GroupMembershipResponseConfig struct {
 
 type GroupMembershipResponseAttrs struct {
 	// An org group membership resource.
-	Data any
+	Data                 any
 	OrgGroupMembershipId any
 }
 

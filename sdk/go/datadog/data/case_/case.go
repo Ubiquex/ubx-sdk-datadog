@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Case_Data_Attributes_CustomAttributes struct {
 	IsMulti any
-	Type any
-	Value any
+	Type    any
+	Value   any
 }
 
 type Case_Data_Attributes_JiraIssue_Result struct {
-	IssueId any
-	IssueKey any
-	IssueUrl any
+	IssueId    any
+	IssueKey   any
+	IssueUrl   any
 	ProjectKey any
 }
 
@@ -31,27 +31,27 @@ type Case_Data_Attributes_ServiceNowTicket struct {
 }
 
 type Case_Data_Attributes struct {
-	ArchivedAt any
-	Attributes any
-	ClosedAt any
-	CreatedAt any
+	ArchivedAt       any
+	Attributes       any
+	ClosedAt         any
+	CreatedAt        any
 	CustomAttributes any
-	Description any
-	JiraIssue any
-	Key any
-	ModifiedAt any
-	Priority any
+	Description      any
+	JiraIssue        any
+	Key              any
+	ModifiedAt       any
+	Priority         any
 	ServiceNowTicket any
-	Status any
-	StatusGroup any
-	StatusName any
-	Title any
-	Type any
-	TypeId any
+	Status           any
+	StatusGroup      any
+	StatusName       any
+	Title            any
+	Type             any
+	TypeId           any
 }
 
 type Case_Data_Relationships_Assignee_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -60,17 +60,17 @@ type Case_Data_Relationships_Assignee struct {
 }
 
 type Case_Data_Relationships struct {
-	Assignee any
-	CreatedBy any
+	Assignee   any
+	CreatedBy  any
 	ModifiedBy any
-	Project any
+	Project    any
 }
 
 type Case_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Case_Meta_Page struct {
@@ -93,7 +93,7 @@ type CaseConfig struct {
 
 type CaseAttrs struct {
 	// Cases response data
-	Data any
+	Data   any
 	Filter any
 	// Cases response metadata
 	Meta any

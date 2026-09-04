@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowResponse_Data_Attributes_Spec_Annotations_Display_Bounds struct {
 	Height any
-	Width any
-	X any
-	Y any
+	Width  any
+	X      any
+	Y      any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Annotations_Display struct {
@@ -19,36 +19,36 @@ type WorkflowResponse_Data_Attributes_Spec_Annotations_MarkdownTextAnnotation st
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Annotations struct {
-	Display any
-	Id any
+	Display                any
+	Id                     any
 	MarkdownTextAnnotation any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs_ConnectionGroups struct {
 	ConnectionGroupId any
-	Label any
-	Tags any
+	Label             any
+	Tags              any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs_Connections struct {
 	ConnectionId any
-	Label any
+	Label        any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs struct {
 	ConnectionGroups any
-	Connections any
-	Env any
+	Connections      any
+	Env              any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_InputSchema_Parameters struct {
 	AllowExtraValues any
-	AllowedValues any
-	DefaultValue any
-	Description any
-	Label any
-	Name any
-	Type any
+	AllowedValues    any
+	DefaultValue     any
+	Description      any
+	Label            any
+	Name             any
+	Type             any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_InputSchema struct {
@@ -58,11 +58,11 @@ type WorkflowResponse_Data_Attributes_Spec_InputSchema struct {
 
 type WorkflowResponse_Data_Attributes_Spec_OutputSchema_Parameters struct {
 	DefaultValue any
-	Description any
-	Label any
-	Name any
-	Type any
-	Value any
+	Description  any
+	Label        any
+	Name         any
+	Type         any
+	Value        any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_OutputSchema struct {
@@ -77,18 +77,18 @@ type WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_CompletionCondit
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategy_Linear struct {
-	Interval any
+	Interval   any
 	MaxRetries any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategy struct {
-	Kind any
+	Kind   any
 	Linear any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate struct {
 	CompletionCondition any
-	RetryStrategy any
+	RetryStrategy       any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Steps_Display_Bounds struct {
@@ -102,16 +102,16 @@ type WorkflowResponse_Data_Attributes_Spec_Steps_Display struct {
 
 type WorkflowResponse_Data_Attributes_Spec_Steps_ErrorHandlers struct {
 	FallbackStepName any
-	RetryStrategy any
+	RetryStrategy    any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Steps_OutboundEdges struct {
-	BranchName any
+	BranchName   any
 	NextStepName any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Steps_Parameters struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -120,19 +120,19 @@ type WorkflowResponse_Data_Attributes_Spec_Steps_ReadinessGate struct {
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Steps struct {
-	ActionId any
-	CompletionGate any
+	ActionId        any
+	CompletionGate  any
 	ConnectionLabel any
-	Display any
-	ErrorHandlers any
-	Name any
-	OutboundEdges any
-	Parameters any
-	ReadinessGate any
+	Display         any
+	ErrorHandlers   any
+	Name            any
+	OutboundEdges   any
+	Parameters      any
+	ReadinessGate   any
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTrigger_RateLimit struct {
-	Count any
+	Count    any
 	Interval any
 }
 
@@ -150,27 +150,27 @@ type WorkflowResponse_Data_Attributes_Spec_Triggers_ScheduleTrigger struct {
 }
 
 type WorkflowResponse_Data_Attributes_Spec_Triggers struct {
-	AgentTrigger any
-	ApiTrigger any
-	AppTrigger any
-	CaseTrigger any
-	ChangeEventTrigger any
-	DashboardTrigger any
+	AgentTrigger              any
+	ApiTrigger                any
+	AppTrigger                any
+	CaseTrigger               any
+	ChangeEventTrigger        any
+	DashboardTrigger          any
 	DatabaseMonitoringTrigger any
-	DatastoreTrigger any
-	FormTrigger any
-	GithubWebhookTrigger any
-	IncidentTrigger any
-	MonitorTrigger any
-	NotebookTrigger any
-	OnCallTrigger any
-	ScheduleTrigger any
-	SecurityTrigger any
-	SelfServiceTrigger any
-	SlackTrigger any
-	SoftwareCatalogTrigger any
-	StartStepNames any
-	WorkflowTrigger any
+	DatastoreTrigger          any
+	FormTrigger               any
+	GithubWebhookTrigger      any
+	IncidentTrigger           any
+	MonitorTrigger            any
+	NotebookTrigger           any
+	OnCallTrigger             any
+	ScheduleTrigger           any
+	SecurityTrigger           any
+	SelfServiceTrigger        any
+	SlackTrigger              any
+	SoftwareCatalogTrigger    any
+	StartStepNames            any
+	WorkflowTrigger           any
 }
 
 type WorkflowResponse_Data_Attributes_Spec struct {
@@ -240,382 +240,382 @@ type WorkflowResponse_Data struct {
 }
 
 var WorkflowResponse_Data_Attributes_Spec_Annotations_Display_BoundsFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-		"X": ubx.FieldSpec{WireName: "x"},
-		"Y": ubx.FieldSpec{WireName: "y"},
-	}
+	"Height": ubx.FieldSpec{WireName: "height"},
+	"Width":  ubx.FieldSpec{WireName: "width"},
+	"X":      ubx.FieldSpec{WireName: "x"},
+	"Y":      ubx.FieldSpec{WireName: "y"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Annotations_DisplayFields = ubx.FieldMap{
-		"Bounds": ubx.FieldSpec{
-			WireName: "bounds",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Annotations_Display_BoundsFields,
-		},
-	}
+	"Bounds": ubx.FieldSpec{
+		WireName: "bounds",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Annotations_Display_BoundsFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Annotations_MarkdownTextAnnotationFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_AnnotationsFields = ubx.FieldMap{
-		"Display": ubx.FieldSpec{
-			WireName: "display",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Annotations_DisplayFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MarkdownTextAnnotation": ubx.FieldSpec{
-			WireName: "markdown_text_annotation",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Annotations_MarkdownTextAnnotationFields,
-		},
-	}
+	"Display": ubx.FieldSpec{
+		WireName: "display",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Annotations_DisplayFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"MarkdownTextAnnotation": ubx.FieldSpec{
+		WireName: "markdown_text_annotation",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Annotations_MarkdownTextAnnotationFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs_ConnectionGroupsFields = ubx.FieldMap{
-		"ConnectionGroupId": ubx.FieldSpec{WireName: "connection_group_id"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"ConnectionGroupId": ubx.FieldSpec{WireName: "connection_group_id"},
+	"Label":             ubx.FieldSpec{WireName: "label"},
+	"Tags":              ubx.FieldSpec{WireName: "tags"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs_ConnectionsFields = ubx.FieldMap{
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-	}
+	"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
+	"Label":        ubx.FieldSpec{WireName: "label"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_ConnectionEnvsFields = ubx.FieldMap{
-		"ConnectionGroups": ubx.FieldSpec{
-			WireName: "connection_groups",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs_ConnectionGroupsFields,
-		},
-		"Connections": ubx.FieldSpec{
-			WireName: "connections",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs_ConnectionsFields,
-		},
-		"Env": ubx.FieldSpec{WireName: "env"},
-	}
+	"ConnectionGroups": ubx.FieldSpec{
+		WireName: "connection_groups",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs_ConnectionGroupsFields,
+	},
+	"Connections": ubx.FieldSpec{
+		WireName: "connections",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_ConnectionEnvs_ConnectionsFields,
+	},
+	"Env": ubx.FieldSpec{WireName: "env"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_InputSchema_ParametersFields = ubx.FieldMap{
-		"AllowExtraValues": ubx.FieldSpec{WireName: "allow_extra_values"},
-		"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AllowExtraValues": ubx.FieldSpec{WireName: "allow_extra_values"},
+	"AllowedValues":    ubx.FieldSpec{WireName: "allowed_values"},
+	"DefaultValue":     ubx.FieldSpec{WireName: "default_value"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"Label":            ubx.FieldSpec{WireName: "label"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_InputSchemaFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_InputSchema_ParametersFields,
-		},
-	}
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_InputSchema_ParametersFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_OutputSchema_ParametersFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"Label":        ubx.FieldSpec{WireName: "label"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+	"Value":        ubx.FieldSpec{WireName: "value"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_OutputSchemaFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_OutputSchema_ParametersFields,
-		},
-	}
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_OutputSchema_ParametersFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_CompletionConditionFields = ubx.FieldMap{
-		"Operand1": ubx.FieldSpec{WireName: "operand1"},
-		"Operand2": ubx.FieldSpec{WireName: "operand2"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-	}
+	"Operand1": ubx.FieldSpec{WireName: "operand1"},
+	"Operand2": ubx.FieldSpec{WireName: "operand2"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategy_LinearFields = ubx.FieldMap{
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
-	}
+	"Interval":   ubx.FieldSpec{WireName: "interval"},
+	"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategyFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Linear": ubx.FieldSpec{
-			WireName: "linear",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategy_LinearFields,
-		},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Linear": ubx.FieldSpec{
+		WireName: "linear",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategy_LinearFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGateFields = ubx.FieldMap{
-		"CompletionCondition": ubx.FieldSpec{
-			WireName: "completion_condition",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_CompletionConditionFields,
-		},
-		"RetryStrategy": ubx.FieldSpec{
-			WireName: "retry_strategy",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategyFields,
-		},
-	}
+	"CompletionCondition": ubx.FieldSpec{
+		WireName: "completion_condition",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_CompletionConditionFields,
+	},
+	"RetryStrategy": ubx.FieldSpec{
+		WireName: "retry_strategy",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategyFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_Display_BoundsFields = ubx.FieldMap{
-		"X": ubx.FieldSpec{WireName: "x"},
-		"Y": ubx.FieldSpec{WireName: "y"},
-	}
+	"X": ubx.FieldSpec{WireName: "x"},
+	"Y": ubx.FieldSpec{WireName: "y"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_DisplayFields = ubx.FieldMap{
-		"Bounds": ubx.FieldSpec{
-			WireName: "bounds",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_Display_BoundsFields,
-		},
-	}
+	"Bounds": ubx.FieldSpec{
+		WireName: "bounds",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_Display_BoundsFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_ErrorHandlersFields = ubx.FieldMap{
-		"FallbackStepName": ubx.FieldSpec{WireName: "fallback_step_name"},
-		"RetryStrategy": ubx.FieldSpec{
-			WireName: "retry_strategy",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategyFields,
-		},
-	}
+	"FallbackStepName": ubx.FieldSpec{WireName: "fallback_step_name"},
+	"RetryStrategy": ubx.FieldSpec{
+		WireName: "retry_strategy",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGate_RetryStrategyFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_OutboundEdgesFields = ubx.FieldMap{
-		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
-		"NextStepName": ubx.FieldSpec{WireName: "next_step_name"},
-	}
+	"BranchName":   ubx.FieldSpec{WireName: "branch_name"},
+	"NextStepName": ubx.FieldSpec{WireName: "next_step_name"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_ParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Steps_ReadinessGateFields = ubx.FieldMap{
-		"ThresholdType": ubx.FieldSpec{WireName: "threshold_type"},
-	}
+	"ThresholdType": ubx.FieldSpec{WireName: "threshold_type"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_StepsFields = ubx.FieldMap{
-		"ActionId": ubx.FieldSpec{WireName: "action_id"},
-		"CompletionGate": ubx.FieldSpec{
-			WireName: "completion_gate",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGateFields,
-		},
-		"ConnectionLabel": ubx.FieldSpec{WireName: "connection_label"},
-		"Display": ubx.FieldSpec{
-			WireName: "display",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_DisplayFields,
-		},
-		"ErrorHandlers": ubx.FieldSpec{
-			WireName: "error_handlers",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_ErrorHandlersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutboundEdges": ubx.FieldSpec{
-			WireName: "outbound_edges",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_OutboundEdgesFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_ParametersFields,
-		},
-		"ReadinessGate": ubx.FieldSpec{
-			WireName: "readiness_gate",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Steps_ReadinessGateFields,
-		},
-	}
+	"ActionId": ubx.FieldSpec{WireName: "action_id"},
+	"CompletionGate": ubx.FieldSpec{
+		WireName: "completion_gate",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_CompletionGateFields,
+	},
+	"ConnectionLabel": ubx.FieldSpec{WireName: "connection_label"},
+	"Display": ubx.FieldSpec{
+		WireName: "display",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_DisplayFields,
+	},
+	"ErrorHandlers": ubx.FieldSpec{
+		WireName: "error_handlers",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_ErrorHandlersFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OutboundEdges": ubx.FieldSpec{
+		WireName: "outbound_edges",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_OutboundEdgesFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_ParametersFields,
+	},
+	"ReadinessGate": ubx.FieldSpec{
+		WireName: "readiness_gate",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Steps_ReadinessGateFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTrigger_RateLimitFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-	}
+	"Count":    ubx.FieldSpec{WireName: "count"},
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields = ubx.FieldMap{
-		"RateLimit": ubx.FieldSpec{
-			WireName: "rate_limit",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTrigger_RateLimitFields,
-		},
-	}
+	"RateLimit": ubx.FieldSpec{
+		WireName: "rate_limit",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTrigger_RateLimitFields,
+	},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Triggers_FormTriggerFields = ubx.FieldMap{
-		"FormId": ubx.FieldSpec{WireName: "form_id"},
-	}
+	"FormId": ubx.FieldSpec{WireName: "form_id"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_Triggers_ScheduleTriggerFields = ubx.FieldMap{
-		"OverlapBehavior": ubx.FieldSpec{WireName: "overlap_behavior"},
-		"RruleExpression": ubx.FieldSpec{WireName: "rrule_expression"},
-	}
+	"OverlapBehavior": ubx.FieldSpec{WireName: "overlap_behavior"},
+	"RruleExpression": ubx.FieldSpec{WireName: "rrule_expression"},
+}
 
 var WorkflowResponse_Data_Attributes_Spec_TriggersFields = ubx.FieldMap{
-		"AgentTrigger": ubx.FieldSpec{
-			WireName: "agent_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
-		},
-		"ApiTrigger": ubx.FieldSpec{
-			WireName: "api_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
-		},
-		"AppTrigger": ubx.FieldSpec{WireName: "app_trigger"},
-		"CaseTrigger": ubx.FieldSpec{
-			WireName: "case_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
-		},
-		"ChangeEventTrigger": ubx.FieldSpec{WireName: "change_event_trigger"},
-		"DashboardTrigger": ubx.FieldSpec{WireName: "dashboard_trigger"},
-		"DatabaseMonitoringTrigger": ubx.FieldSpec{WireName: "database_monitoring_trigger"},
-		"DatastoreTrigger": ubx.FieldSpec{
-			WireName: "datastore_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
-		},
-		"FormTrigger": ubx.FieldSpec{
-			WireName: "form_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_FormTriggerFields,
-		},
-		"GithubWebhookTrigger": ubx.FieldSpec{
-			WireName: "github_webhook_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
-		},
-		"IncidentTrigger": ubx.FieldSpec{
-			WireName: "incident_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
-		},
-		"MonitorTrigger": ubx.FieldSpec{
-			WireName: "monitor_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
-		},
-		"NotebookTrigger": ubx.FieldSpec{WireName: "notebook_trigger"},
-		"OnCallTrigger": ubx.FieldSpec{
-			WireName: "on_call_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
-		},
-		"ScheduleTrigger": ubx.FieldSpec{
-			WireName: "schedule_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_ScheduleTriggerFields,
-		},
-		"SecurityTrigger": ubx.FieldSpec{
-			WireName: "security_trigger",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
-		},
-		"SelfServiceTrigger": ubx.FieldSpec{WireName: "self_service_trigger"},
-		"SlackTrigger": ubx.FieldSpec{WireName: "slack_trigger"},
-		"SoftwareCatalogTrigger": ubx.FieldSpec{WireName: "software_catalog_trigger"},
-		"StartStepNames": ubx.FieldSpec{WireName: "start_step_names"},
-		"WorkflowTrigger": ubx.FieldSpec{WireName: "workflow_trigger"},
-	}
+	"AgentTrigger": ubx.FieldSpec{
+		WireName: "agent_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+	},
+	"ApiTrigger": ubx.FieldSpec{
+		WireName: "api_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+	},
+	"AppTrigger": ubx.FieldSpec{WireName: "app_trigger"},
+	"CaseTrigger": ubx.FieldSpec{
+		WireName: "case_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+	},
+	"ChangeEventTrigger":        ubx.FieldSpec{WireName: "change_event_trigger"},
+	"DashboardTrigger":          ubx.FieldSpec{WireName: "dashboard_trigger"},
+	"DatabaseMonitoringTrigger": ubx.FieldSpec{WireName: "database_monitoring_trigger"},
+	"DatastoreTrigger": ubx.FieldSpec{
+		WireName: "datastore_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+	},
+	"FormTrigger": ubx.FieldSpec{
+		WireName: "form_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_FormTriggerFields,
+	},
+	"GithubWebhookTrigger": ubx.FieldSpec{
+		WireName: "github_webhook_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+	},
+	"IncidentTrigger": ubx.FieldSpec{
+		WireName: "incident_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+	},
+	"MonitorTrigger": ubx.FieldSpec{
+		WireName: "monitor_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+	},
+	"NotebookTrigger": ubx.FieldSpec{WireName: "notebook_trigger"},
+	"OnCallTrigger": ubx.FieldSpec{
+		WireName: "on_call_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+	},
+	"ScheduleTrigger": ubx.FieldSpec{
+		WireName: "schedule_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_ScheduleTriggerFields,
+	},
+	"SecurityTrigger": ubx.FieldSpec{
+		WireName: "security_trigger",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+	},
+	"SelfServiceTrigger":     ubx.FieldSpec{WireName: "self_service_trigger"},
+	"SlackTrigger":           ubx.FieldSpec{WireName: "slack_trigger"},
+	"SoftwareCatalogTrigger": ubx.FieldSpec{WireName: "software_catalog_trigger"},
+	"StartStepNames":         ubx.FieldSpec{WireName: "start_step_names"},
+	"WorkflowTrigger":        ubx.FieldSpec{WireName: "workflow_trigger"},
+}
 
 var WorkflowResponse_Data_Attributes_SpecFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{
-			WireName: "annotations",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_AnnotationsFields,
-		},
-		"ConnectionEnvs": ubx.FieldSpec{
-			WireName: "connection_envs",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_ConnectionEnvsFields,
-		},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_InputSchemaFields,
-		},
-		"OutputSchema": ubx.FieldSpec{
-			WireName: "output_schema",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_Spec_OutputSchemaFields,
-		},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_StepsFields,
-		},
-		"Triggers": ubx.FieldSpec{
-			WireName: "triggers",
-			Kind: "list",
-			Fields: WorkflowResponse_Data_Attributes_Spec_TriggersFields,
-		},
-	}
+	"Annotations": ubx.FieldSpec{
+		WireName: "annotations",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_AnnotationsFields,
+	},
+	"ConnectionEnvs": ubx.FieldSpec{
+		WireName: "connection_envs",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_ConnectionEnvsFields,
+	},
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_InputSchemaFields,
+	},
+	"OutputSchema": ubx.FieldSpec{
+		WireName: "output_schema",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_OutputSchemaFields,
+	},
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_StepsFields,
+	},
+	"Triggers": ubx.FieldSpec{
+		WireName: "triggers",
+		Kind:     "list",
+		Fields:   WorkflowResponse_Data_Attributes_Spec_TriggersFields,
+	},
+}
 
 var WorkflowResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Published": ubx.FieldSpec{WireName: "published"},
-		"Spec": ubx.FieldSpec{
-			WireName: "spec",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Attributes_SpecFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-		"WebhookSecret": ubx.FieldSpec{WireName: "webhook_secret"},
-	}
+	"CreatedAt":   ubx.FieldSpec{WireName: "created_at"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Published":   ubx.FieldSpec{WireName: "published"},
+	"Spec": ubx.FieldSpec{
+		WireName: "spec",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Attributes_SpecFields,
+	},
+	"Tags":          ubx.FieldSpec{WireName: "tags"},
+	"UpdatedAt":     ubx.FieldSpec{WireName: "updated_at"},
+	"WebhookSecret": ubx.FieldSpec{WireName: "webhook_secret"},
+}
 
 var WorkflowResponse_Data_Relationships_Creator_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var WorkflowResponse_Data_Relationships_CreatorFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Relationships_Creator_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Relationships_Creator_DataFields,
+	},
+}
 
 var WorkflowResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"Creator": ubx.FieldSpec{
-			WireName: "creator",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Relationships_CreatorFields,
-		},
-		"Owner": ubx.FieldSpec{
-			WireName: "owner",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_Relationships_CreatorFields,
-		},
-	}
+	"Creator": ubx.FieldSpec{
+		WireName: "creator",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Relationships_CreatorFields,
+	},
+	"Owner": ubx.FieldSpec{
+		WireName: "owner",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_Relationships_CreatorFields,
+	},
+}
 
 var WorkflowResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: WorkflowResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   WorkflowResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type WorkflowResponseConfig struct {
 	// Data related to the workflow.
@@ -636,8 +636,8 @@ var WorkflowResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: WorkflowResponse_DataFields,
+			Kind:     "object",
+			Fields:   WorkflowResponse_DataFields,
 		},
 		"WorkflowId": ubx.FieldSpec{WireName: "workflow_id"},
 	},

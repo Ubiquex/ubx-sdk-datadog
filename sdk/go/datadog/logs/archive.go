@@ -4,7 +4,7 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Archive_Data_Attributes_Destination_Encryption struct {
-	Key any
+	Key  any
 	Type any
 }
 
@@ -14,15 +14,15 @@ type Archive_Data_Attributes_Destination_Integration struct {
 }
 
 type Archive_Data_Attributes_Destination struct {
-	Bucket any
-	Container any
-	Encryption any
-	Integration any
-	Path any
-	Region any
+	Bucket         any
+	Container      any
+	Encryption     any
+	Integration    any
+	Path           any
+	Region         any
 	StorageAccount any
-	StorageClass any
-	Type any
+	StorageClass   any
+	Type           any
 }
 
 type Archive_Data_Attributes struct {
@@ -44,69 +44,75 @@ type Archive_Data_Attributes struct {
 	RehydrationMaxScanSizeInGb any
 	// An array of tags to add to rehydrated logs from an archive.
 	RehydrationTags any
+	// The state of the archive.
+	State any
 }
 
 type Archive_Data struct {
 	// The attributes associated with the archive.
 	Attributes any
+	// The archive ID.
+	Id any
 	// The type of the resource. The value should always be archives.
 	Type any
 }
 
 var Archive_Data_Attributes_Destination_EncryptionFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Key":  ubx.FieldSpec{WireName: "key"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Archive_Data_Attributes_Destination_IntegrationFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var Archive_Data_Attributes_DestinationFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Container": ubx.FieldSpec{WireName: "container"},
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: Archive_Data_Attributes_Destination_EncryptionFields,
-		},
-		"Integration": ubx.FieldSpec{
-			WireName: "integration",
-			Kind: "object",
-			Fields: Archive_Data_Attributes_Destination_IntegrationFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"StorageAccount": ubx.FieldSpec{WireName: "storage_account"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Bucket":    ubx.FieldSpec{WireName: "bucket"},
+	"Container": ubx.FieldSpec{WireName: "container"},
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   Archive_Data_Attributes_Destination_EncryptionFields,
+	},
+	"Integration": ubx.FieldSpec{
+		WireName: "integration",
+		Kind:     "object",
+		Fields:   Archive_Data_Attributes_Destination_IntegrationFields,
+	},
+	"Path":           ubx.FieldSpec{WireName: "path"},
+	"Region":         ubx.FieldSpec{WireName: "region"},
+	"StorageAccount": ubx.FieldSpec{WireName: "storage_account"},
+	"StorageClass":   ubx.FieldSpec{WireName: "storage_class"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Archive_Data_AttributesFields = ubx.FieldMap{
-		"CompressionMethod": ubx.FieldSpec{WireName: "compression_method"},
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: Archive_Data_Attributes_DestinationFields,
-		},
-		"IncludeTags": ubx.FieldSpec{WireName: "include_tags"},
-		"LookupAttributes": ubx.FieldSpec{WireName: "lookup_attributes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PartitioningAttributes": ubx.FieldSpec{WireName: "partitioning_attributes"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"RehydrationMaxScanSizeInGb": ubx.FieldSpec{WireName: "rehydration_max_scan_size_in_gb"},
-		"RehydrationTags": ubx.FieldSpec{WireName: "rehydration_tags"},
-	}
+	"CompressionMethod": ubx.FieldSpec{WireName: "compression_method"},
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   Archive_Data_Attributes_DestinationFields,
+	},
+	"IncludeTags":                ubx.FieldSpec{WireName: "include_tags"},
+	"LookupAttributes":           ubx.FieldSpec{WireName: "lookup_attributes"},
+	"Name":                       ubx.FieldSpec{WireName: "name"},
+	"PartitioningAttributes":     ubx.FieldSpec{WireName: "partitioning_attributes"},
+	"Query":                      ubx.FieldSpec{WireName: "query"},
+	"RehydrationMaxScanSizeInGb": ubx.FieldSpec{WireName: "rehydration_max_scan_size_in_gb"},
+	"RehydrationTags":            ubx.FieldSpec{WireName: "rehydration_tags"},
+	"State":                      ubx.FieldSpec{WireName: "state"},
+}
 
 var Archive_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Archive_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Archive_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ArchiveConfig struct {
 	// The definition of an archive.
@@ -127,8 +133,8 @@ var Archive = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Archive_DataFields,
+			Kind:     "object",
+			Fields:   Archive_DataFields,
 		},
 		"ArchiveId": ubx.FieldSpec{WireName: "archive_id"},
 	},

@@ -11,6 +11,8 @@ export interface TeamsWorkflowsWebhookHandleResponse_Data_Attributes {
 export interface TeamsWorkflowsWebhookHandleResponse_Data {
   /** Workflows Webhook handle attributes. */
   attributes: TeamsWorkflowsWebhookHandleResponse_Data_Attributes | Computed<TeamsWorkflowsWebhookHandleResponse_Data_Attributes>;
+  /** The ID of the Workflows webhook handle. */
+  id?: string | Computed<string>;
   /** Specifies the Workflows webhook handle resource type. */
   type: string | Computed<string>;
 }
@@ -26,6 +28,7 @@ const TeamsWorkflowsWebhookHandleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: TeamsWorkflowsWebhookHandleResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

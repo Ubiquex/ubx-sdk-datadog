@@ -2,6 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ViewResponse_Data_Attributes {
+  /** Timestamp when the view was created. */
+  createdAt?: string | Computed<string>;
+  /** Timestamp when the view was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the view. */
   name: string | Computed<string>;
   /** The identifier of a notification rule linked to this view. When set, users subscribed to the view receive alerts for matching cases. */
@@ -12,18 +16,76 @@ export interface ViewResponse_Data_Attributes {
   query: string | Computed<string>;
 }
 
+export interface ViewResponse_Data_Relationships_CreatedBy_Data {
+  /** A unique identifier that represents the user. */
+  id: string | Computed<string>;
+  /** User resource type. */
+  type: string | Computed<string>;
+}
+
+export interface ViewResponse_Data_Relationships_CreatedBy {
+  /** Relationship to user object. */
+  data: ViewResponse_Data_Relationships_CreatedBy_Data | Computed<ViewResponse_Data_Relationships_CreatedBy_Data>;
+}
+
+export interface ViewResponse_Data_Relationships {
+  /** Relationship to user. */
+  createdBy?: ViewResponse_Data_Relationships_CreatedBy | Computed<ViewResponse_Data_Relationships_CreatedBy>;
+  /** Relationship to user. */
+  modifiedBy?: ViewResponse_Data_Relationships_CreatedBy | Computed<ViewResponse_Data_Relationships_CreatedBy>;
+  /** Relationship to project. */
+  project?: ViewResponse_Data_Relationships_CreatedBy | Computed<ViewResponse_Data_Relationships_CreatedBy>;
+}
+
 export interface ViewResponse_Data {
   /** Attributes required to create a case view. */
   attributes: ViewResponse_Data_Attributes | Computed<ViewResponse_Data_Attributes>;
+  /** The view's identifier. */
+  id?: string | Computed<string>;
+  /** Related resources for the case view, including the creator, last modifier, and associated project. */
+  relationships?: ViewResponse_Data_Relationships | Computed<ViewResponse_Data_Relationships>;
   /** JSON:API resource type for case views. */
   type: string | Computed<string>;
 }
 
 const ViewResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  modifiedAt: "modified_at",
   name: "name",
   npRuleId: "np_rule_id",
   projectId: "project_id",
   query: "query",
+};
+
+const ViewResponse_Data_Relationships_CreatedBy_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const ViewResponse_Data_Relationships_CreatedByFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: ViewResponse_Data_Relationships_CreatedBy_DataFields,
+  },
+};
+
+const ViewResponse_Data_RelationshipsFields: FieldMap = {
+  createdBy: {
+    wireName: "created_by",
+    kind: "object",
+    fields: ViewResponse_Data_Relationships_CreatedByFields,
+  },
+  modifiedBy: {
+    wireName: "modified_by",
+    kind: "object",
+    fields: ViewResponse_Data_Relationships_CreatedByFields,
+  },
+  project: {
+    wireName: "project",
+    kind: "object",
+    fields: ViewResponse_Data_Relationships_CreatedByFields,
+  },
 };
 
 const ViewResponse_DataFields: FieldMap = {
@@ -31,6 +93,12 @@ const ViewResponse_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: ViewResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: ViewResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

@@ -61,6 +61,8 @@ export interface AppResponse_Data_Attributes {
   components?: AppResponse_Data_Attributes_Components[] | Computed<AppResponse_Data_Attributes_Components[]>;
   /** A human-readable description for the app. */
   description?: string | Computed<string>;
+  /** Whether the app is marked as a favorite by the current user. */
+  favorite?: boolean | Computed<boolean>;
   /** The name of the app. */
   name?: string | Computed<string>;
   /** An array of queries, such as external actions and state variables, that the app uses. */
@@ -74,6 +76,8 @@ export interface AppResponse_Data_Attributes {
 export interface AppResponse_Data {
   /** App definition attributes such as name, description, and components. */
   attributes?: AppResponse_Data_Attributes | Computed<AppResponse_Data_Attributes>;
+  /** The ID of the app. */
+  id?: string | Computed<string>;
   /** The app definition type. */
   type: string | Computed<string>;
 }
@@ -248,6 +252,7 @@ const AppResponse_Data_AttributesFields: FieldMap = {
     fields: AppResponse_Data_Attributes_ComponentsFields,
   },
   description: "description",
+  favorite: "favorite",
   name: "name",
   queries: {
     wireName: "queries",
@@ -264,6 +269,7 @@ const AppResponse_DataFields: FieldMap = {
     kind: "object",
     fields: AppResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

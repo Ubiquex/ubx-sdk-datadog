@@ -15,19 +15,14 @@ class Index_DailyLimitReset:
 
 @dataclasses.dataclass
 class Index_ExclusionFilters_Filter:
-    # The query string to filter logs that should be excluded from the index. It follows the Datadog log search syntax. (AI-inferred)
     query: Any = None
     sample_attribute: Any = None
-    # The fraction of logs matching the exclusion filter query that will be excluded. Must be a number between 0 and 1, where 1.0 excludes all matching logs. (AI-inferred)
     sample_rate: Any = None
 
 @dataclasses.dataclass
 class Index_ExclusionFilters:
-    # The filter object defines the query criteria that determine which logs are excluded from the index based on the exclusion filter's configuration. (AI-inferred)
     filter: Any = None
-    # Whether the exclusion filter is enabled. When true, logs matching the filter's query are excluded from the index. (AI-inferred)
     is_enabled: Any = None
-    # Name of the exclusion filter. This is a user-defined label used to identify the filter within the logs index. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
@@ -72,8 +67,6 @@ class IndexConfig:
     exclusion_filters: Any = None
     # Filter for logs.
     filter: Any = None
-    # A boolean stating if the index is rate limited, meaning more logs than the daily limit have been sent. Rate limit is reset every-day at 2pm UTC.
-    is_rate_limited: Any = None
     # The name of the index.
     name: Any = None
     # The total number of days logs are stored in Standard and Flex Tier before being deleted from the index. If Standard Tier is enabled on this index, logs are first retained in Standard Tier for the number of days specified through `num_retention_days`, and then stored in Flex Tier until the number of days specified in `num_flex_logs_retention_days` is reached. The available values depend on retention plans specified in your organization's contract/subscriptions.
@@ -126,7 +119,6 @@ Index = ubx.ResourceBinding(
             kind="object",
             fields=_Index_FilterFields,
         ),
-        "is_rate_limited": ubx.FieldSpec(wire_name="is_rate_limited"),
         "name": ubx.FieldSpec(wire_name="name"),
         "num_flex_logs_retention_days": ubx.FieldSpec(wire_name="num_flex_logs_retention_days"),
         "num_retention_days": ubx.FieldSpec(wire_name="num_retention_days"),

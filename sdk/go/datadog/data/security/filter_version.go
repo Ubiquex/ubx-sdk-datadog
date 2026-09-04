@@ -4,31 +4,31 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FilterVersion_Data_Attributes_Filters_ExclusionFilters struct {
-	Name any
+	Name  any
 	Query any
 }
 
 type FilterVersion_Data_Attributes_Filters struct {
 	ExclusionFilters any
 	FilteredDataType any
-	Id any
-	IsBuiltin any
-	IsEnabled any
-	Name any
-	Query any
-	Version any
+	Id               any
+	IsBuiltin        any
+	IsEnabled        any
+	Name             any
+	Query            any
+	Version          any
 }
 
 type FilterVersion_Data_Attributes struct {
-	Date any
+	Date    any
 	Filters any
 	Version any
 }
 
 type FilterVersion_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type FilterVersionConfig struct {
@@ -41,6 +41,5 @@ type FilterVersionAttrs struct {
 
 var FilterVersion = ubx.DataSourceBinding{
 	WireType: "datadog_security_filter_version",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

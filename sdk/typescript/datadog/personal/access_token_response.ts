@@ -2,25 +2,79 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AccessTokenResponse_Data_Attributes {
+  /** Creation date of the access token. */
+  createdAt?: string | Computed<string>;
   /** Expiration date of the access token. Must be at least 24 hours in the future. */
-  expiresAt: string | Computed<string>;
+  expiresAt?: string | Computed<string>;
+  /** Date the access token was last used. */
+  lastUsedAt?: string | Computed<string>;
+  /** Date of last modification of the access token. */
+  modifiedAt?: string | Computed<string>;
   /** Name of the access token. */
   name: string | Computed<string>;
+  /** The public portion of the access token. */
+  publicPortion?: string | Computed<string>;
   /** Array of scopes to grant the access token. */
   scopes: string[] | Computed<string[]>;
+}
+
+export interface AccessTokenResponse_Data_Relationships_OwnedBy_Data {
+  /** A unique identifier that represents the user. */
+  id: string | Computed<string>;
+  /** Users resource type. */
+  type: string | Computed<string>;
+}
+
+export interface AccessTokenResponse_Data_Relationships_OwnedBy {
+  /** Relationship to user object. */
+  data: AccessTokenResponse_Data_Relationships_OwnedBy_Data | Computed<AccessTokenResponse_Data_Relationships_OwnedBy_Data>;
+}
+
+export interface AccessTokenResponse_Data_Relationships {
+  /** Relationship to user. */
+  ownedBy?: AccessTokenResponse_Data_Relationships_OwnedBy | Computed<AccessTokenResponse_Data_Relationships_OwnedBy>;
 }
 
 export interface AccessTokenResponse_Data {
   /** Attributes used to create an access token. */
   attributes: AccessTokenResponse_Data_Attributes | Computed<AccessTokenResponse_Data_Attributes>;
+  /** ID of the access token. */
+  id?: string | Computed<string>;
+  /** Resources related to the access token. */
+  relationships?: AccessTokenResponse_Data_Relationships | Computed<AccessTokenResponse_Data_Relationships>;
   /** Personal access tokens resource type. */
   type: string | Computed<string>;
 }
 
 const AccessTokenResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
   expiresAt: "expires_at",
+  lastUsedAt: "last_used_at",
+  modifiedAt: "modified_at",
   name: "name",
+  publicPortion: "public_portion",
   scopes: "scopes",
+};
+
+const AccessTokenResponse_Data_Relationships_OwnedBy_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const AccessTokenResponse_Data_Relationships_OwnedByFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: AccessTokenResponse_Data_Relationships_OwnedBy_DataFields,
+  },
+};
+
+const AccessTokenResponse_Data_RelationshipsFields: FieldMap = {
+  ownedBy: {
+    wireName: "owned_by",
+    kind: "object",
+    fields: AccessTokenResponse_Data_Relationships_OwnedByFields,
+  },
 };
 
 const AccessTokenResponse_DataFields: FieldMap = {
@@ -28,6 +82,12 @@ const AccessTokenResponse_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: AccessTokenResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: AccessTokenResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

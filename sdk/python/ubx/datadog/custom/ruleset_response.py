@@ -55,6 +55,10 @@ class RulesetResponse_Data_Attributes_Rules:
 
 @dataclasses.dataclass
 class RulesetResponse_Data_Attributes:
+    # Creation timestamp
+    created_at: Any = None
+    # Creator identifier
+    created_by: Any = None
     # Base64-encoded full description
     description: Any = None
     # Ruleset name
@@ -137,6 +141,8 @@ _RulesetResponse_Data_Attributes_RulesFields = {
 }
 
 _RulesetResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
     "description": ubx.FieldSpec(wire_name="description"),
     "name": ubx.FieldSpec(wire_name="name"),
     "rules": ubx.FieldSpec(

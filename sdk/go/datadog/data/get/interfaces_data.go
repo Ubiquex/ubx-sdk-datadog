@@ -4,37 +4,37 @@ package get
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InterfacesData_Data_Attributes struct {
-	Alias any
+	Alias       any
 	Description any
-	Index any
+	Index       any
 	IpAddresses any
-	MacAddress any
-	Name any
-	Status any
+	MacAddress  any
+	Name        any
+	Status      any
 }
 
 type InterfacesData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type InterfacesDataConfig struct {
-	DeviceId any
+	DeviceId       any
 	GetIpAddresses any
 }
 
 type InterfacesDataAttrs struct {
 	// Get Interfaces response
-	Data any
-	DeviceId any
+	Data           any
+	DeviceId       any
 	GetIpAddresses any
 }
 
 var InterfacesData = ubx.DataSourceBinding{
 	WireType: "datadog_get_interfaces_data",
 	Fields: ubx.FieldMap{
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
+		"DeviceId":       ubx.FieldSpec{WireName: "device_id"},
 		"GetIpAddresses": ubx.FieldSpec{WireName: "get_ip_addresses"},
 	},
 }

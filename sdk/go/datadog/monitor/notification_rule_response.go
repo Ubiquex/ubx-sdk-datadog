@@ -10,7 +10,7 @@ type NotificationRuleResponse_Data_Attributes_BundleConfig struct {
 
 type NotificationRuleResponse_Data_Attributes_ConditionalRecipients_Conditions struct {
 	Recipients any
-	Scope any
+	Scope      any
 }
 
 type NotificationRuleResponse_Data_Attributes_ConditionalRecipients struct {
@@ -22,7 +22,7 @@ type NotificationRuleResponse_Data_Attributes_ConditionalRecipients struct {
 
 type NotificationRuleResponse_Data_Attributes_Filter struct {
 	Scope any
-	Tags any
+	Tags  any
 }
 
 type NotificationRuleResponse_Data_Attributes struct {
@@ -30,45 +30,61 @@ type NotificationRuleResponse_Data_Attributes struct {
 	BundleConfig any
 	// Use conditional recipients to define different recipients for different situations. Cannot be used with `recipients`.
 	ConditionalRecipients any
+	// Creation time of the monitor notification rule.
+	Created any
 	// Specifies the matching criteria for monitor notifications.
 	Filter any
+	// Time the monitor notification rule was last modified.
+	Modified any
 	// The name of the monitor notification rule.
 	Name any
 	// A list of recipients to notify. Uses the same format as the monitor `message` field. Must not start with an '@'. Cannot be used with `conditional_recipients`.
 	Recipients any
 }
 
+type NotificationRuleResponse_Data_Relationships_CreatedBy_Data struct {
+	// User ID of the monitor notification rule creator.
+	Id any
+	// Users resource type.
+	Type any
+}
+
+type NotificationRuleResponse_Data_Relationships_CreatedBy struct {
+	// Data for the user who created the monitor notification rule.
+	Data any
+}
+
+type NotificationRuleResponse_Data_Relationships struct {
+	// The user who created the monitor notification rule.
+	CreatedBy any
+}
+
 type NotificationRuleResponse_Data struct {
 	// Attributes of the monitor notification rule.
 	Attributes any
+	// The ID of the monitor notification rule.
+	Id any
+	// All relationships associated with monitor notification rule.
+	Relationships any
 	// Monitor notification rule resource type.
 	Type any
 }
 
 type NotificationRuleResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
-}
-
-type NotificationRuleResponse_Included_Relationships_Org_Data struct {
-	Id any
-	Type any
-}
-
-type NotificationRuleResponse_Included_Relationships_Org struct {
-	Data any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type NotificationRuleResponse_Included_Relationships_OtherOrgs struct {
@@ -76,70 +92,99 @@ type NotificationRuleResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type NotificationRuleResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type NotificationRuleResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var NotificationRuleResponse_Data_Attributes_BundleConfigFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-	}
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+}
 
 var NotificationRuleResponse_Data_Attributes_ConditionalRecipients_ConditionsFields = ubx.FieldMap{
-		"Recipients": ubx.FieldSpec{WireName: "recipients"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"Recipients": ubx.FieldSpec{WireName: "recipients"},
+	"Scope":      ubx.FieldSpec{WireName: "scope"},
+}
 
 var NotificationRuleResponse_Data_Attributes_ConditionalRecipientsFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: NotificationRuleResponse_Data_Attributes_ConditionalRecipients_ConditionsFields,
-		},
-		"FallbackRecipients": ubx.FieldSpec{WireName: "fallback_recipients"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   NotificationRuleResponse_Data_Attributes_ConditionalRecipients_ConditionsFields,
+	},
+	"FallbackRecipients": ubx.FieldSpec{WireName: "fallback_recipients"},
+}
 
 var NotificationRuleResponse_Data_Attributes_FilterFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Scope": ubx.FieldSpec{WireName: "scope"},
+	"Tags":  ubx.FieldSpec{WireName: "tags"},
+}
 
 var NotificationRuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"BundleConfig": ubx.FieldSpec{
-			WireName: "bundle_config",
-			Kind: "object",
-			Fields: NotificationRuleResponse_Data_Attributes_BundleConfigFields,
-		},
-		"ConditionalRecipients": ubx.FieldSpec{
-			WireName: "conditional_recipients",
-			Kind: "object",
-			Fields: NotificationRuleResponse_Data_Attributes_ConditionalRecipientsFields,
-		},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: NotificationRuleResponse_Data_Attributes_FilterFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Recipients": ubx.FieldSpec{WireName: "recipients"},
-	}
+	"BundleConfig": ubx.FieldSpec{
+		WireName: "bundle_config",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_Attributes_BundleConfigFields,
+	},
+	"ConditionalRecipients": ubx.FieldSpec{
+		WireName: "conditional_recipients",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_Attributes_ConditionalRecipientsFields,
+	},
+	"Created": ubx.FieldSpec{WireName: "created"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_Attributes_FilterFields,
+	},
+	"Modified":   ubx.FieldSpec{WireName: "modified"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Recipients": ubx.FieldSpec{WireName: "recipients"},
+}
+
+var NotificationRuleResponse_Data_Relationships_CreatedBy_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var NotificationRuleResponse_Data_Relationships_CreatedByFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_Relationships_CreatedBy_DataFields,
+	},
+}
+
+var NotificationRuleResponse_Data_RelationshipsFields = ubx.FieldMap{
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_Relationships_CreatedByFields,
+	},
+}
 
 var NotificationRuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: NotificationRuleResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type NotificationRuleResponseConfig struct {
 	// Object to create a monitor notification rule.
@@ -162,8 +207,8 @@ var NotificationRuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: NotificationRuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   NotificationRuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

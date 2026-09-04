@@ -7,6 +7,13 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Resp_Data_Attributes_Created:
+    # The `created` `nanos`.
+    nanos: Any = None
+    # The `created` `seconds`.
+    seconds: Any = None
+
+@dataclasses.dataclass
 class Resp_Data_Attributes_Rules_Mapping:
     destination_key: Any = None
     if_not_exists: Any = None
@@ -51,10 +58,24 @@ class Resp_Data_Attributes_Rules:
 
 @dataclasses.dataclass
 class Resp_Data_Attributes:
+    # The definition of `RulesetRespDataAttributesCreated` object.
+    created: Any = None
     # The `attributes` `enabled`.
     enabled: Any = None
+    # The `attributes` `last_modified_user_uuid`.
+    last_modified_user_uuid: Any = None
+    # The definition of `RulesetRespDataAttributesModified` object.
+    modified: Any = None
+    # The `attributes` `name`.
+    name: Any = None
+    # The `attributes` `position`.
+    position: Any = None
+    # The `attributes` `processing_status`.
+    processing_status: Any = None
     # The `attributes` `rules`.
     rules: Any = None
+    # The `attributes` `version`.
+    version: Any = None
 
 @dataclasses.dataclass
 class Resp_Data:
@@ -64,6 +85,11 @@ class Resp_Data:
     id: Any = None
     # Create ruleset resource type.
     type: Any = None
+
+_Resp_Data_Attributes_CreatedFields = {
+    "nanos": ubx.FieldSpec(wire_name="nanos"),
+    "seconds": ubx.FieldSpec(wire_name="seconds"),
+}
 
 _Resp_Data_Attributes_Rules_MappingFields = {
     "destination_key": ubx.FieldSpec(wire_name="destination_key"),
@@ -129,12 +155,27 @@ _Resp_Data_Attributes_RulesFields = {
 }
 
 _Resp_Data_AttributesFields = {
+    "created": ubx.FieldSpec(
+        wire_name="created",
+        kind="object",
+        fields=_Resp_Data_Attributes_CreatedFields,
+    ),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "last_modified_user_uuid": ubx.FieldSpec(wire_name="last_modified_user_uuid"),
+    "modified": ubx.FieldSpec(
+        wire_name="modified",
+        kind="object",
+        fields=_Resp_Data_Attributes_CreatedFields,
+    ),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "position": ubx.FieldSpec(wire_name="position"),
+    "processing_status": ubx.FieldSpec(wire_name="processing_status"),
     "rules": ubx.FieldSpec(
         wire_name="rules",
         kind="list",
         fields=_Resp_Data_Attributes_RulesFields,
     ),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _Resp_DataFields = {

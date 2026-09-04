@@ -32,6 +32,8 @@ export interface SdkConfigResponse_Data_Attributes_Rum {
   allowedTracingUrls?: SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls[] | Computed<SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls[]>;
   /** A list of origin patterns allowed for cross-origin session tracking. */
   allowedTrackingOrigins?: SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_Match[] | Computed<SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_Match[]>;
+  /** The ID of the RUM application this configuration belongs to. */
+  applicationId?: string | Computed<string>;
   /** A list of dynamic option key-value pairs. */
   context?: SdkConfigResponse_Data_Attributes_Rum_Context[] | Computed<SdkConfigResponse_Data_Attributes_Rum_Context[]>;
   /** The default privacy masking level applied to all RUM data. */
@@ -61,11 +63,20 @@ export interface SdkConfigResponse_Data_Attributes {
   rum: SdkConfigResponse_Data_Attributes_Rum | Computed<SdkConfigResponse_Data_Attributes_Rum>;
 }
 
+export interface SdkConfigResponse_Data_Meta {
+  /** The timestamp of the last update to this configuration. */
+  updatedAt: string | Computed<string>;
+  /** The handle of the user who last updated this configuration. */
+  updatedBy: string | Computed<string>;
+}
+
 export interface SdkConfigResponse_Data {
   /** Attributes of the RUM SDK configuration to update. */
   attributes: SdkConfigResponse_Data_Attributes | Computed<SdkConfigResponse_Data_Attributes>;
   /** The ID of the RUM SDK configuration to update. */
   id: string | Computed<string>;
+  /** Metadata associated with a RUM SDK configuration. */
+  meta?: SdkConfigResponse_Data_Meta | Computed<SdkConfigResponse_Data_Meta>;
   /** The type of the resource. The value should always be `rum_sdk_config`. */
   type: string | Computed<string>;
 }
@@ -119,6 +130,7 @@ const SdkConfigResponse_Data_Attributes_RumFields: FieldMap = {
     kind: "list",
     fields: SdkConfigResponse_Data_Attributes_Rum_AllowedTracingUrls_MatchFields,
   },
+  applicationId: "application_id",
   context: {
     wireName: "context",
     kind: "list",
@@ -152,6 +164,11 @@ const SdkConfigResponse_Data_AttributesFields: FieldMap = {
   },
 };
 
+const SdkConfigResponse_Data_MetaFields: FieldMap = {
+  updatedAt: "updated_at",
+  updatedBy: "updated_by",
+};
+
 const SdkConfigResponse_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
@@ -159,6 +176,11 @@ const SdkConfigResponse_DataFields: FieldMap = {
     fields: SdkConfigResponse_Data_AttributesFields,
   },
   id: "id",
+  meta: {
+    wireName: "meta",
+    kind: "object",
+    fields: SdkConfigResponse_Data_MetaFields,
+  },
   type: "type",
 };
 

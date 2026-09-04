@@ -2,15 +2,42 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ApplicationKeyResponse_Data_Attributes {
+  /** Creation date of the application key. */
+  createdAt?: string | Computed<string>;
+  /** The last four characters of the application key. */
+  last4?: string | Computed<string>;
+  /** Last usage timestamp of the application key. */
+  lastUsedAt?: string | Computed<string>;
   /** Name of the application key. */
   name: string | Computed<string>;
   /** Array of scopes to grant the application key. */
   scopes?: string[] | Computed<string[]>;
 }
 
+export interface ApplicationKeyResponse_Data_Relationships_OwnedBy_Data {
+  /** A unique identifier that represents the user. */
+  id: string | Computed<string>;
+  /** Users resource type. */
+  type: string | Computed<string>;
+}
+
+export interface ApplicationKeyResponse_Data_Relationships_OwnedBy {
+  /** Relationship to user object. */
+  data: ApplicationKeyResponse_Data_Relationships_OwnedBy_Data | Computed<ApplicationKeyResponse_Data_Relationships_OwnedBy_Data>;
+}
+
+export interface ApplicationKeyResponse_Data_Relationships {
+  /** Relationship to user. */
+  ownedBy?: ApplicationKeyResponse_Data_Relationships_OwnedBy | Computed<ApplicationKeyResponse_Data_Relationships_OwnedBy>;
+}
+
 export interface ApplicationKeyResponse_Data {
   /** Attributes used to create an application Key. */
   attributes: ApplicationKeyResponse_Data_Attributes | Computed<ApplicationKeyResponse_Data_Attributes>;
+  /** ID of the application key. */
+  id?: string | Computed<string>;
+  /** Resources related to the application key. */
+  relationships?: ApplicationKeyResponse_Data_Relationships | Computed<ApplicationKeyResponse_Data_Relationships>;
   /** Application Keys resource type. */
   type: string | Computed<string>;
 }
@@ -32,21 +59,12 @@ export interface ApplicationKeyResponse_Included_Attributes {
   verified?: boolean | Computed<boolean>;
 }
 
-export interface ApplicationKeyResponse_Included_Relationships_Org_Data {
-  id?: string | Computed<string>;
-  type?: string | Computed<string>;
-}
-
-export interface ApplicationKeyResponse_Included_Relationships_Org {
-  data?: ApplicationKeyResponse_Included_Relationships_Org_Data | Computed<ApplicationKeyResponse_Included_Relationships_Org_Data>;
-}
-
 export interface ApplicationKeyResponse_Included_Relationships_OtherOrgs {
-  data?: ApplicationKeyResponse_Included_Relationships_Org_Data[] | Computed<ApplicationKeyResponse_Included_Relationships_Org_Data[]>;
+  data?: ApplicationKeyResponse_Data_Relationships_OwnedBy_Data[] | Computed<ApplicationKeyResponse_Data_Relationships_OwnedBy_Data[]>;
 }
 
 export interface ApplicationKeyResponse_Included_Relationships {
-  org?: ApplicationKeyResponse_Included_Relationships_Org | Computed<ApplicationKeyResponse_Included_Relationships_Org>;
+  org?: ApplicationKeyResponse_Data_Relationships_OwnedBy | Computed<ApplicationKeyResponse_Data_Relationships_OwnedBy>;
   otherOrgs?: ApplicationKeyResponse_Included_Relationships_OtherOrgs | Computed<ApplicationKeyResponse_Included_Relationships_OtherOrgs>;
   otherUsers?: ApplicationKeyResponse_Included_Relationships_OtherOrgs | Computed<ApplicationKeyResponse_Included_Relationships_OtherOrgs>;
   roles?: ApplicationKeyResponse_Included_Relationships_OtherOrgs | Computed<ApplicationKeyResponse_Included_Relationships_OtherOrgs>;
@@ -60,8 +78,32 @@ export interface ApplicationKeyResponse_Included {
 }
 
 const ApplicationKeyResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  last4: "last4",
+  lastUsedAt: "last_used_at",
   name: "name",
   scopes: "scopes",
+};
+
+const ApplicationKeyResponse_Data_Relationships_OwnedBy_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const ApplicationKeyResponse_Data_Relationships_OwnedByFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: ApplicationKeyResponse_Data_Relationships_OwnedBy_DataFields,
+  },
+};
+
+const ApplicationKeyResponse_Data_RelationshipsFields: FieldMap = {
+  ownedBy: {
+    wireName: "owned_by",
+    kind: "object",
+    fields: ApplicationKeyResponse_Data_Relationships_OwnedByFields,
+  },
 };
 
 const ApplicationKeyResponse_DataFields: FieldMap = {
@@ -69,6 +111,12 @@ const ApplicationKeyResponse_DataFields: FieldMap = {
     wireName: "attributes",
     kind: "object",
     fields: ApplicationKeyResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: ApplicationKeyResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

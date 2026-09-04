@@ -4,30 +4,30 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TypeObject_Data_Attributes_Configuration struct {
-	AllowIncidentDeletion any
-	AllowWorkflows any
-	CreateMessage any
-	EditableTimestamps any
-	PrivateIncidents any
+	AllowIncidentDeletion     any
+	AllowWorkflows            any
+	CreateMessage             any
+	EditableTimestamps        any
+	PrivateIncidents          any
 	PrivateIncidentsByDefault any
-	SlugSource any
-	TestIncidents any
+	SlugSource                any
+	TestIncidents             any
 }
 
 type TypeObject_Data_Attributes struct {
-	Configuration any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	IsDefault any
+	Configuration  any
+	CreatedAt      any
+	CreatedBy      any
+	Description    any
+	IsDefault      any
 	LastModifiedBy any
-	ModifiedAt any
-	Name any
-	Prefix any
+	ModifiedAt     any
+	Name           any
+	Prefix         any
 }
 
 type TypeObject_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -36,18 +36,18 @@ type TypeObject_Data_Relationships_CreatedByUser struct {
 }
 
 type TypeObject_Data_Relationships struct {
-	CreatedByUser any
-	GoogleMeetConfiguration any
-	LastModifiedByUser any
+	CreatedByUser               any
+	GoogleMeetConfiguration     any
+	LastModifiedByUser          any
 	MicrosoftTeamsConfiguration any
-	ZoomConfiguration any
+	ZoomConfiguration           any
 }
 
 type TypeObject_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TypeObjectConfig struct {
@@ -56,7 +56,7 @@ type TypeObjectConfig struct {
 
 type TypeObjectAttrs struct {
 	// An array of incident type objects.
-	Data any
+	Data           any
 	IncludeDeleted any
 }
 

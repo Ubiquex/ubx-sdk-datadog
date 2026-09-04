@@ -16,70 +16,215 @@ type Response_Data_Attributes_DataDefinition struct {
 	Type any
 }
 
+type Response_Data_Attributes_DatastoreConfig struct {
+	// The ID of the datastore.
+	DatastoreId any
+	// The name of the primary column in the datastore.
+	PrimaryColumnName any
+	// The strategy used to generate primary keys in the datastore.
+	PrimaryKeyGenerationStrategy any
+}
+
+type Response_Data_Attributes_Publication struct {
+	// The time at which the publication was created.
+	CreatedAt any
+	// The ID of the form.
+	FormId any
+	// The version number that was published.
+	FormVersion any
+	// The ID of the form publication.
+	Id any
+	// The time at which the publication was last modified.
+	ModifiedAt any
+	// The ID of the organization that owns this publication.
+	OrgId any
+	// The sequential publication number for this form.
+	PublishSeq any
+	// The ID of the user who created this publication.
+	UserId any
+	// The UUID of the user who created this publication.
+	UserUuid any
+}
+
 type Response_Data_Attributes_UiDefinition struct {
 }
 
-type Response_Data_Attributes struct {
-	// Whether the form accepts anonymous submissions.
-	Anonymous any
+type Response_Data_Attributes_Version struct {
+	// The time at which the version was created.
+	CreatedAt any
 	// A JSON Schema definition that describes the form's data fields.
 	DataDefinition any
+	// The signature of the version definition.
+	DefinitionSignature any
+	// The ETag for optimistic concurrency control.
+	Etag any
+	// The ID of the form version.
+	Id any
+	// The time at which the version was last modified.
+	ModifiedAt any
+	// The state of a form version.
+	State any
+	// UI configuration for rendering form fields, including widget overrides, field ordering, and themes.
+	UiDefinition any
+	// The ID of the user who created this version.
+	UserId any
+	// The UUID of the user who created this version.
+	UserUuid any
+	// The sequential version number.
+	Version any
+}
+
+type Response_Data_Attributes struct {
+	// Whether the form is currently active.
+	Active any
+	// Whether the form accepts anonymous submissions.
+	Anonymous any
+	// The time at which the form was created.
+	CreatedAt any
+	// A JSON Schema definition that describes the form's data fields.
+	DataDefinition any
+	// The datastore configuration for a form.
+	DatastoreConfig any
 	// The description of the form.
 	Description any
+	// The date and time at which the form stops accepting responses.
+	EndDate any
+	// Whether the current user has already submitted this form. Only present for forms with `single_response` set to `true`.
+	HasSubmitted any
 	// Whether the form is an IDP survey.
 	IdpSurvey any
+	// The time at which the form was last modified.
+	ModifiedAt any
 	// The name of the form.
 	Name any
+	// The ID of the organization that owns this form.
+	OrgId any
+	// The attributes of a form publication.
+	Publication any
+	// Whether the form is available in the self-service catalog.
+	SelfService any
 	// Whether each user can only submit one response.
 	SingleResponse any
 	// UI configuration for rendering form fields, including widget overrides, field ordering, and themes.
 	UiDefinition any
+	// The ID of the user who created this form.
+	UserId any
+	// The UUID of the user who created this form.
+	UserUuid any
+	// The attributes of a form version.
+	Version any
 }
 
 type Response_Data struct {
 	// The attributes for creating a form.
 	Attributes any
+	// The ID of the form.
+	Id any
 	// The resource type for a form.
 	Type any
 }
 
 var Response_Data_Attributes_DataDefinitionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Properties":  ubx.FieldSpec{WireName: "properties"},
+	"Required":    ubx.FieldSpec{WireName: "required"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
-var Response_Data_Attributes_UiDefinitionFields = ubx.FieldMap{
-	}
+var Response_Data_Attributes_DatastoreConfigFields = ubx.FieldMap{
+	"DatastoreId":                  ubx.FieldSpec{WireName: "datastore_id"},
+	"PrimaryColumnName":            ubx.FieldSpec{WireName: "primary_column_name"},
+	"PrimaryKeyGenerationStrategy": ubx.FieldSpec{WireName: "primary_key_generation_strategy"},
+}
+
+var Response_Data_Attributes_PublicationFields = ubx.FieldMap{
+	"CreatedAt":   ubx.FieldSpec{WireName: "created_at"},
+	"FormId":      ubx.FieldSpec{WireName: "form_id"},
+	"FormVersion": ubx.FieldSpec{WireName: "form_version"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"ModifiedAt":  ubx.FieldSpec{WireName: "modified_at"},
+	"OrgId":       ubx.FieldSpec{WireName: "org_id"},
+	"PublishSeq":  ubx.FieldSpec{WireName: "publish_seq"},
+	"UserId":      ubx.FieldSpec{WireName: "user_id"},
+	"UserUuid":    ubx.FieldSpec{WireName: "user_uuid"},
+}
+
+var Response_Data_Attributes_UiDefinitionFields = ubx.FieldMap{}
+
+var Response_Data_Attributes_VersionFields = ubx.FieldMap{
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"DataDefinition": ubx.FieldSpec{
+		WireName: "data_definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_DataDefinitionFields,
+	},
+	"DefinitionSignature": ubx.FieldSpec{WireName: "definition_signature"},
+	"Etag":                ubx.FieldSpec{WireName: "etag"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"ModifiedAt":          ubx.FieldSpec{WireName: "modified_at"},
+	"State":               ubx.FieldSpec{WireName: "state"},
+	"UiDefinition": ubx.FieldSpec{
+		WireName: "ui_definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_UiDefinitionFields,
+	},
+	"UserId":   ubx.FieldSpec{WireName: "user_id"},
+	"UserUuid": ubx.FieldSpec{WireName: "user_uuid"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"Anonymous": ubx.FieldSpec{WireName: "anonymous"},
-		"DataDefinition": ubx.FieldSpec{
-			WireName: "data_definition",
-			Kind: "object",
-			Fields: Response_Data_Attributes_DataDefinitionFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IdpSurvey": ubx.FieldSpec{WireName: "idp_survey"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SingleResponse": ubx.FieldSpec{WireName: "single_response"},
-		"UiDefinition": ubx.FieldSpec{
-			WireName: "ui_definition",
-			Kind: "object",
-			Fields: Response_Data_Attributes_UiDefinitionFields,
-		},
-	}
+	"Active":    ubx.FieldSpec{WireName: "active"},
+	"Anonymous": ubx.FieldSpec{WireName: "anonymous"},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"DataDefinition": ubx.FieldSpec{
+		WireName: "data_definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_DataDefinitionFields,
+	},
+	"DatastoreConfig": ubx.FieldSpec{
+		WireName: "datastore_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_DatastoreConfigFields,
+	},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"EndDate":      ubx.FieldSpec{WireName: "end_date"},
+	"HasSubmitted": ubx.FieldSpec{WireName: "has_submitted"},
+	"IdpSurvey":    ubx.FieldSpec{WireName: "idp_survey"},
+	"ModifiedAt":   ubx.FieldSpec{WireName: "modified_at"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"OrgId":        ubx.FieldSpec{WireName: "org_id"},
+	"Publication": ubx.FieldSpec{
+		WireName: "publication",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_PublicationFields,
+	},
+	"SelfService":    ubx.FieldSpec{WireName: "self_service"},
+	"SingleResponse": ubx.FieldSpec{WireName: "single_response"},
+	"UiDefinition": ubx.FieldSpec{
+		WireName: "ui_definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_UiDefinitionFields,
+	},
+	"UserId":   ubx.FieldSpec{WireName: "user_id"},
+	"UserUuid": ubx.FieldSpec{WireName: "user_uuid"},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_VersionFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// The data for creating a form.
@@ -100,8 +245,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"FormId": ubx.FieldSpec{WireName: "form_id"},
 	},

@@ -4,10 +4,10 @@ package integration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Integration_Data_Attributes struct {
-	Categories any
+	Categories  any
 	Description any
-	Installed any
-	Title any
+	Installed   any
+	Title       any
 }
 
 type Integration_Data_Links struct {
@@ -16,9 +16,9 @@ type Integration_Data_Links struct {
 
 type Integration_Data struct {
 	Attributes any
-	Id any
-	Links any
-	Type any
+	Id         any
+	Links      any
+	Type       any
 }
 
 type IntegrationConfig struct {
@@ -31,6 +31,5 @@ type IntegrationAttrs struct {
 
 var Integration = ubx.DataSourceBinding{
 	WireType: "datadog_integration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

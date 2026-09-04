@@ -4,74 +4,74 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SpanData_Data_Attributes_Evaluation struct {
-	Assessment any
+	Assessment     any
 	EvalMetricType any
-	Reasoning any
-	Status any
-	Tags any
-	Value any
+	Reasoning      any
+	Status         any
+	Tags           any
+	Value          any
 }
 
 type SpanData_Data_Attributes_Input_Messages_ToolCalls struct {
 	Arguments any
-	Name any
-	ToolId any
-	Type any
+	Name      any
+	ToolId    any
+	Type      any
 }
 
 type SpanData_Data_Attributes_Input_Messages_ToolResults struct {
-	Name any
+	Name   any
 	Result any
 	ToolId any
-	Type any
+	Type   any
 }
 
 type SpanData_Data_Attributes_Input_Messages struct {
-	Content any
-	Id any
-	Role any
-	ToolCalls any
+	Content     any
+	Id          any
+	Role        any
+	ToolCalls   any
 	ToolResults any
 }
 
 type SpanData_Data_Attributes_Input struct {
 	Messages any
-	Value any
+	Value    any
 }
 
 type SpanData_Data_Attributes_ToolDefinitions struct {
 	Description any
-	Name any
-	Schema any
-	Version any
+	Name        any
+	Schema      any
+	Version     any
 }
 
 type SpanData_Data_Attributes struct {
-	Duration any
-	Evaluation any
-	Input any
-	Intent any
-	Metadata any
-	Metrics any
-	MlApp any
-	ModelName any
-	ModelProvider any
-	Name any
-	Output any
-	ParentId any
-	SpanId any
-	SpanKind any
-	StartNs any
-	Status any
-	Tags any
+	Duration        any
+	Evaluation      any
+	Input           any
+	Intent          any
+	Metadata        any
+	Metrics         any
+	MlApp           any
+	ModelName       any
+	ModelProvider   any
+	Name            any
+	Output          any
+	ParentId        any
+	SpanId          any
+	SpanKind        any
+	StartNs         any
+	Status          any
+	Tags            any
 	ToolDefinitions any
-	TraceId any
+	TraceId         any
 }
 
 type SpanData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type SpanData_Links struct {
@@ -97,12 +97,12 @@ type SpanData_Meta struct {
 
 type SpanDataConfig struct {
 	IncludeAttachments any
-	Sort any
+	Sort               any
 }
 
 type SpanDataAttrs struct {
 	// List of spans matching the query.
-	Data any
+	Data               any
 	IncludeAttachments any
 	// Pagination links accompanying the spans response.
 	Links any
@@ -115,6 +115,6 @@ var SpanData = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_span_data",
 	Fields: ubx.FieldMap{
 		"IncludeAttachments": ubx.FieldSpec{WireName: "include_attachments"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":               ubx.FieldSpec{WireName: "sort"},
 	},
 }

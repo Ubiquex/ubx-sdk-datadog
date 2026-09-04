@@ -9,22 +9,22 @@ type IntegrationAccountResponseData_Data_Attributes_Authentication struct {
 }
 
 type IntegrationAccountResponseData_Data_Attributes_Dataflows_TwilioAlertsLogs_Status struct {
-	Health any
-	Message any
+	Health    any
+	Message   any
 	UpdatedAt any
 }
 
 type IntegrationAccountResponseData_Data_Attributes_Dataflows_TwilioAlertsLogs struct {
 	Enabled any
-	Status any
+	Status  any
 }
 
 type IntegrationAccountResponseData_Data_Attributes_Dataflows struct {
-	TwilioAlertsLogs any
+	TwilioAlertsLogs        any
 	TwilioCallSummariesLogs any
-	TwilioCloudCostMetrics any
-	TwilioEventsLogs any
-	TwilioMessagesLogs any
+	TwilioCloudCostMetrics  any
+	TwilioEventsLogs        any
+	TwilioMessagesLogs      any
 }
 
 type IntegrationAccountResponseData_Data_Attributes_Settings struct {
@@ -34,15 +34,15 @@ type IntegrationAccountResponseData_Data_Attributes_Settings struct {
 
 type IntegrationAccountResponseData_Data_Attributes struct {
 	Authentication any
-	Dataflows any
-	Name any
-	Settings any
+	Dataflows      any
+	Name           any
+	Settings       any
 }
 
 type IntegrationAccountResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type IntegrationAccountResponseDataConfig struct {
@@ -55,6 +55,5 @@ type IntegrationAccountResponseDataAttrs struct {
 
 var IntegrationAccountResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_twilio_integration_account_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

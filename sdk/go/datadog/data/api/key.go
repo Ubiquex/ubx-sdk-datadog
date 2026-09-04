@@ -4,10 +4,10 @@ package api
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Key_ApiKeys struct {
-	Created any
+	Created   any
 	CreatedBy any
-	Key any
-	Name any
+	Key       any
+	Name      any
 }
 
 type KeyConfig struct {
@@ -20,6 +20,5 @@ type KeyAttrs struct {
 
 var Key = ubx.DataSourceBinding{
 	WireType: "datadog_api_key",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -93,10 +93,14 @@ export interface Response_Data_Attributes {
   awsPartition: string | Computed<string>;
   /** AWS Regions to collect data from. Defaults to `include_all`. */
   awsRegions?: Response_Data_Attributes_AwsRegions | Computed<Response_Data_Attributes_AwsRegions>;
+  /** Timestamp of when the account integration was created. */
+  createdAt?: string | Computed<string>;
   /** AWS Logs Collection config. */
   logsConfig?: Response_Data_Attributes_LogsConfig | Computed<Response_Data_Attributes_LogsConfig>;
   /** AWS Metrics Collection config. */
   metricsConfig?: Response_Data_Attributes_MetricsConfig | Computed<Response_Data_Attributes_MetricsConfig>;
+  /** Timestamp of when the account integration was updated. */
+  modifiedAt?: string | Computed<string>;
   /** AWS Resources Collection config. */
   resourcesConfig?: Response_Data_Attributes_ResourcesConfig | Computed<Response_Data_Attributes_ResourcesConfig>;
   /** AWS Traces Collection config. */
@@ -106,6 +110,8 @@ export interface Response_Data_Attributes {
 export interface Response_Data {
   /** The AWS Account Integration Config to be created. */
   attributes: Response_Data_Attributes | Computed<Response_Data_Attributes>;
+  /** Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the [List all AWS integrations](https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations) endpoint and query by AWS Account ID. */
+  id?: string | Computed<string>;
   /** AWS Account resource type. */
   type: string | Computed<string>;
 }
@@ -218,6 +224,7 @@ const Response_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: Response_Data_Attributes_AwsRegionsFields,
   },
+  createdAt: "created_at",
   logsConfig: {
     wireName: "logs_config",
     kind: "object",
@@ -228,6 +235,7 @@ const Response_Data_AttributesFields: FieldMap = {
     kind: "object",
     fields: Response_Data_Attributes_MetricsConfigFields,
   },
+  modifiedAt: "modified_at",
   resourcesConfig: {
     wireName: "resources_config",
     kind: "object",
@@ -246,6 +254,7 @@ const Response_DataFields: FieldMap = {
     kind: "object",
     fields: Response_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

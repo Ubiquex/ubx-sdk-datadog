@@ -3,42 +3,92 @@ package llmobs
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type PromptVersionResponse_Data_Attributes_Datasets struct {
+	Id   any
+	Name any
+}
+
 type PromptVersionResponse_Data_Attributes struct {
+	// UUID of the user who authored this version.
+	Author any
+	// Timestamp stored on this prompt version.
+	CreatedAt any
+	// Datasets observed in runs associated with this prompt version.
+	Datasets any
 	// Optional description of this version.
 	Description any
 	// Optional feature-flag environment UUIDs the service attempts to enable and configure to use this version as their default after creation.
 	EnvIds any
 	// Optional labels to attach to this version. Do not use this attribute for new integrations.
 	Labels any
+	// Timestamp of the most recent observed run of this prompt version.
+	LastSeenAt any
+	// The ML application this prompt is associated with.
+	MlApp any
+	// ML applications observed running this prompt version.
+	MlApps any
+	// Customer-provided identifier of the parent prompt.
+	PromptId any
+	// Unique identifier of the parent prompt.
+	PromptUuid any
+	// Tags observed on runs of this prompt version.
+	Tags any
 	// A text template or a list of chat messages.
 	Template any
 	// Optional user-supplied version identifier for this version.
 	UserVersion any
+	// Sequential version number.
+	Version any
+	// Timestamp when this version was created.
+	VersionCreatedAt any
 }
 
 type PromptVersionResponse_Data struct {
 	// Attributes for creating a new version of an Agent Observability prompt. `template` is required; all other attributes are optional.
 	Attributes any
+	// Unique identifier of the prompt version.
+	Id any
 	// Resource type of an Agent Observability prompt version.
 	Type any
 }
 
+var PromptVersionResponse_Data_Attributes_DatasetsFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
+
 var PromptVersionResponse_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnvIds": ubx.FieldSpec{WireName: "env_ids"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Template": ubx.FieldSpec{WireName: "template"},
-		"UserVersion": ubx.FieldSpec{WireName: "user_version"},
-	}
+	"Author":    ubx.FieldSpec{WireName: "author"},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"Datasets": ubx.FieldSpec{
+		WireName: "datasets",
+		Kind:     "list",
+		Fields:   PromptVersionResponse_Data_Attributes_DatasetsFields,
+	},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"EnvIds":           ubx.FieldSpec{WireName: "env_ids"},
+	"Labels":           ubx.FieldSpec{WireName: "labels"},
+	"LastSeenAt":       ubx.FieldSpec{WireName: "last_seen_at"},
+	"MlApp":            ubx.FieldSpec{WireName: "ml_app"},
+	"MlApps":           ubx.FieldSpec{WireName: "ml_apps"},
+	"PromptId":         ubx.FieldSpec{WireName: "prompt_id"},
+	"PromptUuid":       ubx.FieldSpec{WireName: "prompt_uuid"},
+	"Tags":             ubx.FieldSpec{WireName: "tags"},
+	"Template":         ubx.FieldSpec{WireName: "template"},
+	"UserVersion":      ubx.FieldSpec{WireName: "user_version"},
+	"Version":          ubx.FieldSpec{WireName: "version"},
+	"VersionCreatedAt": ubx.FieldSpec{WireName: "version_created_at"},
+}
 
 var PromptVersionResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: PromptVersionResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   PromptVersionResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PromptVersionResponseConfig struct {
 	// Data object for creating an Agent Observability prompt version.
@@ -63,10 +113,10 @@ var PromptVersionResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: PromptVersionResponse_DataFields,
+			Kind:     "object",
+			Fields:   PromptVersionResponse_DataFields,
 		},
 		"PromptId": ubx.FieldSpec{WireName: "prompt_id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Version":  ubx.FieldSpec{WireName: "version"},
 	},
 }

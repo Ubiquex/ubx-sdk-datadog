@@ -2,19 +2,33 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GroupResponse_Data_Attributes {
+  /** Timestamp when the org group was created. */
+  createdAt?: string | Computed<string>;
+  /** Timestamp when the org group was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the org group. */
   name: string | Computed<string>;
+  /** The site of the organization that owns this org group. */
+  ownerOrgSite?: string | Computed<string>;
+  /** The UUID of the organization that owns this org group. */
+  ownerOrgUuid?: string | Computed<string>;
 }
 
 export interface GroupResponse_Data {
   /** Attributes for creating an org group. */
   attributes: GroupResponse_Data_Attributes | Computed<GroupResponse_Data_Attributes>;
+  /** The ID of the org group. */
+  id?: string | Computed<string>;
   /** Org groups resource type. */
   type: string | Computed<string>;
 }
 
 const GroupResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  modifiedAt: "modified_at",
   name: "name",
+  ownerOrgSite: "owner_org_site",
+  ownerOrgUuid: "owner_org_uuid",
 };
 
 const GroupResponse_DataFields: FieldMap = {
@@ -23,6 +37,7 @@ const GroupResponse_DataFields: FieldMap = {
     kind: "object",
     fields: GroupResponse_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

@@ -11,52 +11,116 @@ type Response_Data_Attributes_Definition struct {
 }
 
 type Response_Data_Attributes struct {
+	// ISO 8601 timestamp of when the widget was created.
+	CreatedAt any
 	// The definition of a widget, including its type and configuration.
 	Definition any
+	// Whether the current user has favorited this widget. Populated on get, batch_get, update, and search responses; create responses always return `false` because a widget can only be favorited after it exists. Favoriting itself is performed through the shared favorites API, not this service.
+	IsFavorited any
+	// ISO 8601 timestamp of when the widget was last modified.
+	ModifiedAt any
 	// User-defined tags for organizing the widget.
 	Tags any
+}
+
+type Response_Data_Relationships_CreatedBy_Data struct {
+	// The unique identifier of the user.
+	Id any
+	// Users resource type.
+	Type any
+}
+
+type Response_Data_Relationships_CreatedBy struct {
+	// Relationship data referencing a user resource.
+	Data any
+}
+
+type Response_Data_Relationships struct {
+	// A JSON:API relationship to a user.
+	CreatedBy any
+	// A JSON:API relationship to a user.
+	ModifiedBy any
 }
 
 type Response_Data struct {
 	// Attributes for creating or updating a widget.
 	Attributes any
+	// The unique identifier of the widget.
+	Id any
+	// Relationships of the widget resource.
+	Relationships any
 	// Widgets resource type.
 	Type any
 }
 
 type Response_Included_Attributes struct {
 	Handle any
-	Name any
+	Name   any
 }
 
 type Response_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 var Response_Data_Attributes_DefinitionFields = ubx.FieldMap{
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Title": ubx.FieldSpec{WireName: "title"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{
-			WireName: "definition",
-			Kind: "object",
-			Fields: Response_Data_Attributes_DefinitionFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"Definition": ubx.FieldSpec{
+		WireName: "definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_DefinitionFields,
+	},
+	"IsFavorited": ubx.FieldSpec{WireName: "is_favorited"},
+	"ModifiedAt":  ubx.FieldSpec{WireName: "modified_at"},
+	"Tags":        ubx.FieldSpec{WireName: "tags"},
+}
+
+var Response_Data_Relationships_CreatedBy_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var Response_Data_Relationships_CreatedByFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CreatedBy_DataFields,
+	},
+}
+
+var Response_Data_RelationshipsFields = ubx.FieldMap{
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CreatedByFields,
+	},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_CreatedByFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Response_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Data for creating or updating a widget.
@@ -83,10 +147,10 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"ExperienceType": ubx.FieldSpec{WireName: "experience_type"},
-		"Uuid": ubx.FieldSpec{WireName: "uuid"},
+		"Uuid":           ubx.FieldSpec{WireName: "uuid"},
 	},
 }

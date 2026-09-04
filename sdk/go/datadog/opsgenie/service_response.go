@@ -17,25 +17,28 @@ type ServiceResponse_Data_Attributes struct {
 type ServiceResponse_Data struct {
 	// The Opsgenie service attributes for a create request.
 	Attributes any
+	// The ID of the Opsgenie service.
+	Id any
 	// Opsgenie service resource type.
 	Type any
 }
 
 var ServiceResponse_Data_AttributesFields = ubx.FieldMap{
-		"CustomUrl": ubx.FieldSpec{WireName: "custom_url"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OpsgenieApiKey": ubx.FieldSpec{WireName: "opsgenie_api_key"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"CustomUrl":      ubx.FieldSpec{WireName: "custom_url"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"OpsgenieApiKey": ubx.FieldSpec{WireName: "opsgenie_api_key"},
+	"Region":         ubx.FieldSpec{WireName: "region"},
+}
 
 var ServiceResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ServiceResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ServiceResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ServiceResponseConfig struct {
 	// Opsgenie service data for a create request.
@@ -56,8 +59,8 @@ var ServiceResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ServiceResponse_DataFields,
+			Kind:     "object",
+			Fields:   ServiceResponse_DataFields,
 		},
 		"IntegrationServiceId": ubx.FieldSpec{WireName: "integration_service_id"},
 	},

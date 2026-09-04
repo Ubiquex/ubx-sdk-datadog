@@ -7,11 +7,24 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class MonitoringSuppressionResponse_Data_Attributes_Creator:
+    # The handle of the user.
+    handle: Any = None
+    # The name of the user.
+    name: Any = None
+
+@dataclasses.dataclass
 class MonitoringSuppressionResponse_Data_Attributes:
+    # A Unix millisecond timestamp given the creation date of the suppression rule.
+    creation_date: Any = None
+    # A user.
+    creator: Any = None
     # An exclusion query on the input data of the security rules, which could be logs, Agent events, or other types of data based on the security rule. Events matching this query are ignored by any detection rules referenced in the suppression rule.
     data_exclusion_query: Any = None
     # A description for the suppression rule.
     description: Any = None
+    # Whether the suppression rule is editable.
+    editable: Any = None
     # Whether the suppression rule is enabled.
     enabled: Any = None
     # A Unix millisecond timestamp giving an expiration date for the suppression rule. After this date, it won't suppress signals anymore.
@@ -26,17 +39,37 @@ class MonitoringSuppressionResponse_Data_Attributes:
     suppression_query: Any = None
     # List of tags associated with the suppression rule.
     tags: Any = None
+    # A Unix millisecond timestamp given the update date of the suppression rule.
+    update_date: Any = None
+    # A user.
+    updater: Any = None
+    # The version of the suppression rule; it starts at 1, and is incremented at each update.
+    version: Any = None
 
 @dataclasses.dataclass
 class MonitoringSuppressionResponse_Data:
     # Object containing the attributes of the suppression rule to be created.
     attributes: Any = None
+    # The ID of the suppression rule.
+    id: Any = None
     # The type of the resource. The value should always be `suppressions`.
     type: Any = None
 
+_MonitoringSuppressionResponse_Data_Attributes_CreatorFields = {
+    "handle": ubx.FieldSpec(wire_name="handle"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 _MonitoringSuppressionResponse_Data_AttributesFields = {
+    "creation_date": ubx.FieldSpec(wire_name="creation_date"),
+    "creator": ubx.FieldSpec(
+        wire_name="creator",
+        kind="object",
+        fields=_MonitoringSuppressionResponse_Data_Attributes_CreatorFields,
+    ),
     "data_exclusion_query": ubx.FieldSpec(wire_name="data_exclusion_query"),
     "description": ubx.FieldSpec(wire_name="description"),
+    "editable": ubx.FieldSpec(wire_name="editable"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
     "expiration_date": ubx.FieldSpec(wire_name="expiration_date"),
     "name": ubx.FieldSpec(wire_name="name"),
@@ -44,6 +77,13 @@ _MonitoringSuppressionResponse_Data_AttributesFields = {
     "start_date": ubx.FieldSpec(wire_name="start_date"),
     "suppression_query": ubx.FieldSpec(wire_name="suppression_query"),
     "tags": ubx.FieldSpec(wire_name="tags"),
+    "update_date": ubx.FieldSpec(wire_name="update_date"),
+    "updater": ubx.FieldSpec(
+        wire_name="updater",
+        kind="object",
+        fields=_MonitoringSuppressionResponse_Data_Attributes_CreatorFields,
+    ),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _MonitoringSuppressionResponse_DataFields = {
@@ -52,6 +92,7 @@ _MonitoringSuppressionResponse_DataFields = {
         kind="object",
         fields=_MonitoringSuppressionResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

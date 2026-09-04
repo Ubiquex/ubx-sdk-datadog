@@ -6,6 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type CreationRuleResponse_Data_Attributes_Action struct {
 	// The UUID of the default assignee for created tickets.
 	AssigneeId any
+	// The reason the rule was automatically disabled by the system due to a ticketing integration error.
+	AutoDisabledReason any
 	// Custom fields of the Jira issue to create. For the list of available fields, see [Jira documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-issues/#api-rest-api-2-issue-createmeta-projectidorkey-issuetypes-issuetypeid-get).
 	Fields any
 	// The maximum number of tickets the rule may create per day. If exceeded, one final ticket will be created, explaining the limit was hit and link back to the responsible rule.
@@ -14,6 +16,15 @@ type CreationRuleResponse_Data_Attributes_Action struct {
 	ProjectId any
 	// The ticketing system to create tickets in.
 	Target any
+}
+
+type CreationRuleResponse_Data_Attributes_CreatedBy struct {
+	// The actor's identifier (a user UUID or a system identifier).
+	Id any
+	// The name of the actor.
+	Name any
+	// Whether the actor is a user or the Datadog system.
+	Type any
 }
 
 type CreationRuleResponse_Data_Attributes_Rule struct {
@@ -26,8 +37,16 @@ type CreationRuleResponse_Data_Attributes_Rule struct {
 type CreationRuleResponse_Data_Attributes struct {
 	// The action to take when the ticket creation rule matches a finding.
 	Action any
+	// The Unix timestamp in milliseconds when the rule was created.
+	CreatedAt any
+	// The user or Datadog system who created the rule.
+	CreatedBy any
 	// Whether the ticket creation rule is enabled.
 	Enabled any
+	// The Unix timestamp in milliseconds when the rule was last modified.
+	ModifiedAt any
+	// The user or Datadog system who last modified the rule.
+	ModifiedBy any
 	// The name of the ticket creation rule.
 	Name any
 	// Defines the scope of findings to which the automation rule applies.
@@ -37,46 +56,68 @@ type CreationRuleResponse_Data_Attributes struct {
 type CreationRuleResponse_Data struct {
 	// Attributes for creating or updating a ticket creation rule.
 	Attributes any
+	// The ID of the ticket creation rule.
+	Id any
 	// The JSON:API type for ticket creation rules.
 	Type any
 }
 
 var CreationRuleResponse_Data_Attributes_ActionFields = ubx.FieldMap{
-		"AssigneeId": ubx.FieldSpec{WireName: "assignee_id"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"MaxTicketsPerDay": ubx.FieldSpec{WireName: "max_tickets_per_day"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"AssigneeId":         ubx.FieldSpec{WireName: "assignee_id"},
+	"AutoDisabledReason": ubx.FieldSpec{WireName: "auto_disabled_reason"},
+	"Fields":             ubx.FieldSpec{WireName: "fields"},
+	"MaxTicketsPerDay":   ubx.FieldSpec{WireName: "max_tickets_per_day"},
+	"ProjectId":          ubx.FieldSpec{WireName: "project_id"},
+	"Target":             ubx.FieldSpec{WireName: "target"},
+}
+
+var CreationRuleResponse_Data_Attributes_CreatedByFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var CreationRuleResponse_Data_Attributes_RuleFields = ubx.FieldMap{
-		"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
+	"Query":        ubx.FieldSpec{WireName: "query"},
+}
 
 var CreationRuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: CreationRuleResponse_Data_Attributes_ActionFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "object",
-			Fields: CreationRuleResponse_Data_Attributes_RuleFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_Attributes_ActionFields,
+	},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Rule": ubx.FieldSpec{
+		WireName: "rule",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_Attributes_RuleFields,
+	},
+}
 
 var CreationRuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: CreationRuleResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type CreationRuleResponseConfig struct {
 	// The data object for a ticket creation rule create or update request.
@@ -97,8 +138,8 @@ var CreationRuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: CreationRuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   CreationRuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

@@ -7,34 +7,44 @@ export interface UserDefinedRoleResponse_Data_Attributes_Policy {
 }
 
 export interface UserDefinedRoleResponse_Data_Attributes {
+  /** Timestamp when the role was created. */
+  created?: string | Computed<string>;
   /** A description of the user-defined role. */
   description?: string | Computed<string>;
+  /** Timestamp when the role was last modified. */
+  modified?: string | Computed<string>;
   /** The name of the user-defined role. */
   name: string | Computed<string>;
   /** Policy configuration for a user-defined role. */
   policy?: UserDefinedRoleResponse_Data_Attributes_Policy | Computed<UserDefinedRoleResponse_Data_Attributes_Policy>;
 }
 
-export interface UserDefinedRoleResponse_Data_Relationships_IncidentType_Data {
-  /** The ID of the incident type. */
+export interface UserDefinedRoleResponse_Data_Relationships_CreatedByUser_Data {
+  /** A unique identifier that represents the user. */
   id: string | Computed<string>;
-  /** The type of the resource. */
+  /** Users resource type. */
   type: string | Computed<string>;
 }
 
-export interface UserDefinedRoleResponse_Data_Relationships_IncidentType {
-  /** Data for the incident type relationship of a user-defined role. */
-  data: UserDefinedRoleResponse_Data_Relationships_IncidentType_Data | Computed<UserDefinedRoleResponse_Data_Relationships_IncidentType_Data>;
+export interface UserDefinedRoleResponse_Data_Relationships_CreatedByUser {
+  /** Relationship to user object. */
+  data: UserDefinedRoleResponse_Data_Relationships_CreatedByUser_Data | Computed<UserDefinedRoleResponse_Data_Relationships_CreatedByUser_Data>;
 }
 
 export interface UserDefinedRoleResponse_Data_Relationships {
+  /** Relationship to user. */
+  createdByUser?: UserDefinedRoleResponse_Data_Relationships_CreatedByUser | Computed<UserDefinedRoleResponse_Data_Relationships_CreatedByUser>;
   /** Relationship to an incident type for a user-defined role. */
-  incidentType: UserDefinedRoleResponse_Data_Relationships_IncidentType | Computed<UserDefinedRoleResponse_Data_Relationships_IncidentType>;
+  incidentType: UserDefinedRoleResponse_Data_Relationships_CreatedByUser | Computed<UserDefinedRoleResponse_Data_Relationships_CreatedByUser>;
+  /** Relationship to user. */
+  lastModifiedByUser?: UserDefinedRoleResponse_Data_Relationships_CreatedByUser | Computed<UserDefinedRoleResponse_Data_Relationships_CreatedByUser>;
 }
 
 export interface UserDefinedRoleResponse_Data {
   /** Attributes for creating an incident user-defined role. */
   attributes: UserDefinedRoleResponse_Data_Attributes | Computed<UserDefinedRoleResponse_Data_Attributes>;
+  /** The ID of the user-defined role. */
+  id?: string | Computed<string>;
   /** Relationships for creating a user-defined role. */
   relationships: UserDefinedRoleResponse_Data_Relationships | Computed<UserDefinedRoleResponse_Data_Relationships>;
   /** Incident user-defined role resource type. */
@@ -50,11 +60,11 @@ export interface UserDefinedRoleResponse_Included_Attributes {
 }
 
 export interface UserDefinedRoleResponse_Included_Relationships {
-  createdByUser?: UserDefinedRoleResponse_Data_Relationships_IncidentType | Computed<UserDefinedRoleResponse_Data_Relationships_IncidentType>;
-  googleMeetConfiguration?: UserDefinedRoleResponse_Data_Relationships_IncidentType | Computed<UserDefinedRoleResponse_Data_Relationships_IncidentType>;
-  lastModifiedByUser?: UserDefinedRoleResponse_Data_Relationships_IncidentType | Computed<UserDefinedRoleResponse_Data_Relationships_IncidentType>;
-  microsoftTeamsConfiguration?: UserDefinedRoleResponse_Data_Relationships_IncidentType | Computed<UserDefinedRoleResponse_Data_Relationships_IncidentType>;
-  zoomConfiguration?: UserDefinedRoleResponse_Data_Relationships_IncidentType | Computed<UserDefinedRoleResponse_Data_Relationships_IncidentType>;
+  createdByUser?: UserDefinedRoleResponse_Data_Relationships_CreatedByUser | Computed<UserDefinedRoleResponse_Data_Relationships_CreatedByUser>;
+  googleMeetConfiguration?: UserDefinedRoleResponse_Data_Relationships_CreatedByUser | Computed<UserDefinedRoleResponse_Data_Relationships_CreatedByUser>;
+  lastModifiedByUser?: UserDefinedRoleResponse_Data_Relationships_CreatedByUser | Computed<UserDefinedRoleResponse_Data_Relationships_CreatedByUser>;
+  microsoftTeamsConfiguration?: UserDefinedRoleResponse_Data_Relationships_CreatedByUser | Computed<UserDefinedRoleResponse_Data_Relationships_CreatedByUser>;
+  zoomConfiguration?: UserDefinedRoleResponse_Data_Relationships_CreatedByUser | Computed<UserDefinedRoleResponse_Data_Relationships_CreatedByUser>;
 }
 
 export interface UserDefinedRoleResponse_Included {
@@ -69,7 +79,9 @@ const UserDefinedRoleResponse_Data_Attributes_PolicyFields: FieldMap = {
 };
 
 const UserDefinedRoleResponse_Data_AttributesFields: FieldMap = {
+  created: "created",
   description: "description",
+  modified: "modified",
   name: "name",
   policy: {
     wireName: "policy",
@@ -78,24 +90,34 @@ const UserDefinedRoleResponse_Data_AttributesFields: FieldMap = {
   },
 };
 
-const UserDefinedRoleResponse_Data_Relationships_IncidentType_DataFields: FieldMap = {
+const UserDefinedRoleResponse_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
   id: "id",
   type: "type",
 };
 
-const UserDefinedRoleResponse_Data_Relationships_IncidentTypeFields: FieldMap = {
+const UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields: FieldMap = {
   data: {
     wireName: "data",
     kind: "object",
-    fields: UserDefinedRoleResponse_Data_Relationships_IncidentType_DataFields,
+    fields: UserDefinedRoleResponse_Data_Relationships_CreatedByUser_DataFields,
   },
 };
 
 const UserDefinedRoleResponse_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+  },
   incidentType: {
     wireName: "incident_type",
     kind: "object",
-    fields: UserDefinedRoleResponse_Data_Relationships_IncidentTypeFields,
+    fields: UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
   },
 };
 
@@ -105,6 +127,7 @@ const UserDefinedRoleResponse_DataFields: FieldMap = {
     kind: "object",
     fields: UserDefinedRoleResponse_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

@@ -7,6 +7,10 @@ export interface ResponseSingle_Data_Attributes_ProductFilters {
 }
 
 export interface ResponseSingle_Data_Attributes {
+  /** Timestamp when the dataset was created. */
+  createdAt?: string | Computed<string>;
+  /** Unique ID of the user who created the dataset. */
+  createdBy?: string | Computed<string>;
   /** Name of the dataset. */
   name: string | Computed<string>;
   /** List of access principals, formatted as `principal_type:id`. Principal can be 'team' or 'role'. */
@@ -18,6 +22,8 @@ export interface ResponseSingle_Data_Attributes {
 export interface ResponseSingle_Data {
   /** Dataset metadata and configurations. */
   attributes: ResponseSingle_Data_Attributes | Computed<ResponseSingle_Data_Attributes>;
+  /** Unique identifier for the dataset. */
+  id?: string | Computed<string>;
   /** Resource type, always set to `dataset`. */
   type: string | Computed<string>;
 }
@@ -28,6 +34,8 @@ const ResponseSingle_Data_Attributes_ProductFiltersFields: FieldMap = {
 };
 
 const ResponseSingle_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  createdBy: "created_by",
   name: "name",
   principals: "principals",
   productFilters: {
@@ -43,6 +51,7 @@ const ResponseSingle_DataFields: FieldMap = {
     kind: "object",
     fields: ResponseSingle_Data_AttributesFields,
   },
+  id: "id",
   type: "type",
 };
 

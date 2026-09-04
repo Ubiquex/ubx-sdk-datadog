@@ -9,8 +9,8 @@ type OverrideIdentityProviderData_Data_Attributes struct {
 
 type OverrideIdentityProviderData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type OverrideIdentityProviderDataConfig struct {
@@ -19,7 +19,7 @@ type OverrideIdentityProviderDataConfig struct {
 
 type OverrideIdentityProviderDataAttrs struct {
 	// List of user identity provider override data objects.
-	Data any
+	Data   any
 	UserId any
 }
 

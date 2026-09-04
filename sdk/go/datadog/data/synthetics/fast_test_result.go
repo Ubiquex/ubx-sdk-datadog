@@ -55,16 +55,16 @@ type FastTestResult_Data_Attributes_Location struct {
 }
 
 type FastTestResult_Data_Attributes_Result_Assertions struct {
-	Actual any
-	ErrorMessage any
-	Expected any
-	Operator any
-	Property any
-	Target any
-	TargetPath any
+	Actual             any
+	ErrorMessage       any
+	Expected           any
+	Operator           any
+	Property           any
+	Target             any
+	TargetPath         any
 	TargetPathOperator any
-	Type any
-	Valid any
+	Type               any
+	Valid              any
 }
 
 type FastTestResult_Data_Attributes_Result_Cert_Valid struct {
@@ -114,10 +114,10 @@ type FastTestResult_Data_Attributes_Result_Failure struct {
 
 type FastTestResult_Data_Attributes_Result_Request_Files struct {
 	BucketKey any
-	Encoding any
-	Name any
-	Size any
-	Type any
+	Encoding  any
+	Name      any
+	Size      any
+	Type      any
 }
 
 type FastTestResult_Data_Attributes_Result_Request struct {
@@ -194,12 +194,12 @@ type FastTestResult_Data_Attributes_Result_Response_Healthcheck struct {
 }
 
 type FastTestResult_Data_Attributes_Result_Response_Records struct {
-	Type any
+	Type   any
 	Values any
 }
 
 type FastTestResult_Data_Attributes_Result_Response_Redirects struct {
-	Location any
+	Location   any
 	StatusCode any
 }
 
@@ -243,66 +243,66 @@ type FastTestResult_Data_Attributes_Result_Response struct {
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_AssertionResult struct {
-	Actual any
-	CheckType any
-	Expected any
+	Actual             any
+	CheckType          any
+	Expected           any
 	HasSecureVariables any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_Bounds struct {
 	Height any
-	Width any
-	X any
-	Y any
+	Width  any
+	X      any
+	Y      any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_BrowserErrors struct {
 	Description any
-	Method any
-	Name any
-	Status any
-	Type any
-	Url any
+	Method      any
+	Name        any
+	Status      any
+	Type        any
+	Url         any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_BucketKeys struct {
-	AfterStepScreenshot any
-	AfterTurnScreenshot any
-	Artifacts any
+	AfterStepScreenshot  any
+	AfterTurnScreenshot  any
+	Artifacts            any
 	BeforeStepScreenshot any
 	BeforeTurnScreenshot any
-	CrashReport any
-	DeviceLogs any
-	EmailMessages any
-	Screenshot any
-	Snapshot any
-	Source any
+	CrashReport          any
+	DeviceLogs           any
+	EmailMessages        any
+	Screenshot           any
+	Snapshot             any
+	Source               any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_CdnResources struct {
-	Cdn any
+	Cdn        any
 	ResolvedIp any
-	Timestamp any
-	Timings any
+	Timestamp  any
+	Timings    any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_ElementUpdates struct {
-	MultiLocator any
+	MultiLocator    any
 	TargetOuterHtml any
-	Version any
+	Version         any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_ExtractedValue struct {
-	Err any
+	Err          any
 	ErrorMessage any
-	Example any
-	Id any
-	Name any
-	Pattern any
-	Secure any
-	Type any
-	Val any
-	Value any
+	Example      any
+	Id           any
+	Name         any
+	Pattern      any
+	Secure       any
+	Type         any
+	Val          any
+	Value        any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_Retries struct {
@@ -310,8 +310,8 @@ type FastTestResult_Data_Attributes_Result_Steps_Retries struct {
 
 type FastTestResult_Data_Attributes_Result_Steps_RumContext struct {
 	ApplicationId any
-	SessionId any
-	ViewId any
+	SessionId     any
+	ViewId        any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_SubStep_ParentStep struct {
@@ -319,87 +319,87 @@ type FastTestResult_Data_Attributes_Result_Steps_SubStep_ParentStep struct {
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_SubStep struct {
-	Level any
+	Level      any
 	ParentStep any
 	ParentTest any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_SubTest struct {
-	Id any
+	Id         any
 	PlayingTab any
 	RumContext any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_Tabs struct {
 	Focused any
-	Title any
-	Url any
+	Title   any
+	Url     any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_Variables struct {
-	Config any
+	Config    any
 	Extracted any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_VitalsMetrics struct {
-	Cls any
-	Fcp any
-	Inp any
-	Lcp any
+	Cls  any
+	Fcp  any
+	Inp  any
+	Lcp  any
 	Ttfb any
-	Url any
+	Url  any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps_Warnings struct {
 	ElementBounds any
-	Message any
-	Type any
+	Message       any
+	Type          any
 }
 
 type FastTestResult_Data_Attributes_Result_Steps struct {
-	AllowFailure any
-	ApiTest any
-	AssertionResult any
-	Assertions any
-	BlockedRequestsUrls any
-	Bounds any
-	BrowserErrors any
-	BucketKeys any
-	CdnResources any
-	ClickType any
-	CompressedJsonDescriptor any
-	Config any
-	Description any
-	Duration any
-	ElementDescription any
-	ElementUpdates any
-	ExtractedValue any
-	Failure any
-	HttpResults any
-	Id any
-	IsCritical any
+	AllowFailure                  any
+	ApiTest                       any
+	AssertionResult               any
+	Assertions                    any
+	BlockedRequestsUrls           any
+	Bounds                        any
+	BrowserErrors                 any
+	BucketKeys                    any
+	CdnResources                  any
+	ClickType                     any
+	CompressedJsonDescriptor      any
+	Config                        any
+	Description                   any
+	Duration                      any
+	ElementDescription            any
+	ElementUpdates                any
+	ExtractedValue                any
+	Failure                       any
+	HttpResults                   any
+	Id                            any
+	IsCritical                    any
 	JavascriptCustomAssertionCode any
-	LocateElementDuration any
-	Name any
-	Request any
-	Response any
-	Retries any
-	RetryCount any
-	RumContext any
-	StartedAt any
-	Status any
-	SubStep any
-	SubTest any
-	Subtype any
-	Tabs any
-	Timings any
-	Tunnel any
-	Type any
-	Url any
-	Value any
-	Variables any
-	VitalsMetrics any
-	Warnings any
+	LocateElementDuration         any
+	Name                          any
+	Request                       any
+	Response                      any
+	Retries                       any
+	RetryCount                    any
+	RumContext                    any
+	StartedAt                     any
+	Status                        any
+	SubStep                       any
+	SubTest                       any
+	Subtype                       any
+	Tabs                          any
+	Timings                       any
+	Tunnel                        any
+	Type                          any
+	Url                           any
+	Value                         any
+	Variables                     any
+	VitalsMetrics                 any
+	Warnings                      any
 }
 
 type FastTestResult_Data_Attributes_Result_Traceroute_Latency struct {
@@ -409,19 +409,19 @@ type FastTestResult_Data_Attributes_Result_Traceroute_Latency struct {
 }
 
 type FastTestResult_Data_Attributes_Result_Traceroute_Routers struct {
-	Ip any
+	Ip           any
 	ResolvedHost any
 }
 
 type FastTestResult_Data_Attributes_Result_Traceroute struct {
-	Host any
-	Latency any
+	Host                 any
+	Latency              any
 	PacketLossPercentage any
-	PacketSize any
-	PacketsReceived any
-	PacketsSent any
-	ResolvedIp any
-	Routers any
+	PacketSize           any
+	PacketsReceived      any
+	PacketsSent          any
+	ResolvedIp           any
+	Routers              any
 }
 
 type FastTestResult_Data_Attributes_Result struct {
@@ -496,7 +496,7 @@ type FastTestResultConfig struct {
 type FastTestResultAttrs struct {
 	// Fast test result data object (JSON:API format).
 	Data any
-	Id any
+	Id   any
 }
 
 var FastTestResult = ubx.DataSourceBinding{

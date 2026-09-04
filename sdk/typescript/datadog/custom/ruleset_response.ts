@@ -49,6 +49,10 @@ export interface RulesetResponse_Data_Attributes_Rules {
 }
 
 export interface RulesetResponse_Data_Attributes {
+  /** Creation timestamp */
+  createdAt?: string | Computed<string>;
+  /** Creator identifier */
+  createdBy?: string | Computed<string>;
   /** Base64-encoded full description */
   description?: string | Computed<string>;
   /** Ruleset name */
@@ -132,6 +136,8 @@ const RulesetResponse_Data_Attributes_RulesFields: FieldMap = {
 };
 
 const RulesetResponse_Data_AttributesFields: FieldMap = {
+  createdAt: "created_at",
+  createdBy: "created_by",
   description: "description",
   name: "name",
   rules: {

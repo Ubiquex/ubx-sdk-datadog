@@ -9,31 +9,31 @@ type NotificationRuleListResponse_Data_Attributes_BundleConfig struct {
 
 type NotificationRuleListResponse_Data_Attributes_ConditionalRecipients_Conditions struct {
 	Recipients any
-	Scope any
+	Scope      any
 }
 
 type NotificationRuleListResponse_Data_Attributes_ConditionalRecipients struct {
-	Conditions any
+	Conditions         any
 	FallbackRecipients any
 }
 
 type NotificationRuleListResponse_Data_Attributes_Filter struct {
 	Scope any
-	Tags any
+	Tags  any
 }
 
 type NotificationRuleListResponse_Data_Attributes struct {
-	BundleConfig any
+	BundleConfig          any
 	ConditionalRecipients any
-	Created any
-	Filter any
-	Modified any
-	Name any
-	Recipients any
+	Created               any
+	Filter                any
+	Modified              any
+	Name                  any
+	Recipients            any
 }
 
 type NotificationRuleListResponse_Data_Relationships_CreatedBy_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -46,27 +46,27 @@ type NotificationRuleListResponse_Data_Relationships struct {
 }
 
 type NotificationRuleListResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type NotificationRuleListResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type NotificationRuleListResponse_Included_Relationships_OtherOrgs struct {
@@ -74,37 +74,37 @@ type NotificationRuleListResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type NotificationRuleListResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type NotificationRuleListResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type NotificationRuleListResponseConfig struct {
 	Filters any
 	Include any
-	Page any
+	Page    any
 	PerPage any
-	Sort any
+	Sort    any
 }
 
 type NotificationRuleListResponseAttrs struct {
 	// A list of monitor notification rules.
-	Data any
+	Data    any
 	Filters any
 	Include any
 	// Array of objects related to the monitor notification rules.
 	Included any
-	Page any
-	PerPage any
-	Sort any
+	Page     any
+	PerPage  any
+	Sort     any
 }
 
 var NotificationRuleListResponse = ubx.DataSourceBinding{
@@ -112,8 +112,8 @@ var NotificationRuleListResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"Filters": ubx.FieldSpec{WireName: "filters"},
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

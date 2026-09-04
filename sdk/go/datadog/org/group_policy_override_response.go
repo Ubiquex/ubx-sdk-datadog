@@ -4,6 +4,12 @@ package org
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupPolicyOverrideResponse_Data_Attributes struct {
+	// The override content as key-value pairs.
+	Content any
+	// Timestamp when the override was created.
+	CreatedAt any
+	// Timestamp when the override was last modified.
+	ModifiedAt any
 	// The site of the organization.
 	OrgSite any
 	// The UUID of the organization to grant the override.
@@ -32,6 +38,8 @@ type GroupPolicyOverrideResponse_Data_Relationships struct {
 type GroupPolicyOverrideResponse_Data struct {
 	// Attributes for creating a policy override.
 	Attributes any
+	// The ID of the policy override.
+	Id any
 	// Relationships for creating a policy override.
 	Relationships any
 	// Org group policy overrides resource type.
@@ -39,49 +47,53 @@ type GroupPolicyOverrideResponse_Data struct {
 }
 
 var GroupPolicyOverrideResponse_Data_AttributesFields = ubx.FieldMap{
-		"OrgSite": ubx.FieldSpec{WireName: "org_site"},
-		"OrgUuid": ubx.FieldSpec{WireName: "org_uuid"},
-	}
+	"Content":    ubx.FieldSpec{WireName: "content"},
+	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"OrgSite":    ubx.FieldSpec{WireName: "org_site"},
+	"OrgUuid":    ubx.FieldSpec{WireName: "org_uuid"},
+}
 
 var GroupPolicyOverrideResponse_Data_Relationships_OrgGroup_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var GroupPolicyOverrideResponse_Data_Relationships_OrgGroupFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: GroupPolicyOverrideResponse_Data_Relationships_OrgGroup_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   GroupPolicyOverrideResponse_Data_Relationships_OrgGroup_DataFields,
+	},
+}
 
 var GroupPolicyOverrideResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"OrgGroup": ubx.FieldSpec{
-			WireName: "org_group",
-			Kind: "object",
-			Fields: GroupPolicyOverrideResponse_Data_Relationships_OrgGroupFields,
-		},
-		"OrgGroupPolicy": ubx.FieldSpec{
-			WireName: "org_group_policy",
-			Kind: "object",
-			Fields: GroupPolicyOverrideResponse_Data_Relationships_OrgGroupFields,
-		},
-	}
+	"OrgGroup": ubx.FieldSpec{
+		WireName: "org_group",
+		Kind:     "object",
+		Fields:   GroupPolicyOverrideResponse_Data_Relationships_OrgGroupFields,
+	},
+	"OrgGroupPolicy": ubx.FieldSpec{
+		WireName: "org_group_policy",
+		Kind:     "object",
+		Fields:   GroupPolicyOverrideResponse_Data_Relationships_OrgGroupFields,
+	},
+}
 
 var GroupPolicyOverrideResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: GroupPolicyOverrideResponse_Data_AttributesFields,
-		},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: GroupPolicyOverrideResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   GroupPolicyOverrideResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   GroupPolicyOverrideResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type GroupPolicyOverrideResponseConfig struct {
 	// Data for creating an org group policy override.
@@ -102,8 +114,8 @@ var GroupPolicyOverrideResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: GroupPolicyOverrideResponse_DataFields,
+			Kind:     "object",
+			Fields:   GroupPolicyOverrideResponse_DataFields,
 		},
 		"OrgGroupPolicyOverrideId": ubx.FieldSpec{WireName: "org_group_policy_override_id"},
 	},

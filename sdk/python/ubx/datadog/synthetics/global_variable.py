@@ -99,8 +99,6 @@ class GlobalVariableConfig:
     attributes: Any = None
     # Description of the global variable.
     description: Any = None
-    # Unique identifier of the global variable.
-    id: Any = None
     # Determines if the global variable is a FIDO variable.
     is_fido: Any = None
     # Determines if the global variable is a TOTP/MFA variable.
@@ -152,7 +150,6 @@ GlobalVariable = ubx.ResourceBinding(
             fields=_GlobalVariable_AttributesFields,
         ),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "is_fido": ubx.FieldSpec(wire_name="is_fido"),
         "is_totp": ubx.FieldSpec(wire_name="is_totp"),
         "name": ubx.FieldSpec(wire_name="name"),

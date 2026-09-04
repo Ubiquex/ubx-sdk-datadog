@@ -4,47 +4,47 @@ package application
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityWafExclusionFilterResource_Data_Attributes_Metadata struct {
-	AddedAt any
-	AddedBy any
-	AddedByName any
-	ModifiedAt any
-	ModifiedBy any
+	AddedAt        any
+	AddedBy        any
+	AddedByName    any
+	ModifiedAt     any
+	ModifiedBy     any
 	ModifiedByName any
 }
 
 type SecurityWafExclusionFilterResource_Data_Attributes_RulesTarget_Tags struct {
 	Category any
-	Type any
+	Type     any
 }
 
 type SecurityWafExclusionFilterResource_Data_Attributes_RulesTarget struct {
 	RuleId any
-	Tags any
+	Tags   any
 }
 
 type SecurityWafExclusionFilterResource_Data_Attributes_Scope struct {
-	Env any
+	Env     any
 	Service any
 }
 
 type SecurityWafExclusionFilterResource_Data_Attributes struct {
 	Description any
-	Enabled any
-	EventQuery any
-	IpList any
-	Metadata any
-	OnMatch any
-	Parameters any
-	PathGlob any
+	Enabled     any
+	EventQuery  any
+	IpList      any
+	Metadata    any
+	OnMatch     any
+	Parameters  any
+	PathGlob    any
 	RulesTarget any
-	Scope any
+	Scope       any
 	SearchQuery any
 }
 
 type SecurityWafExclusionFilterResource_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type SecurityWafExclusionFilterResourceConfig struct {
@@ -57,6 +57,5 @@ type SecurityWafExclusionFilterResourceAttrs struct {
 
 var SecurityWafExclusionFilterResource = ubx.DataSourceBinding{
 	WireType: "datadog_application_security_waf_exclusion_filter_resource",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

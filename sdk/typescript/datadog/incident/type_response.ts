@@ -41,9 +41,38 @@ export interface TypeResponse_Data_Attributes {
   prefix?: string | Computed<string>;
 }
 
+export interface TypeResponse_Data_Relationships_CreatedByUser_Data {
+  /** A unique identifier that represents the user. */
+  id: string | Computed<string>;
+  /** Users resource type. */
+  type: string | Computed<string>;
+}
+
+export interface TypeResponse_Data_Relationships_CreatedByUser {
+  /** Relationship to user object. */
+  data: TypeResponse_Data_Relationships_CreatedByUser_Data | Computed<TypeResponse_Data_Relationships_CreatedByUser_Data>;
+}
+
+export interface TypeResponse_Data_Relationships {
+  /** Relationship to user. */
+  createdByUser?: TypeResponse_Data_Relationships_CreatedByUser | Computed<TypeResponse_Data_Relationships_CreatedByUser>;
+  /** A reference to a Google Meet Configuration resource. */
+  googleMeetConfiguration?: TypeResponse_Data_Relationships_CreatedByUser | Computed<TypeResponse_Data_Relationships_CreatedByUser>;
+  /** Relationship to user. */
+  lastModifiedByUser?: TypeResponse_Data_Relationships_CreatedByUser | Computed<TypeResponse_Data_Relationships_CreatedByUser>;
+  /** A reference to a Microsoft Teams Configuration resource. */
+  microsoftTeamsConfiguration?: TypeResponse_Data_Relationships_CreatedByUser | Computed<TypeResponse_Data_Relationships_CreatedByUser>;
+  /** A reference to a Zoom configuration resource. */
+  zoomConfiguration?: TypeResponse_Data_Relationships_CreatedByUser | Computed<TypeResponse_Data_Relationships_CreatedByUser>;
+}
+
 export interface TypeResponse_Data {
   /** Incident type's attributes. */
   attributes: TypeResponse_Data_Attributes | Computed<TypeResponse_Data_Attributes>;
+  /** The incident type's ID. */
+  id?: string | Computed<string>;
+  /** The incident type's resource relationships. */
+  relationships?: TypeResponse_Data_Relationships | Computed<TypeResponse_Data_Relationships>;
   /** Incident type resource type. */
   type: string | Computed<string>;
 }
@@ -75,11 +104,58 @@ const TypeResponse_Data_AttributesFields: FieldMap = {
   prefix: "prefix",
 };
 
+const TypeResponse_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
+  id: "id",
+  type: "type",
+};
+
+const TypeResponse_Data_Relationships_CreatedByUserFields: FieldMap = {
+  data: {
+    wireName: "data",
+    kind: "object",
+    fields: TypeResponse_Data_Relationships_CreatedByUser_DataFields,
+  },
+};
+
+const TypeResponse_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: TypeResponse_Data_Relationships_CreatedByUserFields,
+  },
+  googleMeetConfiguration: {
+    wireName: "google_meet_configuration",
+    kind: "object",
+    fields: TypeResponse_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: TypeResponse_Data_Relationships_CreatedByUserFields,
+  },
+  microsoftTeamsConfiguration: {
+    wireName: "microsoft_teams_configuration",
+    kind: "object",
+    fields: TypeResponse_Data_Relationships_CreatedByUserFields,
+  },
+  zoomConfiguration: {
+    wireName: "zoom_configuration",
+    kind: "object",
+    fields: TypeResponse_Data_Relationships_CreatedByUserFields,
+  },
+};
+
 const TypeResponse_DataFields: FieldMap = {
   attributes: {
     wireName: "attributes",
     kind: "object",
     fields: TypeResponse_Data_AttributesFields,
+  },
+  id: "id",
+  relationships: {
+    wireName: "relationships",
+    kind: "object",
+    fields: TypeResponse_Data_RelationshipsFields,
   },
   type: "type",
 };

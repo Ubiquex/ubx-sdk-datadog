@@ -4,15 +4,15 @@ package google
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChatOrganizationHandleResponseData_Data_Attributes struct {
-	Name any
-	SpaceDisplayName any
+	Name              any
+	SpaceDisplayName  any
 	SpaceResourceName any
 }
 
 type ChatOrganizationHandleResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ChatOrganizationHandleResponseDataConfig struct {
@@ -21,7 +21,7 @@ type ChatOrganizationHandleResponseDataConfig struct {
 
 type ChatOrganizationHandleResponseDataAttrs struct {
 	// An array of organization handles.
-	Data any
+	Data                  any
 	OrganizationBindingId any
 }
 

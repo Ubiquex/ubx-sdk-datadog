@@ -4,35 +4,95 @@ package personal
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessTokenResponse_Data_Attributes struct {
+	// Creation date of the access token.
+	CreatedAt any
 	// Expiration date of the access token. Must be at least 24 hours in the future.
 	ExpiresAt any
+	// Date the access token was last used.
+	LastUsedAt any
+	// Date of last modification of the access token.
+	ModifiedAt any
 	// Name of the access token.
 	Name any
+	// The public portion of the access token.
+	PublicPortion any
 	// Array of scopes to grant the access token.
 	Scopes any
+}
+
+type AccessTokenResponse_Data_Relationships_OwnedBy_Data struct {
+	// A unique identifier that represents the user.
+	Id any
+	// Users resource type.
+	Type any
+}
+
+type AccessTokenResponse_Data_Relationships_OwnedBy struct {
+	// Relationship to user object.
+	Data any
+}
+
+type AccessTokenResponse_Data_Relationships struct {
+	// Relationship to user.
+	OwnedBy any
 }
 
 type AccessTokenResponse_Data struct {
 	// Attributes used to create an access token.
 	Attributes any
+	// ID of the access token.
+	Id any
+	// Resources related to the access token.
+	Relationships any
 	// Personal access tokens resource type.
 	Type any
 }
 
 var AccessTokenResponse_Data_AttributesFields = ubx.FieldMap{
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"CreatedAt":     ubx.FieldSpec{WireName: "created_at"},
+	"ExpiresAt":     ubx.FieldSpec{WireName: "expires_at"},
+	"LastUsedAt":    ubx.FieldSpec{WireName: "last_used_at"},
+	"ModifiedAt":    ubx.FieldSpec{WireName: "modified_at"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"PublicPortion": ubx.FieldSpec{WireName: "public_portion"},
+	"Scopes":        ubx.FieldSpec{WireName: "scopes"},
+}
+
+var AccessTokenResponse_Data_Relationships_OwnedBy_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
+
+var AccessTokenResponse_Data_Relationships_OwnedByFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   AccessTokenResponse_Data_Relationships_OwnedBy_DataFields,
+	},
+}
+
+var AccessTokenResponse_Data_RelationshipsFields = ubx.FieldMap{
+	"OwnedBy": ubx.FieldSpec{
+		WireName: "owned_by",
+		Kind:     "object",
+		Fields:   AccessTokenResponse_Data_Relationships_OwnedByFields,
+	},
+}
 
 var AccessTokenResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: AccessTokenResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   AccessTokenResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   AccessTokenResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type AccessTokenResponseConfig struct {
 	// Object used to create an access token.
@@ -53,8 +113,8 @@ var AccessTokenResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: AccessTokenResponse_DataFields,
+			Kind:     "object",
+			Fields:   AccessTokenResponse_DataFields,
 		},
 		"TokenId": ubx.FieldSpec{WireName: "token_id"},
 	},

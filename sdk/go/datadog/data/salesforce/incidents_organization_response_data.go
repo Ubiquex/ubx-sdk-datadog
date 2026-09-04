@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IncidentsOrganizationResponseData_Data_Attributes struct {
 	InstanceUrl any
-	Name any
-	SfdcOrgId any
+	Name        any
+	SfdcOrgId   any
 	SfdcOrgType any
 }
 
 type IncidentsOrganizationResponseData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type IncidentsOrganizationResponseDataConfig struct {
@@ -26,6 +26,5 @@ type IncidentsOrganizationResponseDataAttrs struct {
 
 var IncidentsOrganizationResponseData = ubx.DataSourceBinding{
 	WireType: "datadog_salesforce_incidents_organization_response_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

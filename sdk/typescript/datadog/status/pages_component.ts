@@ -10,34 +10,48 @@ export interface PagesComponent_Data_Attributes_Components {
 export interface PagesComponent_Data_Attributes {
   /** If creating a component of type `group`, the components to create within the group. */
   components?: PagesComponent_Data_Attributes_Components[] | Computed<PagesComponent_Data_Attributes_Components[]>;
+  /** Timestamp of when the component was created. */
+  createdAt?: string | Computed<string>;
+  /** Timestamp of when the component was last modified. */
+  modifiedAt?: string | Computed<string>;
   /** The name of the component. */
   name: string | Computed<string>;
   /** The zero-indexed position of the component. */
   position: number | Computed<number>;
+  /** The status of the component. */
+  status?: string | Computed<string>;
   /** The type of the component. */
   type: string | Computed<string>;
 }
 
-export interface PagesComponent_Data_Relationships_Group_Data {
-  /** The ID of the group. */
+export interface PagesComponent_Data_Relationships_CreatedByUser_Data {
+  /** The ID of the Datadog user who created the component. */
   id: string | Computed<string>;
-  /** Components resource type. */
+  /** Users resource type. */
   type: string | Computed<string>;
 }
 
-export interface PagesComponent_Data_Relationships_Group {
-  /** The data object identifying the group to create the component within. */
-  data: PagesComponent_Data_Relationships_Group_Data | Computed<PagesComponent_Data_Relationships_Group_Data>;
+export interface PagesComponent_Data_Relationships_CreatedByUser {
+  /** The data object identifying the Datadog user who created the component. */
+  data: PagesComponent_Data_Relationships_CreatedByUser_Data | Computed<PagesComponent_Data_Relationships_CreatedByUser_Data>;
 }
 
 export interface PagesComponent_Data_Relationships {
+  /** The Datadog user who created the component. */
+  createdByUser?: PagesComponent_Data_Relationships_CreatedByUser | Computed<PagesComponent_Data_Relationships_CreatedByUser>;
   /** The group to create the component within. */
-  group?: PagesComponent_Data_Relationships_Group | Computed<PagesComponent_Data_Relationships_Group>;
+  group?: PagesComponent_Data_Relationships_CreatedByUser | Computed<PagesComponent_Data_Relationships_CreatedByUser>;
+  /** The Datadog user who last modified the component. */
+  lastModifiedByUser?: PagesComponent_Data_Relationships_CreatedByUser | Computed<PagesComponent_Data_Relationships_CreatedByUser>;
+  /** The status page the component belongs to. */
+  statusPage?: PagesComponent_Data_Relationships_CreatedByUser | Computed<PagesComponent_Data_Relationships_CreatedByUser>;
 }
 
 export interface PagesComponent_Data {
   /** The supported attributes for creating a component. */
   attributes: PagesComponent_Data_Attributes | Computed<PagesComponent_Data_Attributes>;
+  /** The ID of the component. */
+  id?: string | Computed<string>;
   /** The supported relationships for creating a component. */
   relationships?: PagesComponent_Data_Relationships | Computed<PagesComponent_Data_Relationships>;
   /** Components resource type. */
@@ -53,8 +67,8 @@ export interface PagesComponent_Included_Attributes {
 }
 
 export interface PagesComponent_Included_Relationships {
-  createdByUser?: PagesComponent_Data_Relationships_Group | Computed<PagesComponent_Data_Relationships_Group>;
-  lastModifiedByUser?: PagesComponent_Data_Relationships_Group | Computed<PagesComponent_Data_Relationships_Group>;
+  createdByUser?: PagesComponent_Data_Relationships_CreatedByUser | Computed<PagesComponent_Data_Relationships_CreatedByUser>;
+  lastModifiedByUser?: PagesComponent_Data_Relationships_CreatedByUser | Computed<PagesComponent_Data_Relationships_CreatedByUser>;
 }
 
 export interface PagesComponent_Included {
@@ -76,29 +90,47 @@ const PagesComponent_Data_AttributesFields: FieldMap = {
     kind: "list",
     fields: PagesComponent_Data_Attributes_ComponentsFields,
   },
+  createdAt: "created_at",
+  modifiedAt: "modified_at",
   name: "name",
   position: "position",
+  status: "status",
   type: "type",
 };
 
-const PagesComponent_Data_Relationships_Group_DataFields: FieldMap = {
+const PagesComponent_Data_Relationships_CreatedByUser_DataFields: FieldMap = {
   id: "id",
   type: "type",
 };
 
-const PagesComponent_Data_Relationships_GroupFields: FieldMap = {
+const PagesComponent_Data_Relationships_CreatedByUserFields: FieldMap = {
   data: {
     wireName: "data",
     kind: "object",
-    fields: PagesComponent_Data_Relationships_Group_DataFields,
+    fields: PagesComponent_Data_Relationships_CreatedByUser_DataFields,
   },
 };
 
 const PagesComponent_Data_RelationshipsFields: FieldMap = {
+  createdByUser: {
+    wireName: "created_by_user",
+    kind: "object",
+    fields: PagesComponent_Data_Relationships_CreatedByUserFields,
+  },
   group: {
     wireName: "group",
     kind: "object",
-    fields: PagesComponent_Data_Relationships_GroupFields,
+    fields: PagesComponent_Data_Relationships_CreatedByUserFields,
+  },
+  lastModifiedByUser: {
+    wireName: "last_modified_by_user",
+    kind: "object",
+    fields: PagesComponent_Data_Relationships_CreatedByUserFields,
+  },
+  statusPage: {
+    wireName: "status_page",
+    kind: "object",
+    fields: PagesComponent_Data_Relationships_CreatedByUserFields,
   },
 };
 
@@ -108,6 +140,7 @@ const PagesComponent_DataFields: FieldMap = {
     kind: "object",
     fields: PagesComponent_Data_AttributesFields,
   },
+  id: "id",
   relationships: {
     wireName: "relationships",
     kind: "object",

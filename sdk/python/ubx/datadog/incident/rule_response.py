@@ -26,14 +26,28 @@ class RuleResponse_Data_Attributes:
     condition_table_type: Any = None
     # List of field-based conditions.
     conditions: Any = None
+    # Timestamp when the rule was created.
+    created: Any = None
+    # UUID of the user who created the rule.
+    created_by_uuid: Any = None
+    # Timestamp when the rule was deleted.
+    deleted: Any = None
     # Whether the rule is enabled.
     enabled: Any = None
     # The execution type of an incident rule.
     execution_type: Any = None
+    # The incident settings association UUID.
+    incident_settings_association_uuid: Any = None
     # The UUID of the incident type this rule applies to.
     incident_type_uuid: Any = None
     # Whether any condition (OR logic) should match instead of all (AND logic).
     match_any_condition: Any = None
+    # Timestamp when the rule was last modified.
+    modified: Any = None
+    # UUID of the user who last modified the rule.
+    modified_by_uuid: Any = None
+    # The organization ID.
+    org_id: Any = None
     # The task ID for an incident rule.
     task_id: Any = None
     # The JSON-encoded payload for the task.
@@ -45,6 +59,8 @@ class RuleResponse_Data_Attributes:
 class RuleResponse_Data:
     # Attributes for creating an incident rule.
     attributes: Any = None
+    # The rule identifier.
+    id: Any = None
     # Incident rule resource type.
     type: Any = None
 
@@ -70,10 +86,17 @@ _RuleResponse_Data_AttributesFields = {
         kind="list",
         fields=_RuleResponse_Data_Attributes_ConditionsFields,
     ),
+    "created": ubx.FieldSpec(wire_name="created"),
+    "created_by_uuid": ubx.FieldSpec(wire_name="created_by_uuid"),
+    "deleted": ubx.FieldSpec(wire_name="deleted"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
     "execution_type": ubx.FieldSpec(wire_name="execution_type"),
+    "incident_settings_association_uuid": ubx.FieldSpec(wire_name="incident_settings_association_uuid"),
     "incident_type_uuid": ubx.FieldSpec(wire_name="incident_type_uuid"),
     "match_any_condition": ubx.FieldSpec(wire_name="match_any_condition"),
+    "modified": ubx.FieldSpec(wire_name="modified"),
+    "modified_by_uuid": ubx.FieldSpec(wire_name="modified_by_uuid"),
+    "org_id": ubx.FieldSpec(wire_name="org_id"),
     "task_id": ubx.FieldSpec(wire_name="task_id"),
     "task_payload": ubx.FieldSpec(wire_name="task_payload"),
     "trigger": ubx.FieldSpec(wire_name="trigger"),
@@ -85,6 +108,7 @@ _RuleResponse_DataFields = {
         kind="object",
         fields=_RuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

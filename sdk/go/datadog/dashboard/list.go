@@ -12,29 +12,9 @@ type List_Author struct {
 	Name any
 }
 
-var List_AuthorFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
-
 type ListConfig struct {
-	// Object describing the creator of the shared element.
-	Author any
-	// Date of creation of the dashboard list.
-	Created any
-	// The number of dashboards in the list.
-	DashboardCount any
-	// The ID of the dashboard list.
-	Id any
-	// Whether or not the list is in the favorites.
-	IsFavorite any
-	// Date of last edition of the dashboard list.
-	Modified any
 	// The name of the dashboard list.
 	Name any
-	// The type of dashboard list.
-	Type any
 	// path parameter, not part of the API's own resource representation
 	ListId any
 }
@@ -63,18 +43,7 @@ type ListAttrs struct {
 var List = ubx.ResourceBinding{
 	WireType: "datadog_dashboard_list",
 	Fields: ubx.FieldMap{
-		"Author": ubx.FieldSpec{
-			WireName: "author",
-			Kind: "object",
-			Fields: List_AuthorFields,
-		},
-		"Created": ubx.FieldSpec{WireName: "created"},
-		"DashboardCount": ubx.FieldSpec{WireName: "dashboard_count"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IsFavorite": ubx.FieldSpec{WireName: "is_favorite"},
-		"Modified": ubx.FieldSpec{WireName: "modified"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ListId": ubx.FieldSpec{WireName: "list_id"},
 	},
 }

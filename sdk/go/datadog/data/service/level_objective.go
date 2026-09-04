@@ -4,14 +4,14 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LevelObjective_Data_Creator struct {
-	Email any
+	Email  any
 	Handle any
-	Name any
+	Name   any
 }
 
 type LevelObjective_Data_Query struct {
 	Denominator any
-	Numerator any
+	Numerator   any
 }
 
 type LevelObjective_Data_SliSpecification_Count_BadEventsFormula struct {
@@ -19,63 +19,63 @@ type LevelObjective_Data_SliSpecification_Count_BadEventsFormula struct {
 }
 
 type LevelObjective_Data_SliSpecification_Count_Queries struct {
-	Aggregator any
+	Aggregator    any
 	CrossOrgUuids any
-	DataSource any
-	Name any
-	Query any
-	SemanticMode any
+	DataSource    any
+	Name          any
+	Query         any
+	SemanticMode  any
 }
 
 type LevelObjective_Data_SliSpecification_Count struct {
-	BadEventsFormula any
-	GoodEventsFormula any
-	Queries any
+	BadEventsFormula   any
+	GoodEventsFormula  any
+	Queries            any
 	TotalEventsFormula any
 }
 
 type LevelObjective_Data_SliSpecification_TimeSlice_Query struct {
 	Formulas any
-	Queries any
+	Queries  any
 }
 
 type LevelObjective_Data_SliSpecification_TimeSlice struct {
-	Comparator any
-	Query any
+	Comparator           any
+	Query                any
 	QueryIntervalSeconds any
-	Threshold any
+	Threshold            any
 }
 
 type LevelObjective_Data_SliSpecification struct {
-	Count any
+	Count     any
 	TimeSlice any
 }
 
 type LevelObjective_Data_Thresholds struct {
-	Target any
-	TargetDisplay any
-	Timeframe any
-	Warning any
+	Target         any
+	TargetDisplay  any
+	Timeframe      any
+	Warning        any
 	WarningDisplay any
 }
 
 type LevelObjective_Data struct {
-	CreatedAt any
-	Creator any
-	Description any
-	Groups any
-	Id any
-	ModifiedAt any
-	MonitorIds any
-	MonitorTags any
-	Name any
-	Query any
+	CreatedAt        any
+	Creator          any
+	Description      any
+	Groups           any
+	Id               any
+	ModifiedAt       any
+	MonitorIds       any
+	MonitorTags      any
+	Name             any
+	Query            any
 	SliSpecification any
-	Tags any
-	TargetThreshold any
-	Thresholds any
-	Timeframe any
-	Type any
+	Tags             any
+	TargetThreshold  any
+	Thresholds       any
+	Timeframe        any
+	Type             any
 	WarningThreshold any
 }
 
@@ -92,40 +92,40 @@ type LevelObjective_Metadata struct {
 }
 
 type LevelObjectiveConfig struct {
-	Ids any
-	IsDeleted any
-	Limit any
+	Ids          any
+	IsDeleted    any
+	Limit        any
 	MetricsQuery any
-	Offset any
-	Query any
-	TagsQuery any
+	Offset       any
+	Query        any
+	TagsQuery    any
 }
 
 type LevelObjectiveAttrs struct {
 	// An array of service level objective objects.
 	Data any
 	// An array of error messages. Each endpoint documents how/whether this field is used.
-	Errors any
-	Ids any
+	Errors    any
+	Ids       any
 	IsDeleted any
-	Limit any
+	Limit     any
 	// The metadata object containing additional information about the list of SLOs.
-	Metadata any
+	Metadata     any
 	MetricsQuery any
-	Offset any
-	Query any
-	TagsQuery any
+	Offset       any
+	Query        any
+	TagsQuery    any
 }
 
 var LevelObjective = ubx.DataSourceBinding{
 	WireType: "datadog_service_level_objective",
 	Fields: ubx.FieldMap{
-		"Ids": ubx.FieldSpec{WireName: "ids"},
-		"IsDeleted": ubx.FieldSpec{WireName: "is_deleted"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Ids":          ubx.FieldSpec{WireName: "ids"},
+		"IsDeleted":    ubx.FieldSpec{WireName: "is_deleted"},
+		"Limit":        ubx.FieldSpec{WireName: "limit"},
 		"MetricsQuery": ubx.FieldSpec{WireName: "metrics_query"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"TagsQuery": ubx.FieldSpec{WireName: "tags_query"},
+		"Offset":       ubx.FieldSpec{WireName: "offset"},
+		"Query":        ubx.FieldSpec{WireName: "query"},
+		"TagsQuery":    ubx.FieldSpec{WireName: "tags_query"},
 	},
 }

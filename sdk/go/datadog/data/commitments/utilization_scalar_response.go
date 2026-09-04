@@ -4,12 +4,12 @@ package commitments
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UtilizationScalarResponse_Columns_Meta_Unit struct {
-	Family any
-	Id any
-	Name any
-	Plural any
+	Family      any
+	Id          any
+	Name        any
+	Plural      any
 	ScaleFactor any
-	ShortName any
+	ShortName   any
 }
 
 type UtilizationScalarResponse_Columns_Meta struct {
@@ -17,26 +17,26 @@ type UtilizationScalarResponse_Columns_Meta struct {
 }
 
 type UtilizationScalarResponse_Columns struct {
-	Meta any
-	Name any
-	Type any
+	Meta   any
+	Name   any
+	Type   any
 	Values any
 }
 
 type UtilizationScalarResponse_ProductBreakdown struct {
-	Product any
+	Product     any
 	Utilization any
 }
 
 type UtilizationScalarResponseConfig struct {
 	// Type of commitment. ri for Reserved Instances, sp for Savings Plans.
 	CommitmentType any
-	End any
-	FilterBy any
-	Product any
+	End            any
+	FilterBy       any
+	Product        any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 }
 
 type UtilizationScalarResponseAttrs struct {
@@ -44,24 +44,24 @@ type UtilizationScalarResponseAttrs struct {
 	Columns any
 	// Type of commitment. ri for Reserved Instances, sp for Savings Plans.
 	CommitmentType any
-	End any
-	FilterBy any
-	Product any
+	End            any
+	FilterBy       any
+	Product        any
 	// Array of per-product utilization breakdown entries.
 	ProductBreakdown any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 }
 
 var UtilizationScalarResponse = ubx.DataSourceBinding{
 	WireType: "datadog_commitments_utilization_scalar_response",
 	Fields: ubx.FieldMap{
 		"CommitmentType": ubx.FieldSpec{WireName: "commitment_type"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"FilterBy": ubx.FieldSpec{WireName: "filter_by"},
-		"Product": ubx.FieldSpec{WireName: "product"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Start": ubx.FieldSpec{WireName: "start"},
+		"End":            ubx.FieldSpec{WireName: "end"},
+		"FilterBy":       ubx.FieldSpec{WireName: "filter_by"},
+		"Product":        ubx.FieldSpec{WireName: "product"},
+		"Provider":       ubx.FieldSpec{WireName: "provider"},
+		"Start":          ubx.FieldSpec{WireName: "start"},
 	},
 }

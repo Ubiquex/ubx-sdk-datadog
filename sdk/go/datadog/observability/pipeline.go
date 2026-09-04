@@ -5,160 +5,160 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pipeline_Data_Attributes_Config_Destinations_Auth struct {
 	PasswordKey any
-	Strategy any
+	Strategy    any
 	UsernameKey any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_Batch struct {
-	MaxEvents any
+	MaxEvents   any
 	TimeoutSecs any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_BatchEncoding struct {
 	AllowNullableFields any
-	Codec any
+	Codec               any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_BatchSettings struct {
-	BatchSize any
+	BatchSize   any
 	TimeoutSecs any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_Buffer struct {
 	MaxEvents any
-	MaxSize any
-	Type any
-	WhenFull any
+	MaxSize   any
+	Type      any
+	WhenFull  any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_Compression struct {
 	Algorithm any
-	Level any
+	Level     any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_DataStream struct {
 	AutoRouting any
-	Dataset any
-	Dtype any
-	Namespace any
-	SyncFields any
+	Dataset     any
+	Dtype       any
+	Namespace   any
+	SyncFields  any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_Framing struct {
 	Delimiter any
-	Method any
+	Method    any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFields struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_Routes struct {
 	ApiKeyKey any
-	Include any
-	RouteId any
-	Site any
+	Include   any
+	RouteId   any
+	Site      any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_Sasl struct {
-	Mechanism any
+	Mechanism   any
 	PasswordKey any
 	UsernameKey any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations_Tls struct {
-	CaFile any
-	CrtFile any
-	KeyFile any
+	CaFile     any
+	CrtFile    any
+	KeyFile    any
 	KeyPassKey any
 }
 
 type Pipeline_Data_Attributes_Config_Destinations struct {
-	AccountIdKey any
-	Acl any
-	AddressKey any
-	ApiVersion any
-	Auth any
-	AuthStrategy any
-	AutoExtractTimestamp any
-	Batch any
-	BatchEncoding any
-	BatchSettings any
-	BlobPrefix any
-	BootstrapServersKey any
-	Bucket any
-	Buffer any
-	BulkIndex any
-	ClientId any
-	ClientSecretKey any
-	Compression any
-	ConnectionStringKey any
-	ContainerName any
-	CustomKey any
-	CustomSourceName any
-	CustomerId any
-	DataStream any
-	Database any
-	DateTimeBestEffort any
-	DceUriKey any
-	DcrImmutableId any
-	DefaultNamespace any
-	Encoding any
-	EndpointUrlKey any
-	Format any
-	Framing any
-	HeaderCustomFields any
-	HeaderHostName any
-	HeaderSourceCategory any
-	HeaderSourceName any
-	HeadersKey any
-	Id any
-	IdKey any
-	Index any
-	IndexedFields any
-	IngestionEndpointKey any
-	Inputs any
-	Keepalive any
-	KeyField any
-	KeyPrefix any
-	LibrdkafkaOptions any
-	LicenseKeyKey any
-	LogType any
-	MessageTimeoutMs any
-	Metadata any
-	Mode any
-	PasswordKey any
-	Pipeline any
-	Project any
-	RateLimitDurationSecs any
-	RateLimitNum any
-	Region any
-	RequestRetryPartial any
-	Routes any
-	Sasl any
-	ServerSideEncryption any
-	SkipUnknownFields any
-	SocketTimeoutMs any
-	Source any
-	Sourcetype any
-	SsekmsKeyId any
-	StorageClass any
-	Table any
-	TableName any
-	TenantId any
-	Tls any
-	TokenKey any
-	TokenStrategy any
-	Topic any
-	Type any
+	AccountIdKey            any
+	Acl                     any
+	AddressKey              any
+	ApiVersion              any
+	Auth                    any
+	AuthStrategy            any
+	AutoExtractTimestamp    any
+	Batch                   any
+	BatchEncoding           any
+	BatchSettings           any
+	BlobPrefix              any
+	BootstrapServersKey     any
+	Bucket                  any
+	Buffer                  any
+	BulkIndex               any
+	ClientId                any
+	ClientSecretKey         any
+	Compression             any
+	ConnectionStringKey     any
+	ContainerName           any
+	CustomKey               any
+	CustomSourceName        any
+	CustomerId              any
+	DataStream              any
+	Database                any
+	DateTimeBestEffort      any
+	DceUriKey               any
+	DcrImmutableId          any
+	DefaultNamespace        any
+	Encoding                any
+	EndpointUrlKey          any
+	Format                  any
+	Framing                 any
+	HeaderCustomFields      any
+	HeaderHostName          any
+	HeaderSourceCategory    any
+	HeaderSourceName        any
+	HeadersKey              any
+	Id                      any
+	IdKey                   any
+	Index                   any
+	IndexedFields           any
+	IngestionEndpointKey    any
+	Inputs                  any
+	Keepalive               any
+	KeyField                any
+	KeyPrefix               any
+	LibrdkafkaOptions       any
+	LicenseKeyKey           any
+	LogType                 any
+	MessageTimeoutMs        any
+	Metadata                any
+	Mode                    any
+	PasswordKey             any
+	Pipeline                any
+	Project                 any
+	RateLimitDurationSecs   any
+	RateLimitNum            any
+	Region                  any
+	RequestRetryPartial     any
+	Routes                  any
+	Sasl                    any
+	ServerSideEncryption    any
+	SkipUnknownFields       any
+	SocketTimeoutMs         any
+	Source                  any
+	Sourcetype              any
+	SsekmsKeyId             any
+	StorageClass            any
+	Table                   any
+	TableName               any
+	TenantId                any
+	Tls                     any
+	TokenKey                any
+	TokenStrategy           any
+	Topic                   any
+	Type                    any
 	UnityCatalogEndpointKey any
-	UriKey any
-	UsernameKey any
+	UriKey                  any
+	UsernameKey             any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Arrays struct {
-	Field any
+	Field   any
 	Include any
 }
 
@@ -167,38 +167,38 @@ type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Cache struct {
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_Encoding struct {
-	Delimiter any
+	Delimiter       any
 	IncludesHeaders any
-	Type any
+	Type            any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_Key struct {
-	Column any
+	Column     any
 	Comparison any
-	Field any
+	Field      any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_Schema struct {
 	Column any
-	Type any
+	Type   any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File struct {
 	Encoding any
-	Key any
-	Path any
-	Schema any
+	Key      any
+	Path     any
+	Schema   any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Geoip struct {
 	KeyField any
-	Locale any
-	Path any
+	Locale   any
+	Path     any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Limit struct {
 	Enforce any
-	Limit any
+	Limit   any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Mappings struct {
@@ -207,55 +207,55 @@ type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Mappings struct 
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MergeStrategies struct {
-	Path any
+	Path     any
 	Strategy any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Metrics_Value struct {
-	Field any
+	Field    any
 	Strategy any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Metrics struct {
-	GroupBy any
-	Include any
+	GroupBy    any
+	Include    any
 	MetricType any
-	Name any
-	Value any
+	Name       any
+	Value      any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Overrides struct {
 	Fields any
-	Limit any
+	Limit  any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_PerMetricLimits_PerTagLimits struct {
 	OverrideType any
-	TagKey any
-	ValueLimit any
+	TagKey       any
+	ValueLimit   any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_PerMetricLimits struct {
 	LimitExceededAction any
-	MetricName any
-	OverrideType any
-	PerTagLimits any
-	ValueLimit any
+	MetricName          any
+	OverrideType        any
+	PerTagLimits        any
+	ValueLimit          any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_ReferenceTable struct {
 	AppKeyKey any
-	Columns any
-	KeyField any
-	TableId any
+	Columns   any
+	KeyField  any
+	TableId   any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Remaps struct {
 	DropOnError any
-	Enabled any
-	Include any
-	Name any
-	Source any
+	Enabled     any
+	Include     any
+	Name        any
+	Source      any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Rules_MatchRules struct {
@@ -264,9 +264,9 @@ type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Rules_MatchRules
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Rules struct {
-	Include any
-	MatchRules any
-	Source any
+	Include      any
+	MatchRules   any
+	Source       any
 	SupportRules any
 }
 
@@ -276,120 +276,120 @@ type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_TrackingMode str
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Variables struct {
 	Field any
-	Name any
+	Name  any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups_Processors struct {
-	Action any
-	AlwaysUseTextKey any
-	Arrays any
-	AttrPrefix any
-	Cache any
-	DisableLibraryRules any
-	DisplayName any
-	DropEvents any
-	Enabled any
-	Field any
-	Fields any
-	File any
-	Geoip any
-	GroupBy any
-	Id any
+	Action                      any
+	AlwaysUseTextKey            any
+	Arrays                      any
+	AttrPrefix                  any
+	Cache                       any
+	DisableLibraryRules         any
+	DisplayName                 any
+	DropEvents                  any
+	Enabled                     any
+	Field                       any
+	Fields                      any
+	File                        any
+	Geoip                       any
+	GroupBy                     any
+	Id                          any
 	IgnoreWhenMissingPartitions any
-	Include any
-	IncludeAttr any
-	IntervalSecs any
-	KeepUnmatched any
-	Keys any
-	Limit any
-	LimitExceededAction any
-	Mappings any
-	MergeStrategies any
-	Metrics any
-	Mode any
-	Name any
-	OverflowAction any
-	Overrides any
-	ParseBool any
-	ParseNull any
-	ParseNumber any
-	PartitionFields any
-	PerMetricLimits any
-	Percentage any
-	ReferenceTable any
-	Remaps any
-	Rules any
-	Tags any
-	Target any
-	TextKey any
-	Threshold any
-	TooManyBucketsAction any
-	TrackingMode any
-	Type any
-	ValueLimit any
-	Variables any
-	Window any
+	Include                     any
+	IncludeAttr                 any
+	IntervalSecs                any
+	KeepUnmatched               any
+	Keys                        any
+	Limit                       any
+	LimitExceededAction         any
+	Mappings                    any
+	MergeStrategies             any
+	Metrics                     any
+	Mode                        any
+	Name                        any
+	OverflowAction              any
+	Overrides                   any
+	ParseBool                   any
+	ParseNull                   any
+	ParseNumber                 any
+	PartitionFields             any
+	PerMetricLimits             any
+	Percentage                  any
+	ReferenceTable              any
+	Remaps                      any
+	Rules                       any
+	Tags                        any
+	Target                      any
+	TextKey                     any
+	Threshold                   any
+	TooManyBucketsAction        any
+	TrackingMode                any
+	Type                        any
+	ValueLimit                  any
+	Variables                   any
+	Window                      any
 }
 
 type Pipeline_Data_Attributes_Config_ProcessorGroups struct {
 	DisplayName any
-	Enabled any
-	Id any
-	Include any
-	Inputs any
-	Processors any
+	Enabled     any
+	Id          any
+	Include     any
+	Inputs      any
+	Processors  any
 }
 
 type Pipeline_Data_Attributes_Config_Sources_Auth struct {
-	AssumeRole any
-	ExternalId any
+	AssumeRole  any
+	ExternalId  any
 	SessionName any
 }
 
 type Pipeline_Data_Attributes_Config_Sources_ValidTokens_FieldToAdd struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Pipeline_Data_Attributes_Config_Sources_ValidTokens struct {
-	Enabled any
-	FieldToAdd any
+	Enabled     any
+	FieldToAdd  any
 	PathToToken any
-	TokenKey any
+	TokenKey    any
 }
 
 type Pipeline_Data_Attributes_Config_Sources struct {
-	AddressKey any
-	Auth any
-	AuthStrategy any
+	AddressKey          any
+	Auth                any
+	AuthStrategy        any
 	BootstrapServersKey any
-	Compression any
-	CustomKey any
-	Decoding any
-	EndpointUrlKey any
-	Framing any
-	GroupId any
-	GrpcAddressKey any
-	HttpAddressKey any
-	Id any
-	LibrdkafkaOptions any
-	Mode any
-	PasswordKey any
-	Project any
-	Region any
-	Sasl any
-	ScrapeIntervalSecs any
-	ScrapeTimeoutSecs any
-	StoreHecToken any
-	Subscription any
-	Tls any
-	TokenKey any
-	Topics any
-	Type any
-	UriKey any
-	UrlKey any
-	UsernameKey any
-	ValidTokens any
+	Compression         any
+	CustomKey           any
+	Decoding            any
+	EndpointUrlKey      any
+	Framing             any
+	GroupId             any
+	GrpcAddressKey      any
+	HttpAddressKey      any
+	Id                  any
+	LibrdkafkaOptions   any
+	Mode                any
+	PasswordKey         any
+	Project             any
+	Region              any
+	Sasl                any
+	ScrapeIntervalSecs  any
+	ScrapeTimeoutSecs   any
+	StoreHecToken       any
+	Subscription        any
+	Tls                 any
+	TokenKey            any
+	Topics              any
+	Type                any
+	UriKey              any
+	UrlKey              any
+	UsernameKey         any
+	ValidTokens         any
 }
 
 type Pipeline_Data_Attributes_Config struct {
@@ -417,633 +417,636 @@ type Pipeline_Data_Attributes struct {
 type Pipeline_Data struct {
 	// Defines the pipeline’s name and its components (sources, processors, and destinations).
 	Attributes any
+	// Unique identifier for the pipeline.
+	Id any
 	// The resource type identifier. For pipeline resources, this should always be set to `pipelines`.
 	Type any
 }
 
 var Pipeline_Data_Attributes_Config_Destinations_AuthFields = ubx.FieldMap{
-		"PasswordKey": ubx.FieldSpec{WireName: "password_key"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-		"UsernameKey": ubx.FieldSpec{WireName: "username_key"},
-	}
+	"PasswordKey": ubx.FieldSpec{WireName: "password_key"},
+	"Strategy":    ubx.FieldSpec{WireName: "strategy"},
+	"UsernameKey": ubx.FieldSpec{WireName: "username_key"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_BatchFields = ubx.FieldMap{
-		"MaxEvents": ubx.FieldSpec{WireName: "max_events"},
-		"TimeoutSecs": ubx.FieldSpec{WireName: "timeout_secs"},
-	}
+	"MaxEvents":   ubx.FieldSpec{WireName: "max_events"},
+	"TimeoutSecs": ubx.FieldSpec{WireName: "timeout_secs"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_BatchEncodingFields = ubx.FieldMap{
-		"AllowNullableFields": ubx.FieldSpec{WireName: "allow_nullable_fields"},
-		"Codec": ubx.FieldSpec{WireName: "codec"},
-	}
+	"AllowNullableFields": ubx.FieldSpec{WireName: "allow_nullable_fields"},
+	"Codec":               ubx.FieldSpec{WireName: "codec"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_BatchSettingsFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"TimeoutSecs": ubx.FieldSpec{WireName: "timeout_secs"},
-	}
+	"BatchSize":   ubx.FieldSpec{WireName: "batch_size"},
+	"TimeoutSecs": ubx.FieldSpec{WireName: "timeout_secs"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_BufferFields = ubx.FieldMap{
-		"MaxEvents": ubx.FieldSpec{WireName: "max_events"},
-		"MaxSize": ubx.FieldSpec{WireName: "max_size"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WhenFull": ubx.FieldSpec{WireName: "when_full"},
-	}
+	"MaxEvents": ubx.FieldSpec{WireName: "max_events"},
+	"MaxSize":   ubx.FieldSpec{WireName: "max_size"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+	"WhenFull":  ubx.FieldSpec{WireName: "when_full"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_CompressionFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
+	"Level":     ubx.FieldSpec{WireName: "level"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_DataStreamFields = ubx.FieldMap{
-		"AutoRouting": ubx.FieldSpec{WireName: "auto_routing"},
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"Dtype": ubx.FieldSpec{WireName: "dtype"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"SyncFields": ubx.FieldSpec{WireName: "sync_fields"},
-	}
+	"AutoRouting": ubx.FieldSpec{WireName: "auto_routing"},
+	"Dataset":     ubx.FieldSpec{WireName: "dataset"},
+	"Dtype":       ubx.FieldSpec{WireName: "dtype"},
+	"Namespace":   ubx.FieldSpec{WireName: "namespace"},
+	"SyncFields":  ubx.FieldSpec{WireName: "sync_fields"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_FramingFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-	}
+	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+	"Method":    ubx.FieldSpec{WireName: "method"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_RoutesFields = ubx.FieldMap{
-		"ApiKeyKey": ubx.FieldSpec{WireName: "api_key_key"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"RouteId": ubx.FieldSpec{WireName: "route_id"},
-		"Site": ubx.FieldSpec{WireName: "site"},
-	}
+	"ApiKeyKey": ubx.FieldSpec{WireName: "api_key_key"},
+	"Include":   ubx.FieldSpec{WireName: "include"},
+	"RouteId":   ubx.FieldSpec{WireName: "route_id"},
+	"Site":      ubx.FieldSpec{WireName: "site"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_SaslFields = ubx.FieldMap{
-		"Mechanism": ubx.FieldSpec{WireName: "mechanism"},
-		"PasswordKey": ubx.FieldSpec{WireName: "password_key"},
-		"UsernameKey": ubx.FieldSpec{WireName: "username_key"},
-	}
+	"Mechanism":   ubx.FieldSpec{WireName: "mechanism"},
+	"PasswordKey": ubx.FieldSpec{WireName: "password_key"},
+	"UsernameKey": ubx.FieldSpec{WireName: "username_key"},
+}
 
 var Pipeline_Data_Attributes_Config_Destinations_TlsFields = ubx.FieldMap{
-		"CaFile": ubx.FieldSpec{WireName: "ca_file"},
-		"CrtFile": ubx.FieldSpec{WireName: "crt_file"},
-		"KeyFile": ubx.FieldSpec{WireName: "key_file"},
-		"KeyPassKey": ubx.FieldSpec{WireName: "key_pass_key"},
-	}
+	"CaFile":     ubx.FieldSpec{WireName: "ca_file"},
+	"CrtFile":    ubx.FieldSpec{WireName: "crt_file"},
+	"KeyFile":    ubx.FieldSpec{WireName: "key_file"},
+	"KeyPassKey": ubx.FieldSpec{WireName: "key_pass_key"},
+}
 
 var Pipeline_Data_Attributes_Config_DestinationsFields = ubx.FieldMap{
-		"AccountIdKey": ubx.FieldSpec{WireName: "account_id_key"},
-		"Acl": ubx.FieldSpec{WireName: "acl"},
-		"AddressKey": ubx.FieldSpec{WireName: "address_key"},
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Auth": ubx.FieldSpec{
-			WireName: "auth",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_AuthFields,
-		},
-		"AuthStrategy": ubx.FieldSpec{WireName: "auth_strategy"},
-		"AutoExtractTimestamp": ubx.FieldSpec{WireName: "auto_extract_timestamp"},
-		"Batch": ubx.FieldSpec{
-			WireName: "batch",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_BatchFields,
-		},
-		"BatchEncoding": ubx.FieldSpec{
-			WireName: "batch_encoding",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_BatchEncodingFields,
-		},
-		"BatchSettings": ubx.FieldSpec{
-			WireName: "batch_settings",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_BatchSettingsFields,
-		},
-		"BlobPrefix": ubx.FieldSpec{WireName: "blob_prefix"},
-		"BootstrapServersKey": ubx.FieldSpec{WireName: "bootstrap_servers_key"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Buffer": ubx.FieldSpec{
-			WireName: "buffer",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_BufferFields,
-		},
-		"BulkIndex": ubx.FieldSpec{WireName: "bulk_index"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecretKey": ubx.FieldSpec{WireName: "client_secret_key"},
-		"Compression": ubx.FieldSpec{
-			WireName: "compression",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_CompressionFields,
-		},
-		"ConnectionStringKey": ubx.FieldSpec{WireName: "connection_string_key"},
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"CustomKey": ubx.FieldSpec{WireName: "custom_key"},
-		"CustomSourceName": ubx.FieldSpec{WireName: "custom_source_name"},
-		"CustomerId": ubx.FieldSpec{WireName: "customer_id"},
-		"DataStream": ubx.FieldSpec{
-			WireName: "data_stream",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_DataStreamFields,
-		},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DateTimeBestEffort": ubx.FieldSpec{WireName: "date_time_best_effort"},
-		"DceUriKey": ubx.FieldSpec{WireName: "dce_uri_key"},
-		"DcrImmutableId": ubx.FieldSpec{WireName: "dcr_immutable_id"},
-		"DefaultNamespace": ubx.FieldSpec{WireName: "default_namespace"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"EndpointUrlKey": ubx.FieldSpec{WireName: "endpoint_url_key"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Framing": ubx.FieldSpec{
-			WireName: "framing",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_FramingFields,
-		},
-		"HeaderCustomFields": ubx.FieldSpec{
-			WireName: "header_custom_fields",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
-		},
-		"HeaderHostName": ubx.FieldSpec{WireName: "header_host_name"},
-		"HeaderSourceCategory": ubx.FieldSpec{WireName: "header_source_category"},
-		"HeaderSourceName": ubx.FieldSpec{WireName: "header_source_name"},
-		"HeadersKey": ubx.FieldSpec{WireName: "headers_key"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IdKey": ubx.FieldSpec{WireName: "id_key"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"IndexedFields": ubx.FieldSpec{WireName: "indexed_fields"},
-		"IngestionEndpointKey": ubx.FieldSpec{WireName: "ingestion_endpoint_key"},
-		"Inputs": ubx.FieldSpec{WireName: "inputs"},
-		"Keepalive": ubx.FieldSpec{WireName: "keepalive"},
-		"KeyField": ubx.FieldSpec{WireName: "key_field"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-		"LibrdkafkaOptions": ubx.FieldSpec{
-			WireName: "librdkafka_options",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
-		},
-		"LicenseKeyKey": ubx.FieldSpec{WireName: "license_key_key"},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-		"MessageTimeoutMs": ubx.FieldSpec{WireName: "message_timeout_ms"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"PasswordKey": ubx.FieldSpec{WireName: "password_key"},
-		"Pipeline": ubx.FieldSpec{WireName: "pipeline"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"RateLimitDurationSecs": ubx.FieldSpec{WireName: "rate_limit_duration_secs"},
-		"RateLimitNum": ubx.FieldSpec{WireName: "rate_limit_num"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RequestRetryPartial": ubx.FieldSpec{WireName: "request_retry_partial"},
-		"Routes": ubx.FieldSpec{
-			WireName: "routes",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_RoutesFields,
-		},
-		"Sasl": ubx.FieldSpec{
-			WireName: "sasl",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_SaslFields,
-		},
-		"ServerSideEncryption": ubx.FieldSpec{WireName: "server_side_encryption"},
-		"SkipUnknownFields": ubx.FieldSpec{WireName: "skip_unknown_fields"},
-		"SocketTimeoutMs": ubx.FieldSpec{WireName: "socket_timeout_ms"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Sourcetype": ubx.FieldSpec{WireName: "sourcetype"},
-		"SsekmsKeyId": ubx.FieldSpec{WireName: "ssekms_key_id"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-		"Tls": ubx.FieldSpec{
-			WireName: "tls",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_TlsFields,
-		},
-		"TokenKey": ubx.FieldSpec{WireName: "token_key"},
-		"TokenStrategy": ubx.FieldSpec{WireName: "token_strategy"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UnityCatalogEndpointKey": ubx.FieldSpec{WireName: "unity_catalog_endpoint_key"},
-		"UriKey": ubx.FieldSpec{WireName: "uri_key"},
-		"UsernameKey": ubx.FieldSpec{WireName: "username_key"},
-	}
+	"AccountIdKey": ubx.FieldSpec{WireName: "account_id_key"},
+	"Acl":          ubx.FieldSpec{WireName: "acl"},
+	"AddressKey":   ubx.FieldSpec{WireName: "address_key"},
+	"ApiVersion":   ubx.FieldSpec{WireName: "api_version"},
+	"Auth": ubx.FieldSpec{
+		WireName: "auth",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_AuthFields,
+	},
+	"AuthStrategy":         ubx.FieldSpec{WireName: "auth_strategy"},
+	"AutoExtractTimestamp": ubx.FieldSpec{WireName: "auto_extract_timestamp"},
+	"Batch": ubx.FieldSpec{
+		WireName: "batch",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_BatchFields,
+	},
+	"BatchEncoding": ubx.FieldSpec{
+		WireName: "batch_encoding",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_BatchEncodingFields,
+	},
+	"BatchSettings": ubx.FieldSpec{
+		WireName: "batch_settings",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_BatchSettingsFields,
+	},
+	"BlobPrefix":          ubx.FieldSpec{WireName: "blob_prefix"},
+	"BootstrapServersKey": ubx.FieldSpec{WireName: "bootstrap_servers_key"},
+	"Bucket":              ubx.FieldSpec{WireName: "bucket"},
+	"Buffer": ubx.FieldSpec{
+		WireName: "buffer",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_BufferFields,
+	},
+	"BulkIndex":       ubx.FieldSpec{WireName: "bulk_index"},
+	"ClientId":        ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecretKey": ubx.FieldSpec{WireName: "client_secret_key"},
+	"Compression": ubx.FieldSpec{
+		WireName: "compression",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_CompressionFields,
+	},
+	"ConnectionStringKey": ubx.FieldSpec{WireName: "connection_string_key"},
+	"ContainerName":       ubx.FieldSpec{WireName: "container_name"},
+	"CustomKey":           ubx.FieldSpec{WireName: "custom_key"},
+	"CustomSourceName":    ubx.FieldSpec{WireName: "custom_source_name"},
+	"CustomerId":          ubx.FieldSpec{WireName: "customer_id"},
+	"DataStream": ubx.FieldSpec{
+		WireName: "data_stream",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_DataStreamFields,
+	},
+	"Database":           ubx.FieldSpec{WireName: "database"},
+	"DateTimeBestEffort": ubx.FieldSpec{WireName: "date_time_best_effort"},
+	"DceUriKey":          ubx.FieldSpec{WireName: "dce_uri_key"},
+	"DcrImmutableId":     ubx.FieldSpec{WireName: "dcr_immutable_id"},
+	"DefaultNamespace":   ubx.FieldSpec{WireName: "default_namespace"},
+	"Encoding":           ubx.FieldSpec{WireName: "encoding"},
+	"EndpointUrlKey":     ubx.FieldSpec{WireName: "endpoint_url_key"},
+	"Format":             ubx.FieldSpec{WireName: "format"},
+	"Framing": ubx.FieldSpec{
+		WireName: "framing",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_FramingFields,
+	},
+	"HeaderCustomFields": ubx.FieldSpec{
+		WireName: "header_custom_fields",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
+	},
+	"HeaderHostName":       ubx.FieldSpec{WireName: "header_host_name"},
+	"HeaderSourceCategory": ubx.FieldSpec{WireName: "header_source_category"},
+	"HeaderSourceName":     ubx.FieldSpec{WireName: "header_source_name"},
+	"HeadersKey":           ubx.FieldSpec{WireName: "headers_key"},
+	"Id":                   ubx.FieldSpec{WireName: "id"},
+	"IdKey":                ubx.FieldSpec{WireName: "id_key"},
+	"Index":                ubx.FieldSpec{WireName: "index"},
+	"IndexedFields":        ubx.FieldSpec{WireName: "indexed_fields"},
+	"IngestionEndpointKey": ubx.FieldSpec{WireName: "ingestion_endpoint_key"},
+	"Inputs":               ubx.FieldSpec{WireName: "inputs"},
+	"Keepalive":            ubx.FieldSpec{WireName: "keepalive"},
+	"KeyField":             ubx.FieldSpec{WireName: "key_field"},
+	"KeyPrefix":            ubx.FieldSpec{WireName: "key_prefix"},
+	"LibrdkafkaOptions": ubx.FieldSpec{
+		WireName: "librdkafka_options",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
+	},
+	"LicenseKeyKey":    ubx.FieldSpec{WireName: "license_key_key"},
+	"LogType":          ubx.FieldSpec{WireName: "log_type"},
+	"MessageTimeoutMs": ubx.FieldSpec{WireName: "message_timeout_ms"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
+	},
+	"Mode":                  ubx.FieldSpec{WireName: "mode"},
+	"PasswordKey":           ubx.FieldSpec{WireName: "password_key"},
+	"Pipeline":              ubx.FieldSpec{WireName: "pipeline"},
+	"Project":               ubx.FieldSpec{WireName: "project"},
+	"RateLimitDurationSecs": ubx.FieldSpec{WireName: "rate_limit_duration_secs"},
+	"RateLimitNum":          ubx.FieldSpec{WireName: "rate_limit_num"},
+	"Region":                ubx.FieldSpec{WireName: "region"},
+	"RequestRetryPartial":   ubx.FieldSpec{WireName: "request_retry_partial"},
+	"Routes": ubx.FieldSpec{
+		WireName: "routes",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_RoutesFields,
+	},
+	"Sasl": ubx.FieldSpec{
+		WireName: "sasl",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_SaslFields,
+	},
+	"ServerSideEncryption": ubx.FieldSpec{WireName: "server_side_encryption"},
+	"SkipUnknownFields":    ubx.FieldSpec{WireName: "skip_unknown_fields"},
+	"SocketTimeoutMs":      ubx.FieldSpec{WireName: "socket_timeout_ms"},
+	"Source":               ubx.FieldSpec{WireName: "source"},
+	"Sourcetype":           ubx.FieldSpec{WireName: "sourcetype"},
+	"SsekmsKeyId":          ubx.FieldSpec{WireName: "ssekms_key_id"},
+	"StorageClass":         ubx.FieldSpec{WireName: "storage_class"},
+	"Table":                ubx.FieldSpec{WireName: "table"},
+	"TableName":            ubx.FieldSpec{WireName: "table_name"},
+	"TenantId":             ubx.FieldSpec{WireName: "tenant_id"},
+	"Tls": ubx.FieldSpec{
+		WireName: "tls",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_TlsFields,
+	},
+	"TokenKey":                ubx.FieldSpec{WireName: "token_key"},
+	"TokenStrategy":           ubx.FieldSpec{WireName: "token_strategy"},
+	"Topic":                   ubx.FieldSpec{WireName: "topic"},
+	"Type":                    ubx.FieldSpec{WireName: "type"},
+	"UnityCatalogEndpointKey": ubx.FieldSpec{WireName: "unity_catalog_endpoint_key"},
+	"UriKey":                  ubx.FieldSpec{WireName: "uri_key"},
+	"UsernameKey":             ubx.FieldSpec{WireName: "username_key"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_ArraysFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-	}
+	"Field":   ubx.FieldSpec{WireName: "field"},
+	"Include": ubx.FieldSpec{WireName: "include"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_CacheFields = ubx.FieldMap{
-		"NumEvents": ubx.FieldSpec{WireName: "num_events"},
-	}
+	"NumEvents": ubx.FieldSpec{WireName: "num_events"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_EncodingFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"IncludesHeaders": ubx.FieldSpec{WireName: "includes_headers"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Delimiter":       ubx.FieldSpec{WireName: "delimiter"},
+	"IncludesHeaders": ubx.FieldSpec{WireName: "includes_headers"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_KeyFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-	}
+	"Column":     ubx.FieldSpec{WireName: "column"},
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Field":      ubx.FieldSpec{WireName: "field"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_SchemaFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Column": ubx.FieldSpec{WireName: "column"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_FileFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{
-			WireName: "encoding",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_EncodingFields,
-		},
-		"Key": ubx.FieldSpec{
-			WireName: "key",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_KeyFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_SchemaFields,
-		},
-	}
+	"Encoding": ubx.FieldSpec{
+		WireName: "encoding",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_EncodingFields,
+	},
+	"Key": ubx.FieldSpec{
+		WireName: "key",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_KeyFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_File_SchemaFields,
+	},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_GeoipFields = ubx.FieldMap{
-		"KeyField": ubx.FieldSpec{WireName: "key_field"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"KeyField": ubx.FieldSpec{WireName: "key_field"},
+	"Locale":   ubx.FieldSpec{WireName: "locale"},
+	"Path":     ubx.FieldSpec{WireName: "path"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_LimitFields = ubx.FieldMap{
-		"Enforce": ubx.FieldSpec{WireName: "enforce"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-	}
+	"Enforce": ubx.FieldSpec{WireName: "enforce"},
+	"Limit":   ubx.FieldSpec{WireName: "limit"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MappingsFields = ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"Mapping": ubx.FieldSpec{WireName: "mapping"},
-	}
+	"Include": ubx.FieldSpec{WireName: "include"},
+	"Mapping": ubx.FieldSpec{WireName: "mapping"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MergeStrategiesFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"Strategy": ubx.FieldSpec{WireName: "strategy"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Metrics_ValueFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"Field":    ubx.FieldSpec{WireName: "field"},
+	"Strategy": ubx.FieldSpec{WireName: "strategy"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MetricsFields = ubx.FieldMap{
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"MetricType": ubx.FieldSpec{WireName: "metric_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Metrics_ValueFields,
-		},
-	}
+	"GroupBy":    ubx.FieldSpec{WireName: "group_by"},
+	"Include":    ubx.FieldSpec{WireName: "include"},
+	"MetricType": ubx.FieldSpec{WireName: "metric_type"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Metrics_ValueFields,
+	},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_OverridesFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
-		},
-		"Limit": ubx.FieldSpec{
-			WireName: "limit",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_LimitFields,
-		},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
+	},
+	"Limit": ubx.FieldSpec{
+		WireName: "limit",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_LimitFields,
+	},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_PerMetricLimits_PerTagLimitsFields = ubx.FieldMap{
-		"OverrideType": ubx.FieldSpec{WireName: "override_type"},
-		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
-		"ValueLimit": ubx.FieldSpec{WireName: "value_limit"},
-	}
+	"OverrideType": ubx.FieldSpec{WireName: "override_type"},
+	"TagKey":       ubx.FieldSpec{WireName: "tag_key"},
+	"ValueLimit":   ubx.FieldSpec{WireName: "value_limit"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_PerMetricLimitsFields = ubx.FieldMap{
-		"LimitExceededAction": ubx.FieldSpec{WireName: "limit_exceeded_action"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"OverrideType": ubx.FieldSpec{WireName: "override_type"},
-		"PerTagLimits": ubx.FieldSpec{
-			WireName: "per_tag_limits",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_PerMetricLimits_PerTagLimitsFields,
-		},
-		"ValueLimit": ubx.FieldSpec{WireName: "value_limit"},
-	}
+	"LimitExceededAction": ubx.FieldSpec{WireName: "limit_exceeded_action"},
+	"MetricName":          ubx.FieldSpec{WireName: "metric_name"},
+	"OverrideType":        ubx.FieldSpec{WireName: "override_type"},
+	"PerTagLimits": ubx.FieldSpec{
+		WireName: "per_tag_limits",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_PerMetricLimits_PerTagLimitsFields,
+	},
+	"ValueLimit": ubx.FieldSpec{WireName: "value_limit"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_ReferenceTableFields = ubx.FieldMap{
-		"AppKeyKey": ubx.FieldSpec{WireName: "app_key_key"},
-		"Columns": ubx.FieldSpec{WireName: "columns"},
-		"KeyField": ubx.FieldSpec{WireName: "key_field"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"AppKeyKey": ubx.FieldSpec{WireName: "app_key_key"},
+	"Columns":   ubx.FieldSpec{WireName: "columns"},
+	"KeyField":  ubx.FieldSpec{WireName: "key_field"},
+	"TableId":   ubx.FieldSpec{WireName: "table_id"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_RemapsFields = ubx.FieldMap{
-		"DropOnError": ubx.FieldSpec{WireName: "drop_on_error"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"DropOnError": ubx.FieldSpec{WireName: "drop_on_error"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"Include":     ubx.FieldSpec{WireName: "include"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Source":      ubx.FieldSpec{WireName: "source"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Rules_MatchRulesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rule": ubx.FieldSpec{WireName: "rule"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Rule": ubx.FieldSpec{WireName: "rule"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_RulesFields = ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"MatchRules": ubx.FieldSpec{
-			WireName: "match_rules",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Rules_MatchRulesFields,
-		},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"SupportRules": ubx.FieldSpec{
-			WireName: "support_rules",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Rules_MatchRulesFields,
-		},
-	}
+	"Include": ubx.FieldSpec{WireName: "include"},
+	"MatchRules": ubx.FieldSpec{
+		WireName: "match_rules",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Rules_MatchRulesFields,
+	},
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"SupportRules": ubx.FieldSpec{
+		WireName: "support_rules",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_Rules_MatchRulesFields,
+	},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_TrackingModeFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_VariablesFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroups_ProcessorsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"AlwaysUseTextKey": ubx.FieldSpec{WireName: "always_use_text_key"},
-		"Arrays": ubx.FieldSpec{
-			WireName: "arrays",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_ArraysFields,
-		},
-		"AttrPrefix": ubx.FieldSpec{WireName: "attr_prefix"},
-		"Cache": ubx.FieldSpec{
-			WireName: "cache",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_CacheFields,
-		},
-		"DisableLibraryRules": ubx.FieldSpec{WireName: "disable_library_rules"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"DropEvents": ubx.FieldSpec{WireName: "drop_events"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
-		},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_FileFields,
-		},
-		"Geoip": ubx.FieldSpec{
-			WireName: "geoip",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_GeoipFields,
-		},
-		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IgnoreWhenMissingPartitions": ubx.FieldSpec{WireName: "ignore_when_missing_partitions"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"IncludeAttr": ubx.FieldSpec{WireName: "include_attr"},
-		"IntervalSecs": ubx.FieldSpec{WireName: "interval_secs"},
-		"KeepUnmatched": ubx.FieldSpec{WireName: "keep_unmatched"},
-		"Keys": ubx.FieldSpec{WireName: "keys"},
-		"Limit": ubx.FieldSpec{
-			WireName: "limit",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_LimitFields,
-		},
-		"LimitExceededAction": ubx.FieldSpec{WireName: "limit_exceeded_action"},
-		"Mappings": ubx.FieldSpec{
-			WireName: "mappings",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MappingsFields,
-		},
-		"MergeStrategies": ubx.FieldSpec{
-			WireName: "merge_strategies",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MergeStrategiesFields,
-		},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MetricsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OverflowAction": ubx.FieldSpec{WireName: "overflow_action"},
-		"Overrides": ubx.FieldSpec{
-			WireName: "overrides",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_OverridesFields,
-		},
-		"ParseBool": ubx.FieldSpec{WireName: "parse_bool"},
-		"ParseNull": ubx.FieldSpec{WireName: "parse_null"},
-		"ParseNumber": ubx.FieldSpec{WireName: "parse_number"},
-		"PartitionFields": ubx.FieldSpec{WireName: "partition_fields"},
-		"PerMetricLimits": ubx.FieldSpec{
-			WireName: "per_metric_limits",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_PerMetricLimitsFields,
-		},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-		"ReferenceTable": ubx.FieldSpec{
-			WireName: "reference_table",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_ReferenceTableFields,
-		},
-		"Remaps": ubx.FieldSpec{
-			WireName: "remaps",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_RemapsFields,
-		},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_RulesFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
-		},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"TextKey": ubx.FieldSpec{WireName: "text_key"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-		"TooManyBucketsAction": ubx.FieldSpec{WireName: "too_many_buckets_action"},
-		"TrackingMode": ubx.FieldSpec{
-			WireName: "tracking_mode",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_TrackingModeFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"ValueLimit": ubx.FieldSpec{WireName: "value_limit"},
-		"Variables": ubx.FieldSpec{
-			WireName: "variables",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_VariablesFields,
-		},
-		"Window": ubx.FieldSpec{WireName: "window"},
-	}
+	"Action":           ubx.FieldSpec{WireName: "action"},
+	"AlwaysUseTextKey": ubx.FieldSpec{WireName: "always_use_text_key"},
+	"Arrays": ubx.FieldSpec{
+		WireName: "arrays",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_ArraysFields,
+	},
+	"AttrPrefix": ubx.FieldSpec{WireName: "attr_prefix"},
+	"Cache": ubx.FieldSpec{
+		WireName: "cache",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_CacheFields,
+	},
+	"DisableLibraryRules": ubx.FieldSpec{WireName: "disable_library_rules"},
+	"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+	"DropEvents":          ubx.FieldSpec{WireName: "drop_events"},
+	"Enabled":             ubx.FieldSpec{WireName: "enabled"},
+	"Field":               ubx.FieldSpec{WireName: "field"},
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
+	},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_FileFields,
+	},
+	"Geoip": ubx.FieldSpec{
+		WireName: "geoip",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_GeoipFields,
+	},
+	"GroupBy":                     ubx.FieldSpec{WireName: "group_by"},
+	"Id":                          ubx.FieldSpec{WireName: "id"},
+	"IgnoreWhenMissingPartitions": ubx.FieldSpec{WireName: "ignore_when_missing_partitions"},
+	"Include":                     ubx.FieldSpec{WireName: "include"},
+	"IncludeAttr":                 ubx.FieldSpec{WireName: "include_attr"},
+	"IntervalSecs":                ubx.FieldSpec{WireName: "interval_secs"},
+	"KeepUnmatched":               ubx.FieldSpec{WireName: "keep_unmatched"},
+	"Keys":                        ubx.FieldSpec{WireName: "keys"},
+	"Limit": ubx.FieldSpec{
+		WireName: "limit",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_LimitFields,
+	},
+	"LimitExceededAction": ubx.FieldSpec{WireName: "limit_exceeded_action"},
+	"Mappings": ubx.FieldSpec{
+		WireName: "mappings",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MappingsFields,
+	},
+	"MergeStrategies": ubx.FieldSpec{
+		WireName: "merge_strategies",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MergeStrategiesFields,
+	},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_MetricsFields,
+	},
+	"Mode":           ubx.FieldSpec{WireName: "mode"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"OverflowAction": ubx.FieldSpec{WireName: "overflow_action"},
+	"Overrides": ubx.FieldSpec{
+		WireName: "overrides",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_OverridesFields,
+	},
+	"ParseBool":       ubx.FieldSpec{WireName: "parse_bool"},
+	"ParseNull":       ubx.FieldSpec{WireName: "parse_null"},
+	"ParseNumber":     ubx.FieldSpec{WireName: "parse_number"},
+	"PartitionFields": ubx.FieldSpec{WireName: "partition_fields"},
+	"PerMetricLimits": ubx.FieldSpec{
+		WireName: "per_metric_limits",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_PerMetricLimitsFields,
+	},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+	"ReferenceTable": ubx.FieldSpec{
+		WireName: "reference_table",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_ReferenceTableFields,
+	},
+	"Remaps": ubx.FieldSpec{
+		WireName: "remaps",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_RemapsFields,
+	},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_RulesFields,
+	},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
+	},
+	"Target":               ubx.FieldSpec{WireName: "target"},
+	"TextKey":              ubx.FieldSpec{WireName: "text_key"},
+	"Threshold":            ubx.FieldSpec{WireName: "threshold"},
+	"TooManyBucketsAction": ubx.FieldSpec{WireName: "too_many_buckets_action"},
+	"TrackingMode": ubx.FieldSpec{
+		WireName: "tracking_mode",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_TrackingModeFields,
+	},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+	"ValueLimit": ubx.FieldSpec{WireName: "value_limit"},
+	"Variables": ubx.FieldSpec{
+		WireName: "variables",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_Processors_VariablesFields,
+	},
+	"Window": ubx.FieldSpec{WireName: "window"},
+}
 
 var Pipeline_Data_Attributes_Config_ProcessorGroupsFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Include": ubx.FieldSpec{WireName: "include"},
-		"Inputs": ubx.FieldSpec{WireName: "inputs"},
-		"Processors": ubx.FieldSpec{
-			WireName: "processors",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroups_ProcessorsFields,
-		},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Include":     ubx.FieldSpec{WireName: "include"},
+	"Inputs":      ubx.FieldSpec{WireName: "inputs"},
+	"Processors": ubx.FieldSpec{
+		WireName: "processors",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroups_ProcessorsFields,
+	},
+}
 
 var Pipeline_Data_Attributes_Config_Sources_AuthFields = ubx.FieldMap{
-		"AssumeRole": ubx.FieldSpec{WireName: "assume_role"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"SessionName": ubx.FieldSpec{WireName: "session_name"},
-	}
+	"AssumeRole":  ubx.FieldSpec{WireName: "assume_role"},
+	"ExternalId":  ubx.FieldSpec{WireName: "external_id"},
+	"SessionName": ubx.FieldSpec{WireName: "session_name"},
+}
 
 var Pipeline_Data_Attributes_Config_Sources_ValidTokens_FieldToAddFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Pipeline_Data_Attributes_Config_Sources_ValidTokensFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"FieldToAdd": ubx.FieldSpec{
-			WireName: "field_to_add",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Sources_ValidTokens_FieldToAddFields,
-		},
-		"PathToToken": ubx.FieldSpec{WireName: "path_to_token"},
-		"TokenKey": ubx.FieldSpec{WireName: "token_key"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"FieldToAdd": ubx.FieldSpec{
+		WireName: "field_to_add",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Sources_ValidTokens_FieldToAddFields,
+	},
+	"PathToToken": ubx.FieldSpec{WireName: "path_to_token"},
+	"TokenKey":    ubx.FieldSpec{WireName: "token_key"},
+}
 
 var Pipeline_Data_Attributes_Config_SourcesFields = ubx.FieldMap{
-		"AddressKey": ubx.FieldSpec{WireName: "address_key"},
-		"Auth": ubx.FieldSpec{
-			WireName: "auth",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Sources_AuthFields,
-		},
-		"AuthStrategy": ubx.FieldSpec{WireName: "auth_strategy"},
-		"BootstrapServersKey": ubx.FieldSpec{WireName: "bootstrap_servers_key"},
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"CustomKey": ubx.FieldSpec{WireName: "custom_key"},
-		"Decoding": ubx.FieldSpec{WireName: "decoding"},
-		"EndpointUrlKey": ubx.FieldSpec{WireName: "endpoint_url_key"},
-		"Framing": ubx.FieldSpec{
-			WireName: "framing",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_FramingFields,
-		},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"GrpcAddressKey": ubx.FieldSpec{WireName: "grpc_address_key"},
-		"HttpAddressKey": ubx.FieldSpec{WireName: "http_address_key"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LibrdkafkaOptions": ubx.FieldSpec{
-			WireName: "librdkafka_options",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"PasswordKey": ubx.FieldSpec{WireName: "password_key"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Sasl": ubx.FieldSpec{
-			WireName: "sasl",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_SaslFields,
-		},
-		"ScrapeIntervalSecs": ubx.FieldSpec{WireName: "scrape_interval_secs"},
-		"ScrapeTimeoutSecs": ubx.FieldSpec{WireName: "scrape_timeout_secs"},
-		"StoreHecToken": ubx.FieldSpec{WireName: "store_hec_token"},
-		"Subscription": ubx.FieldSpec{WireName: "subscription"},
-		"Tls": ubx.FieldSpec{
-			WireName: "tls",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_Config_Destinations_TlsFields,
-		},
-		"TokenKey": ubx.FieldSpec{WireName: "token_key"},
-		"Topics": ubx.FieldSpec{WireName: "topics"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UriKey": ubx.FieldSpec{WireName: "uri_key"},
-		"UrlKey": ubx.FieldSpec{WireName: "url_key"},
-		"UsernameKey": ubx.FieldSpec{WireName: "username_key"},
-		"ValidTokens": ubx.FieldSpec{
-			WireName: "valid_tokens",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_Sources_ValidTokensFields,
-		},
-	}
+	"AddressKey": ubx.FieldSpec{WireName: "address_key"},
+	"Auth": ubx.FieldSpec{
+		WireName: "auth",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Sources_AuthFields,
+	},
+	"AuthStrategy":        ubx.FieldSpec{WireName: "auth_strategy"},
+	"BootstrapServersKey": ubx.FieldSpec{WireName: "bootstrap_servers_key"},
+	"Compression":         ubx.FieldSpec{WireName: "compression"},
+	"CustomKey":           ubx.FieldSpec{WireName: "custom_key"},
+	"Decoding":            ubx.FieldSpec{WireName: "decoding"},
+	"EndpointUrlKey":      ubx.FieldSpec{WireName: "endpoint_url_key"},
+	"Framing": ubx.FieldSpec{
+		WireName: "framing",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_FramingFields,
+	},
+	"GroupId":        ubx.FieldSpec{WireName: "group_id"},
+	"GrpcAddressKey": ubx.FieldSpec{WireName: "grpc_address_key"},
+	"HttpAddressKey": ubx.FieldSpec{WireName: "http_address_key"},
+	"Id":             ubx.FieldSpec{WireName: "id"},
+	"LibrdkafkaOptions": ubx.FieldSpec{
+		WireName: "librdkafka_options",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
+	},
+	"Mode":        ubx.FieldSpec{WireName: "mode"},
+	"PasswordKey": ubx.FieldSpec{WireName: "password_key"},
+	"Project":     ubx.FieldSpec{WireName: "project"},
+	"Region":      ubx.FieldSpec{WireName: "region"},
+	"Sasl": ubx.FieldSpec{
+		WireName: "sasl",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_SaslFields,
+	},
+	"ScrapeIntervalSecs": ubx.FieldSpec{WireName: "scrape_interval_secs"},
+	"ScrapeTimeoutSecs":  ubx.FieldSpec{WireName: "scrape_timeout_secs"},
+	"StoreHecToken":      ubx.FieldSpec{WireName: "store_hec_token"},
+	"Subscription":       ubx.FieldSpec{WireName: "subscription"},
+	"Tls": ubx.FieldSpec{
+		WireName: "tls",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_Config_Destinations_TlsFields,
+	},
+	"TokenKey":    ubx.FieldSpec{WireName: "token_key"},
+	"Topics":      ubx.FieldSpec{WireName: "topics"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+	"UriKey":      ubx.FieldSpec{WireName: "uri_key"},
+	"UrlKey":      ubx.FieldSpec{WireName: "url_key"},
+	"UsernameKey": ubx.FieldSpec{WireName: "username_key"},
+	"ValidTokens": ubx.FieldSpec{
+		WireName: "valid_tokens",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_Sources_ValidTokensFields,
+	},
+}
 
 var Pipeline_Data_Attributes_ConfigFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_DestinationsFields,
-		},
-		"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
-		"ProcessorGroups": ubx.FieldSpec{
-			WireName: "processor_groups",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroupsFields,
-		},
-		"Processors": ubx.FieldSpec{
-			WireName: "processors",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_ProcessorGroupsFields,
-		},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: Pipeline_Data_Attributes_Config_SourcesFields,
-		},
-		"UseLegacySearchSyntax": ubx.FieldSpec{WireName: "use_legacy_search_syntax"},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_DestinationsFields,
+	},
+	"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
+	"ProcessorGroups": ubx.FieldSpec{
+		WireName: "processor_groups",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroupsFields,
+	},
+	"Processors": ubx.FieldSpec{
+		WireName: "processors",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_ProcessorGroupsFields,
+	},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   Pipeline_Data_Attributes_Config_SourcesFields,
+	},
+	"UseLegacySearchSyntax": ubx.FieldSpec{WireName: "use_legacy_search_syntax"},
+}
 
 var Pipeline_Data_AttributesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Pipeline_Data_Attributes_ConfigFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Pipeline_Data_Attributes_ConfigFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Pipeline_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Pipeline_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Pipeline_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PipelineConfig struct {
 	// Contains the the pipeline configuration.
@@ -1064,8 +1067,8 @@ var Pipeline = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Pipeline_DataFields,
+			Kind:     "object",
+			Fields:   Pipeline_DataFields,
 		},
 		"PipelineId": ubx.FieldSpec{WireName: "pipeline_id"},
 	},

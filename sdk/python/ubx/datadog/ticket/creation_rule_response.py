@@ -10,6 +10,8 @@ import ubx_sdk as ubx
 class CreationRuleResponse_Data_Attributes_Action:
     # The UUID of the default assignee for created tickets.
     assignee_id: Any = None
+    # The reason the rule was automatically disabled by the system due to a ticketing integration error.
+    auto_disabled_reason: Any = None
     # Custom fields of the Jira issue to create. For the list of available fields, see [Jira documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-issues/#api-rest-api-2-issue-createmeta-projectidorkey-issuetypes-issuetypeid-get).
     fields: Any = None
     # The maximum number of tickets the rule may create per day. If exceeded, one final ticket will be created, explaining the limit was hit and link back to the responsible rule.
@@ -18,6 +20,15 @@ class CreationRuleResponse_Data_Attributes_Action:
     project_id: Any = None
     # The ticketing system to create tickets in.
     target: Any = None
+
+@dataclasses.dataclass
+class CreationRuleResponse_Data_Attributes_CreatedBy:
+    # The actor's identifier (a user UUID or a system identifier).
+    id: Any = None
+    # The name of the actor.
+    name: Any = None
+    # Whether the actor is a user or the Datadog system.
+    type: Any = None
 
 @dataclasses.dataclass
 class CreationRuleResponse_Data_Attributes_Rule:
@@ -30,8 +41,16 @@ class CreationRuleResponse_Data_Attributes_Rule:
 class CreationRuleResponse_Data_Attributes:
     # The action to take when the ticket creation rule matches a finding.
     action: Any = None
+    # The Unix timestamp in milliseconds when the rule was created.
+    created_at: Any = None
+    # The user or Datadog system who created the rule.
+    created_by: Any = None
     # Whether the ticket creation rule is enabled.
     enabled: Any = None
+    # The Unix timestamp in milliseconds when the rule was last modified.
+    modified_at: Any = None
+    # The user or Datadog system who last modified the rule.
+    modified_by: Any = None
     # The name of the ticket creation rule.
     name: Any = None
     # Defines the scope of findings to which the automation rule applies.
@@ -41,15 +60,24 @@ class CreationRuleResponse_Data_Attributes:
 class CreationRuleResponse_Data:
     # Attributes for creating or updating a ticket creation rule.
     attributes: Any = None
+    # The ID of the ticket creation rule.
+    id: Any = None
     # The JSON:API type for ticket creation rules.
     type: Any = None
 
 _CreationRuleResponse_Data_Attributes_ActionFields = {
     "assignee_id": ubx.FieldSpec(wire_name="assignee_id"),
+    "auto_disabled_reason": ubx.FieldSpec(wire_name="auto_disabled_reason"),
     "fields": ubx.FieldSpec(wire_name="fields"),
     "max_tickets_per_day": ubx.FieldSpec(wire_name="max_tickets_per_day"),
     "project_id": ubx.FieldSpec(wire_name="project_id"),
     "target": ubx.FieldSpec(wire_name="target"),
+}
+
+_CreationRuleResponse_Data_Attributes_CreatedByFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "type": ubx.FieldSpec(wire_name="type"),
 }
 
 _CreationRuleResponse_Data_Attributes_RuleFields = {
@@ -63,7 +91,19 @@ _CreationRuleResponse_Data_AttributesFields = {
         kind="object",
         fields=_CreationRuleResponse_Data_Attributes_ActionFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "created_by": ubx.FieldSpec(
+        wire_name="created_by",
+        kind="object",
+        fields=_CreationRuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
+    "modified_by": ubx.FieldSpec(
+        wire_name="modified_by",
+        kind="object",
+        fields=_CreationRuleResponse_Data_Attributes_CreatedByFields,
+    ),
     "name": ubx.FieldSpec(wire_name="name"),
     "rule": ubx.FieldSpec(
         wire_name="rule",
@@ -78,6 +118,7 @@ _CreationRuleResponse_DataFields = {
         kind="object",
         fields=_CreationRuleResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

@@ -10,21 +10,21 @@ type EventResponse_Data_Attributes_Attributes_Author struct {
 
 type EventResponse_Data_Attributes_Attributes_Links struct {
 	Category any
-	Title any
-	Url any
+	Title    any
+	Url      any
 }
 
 type EventResponse_Data_Attributes_Attributes struct {
-	Author any
-	ChangeMetadata any
-	ChangedResource any
-	Custom any
+	Author            any
+	ChangeMetadata    any
+	ChangedResource   any
+	Custom            any
 	ImpactedResources any
-	Links any
-	NewValue any
-	PrevValue any
-	Priority any
-	Status any
+	Links             any
+	NewValue          any
+	PrevValue         any
+	Priority          any
+	Status            any
 }
 
 type EventResponse_Data_Attributes struct {
@@ -51,74 +51,77 @@ type EventResponse_Data_Attributes struct {
 type EventResponse_Data struct {
 	// Event attributes.
 	Attributes any
+	// The event's ID.
+	Id any
 	// Entity type.
 	Type any
 }
 
 var EventResponse_Data_Attributes_Attributes_AuthorFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var EventResponse_Data_Attributes_Attributes_LinksFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Category": ubx.FieldSpec{WireName: "category"},
+	"Title":    ubx.FieldSpec{WireName: "title"},
+	"Url":      ubx.FieldSpec{WireName: "url"},
+}
 
 var EventResponse_Data_Attributes_AttributesFields = ubx.FieldMap{
-		"Author": ubx.FieldSpec{
-			WireName: "author",
-			Kind: "object",
-			Fields: EventResponse_Data_Attributes_Attributes_AuthorFields,
-		},
-		"ChangeMetadata": ubx.FieldSpec{WireName: "change_metadata"},
-		"ChangedResource": ubx.FieldSpec{
-			WireName: "changed_resource",
-			Kind: "object",
-			Fields: EventResponse_Data_Attributes_Attributes_AuthorFields,
-		},
-		"Custom": ubx.FieldSpec{WireName: "custom"},
-		"ImpactedResources": ubx.FieldSpec{
-			WireName: "impacted_resources",
-			Kind: "list",
-			Fields: EventResponse_Data_Attributes_Attributes_AuthorFields,
-		},
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "list",
-			Fields: EventResponse_Data_Attributes_Attributes_LinksFields,
-		},
-		"NewValue": ubx.FieldSpec{WireName: "new_value"},
-		"PrevValue": ubx.FieldSpec{WireName: "prev_value"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Author": ubx.FieldSpec{
+		WireName: "author",
+		Kind:     "object",
+		Fields:   EventResponse_Data_Attributes_Attributes_AuthorFields,
+	},
+	"ChangeMetadata": ubx.FieldSpec{WireName: "change_metadata"},
+	"ChangedResource": ubx.FieldSpec{
+		WireName: "changed_resource",
+		Kind:     "object",
+		Fields:   EventResponse_Data_Attributes_Attributes_AuthorFields,
+	},
+	"Custom": ubx.FieldSpec{WireName: "custom"},
+	"ImpactedResources": ubx.FieldSpec{
+		WireName: "impacted_resources",
+		Kind:     "list",
+		Fields:   EventResponse_Data_Attributes_Attributes_AuthorFields,
+	},
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "list",
+		Fields:   EventResponse_Data_Attributes_Attributes_LinksFields,
+	},
+	"NewValue":  ubx.FieldSpec{WireName: "new_value"},
+	"PrevValue": ubx.FieldSpec{WireName: "prev_value"},
+	"Priority":  ubx.FieldSpec{WireName: "priority"},
+	"Status":    ubx.FieldSpec{WireName: "status"},
+}
 
 var EventResponse_Data_AttributesFields = ubx.FieldMap{
-		"AggregationKey": ubx.FieldSpec{WireName: "aggregation_key"},
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: EventResponse_Data_Attributes_AttributesFields,
-		},
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"AggregationKey": ubx.FieldSpec{WireName: "aggregation_key"},
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   EventResponse_Data_Attributes_AttributesFields,
+	},
+	"Category":      ubx.FieldSpec{WireName: "category"},
+	"Host":          ubx.FieldSpec{WireName: "host"},
+	"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
+	"Message":       ubx.FieldSpec{WireName: "message"},
+	"Tags":          ubx.FieldSpec{WireName: "tags"},
+	"Timestamp":     ubx.FieldSpec{WireName: "timestamp"},
+	"Title":         ubx.FieldSpec{WireName: "title"},
+}
 
 var EventResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: EventResponse_Data_AttributesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   EventResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type EventResponseConfig struct {
 	// An event object.
@@ -139,8 +142,8 @@ var EventResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: EventResponse_DataFields,
+			Kind:     "object",
+			Fields:   EventResponse_DataFields,
 		},
 		"EventId": ubx.FieldSpec{WireName: "event_id"},
 	},

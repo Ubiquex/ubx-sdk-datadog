@@ -55,6 +55,8 @@ class EventResponse_Data_Attributes:
 class EventResponse_Data:
     # Event attributes.
     attributes: Any = None
+    # The event's ID.
+    id: Any = None
     # Entity type.
     type: Any = None
 
@@ -120,6 +122,7 @@ _EventResponse_DataFields = {
         kind="object",
         fields=_EventResponse_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

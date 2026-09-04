@@ -4,19 +4,19 @@ package item
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiPayloadData_Data_Attributes struct {
-	CreatedAt any
-	ModifiedAt any
-	OrgId any
+	CreatedAt         any
+	ModifiedAt        any
+	OrgId             any
 	PrimaryColumnName any
-	Signature any
-	StoreId any
-	Value any
+	Signature         any
+	StoreId           any
+	Value             any
 }
 
 type ApiPayloadData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ApiPayloadData_Meta_Page struct {
@@ -49,17 +49,17 @@ type ApiPayloadData_Meta struct {
 
 type ApiPayloadDataConfig struct {
 	DatastoreId any
-	Filter any
-	ItemKey any
-	Sort any
+	Filter      any
+	ItemKey     any
+	Sort        any
 }
 
 type ApiPayloadDataAttrs struct {
 	// An array of datastore items with their content and metadata.
-	Data any
+	Data        any
 	DatastoreId any
-	Filter any
-	ItemKey any
+	Filter      any
+	ItemKey     any
 	// Additional metadata about a collection of datastore items, including pagination and schema information.
 	Meta any
 	Sort any
@@ -69,8 +69,8 @@ var ApiPayloadData = ubx.DataSourceBinding{
 	WireType: "datadog_item_api_payload_data",
 	Fields: ubx.FieldMap{
 		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"ItemKey": ubx.FieldSpec{WireName: "item_key"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
+		"ItemKey":     ubx.FieldSpec{WireName: "item_key"},
+		"Sort":        ubx.FieldSpec{WireName: "sort"},
 	},
 }

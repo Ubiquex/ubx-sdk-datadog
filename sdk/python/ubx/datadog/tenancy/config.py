@@ -44,6 +44,8 @@ class Config_Data_Attributes_RegionsConfig:
 class Config_Data_Attributes:
     # OCI API signing key credentials used to authenticate the Datadog integration with the OCI tenancy.
     auth_credentials: Any = None
+    # The identifier of the billing plan associated with the OCI tenancy.
+    billing_plan_id: Any = None
     # Version number of the integration the tenancy is integrated with
     config_version: Any = None
     # Whether cost data collection from OCI is enabled for the tenancy.
@@ -58,10 +60,14 @@ class Config_Data_Attributes:
     logs_config: Any = None
     # Metrics collection configuration for an OCI tenancy, controlling which compartments and services are included or excluded.
     metrics_config: Any = None
+    # The name of the parent OCI tenancy, if applicable.
+    parent_tenancy_name: Any = None
     # Region configuration for an OCI tenancy, specifying which regions are available, enabled, or disabled for data collection.
     regions_config: Any = None
     # Whether resource collection from OCI is enabled for the tenancy.
     resource_collection_enabled: Any = None
+    # The human-readable name of the OCI tenancy.
+    tenancy_name: Any = None
     # The OCID of the OCI user used by the Datadog integration for authentication.
     user_ocid: Any = None
 
@@ -103,6 +109,7 @@ _Config_Data_AttributesFields = {
         kind="object",
         fields=_Config_Data_Attributes_AuthCredentialsFields,
     ),
+    "billing_plan_id": ubx.FieldSpec(wire_name="billing_plan_id"),
     "config_version": ubx.FieldSpec(wire_name="config_version"),
     "cost_collection_enabled": ubx.FieldSpec(wire_name="cost_collection_enabled"),
     "dd_compartment_id": ubx.FieldSpec(wire_name="dd_compartment_id"),
@@ -118,12 +125,14 @@ _Config_Data_AttributesFields = {
         kind="object",
         fields=_Config_Data_Attributes_MetricsConfigFields,
     ),
+    "parent_tenancy_name": ubx.FieldSpec(wire_name="parent_tenancy_name"),
     "regions_config": ubx.FieldSpec(
         wire_name="regions_config",
         kind="object",
         fields=_Config_Data_Attributes_RegionsConfigFields,
     ),
     "resource_collection_enabled": ubx.FieldSpec(wire_name="resource_collection_enabled"),
+    "tenancy_name": ubx.FieldSpec(wire_name="tenancy_name"),
     "user_ocid": ubx.FieldSpec(wire_name="user_ocid"),
 }
 

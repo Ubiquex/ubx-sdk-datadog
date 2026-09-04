@@ -12,30 +12,30 @@ type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Kill struct {
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Metadata struct {
-	ImageTag any
-	Service any
+	ImageTag   any
+	Service    any
 	ShortImage any
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Set struct {
-	Append any
+	Append       any
 	DefaultValue any
-	Expression any
-	Field any
-	Inherited any
-	Name any
-	Scope any
-	Size any
-	Ttl any
-	Value any
+	Expression   any
+	Field        any
+	Inherited    any
+	Name         any
+	Scope        any
+	Size         any
+	Ttl          any
+	Value        any
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions struct {
-	Filter any
-	Hash any
-	Kill any
+	Filter   any
+	Hash     any
+	Kill     any
 	Metadata any
-	Set any
+	Set      any
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Creator struct {

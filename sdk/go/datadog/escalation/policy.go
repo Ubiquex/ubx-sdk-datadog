@@ -13,14 +13,14 @@ type Policy_Data_Attributes_Steps_Targets_Config struct {
 
 type Policy_Data_Attributes_Steps_Targets struct {
 	Config any
-	Id any
-	Type any
+	Id     any
+	Type   any
 }
 
 type Policy_Data_Attributes_Steps struct {
-	Assignment any
+	Assignment           any
 	EscalateAfterSeconds any
-	Targets any
+	Targets              any
 }
 
 type Policy_Data_Attributes struct {
@@ -34,17 +34,19 @@ type Policy_Data_Attributes struct {
 	Steps any
 }
 
-type Policy_Data_Relationships_Teams_Data struct {
-	Id any
+type Policy_Data_Relationships_Steps_Data struct {
+	Id   any
 	Type any
 }
 
-type Policy_Data_Relationships_Teams struct {
-	// An array of team references for this schedule.
+type Policy_Data_Relationships_Steps struct {
+	// An array of references to the steps defined in this escalation policy.
 	Data any
 }
 
 type Policy_Data_Relationships struct {
+	// Defines the relationship to a collection of steps within an escalation policy. Contains an array of step data references.
+	Steps any
 	// Associates teams with this schedule in a data structure.
 	Teams any
 }
@@ -52,6 +54,8 @@ type Policy_Data_Relationships struct {
 type Policy_Data struct {
 	// Defines the attributes for creating an escalation policy, including its description, name, resolution behavior, retries, and steps.
 	Attributes any
+	// Specifies the unique identifier of the escalation policy.
+	Id any
 	// Represents relationships in an escalation policy creation request, including references to teams.
 	Relationships any
 	// Indicates that the resource is of type `policies`.
@@ -59,7 +63,7 @@ type Policy_Data struct {
 }
 
 type Policy_Included_Attributes struct {
-	Assignment any
+	Assignment           any
 	EscalateAfterSeconds any
 }
 
@@ -68,89 +72,95 @@ type Policy_Included_Relationships struct {
 }
 
 type Policy_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var Policy_Data_Attributes_Steps_Targets_Config_ScheduleFields = ubx.FieldMap{
-		"Position": ubx.FieldSpec{WireName: "position"},
-	}
+	"Position": ubx.FieldSpec{WireName: "position"},
+}
 
 var Policy_Data_Attributes_Steps_Targets_ConfigFields = ubx.FieldMap{
-		"Schedule": ubx.FieldSpec{
-			WireName: "schedule",
-			Kind: "object",
-			Fields: Policy_Data_Attributes_Steps_Targets_Config_ScheduleFields,
-		},
-	}
+	"Schedule": ubx.FieldSpec{
+		WireName: "schedule",
+		Kind:     "object",
+		Fields:   Policy_Data_Attributes_Steps_Targets_Config_ScheduleFields,
+	},
+}
 
 var Policy_Data_Attributes_Steps_TargetsFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Policy_Data_Attributes_Steps_Targets_ConfigFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Policy_Data_Attributes_Steps_Targets_ConfigFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Policy_Data_Attributes_StepsFields = ubx.FieldMap{
-		"Assignment": ubx.FieldSpec{WireName: "assignment"},
-		"EscalateAfterSeconds": ubx.FieldSpec{WireName: "escalate_after_seconds"},
-		"Targets": ubx.FieldSpec{
-			WireName: "targets",
-			Kind: "list",
-			Fields: Policy_Data_Attributes_Steps_TargetsFields,
-		},
-	}
+	"Assignment":           ubx.FieldSpec{WireName: "assignment"},
+	"EscalateAfterSeconds": ubx.FieldSpec{WireName: "escalate_after_seconds"},
+	"Targets": ubx.FieldSpec{
+		WireName: "targets",
+		Kind:     "list",
+		Fields:   Policy_Data_Attributes_Steps_TargetsFields,
+	},
+}
 
 var Policy_Data_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResolvePageOnPolicyEnd": ubx.FieldSpec{WireName: "resolve_page_on_policy_end"},
-		"Retries": ubx.FieldSpec{WireName: "retries"},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: Policy_Data_Attributes_StepsFields,
-		},
-	}
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"ResolvePageOnPolicyEnd": ubx.FieldSpec{WireName: "resolve_page_on_policy_end"},
+	"Retries":                ubx.FieldSpec{WireName: "retries"},
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   Policy_Data_Attributes_StepsFields,
+	},
+}
 
-var Policy_Data_Relationships_Teams_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+var Policy_Data_Relationships_Steps_DataFields = ubx.FieldMap{
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
-var Policy_Data_Relationships_TeamsFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "list",
-			Fields: Policy_Data_Relationships_Teams_DataFields,
-		},
-	}
+var Policy_Data_Relationships_StepsFields = ubx.FieldMap{
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   Policy_Data_Relationships_Steps_DataFields,
+	},
+}
 
 var Policy_Data_RelationshipsFields = ubx.FieldMap{
-		"Teams": ubx.FieldSpec{
-			WireName: "teams",
-			Kind: "object",
-			Fields: Policy_Data_Relationships_TeamsFields,
-		},
-	}
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "object",
+		Fields:   Policy_Data_Relationships_StepsFields,
+	},
+	"Teams": ubx.FieldSpec{
+		WireName: "teams",
+		Kind:     "object",
+		Fields:   Policy_Data_Relationships_StepsFields,
+	},
+}
 
 var Policy_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Policy_Data_AttributesFields,
-		},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: Policy_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Policy_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Policy_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PolicyConfig struct {
 	// Represents the data for creating an escalation policy, including its attributes, relationships, and resource type.
@@ -173,8 +183,8 @@ var Policy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Policy_DataFields,
+			Kind:     "object",
+			Fields:   Policy_DataFields,
 		},
 		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
 	},

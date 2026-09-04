@@ -9,7 +9,7 @@ type ApisResponseData_Data_Attributes struct {
 
 type ApisResponseData_Data struct {
 	Attributes any
-	Id any
+	Id         any
 }
 
 type ApisResponseData_Meta_Pagination struct {
@@ -34,7 +34,7 @@ type ApisResponseDataAttrs struct {
 	// List of API items.
 	Data any
 	// Metadata for `ListAPIsResponse`.
-	Meta any
+	Meta  any
 	Query any
 }
 

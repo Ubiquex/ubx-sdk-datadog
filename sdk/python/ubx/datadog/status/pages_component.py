@@ -16,34 +16,48 @@ class PagesComponent_Data_Attributes_Components:
 class PagesComponent_Data_Attributes:
     # If creating a component of type `group`, the components to create within the group.
     components: Any = None
+    # Timestamp of when the component was created.
+    created_at: Any = None
+    # Timestamp of when the component was last modified.
+    modified_at: Any = None
     # The name of the component.
     name: Any = None
     # The zero-indexed position of the component.
     position: Any = None
+    # The status of the component.
+    status: Any = None
     # The type of the component.
     type: Any = None
 
 @dataclasses.dataclass
-class PagesComponent_Data_Relationships_Group_Data:
-    # The ID of the group.
+class PagesComponent_Data_Relationships_CreatedByUser_Data:
+    # The ID of the Datadog user who created the component.
     id: Any = None
-    # Components resource type.
+    # Users resource type.
     type: Any = None
 
 @dataclasses.dataclass
-class PagesComponent_Data_Relationships_Group:
-    # The data object identifying the group to create the component within.
+class PagesComponent_Data_Relationships_CreatedByUser:
+    # The data object identifying the Datadog user who created the component.
     data: Any = None
 
 @dataclasses.dataclass
 class PagesComponent_Data_Relationships:
+    # The Datadog user who created the component.
+    created_by_user: Any = None
     # The group to create the component within.
     group: Any = None
+    # The Datadog user who last modified the component.
+    last_modified_by_user: Any = None
+    # The status page the component belongs to.
+    status_page: Any = None
 
 @dataclasses.dataclass
 class PagesComponent_Data:
     # The supported attributes for creating a component.
     attributes: Any = None
+    # The ID of the component.
+    id: Any = None
     # The supported relationships for creating a component.
     relationships: Any = None
     # Components resource type.
@@ -81,29 +95,47 @@ _PagesComponent_Data_AttributesFields = {
         kind="list",
         fields=_PagesComponent_Data_Attributes_ComponentsFields,
     ),
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "name": ubx.FieldSpec(wire_name="name"),
     "position": ubx.FieldSpec(wire_name="position"),
+    "status": ubx.FieldSpec(wire_name="status"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_PagesComponent_Data_Relationships_Group_DataFields = {
+_PagesComponent_Data_Relationships_CreatedByUser_DataFields = {
     "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_PagesComponent_Data_Relationships_GroupFields = {
+_PagesComponent_Data_Relationships_CreatedByUserFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_PagesComponent_Data_Relationships_Group_DataFields,
+        fields=_PagesComponent_Data_Relationships_CreatedByUser_DataFields,
     ),
 }
 
 _PagesComponent_Data_RelationshipsFields = {
+    "created_by_user": ubx.FieldSpec(
+        wire_name="created_by_user",
+        kind="object",
+        fields=_PagesComponent_Data_Relationships_CreatedByUserFields,
+    ),
     "group": ubx.FieldSpec(
         wire_name="group",
         kind="object",
-        fields=_PagesComponent_Data_Relationships_GroupFields,
+        fields=_PagesComponent_Data_Relationships_CreatedByUserFields,
+    ),
+    "last_modified_by_user": ubx.FieldSpec(
+        wire_name="last_modified_by_user",
+        kind="object",
+        fields=_PagesComponent_Data_Relationships_CreatedByUserFields,
+    ),
+    "status_page": ubx.FieldSpec(
+        wire_name="status_page",
+        kind="object",
+        fields=_PagesComponent_Data_Relationships_CreatedByUserFields,
     ),
 }
 
@@ -113,6 +145,7 @@ _PagesComponent_DataFields = {
         kind="object",
         fields=_PagesComponent_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "relationships": ubx.FieldSpec(
         wire_name="relationships",
         kind="object",

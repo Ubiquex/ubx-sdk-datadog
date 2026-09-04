@@ -4,17 +4,17 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImpactsResponse_Data_Attributes struct {
-	Created any
+	Created     any
 	Description any
-	EndAt any
-	Fields any
-	ImpactType any
-	Modified any
-	StartAt any
+	EndAt       any
+	Fields      any
+	ImpactType  any
+	Modified    any
+	StartAt     any
 }
 
 type ImpactsResponse_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -23,42 +23,42 @@ type ImpactsResponse_Data_Relationships_CreatedByUser struct {
 }
 
 type ImpactsResponse_Data_Relationships struct {
-	CreatedByUser any
-	Incident any
+	CreatedByUser      any
+	Incident           any
 	LastModifiedByUser any
 }
 
 type ImpactsResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ImpactsResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type ImpactsResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ImpactsResponseConfig struct {
 	IncidentId any
-	Include any
+	Include    any
 }
 
 type ImpactsResponseAttrs struct {
 	// An array of incident impacts.
-	Data any
+	Data       any
 	IncidentId any
-	Include any
+	Include    any
 	// Included related resources that the user requested.
 	Included any
 }
@@ -67,6 +67,6 @@ var ImpactsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_incident_impacts_response",
 	Fields: ubx.FieldMap{
 		"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":    ubx.FieldSpec{WireName: "include"},
 	},
 }

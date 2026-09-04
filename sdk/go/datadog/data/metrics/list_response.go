@@ -4,8 +4,8 @@ package metrics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ListResponseConfig struct {
-	From any
-	Host any
+	From      any
+	Host      any
 	TagFilter any
 }
 
@@ -13,15 +13,15 @@ type ListResponseAttrs struct {
 	From any
 	Host any
 	// List of metric names.
-	Metrics any
+	Metrics   any
 	TagFilter any
 }
 
 var ListResponse = ubx.DataSourceBinding{
 	WireType: "datadog_metrics_list_response",
 	Fields: ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Host": ubx.FieldSpec{WireName: "host"},
+		"From":      ubx.FieldSpec{WireName: "from"},
+		"Host":      ubx.FieldSpec{WireName: "host"},
 		"TagFilter": ubx.FieldSpec{WireName: "tag_filter"},
 	},
 }

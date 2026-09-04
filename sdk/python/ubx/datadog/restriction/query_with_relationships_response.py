@@ -8,13 +8,44 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class QueryWithRelationshipsResponse_Data_Attributes:
+    # Creation time of the restriction query.
+    created_at: Any = None
+    # Email of the user who last modified this restriction query.
+    last_modifier_email: Any = None
+    # Name of the user who last modified this restriction query.
+    last_modifier_name: Any = None
+    # Time of last restriction query modification.
+    modified_at: Any = None
     # The restriction query.
     restriction_query: Any = None
+    # Number of roles associated with this restriction query.
+    role_count: Any = None
+    # Number of users associated with this restriction query.
+    user_count: Any = None
+
+@dataclasses.dataclass
+class QueryWithRelationshipsResponse_Data_Relationships_Roles_Data:
+    id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
+class QueryWithRelationshipsResponse_Data_Relationships_Roles:
+    # An array containing type and the unique identifier of a role.
+    data: Any = None
+
+@dataclasses.dataclass
+class QueryWithRelationshipsResponse_Data_Relationships:
+    # Relationship to roles.
+    roles: Any = None
 
 @dataclasses.dataclass
 class QueryWithRelationshipsResponse_Data:
     # Attributes of the created restriction query.
     attributes: Any = None
+    # ID of the restriction query.
+    id: Any = None
+    # Relationships of the user object.
+    relationships: Any = None
     # Restriction query resource type.
     type: Any = None
 
@@ -29,7 +60,34 @@ class QueryWithRelationshipsResponse_Included:
     type: Any = None
 
 _QueryWithRelationshipsResponse_Data_AttributesFields = {
+    "created_at": ubx.FieldSpec(wire_name="created_at"),
+    "last_modifier_email": ubx.FieldSpec(wire_name="last_modifier_email"),
+    "last_modifier_name": ubx.FieldSpec(wire_name="last_modifier_name"),
+    "modified_at": ubx.FieldSpec(wire_name="modified_at"),
     "restriction_query": ubx.FieldSpec(wire_name="restriction_query"),
+    "role_count": ubx.FieldSpec(wire_name="role_count"),
+    "user_count": ubx.FieldSpec(wire_name="user_count"),
+}
+
+_QueryWithRelationshipsResponse_Data_Relationships_Roles_DataFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
+_QueryWithRelationshipsResponse_Data_Relationships_RolesFields = {
+    "data": ubx.FieldSpec(
+        wire_name="data",
+        kind="list",
+        fields=_QueryWithRelationshipsResponse_Data_Relationships_Roles_DataFields,
+    ),
+}
+
+_QueryWithRelationshipsResponse_Data_RelationshipsFields = {
+    "roles": ubx.FieldSpec(
+        wire_name="roles",
+        kind="object",
+        fields=_QueryWithRelationshipsResponse_Data_Relationships_RolesFields,
+    ),
 }
 
 _QueryWithRelationshipsResponse_DataFields = {
@@ -37,6 +95,12 @@ _QueryWithRelationshipsResponse_DataFields = {
         wire_name="attributes",
         kind="object",
         fields=_QueryWithRelationshipsResponse_Data_AttributesFields,
+    ),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "relationships": ubx.FieldSpec(
+        wire_name="relationships",
+        kind="object",
+        fields=_QueryWithRelationshipsResponse_Data_RelationshipsFields,
     ),
     "type": ubx.FieldSpec(wire_name="type"),
 }

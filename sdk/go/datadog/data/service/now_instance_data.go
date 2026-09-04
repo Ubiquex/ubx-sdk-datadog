@@ -9,8 +9,8 @@ type NowInstanceData_Data_Attributes struct {
 
 type NowInstanceData_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type NowInstanceDataConfig struct {
@@ -23,6 +23,5 @@ type NowInstanceDataAttrs struct {
 
 var NowInstanceData = ubx.DataSourceBinding{
 	WireType: "datadog_service_now_instance_data",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

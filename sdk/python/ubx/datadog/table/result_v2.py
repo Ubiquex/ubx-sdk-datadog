@@ -53,23 +53,35 @@ class ResultV2_Data_Attributes_Schema:
 
 @dataclasses.dataclass
 class ResultV2_Data_Attributes:
+    # UUID of the user who created the reference table.
+    created_by: Any = None
     # Optional text describing the purpose or contents of this reference table.
     description: Any = None
     # Metadata specifying where and how to access the reference table's data file.
     file_metadata: Any = None
+    # UUID of the user who last updated the reference table.
+    last_updated_by: Any = None
+    # The number of successfully processed rows in the reference table.
+    row_count: Any = None
     # Schema defining the structure and columns of the reference table.
     schema: Any = None
     # The source type for creating reference table data. Only these source types can be created through this API.
     source: Any = None
+    # The processing status of the table.
+    status: Any = None
     # Name to identify this reference table.
     table_name: Any = None
     # Tags for organizing and filtering reference tables.
     tags: Any = None
+    # When the reference table was last updated, in ISO 8601 format.
+    updated_at: Any = None
 
 @dataclasses.dataclass
 class ResultV2_Data:
     # Attributes that define the reference table's configuration and properties.
     attributes: Any = None
+    # Unique identifier for the reference table.
+    id: Any = None
     # Reference table resource type.
     type: Any = None
 
@@ -137,20 +149,25 @@ _ResultV2_Data_Attributes_SchemaFields = {
 }
 
 _ResultV2_Data_AttributesFields = {
+    "created_by": ubx.FieldSpec(wire_name="created_by"),
     "description": ubx.FieldSpec(wire_name="description"),
     "file_metadata": ubx.FieldSpec(
         wire_name="file_metadata",
         kind="object",
         fields=_ResultV2_Data_Attributes_FileMetadataFields,
     ),
+    "last_updated_by": ubx.FieldSpec(wire_name="last_updated_by"),
+    "row_count": ubx.FieldSpec(wire_name="row_count"),
     "schema": ubx.FieldSpec(
         wire_name="schema",
         kind="object",
         fields=_ResultV2_Data_Attributes_SchemaFields,
     ),
     "source": ubx.FieldSpec(wire_name="source"),
+    "status": ubx.FieldSpec(wire_name="status"),
     "table_name": ubx.FieldSpec(wire_name="table_name"),
     "tags": ubx.FieldSpec(wire_name="tags"),
+    "updated_at": ubx.FieldSpec(wire_name="updated_at"),
 }
 
 _ResultV2_DataFields = {
@@ -159,6 +176,7 @@ _ResultV2_DataFields = {
         kind="object",
         fields=_ResultV2_Data_AttributesFields,
     ),
+    "id": ubx.FieldSpec(wire_name="id"),
     "type": ubx.FieldSpec(wire_name="type"),
 }
 

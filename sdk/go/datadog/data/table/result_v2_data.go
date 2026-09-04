@@ -4,38 +4,38 @@ package table
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResultV2Data_Data_Attributes_FileMetadata_AccessDetails_AwsDetail struct {
-	AwsAccountId any
+	AwsAccountId  any
 	AwsBucketName any
-	FilePath any
+	FilePath      any
 }
 
 type ResultV2Data_Data_Attributes_FileMetadata_AccessDetails_AzureDetail struct {
-	AzureClientId any
-	AzureContainerName any
+	AzureClientId           any
+	AzureContainerName      any
 	AzureStorageAccountName any
-	AzureTenantId any
-	FilePath any
+	AzureTenantId           any
+	FilePath                any
 }
 
 type ResultV2Data_Data_Attributes_FileMetadata_AccessDetails_GcpDetail struct {
-	FilePath any
-	GcpBucketName any
-	GcpProjectId any
+	FilePath               any
+	GcpBucketName          any
+	GcpProjectId           any
 	GcpServiceAccountEmail any
 }
 
 type ResultV2Data_Data_Attributes_FileMetadata_AccessDetails struct {
-	AwsDetail any
+	AwsDetail   any
 	AzureDetail any
-	GcpDetail any
+	GcpDetail   any
 }
 
 type ResultV2Data_Data_Attributes_FileMetadata struct {
 	AccessDetails any
-	ErrorMessage any
+	ErrorMessage  any
 	ErrorRowCount any
-	ErrorType any
-	SyncEnabled any
+	ErrorType     any
+	SyncEnabled   any
 }
 
 type ResultV2Data_Data_Attributes_Schema_Fields struct {
@@ -44,28 +44,28 @@ type ResultV2Data_Data_Attributes_Schema_Fields struct {
 }
 
 type ResultV2Data_Data_Attributes_Schema struct {
-	Fields any
+	Fields      any
 	PrimaryKeys any
 }
 
 type ResultV2Data_Data_Attributes struct {
-	CreatedBy any
-	Description any
-	FileMetadata any
+	CreatedBy     any
+	Description   any
+	FileMetadata  any
 	LastUpdatedBy any
-	RowCount any
-	Schema any
-	Source any
-	Status any
-	TableName any
-	Tags any
-	UpdatedAt any
+	RowCount      any
+	Schema        any
+	Source        any
+	Status        any
+	TableName     any
+	Tags          any
+	UpdatedAt     any
 }
 
 type ResultV2Data_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ResultV2DataConfig struct {

@@ -55,21 +55,21 @@ type AuthorizedClientResponse_Data struct {
 }
 
 type AuthorizedClientResponseConfig struct {
-	Include any
+	Include               any
 	OrgAuthorizedClientId any
 }
 
 type AuthorizedClientResponseAttrs struct {
 	// Data object representing an org authorized client.
-	Data any
-	Include any
+	Data                  any
+	Include               any
 	OrgAuthorizedClientId any
 }
 
 var AuthorizedClientResponse = ubx.DataSourceBinding{
 	WireType: "datadog_org_authorized_client_response",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":               ubx.FieldSpec{WireName: "include"},
 		"OrgAuthorizedClientId": ubx.FieldSpec{WireName: "org_authorized_client_id"},
 	},
 }

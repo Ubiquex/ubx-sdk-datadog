@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rumevent_Data_Attributes struct {
 	Attributes any
-	Service any
-	Tags any
-	Timestamp any
+	Service    any
+	Tags       any
+	Timestamp  any
 }
 
 type Rumevent_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Rumevent_Links struct {
@@ -27,9 +27,9 @@ type Rumevent_Meta_Page struct {
 }
 
 type Rumevent_Meta_Warnings struct {
-	Code any
+	Code   any
 	Detail any
-	Title any
+	Title  any
 }
 
 type Rumevent_Meta struct {

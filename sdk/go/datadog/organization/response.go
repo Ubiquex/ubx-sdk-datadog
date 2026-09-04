@@ -63,46 +63,46 @@ type Response_Org struct {
 }
 
 var Response_BillingFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Org_Settings_SamlFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Response_Org_Settings_SamlAutocreateUsersDomainsFields = ubx.FieldMap{
-		"Domains": ubx.FieldSpec{WireName: "domains"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Domains": ubx.FieldSpec{WireName: "domains"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Response_Org_SettingsFields = ubx.FieldMap{
-		"PrivateWidgetShare": ubx.FieldSpec{WireName: "private_widget_share"},
-		"Saml": ubx.FieldSpec{
-			WireName: "saml",
-			Kind: "object",
-			Fields: Response_Org_Settings_SamlFields,
-		},
-		"SamlAutocreateAccessRole": ubx.FieldSpec{WireName: "saml_autocreate_access_role"},
-		"SamlAutocreateUsersDomains": ubx.FieldSpec{
-			WireName: "saml_autocreate_users_domains",
-			Kind: "object",
-			Fields: Response_Org_Settings_SamlAutocreateUsersDomainsFields,
-		},
-		"SamlCanBeEnabled": ubx.FieldSpec{WireName: "saml_can_be_enabled"},
-		"SamlIdpEndpoint": ubx.FieldSpec{WireName: "saml_idp_endpoint"},
-		"SamlIdpInitiatedLogin": ubx.FieldSpec{
-			WireName: "saml_idp_initiated_login",
-			Kind: "object",
-			Fields: Response_Org_Settings_SamlFields,
-		},
-		"SamlIdpMetadataUploaded": ubx.FieldSpec{WireName: "saml_idp_metadata_uploaded"},
-		"SamlLoginUrl": ubx.FieldSpec{WireName: "saml_login_url"},
-		"SamlStrictMode": ubx.FieldSpec{
-			WireName: "saml_strict_mode",
-			Kind: "object",
-			Fields: Response_Org_Settings_SamlFields,
-		},
-	}
+	"PrivateWidgetShare": ubx.FieldSpec{WireName: "private_widget_share"},
+	"Saml": ubx.FieldSpec{
+		WireName: "saml",
+		Kind:     "object",
+		Fields:   Response_Org_Settings_SamlFields,
+	},
+	"SamlAutocreateAccessRole": ubx.FieldSpec{WireName: "saml_autocreate_access_role"},
+	"SamlAutocreateUsersDomains": ubx.FieldSpec{
+		WireName: "saml_autocreate_users_domains",
+		Kind:     "object",
+		Fields:   Response_Org_Settings_SamlAutocreateUsersDomainsFields,
+	},
+	"SamlCanBeEnabled": ubx.FieldSpec{WireName: "saml_can_be_enabled"},
+	"SamlIdpEndpoint":  ubx.FieldSpec{WireName: "saml_idp_endpoint"},
+	"SamlIdpInitiatedLogin": ubx.FieldSpec{
+		WireName: "saml_idp_initiated_login",
+		Kind:     "object",
+		Fields:   Response_Org_Settings_SamlFields,
+	},
+	"SamlIdpMetadataUploaded": ubx.FieldSpec{WireName: "saml_idp_metadata_uploaded"},
+	"SamlLoginUrl":            ubx.FieldSpec{WireName: "saml_login_url"},
+	"SamlStrictMode": ubx.FieldSpec{
+		WireName: "saml_strict_mode",
+		Kind:     "object",
+		Fields:   Response_Org_Settings_SamlFields,
+	},
+}
 
 type ResponseConfig struct {
 	// A JSON array of billing type.
@@ -147,21 +147,21 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Billing": ubx.FieldSpec{
 			WireName: "billing",
-			Kind: "object",
-			Fields: Response_BillingFields,
+			Kind:     "object",
+			Fields:   Response_BillingFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PublicId": ubx.FieldSpec{WireName: "public_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"PublicId":    ubx.FieldSpec{WireName: "public_id"},
 		"Settings": ubx.FieldSpec{
 			WireName: "settings",
-			Kind: "object",
-			Fields: Response_Org_SettingsFields,
+			Kind:     "object",
+			Fields:   Response_Org_SettingsFields,
 		},
 		"Subscription": ubx.FieldSpec{
 			WireName: "subscription",
-			Kind: "object",
-			Fields: Response_BillingFields,
+			Kind:     "object",
+			Fields:   Response_BillingFields,
 		},
 		"Trial": ubx.FieldSpec{WireName: "trial"},
 	},
