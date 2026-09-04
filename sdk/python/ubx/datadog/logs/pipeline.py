@@ -13,23 +13,29 @@ class Pipeline_Filter:
 
 @dataclasses.dataclass
 class Pipeline_Processors_Categories:
+    # The filter object for this category, containing the log query used to match logs. Logs that match this query are assigned to this category. (AI-inferred)
     filter: Any = None
     name: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Processors_Grok:
+    # The grok match rules, specified as a string containing one or more patterns separated by newlines, used to parse logs in the processor. (AI-inferred)
     match_rules: Any = None
+    # Support rules for the Grok processor. These are named patterns that can be referenced by the main matching rules to build complex parsing logic. (AI-inferred)
     support_rules: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Processors_Mappers_Categories:
+    # The filter object for a category, containing the log query that determines whether a log entry is assigned to this category. (AI-inferred)
     filter: Any = None
     id: Any = None
+    # The name of the category. When the associated filter matches, the log is assigned this category. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Processors_Mappers_Fallback:
     sources: Any = None
+    # A map of strings that defines the fallback value mapping for the mapper processor. When the source attribute value does not match any of the primary mapper rules, this map is used to look up the corresponding target value. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
@@ -42,21 +48,30 @@ class Pipeline_Processors_Mappers:
     categories: Any = None
     fallback: Any = None
     name: Any = None
+    # Whether to overwrite the target attribute when it already has a value. If false, the existing value is preserved and the mapping does not take effect. (AI-inferred)
     override_on_conflict: Any = None
+    # Preserves the original source attribute in the log after the remapping is applied. If false, the source attribute is removed after mapping. (AI-inferred)
     preserve_source: Any = None
     sources: Any = None
+    # The name of the target attribute in the log that the mapped source value is written into. This is the new attribute that will be set with the value from the source attribute. (AI-inferred)
     target: Any = None
+    # Specifies the target data type for the mapped value. Allowed values are: auto, string, integer, double. (AI-inferred)
     target_format: Any = None
     targets: Any = None
+    # The type of the mapper, which is 'schema-remapper' in this case. A schema remapper applies a schema mapping to logs, changing field names to align with a standard schema (e.g., remapping custom attributes to Datadog standard attributes). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Processors_Operation:
+    # The Groq query used to filter logs that this processor operates on. When omitted, the processor applies to all logs. (AI-inferred)
     filter: Any = None
     key_to_extract: Any = None
+    # Boolean that indicates whether the processor should overwrite an existing target attribute value when a conflict occurs. When set to true, the existing value is replaced; when set to false, the original value is kept. (AI-inferred)
     override_on_conflict: Any = None
+    # Whether to preserve the source attribute after the operation is applied. When set to false, the source attribute is removed from the log. (AI-inferred)
     preserve_source: Any = None
     source: Any = None
+    # The target log attribute name for the processor operation. This is the attribute that will be created or modified. (AI-inferred)
     target: Any = None
     type: Any = None
     value_to_extract: Any = None
@@ -66,42 +81,66 @@ class Pipeline_Processors_Schema:
     class_name: Any = None
     class_uid: Any = None
     profiles: Any = None
+    # Defines the scope of schema inference for the schema processor. Accepted values are 'full' (infer the schema of the entire log event) and 'attribute' (infer the schema of a specific attribute). (AI-inferred)
     schema_type: Any = None
+    # The version of the processor schema. This value determines the schema version used to interpret the processor's configuration fields. (AI-inferred)
     version: Any = None
 
 @dataclasses.dataclass
 class Pipeline_Processors:
     attribute_to_exclude: Any = None
+    # Specifies the encoding used to convert binary data to text. Allowed values are `base64` and `base16`. (AI-inferred)
     binary_to_text_encoding: Any = None
+    # List of categories for the category processor. Each category contains a name and a filter query, and logs matching the query are assigned the corresponding category name. (AI-inferred)
     categories: Any = None
+    # Default value to assign to the target attribute when the source field is not found in the lookup table. (AI-inferred)
     default_lookup: Any = None
     description: Any = None
     expression: Any = None
+    # This object defines the filter for the processor, including the query that matches logs and whether the processor is enabled. It contains a required `query` string and an optional `is_enabled` boolean. (AI-inferred)
     filter: Any = None
+    # Configures the Grok parser processor, which uses Grok rules to extract structured data from raw log messages. (AI-inferred)
     grok: Any = None
+    # Specifies the representation of the input data: `utf_8` for treating the input as UTF-8 encoded text, or `integer` for treating it as an integer value. (AI-inferred)
     input_representation: Any = None
+    # Whether the processor is enabled. Set to false to disable the processor while keeping its configuration intact. (AI-inferred)
     is_enabled: Any = None
     is_encoded: Any = None
+    # Boolean flag indicating whether the lookup processor should replace the source attribute with the target value when the source attribute is missing. Set to true to enable replacement of missing source attributes. (AI-inferred)
     is_replace_missing: Any = None
+    # The name of the enrichment table used by the lookup processor to enrich log data. (AI-inferred)
     lookup_enrichment_table: Any = None
+    # List of strings that define the lookup table for the lookup processor. Each entry is a comma-separated mapping in the format 'source_value,target_value', used to replace or enrich attribute values. (AI-inferred)
     lookup_table: Any = None
+    # A list of mapping rules for the attribute mapper processor, where each mapper remaps a source attribute to a target attribute with a specified type. (AI-inferred)
     mappers: Any = None
     name: Any = None
+    # When set to `true`, this setting removes the trailing slash from the path of URLs handled by the URL parser processor (e.g., `http://example.com/path/` becomes `http://example.com/path`). When `false`, the URL remains unchanged. (AI-inferred)
     normalize_ending_slashes: Any = None
     operation: Any = None
+    # Determines whether the processor overwrites an existing value on the target attribute when a conflict arises. Set to true to override the existing value, or false to preserve it. (AI-inferred)
     override_on_conflict: Any = None
+    # Whether to preserve the source attribute after remapping. When set to `true`, the original source attribute is retained; when `false`, it is removed. (AI-inferred)
     preserve_source: Any = None
+    # A list of processors to apply to logs in this pipeline. Each processor defines a specific transformation, such as parsing or attribute remapping. (AI-inferred)
     processors: Any = None
+    # List of sample log messages used to validate the grok parser processor's rule. Each string in the list is an example log that the parser rule is tested against. (AI-inferred)
     samples: Any = None
     schema: Any = None
+    # The source attribute of the log event that this processor operates on (e.g., 'message'). (AI-inferred)
     source: Any = None
     source_type: Any = None
+    # List of source attribute paths that the processor reads from. Used in remapper processors (e.g., attribute, date, message, service, status) to specify which log attributes are mapped to a target field. (AI-inferred)
     sources: Any = None
     tags: Any = None
+    # The name of the target log attribute that the processor operates on. This is the field in the log to which the processor applies its transformation or remapping. (AI-inferred)
     target: Any = None
+    # The format of the target value. Allowed values are `auto`, `string`, `integer`, and `double`. (AI-inferred)
     target_format: Any = None
     target_type: Any = None
+    # The template string used to generate a new attribute value, allowing references to other log attributes with the {{ attribute }} syntax. (AI-inferred)
     template: Any = None
+    # The type of processor. For this resource, the only allowed value is `grok-parser`, which indicates a Grok parser processor that extracts custom fields from log messages using Grok patterns. (AI-inferred)
     type: Any = None
 
 _Pipeline_FilterFields = {

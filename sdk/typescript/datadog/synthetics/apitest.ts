@@ -2,11 +2,17 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Apitest_Config_Assertions {
+  /** The expected HTTP status code for the assertion, as a string (e.g., '200'). (AI-inferred) */
   code?: string | Computed<string>;
+  /** The operator to apply for the assertion. Valid values are: contains, doesNotContain, is, isNot, lessThan, lessThanOrEqual, moreThan, moreThanOrEqual, matches, doesNotMatch, validates, isInMoreThan, isInLessThan, doesNotExist, isUndefined. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The property to assert on, such as a header name or a JSONPath expression, depending on the assertion type. (AI-inferred) */
   property?: string | Computed<string>;
+  /** Expected value for the assertion. Its type depends on the assertion type (e.g., string for header/text assertions, number for response time/status code). (AI-inferred) */
   target?: unknown | Computed<unknown>;
+  /** The scope of timings used for the assertion. Set to 'all' to include all timings (including DNS), or 'withoutDNS' to exclude DNS resolution time. (AI-inferred) */
   timingsScope?: string | Computed<string>;
+  /** The type of assertion to perform on the API test response. Must be one of: body, header, statusCode, certificate, responseTime, property, recordEvery, recordSome, tlsVersion, minTlsVersion, latency, packetLossPercentage, packetsReceived, networkHop, receivedMessage, grpcHealthcheckStatus, grpcMetadata, grpcProto, connection, multiNetworkHop, jitter, mcpToolNameLength, mcpToolCount. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -14,40 +20,59 @@ export interface Apitest_Config_ConfigVariables {
   example?: string | Computed<string>;
   id?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** Regex string that the variable's value must match to be considered valid. Used for input validation of the config variable. (AI-inferred) */
   pattern?: string | Computed<string>;
+  /** Boolean indicating whether the config variable's value is secured and hidden from plain text views. (AI-inferred) */
   secure?: boolean | Computed<boolean>;
+  /** Type of the configuration variable. Allowed values are 'global' (reference a global variable), 'text' (a text value), or 'email' (an email address). (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Apitest_Config_Request_BasicAuth_AddClaims {
+  /** When set to `true`, adds the `exp` (expiration) claim to the JWT token, including an expiration timestamp. This is used within the `add_claims` block for JWT-based authentication in Datadog Synthetics API tests. (AI-inferred) */
   exp?: boolean | Computed<boolean>;
+  /** When true, adds the 'iat' (issued at) claim to the JWT token used for authentication. (AI-inferred) */
   iat?: boolean | Computed<boolean>;
 }
 
 export interface Apitest_Config_Request_BasicAuth {
   accessKey?: string | Computed<string>;
+  /** The endpoint URL used to request an OAuth access token for authenticating the API test request. (AI-inferred) */
   accessTokenUrl?: string | Computed<string>;
   addClaims?: Apitest_Config_Request_BasicAuth_AddClaims | Computed<Apitest_Config_Request_BasicAuth_AddClaims>;
   algorithm?: string | Computed<string>;
+  /** The audience of the OAuth2 token, identifying the intended recipient API resource. (AI-inferred) */
   audience?: string | Computed<string>;
   clientId?: string | Computed<string>;
+  /** The client secret used for OAuth2 client credentials authentication. This is the secret key associated with the client ID, required when the auth type is oauth2. (AI-inferred) */
   clientSecret?: string | Computed<string>;
+  /** The domain for the NTLM authentication scheme, used when the basic_auth type is 'ntlm'. (AI-inferred) */
   domain?: string | Computed<string>;
   expiresIn?: number | Computed<number>;
+  /** The name of the HTTP header used to send basic authentication credentials (e.g., `Authorization`). (AI-inferred) */
   header?: string | Computed<string>;
+  /** The password used for basic authentication in the request. (AI-inferred) */
   password?: string | Computed<string>;
   payload?: string | Computed<string>;
   region?: string | Computed<string>;
   resource?: string | Computed<string>;
   scope?: string | Computed<string>;
+  /** The password or secret used for basic authentication in the API test request. (AI-inferred) */
   secret?: string | Computed<string>;
+  /** The secret key (password) used with the username for HTTP basic authentication in the synthetic API test request. (AI-inferred) */
   secretKey?: string | Computed<string>;
+  /** The service name (SPN) for NTLM authentication within the basic auth configuration. (AI-inferred) */
   serviceName?: string | Computed<string>;
   sessionToken?: string | Computed<string>;
+  /** The API token used for token-based authentication in the basic auth configuration. This is typically used when the authentication type is set to 'token'. (AI-inferred) */
   tokenApiAuthentication?: string | Computed<string>;
+  /** The prefix used in the Authorization header before the token (e.g., 'Bearer'). When set, the authorization header becomes '<token_prefix> <token>'. (AI-inferred) */
   tokenPrefix?: string | Computed<string>;
+  /** The type of basic authentication to use. Valid values are `web` for standard HTTP basic auth and `ntlm` for NTLM authentication. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The username for basic authentication used in the API test request. (AI-inferred) */
   username?: string | Computed<string>;
+  /** The Windows workstation name used for NTLM authentication. This is only relevant when the basic_auth configuration is set to NTLM authentication type. (AI-inferred) */
   workstation?: string | Computed<string>;
 }
 
@@ -69,11 +94,17 @@ export interface Apitest_Config_Request_Certificate {
 
 export interface Apitest_Config_Request_Files {
   bucketKey?: string | Computed<string>;
+  /** Content of the file to be sent in the request. Maximum length is 3145728 bytes (3 MB). (AI-inferred) */
   content?: string | Computed<string>;
+  /** The encoding used for the file content, such as `base64` or `binary` when constructing the multipart request. (AI-inferred) */
   encoding?: string | Computed<string>;
+  /** The file name for a file to be sent in the request. The maximum allowed length is 1500 characters. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The original file name of the file being uploaded in the request. Must not exceed 1500 characters. (AI-inferred) */
   originalFileName?: string | Computed<string>;
+  /** The size of the file in bytes. Must be between 1 and 3,145,728 bytes (3 MiB). (AI-inferred) */
   size?: number | Computed<number>;
+  /** The MIME type of the file being sent in the request, such as 'text/plain' or 'application/json'. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -164,36 +195,54 @@ export interface Apitest_Config_Request {
 }
 
 export interface Apitest_Config_Steps_ExtractedValues_Parser {
+  /** The type of parser used to extract the value from the HTTP response. Valid values are `raw`, `json_path`, `regex`, and `x_path`. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The value of the parser, such as the regex pattern or JSON path, used to extract the desired content from the response. The interpretation depends on the parser type. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Apitest_Config_Steps_ExtractedValues {
+  /** Specifies the part of the HTTP response from which the value in the extracted value step is taken, such as `http_response_body` or `http_response_headers`. (AI-inferred) */
   field?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** Parser configuration used to extract the value from the response, defining the extraction method and pattern to apply. (AI-inferred) */
   parser?: Apitest_Config_Steps_ExtractedValues_Parser | Computed<Apitest_Config_Steps_ExtractedValues_Parser>;
+  /** Whether the extracted value is treated as a secret and hidden from plain view in the Datadog UI and test logs. (AI-inferred) */
   secure?: boolean | Computed<boolean>;
+  /** The type of value to extract from the step response. Allowed values are: `grpc_message`, `grpc_metadata`, `http_body`, `http_header`, `http_status_code`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface Apitest_Config_Steps_Retry {
+  /** The number of retry attempts for the step. (AI-inferred) */
   count?: number | Computed<number>;
+  /** The interval in milliseconds to wait between retry attempts. (AI-inferred) */
   interval?: number | Computed<number>;
 }
 
 export interface Apitest_Config_Steps {
+  /** If true, the step is allowed to fail without failing the entire API test. (AI-inferred) */
   allowFailure?: boolean | Computed<boolean>;
+  /** When set to true, this step runs unconditionally, even if previous steps fail. (AI-inferred) */
   alwaysExecute?: boolean | Computed<boolean>;
+  /** List of assertions that define expected conditions on the step's response, such as status code, response time, or header/body content. (AI-inferred) */
   assertions?: Apitest_Config_Assertions[] | Computed<Apitest_Config_Assertions[]>;
+  /** If true, the test will stop (exit) after this step if the step passes successfully. (AI-inferred) */
   exitIfSucceed?: boolean | Computed<boolean>;
+  /** A list of objects defining variables to extract from the step's response (e.g., from response body or headers) for use in later steps. (AI-inferred) */
   extractedValues?: Apitest_Config_Steps_ExtractedValues[] | Computed<Apitest_Config_Steps_ExtractedValues[]>;
   extractedValuesFromScript?: string | Computed<string>;
   id?: string | Computed<string>;
+  /** Whether the step is critical: if a critical step fails, the entire test is considered failed. Non-critical steps do not fail the test on failure. (AI-inferred) */
   isCritical?: boolean | Computed<boolean>;
   name?: string | Computed<string>;
+  /** The request configuration for this step, containing the HTTP method, URL, headers, and body of the request to be made. (AI-inferred) */
   request?: Apitest_Config_Request | Computed<Apitest_Config_Request>;
+  /** The retry block configures automatic retries for this step on failure, including the number of attempts and the interval between them. (AI-inferred) */
   retry?: Apitest_Config_Steps_Retry | Computed<Apitest_Config_Steps_Retry>;
+  /** The public ID of the Datadog Synthetics test to run as a subtest in this step. (AI-inferred) */
   subtestPublicId?: string | Computed<string>;
+  /** The subtype of the step, indicating the protocol or service type. Allowed values are: `http`, `grpc`, `ssl`, `dns`, `tcp`, `udp`, `icmp`, `websocket`, `mcp`. (AI-inferred) */
   subtype?: string | Computed<string>;
   value?: number | Computed<number>;
 }
@@ -237,8 +286,11 @@ export interface Apitest_Options_RumSettings {
 }
 
 export interface Apitest_Options_Scheduling_Timeframes {
+  /** The day of the week for this scheduled timeframe, as an integer between 1 and 7, where 1 represents Monday and 7 represents Sunday. (AI-inferred) */
   day?: number | Computed<number>;
+  /** The starting time of the scheduling timeframe, representing when the test is allowed to begin running. (AI-inferred) */
   from?: string | Computed<string>;
+  /** End time of the scheduled time window in HH:mm format. (AI-inferred) */
   to?: string | Computed<string>;
 }
 

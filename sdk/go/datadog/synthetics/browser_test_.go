@@ -4,53 +4,75 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BrowserTest_Config_Assertions struct {
-	Code         any
-	Operator     any
-	Property     any
-	Target       any
+	Code any
+	// The comparison operator used in the assertion. Allowed values include: contains, doesNotContain, is, isNot, lessThan, lessThanOrEqual, moreThan, moreThanOrEqual, matches, doesNotMatch, validates, isInMoreThan, isInLessThan, doesNotExist, isUndefined. (AI-inferred)
+	Operator any
+	// Specifies the property of the response to evaluate, such as a header name when using header assertions. (AI-inferred)
+	Property any
+	// The expected value to compare against when evaluating the assertion. The data type depends on the assertion property being validated. (AI-inferred)
+	Target any
+	// Specifies which timings are included in the assertion: `all` includes all timings, `withoutDNS` excludes DNS resolution timing. (AI-inferred)
 	TimingsScope any
-	Type         any
+	// Specifies the kind of assertion to apply, such as 'statusCode', 'body', 'header', or 'responseTime'. The allowed values in this context are: body, header, statusCode, certificate, responseTime, property, recordEvery, recordSome, tlsVersion, minTlsVersion, latency, packetLossPercentage, packetsReceived, networkHop, receivedMessage, grpcHealthcheckStatus, grpcMetadata, grpcProto, connection, multiNetworkHop, jitter, mcpToolNameLength, mcpToolCount. (AI-inferred)
+	Type any
 }
 
 type BrowserTest_Config_ConfigVariables struct {
 	Example any
 	Id      any
 	Name    any
+	// Regular expression pattern used to generate random values for the config variable during test execution. (AI-inferred)
 	Pattern any
-	Secure  any
-	Type    any
+	// Whether the config variable is a secure (hidden) variable. When set to true, the variable's value is not displayed in the UI or API responses. (AI-inferred)
+	Secure any
+	// The type of configuration variable. Allowed values are: `global`, `text`, `email`. (AI-inferred)
+	Type any
 }
 
 type BrowserTest_Config_Request_BasicAuth_AddClaims struct {
 	Exp any
+	// If true, includes the 'issued at' (iat) claim in the JWT token used for basic authentication. (AI-inferred)
 	Iat any
 }
 
 type BrowserTest_Config_Request_BasicAuth struct {
-	AccessKey              any
-	AccessTokenUrl         any
-	AddClaims              any
-	Algorithm              any
-	Audience               any
-	ClientId               any
-	ClientSecret           any
-	Domain                 any
-	ExpiresIn              any
-	Header                 any
-	Password               any
-	Payload                any
-	Region                 any
-	Resource               any
-	Scope                  any
-	Secret                 any
-	SecretKey              any
+	AccessKey any
+	// The URL used to obtain an OAuth access token during authentication for the synthetic request. (AI-inferred)
+	AccessTokenUrl any
+	// Map of custom claims to add to the authentication request, where each key is the claim name and the corresponding value is the claim value. (AI-inferred)
+	AddClaims any
+	Algorithm any
+	// The audience for the OAuth2 token, used when the basic auth type is set to 'oauth2'. (AI-inferred)
+	Audience any
+	ClientId any
+	// The client secret used for OAuth client authentication in the request's basic_auth configuration. (AI-inferred)
+	ClientSecret any
+	// The domain for NTLM authentication in the basic auth configuration. Used when the auth type is set to 'ntlm'. (AI-inferred)
+	Domain    any
+	ExpiresIn any
+	Header    any
+	// The password to use for basic authentication against the requested endpoint. (AI-inferred)
+	Password any
+	Payload  any
+	// The AWS region to use for SigV4 authentication. Only relevant when the basic authentication type is set to `sigv4`. (AI-inferred)
+	Region   any
+	Resource any
+	Scope    any
+	// The password or secret used for basic authentication against the endpoint. (AI-inferred)
+	Secret    any
+	SecretKey any
+	// The service name to use for NTLM authentication within the basic auth configuration. (AI-inferred)
 	ServiceName            any
 	SessionToken           any
 	TokenApiAuthentication any
-	TokenPrefix            any
-	Type                   any
-	Username               any
-	Workstation            any
+	// The prefix (scheme) to prepend to the token in the Authorization header, e.g., 'Bearer'. (AI-inferred)
+	TokenPrefix any
+	// The type of basic authentication to use for the request. (AI-inferred)
+	Type any
+	// The username used for basic authentication in the Synthetics browser test request. (AI-inferred)
+	Username any
+	// The workstation name for NTLM authentication. (AI-inferred)
+	Workstation any
 }
 
 type BrowserTest_Config_Request_Certificate_Cert struct {
@@ -70,13 +92,20 @@ type BrowserTest_Config_Request_Certificate struct {
 }
 
 type BrowserTest_Config_Request_Files struct {
-	BucketKey        any
-	Content          any
-	Encoding         any
-	Name             any
+	// The object key (path) of the file within the S3 bucket to be uploaded for the browser test. (AI-inferred)
+	BucketKey any
+	// The base64-encoded content of the file to be uploaded in the browser test request. The maximum length of the string is 3,145,728 characters (3 MB). (AI-inferred)
+	Content any
+	// Encoding of the file content, such as 'base64'. (AI-inferred)
+	Encoding any
+	// The name of the file to be sent in the request, used as the filename in multipart form data. Must be at most 1500 characters. (AI-inferred)
+	Name any
+	// The original filename of the file to be uploaded in the browser test step. Must be a string with a maximum length of 1500 characters. (AI-inferred)
 	OriginalFileName any
-	Size             any
-	Type             any
+	// The size of the file, in bytes. The value must be between 1 and 3,145,728 bytes (3 MB). (AI-inferred)
+	Size any
+	// The MIME type (content type) of the uploaded file, such as 'application/json' or 'image/png'. Must be at most 1500 characters. (AI-inferred)
+	Type any
 }
 
 type BrowserTest_Config_Request_Proxy struct {
@@ -211,9 +240,12 @@ type BrowserTest_Options_RumSettings struct {
 }
 
 type BrowserTest_Options_Scheduling_Timeframes struct {
-	Day  any
+	// The day of the week (1=Monday, 7=Sunday) that this timeframe applies to. (AI-inferred)
+	Day any
+	// The start time of the scheduling timeframe, formatted as HH:mm in 24-hour time. (AI-inferred)
 	From any
-	To   any
+	// The end time of the scheduling time window. (AI-inferred)
+	To any
 }
 
 type BrowserTest_Options_Scheduling struct {
@@ -283,16 +315,24 @@ type BrowserTest_Options struct {
 }
 
 type BrowserTest_Steps struct {
-	AllowFailure  any
+	// When set to true, failures in this step are allowed and do not fail the entire test. This is useful for steps that may be conditional or non-critical. (AI-inferred)
+	AllowFailure any
+	// Boolean that indicates whether the step should always be executed, even if a previous step fails. If set to false, the step will be skipped when a preceding step fails. (AI-inferred)
 	AlwaysExecute any
+	// If set to `true`, the test stops and is marked as successful when this step succeeds. Defaults to `false`. (AI-inferred)
 	ExitIfSucceed any
-	IsCritical    any
-	Name          any
-	NoScreenshot  any
-	Params        any
-	PublicId      any
-	Timeout       any
-	Type          any
+	// Whether the step is critical. If set to `true`, a failure of this step causes the entire synthetic test to fail. If `false`, the step can fail without failing the test. Defaults to `false`. (AI-inferred)
+	IsCritical any
+	Name       any
+	// When set to true, screenshots are not taken for this step. (AI-inferred)
+	NoScreenshot any
+	// A dynamic object containing step-specific configuration, such as the element to interact with, text to input, or assertion details, depending on the step type in a Datadog synthetic browser test. (AI-inferred)
+	Params   any
+	PublicId any
+	// The maximum time, in milliseconds, to wait for the step to complete before failing. (AI-inferred)
+	Timeout any
+	// The type of step in the browser test, determining the action to be performed. Allowed values include click, typeText, hover, wait, assertCurrentUrl, assertElementPresent, and others. (AI-inferred)
+	Type any
 }
 
 var BrowserTest_Config_AssertionsFields = ubx.FieldMap{

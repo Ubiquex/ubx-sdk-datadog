@@ -2,11 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MobileTest_Config_Variables {
+  /** Sample value for the variable, used as an example in the test configuration. (AI-inferred) */
   example?: string | Computed<string>;
   id?: string | Computed<string>;
+  /** The name of the variable, used to reference it within the test configuration. (AI-inferred) */
   name?: string | Computed<string>;
   pattern?: string | Computed<string>;
+  /** Whether the variable is a secure variable, meaning its value is encrypted and hidden in the UI. (AI-inferred) */
   secure?: boolean | Computed<boolean>;
+  /** The type of the Synthetics mobile test variable. Valid values are `global` (references a global variable), `text` (a literal text value), and `email` (a generated email address). (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -18,7 +22,9 @@ export interface MobileTest_Config {
 }
 
 export interface MobileTest_Options_Bindings {
+  /** List of principals (users, groups, or roles) that this binding applies to. Each principal is a string identifier such as a user email or a group ID. (AI-inferred) */
   principals?: string[] | Computed<string[]>;
+  /** The type of access granted to the bound role. Allowed values are `editor` (full edit access) and `viewer` (read-only access). (AI-inferred) */
   relation?: string | Computed<string>;
 }
 
@@ -55,8 +61,11 @@ export interface MobileTest_Options_Retry {
 }
 
 export interface MobileTest_Options_Scheduling_Timeframes {
+  /** The day of the week for this scheduling timeframe, where 1 is Monday and 7 is Sunday. Must be between 1 and 7. (AI-inferred) */
   day?: number | Computed<number>;
+  /** Start time of the time frame during which the test is scheduled to run. (AI-inferred) */
   from?: string | Computed<string>;
+  /** The end time of the scheduling timeframe, formatted as HH:MM. (AI-inferred) */
   to?: string | Computed<string>;
 }
 
@@ -105,28 +114,38 @@ export interface MobileTest_Options {
 }
 
 export interface MobileTest_Steps_Params_Element_RelativePosition {
+  /** The x-coordinate of the element's relative position within the parent context, used to define the element's location for interaction in the mobile test step. (AI-inferred) */
   x?: number | Computed<number>;
+  /** The y-coordinate of the element's relative position, used to define the vertical offset from the reference element. (AI-inferred) */
   y?: number | Computed<number>;
 }
 
 export interface MobileTest_Steps_Params_Element_UserLocator_Values {
+  /** The type of locator used to identify a mobile element. Allowed values: accessibility-id, id, ios-predicate-string, ios-class-chain, xpath. (AI-inferred) */
   type?: string | Computed<string>;
+  /** A single string value in the user locator 'values' list, used to identify the mobile element during the test step. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface MobileTest_Steps_Params_Element_UserLocator {
+  /** If true, the mobile test step is marked as failed when the specified user locator fails to locate the element. (AI-inferred) */
   failTestOnCannotLocate?: boolean | Computed<boolean>;
   values?: MobileTest_Steps_Params_Element_UserLocator_Values[] | Computed<MobileTest_Steps_Params_Element_UserLocator_Values[]>;
 }
 
 export interface MobileTest_Steps_Params_Element {
   context?: string | Computed<string>;
+  /** Specifies whether the element is in a native or web context. Allowed values are 'native' and 'web'. (AI-inferred) */
   contextType?: string | Computed<string>;
+  /** A description of the mobile UI element targeted by the step. (AI-inferred) */
   elementDescription?: string | Computed<string>;
+  /** A list of alternative locators for the element, allowing the synthetics mobile test to use any of these locators to find the element during test execution. (AI-inferred) */
   multiLocator?: unknown | Computed<unknown>;
   relativePosition?: MobileTest_Steps_Params_Element_RelativePosition | Computed<MobileTest_Steps_Params_Element_RelativePosition>;
+  /** The text content of the on-screen element used to identify and interact with it in the mobile test step. (AI-inferred) */
   textContent?: string | Computed<string>;
   userLocator?: MobileTest_Steps_Params_Element_UserLocator | Computed<MobileTest_Steps_Params_Element_UserLocator>;
+  /** The name of the view (screen) in the mobile application where the element is located. (AI-inferred) */
   viewName?: string | Computed<string>;
 }
 
@@ -136,30 +155,43 @@ export interface MobileTest_Steps_Params_Variable {
 }
 
 export interface MobileTest_Steps_Params {
+  /** The type of check to perform on the target value. Allowed values: equals, notEquals, contains, notContains, startsWith, notStartsWith, greater, lower, greaterEquals, lowerEquals, matchRegex, between, isEmpty, notIsEmpty. (AI-inferred) */
   check?: string | Computed<string>;
+  /** Delay in milliseconds to wait before executing the step. Must be between 0 and 5000. (AI-inferred) */
   delay?: number | Computed<number>;
+  /** Specifies the direction of the mobile gesture (e.g., swipe), with allowed values: up, down, left, right. (AI-inferred) */
   direction?: string | Computed<string>;
   element?: MobileTest_Steps_Params_Element | Computed<MobileTest_Steps_Params_Element>;
   enabled?: boolean | Computed<boolean>;
+  /** The maximum number of scroll actions to perform during this mobile test step. (AI-inferred) */
   maxScrolls?: number | Computed<number>;
   positions?: MobileTest_Steps_Params_Element_RelativePosition[] | Computed<MobileTest_Steps_Params_Element_RelativePosition[]>;
+  /** The public ID of the subtest to run in this step. (AI-inferred) */
   subtestPublicId?: string | Computed<string>;
+  /** The value associated with a parameter for a step in the mobile test. The type is dynamic and can vary based on the specific step and parameter. (AI-inferred) */
   value?: unknown | Computed<unknown>;
   variable?: MobileTest_Steps_Params_Variable | Computed<MobileTest_Steps_Params_Variable>;
+  /** Whether to press the Enter key after inputting text in the step. (AI-inferred) */
   withEnter?: boolean | Computed<boolean>;
+  /** The horizontal (x) coordinate for the interaction point in the mobile test step. (AI-inferred) */
   x?: number | Computed<number>;
   y?: number | Computed<number>;
 }
 
 export interface MobileTest_Steps {
+  /** Determines if the mobile test step can fail without marking the entire test as failed. When set to true, a failure in this step will not fail the overall test. (AI-inferred) */
   allowFailure?: boolean | Computed<boolean>;
   hasNewStepElement?: boolean | Computed<boolean>;
+  /** A boolean indicating whether this step is critical. If a critical step fails, the entire test is considered failed; non-critical steps do not cause failure on their own. (AI-inferred) */
   isCritical?: boolean | Computed<boolean>;
+  /** The name of the step in the Datadog Synthetics mobile test. Must be at most 1500 characters. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Whether to disable the screenshot capture for this step. Set to true to prevent Datadog from taking a screenshot during this step. (AI-inferred) */
   noScreenshot?: boolean | Computed<boolean>;
   params?: MobileTest_Steps_Params | Computed<MobileTest_Steps_Params>;
   publicId?: string | Computed<string>;
   timeout?: number | Computed<number>;
+  /** The type of step to perform in the mobile test. Possible values include assertElementContent, assertScreenContains, assertScreenLacks, doubleTap, extractVariable, flick, openDeeplink, playSubTest, pressBack, restartApplication, rotate, scroll, scrollToElement, tap, toggleWiFi, typeText, and wait. (AI-inferred) */
   type?: string | Computed<string>;
 }
 

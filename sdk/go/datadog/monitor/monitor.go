@@ -4,9 +4,11 @@ package monitor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Monitor_Assets struct {
-	Category     any
-	Name         any
-	ResourceKey  any
+	// The category of the asset. Allowed value: `runbook`. (AI-inferred)
+	Category    any
+	Name        any
+	ResourceKey any
+	// The type of the asset associated with the monitor. The only supported value is 'notebook'. (AI-inferred)
 	ResourceType any
 	Url          any
 }
@@ -21,9 +23,13 @@ type Monitor_Creator struct {
 }
 
 type Monitor_MatchingDowntimes struct {
-	End   any
-	Id    any
+	// The timestamp (epoch seconds) when the downtime ends. (AI-inferred)
+	End any
+	// The unique identifier of the Datadog downtime that matches the monitor. (AI-inferred)
+	Id any
+	// The list of monitor scopes (such as host, service, or environment tags) to which the matching downtime applies. The downtime mutes monitors that match these scopes. (AI-inferred)
 	Scope any
+	// The start time of the matching downtime, as a Unix timestamp in seconds. (AI-inferred)
 	Start any
 }
 
@@ -37,8 +43,10 @@ type Monitor_Options_Aggregation struct {
 }
 
 type Monitor_Options_SchedulingOptions_CustomSchedule_Recurrences struct {
-	Rrule    any
-	Start    any
+	// The RRULE expression, in RFC 5545 format, that defines the recurrence pattern for the custom schedule. For example, 'FREQ=DAILY;INTERVAL=2'. (AI-inferred)
+	Rrule any
+	Start any
+	// The IANA timezone in which the recurrence's start and end times are expressed. (AI-inferred)
 	Timezone any
 }
 
@@ -92,101 +100,143 @@ type Monitor_Options_Thresholds struct {
 }
 
 type Monitor_Options_Variables_AugmentQuery_Columns struct {
+	// The alias for the column, used to reference the column in the monitor's template variables and messages. (AI-inferred)
 	Alias any
-	Name  any
+	// The name of the column to be added to the augmented query result. (AI-inferred)
+	Name any
 }
 
 type Monitor_Options_Variables_AugmentQuery_Compute struct {
 	Aggregation any
-	Interval    any
-	Metric      any
-	Name        any
-	Source      any
+	// The time interval in seconds over which the compute aggregation is applied. (AI-inferred)
+	Interval any
+	// The name of the metric to use in the compute operation for the augmented query variable. (AI-inferred)
+	Metric any
+	Name   any
+	Source any
 }
 
 type Monitor_Options_Variables_AugmentQuery_GroupBy_Sort struct {
+	// The aggregation method for the sort metric. (AI-inferred)
 	Aggregation any
-	Metric      any
-	Order       any
+	// The metric name used to sort the groups in the augment query's group_by, combined with the aggregation and order to determine the sort order. For example, a metric like 'system.cpu.user'. (AI-inferred)
+	Metric any
+	Order  any
 }
 
 type Monitor_Options_Variables_AugmentQuery_GroupBy struct {
-	Facet  any
-	Limit  any
+	// The facet used to group query results within the monitor's variable augment query. It specifies the field by which the query is grouped. (AI-inferred)
+	Facet any
+	// The maximum number of groups to return from the group_by operation in the augment query. (AI-inferred)
+	Limit any
+	// This object specifies the sorting parameters for the groups created by the group_by, controlling their display order in the monitor. (AI-inferred)
 	Sort   any
 	Source any
 }
 
 type Monitor_Options_Variables_AugmentQuery_Search struct {
+	// The search query used to augment a monitor variable. It specifies the query string that defines what data to include in the augmentation search. (AI-inferred)
 	Query any
 }
 
 type Monitor_Options_Variables_AugmentQuery struct {
-	Columns     any
-	Compute     any
-	DataSource  any
-	GroupBy     any
-	Indexes     any
-	Name        any
+	Columns    any
+	Compute    any
+	DataSource any
+	GroupBy    any
+	// A list of log index names used by the augment query to restrict the scope of the variable's search. If not specified, the query may use all available indexes. (AI-inferred)
+	Indexes any
+	// The name of the augment query, used to identify it within the monitor. (AI-inferred)
+	Name any
+	// The filter expression for the augment query. (AI-inferred)
 	QueryFilter any
 	Search      any
 	TableName   any
 }
 
 type Monitor_Options_Variables_BaseQuery struct {
+	// The aggregation method applied to the variable's base query, controlling how values are combined. (AI-inferred)
 	Aggregator any
-	Compute    any
+	// The compute object specifies the aggregation function and field used to transform the base query into a numeric value for the monitor variable. (AI-inferred)
+	Compute any
+	// The data source type for a monitor template variable, which determines where the variable's values are queried from (e.g., 'metrics', 'logs', 'rum', 'events'). (AI-inferred)
 	DataSource any
-	GroupBy    any
-	Indexes    any
-	Name       any
-	Query      any
-	Search     any
+	// A list of group-by definitions that determine the tag or attribute keys used to aggregate the base query results when populating the template variable's available values. (AI-inferred)
+	GroupBy any
+	// The list of log index names to search in the base query. If omitted, all log indexes are searched. (AI-inferred)
+	Indexes any
+	// The name of the template variable defined for the monitor. This name is used to reference the variable in the monitor's query or message. (AI-inferred)
+	Name any
+	// The base query string that defines the possible values for this template variable. (AI-inferred)
+	Query  any
+	Search any
 }
 
 type Monitor_Options_Variables_Filters struct {
-	BaseAttribute   any
-	Exclude         any
+	// The base attribute name used to filter the values available for the monitor variable. For example, when the filter's data source is 'logs', this could be a log facet like '@http.url'. (AI-inferred)
+	BaseAttribute any
+	// Whether the filter is an exclusion filter. When true, the specified tag values are excluded from the template variable's available values. (AI-inferred)
+	Exclude any
+	// The attribute name that the filter uses to narrow the template variable's available values. (AI-inferred)
 	FilterAttribute any
 }
 
 type Monitor_Options_Variables_JoinCondition struct {
 	AugmentAttribute any
-	BaseAttribute    any
-	JoinType         any
+	// The attribute from the base query used to join with the other query in the join condition. (AI-inferred)
+	BaseAttribute any
+	// The type of join to perform for the join condition. Valid values are 'inner' and 'left'. (AI-inferred)
+	JoinType any
 }
 
 type Monitor_Options_Variables_MonitorOptions struct {
-	CrontabOverride   any
-	CustomSql         any
-	CustomWhere       any
-	GroupByColumns    any
+	CrontabOverride any
+	CustomSql       any
+	// A custom where clause used to filter the available values for the monitor template variable. For example, you can scope the variable by specifying a tag-based filter like 'availability-zone:us-east-1a'. (AI-inferred)
+	CustomWhere any
+	// A list of columns to group by for the variable's expression in the monitor query. (AI-inferred)
+	GroupByColumns any
+	// Override the model type for the monitor variable. Allowed values are 'freshness', 'percentage', or 'any'. (AI-inferred)
 	ModelTypeOverride any
-	Sensitivity       any
+	// The sensitivity of the anomaly detection monitor, from 1 (least sensitive) to 5 (most sensitive). This controls the width of the anomaly detection band. (AI-inferred)
+	Sensitivity any
 }
 
 type Monitor_Options_Variables struct {
-	Aggregator     any
-	AugmentQuery   any
-	BaseQuery      any
-	Compute        any
-	DataSource     any
-	Filter         any
-	FilterQuery    any
-	Filters        any
-	GroupBy        any
-	Indexes        any
-	JobType        any
-	JobsQuery      any
-	JoinCondition  any
-	Measure        any
+	// The aggregation method used for the variable query. Valid values are avg, sum, max, min, last, area, l2norm, percentile, stddev. (AI-inferred)
+	Aggregator   any
+	AugmentQuery any
+	BaseQuery    any
+	// The compute block specifies the aggregation and facet used to calculate the value of the variable. It contains an `aggregation` field (required) and an optional `facet` field. (AI-inferred)
+	Compute any
+	// The data source type for the monitor variable. Allowed values are: rum, ci_pipelines, ci_tests, audit, events, logs, spans, database_queries, network, network_path. (AI-inferred)
+	DataSource any
+	// The filter query that restricts the possible values for this template variable in a Datadog monitor. (AI-inferred)
+	Filter any
+	// The filter query used to restrict the available values for this monitor template variable. (AI-inferred)
+	FilterQuery any
+	// Filters for the template variable, restricting the available values based on tag keys and values. (AI-inferred)
+	Filters any
+	// List of grouping conditions for the monitor variable. Each item contains a name and tag used to group the query results when resolving the variable's value. (AI-inferred)
+	GroupBy any
+	// A list of log indexes that this template variable will be restricted to. When set, the variable only uses these indexes when querying log data in log-based monitors. (AI-inferred)
+	Indexes any
+	JobType any
+	// The query used to populate the list of values for this monitor variable. (AI-inferred)
+	JobsQuery     any
+	JoinCondition any
+	Measure       any
+	// The options object for a monitor template variable. It contains a `values` attribute (a list of strings) that restricts the selectable values for the variable. (AI-inferred)
 	MonitorOptions any
-	Name           any
-	Query          any
-	QueryDialect   any
-	SchemaVersion  any
-	Scope          any
-	Search         any
+	// The name of the variable, which serves as the identifier used in the monitor's query or message for template variable substitution. (AI-inferred)
+	Name any
+	// The query string that defines the set of values for this monitor variable. It is used to populate the variable's available values, for example with a metric query or a list of hosts. (AI-inferred)
+	Query any
+	// The query language used for the variable's query. Valid values are `datadog` (default) for Datadog query syntax or `prometheus` for PromQL. (AI-inferred)
+	QueryDialect  any
+	SchemaVersion any
+	Scope         any
+	Search        any
 }
 
 type Monitor_Options struct {
@@ -255,12 +305,17 @@ type Monitor_Options struct {
 }
 
 type Monitor_State_Groups struct {
-	LastNodataTs    any
-	LastNotifiedTs  any
-	LastResolvedTs  any
+	// Unix timestamp of the last time the monitor group reported no data. (AI-inferred)
+	LastNodataTs any
+	// The timestamp of the last notification sent for this monitor group. (AI-inferred)
+	LastNotifiedTs any
+	// The Unix timestamp (in seconds) when the monitor group was last resolved. (AI-inferred)
+	LastResolvedTs any
+	// The timestamp (Unix epoch) when the monitor last triggered an alert for this group. (AI-inferred)
 	LastTriggeredTs any
-	Name            any
-	Status          any
+	// The name of the monitor group, typically the combination of tag values that defines the group for multi-alert monitors. (AI-inferred)
+	Name   any
+	Status any
 }
 
 type Monitor_State struct {

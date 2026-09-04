@@ -3,10 +3,15 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BrowserTest_Config_Assertions {
   code?: string | Computed<string>;
+  /** The comparison operator used in the assertion. Allowed values include: contains, doesNotContain, is, isNot, lessThan, lessThanOrEqual, moreThan, moreThanOrEqual, matches, doesNotMatch, validates, isInMoreThan, isInLessThan, doesNotExist, isUndefined. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** Specifies the property of the response to evaluate, such as a header name when using header assertions. (AI-inferred) */
   property?: string | Computed<string>;
+  /** The expected value to compare against when evaluating the assertion. The data type depends on the assertion property being validated. (AI-inferred) */
   target?: unknown | Computed<unknown>;
+  /** Specifies which timings are included in the assertion: `all` includes all timings, `withoutDNS` excludes DNS resolution timing. (AI-inferred) */
   timingsScope?: string | Computed<string>;
+  /** Specifies the kind of assertion to apply, such as 'statusCode', 'body', 'header', or 'responseTime'. The allowed values in this context are: body, header, statusCode, certificate, responseTime, property, recordEvery, recordSome, tlsVersion, minTlsVersion, latency, packetLossPercentage, packetsReceived, networkHop, receivedMessage, grpcHealthcheckStatus, grpcMetadata, grpcProto, connection, multiNetworkHop, jitter, mcpToolNameLength, mcpToolCount. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -14,40 +19,57 @@ export interface BrowserTest_Config_ConfigVariables {
   example?: string | Computed<string>;
   id?: string | Computed<string>;
   name?: string | Computed<string>;
+  /** Regular expression pattern used to generate random values for the config variable during test execution. (AI-inferred) */
   pattern?: string | Computed<string>;
+  /** Whether the config variable is a secure (hidden) variable. When set to true, the variable's value is not displayed in the UI or API responses. (AI-inferred) */
   secure?: boolean | Computed<boolean>;
+  /** The type of configuration variable. Allowed values are: `global`, `text`, `email`. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface BrowserTest_Config_Request_BasicAuth_AddClaims {
   exp?: boolean | Computed<boolean>;
+  /** If true, includes the 'issued at' (iat) claim in the JWT token used for basic authentication. (AI-inferred) */
   iat?: boolean | Computed<boolean>;
 }
 
 export interface BrowserTest_Config_Request_BasicAuth {
   accessKey?: string | Computed<string>;
+  /** The URL used to obtain an OAuth access token during authentication for the synthetic request. (AI-inferred) */
   accessTokenUrl?: string | Computed<string>;
+  /** Map of custom claims to add to the authentication request, where each key is the claim name and the corresponding value is the claim value. (AI-inferred) */
   addClaims?: BrowserTest_Config_Request_BasicAuth_AddClaims | Computed<BrowserTest_Config_Request_BasicAuth_AddClaims>;
   algorithm?: string | Computed<string>;
+  /** The audience for the OAuth2 token, used when the basic auth type is set to 'oauth2'. (AI-inferred) */
   audience?: string | Computed<string>;
   clientId?: string | Computed<string>;
+  /** The client secret used for OAuth client authentication in the request's basic_auth configuration. (AI-inferred) */
   clientSecret?: string | Computed<string>;
+  /** The domain for NTLM authentication in the basic auth configuration. Used when the auth type is set to 'ntlm'. (AI-inferred) */
   domain?: string | Computed<string>;
   expiresIn?: number | Computed<number>;
   header?: string | Computed<string>;
+  /** The password to use for basic authentication against the requested endpoint. (AI-inferred) */
   password?: string | Computed<string>;
   payload?: string | Computed<string>;
+  /** The AWS region to use for SigV4 authentication. Only relevant when the basic authentication type is set to `sigv4`. (AI-inferred) */
   region?: string | Computed<string>;
   resource?: string | Computed<string>;
   scope?: string | Computed<string>;
+  /** The password or secret used for basic authentication against the endpoint. (AI-inferred) */
   secret?: string | Computed<string>;
   secretKey?: string | Computed<string>;
+  /** The service name to use for NTLM authentication within the basic auth configuration. (AI-inferred) */
   serviceName?: string | Computed<string>;
   sessionToken?: string | Computed<string>;
   tokenApiAuthentication?: string | Computed<string>;
+  /** The prefix (scheme) to prepend to the token in the Authorization header, e.g., 'Bearer'. (AI-inferred) */
   tokenPrefix?: string | Computed<string>;
+  /** The type of basic authentication to use for the request. (AI-inferred) */
   type?: string | Computed<string>;
+  /** The username used for basic authentication in the Synthetics browser test request. (AI-inferred) */
   username?: string | Computed<string>;
+  /** The workstation name for NTLM authentication. (AI-inferred) */
   workstation?: string | Computed<string>;
 }
 
@@ -68,12 +90,19 @@ export interface BrowserTest_Config_Request_Certificate {
 }
 
 export interface BrowserTest_Config_Request_Files {
+  /** The object key (path) of the file within the S3 bucket to be uploaded for the browser test. (AI-inferred) */
   bucketKey?: string | Computed<string>;
+  /** The base64-encoded content of the file to be uploaded in the browser test request. The maximum length of the string is 3,145,728 characters (3 MB). (AI-inferred) */
   content?: string | Computed<string>;
+  /** Encoding of the file content, such as 'base64'. (AI-inferred) */
   encoding?: string | Computed<string>;
+  /** The name of the file to be sent in the request, used as the filename in multipart form data. Must be at most 1500 characters. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The original filename of the file to be uploaded in the browser test step. Must be a string with a maximum length of 1500 characters. (AI-inferred) */
   originalFileName?: string | Computed<string>;
+  /** The size of the file, in bytes. The value must be between 1 and 3,145,728 bytes (3 MB). (AI-inferred) */
   size?: number | Computed<number>;
+  /** The MIME type (content type) of the uploaded file, such as 'application/json' or 'image/png'. Must be at most 1500 characters. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -209,8 +238,11 @@ export interface BrowserTest_Options_RumSettings {
 }
 
 export interface BrowserTest_Options_Scheduling_Timeframes {
+  /** The day of the week (1=Monday, 7=Sunday) that this timeframe applies to. (AI-inferred) */
   day?: number | Computed<number>;
+  /** The start time of the scheduling timeframe, formatted as HH:mm in 24-hour time. (AI-inferred) */
   from?: string | Computed<string>;
+  /** The end time of the scheduling time window. (AI-inferred) */
   to?: string | Computed<string>;
 }
 
@@ -281,15 +313,23 @@ export interface BrowserTest_Options {
 }
 
 export interface BrowserTest_Steps {
+  /** When set to true, failures in this step are allowed and do not fail the entire test. This is useful for steps that may be conditional or non-critical. (AI-inferred) */
   allowFailure?: boolean | Computed<boolean>;
+  /** Boolean that indicates whether the step should always be executed, even if a previous step fails. If set to false, the step will be skipped when a preceding step fails. (AI-inferred) */
   alwaysExecute?: boolean | Computed<boolean>;
+  /** If set to `true`, the test stops and is marked as successful when this step succeeds. Defaults to `false`. (AI-inferred) */
   exitIfSucceed?: boolean | Computed<boolean>;
+  /** Whether the step is critical. If set to `true`, a failure of this step causes the entire synthetic test to fail. If `false`, the step can fail without failing the test. Defaults to `false`. (AI-inferred) */
   isCritical?: boolean | Computed<boolean>;
   name?: string | Computed<string>;
+  /** When set to true, screenshots are not taken for this step. (AI-inferred) */
   noScreenshot?: boolean | Computed<boolean>;
+  /** A dynamic object containing step-specific configuration, such as the element to interact with, text to input, or assertion details, depending on the step type in a Datadog synthetic browser test. (AI-inferred) */
   params?: unknown | Computed<unknown>;
   publicId?: string | Computed<string>;
+  /** The maximum time, in milliseconds, to wait for the step to complete before failing. (AI-inferred) */
   timeout?: number | Computed<number>;
+  /** The type of step in the browser test, determining the action to be performed. Allowed values include click, typeText, hover, wait, assertCurrentUrl, assertElementPresent, and others. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
