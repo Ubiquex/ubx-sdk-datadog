@@ -4,12 +4,12 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .agent_data import AgentData, AgentDataConfig
-from .agentless_host_data import AgentlessHostData, AgentlessHostDataConfig
-from .agentless_host_facet_data import AgentlessHostFacetData, AgentlessHostFacetDataConfig
+from .agent_data_list import AgentDataList, AgentDataListConfig
+from .agentless_host_data_list import AgentlessHostDataList, AgentlessHostDataListConfig
+from .agentless_host_facet_data_list import AgentlessHostFacetDataList, AgentlessHostFacetDataListConfig
 from .cloud_accounts_coverage_analysis_response import CloudAccountsCoverageAnalysisResponse, CloudAccountsCoverageAnalysisResponseConfig
 from .host_facet_info_response import HostFacetInfoResponse, HostFacetInfoResponseConfig
 from .hosts_and_containers_coverage_analysis_response import HostsAndContainersCoverageAnalysisResponse, HostsAndContainersCoverageAnalysisResponseConfig
 from .serverless_coverage_analysis_response import ServerlessCoverageAnalysisResponse, ServerlessCoverageAnalysisResponseConfig
-from .unified_host_data import UnifiedHostData, UnifiedHostDataConfig
-from .unified_host_facet_data import UnifiedHostFacetData, UnifiedHostFacetDataConfig
+from .unified_host_data_list import UnifiedHostDataList, UnifiedHostDataListConfig
+from .unified_host_facet_data_list import UnifiedHostFacetDataList, UnifiedHostFacetDataListConfig

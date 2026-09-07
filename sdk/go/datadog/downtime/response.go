@@ -4,21 +4,21 @@ package downtime
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes_MonitorIdentifier struct {
-	MonitorId   any
+	MonitorId any
 	MonitorTags any
 }
 
 type Response_Data_Attributes_Schedule_Recurrences struct {
 	Duration any
-	Rrule    any
-	Start    any
+	Rrule any
+	Start any
 }
 
 type Response_Data_Attributes_Schedule struct {
-	End         any
+	End any
 	Recurrences any
-	Start       any
-	Timezone    any
+	Start any
+	Timezone any
 }
 
 type Response_Data_Attributes struct {
@@ -79,20 +79,20 @@ type Response_Data struct {
 }
 
 type Response_Included_Attributes struct {
-	CreatedAt      any
-	Disabled       any
-	Email          any
-	Handle         any
-	Icon           any
-	LastLoginTime  any
-	MfaEnabled     any
-	ModifiedAt     any
-	Name           any
+	CreatedAt any
+	Disabled any
+	Email any
+	Handle any
+	Icon any
+	LastLoginTime any
+	MfaEnabled any
+	ModifiedAt any
+	Name any
 	ServiceAccount any
-	Status         any
-	Title          any
-	Uuid           any
-	Verified       any
+	Status any
+	Title any
+	Uuid any
+	Verified any
 }
 
 type Response_Included_Relationships_OtherOrgs struct {
@@ -100,104 +100,104 @@ type Response_Included_Relationships_OtherOrgs struct {
 }
 
 type Response_Included_Relationships struct {
-	Org        any
-	OtherOrgs  any
+	Org any
+	OtherOrgs any
 	OtherUsers any
-	Roles      any
+	Roles any
 }
 
 type Response_Included struct {
-	Attributes    any
-	Id            any
+	Attributes any
+	Id any
 	Relationships any
-	Type          any
+	Type any
 }
 
 var Response_Data_Attributes_MonitorIdentifierFields = ubx.FieldMap{
-	"MonitorId":   ubx.FieldSpec{WireName: "monitor_id"},
-	"MonitorTags": ubx.FieldSpec{WireName: "monitor_tags"},
-}
+		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
+		"MonitorTags": ubx.FieldSpec{WireName: "monitor_tags"},
+	}
 
 var Response_Data_Attributes_Schedule_RecurrencesFields = ubx.FieldMap{
-	"Duration": ubx.FieldSpec{WireName: "duration"},
-	"Rrule":    ubx.FieldSpec{WireName: "rrule"},
-	"Start":    ubx.FieldSpec{WireName: "start"},
-}
+		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"Rrule": ubx.FieldSpec{WireName: "rrule"},
+		"Start": ubx.FieldSpec{WireName: "start"},
+	}
 
 var Response_Data_Attributes_ScheduleFields = ubx.FieldMap{
-	"End": ubx.FieldSpec{WireName: "end"},
-	"Recurrences": ubx.FieldSpec{
-		WireName: "recurrences",
-		Kind:     "list",
-		Fields:   Response_Data_Attributes_Schedule_RecurrencesFields,
-	},
-	"Start":    ubx.FieldSpec{WireName: "start"},
-	"Timezone": ubx.FieldSpec{WireName: "timezone"},
-}
+		"End": ubx.FieldSpec{WireName: "end"},
+		"Recurrences": ubx.FieldSpec{
+			WireName: "recurrences",
+			Kind: "list",
+			Fields: Response_Data_Attributes_Schedule_RecurrencesFields,
+		},
+		"Start": ubx.FieldSpec{WireName: "start"},
+		"Timezone": ubx.FieldSpec{WireName: "timezone"},
+	}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-	"Canceled":        ubx.FieldSpec{WireName: "canceled"},
-	"Created":         ubx.FieldSpec{WireName: "created"},
-	"DisplayTimezone": ubx.FieldSpec{WireName: "display_timezone"},
-	"Message":         ubx.FieldSpec{WireName: "message"},
-	"Modified":        ubx.FieldSpec{WireName: "modified"},
-	"MonitorIdentifier": ubx.FieldSpec{
-		WireName: "monitor_identifier",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_MonitorIdentifierFields,
-	},
-	"MuteFirstRecoveryNotification": ubx.FieldSpec{WireName: "mute_first_recovery_notification"},
-	"NotifyEndStates":               ubx.FieldSpec{WireName: "notify_end_states"},
-	"NotifyEndTypes":                ubx.FieldSpec{WireName: "notify_end_types"},
-	"Schedule": ubx.FieldSpec{
-		WireName: "schedule",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_ScheduleFields,
-	},
-	"Scope":  ubx.FieldSpec{WireName: "scope"},
-	"Status": ubx.FieldSpec{WireName: "status"},
-}
+		"Canceled": ubx.FieldSpec{WireName: "canceled"},
+		"Created": ubx.FieldSpec{WireName: "created"},
+		"DisplayTimezone": ubx.FieldSpec{WireName: "display_timezone"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"Modified": ubx.FieldSpec{WireName: "modified"},
+		"MonitorIdentifier": ubx.FieldSpec{
+			WireName: "monitor_identifier",
+			Kind: "object",
+			Fields: Response_Data_Attributes_MonitorIdentifierFields,
+		},
+		"MuteFirstRecoveryNotification": ubx.FieldSpec{WireName: "mute_first_recovery_notification"},
+		"NotifyEndStates": ubx.FieldSpec{WireName: "notify_end_states"},
+		"NotifyEndTypes": ubx.FieldSpec{WireName: "notify_end_types"},
+		"Schedule": ubx.FieldSpec{
+			WireName: "schedule",
+			Kind: "object",
+			Fields: Response_Data_Attributes_ScheduleFields,
+		},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
 
 var Response_Data_Relationships_CreatedBy_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Response_Data_Relationships_CreatedByFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_CreatedBy_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "object",
+			Fields: Response_Data_Relationships_CreatedBy_DataFields,
+		},
+	}
 
 var Response_Data_RelationshipsFields = ubx.FieldMap{
-	"CreatedBy": ubx.FieldSpec{
-		WireName: "created_by",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_CreatedByFields,
-	},
-	"Monitor": ubx.FieldSpec{
-		WireName: "monitor",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_CreatedByFields,
-	},
-}
+		"CreatedBy": ubx.FieldSpec{
+			WireName: "created_by",
+			Kind: "object",
+			Fields: Response_Data_Relationships_CreatedByFields,
+		},
+		"Monitor": ubx.FieldSpec{
+			WireName: "monitor",
+			Kind: "object",
+			Fields: Response_Data_Relationships_CreatedByFields,
+		},
+	}
 
 var Response_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   Response_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   Response_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: Response_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: Response_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResponseConfig struct {
 	// Object to create a downtime.
@@ -220,8 +220,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   Response_DataFields,
+			Kind: "object",
+			Fields: Response_DataFields,
 		},
 		"DowntimeId": ubx.FieldSpec{WireName: "downtime_id"},
 	},

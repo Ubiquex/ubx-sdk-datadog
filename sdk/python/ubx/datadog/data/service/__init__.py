@@ -4,12 +4,12 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .access_token import AccessToken, AccessTokenConfig
-from .definition_data import DefinitionData, DefinitionDataConfig
-from .level_objective import LevelObjective, LevelObjectiveConfig
+from .access_token_list import AccessTokenList, AccessTokenListConfig
+from .definition_data_list import DefinitionDataList, DefinitionDataListConfig
+from .level_objective_list import LevelObjectiveList, LevelObjectiveListConfig
 from .list import List, ListConfig
-from .now_assignment_group_data import NowAssignmentGroupData, NowAssignmentGroupDataConfig
-from .now_business_service_data import NowBusinessServiceData, NowBusinessServiceDataConfig
-from .now_instance_data import NowInstanceData, NowInstanceDataConfig
-from .now_template_data import NowTemplateData, NowTemplateDataConfig
-from .now_user_data import NowUserData, NowUserDataConfig
+from .now_assignment_group_data_list import NowAssignmentGroupDataList, NowAssignmentGroupDataListConfig
+from .now_business_service_data_list import NowBusinessServiceDataList, NowBusinessServiceDataListConfig
+from .now_instance_data_list import NowInstanceDataList, NowInstanceDataListConfig
+from .now_template_data_list import NowTemplateDataList, NowTemplateDataListConfig
+from .now_user_data_list import NowUserDataList, NowUserDataListConfig

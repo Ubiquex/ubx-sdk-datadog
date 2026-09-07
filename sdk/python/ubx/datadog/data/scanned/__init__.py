@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .asset_metadata import AssetMetadata, AssetMetadataConfig
+from .asset_metadata_list import AssetMetadataList, AssetMetadataListConfig

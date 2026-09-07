@@ -22,6 +22,8 @@ class WorkloadSecurityAgentPolicyResponse_Data_Attributes_Versions:
 class WorkloadSecurityAgentPolicyResponse_Data_Attributes:
     # The number of rules with the blocking feature in this policy
     blocking_rules_count: Any = None
+    # Whether an update is available for the content pack. Only set for activated content packs, `null` otherwise
+    content_pack_update_available: Any = None
     # Whether the policy is managed by Datadog
     datadog_managed: Any = None
     # The description of the policy
@@ -48,6 +50,8 @@ class WorkloadSecurityAgentPolicyResponse_Data_Attributes:
     priority: Any = None
     # The number of rules in this policy
     rule_count: Any = None
+    # The ID of the Datadog-managed default policy this policy is derived from
+    source_default_policy_id: Any = None
     # Timestamp in milliseconds when the policy was last updated
     update_date: Any = None
     # When the policy was last updated, timestamp in milliseconds
@@ -78,6 +82,7 @@ _WorkloadSecurityAgentPolicyResponse_Data_Attributes_VersionsFields = {
 
 _WorkloadSecurityAgentPolicyResponse_Data_AttributesFields = {
     "blocking_rules_count": ubx.FieldSpec(wire_name="blocking_rules_count"),
+    "content_pack_update_available": ubx.FieldSpec(wire_name="content_pack_update_available"),
     "datadog_managed": ubx.FieldSpec(wire_name="datadog_managed"),
     "description": ubx.FieldSpec(wire_name="description"),
     "disabled_rules_count": ubx.FieldSpec(wire_name="disabled_rules_count"),
@@ -91,6 +96,7 @@ _WorkloadSecurityAgentPolicyResponse_Data_AttributesFields = {
     "policy_version": ubx.FieldSpec(wire_name="policy_version"),
     "priority": ubx.FieldSpec(wire_name="priority"),
     "rule_count": ubx.FieldSpec(wire_name="rule_count"),
+    "source_default_policy_id": ubx.FieldSpec(wire_name="source_default_policy_id"),
     "update_date": ubx.FieldSpec(wire_name="update_date"),
     "updated_at": ubx.FieldSpec(wire_name="updated_at"),
     "updater": ubx.FieldSpec(

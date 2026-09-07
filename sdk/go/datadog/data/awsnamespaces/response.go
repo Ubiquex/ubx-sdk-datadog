@@ -27,5 +27,6 @@ type ResponseAttrs struct {
 
 var Response = ubx.DataSourceBinding{
 	WireType: "datadog_awsnamespaces_response",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

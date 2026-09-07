@@ -32,25 +32,25 @@ type OwnershipMappingResponse_Data struct {
 }
 
 var OwnershipMappingResponse_Data_AttributesFields = ubx.FieldMap{
-	"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-	"CreatedAt":     ubx.FieldSpec{WireName: "created_at"},
-	"CreatedBy":     ubx.FieldSpec{WireName: "created_by"},
-	"MatchType":     ubx.FieldSpec{WireName: "match_type"},
-	"OrgId":         ubx.FieldSpec{WireName: "org_id"},
-	"Service":       ubx.FieldSpec{WireName: "service"},
-	"TeamHandle":    ubx.FieldSpec{WireName: "team_handle"},
-	"ViewName":      ubx.FieldSpec{WireName: "view_name"},
-}
+		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+		"MatchType": ubx.FieldSpec{WireName: "match_type"},
+		"OrgId": ubx.FieldSpec{WireName: "org_id"},
+		"Service": ubx.FieldSpec{WireName: "service"},
+		"TeamHandle": ubx.FieldSpec{WireName: "team_handle"},
+		"ViewName": ubx.FieldSpec{WireName: "view_name"},
+	}
 
 var OwnershipMappingResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   OwnershipMappingResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: OwnershipMappingResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type OwnershipMappingResponseConfig struct {
 	// The JSON:API data envelope for a teams ownership mapping create request.
@@ -71,8 +71,8 @@ var OwnershipMappingResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   OwnershipMappingResponse_DataFields,
+			Kind: "object",
+			Fields: OwnershipMappingResponse_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

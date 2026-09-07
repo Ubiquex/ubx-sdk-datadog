@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .deletion_response_item import DeletionResponseItem, DeletionResponseItemConfig
+from .deletion_response_item_list import DeletionResponseItemList, DeletionResponseItemListConfig

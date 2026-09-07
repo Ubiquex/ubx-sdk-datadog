@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DateRuleResponse_Data_Attributes_Action_DueDaysPerSeverity struct {
 	DueInDays any
-	Severity  any
+	Severity any
 }
 
 type DateRuleResponse_Data_Attributes_Action struct {
@@ -62,67 +62,67 @@ type DateRuleResponse_Data struct {
 }
 
 var DateRuleResponse_Data_Attributes_Action_DueDaysPerSeverityFields = ubx.FieldMap{
-	"DueInDays": ubx.FieldSpec{WireName: "due_in_days"},
-	"Severity":  ubx.FieldSpec{WireName: "severity"},
-}
+		"DueInDays": ubx.FieldSpec{WireName: "due_in_days"},
+		"Severity": ubx.FieldSpec{WireName: "severity"},
+	}
 
 var DateRuleResponse_Data_Attributes_ActionFields = ubx.FieldMap{
-	"DueDaysPerSeverity": ubx.FieldSpec{
-		WireName: "due_days_per_severity",
-		Kind:     "list",
-		Fields:   DateRuleResponse_Data_Attributes_Action_DueDaysPerSeverityFields,
-	},
-	"DueFrom":           ubx.FieldSpec{WireName: "due_from"},
-	"ReasonDescription": ubx.FieldSpec{WireName: "reason_description"},
-}
+		"DueDaysPerSeverity": ubx.FieldSpec{
+			WireName: "due_days_per_severity",
+			Kind: "list",
+			Fields: DateRuleResponse_Data_Attributes_Action_DueDaysPerSeverityFields,
+		},
+		"DueFrom": ubx.FieldSpec{WireName: "due_from"},
+		"ReasonDescription": ubx.FieldSpec{WireName: "reason_description"},
+	}
 
 var DateRuleResponse_Data_Attributes_CreatedByFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var DateRuleResponse_Data_Attributes_RuleFields = ubx.FieldMap{
-	"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
-	"Query":        ubx.FieldSpec{WireName: "query"},
-}
+		"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
+		"Query": ubx.FieldSpec{WireName: "query"},
+	}
 
 var DateRuleResponse_Data_AttributesFields = ubx.FieldMap{
-	"Action": ubx.FieldSpec{
-		WireName: "action",
-		Kind:     "object",
-		Fields:   DateRuleResponse_Data_Attributes_ActionFields,
-	},
-	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-	"CreatedBy": ubx.FieldSpec{
-		WireName: "created_by",
-		Kind:     "object",
-		Fields:   DateRuleResponse_Data_Attributes_CreatedByFields,
-	},
-	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
-	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-	"ModifiedBy": ubx.FieldSpec{
-		WireName: "modified_by",
-		Kind:     "object",
-		Fields:   DateRuleResponse_Data_Attributes_CreatedByFields,
-	},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Rule": ubx.FieldSpec{
-		WireName: "rule",
-		Kind:     "object",
-		Fields:   DateRuleResponse_Data_Attributes_RuleFields,
-	},
-}
+		"Action": ubx.FieldSpec{
+			WireName: "action",
+			Kind: "object",
+			Fields: DateRuleResponse_Data_Attributes_ActionFields,
+		},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"CreatedBy": ubx.FieldSpec{
+			WireName: "created_by",
+			Kind: "object",
+			Fields: DateRuleResponse_Data_Attributes_CreatedByFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+		"ModifiedBy": ubx.FieldSpec{
+			WireName: "modified_by",
+			Kind: "object",
+			Fields: DateRuleResponse_Data_Attributes_CreatedByFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Rule": ubx.FieldSpec{
+			WireName: "rule",
+			Kind: "object",
+			Fields: DateRuleResponse_Data_Attributes_RuleFields,
+		},
+	}
 
 var DateRuleResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   DateRuleResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: DateRuleResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type DateRuleResponseConfig struct {
 	// The data object for a due date rule create or update request.
@@ -143,8 +143,8 @@ var DateRuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   DateRuleResponse_DataFields,
+			Kind: "object",
+			Fields: DateRuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

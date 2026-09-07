@@ -11,7 +11,7 @@ type RuleResponse_Data_Attributes_Condition struct {
 }
 
 type RuleResponse_Data_Attributes_Conditions struct {
-	Field  any
+	Field any
 	Values any
 }
 
@@ -62,52 +62,52 @@ type RuleResponse_Data struct {
 }
 
 var RuleResponse_Data_Attributes_ConditionFields = ubx.FieldMap{
-	"NormalizedQuery": ubx.FieldSpec{WireName: "normalized_query"},
-	"RawQuery":        ubx.FieldSpec{WireName: "raw_query"},
-}
+		"NormalizedQuery": ubx.FieldSpec{WireName: "normalized_query"},
+		"RawQuery": ubx.FieldSpec{WireName: "raw_query"},
+	}
 
 var RuleResponse_Data_Attributes_ConditionsFields = ubx.FieldMap{
-	"Field":  ubx.FieldSpec{WireName: "field"},
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Field": ubx.FieldSpec{WireName: "field"},
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{
-	"Condition": ubx.FieldSpec{
-		WireName: "condition",
-		Kind:     "object",
-		Fields:   RuleResponse_Data_Attributes_ConditionFields,
-	},
-	"ConditionTableType": ubx.FieldSpec{WireName: "condition_table_type"},
-	"Conditions": ubx.FieldSpec{
-		WireName: "conditions",
-		Kind:     "list",
-		Fields:   RuleResponse_Data_Attributes_ConditionsFields,
-	},
-	"Created":                         ubx.FieldSpec{WireName: "created"},
-	"CreatedByUuid":                   ubx.FieldSpec{WireName: "created_by_uuid"},
-	"Deleted":                         ubx.FieldSpec{WireName: "deleted"},
-	"Enabled":                         ubx.FieldSpec{WireName: "enabled"},
-	"ExecutionType":                   ubx.FieldSpec{WireName: "execution_type"},
-	"IncidentSettingsAssociationUuid": ubx.FieldSpec{WireName: "incident_settings_association_uuid"},
-	"IncidentTypeUuid":                ubx.FieldSpec{WireName: "incident_type_uuid"},
-	"MatchAnyCondition":               ubx.FieldSpec{WireName: "match_any_condition"},
-	"Modified":                        ubx.FieldSpec{WireName: "modified"},
-	"ModifiedByUuid":                  ubx.FieldSpec{WireName: "modified_by_uuid"},
-	"OrgId":                           ubx.FieldSpec{WireName: "org_id"},
-	"TaskId":                          ubx.FieldSpec{WireName: "task_id"},
-	"TaskPayload":                     ubx.FieldSpec{WireName: "task_payload"},
-	"Trigger":                         ubx.FieldSpec{WireName: "trigger"},
-}
+		"Condition": ubx.FieldSpec{
+			WireName: "condition",
+			Kind: "object",
+			Fields: RuleResponse_Data_Attributes_ConditionFields,
+		},
+		"ConditionTableType": ubx.FieldSpec{WireName: "condition_table_type"},
+		"Conditions": ubx.FieldSpec{
+			WireName: "conditions",
+			Kind: "list",
+			Fields: RuleResponse_Data_Attributes_ConditionsFields,
+		},
+		"Created": ubx.FieldSpec{WireName: "created"},
+		"CreatedByUuid": ubx.FieldSpec{WireName: "created_by_uuid"},
+		"Deleted": ubx.FieldSpec{WireName: "deleted"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"ExecutionType": ubx.FieldSpec{WireName: "execution_type"},
+		"IncidentSettingsAssociationUuid": ubx.FieldSpec{WireName: "incident_settings_association_uuid"},
+		"IncidentTypeUuid": ubx.FieldSpec{WireName: "incident_type_uuid"},
+		"MatchAnyCondition": ubx.FieldSpec{WireName: "match_any_condition"},
+		"Modified": ubx.FieldSpec{WireName: "modified"},
+		"ModifiedByUuid": ubx.FieldSpec{WireName: "modified_by_uuid"},
+		"OrgId": ubx.FieldSpec{WireName: "org_id"},
+		"TaskId": ubx.FieldSpec{WireName: "task_id"},
+		"TaskPayload": ubx.FieldSpec{WireName: "task_payload"},
+		"Trigger": ubx.FieldSpec{WireName: "trigger"},
+	}
 
 var RuleResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   RuleResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: RuleResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type RuleResponseConfig struct {
 	// Incident rule data in a create request.
@@ -128,8 +128,8 @@ var RuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   RuleResponse_DataFields,
+			Kind: "object",
+			Fields: RuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

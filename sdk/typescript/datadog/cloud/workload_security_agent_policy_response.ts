@@ -16,6 +16,8 @@ export interface WorkloadSecurityAgentPolicyResponse_Data_Attributes_Versions {
 export interface WorkloadSecurityAgentPolicyResponse_Data_Attributes {
   /** The number of rules with the blocking feature in this policy */
   blockingRulesCount?: number | Computed<number>;
+  /** Whether an update is available for the content pack. Only set for activated content packs, `null` otherwise */
+  contentPackUpdateAvailable?: boolean | Computed<boolean>;
   /** Whether the policy is managed by Datadog */
   datadogManaged?: boolean | Computed<boolean>;
   /** The description of the policy */
@@ -42,6 +44,8 @@ export interface WorkloadSecurityAgentPolicyResponse_Data_Attributes {
   priority?: number | Computed<number>;
   /** The number of rules in this policy */
   ruleCount?: number | Computed<number>;
+  /** The ID of the Datadog-managed default policy this policy is derived from */
+  sourceDefaultPolicyId?: string | Computed<string>;
   /** Timestamp in milliseconds when the policy was last updated */
   updateDate?: number | Computed<number>;
   /** When the policy was last updated, timestamp in milliseconds */
@@ -73,6 +77,7 @@ const WorkloadSecurityAgentPolicyResponse_Data_Attributes_VersionsFields: FieldM
 
 const WorkloadSecurityAgentPolicyResponse_Data_AttributesFields: FieldMap = {
   blockingRulesCount: "blocking_rules_count",
+  contentPackUpdateAvailable: "content_pack_update_available",
   datadogManaged: "datadog_managed",
   description: "description",
   disabledRulesCount: "disabled_rules_count",
@@ -86,6 +91,7 @@ const WorkloadSecurityAgentPolicyResponse_Data_AttributesFields: FieldMap = {
   policyVersion: "policy_version",
   priority: "priority",
   ruleCount: "rule_count",
+  sourceDefaultPolicyId: "source_default_policy_id",
   updateDate: "update_date",
   updatedAt: "updated_at",
   updater: {

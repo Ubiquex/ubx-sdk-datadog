@@ -4,7 +4,7 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PromptVersionResponse_Data_Attributes_Datasets struct {
-	Id   any
+	Id any
 	Name any
 }
 
@@ -53,42 +53,42 @@ type PromptVersionResponse_Data struct {
 }
 
 var PromptVersionResponse_Data_Attributes_DatasetsFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Name": ubx.FieldSpec{WireName: "name"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var PromptVersionResponse_Data_AttributesFields = ubx.FieldMap{
-	"Author":    ubx.FieldSpec{WireName: "author"},
-	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-	"Datasets": ubx.FieldSpec{
-		WireName: "datasets",
-		Kind:     "list",
-		Fields:   PromptVersionResponse_Data_Attributes_DatasetsFields,
-	},
-	"Description":      ubx.FieldSpec{WireName: "description"},
-	"EnvIds":           ubx.FieldSpec{WireName: "env_ids"},
-	"Labels":           ubx.FieldSpec{WireName: "labels"},
-	"LastSeenAt":       ubx.FieldSpec{WireName: "last_seen_at"},
-	"MlApp":            ubx.FieldSpec{WireName: "ml_app"},
-	"MlApps":           ubx.FieldSpec{WireName: "ml_apps"},
-	"PromptId":         ubx.FieldSpec{WireName: "prompt_id"},
-	"PromptUuid":       ubx.FieldSpec{WireName: "prompt_uuid"},
-	"Tags":             ubx.FieldSpec{WireName: "tags"},
-	"Template":         ubx.FieldSpec{WireName: "template"},
-	"UserVersion":      ubx.FieldSpec{WireName: "user_version"},
-	"Version":          ubx.FieldSpec{WireName: "version"},
-	"VersionCreatedAt": ubx.FieldSpec{WireName: "version_created_at"},
-}
+		"Author": ubx.FieldSpec{WireName: "author"},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"Datasets": ubx.FieldSpec{
+			WireName: "datasets",
+			Kind: "list",
+			Fields: PromptVersionResponse_Data_Attributes_DatasetsFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"EnvIds": ubx.FieldSpec{WireName: "env_ids"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LastSeenAt": ubx.FieldSpec{WireName: "last_seen_at"},
+		"MlApp": ubx.FieldSpec{WireName: "ml_app"},
+		"MlApps": ubx.FieldSpec{WireName: "ml_apps"},
+		"PromptId": ubx.FieldSpec{WireName: "prompt_id"},
+		"PromptUuid": ubx.FieldSpec{WireName: "prompt_uuid"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Template": ubx.FieldSpec{WireName: "template"},
+		"UserVersion": ubx.FieldSpec{WireName: "user_version"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+		"VersionCreatedAt": ubx.FieldSpec{WireName: "version_created_at"},
+	}
 
 var PromptVersionResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   PromptVersionResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: PromptVersionResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type PromptVersionResponseConfig struct {
 	// Data object for creating an Agent Observability prompt version.
@@ -113,10 +113,10 @@ var PromptVersionResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   PromptVersionResponse_DataFields,
+			Kind: "object",
+			Fields: PromptVersionResponse_DataFields,
 		},
 		"PromptId": ubx.FieldSpec{WireName: "prompt_id"},
-		"Version":  ubx.FieldSpec{WireName: "version"},
+		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

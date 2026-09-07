@@ -13,5 +13,6 @@ type ApikeyResponseAttrs struct {
 
 var ApikeyResponse = ubx.DataSourceBinding{
 	WireType: "datadog_validate_apikey_response",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

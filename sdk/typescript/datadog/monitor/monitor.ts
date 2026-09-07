@@ -187,6 +187,30 @@ export interface Monitor_Options_Variables_JoinCondition {
   joinType?: string | Computed<string>;
 }
 
+export interface Monitor_Options_Variables_MonitorOptions_ModelConfiguration {
+  autoResolveDays?: number | Computed<number>;
+  enableFlatlineDetection?: boolean | Computed<boolean>;
+  function?: string | Computed<string>;
+  minLowerBoundSize?: number | Computed<number>;
+  minUpperBoundSize?: number | Computed<number>;
+  modelBoundsOverride?: string | Computed<string>;
+}
+
+export interface Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_Source {
+  customSql?: string | Computed<string>;
+  customWhere?: string | Computed<string>;
+  entityId?: string | Computed<string>;
+  entityType?: string | Computed<string>;
+  groupByColumns?: string[] | Computed<string[]>;
+}
+
+export interface Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig {
+  diffType?: string | Computed<string>;
+  entityType?: string | Computed<string>;
+  source?: Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_Source | Computed<Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_Source>;
+  target?: Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_Source | Computed<Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_Source>;
+}
+
 export interface Monitor_Options_Variables_MonitorOptions {
   crontabOverride?: string | Computed<string>;
   customSql?: string | Computed<string>;
@@ -194,10 +218,12 @@ export interface Monitor_Options_Variables_MonitorOptions {
   customWhere?: string | Computed<string>;
   /** A list of columns to group by for the variable's expression in the monitor query. (AI-inferred) */
   groupByColumns?: string[] | Computed<string[]>;
+  modelConfiguration?: Monitor_Options_Variables_MonitorOptions_ModelConfiguration | Computed<Monitor_Options_Variables_MonitorOptions_ModelConfiguration>;
   /** Override the model type for the monitor variable. Allowed values are 'freshness', 'percentage', or 'any'. (AI-inferred) */
   modelTypeOverride?: string | Computed<string>;
   /** The sensitivity of the anomaly detection monitor, from 1 (least sensitive) to 5 (most sensitive). This controls the width of the anomaly detection band. (AI-inferred) */
   sensitivity?: number | Computed<number>;
+  sourceToTargetConfig?: Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig | Computed<Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig>;
 }
 
 export interface Monitor_Options_Variables {
@@ -489,13 +515,55 @@ const Monitor_Options_Variables_JoinConditionFields: FieldMap = {
   joinType: "join_type",
 };
 
+const Monitor_Options_Variables_MonitorOptions_ModelConfigurationFields: FieldMap = {
+  autoResolveDays: "auto_resolve_days",
+  enableFlatlineDetection: "enable_flatline_detection",
+  function: "function",
+  minLowerBoundSize: "min_lower_bound_size",
+  minUpperBoundSize: "min_upper_bound_size",
+  modelBoundsOverride: "model_bounds_override",
+};
+
+const Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_SourceFields: FieldMap = {
+  customSql: "custom_sql",
+  customWhere: "custom_where",
+  entityId: "entity_id",
+  entityType: "entity_type",
+  groupByColumns: "group_by_columns",
+};
+
+const Monitor_Options_Variables_MonitorOptions_SourceToTargetConfigFields: FieldMap = {
+  diffType: "diff_type",
+  entityType: "entity_type",
+  source: {
+    wireName: "source",
+    kind: "object",
+    fields: Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_SourceFields,
+  },
+  target: {
+    wireName: "target",
+    kind: "object",
+    fields: Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_SourceFields,
+  },
+};
+
 const Monitor_Options_Variables_MonitorOptionsFields: FieldMap = {
   crontabOverride: "crontab_override",
   customSql: "custom_sql",
   customWhere: "custom_where",
   groupByColumns: "group_by_columns",
+  modelConfiguration: {
+    wireName: "model_configuration",
+    kind: "object",
+    fields: Monitor_Options_Variables_MonitorOptions_ModelConfigurationFields,
+  },
   modelTypeOverride: "model_type_override",
   sensitivity: "sensitivity",
+  sourceToTargetConfig: {
+    wireName: "source_to_target_config",
+    kind: "object",
+    fields: Monitor_Options_Variables_MonitorOptions_SourceToTargetConfigFields,
+  },
 };
 
 const Monitor_Options_VariablesFields: FieldMap = {

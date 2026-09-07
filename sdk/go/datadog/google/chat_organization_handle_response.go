@@ -22,20 +22,20 @@ type ChatOrganizationHandleResponse_Data struct {
 }
 
 var ChatOrganizationHandleResponse_Data_AttributesFields = ubx.FieldMap{
-	"Name":              ubx.FieldSpec{WireName: "name"},
-	"SpaceDisplayName":  ubx.FieldSpec{WireName: "space_display_name"},
-	"SpaceResourceName": ubx.FieldSpec{WireName: "space_resource_name"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SpaceDisplayName": ubx.FieldSpec{WireName: "space_display_name"},
+		"SpaceResourceName": ubx.FieldSpec{WireName: "space_resource_name"},
+	}
 
 var ChatOrganizationHandleResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   ChatOrganizationHandleResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: ChatOrganizationHandleResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ChatOrganizationHandleResponseConfig struct {
 	// Organization handle data for a create request.
@@ -64,11 +64,11 @@ var ChatOrganizationHandleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   ChatOrganizationHandleResponse_DataFields,
+			Kind: "object",
+			Fields: ChatOrganizationHandleResponse_DataFields,
 		},
-		"Type":                  ubx.FieldSpec{WireName: "type"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 		"OrganizationBindingId": ubx.FieldSpec{WireName: "organization_binding_id"},
-		"HandleId":              ubx.FieldSpec{WireName: "handle_id"},
+		"HandleId": ubx.FieldSpec{WireName: "handle_id"},
 	},
 }

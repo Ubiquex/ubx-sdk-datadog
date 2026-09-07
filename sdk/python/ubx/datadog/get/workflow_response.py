@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_RunAs:
+    id: Any = None
+    type: Any = None
+
+@dataclasses.dataclass
 class WorkflowResponse_Data_Attributes_Spec_Annotations_Display_Bounds:
     height: Any = None
     width: Any = None
@@ -148,9 +153,64 @@ class WorkflowResponse_Data_Attributes_Spec_Triggers_FormTrigger:
     form_id: Any = None
 
 @dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger_TagCondition_TagValues:
+    tag: Any = None
+    values: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger_TagCondition:
+    tag_values: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger:
+    incident_type: Any = None
+    tag_condition: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTrigger_ExecutionLimit:
+    count: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTrigger:
+    execution_limit: Any = None
+    incident_type: Any = None
+    tag_condition: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentSavedTrigger_SerialExecution:
+    enabled: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentSavedTrigger:
+    execution_limit: Any = None
+    incident_type: Any = None
+    serial_execution: Any = None
+    tag_condition: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentScheduleTrigger:
+    incident_type: Any = None
+    rrule: Any = None
+    tag_condition: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentTrigger:
+    rate_limit: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
 class WorkflowResponse_Data_Attributes_Spec_Triggers_ScheduleTrigger:
     overlap_behavior: Any = None
     rrule_expression: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_SlackTrigger_ReactionTriggers:
+    reaction_emoji: Any = None
+    team_id: Any = None
+
+@dataclasses.dataclass
+class WorkflowResponse_Data_Attributes_Spec_Triggers_SlackTrigger:
+    reaction_triggers: Any = None
 
 @dataclasses.dataclass
 class WorkflowResponse_Data_Attributes_Spec_Triggers:
@@ -164,6 +224,13 @@ class WorkflowResponse_Data_Attributes_Spec_Triggers:
     datastore_trigger: Any = None
     form_trigger: Any = None
     github_webhook_trigger: Any = None
+    incident_created_trigger: Any = None
+    incident_impact_created_trigger: Any = None
+    incident_impact_updated_trigger: Any = None
+    incident_postmortem_updated_trigger: Any = None
+    incident_responder_created_trigger: Any = None
+    incident_saved_trigger: Any = None
+    incident_schedule_trigger: Any = None
     incident_trigger: Any = None
     monitor_trigger: Any = None
     notebook_trigger: Any = None
@@ -203,6 +270,10 @@ class WorkflowResponse_Data_Attributes:
     name: Any = None
     # Set the workflow to published or unpublished. Workflows in an unpublished state will only be executable via manual runs. Automatic triggers such as Schedule will not execute the workflow until it is published.
     published: Any = None
+    # Identity used to run the workflow.
+    run_as: Any = None
+    # The effective type of identity used to run the workflow.
+    run_as_user_mode: Any = None
     # A complete Workflow Automation definition, including its triggers, steps, and connections.
     spec: Any = None
     # Tags of the workflow.
@@ -211,13 +282,6 @@ class WorkflowResponse_Data_Attributes:
     updated_at: Any = None
     # If a Webhook trigger is defined on this workflow, a webhookSecret is required and should be provided here.
     webhook_secret: Any = None
-
-@dataclasses.dataclass
-class WorkflowResponse_Data_Relationships_Creator_Data:
-    # The user identifier
-    id: Any = None
-    # The definition of `WorkflowUserRelationshipType` object.
-    type: Any = None
 
 @dataclasses.dataclass
 class WorkflowResponse_Data_Relationships_Creator:
@@ -230,6 +294,8 @@ class WorkflowResponse_Data_Relationships:
     creator: Any = None
     # The definition of `WorkflowUserRelationship` object.
     owner: Any = None
+    # The definition of `WorkflowUserRelationship` object.
+    run_as: Any = None
 
 @dataclasses.dataclass
 class WorkflowResponse_Data:
@@ -241,6 +307,11 @@ class WorkflowResponse_Data:
     relationships: Any = None
     # The definition of `WorkflowDataType` object.
     type: Any = None
+
+_WorkflowResponse_Data_Attributes_RunAsFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
 
 _WorkflowResponse_Data_Attributes_Spec_Annotations_Display_BoundsFields = {
     "height": ubx.FieldSpec(wire_name="height"),
@@ -457,9 +528,104 @@ _WorkflowResponse_Data_Attributes_Spec_Triggers_FormTriggerFields = {
     "form_id": ubx.FieldSpec(wire_name="form_id"),
 }
 
+_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger_TagCondition_TagValuesFields = {
+    "tag": ubx.FieldSpec(wire_name="tag"),
+    "values": ubx.FieldSpec(wire_name="values"),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger_TagConditionFields = {
+    "tag_values": ubx.FieldSpec(
+        wire_name="tag_values",
+        kind="list",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger_TagCondition_TagValuesFields,
+    ),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTriggerFields = {
+    "incident_type": ubx.FieldSpec(wire_name="incident_type"),
+    "tag_condition": ubx.FieldSpec(
+        wire_name="tag_condition",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger_TagConditionFields,
+    ),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTrigger_ExecutionLimitFields = {
+    "count": ubx.FieldSpec(wire_name="count"),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTriggerFields = {
+    "execution_limit": ubx.FieldSpec(
+        wire_name="execution_limit",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTrigger_ExecutionLimitFields,
+    ),
+    "incident_type": ubx.FieldSpec(wire_name="incident_type"),
+    "tag_condition": ubx.FieldSpec(
+        wire_name="tag_condition",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger_TagConditionFields,
+    ),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentSavedTrigger_SerialExecutionFields = {
+    "enabled": ubx.FieldSpec(wire_name="enabled"),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentSavedTriggerFields = {
+    "execution_limit": ubx.FieldSpec(
+        wire_name="execution_limit",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTrigger_ExecutionLimitFields,
+    ),
+    "incident_type": ubx.FieldSpec(wire_name="incident_type"),
+    "serial_execution": ubx.FieldSpec(
+        wire_name="serial_execution",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentSavedTrigger_SerialExecutionFields,
+    ),
+    "tag_condition": ubx.FieldSpec(
+        wire_name="tag_condition",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger_TagConditionFields,
+    ),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentScheduleTriggerFields = {
+    "incident_type": ubx.FieldSpec(wire_name="incident_type"),
+    "rrule": ubx.FieldSpec(wire_name="rrule"),
+    "tag_condition": ubx.FieldSpec(
+        wire_name="tag_condition",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTrigger_TagConditionFields,
+    ),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentTriggerFields = {
+    "rate_limit": ubx.FieldSpec(
+        wire_name="rate_limit",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTrigger_RateLimitFields,
+    ),
+    "version": ubx.FieldSpec(wire_name="version"),
+}
+
 _WorkflowResponse_Data_Attributes_Spec_Triggers_ScheduleTriggerFields = {
     "overlap_behavior": ubx.FieldSpec(wire_name="overlap_behavior"),
     "rrule_expression": ubx.FieldSpec(wire_name="rrule_expression"),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_SlackTrigger_ReactionTriggersFields = {
+    "reaction_emoji": ubx.FieldSpec(wire_name="reaction_emoji"),
+    "team_id": ubx.FieldSpec(wire_name="team_id"),
+}
+
+_WorkflowResponse_Data_Attributes_Spec_Triggers_SlackTriggerFields = {
+    "reaction_triggers": ubx.FieldSpec(
+        wire_name="reaction_triggers",
+        kind="list",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_SlackTrigger_ReactionTriggersFields,
+    ),
 }
 
 _WorkflowResponse_Data_Attributes_Spec_TriggersFields = {
@@ -497,10 +663,45 @@ _WorkflowResponse_Data_Attributes_Spec_TriggersFields = {
         kind="object",
         fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
     ),
+    "incident_created_trigger": ubx.FieldSpec(
+        wire_name="incident_created_trigger",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentCreatedTriggerFields,
+    ),
+    "incident_impact_created_trigger": ubx.FieldSpec(
+        wire_name="incident_impact_created_trigger",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTriggerFields,
+    ),
+    "incident_impact_updated_trigger": ubx.FieldSpec(
+        wire_name="incident_impact_updated_trigger",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTriggerFields,
+    ),
+    "incident_postmortem_updated_trigger": ubx.FieldSpec(
+        wire_name="incident_postmortem_updated_trigger",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTriggerFields,
+    ),
+    "incident_responder_created_trigger": ubx.FieldSpec(
+        wire_name="incident_responder_created_trigger",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentImpactCreatedTriggerFields,
+    ),
+    "incident_saved_trigger": ubx.FieldSpec(
+        wire_name="incident_saved_trigger",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentSavedTriggerFields,
+    ),
+    "incident_schedule_trigger": ubx.FieldSpec(
+        wire_name="incident_schedule_trigger",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentScheduleTriggerFields,
+    ),
     "incident_trigger": ubx.FieldSpec(
         wire_name="incident_trigger",
         kind="object",
-        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_IncidentTriggerFields,
     ),
     "monitor_trigger": ubx.FieldSpec(
         wire_name="monitor_trigger",
@@ -524,7 +725,11 @@ _WorkflowResponse_Data_Attributes_Spec_TriggersFields = {
         fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_AgentTriggerFields,
     ),
     "self_service_trigger": ubx.FieldSpec(wire_name="self_service_trigger"),
-    "slack_trigger": ubx.FieldSpec(wire_name="slack_trigger"),
+    "slack_trigger": ubx.FieldSpec(
+        wire_name="slack_trigger",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_Spec_Triggers_SlackTriggerFields,
+    ),
     "software_catalog_trigger": ubx.FieldSpec(wire_name="software_catalog_trigger"),
     "start_step_names": ubx.FieldSpec(wire_name="start_step_names"),
     "workflow_trigger": ubx.FieldSpec(wire_name="workflow_trigger"),
@@ -569,6 +774,12 @@ _WorkflowResponse_Data_AttributesFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "name": ubx.FieldSpec(wire_name="name"),
     "published": ubx.FieldSpec(wire_name="published"),
+    "run_as": ubx.FieldSpec(
+        wire_name="run_as",
+        kind="object",
+        fields=_WorkflowResponse_Data_Attributes_RunAsFields,
+    ),
+    "run_as_user_mode": ubx.FieldSpec(wire_name="run_as_user_mode"),
     "spec": ubx.FieldSpec(
         wire_name="spec",
         kind="object",
@@ -579,16 +790,11 @@ _WorkflowResponse_Data_AttributesFields = {
     "webhook_secret": ubx.FieldSpec(wire_name="webhook_secret"),
 }
 
-_WorkflowResponse_Data_Relationships_Creator_DataFields = {
-    "id": ubx.FieldSpec(wire_name="id"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
 _WorkflowResponse_Data_Relationships_CreatorFields = {
     "data": ubx.FieldSpec(
         wire_name="data",
         kind="object",
-        fields=_WorkflowResponse_Data_Relationships_Creator_DataFields,
+        fields=_WorkflowResponse_Data_Attributes_RunAsFields,
     ),
 }
 
@@ -600,6 +806,11 @@ _WorkflowResponse_Data_RelationshipsFields = {
     ),
     "owner": ubx.FieldSpec(
         wire_name="owner",
+        kind="object",
+        fields=_WorkflowResponse_Data_Relationships_CreatorFields,
+    ),
+    "run_as": ubx.FieldSpec(
+        wire_name="run_as",
         kind="object",
         fields=_WorkflowResponse_Data_Relationships_CreatorFields,
     ),

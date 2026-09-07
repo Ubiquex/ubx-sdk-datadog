@@ -29,6 +29,7 @@ export interface WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Set {
 }
 
 export interface WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions {
+  disabled?: boolean | Computed<boolean>;
   filter?: string | Computed<string>;
   hash?: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Hash | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Hash>;
   kill?: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Kill | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Kill>;
@@ -68,10 +69,14 @@ export interface WorkloadSecurityAgentRuleResponse_Data_Attributes {
   disabled?: string[] | Computed<string[]>;
   /** Whether the Agent rule is enabled. */
   enabled?: boolean | Computed<boolean>;
+  /** The rate limiting duration of the Agent rule, in nanoseconds */
+  every?: number | Computed<number>;
   /** The SECL expression of the Agent rule. */
   expression: string | Computed<string>;
   /** The platforms the Agent rule is supported on. */
   filters?: string[] | Computed<string[]>;
+  /** The group of rules the Agent rule belongs to */
+  groupId?: string | Computed<string>;
   /** The monitoring policies that the rule belongs to. */
   monitoring?: string[] | Computed<string[]>;
   /** The name of the Agent rule. */
@@ -131,6 +136,7 @@ const WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_SetFields: Field
 };
 
 const WorkloadSecurityAgentRuleResponse_Data_Attributes_ActionsFields: FieldMap = {
+  disabled: "disabled",
   filter: "filter",
   hash: {
     wireName: "hash",
@@ -180,8 +186,10 @@ const WorkloadSecurityAgentRuleResponse_Data_AttributesFields: FieldMap = {
   description: "description",
   disabled: "disabled",
   enabled: "enabled",
+  every: "every",
   expression: "expression",
   filters: "filters",
+  groupId: "group_id",
   monitoring: "monitoring",
   name: "name",
   policyId: "policy_id",

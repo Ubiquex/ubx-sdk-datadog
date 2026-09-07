@@ -5,4 +5,4 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .report_schedule_list_response import ReportScheduleListResponse, ReportScheduleListResponseConfig
-from .response import Response, ResponseConfig
+from .response_list import ResponseList, ResponseListConfig

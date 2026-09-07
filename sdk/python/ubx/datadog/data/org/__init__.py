@@ -4,16 +4,16 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .authorized_client_data import AuthorizedClientData, AuthorizedClientDataConfig
+from .authorized_client_data_list import AuthorizedClientDataList, AuthorizedClientDataListConfig
 from .authorized_client_response import AuthorizedClientResponse, AuthorizedClientResponseConfig
 from .config_get_response import ConfigGetResponse, ConfigGetResponseConfig
-from .config_read import ConfigRead, ConfigReadConfig
-from .connection import Connection, ConnectionConfig
-from .data import Data, DataConfig
-from .group_data import GroupData, GroupDataConfig
-from .group_membership_data import GroupMembershipData, GroupMembershipDataConfig
+from .config_read_list import ConfigReadList, ConfigReadListConfig
+from .connection_list import ConnectionList, ConnectionListConfig
+from .data_list import DataList, DataListConfig
+from .group_data_list import GroupDataList, GroupDataListConfig
+from .group_membership_data_list import GroupMembershipDataList, GroupMembershipDataListConfig
 from .group_membership_response import GroupMembershipResponse, GroupMembershipResponseConfig
-from .group_policy_config_data import GroupPolicyConfigData, GroupPolicyConfigDataConfig
-from .group_policy_data import GroupPolicyData, GroupPolicyDataConfig
-from .group_policy_override_data import GroupPolicyOverrideData, GroupPolicyOverrideDataConfig
-from .group_policy_suggestion_data import GroupPolicySuggestionData, GroupPolicySuggestionDataConfig
+from .group_policy_config_data_list import GroupPolicyConfigDataList, GroupPolicyConfigDataListConfig
+from .group_policy_data_list import GroupPolicyDataList, GroupPolicyDataListConfig
+from .group_policy_override_data_list import GroupPolicyOverrideDataList, GroupPolicyOverrideDataListConfig
+from .group_policy_suggestion_data_list import GroupPolicySuggestionDataList, GroupPolicySuggestionDataListConfig

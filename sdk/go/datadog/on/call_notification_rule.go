@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CallNotificationRule_Data_Attributes_ChannelSettings struct {
 	Method any
-	Type   any
+	Type any
 }
 
 type CallNotificationRule_Data_Attributes struct {
@@ -46,16 +46,16 @@ type CallNotificationRule_Data struct {
 }
 
 type CallNotificationRule_Included_Attributes_Config struct {
-	Address         any
+	Address any
 	ApplicationName any
-	DeviceName      any
-	Formats         any
+	DeviceName any
+	Formats any
 	FormattedNumber any
-	Number          any
-	Region          any
+	Number any
+	Region any
 	SmsSubscribedAt any
-	Type            any
-	Verified        any
+	Type any
+	Verified any
 }
 
 type CallNotificationRule_Included_Attributes struct {
@@ -65,60 +65,60 @@ type CallNotificationRule_Included_Attributes struct {
 
 type CallNotificationRule_Included struct {
 	Attributes any
-	Id         any
-	Type       any
+	Id any
+	Type any
 }
 
 var CallNotificationRule_Data_Attributes_ChannelSettingsFields = ubx.FieldMap{
-	"Method": ubx.FieldSpec{WireName: "method"},
-	"Type":   ubx.FieldSpec{WireName: "type"},
-}
+		"Method": ubx.FieldSpec{WireName: "method"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var CallNotificationRule_Data_AttributesFields = ubx.FieldMap{
-	"Category": ubx.FieldSpec{WireName: "category"},
-	"ChannelSettings": ubx.FieldSpec{
-		WireName: "channel_settings",
-		Kind:     "object",
-		Fields:   CallNotificationRule_Data_Attributes_ChannelSettingsFields,
-	},
-	"DelayMinutes": ubx.FieldSpec{WireName: "delay_minutes"},
-}
+		"Category": ubx.FieldSpec{WireName: "category"},
+		"ChannelSettings": ubx.FieldSpec{
+			WireName: "channel_settings",
+			Kind: "object",
+			Fields: CallNotificationRule_Data_Attributes_ChannelSettingsFields,
+		},
+		"DelayMinutes": ubx.FieldSpec{WireName: "delay_minutes"},
+	}
 
 var CallNotificationRule_Data_Relationships_Channel_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var CallNotificationRule_Data_Relationships_ChannelFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "object",
-		Fields:   CallNotificationRule_Data_Relationships_Channel_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "object",
+			Fields: CallNotificationRule_Data_Relationships_Channel_DataFields,
+		},
+	}
 
 var CallNotificationRule_Data_RelationshipsFields = ubx.FieldMap{
-	"Channel": ubx.FieldSpec{
-		WireName: "channel",
-		Kind:     "object",
-		Fields:   CallNotificationRule_Data_Relationships_ChannelFields,
-	},
-}
+		"Channel": ubx.FieldSpec{
+			WireName: "channel",
+			Kind: "object",
+			Fields: CallNotificationRule_Data_Relationships_ChannelFields,
+		},
+	}
 
 var CallNotificationRule_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   CallNotificationRule_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   CallNotificationRule_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: CallNotificationRule_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: CallNotificationRule_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type CallNotificationRuleConfig struct {
 	// Data for creating an on-call notification rule
@@ -131,7 +131,7 @@ type CallNotificationRuleConfig struct {
 
 type CallNotificationRuleAttrs struct {
 	// Data for creating an on-call notification rule
-	Data     any
+	Data any
 	Included any
 	// path parameter, not part of the API's own resource representation
 	UserId any
@@ -144,8 +144,8 @@ var CallNotificationRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   CallNotificationRule_DataFields,
+			Kind: "object",
+			Fields: CallNotificationRule_DataFields,
 		},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},

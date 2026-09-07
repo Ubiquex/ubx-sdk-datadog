@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .role import Role, RoleConfig
-from .template_data import TemplateData, TemplateDataConfig
+from .list import List, ListConfig
+from .template_data_list import TemplateDataList, TemplateDataListConfig

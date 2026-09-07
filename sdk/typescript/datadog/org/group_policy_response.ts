@@ -2,15 +2,15 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GroupPolicyResponse_Data_Attributes {
-  /** The policy content as key-value pairs. */
+  /** The policy content as key-value pairs. For `org_config` policies, an arbitrary key-value map (for example, `{"value": "UTC"}`). For `role` policies, a `permissions` key containing an array of permission UUIDs (for example, `{"permissions": ["<uuid>", ...]}`). */
   content: Record<string, unknown> | Computed<Record<string, unknown>>;
-  /** The enforcement tier of the policy. `OVERRIDE_ALLOWED` means the policy is set but member orgs may mutate it. `GROUP_MANAGED` means the policy is strictly controlled and mutations are blocked for affected orgs. `DELEGATE` means each member org controls its own value. */
+  /** The enforcement tier of the policy. `OVERRIDE_ALLOWED` means the policy is set but member orgs may mutate it. `GROUP_MANAGED` means the policy is strictly controlled and mutations are blocked for affected orgs. `DELEGATE` means each member org controls its own value. `role` policies only support `GROUP_MANAGED` and `DELEGATE` — `OVERRIDE_ALLOWED` is rejected for this policy type. Transitioning a `role` policy to `DELEGATE` (disabling it) is one-way — the policy cannot be transitioned back to `GROUP_MANAGED` afterward. */
   enforcementTier?: string | Computed<string>;
   /** Timestamp when the policy was last modified. */
   modifiedAt?: string | Computed<string>;
-  /** The name of the policy. */
+  /** The name of the policy. This becomes the name of the resource created across orgs in the group (for example, for `role` policies, the name of the created role). */
   policyName: string | Computed<string>;
-  /** The type of the policy. Only `org_config` is supported, indicating a policy backed by an organization configuration setting. */
+  /** The type of the policy. `org_config` indicates a policy backed by an organization configuration setting. `role` indicates a policy backed by a Datadog custom role. */
   policyType?: string | Computed<string>;
 }
 
@@ -32,7 +32,7 @@ export interface GroupPolicyResponse_Data_Relationships {
 }
 
 export interface GroupPolicyResponse_Data {
-  /** Attributes for creating an org group policy. If `policy_type` or `enforcement_tier` are not provided, they default to `org_config` and `DEFAULT` respectively. */
+  /** Attributes for creating an org group policy. If `policy_type` is not provided, it defaults to `org_config`. `enforcement_tier` is optional; if not provided, the resulting value depends on `policy_type` and is otherwise unspecified. */
   attributes: GroupPolicyResponse_Data_Attributes | Computed<GroupPolicyResponse_Data_Attributes>;
   /** The ID of the org group policy. */
   id?: string | Computed<string>;

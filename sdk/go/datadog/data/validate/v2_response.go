@@ -31,5 +31,6 @@ type V2ResponseAttrs struct {
 
 var V2Response = ubx.DataSourceBinding{
 	WireType: "datadog_validate_v2_response",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

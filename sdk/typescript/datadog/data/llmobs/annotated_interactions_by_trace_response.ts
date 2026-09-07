@@ -32,6 +32,7 @@ export interface AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedI
 
 export interface AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions {
   annotations?: AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions_Annotations[] | Computed<AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions_Annotations[]>;
+  canAnnotate?: boolean | Computed<boolean>;
   contentId?: string | Computed<string>;
   createdAt?: string | Computed<string>;
   displayBlock?: AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions_DisplayBlock[] | Computed<AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions_DisplayBlock[]>;

@@ -4,7 +4,7 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotificationRule_Data_Attributes_Conditions struct {
-	Field  any
+	Field any
 	Values any
 }
 
@@ -62,20 +62,20 @@ type NotificationRule_Data struct {
 }
 
 type NotificationRule_Included_Attributes struct {
-	CreatedAt      any
-	Disabled       any
-	Email          any
-	Handle         any
-	Icon           any
-	LastLoginTime  any
-	MfaEnabled     any
-	ModifiedAt     any
-	Name           any
+	CreatedAt any
+	Disabled any
+	Email any
+	Handle any
+	Icon any
+	LastLoginTime any
+	MfaEnabled any
+	ModifiedAt any
+	Name any
 	ServiceAccount any
-	Status         any
-	Title          any
-	Uuid           any
-	Verified       any
+	Status any
+	Title any
+	Uuid any
+	Verified any
 }
 
 type NotificationRule_Included_Relationships_OtherOrgs struct {
@@ -83,89 +83,89 @@ type NotificationRule_Included_Relationships_OtherOrgs struct {
 }
 
 type NotificationRule_Included_Relationships struct {
-	Org        any
-	OtherOrgs  any
+	Org any
+	OtherOrgs any
 	OtherUsers any
-	Roles      any
+	Roles any
 }
 
 type NotificationRule_Included struct {
-	Attributes    any
-	Id            any
+	Attributes any
+	Id any
 	Relationships any
-	Type          any
+	Type any
 }
 
 var NotificationRule_Data_Attributes_ConditionsFields = ubx.FieldMap{
-	"Field":  ubx.FieldSpec{WireName: "field"},
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Field": ubx.FieldSpec{WireName: "field"},
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var NotificationRule_Data_AttributesFields = ubx.FieldMap{
-	"Conditions": ubx.FieldSpec{
-		WireName: "conditions",
-		Kind:     "list",
-		Fields:   NotificationRule_Data_Attributes_ConditionsFields,
-	},
-	"Created":    ubx.FieldSpec{WireName: "created"},
-	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
-	"Handles":    ubx.FieldSpec{WireName: "handles"},
-	"Modified":   ubx.FieldSpec{WireName: "modified"},
-	"RenotifyOn": ubx.FieldSpec{WireName: "renotify_on"},
-	"Trigger":    ubx.FieldSpec{WireName: "trigger"},
-	"Visibility": ubx.FieldSpec{WireName: "visibility"},
-}
+		"Conditions": ubx.FieldSpec{
+			WireName: "conditions",
+			Kind: "list",
+			Fields: NotificationRule_Data_Attributes_ConditionsFields,
+		},
+		"Created": ubx.FieldSpec{WireName: "created"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Handles": ubx.FieldSpec{WireName: "handles"},
+		"Modified": ubx.FieldSpec{WireName: "modified"},
+		"RenotifyOn": ubx.FieldSpec{WireName: "renotify_on"},
+		"Trigger": ubx.FieldSpec{WireName: "trigger"},
+		"Visibility": ubx.FieldSpec{WireName: "visibility"},
+	}
 
 var NotificationRule_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var NotificationRule_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "object",
-		Fields:   NotificationRule_Data_Relationships_CreatedByUser_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "object",
+			Fields: NotificationRule_Data_Relationships_CreatedByUser_DataFields,
+		},
+	}
 
 var NotificationRule_Data_RelationshipsFields = ubx.FieldMap{
-	"CreatedByUser": ubx.FieldSpec{
-		WireName: "created_by_user",
-		Kind:     "object",
-		Fields:   NotificationRule_Data_Relationships_CreatedByUserFields,
-	},
-	"IncidentType": ubx.FieldSpec{
-		WireName: "incident_type",
-		Kind:     "object",
-		Fields:   NotificationRule_Data_Relationships_CreatedByUserFields,
-	},
-	"LastModifiedByUser": ubx.FieldSpec{
-		WireName: "last_modified_by_user",
-		Kind:     "object",
-		Fields:   NotificationRule_Data_Relationships_CreatedByUserFields,
-	},
-	"NotificationTemplate": ubx.FieldSpec{
-		WireName: "notification_template",
-		Kind:     "object",
-		Fields:   NotificationRule_Data_Relationships_CreatedByUserFields,
-	},
-}
+		"CreatedByUser": ubx.FieldSpec{
+			WireName: "created_by_user",
+			Kind: "object",
+			Fields: NotificationRule_Data_Relationships_CreatedByUserFields,
+		},
+		"IncidentType": ubx.FieldSpec{
+			WireName: "incident_type",
+			Kind: "object",
+			Fields: NotificationRule_Data_Relationships_CreatedByUserFields,
+		},
+		"LastModifiedByUser": ubx.FieldSpec{
+			WireName: "last_modified_by_user",
+			Kind: "object",
+			Fields: NotificationRule_Data_Relationships_CreatedByUserFields,
+		},
+		"NotificationTemplate": ubx.FieldSpec{
+			WireName: "notification_template",
+			Kind: "object",
+			Fields: NotificationRule_Data_Relationships_CreatedByUserFields,
+		},
+	}
 
 var NotificationRule_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   NotificationRule_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   NotificationRule_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: NotificationRule_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: NotificationRule_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type NotificationRuleConfig struct {
 	// Notification rule data for a create request.
@@ -188,8 +188,8 @@ var NotificationRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   NotificationRule_DataFields,
+			Kind: "object",
+			Fields: NotificationRule_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

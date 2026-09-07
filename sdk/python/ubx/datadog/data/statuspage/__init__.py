@@ -5,4 +5,4 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .account_response import AccountResponse, AccountResponseConfig
-from .url_setting_response_data import UrlSettingResponseData, UrlSettingResponseDataConfig
+from .url_setting_response_data_list import UrlSettingResponseDataList, UrlSettingResponseDataListConfig

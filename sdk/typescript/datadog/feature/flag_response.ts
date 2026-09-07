@@ -32,8 +32,8 @@ export interface FlagResponse_Data_Attributes {
   /** The key of the default variant. */
   defaultVariantKey?: string | Computed<string>;
   /** The description of the feature flag. */
-  description: string | Computed<string>;
-  /** Distribution channel for the feature flag. */
+  description?: string | Computed<string>;
+  /** The distribution channel for the feature flag. */
   distributionChannel?: string | Computed<string>;
   /** Environment-specific settings for the feature flag. */
   featureFlagEnvironments?: FlagResponse_Data_Attributes_FeatureFlagEnvironments[] | Computed<FlagResponse_Data_Attributes_FeatureFlagEnvironments[]>;
@@ -47,7 +47,7 @@ export interface FlagResponse_Data_Attributes {
   name: string | Computed<string>;
   /** Indicates whether this feature flag requires approval for changes. */
   requireApproval?: boolean | Computed<boolean>;
-  /** Indicates the whether a feature flag is stale or not. */
+  /** The staleness status for the feature flag at creation. */
   stalenessStatus?: string | Computed<string>;
   /** Tags associated with the feature flag. */
   tags?: string[] | Computed<string[]>;

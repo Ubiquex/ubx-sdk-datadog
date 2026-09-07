@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .key import Key, KeyConfig
-from .key_response_included_item import KeyResponseIncludedItem, KeyResponseIncludedItemConfig
-from .security_policy_data import SecurityPolicyData, SecurityPolicyDataConfig
-from .security_service_resource import SecurityServiceResource, SecurityServiceResourceConfig
-from .security_waf_custom_rule_data import SecurityWafCustomRuleData, SecurityWafCustomRuleDataConfig
-from .security_waf_exclusion_filter_resource import SecurityWafExclusionFilterResource, SecurityWafExclusionFilterResourceConfig
+from .key_list import KeyList, KeyListConfig
+from .key_response_included_item_list import KeyResponseIncludedItemList, KeyResponseIncludedItemListConfig
+from .security_policy_data_list import SecurityPolicyDataList, SecurityPolicyDataListConfig
+from .security_service_resource_list import SecurityServiceResourceList, SecurityServiceResourceListConfig
+from .security_waf_custom_rule_data_list import SecurityWafCustomRuleDataList, SecurityWafCustomRuleDataListConfig
+from .security_waf_exclusion_filter_resource_list import SecurityWafExclusionFilterResourceList, SecurityWafExclusionFilterResourceListConfig

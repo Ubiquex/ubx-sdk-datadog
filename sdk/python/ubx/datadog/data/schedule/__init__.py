@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .on_call_responders_included import OnCallRespondersIncluded, OnCallRespondersIncludedConfig
+from .on_call_responders_included_list import OnCallRespondersIncludedList, OnCallRespondersIncludedListConfig

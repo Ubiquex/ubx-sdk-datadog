@@ -46,32 +46,32 @@ type UcConfigResponse_Data struct {
 }
 
 var UcConfigResponse_Data_AttributesFields = ubx.FieldMap{
-	"AccountId":         ubx.FieldSpec{WireName: "account_id"},
-	"BillingAccountId":  ubx.FieldSpec{WireName: "billing_account_id"},
-	"BucketName":        ubx.FieldSpec{WireName: "bucket_name"},
-	"CreatedAt":         ubx.FieldSpec{WireName: "created_at"},
-	"Dataset":           ubx.FieldSpec{WireName: "dataset"},
-	"ErrorMessages":     ubx.FieldSpec{WireName: "error_messages"},
-	"ExportDatasetName": ubx.FieldSpec{WireName: "export_dataset_name"},
-	"ExportPrefix":      ubx.FieldSpec{WireName: "export_prefix"},
-	"ExportProjectName": ubx.FieldSpec{WireName: "export_project_name"},
-	"Months":            ubx.FieldSpec{WireName: "months"},
-	"ProjectId":         ubx.FieldSpec{WireName: "project_id"},
-	"ServiceAccount":    ubx.FieldSpec{WireName: "service_account"},
-	"Status":            ubx.FieldSpec{WireName: "status"},
-	"StatusUpdatedAt":   ubx.FieldSpec{WireName: "status_updated_at"},
-	"UpdatedAt":         ubx.FieldSpec{WireName: "updated_at"},
-}
+		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"BillingAccountId": ubx.FieldSpec{WireName: "billing_account_id"},
+		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"Dataset": ubx.FieldSpec{WireName: "dataset"},
+		"ErrorMessages": ubx.FieldSpec{WireName: "error_messages"},
+		"ExportDatasetName": ubx.FieldSpec{WireName: "export_dataset_name"},
+		"ExportPrefix": ubx.FieldSpec{WireName: "export_prefix"},
+		"ExportProjectName": ubx.FieldSpec{WireName: "export_project_name"},
+		"Months": ubx.FieldSpec{WireName: "months"},
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"StatusUpdatedAt": ubx.FieldSpec{WireName: "status_updated_at"},
+		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+	}
 
 var UcConfigResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   UcConfigResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: UcConfigResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type UcConfigResponseConfig struct {
 	// Google Cloud Usage Cost config post data.
@@ -92,8 +92,8 @@ var UcConfigResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   UcConfigResponse_DataFields,
+			Kind: "object",
+			Fields: UcConfigResponse_DataFields,
 		},
 		"CloudAccountId": ubx.FieldSpec{WireName: "cloud_account_id"},
 	},

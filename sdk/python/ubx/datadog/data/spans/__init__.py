@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .metric_response_data import MetricResponseData, MetricResponseDataConfig
+from .metric_response_data_list import MetricResponseDataList, MetricResponseDataListConfig

@@ -46,5 +46,6 @@ type CloudAccountsCoverageAnalysisResponseAttrs struct {
 
 var CloudAccountsCoverageAnalysisResponse = ubx.DataSourceBinding{
 	WireType: "datadog_csm_cloud_accounts_coverage_analysis_response",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

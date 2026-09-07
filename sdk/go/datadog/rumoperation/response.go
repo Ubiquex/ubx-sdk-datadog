@@ -20,21 +20,21 @@ type Response_Data_Attributes_JourneyRum_RumSteps_Composite_Predicates struct {
 
 type Response_Data_Attributes_JourneyRum_RumSteps_Composite struct {
 	CompositeRuleId any
-	ConfigVersion   any
-	Kind            any
-	MaxWindowMs     any
-	Predicates      any
+	ConfigVersion any
+	Kind any
+	MaxWindowMs any
+	Predicates any
 }
 
 type Response_Data_Attributes_JourneyRum_RumSteps_Nodes struct {
-	Id    any
+	Id any
 	Query any
 }
 
 type Response_Data_Attributes_JourneyRum_RumSteps struct {
 	Composite any
-	Nodes     any
-	Type      any
+	Nodes any
+	Type any
 }
 
 type Response_Data_Attributes_JourneyRum struct {
@@ -81,92 +81,92 @@ type Response_Data struct {
 }
 
 var Response_Data_Attributes_CreatedByFields = ubx.FieldMap{
-	"Email":  ubx.FieldSpec{WireName: "email"},
-	"Handle": ubx.FieldSpec{WireName: "handle"},
-	"Name":   ubx.FieldSpec{WireName: "name"},
-	"Uuid":   ubx.FieldSpec{WireName: "uuid"},
-}
+		"Email": ubx.FieldSpec{WireName: "email"},
+		"Handle": ubx.FieldSpec{WireName: "handle"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Uuid": ubx.FieldSpec{WireName: "uuid"},
+	}
 
 var Response_Data_Attributes_JourneyRum_RumSteps_Composite_PredicatesFields = ubx.FieldMap{
-	"Query": ubx.FieldSpec{WireName: "query"},
-}
+		"Query": ubx.FieldSpec{WireName: "query"},
+	}
 
 var Response_Data_Attributes_JourneyRum_RumSteps_CompositeFields = ubx.FieldMap{
-	"CompositeRuleId": ubx.FieldSpec{WireName: "composite_rule_id"},
-	"ConfigVersion":   ubx.FieldSpec{WireName: "config_version"},
-	"Kind":            ubx.FieldSpec{WireName: "kind"},
-	"MaxWindowMs":     ubx.FieldSpec{WireName: "max_window_ms"},
-	"Predicates": ubx.FieldSpec{
-		WireName: "predicates",
-		Kind:     "list",
-		Fields:   Response_Data_Attributes_JourneyRum_RumSteps_Composite_PredicatesFields,
-	},
-}
+		"CompositeRuleId": ubx.FieldSpec{WireName: "composite_rule_id"},
+		"ConfigVersion": ubx.FieldSpec{WireName: "config_version"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"MaxWindowMs": ubx.FieldSpec{WireName: "max_window_ms"},
+		"Predicates": ubx.FieldSpec{
+			WireName: "predicates",
+			Kind: "list",
+			Fields: Response_Data_Attributes_JourneyRum_RumSteps_Composite_PredicatesFields,
+		},
+	}
 
 var Response_Data_Attributes_JourneyRum_RumSteps_NodesFields = ubx.FieldMap{
-	"Id":    ubx.FieldSpec{WireName: "id"},
-	"Query": ubx.FieldSpec{WireName: "query"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Query": ubx.FieldSpec{WireName: "query"},
+	}
 
 var Response_Data_Attributes_JourneyRum_RumStepsFields = ubx.FieldMap{
-	"Composite": ubx.FieldSpec{
-		WireName: "composite",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_JourneyRum_RumSteps_CompositeFields,
-	},
-	"Nodes": ubx.FieldSpec{
-		WireName: "nodes",
-		Kind:     "list",
-		Fields:   Response_Data_Attributes_JourneyRum_RumSteps_NodesFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Composite": ubx.FieldSpec{
+			WireName: "composite",
+			Kind: "object",
+			Fields: Response_Data_Attributes_JourneyRum_RumSteps_CompositeFields,
+		},
+		"Nodes": ubx.FieldSpec{
+			WireName: "nodes",
+			Kind: "list",
+			Fields: Response_Data_Attributes_JourneyRum_RumSteps_NodesFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Response_Data_Attributes_JourneyRumFields = ubx.FieldMap{
-	"RumSteps": ubx.FieldSpec{
-		WireName: "rum_steps",
-		Kind:     "list",
-		Fields:   Response_Data_Attributes_JourneyRum_RumStepsFields,
-	},
-}
+		"RumSteps": ubx.FieldSpec{
+			WireName: "rum_steps",
+			Kind: "list",
+			Fields: Response_Data_Attributes_JourneyRum_RumStepsFields,
+		},
+	}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-	"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-	"Category":      ubx.FieldSpec{WireName: "category"},
-	"CreatedAt":     ubx.FieldSpec{WireName: "created_at"},
-	"CreatedBy": ubx.FieldSpec{
-		WireName: "created_by",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_CreatedByFields,
-	},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"FeatureIds":  ubx.FieldSpec{WireName: "feature_ids"},
-	"JourneyRum": ubx.FieldSpec{
-		WireName: "journey_rum",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_JourneyRumFields,
-	},
-	"Name":      ubx.FieldSpec{WireName: "name"},
-	"OrgId":     ubx.FieldSpec{WireName: "org_id"},
-	"Tags":      ubx.FieldSpec{WireName: "tags"},
-	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-	"UpdatedBy": ubx.FieldSpec{
-		WireName: "updated_by",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_CreatedByFields,
-	},
-}
+		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"Category": ubx.FieldSpec{WireName: "category"},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"CreatedBy": ubx.FieldSpec{
+			WireName: "created_by",
+			Kind: "object",
+			Fields: Response_Data_Attributes_CreatedByFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"FeatureIds": ubx.FieldSpec{WireName: "feature_ids"},
+		"JourneyRum": ubx.FieldSpec{
+			WireName: "journey_rum",
+			Kind: "object",
+			Fields: Response_Data_Attributes_JourneyRumFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"OrgId": ubx.FieldSpec{WireName: "org_id"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+		"UpdatedBy": ubx.FieldSpec{
+			WireName: "updated_by",
+			Kind: "object",
+			Fields: Response_Data_Attributes_CreatedByFields,
+		},
+	}
 
 var Response_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   Response_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: Response_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResponseConfig struct {
 	// The data object for creating a RUM operation.
@@ -187,8 +187,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   Response_DataFields,
+			Kind: "object",
+			Fields: Response_DataFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

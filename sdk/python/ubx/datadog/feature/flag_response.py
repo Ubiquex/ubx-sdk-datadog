@@ -39,7 +39,7 @@ class FlagResponse_Data_Attributes:
     default_variant_key: Any = None
     # The description of the feature flag.
     description: Any = None
-    # Distribution channel for the feature flag.
+    # The distribution channel for the feature flag.
     distribution_channel: Any = None
     # Environment-specific settings for the feature flag.
     feature_flag_environments: Any = None
@@ -53,7 +53,7 @@ class FlagResponse_Data_Attributes:
     name: Any = None
     # Indicates whether this feature flag requires approval for changes.
     require_approval: Any = None
-    # Indicates the whether a feature flag is stale or not.
+    # The staleness status for the feature flag at creation.
     staleness_status: Any = None
     # Tags associated with the feature flag.
     tags: Any = None

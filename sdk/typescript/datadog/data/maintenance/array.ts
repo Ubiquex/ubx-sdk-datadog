@@ -19,6 +19,7 @@ export interface Array_Data_Attributes_Updates {
 }
 
 export interface Array_Data_Attributes {
+  canceledDescription?: string | Computed<string>;
   completedDate?: string | Computed<string>;
   completedDescription?: string | Computed<string>;
   componentsAffected?: Array_Data_Attributes_ComponentsAffected[] | Computed<Array_Data_Attributes_ComponentsAffected[]>;

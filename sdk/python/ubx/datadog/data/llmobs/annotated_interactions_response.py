@@ -38,6 +38,7 @@ class AnnotatedInteractionsResponse_Data_Attributes_AnnotatedInteractions_Displa
 @dataclasses.dataclass
 class AnnotatedInteractionsResponse_Data_Attributes_AnnotatedInteractions:
     annotations: Any = None
+    can_annotate: Any = None
     content_id: Any = None
     created_at: Any = None
     display_block: Any = None

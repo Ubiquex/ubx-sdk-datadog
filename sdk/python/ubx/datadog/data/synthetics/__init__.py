@@ -4,21 +4,22 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .api_multistep_parent_test_data import ApiMultistepParentTestData, ApiMultistepParentTestDataConfig
-from .api_multistep_subtest_data import ApiMultistepSubtestData, ApiMultistepSubtestDataConfig
+from .api_multistep_parent_test_data_list import ApiMultistepParentTestDataList, ApiMultistepParentTestDataListConfig
+from .api_multistep_subtest_data_list import ApiMultistepSubtestDataList, ApiMultistepSubtestDataListConfig
 from .apitest_result_full import ApitestResultFull, ApitestResultFullConfig
-from .apitest_result_short import ApitestResultShort, ApitestResultShortConfig
+from .apitest_result_short_list import ApitestResultShortList, ApitestResultShortListConfig
 from .batch_details import BatchDetails, BatchDetailsConfig
 from .browser_test_result_full import BrowserTestResultFull, BrowserTestResultFullConfig
-from .browser_test_result_short import BrowserTestResultShort, BrowserTestResultShortConfig
-from .downtime_data import DowntimeData, DowntimeDataConfig
+from .browser_test_result_short_list import BrowserTestResultShortList, BrowserTestResultShortListConfig
+from .downtime_data_list import DowntimeDataList, DowntimeDataListConfig
 from .fast_test_result import FastTestResult, FastTestResultConfig
-from .global_variable import GlobalVariable, GlobalVariableConfig
+from .global_variable_list import GlobalVariableList, GlobalVariableListConfig
 from .poll_test_results_response import PollTestResultsResponse, PollTestResultsResponseConfig
 from .suite_search_response import SuiteSearchResponse, SuiteSearchResponseConfig
 from .test_details_without_steps import TestDetailsWithoutSteps, TestDetailsWithoutStepsConfig
+from .test_details_without_steps_list import TestDetailsWithoutStepsList, TestDetailsWithoutStepsListConfig
 from .test_latest_results_response import TestLatestResultsResponse, TestLatestResultsResponseConfig
-from .test_parent_suite_data import TestParentSuiteData, TestParentSuiteDataConfig
-from .test_result_included_item import TestResultIncludedItem, TestResultIncludedItemConfig
-from .test_version_change_data import TestVersionChangeData, TestVersionChangeDataConfig
+from .test_parent_suite_data_list import TestParentSuiteDataList, TestParentSuiteDataListConfig
+from .test_result_included_item_list import TestResultIncludedItemList, TestResultIncludedItemListConfig
+from .test_version_change_data_list import TestVersionChangeDataList, TestVersionChangeDataListConfig
 from .test_version_response import TestVersionResponse, TestVersionResponseConfig

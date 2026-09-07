@@ -51,44 +51,44 @@ type MonitoringCriticalAssetResponse_Data struct {
 }
 
 var MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields = ubx.FieldMap{
-	"Handle": ubx.FieldSpec{WireName: "handle"},
-	"Name":   ubx.FieldSpec{WireName: "name"},
-}
+		"Handle": ubx.FieldSpec{WireName: "handle"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var MonitoringCriticalAssetResponse_Data_AttributesFields = ubx.FieldMap{
-	"CreationAuthorId": ubx.FieldSpec{WireName: "creation_author_id"},
-	"CreationDate":     ubx.FieldSpec{WireName: "creation_date"},
-	"Creator": ubx.FieldSpec{
-		WireName: "creator",
-		Kind:     "object",
-		Fields:   MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields,
-	},
-	"Description":    ubx.FieldSpec{WireName: "description"},
-	"Editable":       ubx.FieldSpec{WireName: "editable"},
-	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
-	"Query":          ubx.FieldSpec{WireName: "query"},
-	"RuleQuery":      ubx.FieldSpec{WireName: "rule_query"},
-	"Severity":       ubx.FieldSpec{WireName: "severity"},
-	"Tags":           ubx.FieldSpec{WireName: "tags"},
-	"UpdateAuthorId": ubx.FieldSpec{WireName: "update_author_id"},
-	"UpdateDate":     ubx.FieldSpec{WireName: "update_date"},
-	"Updater": ubx.FieldSpec{
-		WireName: "updater",
-		Kind:     "object",
-		Fields:   MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields,
-	},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"CreationAuthorId": ubx.FieldSpec{WireName: "creation_author_id"},
+		"CreationDate": ubx.FieldSpec{WireName: "creation_date"},
+		"Creator": ubx.FieldSpec{
+			WireName: "creator",
+			Kind: "object",
+			Fields: MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Editable": ubx.FieldSpec{WireName: "editable"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Query": ubx.FieldSpec{WireName: "query"},
+		"RuleQuery": ubx.FieldSpec{WireName: "rule_query"},
+		"Severity": ubx.FieldSpec{WireName: "severity"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"UpdateAuthorId": ubx.FieldSpec{WireName: "update_author_id"},
+		"UpdateDate": ubx.FieldSpec{WireName: "update_date"},
+		"Updater": ubx.FieldSpec{
+			WireName: "updater",
+			Kind: "object",
+			Fields: MonitoringCriticalAssetResponse_Data_Attributes_CreatorFields,
+		},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var MonitoringCriticalAssetResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   MonitoringCriticalAssetResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: MonitoringCriticalAssetResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type MonitoringCriticalAssetResponseConfig struct {
 	// Object for a single critical asset.
@@ -109,8 +109,8 @@ var MonitoringCriticalAssetResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   MonitoringCriticalAssetResponse_DataFields,
+			Kind: "object",
+			Fields: MonitoringCriticalAssetResponse_DataFields,
 		},
 		"CriticalAssetId": ubx.FieldSpec{WireName: "critical_asset_id"},
 	},

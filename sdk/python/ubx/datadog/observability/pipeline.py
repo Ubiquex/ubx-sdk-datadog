@@ -109,6 +109,7 @@ class Pipeline_Data_Attributes_Config_Destinations:
     dcr_immutable_id: Any = None
     default_namespace: Any = None
     encoding: Any = None
+    endpoint_target: Any = None
     endpoint_url_key: Any = None
     format: Any = None
     framing: Any = None
@@ -117,6 +118,7 @@ class Pipeline_Data_Attributes_Config_Destinations:
     header_source_category: Any = None
     header_source_name: Any = None
     headers_key: Any = None
+    http_client_uri_key: Any = None
     id: Any = None
     id_key: Any = None
     index: Any = None
@@ -377,6 +379,7 @@ class Pipeline_Data_Attributes_Config_Sources:
     http_address_key: Any = None
     id: Any = None
     librdkafka_options: Any = None
+    max_connection_duration_secs: Any = None
     mode: Any = None
     password_key: Any = None
     project: Any = None
@@ -556,6 +559,7 @@ _Pipeline_Data_Attributes_Config_DestinationsFields = {
     "dcr_immutable_id": ubx.FieldSpec(wire_name="dcr_immutable_id"),
     "default_namespace": ubx.FieldSpec(wire_name="default_namespace"),
     "encoding": ubx.FieldSpec(wire_name="encoding"),
+    "endpoint_target": ubx.FieldSpec(wire_name="endpoint_target"),
     "endpoint_url_key": ubx.FieldSpec(wire_name="endpoint_url_key"),
     "format": ubx.FieldSpec(wire_name="format"),
     "framing": ubx.FieldSpec(
@@ -572,6 +576,7 @@ _Pipeline_Data_Attributes_Config_DestinationsFields = {
     "header_source_category": ubx.FieldSpec(wire_name="header_source_category"),
     "header_source_name": ubx.FieldSpec(wire_name="header_source_name"),
     "headers_key": ubx.FieldSpec(wire_name="headers_key"),
+    "http_client_uri_key": ubx.FieldSpec(wire_name="http_client_uri_key"),
     "id": ubx.FieldSpec(wire_name="id"),
     "id_key": ubx.FieldSpec(wire_name="id_key"),
     "index": ubx.FieldSpec(wire_name="index"),
@@ -976,6 +981,7 @@ _Pipeline_Data_Attributes_Config_SourcesFields = {
         kind="list",
         fields=_Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
     ),
+    "max_connection_duration_secs": ubx.FieldSpec(wire_name="max_connection_duration_secs"),
     "mode": ubx.FieldSpec(wire_name="mode"),
     "password_key": ubx.FieldSpec(wire_name="password_key"),
     "project": ubx.FieldSpec(wire_name="project"),

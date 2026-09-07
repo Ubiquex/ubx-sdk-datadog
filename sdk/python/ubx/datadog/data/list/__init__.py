@@ -4,17 +4,17 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .apis_response_data import ApisResponseData, ApisResponseDataConfig
+from .apis_response_data_list import ApisResponseDataList, ApisResponseDataListConfig
 from .application_keys_response import ApplicationKeysResponse, ApplicationKeysResponseConfig
 from .apps_response import AppsResponse, AppsResponseConfig
 from .connections_response import ConnectionsResponse, ConnectionsResponseConfig
 from .downtimes_response import DowntimesResponse, DowntimesResponseConfig
 from .entity_catalog_response import EntityCatalogResponse, EntityCatalogResponseConfig
 from .interface_tags_response import InterfaceTagsResponse, InterfaceTagsResponseConfig
-from .investigations_response_data import InvestigationsResponseData, InvestigationsResponseDataConfig
+from .investigations_response_data_list import InvestigationsResponseDataList, InvestigationsResponseDataListConfig
 from .on_call_notification_rules_response import OnCallNotificationRulesResponse, OnCallNotificationRulesResponseConfig
 from .powerpacks_response import PowerpacksResponse, PowerpacksResponseConfig
 from .relation_catalog_response import RelationCatalogResponse, RelationCatalogResponseConfig
-from .rules_response_data_item import RulesResponseDataItem, RulesResponseDataItemConfig
+from .rules_response_data_item_list import RulesResponseDataItemList, RulesResponseDataItemListConfig
 from .shared_dashboards_response import SharedDashboardsResponse, SharedDashboardsResponseConfig
 from .tags_response import TagsResponse, TagsResponseConfig

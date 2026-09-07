@@ -22,20 +22,20 @@ type IntegrationAccountResponse_Data struct {
 }
 
 var IntegrationAccountResponse_Data_AttributesFields = ubx.FieldMap{
-	"Name":     ubx.FieldSpec{WireName: "name"},
-	"Secrets":  ubx.FieldSpec{WireName: "secrets"},
-	"Settings": ubx.FieldSpec{WireName: "settings"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Secrets": ubx.FieldSpec{WireName: "secrets"},
+		"Settings": ubx.FieldSpec{WireName: "settings"},
+	}
 
 var IntegrationAccountResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type IntegrationAccountResponseConfig struct {
 	// Data object for creating a web integration account.
@@ -60,10 +60,10 @@ var IntegrationAccountResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   IntegrationAccountResponse_DataFields,
+			Kind: "object",
+			Fields: IntegrationAccountResponse_DataFields,
 		},
 		"IntegrationName": ubx.FieldSpec{WireName: "integration_name"},
-		"AccountId":       ubx.FieldSpec{WireName: "account_id"},
+		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},
 }

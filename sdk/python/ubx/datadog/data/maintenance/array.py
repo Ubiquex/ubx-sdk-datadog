@@ -25,6 +25,7 @@ class Array_Data_Attributes_Updates:
 
 @dataclasses.dataclass
 class Array_Data_Attributes:
+    canceled_description: Any = None
     completed_date: Any = None
     completed_description: Any = None
     components_affected: Any = None

@@ -29,5 +29,6 @@ type BillingDimensionsResponseAttrs struct {
 
 var BillingDimensionsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_active_billing_dimensions_response",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

@@ -31,5 +31,6 @@ type SettingsResponseAttrs struct {
 
 var SettingsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_ownership_settings_response",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

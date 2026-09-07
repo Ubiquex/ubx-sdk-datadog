@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .bridge_account_configuration import BridgeAccountConfiguration, BridgeAccountConfigurationConfig
+from .bridge_account_configuration_list import BridgeAccountConfigurationList, BridgeAccountConfigurationListConfig
 from .bridge_list_response import BridgeListResponse, BridgeListResponseConfig

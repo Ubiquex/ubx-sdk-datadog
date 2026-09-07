@@ -12,30 +12,31 @@ type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Kill struct {
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Metadata struct {
-	ImageTag   any
-	Service    any
+	ImageTag any
+	Service any
 	ShortImage any
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Set struct {
-	Append       any
+	Append any
 	DefaultValue any
-	Expression   any
-	Field        any
-	Inherited    any
-	Name         any
-	Scope        any
-	Size         any
-	Ttl          any
-	Value        any
+	Expression any
+	Field any
+	Inherited any
+	Name any
+	Scope any
+	Size any
+	Ttl any
+	Value any
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions struct {
-	Filter   any
-	Hash     any
-	Kill     any
+	Disabled any
+	Filter any
+	Hash any
+	Kill any
 	Metadata any
-	Set      any
+	Set any
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Creator struct {
@@ -50,6 +51,8 @@ type WorkloadSecurityAgentRuleResponse_Data_Attributes struct {
 	Actions any
 	// The version of the Agent
 	AgentConstraint any
+	// The version constraint of the Datadog Agent the rule applies to
+	AgentVersion any
 	// The blocking policies that the rule belongs to
 	Blocking any
 	// The category of the Agent rule
@@ -68,10 +71,14 @@ type WorkloadSecurityAgentRuleResponse_Data_Attributes struct {
 	Disabled any
 	// Whether the Agent rule is enabled
 	Enabled any
+	// The rate limiting duration of the Agent rule, in nanoseconds
+	Every any
 	// The SECL expression of the Agent rule
 	Expression any
 	// The platforms the Agent rule is supported on
 	Filters any
+	// The group of rules the Agent rule belongs to
+	GroupId any
 	// The monitoring policies that the rule belongs to
 	Monitoring any
 	// The name of the Agent rule

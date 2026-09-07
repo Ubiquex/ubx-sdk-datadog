@@ -42,5 +42,6 @@ type ServerlessCoverageAnalysisResponseAttrs struct {
 
 var ServerlessCoverageAnalysisResponse = ubx.DataSourceBinding{
 	WireType: "datadog_csm_serverless_coverage_analysis_response",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }
