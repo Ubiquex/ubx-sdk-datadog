@@ -4,20 +4,20 @@ package monitor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigPolicyResponseDataList_Data_Attributes_Policy struct {
-	TagKey any
+	TagKey         any
 	TagKeyRequired any
 	ValidTagValues any
 }
 
 type ConfigPolicyResponseDataList_Data_Attributes struct {
-	Policy any
+	Policy     any
 	PolicyType any
 }
 
 type ConfigPolicyResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ConfigPolicyResponseDataListConfig struct {
@@ -30,6 +30,5 @@ type ConfigPolicyResponseDataListAttrs struct {
 
 var ConfigPolicyResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_monitor_config_policy_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

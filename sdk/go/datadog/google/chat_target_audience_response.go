@@ -20,19 +20,19 @@ type ChatTargetAudienceResponse_Data struct {
 }
 
 var ChatTargetAudienceResponse_Data_AttributesFields = ubx.FieldMap{
-		"AudienceId": ubx.FieldSpec{WireName: "audience_id"},
-		"AudienceName": ubx.FieldSpec{WireName: "audience_name"},
-	}
+	"AudienceId":   ubx.FieldSpec{WireName: "audience_id"},
+	"AudienceName": ubx.FieldSpec{WireName: "audience_name"},
+}
 
 var ChatTargetAudienceResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ChatTargetAudienceResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ChatTargetAudienceResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ChatTargetAudienceResponseConfig struct {
 	// Data for a create target audience request.
@@ -57,10 +57,10 @@ var ChatTargetAudienceResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ChatTargetAudienceResponse_DataFields,
+			Kind:     "object",
+			Fields:   ChatTargetAudienceResponse_DataFields,
 		},
 		"OrganizationBindingId": ubx.FieldSpec{WireName: "organization_binding_id"},
-		"TargetAudienceId": ubx.FieldSpec{WireName: "target_audience_id"},
+		"TargetAudienceId":      ubx.FieldSpec{WireName: "target_audience_id"},
 	},
 }

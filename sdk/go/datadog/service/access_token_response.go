@@ -49,50 +49,50 @@ type AccessTokenResponse_Data struct {
 }
 
 var AccessTokenResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-		"LastUsedAt": ubx.FieldSpec{WireName: "last_used_at"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PublicPortion": ubx.FieldSpec{WireName: "public_portion"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"CreatedAt":     ubx.FieldSpec{WireName: "created_at"},
+	"ExpiresAt":     ubx.FieldSpec{WireName: "expires_at"},
+	"LastUsedAt":    ubx.FieldSpec{WireName: "last_used_at"},
+	"ModifiedAt":    ubx.FieldSpec{WireName: "modified_at"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"PublicPortion": ubx.FieldSpec{WireName: "public_portion"},
+	"Scopes":        ubx.FieldSpec{WireName: "scopes"},
+}
 
 var AccessTokenResponse_Data_Relationships_OwnedBy_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AccessTokenResponse_Data_Relationships_OwnedByFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: AccessTokenResponse_Data_Relationships_OwnedBy_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   AccessTokenResponse_Data_Relationships_OwnedBy_DataFields,
+	},
+}
 
 var AccessTokenResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"OwnedBy": ubx.FieldSpec{
-			WireName: "owned_by",
-			Kind: "object",
-			Fields: AccessTokenResponse_Data_Relationships_OwnedByFields,
-		},
-	}
+	"OwnedBy": ubx.FieldSpec{
+		WireName: "owned_by",
+		Kind:     "object",
+		Fields:   AccessTokenResponse_Data_Relationships_OwnedByFields,
+	},
+}
 
 var AccessTokenResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: AccessTokenResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: AccessTokenResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   AccessTokenResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   AccessTokenResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type AccessTokenResponseConfig struct {
 	// Object used to create a service account access token.
@@ -117,10 +117,10 @@ var AccessTokenResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: AccessTokenResponse_DataFields,
+			Kind:     "object",
+			Fields:   AccessTokenResponse_DataFields,
 		},
 		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-		"TokenId": ubx.FieldSpec{WireName: "token_id"},
+		"TokenId":          ubx.FieldSpec{WireName: "token_id"},
 	},
 }

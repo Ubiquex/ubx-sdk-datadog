@@ -27,7 +27,7 @@ type ChatDelegatedUserResponseConfig struct {
 
 type ChatDelegatedUserResponseAttrs struct {
 	// Google Chat delegated user data from a response.
-	Data any
+	Data                  any
 	OrganizationBindingId any
 }
 

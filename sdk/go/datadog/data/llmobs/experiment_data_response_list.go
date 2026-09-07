@@ -4,38 +4,38 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExperimentDataResponseList_Data_Attributes_Author struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Id any
-	Name any
+	Icon   any
+	Id     any
+	Name   any
 }
 
 type ExperimentDataResponseList_Data_Attributes struct {
-	AggregateData any
-	Author any
-	Config any
-	CreatedAt any
-	DatasetId any
-	DatasetName any
-	DatasetVersion any
-	DeletedAt any
-	Description any
-	Error any
-	Experiment any
-	Metadata any
-	Name any
+	AggregateData      any
+	Author             any
+	Config             any
+	CreatedAt          any
+	DatasetId          any
+	DatasetName        any
+	DatasetVersion     any
+	DeletedAt          any
+	Description        any
+	Error              any
+	Experiment         any
+	Metadata           any
+	Name               any
 	ParentExperimentId any
-	ProjectId any
-	RunCount any
-	Status any
-	UpdatedAt any
+	ProjectId          any
+	RunCount           any
+	Status             any
+	UpdatedAt          any
 }
 
 type ExperimentDataResponseList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ExperimentDataResponseList_Meta struct {
@@ -55,6 +55,5 @@ type ExperimentDataResponseListAttrs struct {
 
 var ExperimentDataResponseList = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_experiment_data_response_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

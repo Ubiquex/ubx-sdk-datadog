@@ -25,7 +25,7 @@ type AllTagsResponseConfig struct {
 
 type AllTagsResponseAttrs struct {
 	// Object for a single metric's indexed and ingested tags.
-	Data any
+	Data       any
 	MetricName any
 }
 

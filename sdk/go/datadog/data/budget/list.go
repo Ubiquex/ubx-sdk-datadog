@@ -4,63 +4,63 @@ package budget
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_Data_Attributes_Costs struct {
-	Actual any
-	Amount any
-	Forecast any
+	Actual       any
+	Amount       any
+	Forecast     any
 	OotbForecast any
 }
 
 type List_Data_Attributes_CostsUnit struct {
-	Family any
-	Id any
-	Name any
-	Plural any
+	Family      any
+	Id          any
+	Name        any
+	Plural      any
 	ScaleFactor any
-	ShortName any
+	ShortName   any
 }
 
 type List_Data_Attributes_Entries_Costs struct {
-	Actual any
-	Amount any
+	Actual         any
+	Amount         any
 	CustomForecast any
-	Forecast any
-	OotbForecast any
+	Forecast       any
+	OotbForecast   any
 }
 
 type List_Data_Attributes_Entries_TagFilters struct {
-	TagKey any
+	TagKey   any
 	TagValue any
 }
 
 type List_Data_Attributes_Entries struct {
-	Amount any
-	Costs any
-	Month any
+	Amount     any
+	Costs      any
+	Month      any
 	TagFilters any
 }
 
 type List_Data_Attributes struct {
-	Costs any
-	CostsPeriodEnd any
+	Costs            any
+	CostsPeriodEnd   any
 	CostsPeriodStart any
-	CostsUnit any
-	CreatedAt any
-	CreatedBy any
-	EndMonth any
-	Entries any
-	MetricsQuery any
-	Name any
-	OrgId any
-	StartMonth any
-	TotalAmount any
-	UpdatedAt any
-	UpdatedBy any
+	CostsUnit        any
+	CreatedAt        any
+	CreatedBy        any
+	EndMonth         any
+	Entries          any
+	MetricsQuery     any
+	Name             any
+	OrgId            any
+	StartMonth       any
+	TotalAmount      any
+	UpdatedAt        any
+	UpdatedBy        any
 }
 
 type List_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ListConfig struct {
@@ -73,6 +73,5 @@ type ListAttrs struct {
 
 var List = ubx.DataSourceBinding{
 	WireType: "datadog_budget_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

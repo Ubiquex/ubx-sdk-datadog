@@ -4,14 +4,14 @@ package google
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChatTargetAudienceDataList_Data_Attributes struct {
-	AudienceId any
+	AudienceId   any
 	AudienceName any
 }
 
 type ChatTargetAudienceDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ChatTargetAudienceDataListConfig struct {
@@ -20,7 +20,7 @@ type ChatTargetAudienceDataListConfig struct {
 
 type ChatTargetAudienceDataListAttrs struct {
 	// An array of Google Chat target audiences.
-	Data any
+	Data                  any
 	OrganizationBindingId any
 }
 

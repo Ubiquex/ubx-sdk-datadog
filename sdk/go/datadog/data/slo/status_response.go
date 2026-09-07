@@ -34,26 +34,26 @@ type StatusResponse_Data struct {
 
 type StatusResponseConfig struct {
 	DisableCorrections any
-	FromTs any
-	SloId any
-	ToTs any
+	FromTs             any
+	SloId              any
+	ToTs               any
 }
 
 type StatusResponseAttrs struct {
 	// The data portion of the SLO status response.
-	Data any
+	Data               any
 	DisableCorrections any
-	FromTs any
-	SloId any
-	ToTs any
+	FromTs             any
+	SloId              any
+	ToTs               any
 }
 
 var StatusResponse = ubx.DataSourceBinding{
 	WireType: "datadog_slo_status_response",
 	Fields: ubx.FieldMap{
 		"DisableCorrections": ubx.FieldSpec{WireName: "disable_corrections"},
-		"FromTs": ubx.FieldSpec{WireName: "from_ts"},
-		"SloId": ubx.FieldSpec{WireName: "slo_id"},
-		"ToTs": ubx.FieldSpec{WireName: "to_ts"},
+		"FromTs":             ubx.FieldSpec{WireName: "from_ts"},
+		"SloId":              ubx.FieldSpec{WireName: "slo_id"},
+		"ToTs":               ubx.FieldSpec{WireName: "to_ts"},
 	},
 }

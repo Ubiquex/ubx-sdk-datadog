@@ -4,48 +4,48 @@ package model
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LabRunDataList_Data_Attributes_MetricSummaries struct {
-	Count any
+	Count     any
 	FirstStep any
-	Key any
-	LastStep any
-	Latest any
-	Max any
-	Mean any
-	Min any
-	Stddev any
+	Key       any
+	LastStep  any
+	Latest    any
+	Max       any
+	Mean      any
+	Min       any
+	Stddev    any
 }
 
 type LabRunDataList_Data_Attributes_Params struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type LabRunDataList_Data_Attributes struct {
-	CompletedAt any
-	CreatedAt any
-	DeletedAt any
-	DescendantMatch any
-	Description any
-	Duration any
-	ExternalUrl any
-	HasChildren any
-	IsPinned any
-	MetricSummaries any
+	CompletedAt            any
+	CreatedAt              any
+	DeletedAt              any
+	DescendantMatch        any
+	Description            any
+	Duration               any
+	ExternalUrl            any
+	HasChildren            any
+	IsPinned               any
+	MetricSummaries        any
 	MlflowArtifactLocation any
-	Name any
-	OwnerId any
-	Params any
-	ProjectId any
-	StartedAt any
-	Status any
-	Tags any
-	UpdatedAt any
+	Name                   any
+	OwnerId                any
+	Params                 any
+	ProjectId              any
+	StartedAt              any
+	Status                 any
+	Tags                   any
+	UpdatedAt              any
 }
 
 type LabRunDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type LabRunDataList_Links struct {
@@ -86,34 +86,34 @@ type LabRunDataList_Meta struct {
 }
 
 type LabRunDataListConfig struct {
-	Filter any
+	Filter                   any
 	IncludeDescendantMatches any
-	IncludePinned any
-	PinnedFirst any
-	Sort any
+	IncludePinned            any
+	PinnedFirst              any
+	Sort                     any
 }
 
 type LabRunDataListAttrs struct {
 	// The list of runs.
-	Data any
-	Filter any
+	Data                     any
+	Filter                   any
 	IncludeDescendantMatches any
-	IncludePinned any
+	IncludePinned            any
 	// Pagination links for navigating list responses.
 	Links any
 	// Pagination metadata for a list response.
-	Meta any
+	Meta        any
 	PinnedFirst any
-	Sort any
+	Sort        any
 }
 
 var LabRunDataList = ubx.DataSourceBinding{
 	WireType: "datadog_model_lab_run_data_list",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":                   ubx.FieldSpec{WireName: "filter"},
 		"IncludeDescendantMatches": ubx.FieldSpec{WireName: "include_descendant_matches"},
-		"IncludePinned": ubx.FieldSpec{WireName: "include_pinned"},
-		"PinnedFirst": ubx.FieldSpec{WireName: "pinned_first"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"IncludePinned":            ubx.FieldSpec{WireName: "include_pinned"},
+		"PinnedFirst":              ubx.FieldSpec{WireName: "pinned_first"},
+		"Sort":                     ubx.FieldSpec{WireName: "sort"},
 	},
 }

@@ -4,17 +4,17 @@ package org
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupDataList_Data_Attributes struct {
-	CreatedAt any
-	ModifiedAt any
-	Name any
+	CreatedAt    any
+	ModifiedAt   any
+	Name         any
 	OwnerOrgSite any
 	OwnerOrgUuid any
 }
 
 type GroupDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type GroupDataList_Links struct {

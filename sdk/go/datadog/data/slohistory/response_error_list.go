@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponseErrorList_Data_Groups_Errors struct {
 	ErrorMessage any
-	ErrorType any
+	ErrorType    any
 }
 
 type ResponseErrorList_Data_Groups struct {
 	ErrorBudgetRemaining any
-	Errors any
-	Group any
-	History any
-	MonitorModified any
-	MonitorType any
-	Name any
-	Precision any
-	Preview any
-	SliValue any
-	SpanPrecision any
-	Uptime any
+	Errors               any
+	Group                any
+	History              any
+	MonitorModified      any
+	MonitorType          any
+	Name                 any
+	Precision            any
+	Preview              any
+	SliValue             any
+	SpanPrecision        any
+	Uptime               any
 }
 
 type ResponseErrorList_Data_Overall struct {
@@ -51,12 +51,12 @@ type ResponseErrorList_Data_Overall struct {
 }
 
 type ResponseErrorList_Data_Series_Denominator_Metadata_Unit struct {
-	Family any
-	Id any
-	Name any
-	Plural any
+	Family      any
+	Id          any
+	Name        any
+	Plural      any
 	ScaleFactor any
-	ShortName any
+	ShortName   any
 }
 
 type ResponseErrorList_Data_Series_Denominator_Metadata struct {
@@ -105,10 +105,10 @@ type ResponseErrorList_Data_Series struct {
 }
 
 type ResponseErrorList_Data_Thresholds struct {
-	Target any
-	TargetDisplay any
-	Timeframe any
-	Warning any
+	Target         any
+	TargetDisplay  any
+	Timeframe      any
+	Warning        any
 	WarningDisplay any
 }
 
@@ -141,10 +141,10 @@ type ResponseErrorList_Errors struct {
 
 type ResponseErrorListConfig struct {
 	ApplyCorrection any
-	FromTs any
-	SloId any
-	Target any
-	ToTs any
+	FromTs          any
+	SloId           any
+	Target          any
+	ToTs            any
 }
 
 type ResponseErrorListAttrs struct {
@@ -154,18 +154,18 @@ type ResponseErrorListAttrs struct {
 	// A list of errors while querying the history data for the service level objective.
 	Errors any
 	FromTs any
-	SloId any
+	SloId  any
 	Target any
-	ToTs any
+	ToTs   any
 }
 
 var ResponseErrorList = ubx.DataSourceBinding{
 	WireType: "datadog_slohistory_response_error_list",
 	Fields: ubx.FieldMap{
 		"ApplyCorrection": ubx.FieldSpec{WireName: "apply_correction"},
-		"FromTs": ubx.FieldSpec{WireName: "from_ts"},
-		"SloId": ubx.FieldSpec{WireName: "slo_id"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"ToTs": ubx.FieldSpec{WireName: "to_ts"},
+		"FromTs":          ubx.FieldSpec{WireName: "from_ts"},
+		"SloId":           ubx.FieldSpec{WireName: "slo_id"},
+		"Target":          ubx.FieldSpec{WireName: "target"},
+		"ToTs":            ubx.FieldSpec{WireName: "to_ts"},
 	},
 }

@@ -68,55 +68,55 @@ type WorkloadSecurityAgentPolicyResponse_Data struct {
 }
 
 var WorkloadSecurityAgentPolicyResponse_Data_Attributes_UpdaterFields = ubx.FieldMap{
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
 
 var WorkloadSecurityAgentPolicyResponse_Data_Attributes_VersionsFields = ubx.FieldMap{
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Date": ubx.FieldSpec{WireName: "date"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var WorkloadSecurityAgentPolicyResponse_Data_AttributesFields = ubx.FieldMap{
-		"BlockingRulesCount": ubx.FieldSpec{WireName: "blocking_rules_count"},
-		"ContentPackUpdateAvailable": ubx.FieldSpec{WireName: "content_pack_update_available"},
-		"DatadogManaged": ubx.FieldSpec{WireName: "datadog_managed"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisabledRulesCount": ubx.FieldSpec{WireName: "disabled_rules_count"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"HostTags": ubx.FieldSpec{WireName: "host_tags"},
-		"HostTagsLists": ubx.FieldSpec{WireName: "host_tags_lists"},
-		"MonitoringRulesCount": ubx.FieldSpec{WireName: "monitoring_rules_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Pinned": ubx.FieldSpec{WireName: "pinned"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-		"PolicyVersion": ubx.FieldSpec{WireName: "policy_version"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"RuleCount": ubx.FieldSpec{WireName: "rule_count"},
-		"SourceDefaultPolicyId": ubx.FieldSpec{WireName: "source_default_policy_id"},
-		"UpdateDate": ubx.FieldSpec{WireName: "update_date"},
-		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-		"Updater": ubx.FieldSpec{
-			WireName: "updater",
-			Kind: "object",
-			Fields: WorkloadSecurityAgentPolicyResponse_Data_Attributes_UpdaterFields,
-		},
-		"Versions": ubx.FieldSpec{
-			WireName: "versions",
-			Kind: "list",
-			Fields: WorkloadSecurityAgentPolicyResponse_Data_Attributes_VersionsFields,
-		},
-	}
+	"BlockingRulesCount":         ubx.FieldSpec{WireName: "blocking_rules_count"},
+	"ContentPackUpdateAvailable": ubx.FieldSpec{WireName: "content_pack_update_available"},
+	"DatadogManaged":             ubx.FieldSpec{WireName: "datadog_managed"},
+	"Description":                ubx.FieldSpec{WireName: "description"},
+	"DisabledRulesCount":         ubx.FieldSpec{WireName: "disabled_rules_count"},
+	"Enabled":                    ubx.FieldSpec{WireName: "enabled"},
+	"HostTags":                   ubx.FieldSpec{WireName: "host_tags"},
+	"HostTagsLists":              ubx.FieldSpec{WireName: "host_tags_lists"},
+	"MonitoringRulesCount":       ubx.FieldSpec{WireName: "monitoring_rules_count"},
+	"Name":                       ubx.FieldSpec{WireName: "name"},
+	"Pinned":                     ubx.FieldSpec{WireName: "pinned"},
+	"PolicyType":                 ubx.FieldSpec{WireName: "policy_type"},
+	"PolicyVersion":              ubx.FieldSpec{WireName: "policy_version"},
+	"Priority":                   ubx.FieldSpec{WireName: "priority"},
+	"RuleCount":                  ubx.FieldSpec{WireName: "rule_count"},
+	"SourceDefaultPolicyId":      ubx.FieldSpec{WireName: "source_default_policy_id"},
+	"UpdateDate":                 ubx.FieldSpec{WireName: "update_date"},
+	"UpdatedAt":                  ubx.FieldSpec{WireName: "updated_at"},
+	"Updater": ubx.FieldSpec{
+		WireName: "updater",
+		Kind:     "object",
+		Fields:   WorkloadSecurityAgentPolicyResponse_Data_Attributes_UpdaterFields,
+	},
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "list",
+		Fields:   WorkloadSecurityAgentPolicyResponse_Data_Attributes_VersionsFields,
+	},
+}
 
 var WorkloadSecurityAgentPolicyResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: WorkloadSecurityAgentPolicyResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   WorkloadSecurityAgentPolicyResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type WorkloadSecurityAgentPolicyResponseConfig struct {
 	// Object for a single Agent rule
@@ -137,8 +137,8 @@ var WorkloadSecurityAgentPolicyResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: WorkloadSecurityAgentPolicyResponse_DataFields,
+			Kind:     "object",
+			Fields:   WorkloadSecurityAgentPolicyResponse_DataFields,
 		},
 		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
 	},

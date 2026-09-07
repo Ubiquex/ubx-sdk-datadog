@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InvestigationResponse_Data_Attributes_Conclusions struct {
 	Description any
-	Summary any
-	Title any
+	Summary     any
+	Title       any
 }
 
 type InvestigationResponse_Data_Attributes_Trigger_MonitorAlertTrigger struct {
@@ -51,50 +51,50 @@ type InvestigationResponse_Links struct {
 }
 
 var InvestigationResponse_Data_Attributes_ConclusionsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Summary": ubx.FieldSpec{WireName: "summary"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Summary":     ubx.FieldSpec{WireName: "summary"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var InvestigationResponse_Data_Attributes_Trigger_MonitorAlertTriggerFields = ubx.FieldMap{
-		"EventId": ubx.FieldSpec{WireName: "event_id"},
-		"EventTs": ubx.FieldSpec{WireName: "event_ts"},
-		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
-	}
+	"EventId":   ubx.FieldSpec{WireName: "event_id"},
+	"EventTs":   ubx.FieldSpec{WireName: "event_ts"},
+	"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
+}
 
 var InvestigationResponse_Data_Attributes_TriggerFields = ubx.FieldMap{
-		"MonitorAlertTrigger": ubx.FieldSpec{
-			WireName: "monitor_alert_trigger",
-			Kind: "object",
-			Fields: InvestigationResponse_Data_Attributes_Trigger_MonitorAlertTriggerFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"MonitorAlertTrigger": ubx.FieldSpec{
+		WireName: "monitor_alert_trigger",
+		Kind:     "object",
+		Fields:   InvestigationResponse_Data_Attributes_Trigger_MonitorAlertTriggerFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var InvestigationResponse_Data_AttributesFields = ubx.FieldMap{
-		"Conclusions": ubx.FieldSpec{
-			WireName: "conclusions",
-			Kind: "list",
-			Fields: InvestigationResponse_Data_Attributes_ConclusionsFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Trigger": ubx.FieldSpec{
-			WireName: "trigger",
-			Kind: "object",
-			Fields: InvestigationResponse_Data_Attributes_TriggerFields,
-		},
-	}
+	"Conclusions": ubx.FieldSpec{
+		WireName: "conclusions",
+		Kind:     "list",
+		Fields:   InvestigationResponse_Data_Attributes_ConclusionsFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+	"Title":  ubx.FieldSpec{WireName: "title"},
+	"Trigger": ubx.FieldSpec{
+		WireName: "trigger",
+		Kind:     "object",
+		Fields:   InvestigationResponse_Data_Attributes_TriggerFields,
+	},
+}
 
 var InvestigationResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: InvestigationResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   InvestigationResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type InvestigationResponseConfig struct {
 	// Data for the trigger investigation request.
@@ -117,8 +117,8 @@ var InvestigationResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: InvestigationResponse_DataFields,
+			Kind:     "object",
+			Fields:   InvestigationResponse_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

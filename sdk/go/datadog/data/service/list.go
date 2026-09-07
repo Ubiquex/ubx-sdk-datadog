@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_Data_Attributes_Metadata struct {
 	IsTraced any
-	IsUsm any
+	IsUsm    any
 }
 
 type List_Data_Attributes struct {
@@ -34,6 +34,5 @@ type ListAttrs struct {
 
 var List = ubx.DataSourceBinding{
 	WireType: "datadog_service_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

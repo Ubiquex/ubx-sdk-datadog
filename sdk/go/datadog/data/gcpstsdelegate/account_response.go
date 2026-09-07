@@ -27,6 +27,5 @@ type AccountResponseAttrs struct {
 
 var AccountResponse = ubx.DataSourceBinding{
 	WireType: "datadog_gcpstsdelegate_account_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

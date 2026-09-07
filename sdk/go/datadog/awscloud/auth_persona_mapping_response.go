@@ -22,20 +22,20 @@ type AuthPersonaMappingResponse_Data struct {
 }
 
 var AuthPersonaMappingResponse_Data_AttributesFields = ubx.FieldMap{
-		"AccountIdentifier": ubx.FieldSpec{WireName: "account_identifier"},
-		"AccountUuid": ubx.FieldSpec{WireName: "account_uuid"},
-		"ArnPattern": ubx.FieldSpec{WireName: "arn_pattern"},
-	}
+	"AccountIdentifier": ubx.FieldSpec{WireName: "account_identifier"},
+	"AccountUuid":       ubx.FieldSpec{WireName: "account_uuid"},
+	"ArnPattern":        ubx.FieldSpec{WireName: "arn_pattern"},
+}
 
 var AuthPersonaMappingResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: AuthPersonaMappingResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   AuthPersonaMappingResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type AuthPersonaMappingResponseConfig struct {
 	// Data for creating an AWS cloud authentication persona mapping
@@ -56,8 +56,8 @@ var AuthPersonaMappingResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: AuthPersonaMappingResponse_DataFields,
+			Kind:     "object",
+			Fields:   AuthPersonaMappingResponse_DataFields,
 		},
 		"PersonaMappingId": ubx.FieldSpec{WireName: "persona_mapping_id"},
 	},

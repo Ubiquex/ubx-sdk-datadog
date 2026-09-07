@@ -4,19 +4,19 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NowTemplateDataList_Data_Attributes struct {
-	AssignmentGroupId any
-	BusinessServiceId any
-	FieldsMapping any
-	HandleName any
-	InstanceId any
+	AssignmentGroupId   any
+	BusinessServiceId   any
+	FieldsMapping       any
+	HandleName          any
+	InstanceId          any
 	ServicenowTablename any
-	UserId any
+	UserId              any
 }
 
 type NowTemplateDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type NowTemplateDataListConfig struct {
@@ -29,6 +29,5 @@ type NowTemplateDataListAttrs struct {
 
 var NowTemplateDataList = ubx.DataSourceBinding{
 	WireType: "datadog_service_now_template_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

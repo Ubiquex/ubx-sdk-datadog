@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NameFilterPreviewResponse_Data_Attributes_Namespaces_Filters struct {
 	MatchCount any
-	Pattern any
+	Pattern    any
 }
 
 type NameFilterPreviewResponse_Data_Attributes_Namespaces_Metrics_DdNames struct {
 	Filtered any
-	Name any
+	Name     any
 }
 
 type NameFilterPreviewResponse_Data_Attributes_Namespaces_Metrics struct {
-	CwName any
+	CwName  any
 	DdNames any
 }
 
 type NameFilterPreviewResponse_Data_Attributes_Namespaces struct {
-	Filters any
-	Metrics any
+	Filters   any
+	Metrics   any
 	Namespace any
 }
 

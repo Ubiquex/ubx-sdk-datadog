@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateDataResponseList_Data_Attributes_ConfluencePostmortemSettings struct {
 	AccountId any
-	ParentId any
-	SpaceId any
+	ParentId  any
+	SpaceId   any
 }
 
 type TemplateDataResponseList_Data_Attributes_GoogleDocsPostmortemSettings struct {
-	AccountId any
+	AccountId      any
 	ParentFolderId any
 }
 
 type TemplateDataResponseList_Data_Attributes struct {
 	ConfluencePostmortemSettings any
-	Content any
-	CreatedAt any
+	Content                      any
+	CreatedAt                    any
 	GoogleDocsPostmortemSettings any
-	IsDefault any
-	Location any
-	ModifiedAt any
-	Name any
+	IsDefault                    any
+	Location                     any
+	ModifiedAt                   any
+	Name                         any
 }
 
 type TemplateDataResponseList_Data_Relationships_IncidentType_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -35,15 +35,15 @@ type TemplateDataResponseList_Data_Relationships_IncidentType struct {
 }
 
 type TemplateDataResponseList_Data_Relationships struct {
-	IncidentType any
+	IncidentType       any
 	LastModifiedByUser any
 }
 
 type TemplateDataResponseList_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TemplateDataResponseListConfig struct {

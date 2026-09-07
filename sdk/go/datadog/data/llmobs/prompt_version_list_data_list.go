@@ -4,31 +4,31 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PromptVersionListDataList_Data_Attributes_Datasets struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type PromptVersionListDataList_Data_Attributes struct {
-	Author any
-	CreatedAt any
-	Datasets any
-	Description any
-	Labels any
-	LastSeenAt any
-	MlApp any
-	MlApps any
-	PromptId any
-	PromptUuid any
-	Tags any
-	UserVersion any
-	Version any
+	Author           any
+	CreatedAt        any
+	Datasets         any
+	Description      any
+	Labels           any
+	LastSeenAt       any
+	MlApp            any
+	MlApps           any
+	PromptId         any
+	PromptUuid       any
+	Tags             any
+	UserVersion      any
+	Version          any
 	VersionCreatedAt any
 }
 
 type PromptVersionListDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type PromptVersionListDataListConfig struct {
@@ -37,7 +37,7 @@ type PromptVersionListDataListConfig struct {
 
 type PromptVersionListDataListAttrs struct {
 	// Prompt versions ordered from newest to oldest.
-	Data any
+	Data     any
 	PromptId any
 }
 

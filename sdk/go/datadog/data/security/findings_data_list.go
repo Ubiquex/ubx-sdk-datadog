@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FindingsDataList_Data_Attributes struct {
 	Attributes any
-	Tags any
-	Timestamp any
+	Tags       any
+	Timestamp  any
 }
 
 type FindingsDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type FindingsDataList_Links struct {

@@ -4,14 +4,14 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PatternsClusteredPointsResponse_Data_Attributes_Points struct {
-	EventId any
-	Id any
-	Input any
-	IsIncluded any
+	EventId     any
+	Id          any
+	Input       any
+	IsIncluded  any
 	IsSuggested any
-	SessionId any
-	SpanId any
-	TopicId any
+	SessionId   any
+	SpanId      any
+	TopicId     any
 }
 
 type PatternsClusteredPointsResponse_Data_Attributes struct {
@@ -33,24 +33,24 @@ type PatternsClusteredPointsResponse_Data struct {
 }
 
 type PatternsClusteredPointsResponseConfig struct {
-	PageSize any
+	PageSize  any
 	PageToken any
-	TopicId any
+	TopicId   any
 }
 
 type PatternsClusteredPointsResponseAttrs struct {
 	// Data object of an Agent Observability patterns clustered points response.
-	Data any
-	PageSize any
+	Data      any
+	PageSize  any
 	PageToken any
-	TopicId any
+	TopicId   any
 }
 
 var PatternsClusteredPointsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_patterns_clustered_points_response",
 	Fields: ubx.FieldMap{
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
+		"PageSize":  ubx.FieldSpec{WireName: "page_size"},
 		"PageToken": ubx.FieldSpec{WireName: "page_token"},
-		"TopicId": ubx.FieldSpec{WireName: "topic_id"},
+		"TopicId":   ubx.FieldSpec{WireName: "topic_id"},
 	},
 }

@@ -22,20 +22,20 @@ type IntegrationConfigResponse_Data struct {
 }
 
 var IntegrationConfigResponse_Data_AttributesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{WireName: "config"},
-		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
-		"OrgId": ubx.FieldSpec{WireName: "org_id"},
-	}
+	"Config":        ubx.FieldSpec{WireName: "config"},
+	"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
+	"OrgId":         ubx.FieldSpec{WireName: "org_id"},
+}
 
 var IntegrationConfigResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: IntegrationConfigResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   IntegrationConfigResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type IntegrationConfigResponseConfig struct {
 	// JSON:API resource object used in a request to create or update an entity integration configuration.
@@ -56,8 +56,8 @@ var IntegrationConfigResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: IntegrationConfigResponse_DataFields,
+			Kind:     "object",
+			Fields:   IntegrationConfigResponse_DataFields,
 		},
 		"IntegrationId": ubx.FieldSpec{WireName: "integration_id"},
 	},

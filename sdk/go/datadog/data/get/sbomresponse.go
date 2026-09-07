@@ -12,24 +12,24 @@ type Sbomresponse_Data_Attributes_Components_Licenses struct {
 }
 
 type Sbomresponse_Data_Attributes_Components_Properties struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Sbomresponse_Data_Attributes_Components struct {
-	BomRef any
-	Licenses any
-	Name any
+	BomRef     any
+	Licenses   any
+	Name       any
 	Properties any
-	Purl any
-	Supplier any
-	Type any
-	Version any
+	Purl       any
+	Supplier   any
+	Type       any
+	Version    any
 }
 
 type Sbomresponse_Data_Attributes_Dependencies struct {
 	DependsOn any
-	Ref any
+	Ref       any
 }
 
 type Sbomresponse_Data_Attributes_Metadata_Component struct {

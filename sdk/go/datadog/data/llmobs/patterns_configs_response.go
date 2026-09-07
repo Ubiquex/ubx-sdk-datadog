@@ -4,19 +4,19 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PatternsConfigsResponse_Data_Attributes_Configs struct {
-	AccountId any
-	CreatedAt any
-	EvpQuery any
-	HierarchyDepth any
-	Id any
+	AccountId           any
+	CreatedAt           any
+	EvpQuery            any
+	HierarchyDepth      any
+	Id                  any
 	IntegrationProvider any
-	ModelName any
-	Name any
-	NumRecords any
-	SamplingRatio any
-	Scope any
-	Template any
-	UpdatedAt any
+	ModelName           any
+	Name                any
+	NumRecords          any
+	SamplingRatio       any
+	Scope               any
+	Template            any
+	UpdatedAt           any
 }
 
 type PatternsConfigsResponse_Data_Attributes struct {
@@ -43,6 +43,5 @@ type PatternsConfigsResponseAttrs struct {
 
 var PatternsConfigsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_patterns_configs_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

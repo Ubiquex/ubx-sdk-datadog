@@ -4,9 +4,9 @@ package rum
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricResponseDataList_Data_Attributes_Compute struct {
-	AggregationType any
+	AggregationType    any
 	IncludePercentiles any
-	Path any
+	Path               any
 }
 
 type MetricResponseDataList_Data_Attributes_Filter struct {
@@ -14,7 +14,7 @@ type MetricResponseDataList_Data_Attributes_Filter struct {
 }
 
 type MetricResponseDataList_Data_Attributes_GroupBy struct {
-	Path any
+	Path    any
 	TagName any
 }
 
@@ -23,17 +23,17 @@ type MetricResponseDataList_Data_Attributes_Uniqueness struct {
 }
 
 type MetricResponseDataList_Data_Attributes struct {
-	Compute any
-	EventType any
-	Filter any
-	GroupBy any
+	Compute    any
+	EventType  any
+	Filter     any
+	GroupBy    any
 	Uniqueness any
 }
 
 type MetricResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MetricResponseDataListConfig struct {
@@ -46,6 +46,5 @@ type MetricResponseDataListAttrs struct {
 
 var MetricResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_rum_metric_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

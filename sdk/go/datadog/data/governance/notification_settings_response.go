@@ -27,6 +27,5 @@ type NotificationSettingsResponseAttrs struct {
 
 var NotificationSettingsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_governance_notification_settings_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

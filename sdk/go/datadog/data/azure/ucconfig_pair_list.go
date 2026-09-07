@@ -4,32 +4,32 @@ package azure
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UcconfigPairList_Data_Attributes_Configs struct {
-	AccountId any
-	ClientId any
-	CreatedAt any
-	DatasetType any
-	ErrorMessages any
-	ExportName any
-	ExportPath any
-	Id any
-	Months any
-	Scope any
-	Status any
-	StatusUpdatedAt any
-	StorageAccount any
+	AccountId        any
+	ClientId         any
+	CreatedAt        any
+	DatasetType      any
+	ErrorMessages    any
+	ExportName       any
+	ExportPath       any
+	Id               any
+	Months           any
+	Scope            any
+	Status           any
+	StatusUpdatedAt  any
+	StorageAccount   any
 	StorageContainer any
-	UpdatedAt any
+	UpdatedAt        any
 }
 
 type UcconfigPairList_Data_Attributes struct {
 	Configs any
-	Id any
+	Id      any
 }
 
 type UcconfigPairList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type UcconfigPairListConfig struct {
@@ -42,6 +42,5 @@ type UcconfigPairListAttrs struct {
 
 var UcconfigPairList = ubx.DataSourceBinding{
 	WireType: "datadog_azure_ucconfig_pair_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

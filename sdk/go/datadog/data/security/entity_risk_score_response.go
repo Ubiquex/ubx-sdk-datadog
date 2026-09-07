@@ -87,7 +87,7 @@ type EntityRiskScoreResponseConfig struct {
 
 type EntityRiskScoreResponseAttrs struct {
 	// An entity risk score containing security risk assessment information
-	Data any
+	Data     any
 	EntityId any
 }
 

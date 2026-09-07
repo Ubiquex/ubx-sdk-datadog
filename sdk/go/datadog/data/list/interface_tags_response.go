@@ -23,7 +23,7 @@ type InterfaceTagsResponseConfig struct {
 
 type InterfaceTagsResponseAttrs struct {
 	// Response data for listing interface tags.
-	Data any
+	Data        any
 	InterfaceId any
 }
 

@@ -18,7 +18,7 @@ type ModelAttrs struct {
 var Model = ubx.DataSourceBinding{
 	WireType: "datadog_model",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":   ubx.FieldSpec{WireName: "account_id"},
 		"Integration": ubx.FieldSpec{WireName: "integration"},
 	},
 }

@@ -4,12 +4,12 @@ package google
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChatOrganizationDataList_Data_Attributes struct {
-	DomainId any
+	DomainId   any
 	DomainName any
 }
 
 type ChatOrganizationDataList_Data_Relationships_DelegatedUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -22,10 +22,10 @@ type ChatOrganizationDataList_Data_Relationships struct {
 }
 
 type ChatOrganizationDataList_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ChatOrganizationDataListConfig struct {
@@ -38,6 +38,5 @@ type ChatOrganizationDataListAttrs struct {
 
 var ChatOrganizationDataList = ubx.DataSourceBinding{
 	WireType: "datadog_google_chat_organization_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

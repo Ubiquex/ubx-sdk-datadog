@@ -4,26 +4,26 @@ package blueprint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataList_Data_Attributes struct {
-	CreatedAt any
-	Definition any
-	Description any
+	CreatedAt                   any
+	Definition                  any
+	Description                 any
 	EmbeddedDatastoreBlueprints any
-	EmbeddedNativeActions any
-	EmbeddedWorkflowBlueprints any
-	IntegrationId any
-	MockedOutputs any
-	Name any
-	Slug any
-	Tags any
-	TileBackground any
-	TileIconActionFqn any
-	UpdatedAt any
+	EmbeddedNativeActions       any
+	EmbeddedWorkflowBlueprints  any
+	IntegrationId               any
+	MockedOutputs               any
+	Name                        any
+	Slug                        any
+	Tags                        any
+	TileBackground              any
+	TileIconActionFqn           any
+	UpdatedAt                   any
 }
 
 type DataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataListConfig struct {
@@ -32,7 +32,7 @@ type DataListConfig struct {
 
 type DataListAttrs struct {
 	// An array of blueprints.
-	Data any
+	Data          any
 	IntegrationId any
 }
 

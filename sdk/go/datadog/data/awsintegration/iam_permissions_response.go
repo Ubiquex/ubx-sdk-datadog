@@ -27,6 +27,5 @@ type IamPermissionsResponseAttrs struct {
 
 var IamPermissionsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_awsintegration_iam_permissions_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

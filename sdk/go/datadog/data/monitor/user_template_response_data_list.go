@@ -5,26 +5,26 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserTemplateResponseDataList_Data_Attributes_TemplateVariables struct {
 	AvailableValues any
-	Defaults any
-	Name any
-	TagKey any
+	Defaults        any
+	Name            any
+	TagKey          any
 }
 
 type UserTemplateResponseDataList_Data_Attributes struct {
-	Created any
-	Description any
-	Modified any
+	Created           any
+	Description       any
+	Modified          any
 	MonitorDefinition any
-	Tags any
+	Tags              any
 	TemplateVariables any
-	Title any
-	Version any
+	Title             any
+	Version           any
 }
 
 type UserTemplateResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type UserTemplateResponseDataListConfig struct {
@@ -37,6 +37,5 @@ type UserTemplateResponseDataListAttrs struct {
 
 var UserTemplateResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_monitor_user_template_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,20 +4,20 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringIntegrationConfigDataList_Data_Attributes struct {
-	CreatedAt any
-	Domain any
-	Enabled any
+	CreatedAt       any
+	Domain          any
+	Enabled         any
 	IntegrationType any
-	ModifiedAt any
-	Name any
-	Settings any
-	State any
+	ModifiedAt      any
+	Name            any
+	Settings        any
+	State           any
 }
 
 type MonitoringIntegrationConfigDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MonitoringIntegrationConfigDataListConfig struct {
@@ -30,6 +30,5 @@ type MonitoringIntegrationConfigDataListAttrs struct {
 
 var MonitoringIntegrationConfigDataList = ubx.DataSourceBinding{
 	WireType: "datadog_security_monitoring_integration_config_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

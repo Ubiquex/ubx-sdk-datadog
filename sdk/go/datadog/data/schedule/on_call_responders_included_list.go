@@ -9,7 +9,7 @@ type OnCallRespondersIncludedList_Data_Attributes struct {
 }
 
 type OnCallRespondersIncludedList_Data_Relationships_Responders_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -50,30 +50,30 @@ type OnCallRespondersIncludedList_Included_Relationships struct {
 }
 
 type OnCallRespondersIncludedList_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type OnCallRespondersIncludedListConfig struct {
-	Include any
+	Include    any
 	ScheduleId any
 }
 
 type OnCallRespondersIncludedListAttrs struct {
 	// The main data object representing a schedule's on-call responders lookup, including relationships and metadata.
-	Data any
+	Data    any
 	Include any
 	// Related resources referenced in the responder groups' relationships, such as shifts, schedules, and users.
-	Included any
+	Included   any
 	ScheduleId any
 }
 
 var OnCallRespondersIncludedList = ubx.DataSourceBinding{
 	WireType: "datadog_schedule_on_call_responders_included_list",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":    ubx.FieldSpec{WireName: "include"},
 		"ScheduleId": ubx.FieldSpec{WireName: "schedule_id"},
 	},
 }

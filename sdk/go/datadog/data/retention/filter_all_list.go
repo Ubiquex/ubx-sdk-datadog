@@ -8,24 +8,24 @@ type FilterAllList_Data_Attributes_Filter struct {
 }
 
 type FilterAllList_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	Editable any
-	Enabled any
+	CreatedAt      any
+	CreatedBy      any
+	Editable       any
+	Enabled        any
 	ExecutionOrder any
-	Filter any
-	FilterType any
-	ModifiedAt any
-	ModifiedBy any
-	Name any
-	Rate any
-	TraceRate any
+	Filter         any
+	FilterType     any
+	ModifiedAt     any
+	ModifiedBy     any
+	Name           any
+	Rate           any
+	TraceRate      any
 }
 
 type FilterAllList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type FilterAllListConfig struct {
@@ -38,6 +38,5 @@ type FilterAllListAttrs struct {
 
 var FilterAllList = ubx.DataSourceBinding{
 	WireType: "datadog_retention_filter_all_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

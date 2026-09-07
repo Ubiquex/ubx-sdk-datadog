@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringDatasetResponse_Data_Attributes_Definition_Columns struct {
 	Column any
-	Type any
+	Type   any
 }
 
 type MonitoringDatasetResponse_Data_Attributes_Definition_Search struct {
@@ -80,72 +80,72 @@ type MonitoringDatasetResponse_Data struct {
 }
 
 var MonitoringDatasetResponse_Data_Attributes_Definition_ColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Column": ubx.FieldSpec{WireName: "column"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var MonitoringDatasetResponse_Data_Attributes_Definition_SearchFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var MonitoringDatasetResponse_Data_Attributes_Definition_TimeWindowFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"From": ubx.FieldSpec{WireName: "from"},
+	"To":   ubx.FieldSpec{WireName: "to"},
+}
 
 var MonitoringDatasetResponse_Data_Attributes_DefinitionFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: MonitoringDatasetResponse_Data_Attributes_Definition_ColumnsFields,
-		},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"Indexes": ubx.FieldSpec{WireName: "indexes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"QueryFilter": ubx.FieldSpec{WireName: "query_filter"},
-		"Search": ubx.FieldSpec{
-			WireName: "search",
-			Kind: "object",
-			Fields: MonitoringDatasetResponse_Data_Attributes_Definition_SearchFields,
-		},
-		"Storage": ubx.FieldSpec{WireName: "storage"},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-		"TimeWindow": ubx.FieldSpec{
-			WireName: "time_window",
-			Kind: "object",
-			Fields: MonitoringDatasetResponse_Data_Attributes_Definition_TimeWindowFields,
-		},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   MonitoringDatasetResponse_Data_Attributes_Definition_ColumnsFields,
+	},
+	"DataSource":  ubx.FieldSpec{WireName: "data_source"},
+	"Indexes":     ubx.FieldSpec{WireName: "indexes"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"QueryFilter": ubx.FieldSpec{WireName: "query_filter"},
+	"Search": ubx.FieldSpec{
+		WireName: "search",
+		Kind:     "object",
+		Fields:   MonitoringDatasetResponse_Data_Attributes_Definition_SearchFields,
+	},
+	"Storage":   ubx.FieldSpec{WireName: "storage"},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+	"TimeWindow": ubx.FieldSpec{
+		WireName: "time_window",
+		Kind:     "object",
+		Fields:   MonitoringDatasetResponse_Data_Attributes_Definition_TimeWindowFields,
+	},
+}
 
 var MonitoringDatasetResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedByHandle": ubx.FieldSpec{WireName: "created_by_handle"},
-		"CreatedByName": ubx.FieldSpec{WireName: "created_by_name"},
-		"Definition": ubx.FieldSpec{
-			WireName: "definition",
-			Kind: "object",
-			Fields: MonitoringDatasetResponse_Data_Attributes_DefinitionFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"IsDeprecated": ubx.FieldSpec{WireName: "is_deprecated"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdatedByHandle": ubx.FieldSpec{WireName: "updated_by_handle"},
-		"UpdatedByName": ubx.FieldSpec{WireName: "updated_by_name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"CreatedAt":       ubx.FieldSpec{WireName: "created_at"},
+	"CreatedByHandle": ubx.FieldSpec{WireName: "created_by_handle"},
+	"CreatedByName":   ubx.FieldSpec{WireName: "created_by_name"},
+	"Definition": ubx.FieldSpec{
+		WireName: "definition",
+		Kind:     "object",
+		Fields:   MonitoringDatasetResponse_Data_Attributes_DefinitionFields,
+	},
+	"Description":     ubx.FieldSpec{WireName: "description"},
+	"Id":              ubx.FieldSpec{WireName: "id"},
+	"IsDefault":       ubx.FieldSpec{WireName: "is_default"},
+	"IsDeprecated":    ubx.FieldSpec{WireName: "is_deprecated"},
+	"ModifiedAt":      ubx.FieldSpec{WireName: "modified_at"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"UpdatedByHandle": ubx.FieldSpec{WireName: "updated_by_handle"},
+	"UpdatedByName":   ubx.FieldSpec{WireName: "updated_by_name"},
+	"Version":         ubx.FieldSpec{WireName: "version"},
+}
 
 var MonitoringDatasetResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: MonitoringDatasetResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   MonitoringDatasetResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MonitoringDatasetResponseConfig struct {
 	// The data wrapper of a dataset create request.
@@ -166,8 +166,8 @@ var MonitoringDatasetResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: MonitoringDatasetResponse_DataFields,
+			Kind:     "object",
+			Fields:   MonitoringDatasetResponse_DataFields,
 		},
 		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
 	},

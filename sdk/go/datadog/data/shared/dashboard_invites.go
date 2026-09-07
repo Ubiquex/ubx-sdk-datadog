@@ -15,25 +15,25 @@ type DashboardInvites_Meta struct {
 
 type DashboardInvitesConfig struct {
 	PageNumber any
-	PageSize any
-	Token any
+	PageSize   any
+	Token      any
 }
 
 type DashboardInvitesAttrs struct {
 	// An object or list of objects containing the information for an invitation to a shared dashboard.
 	Data any
 	// Pagination metadata returned by the API.
-	Meta any
+	Meta       any
 	PageNumber any
-	PageSize any
-	Token any
+	PageSize   any
+	Token      any
 }
 
 var DashboardInvites = ubx.DataSourceBinding{
 	WireType: "datadog_shared_dashboard_invites",
 	Fields: ubx.FieldMap{
 		"PageNumber": ubx.FieldSpec{WireName: "page_number"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"Token": ubx.FieldSpec{WireName: "token"},
+		"PageSize":   ubx.FieldSpec{WireName: "page_size"},
+		"Token":      ubx.FieldSpec{WireName: "token"},
 	},
 }

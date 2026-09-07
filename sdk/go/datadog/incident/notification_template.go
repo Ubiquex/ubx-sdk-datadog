@@ -51,20 +51,20 @@ type NotificationTemplate_Data struct {
 }
 
 type NotificationTemplate_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type NotificationTemplate_Included_Relationships_OtherOrgs struct {
@@ -72,73 +72,73 @@ type NotificationTemplate_Included_Relationships_OtherOrgs struct {
 }
 
 type NotificationTemplate_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type NotificationTemplate_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var NotificationTemplate_Data_AttributesFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Created": ubx.FieldSpec{WireName: "created"},
-		"Modified": ubx.FieldSpec{WireName: "modified"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-	}
+	"Category": ubx.FieldSpec{WireName: "category"},
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"Created":  ubx.FieldSpec{WireName: "created"},
+	"Modified": ubx.FieldSpec{WireName: "modified"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Subject":  ubx.FieldSpec{WireName: "subject"},
+}
 
 var NotificationTemplate_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var NotificationTemplate_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: NotificationTemplate_Data_Relationships_CreatedByUser_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   NotificationTemplate_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var NotificationTemplate_Data_RelationshipsFields = ubx.FieldMap{
-		"CreatedByUser": ubx.FieldSpec{
-			WireName: "created_by_user",
-			Kind: "object",
-			Fields: NotificationTemplate_Data_Relationships_CreatedByUserFields,
-		},
-		"IncidentType": ubx.FieldSpec{
-			WireName: "incident_type",
-			Kind: "object",
-			Fields: NotificationTemplate_Data_Relationships_CreatedByUserFields,
-		},
-		"LastModifiedByUser": ubx.FieldSpec{
-			WireName: "last_modified_by_user",
-			Kind: "object",
-			Fields: NotificationTemplate_Data_Relationships_CreatedByUserFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   NotificationTemplate_Data_Relationships_CreatedByUserFields,
+	},
+	"IncidentType": ubx.FieldSpec{
+		WireName: "incident_type",
+		Kind:     "object",
+		Fields:   NotificationTemplate_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   NotificationTemplate_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var NotificationTemplate_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: NotificationTemplate_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: NotificationTemplate_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   NotificationTemplate_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   NotificationTemplate_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type NotificationTemplateConfig struct {
 	// Notification template data for a create request.
@@ -161,8 +161,8 @@ var NotificationTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: NotificationTemplate_DataFields,
+			Kind:     "object",
+			Fields:   NotificationTemplate_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

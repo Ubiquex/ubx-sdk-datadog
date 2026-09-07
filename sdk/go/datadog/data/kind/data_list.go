@@ -6,19 +6,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DataList_Data_Attributes struct {
 	Description any
 	DisplayName any
-	Name any
+	Name        any
 }
 
 type DataList_Data_Meta struct {
-	CreatedAt any
+	CreatedAt  any
 	ModifiedAt any
 }
 
 type DataList_Data struct {
 	Attributes any
-	Id any
-	Meta any
-	Type any
+	Id         any
+	Meta       any
+	Type       any
 }
 
 type DataList_Meta struct {
@@ -38,6 +38,5 @@ type DataListAttrs struct {
 
 var DataList = ubx.DataSourceBinding{
 	WireType: "datadog_kind_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

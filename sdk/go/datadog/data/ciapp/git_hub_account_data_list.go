@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GitHubAccountDataList_Data_Attributes_Repositories struct {
 	Enabled any
-	Name any
+	Name    any
 }
 
 type GitHubAccountDataList_Data_Attributes struct {
-	Account any
-	Enabled any
-	Host any
-	RepoCount any
+	Account      any
+	Enabled      any
+	Host         any
+	RepoCount    any
 	Repositories any
 }
 
 type GitHubAccountDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type GitHubAccountDataListConfig struct {
@@ -31,6 +31,5 @@ type GitHubAccountDataListAttrs struct {
 
 var GitHubAccountDataList = ubx.DataSourceBinding{
 	WireType: "datadog_ciapp_git_hub_account_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

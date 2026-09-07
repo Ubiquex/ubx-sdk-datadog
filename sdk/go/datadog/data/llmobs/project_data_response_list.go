@@ -4,16 +4,16 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProjectDataResponseList_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Name any
-	UpdatedAt any
+	Name        any
+	UpdatedAt   any
 }
 
 type ProjectDataResponseList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ProjectDataResponseList_Meta struct {
@@ -33,6 +33,5 @@ type ProjectDataResponseListAttrs struct {
 
 var ProjectDataResponseList = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_project_data_response_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

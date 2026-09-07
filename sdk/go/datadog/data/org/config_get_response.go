@@ -31,7 +31,7 @@ type ConfigGetResponseConfig struct {
 
 type ConfigGetResponseAttrs struct {
 	// A single Org Config.
-	Data any
+	Data          any
 	OrgConfigName any
 }
 

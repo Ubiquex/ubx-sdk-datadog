@@ -5,37 +5,37 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleDataResponseList_Data_Attributes_Condition struct {
 	NormalizedQuery any
-	RawQuery any
+	RawQuery        any
 }
 
 type RuleDataResponseList_Data_Attributes_Conditions struct {
-	Field any
+	Field  any
 	Values any
 }
 
 type RuleDataResponseList_Data_Attributes struct {
-	Condition any
-	ConditionTableType any
-	Conditions any
-	Created any
-	CreatedByUuid any
-	Deleted any
-	Enabled any
-	ExecutionType any
+	Condition                       any
+	ConditionTableType              any
+	Conditions                      any
+	Created                         any
+	CreatedByUuid                   any
+	Deleted                         any
+	Enabled                         any
+	ExecutionType                   any
 	IncidentSettingsAssociationUuid any
-	MatchAnyCondition any
-	Modified any
-	ModifiedByUuid any
-	OrgId any
-	TaskId any
-	TaskPayload any
-	Trigger any
+	MatchAnyCondition               any
+	Modified                        any
+	ModifiedByUuid                  any
+	OrgId                           any
+	TaskId                          any
+	TaskPayload                     any
+	Trigger                         any
 }
 
 type RuleDataResponseList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RuleDataResponseListConfig struct {
@@ -44,7 +44,7 @@ type RuleDataResponseListConfig struct {
 
 type RuleDataResponseListAttrs struct {
 	// List of incident rules.
-	Data any
+	Data             any
 	IncidentTypeUuid any
 }
 

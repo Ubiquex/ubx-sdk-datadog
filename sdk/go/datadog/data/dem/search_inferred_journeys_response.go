@@ -5,54 +5,54 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SearchInferredJourneysResponse_Data_Attributes_JourneyRum_RumSteps_Nodes struct {
 	AppId any
-	Id any
+	Id    any
 	Query any
 }
 
 type SearchInferredJourneysResponse_Data_Attributes_JourneyRum_RumSteps struct {
 	Nodes any
-	Type any
+	Type  any
 }
 
 type SearchInferredJourneysResponse_Data_Attributes_JourneyRum_Variants struct {
-	Filter any
-	Id any
-	Name any
+	Filter   any
+	Id       any
+	Name     any
 	RumSteps any
 }
 
 type SearchInferredJourneysResponse_Data_Attributes_JourneyRum struct {
-	Filter any
+	Filter   any
 	RumSteps any
 	Variants any
 }
 
 type SearchInferredJourneysResponse_Data_Attributes_TestSuite struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type SearchInferredJourneysResponse_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	JourneyRum any
-	Name any
-	OrgId any
-	Rank any
-	Tags any
-	TestSuite any
-	Variants any
+	JourneyRum  any
+	Name        any
+	OrgId       any
+	Rank        any
+	Tags        any
+	TestSuite   any
+	Variants    any
 }
 
 type SearchInferredJourneysResponse_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type SearchInferredJourneysResponseConfig struct {
 	AppId any
-	Q any
+	Q     any
 	// The status of an inferred DEM journey.
 	Status any
 }
@@ -61,7 +61,7 @@ type SearchInferredJourneysResponseAttrs struct {
 	AppId any
 	// List of inferred journey items matching the search criteria.
 	Data any
-	Q any
+	Q    any
 	// The status of an inferred DEM journey.
 	Status any
 }
@@ -69,8 +69,8 @@ type SearchInferredJourneysResponseAttrs struct {
 var SearchInferredJourneysResponse = ubx.DataSourceBinding{
 	WireType: "datadog_dem_search_inferred_journeys_response",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"Q": ubx.FieldSpec{WireName: "q"},
+		"AppId":  ubx.FieldSpec{WireName: "app_id"},
+		"Q":      ubx.FieldSpec{WireName: "q"},
 		"Status": ubx.FieldSpec{WireName: "status"},
 	},
 }

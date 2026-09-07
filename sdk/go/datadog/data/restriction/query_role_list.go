@@ -9,8 +9,8 @@ type QueryRoleList_Data_Attributes struct {
 
 type QueryRoleList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type QueryRoleListConfig struct {
@@ -19,7 +19,7 @@ type QueryRoleListConfig struct {
 
 type QueryRoleListAttrs struct {
 	// Array of roles.
-	Data any
+	Data               any
 	RestrictionQueryId any
 }
 

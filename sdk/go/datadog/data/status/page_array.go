@@ -4,44 +4,44 @@ package status
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PageArray_Data_Attributes_Components_Components struct {
-	Id any
-	Name any
+	Id       any
+	Name     any
 	Position any
-	Status any
-	Type any
+	Status   any
+	Type     any
 }
 
 type PageArray_Data_Attributes_Components struct {
 	Components any
-	Id any
-	Name any
-	Position any
-	Status any
-	Type any
+	Id         any
+	Name       any
+	Position   any
+	Status     any
+	Type       any
 }
 
 type PageArray_Data_Attributes struct {
-	CompanyLogo any
-	Components any
-	CreatedAt any
-	CustomDomain any
-	CustomDomainEnabled any
-	DomainPrefix any
-	EmailHeaderImage any
-	Enabled any
-	Favicon any
-	ModifiedAt any
-	Name any
-	PageUrl any
-	SlackAppIcon any
+	CompanyLogo               any
+	Components                any
+	CreatedAt                 any
+	CustomDomain              any
+	CustomDomainEnabled       any
+	DomainPrefix              any
+	EmailHeaderImage          any
+	Enabled                   any
+	Favicon                   any
+	ModifiedAt                any
+	Name                      any
+	PageUrl                   any
+	SlackAppIcon              any
 	SlackSubscriptionsEnabled any
-	SubscriptionsEnabled any
-	Type any
-	VisualizationType any
+	SubscriptionsEnabled      any
+	Type                      any
+	VisualizationType         any
 }
 
 type PageArray_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -50,29 +50,29 @@ type PageArray_Data_Relationships_CreatedByUser struct {
 }
 
 type PageArray_Data_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type PageArray_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type PageArray_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type PageArray_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type PageArray_Meta_Page struct {
@@ -105,7 +105,7 @@ type PageArrayConfig struct {
 
 type PageArrayAttrs struct {
 	// A list of status page data objects.
-	Data any
+	Data    any
 	Include any
 	// The included related resources of a status page. Client must explicitly request these resources by name in the `include` query parameter.
 	Included any

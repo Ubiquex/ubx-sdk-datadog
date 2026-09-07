@@ -4,28 +4,28 @@ package team
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SyncDataList_Data_Attributes_SelectionState_ExternalId struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type SyncDataList_Data_Attributes_SelectionState struct {
 	ExternalId any
-	Operation any
-	Scope any
+	Operation  any
+	Scope      any
 }
 
 type SyncDataList_Data_Attributes struct {
-	Frequency any
+	Frequency      any
 	SelectionState any
-	Source any
+	Source         any
 	SyncMembership any
-	Type any
+	Type           any
 }
 
 type SyncDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type SyncDataListConfig struct {
@@ -38,6 +38,5 @@ type SyncDataListAttrs struct {
 
 var SyncDataList = ubx.DataSourceBinding{
 	WireType: "datadog_team_sync_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

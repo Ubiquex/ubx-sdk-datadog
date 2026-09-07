@@ -4,27 +4,27 @@ package snapshot
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataList_Data_Attributes struct {
-	ApplicationId any
-	CreatedAt any
-	CreatedBy any
-	CreatedByHandle any
-	CreatedByUserId any
-	DeviceType any
-	EventId any
+	ApplicationId              any
+	CreatedAt                  any
+	CreatedBy                  any
+	CreatedByHandle            any
+	CreatedByUserId            any
+	DeviceType                 any
+	EventId                    any
 	IsDeviceTypeSelectedByUser any
-	ModifiedAt any
-	OrgId any
-	SessionId any
-	SnapshotName any
-	Start any
-	ViewId any
-	ViewName any
+	ModifiedAt                 any
+	OrgId                      any
+	SessionId                  any
+	SnapshotName               any
+	Start                      any
+	ViewId                     any
+	ViewName                   any
 }
 
 type DataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataListConfig struct {
@@ -37,6 +37,5 @@ type DataListAttrs struct {
 
 var DataList = ubx.DataSourceBinding{
 	WireType: "datadog_snapshot_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

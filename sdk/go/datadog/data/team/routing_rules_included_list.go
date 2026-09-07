@@ -4,7 +4,7 @@ package team
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RoutingRulesIncludedList_Data_Relationships_Rules_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -28,35 +28,35 @@ type RoutingRulesIncludedList_Data struct {
 }
 
 type RoutingRulesIncludedList_Included_Attributes_Actions_SupportHours_Restrictions struct {
-	EndDay any
-	EndTime any
-	StartDay any
+	EndDay    any
+	EndTime   any
+	StartDay  any
 	StartTime any
 }
 
 type RoutingRulesIncludedList_Included_Attributes_Actions_SupportHours struct {
 	Restrictions any
-	TimeZone any
+	TimeZone     any
 }
 
 type RoutingRulesIncludedList_Included_Attributes_Actions struct {
 	AckTimeoutMinutes any
-	Channel any
-	Handle any
-	PolicyId any
-	SupportHours any
-	Team any
-	Tenant any
-	Type any
-	Urgency any
-	Workspace any
+	Channel           any
+	Handle            any
+	PolicyId          any
+	SupportHours      any
+	Team              any
+	Tenant            any
+	Type              any
+	Urgency           any
+	Workspace         any
 }
 
 type RoutingRulesIncludedList_Included_Attributes struct {
-	Actions any
-	Query any
+	Actions         any
+	Query           any
 	TimeRestriction any
-	Urgency any
+	Urgency         any
 }
 
 type RoutingRulesIncludedList_Included_Relationships_Policy struct {
@@ -68,30 +68,30 @@ type RoutingRulesIncludedList_Included_Relationships struct {
 }
 
 type RoutingRulesIncludedList_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type RoutingRulesIncludedListConfig struct {
 	Include any
-	TeamId any
+	TeamId  any
 }
 
 type RoutingRulesIncludedListAttrs struct {
 	// Represents the top-level data object for team routing rules, containing the ID, relationships, and resource type.
-	Data any
+	Data    any
 	Include any
 	// Provides related routing rules or other included resources.
 	Included any
-	TeamId any
+	TeamId   any
 }
 
 var RoutingRulesIncludedList = ubx.DataSourceBinding{
 	WireType: "datadog_team_routing_rules_included_list",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
+		"TeamId":  ubx.FieldSpec{WireName: "team_id"},
 	},
 }

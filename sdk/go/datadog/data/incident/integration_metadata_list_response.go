@@ -4,44 +4,44 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntegrationMetadataListResponse_Data_Attributes_Metadata_Channels struct {
-	ChannelId any
+	ChannelId   any
 	ChannelName any
 	RedirectUrl any
-	TeamId any
+	TeamId      any
 }
 
 type IntegrationMetadataListResponse_Data_Attributes_Metadata_Issues struct {
-	Account any
-	IssueKey any
+	Account     any
+	IssueKey    any
 	IssuetypeId any
-	ProjectKey any
+	ProjectKey  any
 	RedirectUrl any
 }
 
 type IntegrationMetadataListResponse_Data_Attributes_Metadata_Teams struct {
-	MsChannelId any
+	MsChannelId   any
 	MsChannelName any
-	MsTenantId any
-	RedirectUrl any
+	MsTenantId    any
+	RedirectUrl   any
 }
 
 type IntegrationMetadataListResponse_Data_Attributes_Metadata struct {
 	Channels any
-	Issues any
-	Teams any
+	Issues   any
+	Teams    any
 }
 
 type IntegrationMetadataListResponse_Data_Attributes struct {
-	Created any
-	IncidentId any
+	Created         any
+	IncidentId      any
 	IntegrationType any
-	Metadata any
-	Modified any
-	Status any
+	Metadata        any
+	Modified        any
+	Status          any
 }
 
 type IntegrationMetadataListResponse_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -50,32 +50,32 @@ type IntegrationMetadataListResponse_Data_Relationships_CreatedByUser struct {
 }
 
 type IntegrationMetadataListResponse_Data_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type IntegrationMetadataListResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type IntegrationMetadataListResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type IntegrationMetadataListResponse_Included_Relationships_OtherOrgs struct {
@@ -83,17 +83,17 @@ type IntegrationMetadataListResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type IntegrationMetadataListResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type IntegrationMetadataListResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type IntegrationMetadataListResponse_Meta_Pagination struct {
@@ -116,7 +116,7 @@ type IntegrationMetadataListResponseConfig struct {
 
 type IntegrationMetadataListResponseAttrs struct {
 	// An array of incident integration metadata.
-	Data any
+	Data       any
 	IncidentId any
 	// Included related resources that the user requested.
 	Included any

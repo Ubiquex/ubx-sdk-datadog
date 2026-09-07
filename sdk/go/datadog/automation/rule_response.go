@@ -85,94 +85,94 @@ type RuleResponse_Data struct {
 }
 
 var RuleResponse_Data_Attributes_Action_DataFields = ubx.FieldMap{
-		"AgentType": ubx.FieldSpec{WireName: "agent_type"},
-		"AssignedAgentId": ubx.FieldSpec{WireName: "assigned_agent_id"},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-	}
+	"AgentType":       ubx.FieldSpec{WireName: "agent_type"},
+	"AssignedAgentId": ubx.FieldSpec{WireName: "assigned_agent_id"},
+	"Handle":          ubx.FieldSpec{WireName: "handle"},
+}
 
 var RuleResponse_Data_Attributes_ActionFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_Action_DataFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_Action_DataFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var RuleResponse_Data_Attributes_Trigger_DataFields = ubx.FieldMap{
-		"ApprovalType": ubx.FieldSpec{WireName: "approval_type"},
-		"ChangeType": ubx.FieldSpec{WireName: "change_type"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"FromStatusName": ubx.FieldSpec{WireName: "from_status_name"},
-		"ToStatusName": ubx.FieldSpec{WireName: "to_status_name"},
-	}
+	"ApprovalType":   ubx.FieldSpec{WireName: "approval_type"},
+	"ChangeType":     ubx.FieldSpec{WireName: "change_type"},
+	"Field":          ubx.FieldSpec{WireName: "field"},
+	"FromStatusName": ubx.FieldSpec{WireName: "from_status_name"},
+	"ToStatusName":   ubx.FieldSpec{WireName: "to_status_name"},
+}
 
 var RuleResponse_Data_Attributes_TriggerFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_Trigger_DataFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_Trigger_DataFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_ActionFields,
-		},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Trigger": ubx.FieldSpec{
-			WireName: "trigger",
-			Kind: "object",
-			Fields: RuleResponse_Data_Attributes_TriggerFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_ActionFields,
+	},
+	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"State":      ubx.FieldSpec{WireName: "state"},
+	"Trigger": ubx.FieldSpec{
+		WireName: "trigger",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Attributes_TriggerFields,
+	},
+}
 
 var RuleResponse_Data_Relationships_CreatedBy_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var RuleResponse_Data_Relationships_CreatedByFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_Data_Relationships_CreatedBy_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Relationships_CreatedBy_DataFields,
+	},
+}
 
 var RuleResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"CreatedBy": ubx.FieldSpec{
-			WireName: "created_by",
-			Kind: "object",
-			Fields: RuleResponse_Data_Relationships_CreatedByFields,
-		},
-		"ModifiedBy": ubx.FieldSpec{
-			WireName: "modified_by",
-			Kind: "object",
-			Fields: RuleResponse_Data_Relationships_CreatedByFields,
-		},
-	}
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Relationships_CreatedByFields,
+	},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_Relationships_CreatedByFields,
+	},
+}
 
 var RuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: RuleResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: RuleResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   RuleResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type RuleResponseConfig struct {
 	// Data object for creating an automation rule.
@@ -197,10 +197,10 @@ var RuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: RuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   RuleResponse_DataFields,
 		},
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"RuleId":    ubx.FieldSpec{WireName: "rule_id"},
 	},
 }

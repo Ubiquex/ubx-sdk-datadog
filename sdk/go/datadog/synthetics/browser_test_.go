@@ -19,8 +19,8 @@ type BrowserTest_Config_Assertions struct {
 
 type BrowserTest_Config_ConfigVariables struct {
 	Example any
-	Id any
-	Name any
+	Id      any
+	Name    any
 	// Regular expression pattern used to generate random values for the config variable during test execution. (AI-inferred)
 	Pattern any
 	// Whether the config variable is a secure (hidden) variable. When set to true, the variable's value is not displayed in the UI or API responses. (AI-inferred)
@@ -48,22 +48,22 @@ type BrowserTest_Config_Request_BasicAuth struct {
 	// The client secret used for OAuth client authentication in the request's basic_auth configuration. (AI-inferred)
 	ClientSecret any
 	// The domain for NTLM authentication in the basic auth configuration. Used when the auth type is set to 'ntlm'. (AI-inferred)
-	Domain any
+	Domain    any
 	ExpiresIn any
-	Header any
+	Header    any
 	// The password to use for basic authentication against the requested endpoint. (AI-inferred)
 	Password any
-	Payload any
+	Payload  any
 	// The AWS region to use for SigV4 authentication. Only relevant when the basic authentication type is set to `sigv4`. (AI-inferred)
-	Region any
+	Region   any
 	Resource any
-	Scope any
+	Scope    any
 	// The password or secret used for basic authentication against the endpoint. (AI-inferred)
-	Secret any
+	Secret    any
 	SecretKey any
 	// The service name to use for NTLM authentication within the basic auth configuration. (AI-inferred)
-	ServiceName any
-	SessionToken any
+	ServiceName            any
+	SessionToken           any
 	TokenApiAuthentication any
 	// The prefix (scheme) to prepend to the token in the Authorization header, e.g., 'Bearer'. (AI-inferred)
 	TokenPrefix any
@@ -323,11 +323,11 @@ type BrowserTest_Steps struct {
 	ExitIfSucceed any
 	// Whether the step is critical. If set to `true`, a failure of this step causes the entire synthetic test to fail. If `false`, the step can fail without failing the test. Defaults to `false`. (AI-inferred)
 	IsCritical any
-	Name any
+	Name       any
 	// When set to true, screenshots are not taken for this step. (AI-inferred)
 	NoScreenshot any
 	// A dynamic object containing step-specific configuration, such as the element to interact with, text to input, or assertion details, depending on the step type in a Datadog synthetic browser test. (AI-inferred)
-	Params any
+	Params   any
 	PublicId any
 	// The maximum time, in milliseconds, to wait for the step to complete before failing. (AI-inferred)
 	Timeout any
@@ -336,274 +336,274 @@ type BrowserTest_Steps struct {
 }
 
 var BrowserTest_Config_AssertionsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Property": ubx.FieldSpec{WireName: "property"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"TimingsScope": ubx.FieldSpec{WireName: "timings_scope"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Code":         ubx.FieldSpec{WireName: "code"},
+	"Operator":     ubx.FieldSpec{WireName: "operator"},
+	"Property":     ubx.FieldSpec{WireName: "property"},
+	"Target":       ubx.FieldSpec{WireName: "target"},
+	"TimingsScope": ubx.FieldSpec{WireName: "timings_scope"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var BrowserTest_Config_ConfigVariablesFields = ubx.FieldMap{
-		"Example": ubx.FieldSpec{WireName: "example"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"Secure": ubx.FieldSpec{WireName: "secure"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Example": ubx.FieldSpec{WireName: "example"},
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Pattern": ubx.FieldSpec{WireName: "pattern"},
+	"Secure":  ubx.FieldSpec{WireName: "secure"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var BrowserTest_Config_Request_BasicAuth_AddClaimsFields = ubx.FieldMap{
-		"Exp": ubx.FieldSpec{WireName: "exp"},
-		"Iat": ubx.FieldSpec{WireName: "iat"},
-	}
+	"Exp": ubx.FieldSpec{WireName: "exp"},
+	"Iat": ubx.FieldSpec{WireName: "iat"},
+}
 
 var BrowserTest_Config_Request_BasicAuthFields = ubx.FieldMap{
-		"AccessKey": ubx.FieldSpec{WireName: "access_key"},
-		"AccessTokenUrl": ubx.FieldSpec{WireName: "access_token_url"},
-		"AddClaims": ubx.FieldSpec{
-			WireName: "add_claims",
-			Kind: "object",
-			Fields: BrowserTest_Config_Request_BasicAuth_AddClaimsFields,
-		},
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"ExpiresIn": ubx.FieldSpec{WireName: "expires_in"},
-		"Header": ubx.FieldSpec{WireName: "header"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"SecretKey": ubx.FieldSpec{WireName: "secret_key"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"SessionToken": ubx.FieldSpec{WireName: "session_token"},
-		"TokenApiAuthentication": ubx.FieldSpec{WireName: "token_api_authentication"},
-		"TokenPrefix": ubx.FieldSpec{WireName: "token_prefix"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"Workstation": ubx.FieldSpec{WireName: "workstation"},
-	}
+	"AccessKey":      ubx.FieldSpec{WireName: "access_key"},
+	"AccessTokenUrl": ubx.FieldSpec{WireName: "access_token_url"},
+	"AddClaims": ubx.FieldSpec{
+		WireName: "add_claims",
+		Kind:     "object",
+		Fields:   BrowserTest_Config_Request_BasicAuth_AddClaimsFields,
+	},
+	"Algorithm":              ubx.FieldSpec{WireName: "algorithm"},
+	"Audience":               ubx.FieldSpec{WireName: "audience"},
+	"ClientId":               ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":           ubx.FieldSpec{WireName: "client_secret"},
+	"Domain":                 ubx.FieldSpec{WireName: "domain"},
+	"ExpiresIn":              ubx.FieldSpec{WireName: "expires_in"},
+	"Header":                 ubx.FieldSpec{WireName: "header"},
+	"Password":               ubx.FieldSpec{WireName: "password"},
+	"Payload":                ubx.FieldSpec{WireName: "payload"},
+	"Region":                 ubx.FieldSpec{WireName: "region"},
+	"Resource":               ubx.FieldSpec{WireName: "resource"},
+	"Scope":                  ubx.FieldSpec{WireName: "scope"},
+	"Secret":                 ubx.FieldSpec{WireName: "secret"},
+	"SecretKey":              ubx.FieldSpec{WireName: "secret_key"},
+	"ServiceName":            ubx.FieldSpec{WireName: "service_name"},
+	"SessionToken":           ubx.FieldSpec{WireName: "session_token"},
+	"TokenApiAuthentication": ubx.FieldSpec{WireName: "token_api_authentication"},
+	"TokenPrefix":            ubx.FieldSpec{WireName: "token_prefix"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+	"Username":               ubx.FieldSpec{WireName: "username"},
+	"Workstation":            ubx.FieldSpec{WireName: "workstation"},
+}
 
 var BrowserTest_Config_Request_Certificate_CertFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Filename": ubx.FieldSpec{WireName: "filename"},
-		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-	}
+	"Content":   ubx.FieldSpec{WireName: "content"},
+	"Filename":  ubx.FieldSpec{WireName: "filename"},
+	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+}
 
 var BrowserTest_Config_Request_CertificateFields = ubx.FieldMap{
-		"Cert": ubx.FieldSpec{
-			WireName: "cert",
-			Kind: "object",
-			Fields: BrowserTest_Config_Request_Certificate_CertFields,
-		},
-		"Key": ubx.FieldSpec{
-			WireName: "key",
-			Kind: "object",
-			Fields: BrowserTest_Config_Request_Certificate_CertFields,
-		},
-	}
+	"Cert": ubx.FieldSpec{
+		WireName: "cert",
+		Kind:     "object",
+		Fields:   BrowserTest_Config_Request_Certificate_CertFields,
+	},
+	"Key": ubx.FieldSpec{
+		WireName: "key",
+		Kind:     "object",
+		Fields:   BrowserTest_Config_Request_Certificate_CertFields,
+	},
+}
 
 var BrowserTest_Config_Request_FilesFields = ubx.FieldMap{
-		"BucketKey": ubx.FieldSpec{WireName: "bucket_key"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OriginalFileName": ubx.FieldSpec{WireName: "original_file_name"},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"BucketKey":        ubx.FieldSpec{WireName: "bucket_key"},
+	"Content":          ubx.FieldSpec{WireName: "content"},
+	"Encoding":         ubx.FieldSpec{WireName: "encoding"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"OriginalFileName": ubx.FieldSpec{WireName: "original_file_name"},
+	"Size":             ubx.FieldSpec{WireName: "size"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 var BrowserTest_Config_Request_ProxyFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Headers": ubx.FieldSpec{WireName: "headers"},
+	"Url":     ubx.FieldSpec{WireName: "url"},
+}
 
 var BrowserTest_Config_RequestFields = ubx.FieldMap{
-		"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
-		"BasicAuth": ubx.FieldSpec{
-			WireName: "basic_auth",
-			Kind: "object",
-			Fields: BrowserTest_Config_Request_BasicAuthFields,
-		},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"BodyType": ubx.FieldSpec{WireName: "body_type"},
-		"CallType": ubx.FieldSpec{WireName: "call_type"},
-		"Certificate": ubx.FieldSpec{
-			WireName: "certificate",
-			Kind: "object",
-			Fields: BrowserTest_Config_Request_CertificateFields,
-		},
-		"CertificateDomains": ubx.FieldSpec{WireName: "certificate_domains"},
-		"CheckCertificateRevocation": ubx.FieldSpec{WireName: "check_certificate_revocation"},
-		"CompressedJsonDescriptor": ubx.FieldSpec{WireName: "compressed_json_descriptor"},
-		"CompressedProtoFile": ubx.FieldSpec{WireName: "compressed_proto_file"},
-		"DisableAiaIntermediateFetching": ubx.FieldSpec{WireName: "disable_aia_intermediate_fetching"},
-		"DnsServer": ubx.FieldSpec{WireName: "dns_server"},
-		"DnsServerPort": ubx.FieldSpec{WireName: "dns_server_port"},
-		"Files": ubx.FieldSpec{
-			WireName: "files",
-			Kind: "list",
-			Fields: BrowserTest_Config_Request_FilesFields,
-		},
-		"FollowRedirects": ubx.FieldSpec{WireName: "follow_redirects"},
-		"Form": ubx.FieldSpec{WireName: "form"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"HttpVersion": ubx.FieldSpec{WireName: "http_version"},
-		"IgnoreCertificateValidation": ubx.FieldSpec{WireName: "ignore_certificate_validation"},
-		"IsMessageBase64Encoded": ubx.FieldSpec{WireName: "is_message_base64_encoded"},
-		"McpProtocolVersion": ubx.FieldSpec{WireName: "mcp_protocol_version"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"NoSavingResponseBody": ubx.FieldSpec{WireName: "no_saving_response_body"},
-		"NumberOfPackets": ubx.FieldSpec{WireName: "number_of_packets"},
-		"PersistCookies": ubx.FieldSpec{WireName: "persist_cookies"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Proxy": ubx.FieldSpec{
-			WireName: "proxy",
-			Kind: "object",
-			Fields: BrowserTest_Config_Request_ProxyFields,
-		},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Servername": ubx.FieldSpec{WireName: "servername"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"ShouldTrackHops": ubx.FieldSpec{WireName: "should_track_hops"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"ToolArgs": ubx.FieldSpec{WireName: "tool_args"},
-		"ToolName": ubx.FieldSpec{WireName: "tool_name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
+	"BasicAuth": ubx.FieldSpec{
+		WireName: "basic_auth",
+		Kind:     "object",
+		Fields:   BrowserTest_Config_Request_BasicAuthFields,
+	},
+	"Body":     ubx.FieldSpec{WireName: "body"},
+	"BodyType": ubx.FieldSpec{WireName: "body_type"},
+	"CallType": ubx.FieldSpec{WireName: "call_type"},
+	"Certificate": ubx.FieldSpec{
+		WireName: "certificate",
+		Kind:     "object",
+		Fields:   BrowserTest_Config_Request_CertificateFields,
+	},
+	"CertificateDomains":             ubx.FieldSpec{WireName: "certificate_domains"},
+	"CheckCertificateRevocation":     ubx.FieldSpec{WireName: "check_certificate_revocation"},
+	"CompressedJsonDescriptor":       ubx.FieldSpec{WireName: "compressed_json_descriptor"},
+	"CompressedProtoFile":            ubx.FieldSpec{WireName: "compressed_proto_file"},
+	"DisableAiaIntermediateFetching": ubx.FieldSpec{WireName: "disable_aia_intermediate_fetching"},
+	"DnsServer":                      ubx.FieldSpec{WireName: "dns_server"},
+	"DnsServerPort":                  ubx.FieldSpec{WireName: "dns_server_port"},
+	"Files": ubx.FieldSpec{
+		WireName: "files",
+		Kind:     "list",
+		Fields:   BrowserTest_Config_Request_FilesFields,
+	},
+	"FollowRedirects":             ubx.FieldSpec{WireName: "follow_redirects"},
+	"Form":                        ubx.FieldSpec{WireName: "form"},
+	"Headers":                     ubx.FieldSpec{WireName: "headers"},
+	"Host":                        ubx.FieldSpec{WireName: "host"},
+	"HttpVersion":                 ubx.FieldSpec{WireName: "http_version"},
+	"IgnoreCertificateValidation": ubx.FieldSpec{WireName: "ignore_certificate_validation"},
+	"IsMessageBase64Encoded":      ubx.FieldSpec{WireName: "is_message_base64_encoded"},
+	"McpProtocolVersion":          ubx.FieldSpec{WireName: "mcp_protocol_version"},
+	"Message":                     ubx.FieldSpec{WireName: "message"},
+	"Metadata":                    ubx.FieldSpec{WireName: "metadata"},
+	"Method":                      ubx.FieldSpec{WireName: "method"},
+	"NoSavingResponseBody":        ubx.FieldSpec{WireName: "no_saving_response_body"},
+	"NumberOfPackets":             ubx.FieldSpec{WireName: "number_of_packets"},
+	"PersistCookies":              ubx.FieldSpec{WireName: "persist_cookies"},
+	"Port":                        ubx.FieldSpec{WireName: "port"},
+	"Proxy": ubx.FieldSpec{
+		WireName: "proxy",
+		Kind:     "object",
+		Fields:   BrowserTest_Config_Request_ProxyFields,
+	},
+	"Query":           ubx.FieldSpec{WireName: "query"},
+	"Servername":      ubx.FieldSpec{WireName: "servername"},
+	"Service":         ubx.FieldSpec{WireName: "service"},
+	"ShouldTrackHops": ubx.FieldSpec{WireName: "should_track_hops"},
+	"Timeout":         ubx.FieldSpec{WireName: "timeout"},
+	"ToolArgs":        ubx.FieldSpec{WireName: "tool_args"},
+	"ToolName":        ubx.FieldSpec{WireName: "tool_name"},
+	"Url":             ubx.FieldSpec{WireName: "url"},
+}
 
 var BrowserTest_ConfigFields = ubx.FieldMap{
-		"Assertions": ubx.FieldSpec{
-			WireName: "assertions",
-			Kind: "list",
-			Fields: BrowserTest_Config_AssertionsFields,
-		},
-		"ConfigVariables": ubx.FieldSpec{
-			WireName: "config_variables",
-			Kind: "list",
-			Fields: BrowserTest_Config_ConfigVariablesFields,
-		},
-		"Request": ubx.FieldSpec{
-			WireName: "request",
-			Kind: "object",
-			Fields: BrowserTest_Config_RequestFields,
-		},
-		"SetCookie": ubx.FieldSpec{WireName: "set_cookie"},
-		"Variables": ubx.FieldSpec{
-			WireName: "variables",
-			Kind: "list",
-			Fields: BrowserTest_Config_ConfigVariablesFields,
-		},
-	}
+	"Assertions": ubx.FieldSpec{
+		WireName: "assertions",
+		Kind:     "list",
+		Fields:   BrowserTest_Config_AssertionsFields,
+	},
+	"ConfigVariables": ubx.FieldSpec{
+		WireName: "config_variables",
+		Kind:     "list",
+		Fields:   BrowserTest_Config_ConfigVariablesFields,
+	},
+	"Request": ubx.FieldSpec{
+		WireName: "request",
+		Kind:     "object",
+		Fields:   BrowserTest_Config_RequestFields,
+	},
+	"SetCookie": ubx.FieldSpec{WireName: "set_cookie"},
+	"Variables": ubx.FieldSpec{
+		WireName: "variables",
+		Kind:     "list",
+		Fields:   BrowserTest_Config_ConfigVariablesFields,
+	},
+}
 
 var BrowserTest_Options_CiFields = ubx.FieldMap{
-		"ExecutionRule": ubx.FieldSpec{WireName: "execution_rule"},
-	}
+	"ExecutionRule": ubx.FieldSpec{WireName: "execution_rule"},
+}
 
 var BrowserTest_Options_MonitorOptionsFields = ubx.FieldMap{
-		"EscalationMessage": ubx.FieldSpec{WireName: "escalation_message"},
-		"NotificationPresetName": ubx.FieldSpec{WireName: "notification_preset_name"},
-		"RenotifyInterval": ubx.FieldSpec{WireName: "renotify_interval"},
-		"RenotifyOccurrences": ubx.FieldSpec{WireName: "renotify_occurrences"},
-	}
+	"EscalationMessage":      ubx.FieldSpec{WireName: "escalation_message"},
+	"NotificationPresetName": ubx.FieldSpec{WireName: "notification_preset_name"},
+	"RenotifyInterval":       ubx.FieldSpec{WireName: "renotify_interval"},
+	"RenotifyOccurrences":    ubx.FieldSpec{WireName: "renotify_occurrences"},
+}
 
 var BrowserTest_Options_RetryFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-	}
+	"Count":    ubx.FieldSpec{WireName: "count"},
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+}
 
 var BrowserTest_Options_RumSettingsFields = ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"ClientTokenId": ubx.FieldSpec{WireName: "client_token_id"},
-		"IsEnabled": ubx.FieldSpec{WireName: "is_enabled"},
-	}
+	"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+	"ClientTokenId": ubx.FieldSpec{WireName: "client_token_id"},
+	"IsEnabled":     ubx.FieldSpec{WireName: "is_enabled"},
+}
 
 var BrowserTest_Options_Scheduling_TimeframesFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
-	}
+	"Day":  ubx.FieldSpec{WireName: "day"},
+	"From": ubx.FieldSpec{WireName: "from"},
+	"To":   ubx.FieldSpec{WireName: "to"},
+}
 
 var BrowserTest_Options_SchedulingFields = ubx.FieldMap{
-		"Timeframes": ubx.FieldSpec{
-			WireName: "timeframes",
-			Kind: "list",
-			Fields: BrowserTest_Options_Scheduling_TimeframesFields,
-		},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Timeframes": ubx.FieldSpec{
+		WireName: "timeframes",
+		Kind:     "list",
+		Fields:   BrowserTest_Options_Scheduling_TimeframesFields,
+	},
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 var BrowserTest_OptionsFields = ubx.FieldMap{
-		"AcceptSelfSigned": ubx.FieldSpec{WireName: "accept_self_signed"},
-		"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
-		"BlockedRequestPatterns": ubx.FieldSpec{WireName: "blocked_request_patterns"},
-		"CaptureNetworkPayloads": ubx.FieldSpec{WireName: "capture_network_payloads"},
-		"CheckCertificateRevocation": ubx.FieldSpec{WireName: "check_certificate_revocation"},
-		"Ci": ubx.FieldSpec{
-			WireName: "ci",
-			Kind: "object",
-			Fields: BrowserTest_Options_CiFields,
-		},
-		"DeviceIds": ubx.FieldSpec{WireName: "device_ids"},
-		"DisableAiaIntermediateFetching": ubx.FieldSpec{WireName: "disable_aia_intermediate_fetching"},
-		"DisableCors": ubx.FieldSpec{WireName: "disable_cors"},
-		"DisableCsp": ubx.FieldSpec{WireName: "disable_csp"},
-		"EnableProfiling": ubx.FieldSpec{WireName: "enable_profiling"},
-		"EnableSecurityTesting": ubx.FieldSpec{WireName: "enable_security_testing"},
-		"FollowRedirects": ubx.FieldSpec{WireName: "follow_redirects"},
-		"HttpVersion": ubx.FieldSpec{WireName: "http_version"},
-		"IgnoreCertificateValidation": ubx.FieldSpec{WireName: "ignore_certificate_validation"},
-		"IgnoreServerCertificateError": ubx.FieldSpec{WireName: "ignore_server_certificate_error"},
-		"InitialNavigationTimeout": ubx.FieldSpec{WireName: "initial_navigation_timeout"},
-		"MinFailureDuration": ubx.FieldSpec{WireName: "min_failure_duration"},
-		"MinLocationFailed": ubx.FieldSpec{WireName: "min_location_failed"},
-		"MonitorName": ubx.FieldSpec{WireName: "monitor_name"},
-		"MonitorOptions": ubx.FieldSpec{
-			WireName: "monitor_options",
-			Kind: "object",
-			Fields: BrowserTest_Options_MonitorOptionsFields,
-		},
-		"MonitorPriority": ubx.FieldSpec{WireName: "monitor_priority"},
-		"NoScreenshot": ubx.FieldSpec{WireName: "no_screenshot"},
-		"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
-		"Retry": ubx.FieldSpec{
-			WireName: "retry",
-			Kind: "object",
-			Fields: BrowserTest_Options_RetryFields,
-		},
-		"RumSettings": ubx.FieldSpec{
-			WireName: "rum_settings",
-			Kind: "object",
-			Fields: BrowserTest_Options_RumSettingsFields,
-		},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: BrowserTest_Options_SchedulingFields,
-		},
-		"TickEvery": ubx.FieldSpec{WireName: "tick_every"},
-	}
+	"AcceptSelfSigned":           ubx.FieldSpec{WireName: "accept_self_signed"},
+	"AllowInsecure":              ubx.FieldSpec{WireName: "allow_insecure"},
+	"BlockedRequestPatterns":     ubx.FieldSpec{WireName: "blocked_request_patterns"},
+	"CaptureNetworkPayloads":     ubx.FieldSpec{WireName: "capture_network_payloads"},
+	"CheckCertificateRevocation": ubx.FieldSpec{WireName: "check_certificate_revocation"},
+	"Ci": ubx.FieldSpec{
+		WireName: "ci",
+		Kind:     "object",
+		Fields:   BrowserTest_Options_CiFields,
+	},
+	"DeviceIds":                      ubx.FieldSpec{WireName: "device_ids"},
+	"DisableAiaIntermediateFetching": ubx.FieldSpec{WireName: "disable_aia_intermediate_fetching"},
+	"DisableCors":                    ubx.FieldSpec{WireName: "disable_cors"},
+	"DisableCsp":                     ubx.FieldSpec{WireName: "disable_csp"},
+	"EnableProfiling":                ubx.FieldSpec{WireName: "enable_profiling"},
+	"EnableSecurityTesting":          ubx.FieldSpec{WireName: "enable_security_testing"},
+	"FollowRedirects":                ubx.FieldSpec{WireName: "follow_redirects"},
+	"HttpVersion":                    ubx.FieldSpec{WireName: "http_version"},
+	"IgnoreCertificateValidation":    ubx.FieldSpec{WireName: "ignore_certificate_validation"},
+	"IgnoreServerCertificateError":   ubx.FieldSpec{WireName: "ignore_server_certificate_error"},
+	"InitialNavigationTimeout":       ubx.FieldSpec{WireName: "initial_navigation_timeout"},
+	"MinFailureDuration":             ubx.FieldSpec{WireName: "min_failure_duration"},
+	"MinLocationFailed":              ubx.FieldSpec{WireName: "min_location_failed"},
+	"MonitorName":                    ubx.FieldSpec{WireName: "monitor_name"},
+	"MonitorOptions": ubx.FieldSpec{
+		WireName: "monitor_options",
+		Kind:     "object",
+		Fields:   BrowserTest_Options_MonitorOptionsFields,
+	},
+	"MonitorPriority": ubx.FieldSpec{WireName: "monitor_priority"},
+	"NoScreenshot":    ubx.FieldSpec{WireName: "no_screenshot"},
+	"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
+	"Retry": ubx.FieldSpec{
+		WireName: "retry",
+		Kind:     "object",
+		Fields:   BrowserTest_Options_RetryFields,
+	},
+	"RumSettings": ubx.FieldSpec{
+		WireName: "rum_settings",
+		Kind:     "object",
+		Fields:   BrowserTest_Options_RumSettingsFields,
+	},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   BrowserTest_Options_SchedulingFields,
+	},
+	"TickEvery": ubx.FieldSpec{WireName: "tick_every"},
+}
 
 var BrowserTest_StepsFields = ubx.FieldMap{
-		"AllowFailure": ubx.FieldSpec{WireName: "allow_failure"},
-		"AlwaysExecute": ubx.FieldSpec{WireName: "always_execute"},
-		"ExitIfSucceed": ubx.FieldSpec{WireName: "exit_if_succeed"},
-		"IsCritical": ubx.FieldSpec{WireName: "is_critical"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NoScreenshot": ubx.FieldSpec{WireName: "no_screenshot"},
-		"Params": ubx.FieldSpec{WireName: "params"},
-		"PublicId": ubx.FieldSpec{WireName: "public_id"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AllowFailure":  ubx.FieldSpec{WireName: "allow_failure"},
+	"AlwaysExecute": ubx.FieldSpec{WireName: "always_execute"},
+	"ExitIfSucceed": ubx.FieldSpec{WireName: "exit_if_succeed"},
+	"IsCritical":    ubx.FieldSpec{WireName: "is_critical"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"NoScreenshot":  ubx.FieldSpec{WireName: "no_screenshot"},
+	"Params":        ubx.FieldSpec{WireName: "params"},
+	"PublicId":      ubx.FieldSpec{WireName: "public_id"},
+	"Timeout":       ubx.FieldSpec{WireName: "timeout"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 type BrowserTestConfig struct {
 	// Configuration object for a Synthetic browser test.
@@ -656,22 +656,22 @@ var BrowserTest = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: BrowserTest_ConfigFields,
+			Kind:     "object",
+			Fields:   BrowserTest_ConfigFields,
 		},
 		"Locations": ubx.FieldSpec{WireName: "locations"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Message":   ubx.FieldSpec{WireName: "message"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: BrowserTest_OptionsFields,
+			Kind:     "object",
+			Fields:   BrowserTest_OptionsFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Steps": ubx.FieldSpec{
 			WireName: "steps",
-			Kind: "list",
-			Fields: BrowserTest_StepsFields,
+			Kind:     "list",
+			Fields:   BrowserTest_StepsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Type": ubx.FieldSpec{WireName: "type"},

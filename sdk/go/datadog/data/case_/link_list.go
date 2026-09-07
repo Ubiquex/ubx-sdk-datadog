@@ -4,38 +4,38 @@ package case_
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LinkList_Data_Attributes struct {
-	ChildEntityId any
-	ChildEntityType any
-	ParentEntityId any
+	ChildEntityId    any
+	ChildEntityType  any
+	ParentEntityId   any
 	ParentEntityType any
-	Relationship any
+	Relationship     any
 }
 
 type LinkList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type LinkListConfig struct {
-	EntityId any
-	EntityType any
+	EntityId     any
+	EntityType   any
 	Relationship any
 }
 
 type LinkListAttrs struct {
 	// A list of case links.
-	Data any
-	EntityId any
-	EntityType any
+	Data         any
+	EntityId     any
+	EntityType   any
 	Relationship any
 }
 
 var LinkList = ubx.DataSourceBinding{
 	WireType: "datadog_case_link_list",
 	Fields: ubx.FieldMap{
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
+		"EntityId":     ubx.FieldSpec{WireName: "entity_id"},
+		"EntityType":   ubx.FieldSpec{WireName: "entity_type"},
 		"Relationship": ubx.FieldSpec{WireName: "relationship"},
 	},
 }

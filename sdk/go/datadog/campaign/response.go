@@ -42,30 +42,30 @@ type Response_Data struct {
 }
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DueDate": ubx.FieldSpec{WireName: "due_date"},
-		"EntityScope": ubx.FieldSpec{WireName: "entity_scope"},
-		"Guidance": ubx.FieldSpec{WireName: "guidance"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
-		"OwnerId": ubx.FieldSpec{WireName: "owner_id"},
-		"RuleIds": ubx.FieldSpec{WireName: "rule_ids"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"CreatedAt":   ubx.FieldSpec{WireName: "created_at"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DueDate":     ubx.FieldSpec{WireName: "due_date"},
+	"EntityScope": ubx.FieldSpec{WireName: "entity_scope"},
+	"Guidance":    ubx.FieldSpec{WireName: "guidance"},
+	"Key":         ubx.FieldSpec{WireName: "key"},
+	"ModifiedAt":  ubx.FieldSpec{WireName: "modified_at"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Owner":       ubx.FieldSpec{WireName: "owner"},
+	"OwnerId":     ubx.FieldSpec{WireName: "owner_id"},
+	"RuleIds":     ubx.FieldSpec{WireName: "rule_ids"},
+	"StartDate":   ubx.FieldSpec{WireName: "start_date"},
+	"Status":      ubx.FieldSpec{WireName: "status"},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Data for creating a new campaign.
@@ -86,8 +86,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"CampaignId": ubx.FieldSpec{WireName: "campaign_id"},
 	},

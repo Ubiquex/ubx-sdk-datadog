@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectionList_Data_Attributes struct {
 	ManagedBy any
-	Source any
+	Source    any
 }
 
 type ConnectionList_Data_Relationships_ConnectedTeam_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -19,14 +19,14 @@ type ConnectionList_Data_Relationships_ConnectedTeam struct {
 
 type ConnectionList_Data_Relationships struct {
 	ConnectedTeam any
-	Team any
+	Team          any
 }
 
 type ConnectionList_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ConnectionList_Meta_Page struct {
@@ -65,6 +65,5 @@ type ConnectionListAttrs struct {
 
 var ConnectionList = ubx.DataSourceBinding{
 	WireType: "datadog_team_connection_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

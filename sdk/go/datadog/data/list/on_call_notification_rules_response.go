@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OnCallNotificationRulesResponse_Data_Attributes_ChannelSettings struct {
 	Method any
-	Type any
+	Type   any
 }
 
 type OnCallNotificationRulesResponse_Data_Attributes struct {
-	Category any
+	Category        any
 	ChannelSettings any
-	DelayMinutes any
+	DelayMinutes    any
 }
 
 type OnCallNotificationRulesResponse_Data_Relationships_Channel_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -28,23 +28,23 @@ type OnCallNotificationRulesResponse_Data_Relationships struct {
 }
 
 type OnCallNotificationRulesResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type OnCallNotificationRulesResponse_Included_Attributes_Config struct {
-	Address any
+	Address         any
 	ApplicationName any
-	DeviceName any
-	Formats any
+	DeviceName      any
+	Formats         any
 	FormattedNumber any
-	Number any
-	Region any
+	Number          any
+	Region          any
 	SmsSubscribedAt any
-	Type any
-	Verified any
+	Type            any
+	Verified        any
 }
 
 type OnCallNotificationRulesResponse_Included_Attributes struct {
@@ -54,27 +54,27 @@ type OnCallNotificationRulesResponse_Included_Attributes struct {
 
 type OnCallNotificationRulesResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type OnCallNotificationRulesResponseConfig struct {
 	Include any
-	UserId any
+	UserId  any
 }
 
 type OnCallNotificationRulesResponseAttrs struct {
 	// Array of notification rule data objects.
-	Data any
-	Include any
+	Data     any
+	Include  any
 	Included any
-	UserId any
+	UserId   any
 }
 
 var OnCallNotificationRulesResponse = ubx.DataSourceBinding{
 	WireType: "datadog_list_on_call_notification_rules_response",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":  ubx.FieldSpec{WireName: "user_id"},
 	},
 }

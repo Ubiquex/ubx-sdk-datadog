@@ -4,20 +4,20 @@ package process
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SummaryList_Data_Attributes struct {
-	Cmdline any
-	Host any
-	Pid any
-	Ppid any
-	Start any
-	Tags any
+	Cmdline   any
+	Host      any
+	Pid       any
+	Ppid      any
+	Start     any
+	Tags      any
 	Timestamp any
-	User any
+	User      any
 }
 
 type SummaryList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type SummaryList_Meta_Page struct {
@@ -33,10 +33,10 @@ type SummaryList_Meta struct {
 }
 
 type SummaryListConfig struct {
-	From any
+	From   any
 	Search any
-	Tags any
-	To any
+	Tags   any
+	To     any
 }
 
 type SummaryListAttrs struct {
@@ -44,18 +44,18 @@ type SummaryListAttrs struct {
 	Data any
 	From any
 	// Response metadata object.
-	Meta any
+	Meta   any
 	Search any
-	Tags any
-	To any
+	Tags   any
+	To     any
 }
 
 var SummaryList = ubx.DataSourceBinding{
 	WireType: "datadog_process_summary_list",
 	Fields: ubx.FieldMap{
-		"From": ubx.FieldSpec{WireName: "from"},
+		"From":   ubx.FieldSpec{WireName: "from"},
 		"Search": ubx.FieldSpec{WireName: "search"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"Tags":   ubx.FieldSpec{WireName: "tags"},
+		"To":     ubx.FieldSpec{WireName: "to"},
 	},
 }

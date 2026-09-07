@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes_CustomAttributes struct {
 	IsMulti any
-	Type any
-	Value any
+	Type    any
+	Value   any
 }
 
 type Response_Data_Attributes_JiraIssue_Result struct {
@@ -111,122 +111,122 @@ type Response_Data struct {
 }
 
 var Response_Data_Attributes_CustomAttributesFields = ubx.FieldMap{
-		"IsMulti": ubx.FieldSpec{WireName: "is_multi"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"IsMulti": ubx.FieldSpec{WireName: "is_multi"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"Value":   ubx.FieldSpec{WireName: "value"},
+}
 
 var Response_Data_Attributes_JiraIssue_ResultFields = ubx.FieldMap{
-		"IssueId": ubx.FieldSpec{WireName: "issue_id"},
-		"IssueKey": ubx.FieldSpec{WireName: "issue_key"},
-		"IssueUrl": ubx.FieldSpec{WireName: "issue_url"},
-		"ProjectKey": ubx.FieldSpec{WireName: "project_key"},
-	}
+	"IssueId":    ubx.FieldSpec{WireName: "issue_id"},
+	"IssueKey":   ubx.FieldSpec{WireName: "issue_key"},
+	"IssueUrl":   ubx.FieldSpec{WireName: "issue_url"},
+	"ProjectKey": ubx.FieldSpec{WireName: "project_key"},
+}
 
 var Response_Data_Attributes_JiraIssueFields = ubx.FieldMap{
-		"Result": ubx.FieldSpec{
-			WireName: "result",
-			Kind: "object",
-			Fields: Response_Data_Attributes_JiraIssue_ResultFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Result": ubx.FieldSpec{
+		WireName: "result",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_JiraIssue_ResultFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Response_Data_Attributes_ServiceNowTicket_ResultFields = ubx.FieldMap{
-		"SysTargetLink": ubx.FieldSpec{WireName: "sys_target_link"},
-	}
+	"SysTargetLink": ubx.FieldSpec{WireName: "sys_target_link"},
+}
 
 var Response_Data_Attributes_ServiceNowTicketFields = ubx.FieldMap{
-		"Result": ubx.FieldSpec{
-			WireName: "result",
-			Kind: "object",
-			Fields: Response_Data_Attributes_ServiceNowTicket_ResultFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Result": ubx.FieldSpec{
+		WireName: "result",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_ServiceNowTicket_ResultFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"ArchivedAt": ubx.FieldSpec{WireName: "archived_at"},
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"ClosedAt": ubx.FieldSpec{WireName: "closed_at"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CustomAttributes": ubx.FieldSpec{
-			WireName: "custom_attributes",
-			Kind: "map",
-			Fields: Response_Data_Attributes_CustomAttributesFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"JiraIssue": ubx.FieldSpec{
-			WireName: "jira_issue",
-			Kind: "object",
-			Fields: Response_Data_Attributes_JiraIssueFields,
-		},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"ServiceNowTicket": ubx.FieldSpec{
-			WireName: "service_now_ticket",
-			Kind: "object",
-			Fields: Response_Data_Attributes_ServiceNowTicketFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"StatusGroup": ubx.FieldSpec{WireName: "status_group"},
-		"StatusName": ubx.FieldSpec{WireName: "status_name"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"TypeId": ubx.FieldSpec{WireName: "type_id"},
-	}
+	"ArchivedAt": ubx.FieldSpec{WireName: "archived_at"},
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"ClosedAt":   ubx.FieldSpec{WireName: "closed_at"},
+	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
+	"CustomAttributes": ubx.FieldSpec{
+		WireName: "custom_attributes",
+		Kind:     "map",
+		Fields:   Response_Data_Attributes_CustomAttributesFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"JiraIssue": ubx.FieldSpec{
+		WireName: "jira_issue",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_JiraIssueFields,
+	},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"Priority":   ubx.FieldSpec{WireName: "priority"},
+	"ServiceNowTicket": ubx.FieldSpec{
+		WireName: "service_now_ticket",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_ServiceNowTicketFields,
+	},
+	"Status":      ubx.FieldSpec{WireName: "status"},
+	"StatusGroup": ubx.FieldSpec{WireName: "status_group"},
+	"StatusName":  ubx.FieldSpec{WireName: "status_name"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+	"TypeId":      ubx.FieldSpec{WireName: "type_id"},
+}
 
 var Response_Data_Relationships_Assignee_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_Relationships_AssigneeFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: Response_Data_Relationships_Assignee_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_Assignee_DataFields,
+	},
+}
 
 var Response_Data_RelationshipsFields = ubx.FieldMap{
-		"Assignee": ubx.FieldSpec{
-			WireName: "assignee",
-			Kind: "object",
-			Fields: Response_Data_Relationships_AssigneeFields,
-		},
-		"CreatedBy": ubx.FieldSpec{
-			WireName: "created_by",
-			Kind: "object",
-			Fields: Response_Data_Relationships_AssigneeFields,
-		},
-		"ModifiedBy": ubx.FieldSpec{
-			WireName: "modified_by",
-			Kind: "object",
-			Fields: Response_Data_Relationships_AssigneeFields,
-		},
-		"Project": ubx.FieldSpec{
-			WireName: "project",
-			Kind: "object",
-			Fields: Response_Data_Relationships_AssigneeFields,
-		},
-	}
+	"Assignee": ubx.FieldSpec{
+		WireName: "assignee",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AssigneeFields,
+	},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AssigneeFields,
+	},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AssigneeFields,
+	},
+	"Project": ubx.FieldSpec{
+		WireName: "project",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AssigneeFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: Response_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Response_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Case creation data
@@ -247,8 +247,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"CaseId": ubx.FieldSpec{WireName: "case_id"},
 	},

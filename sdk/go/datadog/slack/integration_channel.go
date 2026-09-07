@@ -17,12 +17,12 @@ type IntegrationChannel_Display struct {
 }
 
 var IntegrationChannel_DisplayFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"MuteButtons": ubx.FieldSpec{WireName: "mute_buttons"},
-		"Notified": ubx.FieldSpec{WireName: "notified"},
-		"Snapshot": ubx.FieldSpec{WireName: "snapshot"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Message":     ubx.FieldSpec{WireName: "message"},
+	"MuteButtons": ubx.FieldSpec{WireName: "mute_buttons"},
+	"Notified":    ubx.FieldSpec{WireName: "notified"},
+	"Snapshot":    ubx.FieldSpec{WireName: "snapshot"},
+	"Tags":        ubx.FieldSpec{WireName: "tags"},
+}
 
 type IntegrationChannelConfig struct {
 	// Configuration options for what is shown in an alert event message.
@@ -51,10 +51,10 @@ var IntegrationChannel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Display": ubx.FieldSpec{
 			WireName: "display",
-			Kind: "object",
-			Fields: IntegrationChannel_DisplayFields,
+			Kind:     "object",
+			Fields:   IntegrationChannel_DisplayFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"AccountName": ubx.FieldSpec{WireName: "account_name"},
 		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
 	},

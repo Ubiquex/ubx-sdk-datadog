@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConnectionList_Data_Attributes struct {
 	ConnectionTypes any
-	CreatedAt any
+	CreatedAt       any
 }
 
 type ConnectionList_Data_Relationships_CreatedBy_Data struct {
-	Id any
+	Id   any
 	Name any
 	Type any
 }
@@ -20,15 +20,15 @@ type ConnectionList_Data_Relationships_CreatedBy struct {
 
 type ConnectionList_Data_Relationships struct {
 	CreatedBy any
-	SinkOrg any
+	SinkOrg   any
 	SourceOrg any
 }
 
 type ConnectionList_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ConnectionList_Meta_Page struct {
@@ -44,29 +44,29 @@ type ConnectionList_Meta struct {
 }
 
 type ConnectionListConfig struct {
-	Limit any
-	Offset any
-	SinkOrgId any
+	Limit       any
+	Offset      any
+	SinkOrgId   any
 	SourceOrgId any
 }
 
 type ConnectionListAttrs struct {
 	// List of org connections.
-	Data any
+	Data  any
 	Limit any
 	// Pagination metadata.
-	Meta any
-	Offset any
-	SinkOrgId any
+	Meta        any
+	Offset      any
+	SinkOrgId   any
 	SourceOrgId any
 }
 
 var ConnectionList = ubx.DataSourceBinding{
 	WireType: "datadog_org_connection_list",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"SinkOrgId": ubx.FieldSpec{WireName: "sink_org_id"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"Offset":      ubx.FieldSpec{WireName: "offset"},
+		"SinkOrgId":   ubx.FieldSpec{WireName: "sink_org_id"},
 		"SourceOrgId": ubx.FieldSpec{WireName: "source_org_id"},
 	},
 }

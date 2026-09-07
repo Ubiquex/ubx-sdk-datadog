@@ -4,18 +4,18 @@ package okta
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountResponseDataList_Data_Attributes struct {
-	ApiKey any
-	AuthMethod any
-	ClientId any
+	ApiKey       any
+	AuthMethod   any
+	ClientId     any
 	ClientSecret any
-	Domain any
-	Name any
+	Domain       any
+	Name         any
 }
 
 type AccountResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AccountResponseDataListConfig struct {
@@ -28,6 +28,5 @@ type AccountResponseDataListAttrs struct {
 
 var AccountResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_okta_account_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

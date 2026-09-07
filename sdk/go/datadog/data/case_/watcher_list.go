@@ -4,7 +4,7 @@ package case_
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WatcherList_Data_Relationships_User_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -17,9 +17,9 @@ type WatcherList_Data_Relationships struct {
 }
 
 type WatcherList_Data struct {
-	Id any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type WatcherListConfig struct {

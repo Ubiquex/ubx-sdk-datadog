@@ -24,21 +24,21 @@ type ResourceResponse_Data struct {
 }
 
 var ResourceResponse_Data_AttributesFields = ubx.FieldMap{
-		"EnableCustomMetrics": ubx.FieldSpec{WireName: "enable_custom_metrics"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"EnableCustomMetrics": ubx.FieldSpec{WireName: "enable_custom_metrics"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"ResourceType":        ubx.FieldSpec{WireName: "resource_type"},
+	"Tags":                ubx.FieldSpec{WireName: "tags"},
+}
 
 var ResourceResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ResourceResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ResourceResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResourceResponseConfig struct {
 	// JSON:API request for updating a Confluent resource.
@@ -63,10 +63,10 @@ var ResourceResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ResourceResponse_DataFields,
+			Kind:     "object",
+			Fields:   ResourceResponse_DataFields,
 		},
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":  ubx.FieldSpec{WireName: "account_id"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

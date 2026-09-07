@@ -23,7 +23,7 @@ type RulesetsPerLanguageResponseConfig struct {
 
 type RulesetsPerLanguageResponseAttrs struct {
 	// The primary data object in the default rulesets per language response.
-	Data any
+	Data     any
 	Language any
 }
 

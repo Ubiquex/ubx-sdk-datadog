@@ -4,17 +4,17 @@ package ownership
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InferenceListResponse_Data_Attributes_Items struct {
-	Checksum any
-	Confidence any
-	CreatedAt any
-	EvidenceVersions any
-	Explanation any
-	Id any
-	OwnerType any
+	Checksum          any
+	Confidence        any
+	CreatedAt         any
+	EvidenceVersions  any
+	Explanation       any
+	Id                any
+	OwnerType         any
 	PrimaryContactRef any
-	Sources any
-	Status any
-	UpdatedAt any
+	Sources           any
+	Status            any
+	UpdatedAt         any
 }
 
 type InferenceListResponse_Data_Attributes struct {
@@ -37,7 +37,7 @@ type InferenceListResponseConfig struct {
 
 type InferenceListResponseAttrs struct {
 	// The data wrapper for the ownership inferences collection response.
-	Data any
+	Data       any
 	ResourceId any
 }
 

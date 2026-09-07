@@ -4,12 +4,12 @@ package get
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MappingResponse_Data_Attributes_Attributes struct {
-	Attribute any
+	Attribute   any
 	Description any
 	DisplayName any
-	Groups any
-	IsCustom any
-	Type any
+	Groups      any
+	IsCustom    any
+	Type        any
 }
 
 type MappingResponse_Data_Attributes struct {
@@ -32,7 +32,7 @@ type MappingResponseConfig struct {
 
 type MappingResponseAttrs struct {
 	// The data object containing the resource type and attributes for the get mapping response.
-	Data any
+	Data   any
 	Entity any
 }
 

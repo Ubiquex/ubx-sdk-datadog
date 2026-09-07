@@ -46,54 +46,54 @@ type NotificationRuleResponse_Data struct {
 }
 
 var NotificationRuleResponse_Data_Attributes_EmailFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var NotificationRuleResponse_Data_Attributes_MsTeamsFields = ubx.FieldMap{
-		"ConnectorName": ubx.FieldSpec{WireName: "connector_name"},
-	}
+	"ConnectorName": ubx.FieldSpec{WireName: "connector_name"},
+}
 
 var NotificationRuleResponse_Data_Attributes_PagerdutyFields = ubx.FieldMap{
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	}
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+}
 
 var NotificationRuleResponse_Data_Attributes_SlackFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"Workspace": ubx.FieldSpec{WireName: "workspace"},
-	}
+	"Channel":   ubx.FieldSpec{WireName: "channel"},
+	"Workspace": ubx.FieldSpec{WireName: "workspace"},
+}
 
 var NotificationRuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{
-			WireName: "email",
-			Kind: "object",
-			Fields: NotificationRuleResponse_Data_Attributes_EmailFields,
-		},
-		"MsTeams": ubx.FieldSpec{
-			WireName: "ms_teams",
-			Kind: "object",
-			Fields: NotificationRuleResponse_Data_Attributes_MsTeamsFields,
-		},
-		"Pagerduty": ubx.FieldSpec{
-			WireName: "pagerduty",
-			Kind: "object",
-			Fields: NotificationRuleResponse_Data_Attributes_PagerdutyFields,
-		},
-		"Slack": ubx.FieldSpec{
-			WireName: "slack",
-			Kind: "object",
-			Fields: NotificationRuleResponse_Data_Attributes_SlackFields,
-		},
-	}
+	"Email": ubx.FieldSpec{
+		WireName: "email",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_Attributes_EmailFields,
+	},
+	"MsTeams": ubx.FieldSpec{
+		WireName: "ms_teams",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_Attributes_MsTeamsFields,
+	},
+	"Pagerduty": ubx.FieldSpec{
+		WireName: "pagerduty",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_Attributes_PagerdutyFields,
+	},
+	"Slack": ubx.FieldSpec{
+		WireName: "slack",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_Attributes_SlackFields,
+	},
+}
 
 var NotificationRuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: NotificationRuleResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   NotificationRuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type NotificationRuleResponseConfig struct {
 	// Team notification rule
@@ -118,8 +118,8 @@ var NotificationRuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: NotificationRuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   NotificationRuleResponse_DataFields,
 		},
 		"TeamId": ubx.FieldSpec{WireName: "team_id"},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},

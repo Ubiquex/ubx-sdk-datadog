@@ -4,7 +4,7 @@ package fastly
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountResponse_Data_Attributes_Services struct {
-	Id any
+	Id   any
 	Tags any
 }
 
@@ -27,29 +27,29 @@ type AccountResponse_Data struct {
 }
 
 var AccountResponse_Data_Attributes_ServicesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 var AccountResponse_Data_AttributesFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Services": ubx.FieldSpec{
-			WireName: "services",
-			Kind: "list",
-			Fields: AccountResponse_Data_Attributes_ServicesFields,
-		},
-	}
+	"ApiKey": ubx.FieldSpec{WireName: "api_key"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Services": ubx.FieldSpec{
+		WireName: "services",
+		Kind:     "list",
+		Fields:   AccountResponse_Data_Attributes_ServicesFields,
+	},
+}
 
 var AccountResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: AccountResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   AccountResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type AccountResponseConfig struct {
 	// Data object for creating a Fastly account.
@@ -70,8 +70,8 @@ var AccountResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: AccountResponse_DataFields,
+			Kind:     "object",
+			Fields:   AccountResponse_DataFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

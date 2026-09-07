@@ -8,15 +8,15 @@ type UserDefinedRolesResponse_Data_Attributes_Policy struct {
 }
 
 type UserDefinedRolesResponse_Data_Attributes struct {
-	Created any
+	Created     any
 	Description any
-	Modified any
-	Name any
-	Policy any
+	Modified    any
+	Name        any
+	Policy      any
 }
 
 type UserDefinedRolesResponse_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -25,39 +25,39 @@ type UserDefinedRolesResponse_Data_Relationships_CreatedByUser struct {
 }
 
 type UserDefinedRolesResponse_Data_Relationships struct {
-	CreatedByUser any
-	IncidentType any
+	CreatedByUser      any
+	IncidentType       any
 	LastModifiedByUser any
 }
 
 type UserDefinedRolesResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type UserDefinedRolesResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type UserDefinedRolesResponse_Included_Relationships struct {
-	CreatedByUser any
-	GoogleMeetConfiguration any
-	LastModifiedByUser any
+	CreatedByUser               any
+	GoogleMeetConfiguration     any
+	LastModifiedByUser          any
 	MicrosoftTeamsConfiguration any
-	ZoomConfiguration any
+	ZoomConfiguration           any
 }
 
 type UserDefinedRolesResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type UserDefinedRolesResponseConfig struct {
@@ -66,7 +66,7 @@ type UserDefinedRolesResponseConfig struct {
 
 type UserDefinedRolesResponseAttrs struct {
 	// List of incident user-defined role data objects.
-	Data any
+	Data    any
 	Include any
 	// Included resources for an incident user-defined role response.
 	Included any

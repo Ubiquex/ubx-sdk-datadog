@@ -4,31 +4,31 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntegrationMetadataResponse_Data_Attributes_Metadata_Channels struct {
-	ChannelId any
+	ChannelId   any
 	ChannelName any
 	RedirectUrl any
-	TeamId any
+	TeamId      any
 }
 
 type IntegrationMetadataResponse_Data_Attributes_Metadata_Issues struct {
-	Account any
-	IssueKey any
+	Account     any
+	IssueKey    any
 	IssuetypeId any
-	ProjectKey any
+	ProjectKey  any
 	RedirectUrl any
 }
 
 type IntegrationMetadataResponse_Data_Attributes_Metadata_Teams struct {
-	MsChannelId any
+	MsChannelId   any
 	MsChannelName any
-	MsTenantId any
-	RedirectUrl any
+	MsTenantId    any
+	RedirectUrl   any
 }
 
 type IntegrationMetadataResponse_Data_Attributes_Metadata struct {
 	Channels any
-	Issues any
-	Teams any
+	Issues   any
+	Teams    any
 }
 
 type IntegrationMetadataResponse_Data_Attributes_PageTarget struct {
@@ -90,20 +90,20 @@ type IntegrationMetadataResponse_Data struct {
 }
 
 type IntegrationMetadataResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type IntegrationMetadataResponse_Included_Relationships_OtherOrgs struct {
@@ -111,124 +111,124 @@ type IntegrationMetadataResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type IntegrationMetadataResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type IntegrationMetadataResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var IntegrationMetadataResponse_Data_Attributes_Metadata_ChannelsFields = ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"RedirectUrl": ubx.FieldSpec{WireName: "redirect_url"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
-	}
+	"ChannelId":   ubx.FieldSpec{WireName: "channel_id"},
+	"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
+	"RedirectUrl": ubx.FieldSpec{WireName: "redirect_url"},
+	"TeamId":      ubx.FieldSpec{WireName: "team_id"},
+}
 
 var IntegrationMetadataResponse_Data_Attributes_Metadata_IssuesFields = ubx.FieldMap{
-		"Account": ubx.FieldSpec{WireName: "account"},
-		"IssueKey": ubx.FieldSpec{WireName: "issue_key"},
-		"IssuetypeId": ubx.FieldSpec{WireName: "issuetype_id"},
-		"ProjectKey": ubx.FieldSpec{WireName: "project_key"},
-		"RedirectUrl": ubx.FieldSpec{WireName: "redirect_url"},
-	}
+	"Account":     ubx.FieldSpec{WireName: "account"},
+	"IssueKey":    ubx.FieldSpec{WireName: "issue_key"},
+	"IssuetypeId": ubx.FieldSpec{WireName: "issuetype_id"},
+	"ProjectKey":  ubx.FieldSpec{WireName: "project_key"},
+	"RedirectUrl": ubx.FieldSpec{WireName: "redirect_url"},
+}
 
 var IntegrationMetadataResponse_Data_Attributes_Metadata_TeamsFields = ubx.FieldMap{
-		"MsChannelId": ubx.FieldSpec{WireName: "ms_channel_id"},
-		"MsChannelName": ubx.FieldSpec{WireName: "ms_channel_name"},
-		"MsTenantId": ubx.FieldSpec{WireName: "ms_tenant_id"},
-		"RedirectUrl": ubx.FieldSpec{WireName: "redirect_url"},
-	}
+	"MsChannelId":   ubx.FieldSpec{WireName: "ms_channel_id"},
+	"MsChannelName": ubx.FieldSpec{WireName: "ms_channel_name"},
+	"MsTenantId":    ubx.FieldSpec{WireName: "ms_tenant_id"},
+	"RedirectUrl":   ubx.FieldSpec{WireName: "redirect_url"},
+}
 
 var IntegrationMetadataResponse_Data_Attributes_MetadataFields = ubx.FieldMap{
-		"Channels": ubx.FieldSpec{
-			WireName: "channels",
-			Kind: "list",
-			Fields: IntegrationMetadataResponse_Data_Attributes_Metadata_ChannelsFields,
-		},
-		"Issues": ubx.FieldSpec{
-			WireName: "issues",
-			Kind: "list",
-			Fields: IntegrationMetadataResponse_Data_Attributes_Metadata_IssuesFields,
-		},
-		"Teams": ubx.FieldSpec{
-			WireName: "teams",
-			Kind: "list",
-			Fields: IntegrationMetadataResponse_Data_Attributes_Metadata_TeamsFields,
-		},
-	}
+	"Channels": ubx.FieldSpec{
+		WireName: "channels",
+		Kind:     "list",
+		Fields:   IntegrationMetadataResponse_Data_Attributes_Metadata_ChannelsFields,
+	},
+	"Issues": ubx.FieldSpec{
+		WireName: "issues",
+		Kind:     "list",
+		Fields:   IntegrationMetadataResponse_Data_Attributes_Metadata_IssuesFields,
+	},
+	"Teams": ubx.FieldSpec{
+		WireName: "teams",
+		Kind:     "list",
+		Fields:   IntegrationMetadataResponse_Data_Attributes_Metadata_TeamsFields,
+	},
+}
 
 var IntegrationMetadataResponse_Data_Attributes_PageTargetFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var IntegrationMetadataResponse_Data_AttributesFields = ubx.FieldMap{
-		"Created": ubx.FieldSpec{WireName: "created"},
-		"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
-		"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: IntegrationMetadataResponse_Data_Attributes_MetadataFields,
-		},
-		"Modified": ubx.FieldSpec{WireName: "modified"},
-		"PageTarget": ubx.FieldSpec{
-			WireName: "page_target",
-			Kind: "object",
-			Fields: IntegrationMetadataResponse_Data_Attributes_PageTargetFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
-	}
+	"Created":         ubx.FieldSpec{WireName: "created"},
+	"IncidentId":      ubx.FieldSpec{WireName: "incident_id"},
+	"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
+	"Key":             ubx.FieldSpec{WireName: "key"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   IntegrationMetadataResponse_Data_Attributes_MetadataFields,
+	},
+	"Modified": ubx.FieldSpec{WireName: "modified"},
+	"PageTarget": ubx.FieldSpec{
+		WireName: "page_target",
+		Kind:     "object",
+		Fields:   IntegrationMetadataResponse_Data_Attributes_PageTargetFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+	"TeamId": ubx.FieldSpec{WireName: "team_id"},
+}
 
 var IntegrationMetadataResponse_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var IntegrationMetadataResponse_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: IntegrationMetadataResponse_Data_Relationships_CreatedByUser_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   IntegrationMetadataResponse_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var IntegrationMetadataResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"CreatedByUser": ubx.FieldSpec{
-			WireName: "created_by_user",
-			Kind: "object",
-			Fields: IntegrationMetadataResponse_Data_Relationships_CreatedByUserFields,
-		},
-		"LastModifiedByUser": ubx.FieldSpec{
-			WireName: "last_modified_by_user",
-			Kind: "object",
-			Fields: IntegrationMetadataResponse_Data_Relationships_CreatedByUserFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   IntegrationMetadataResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   IntegrationMetadataResponse_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var IntegrationMetadataResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: IntegrationMetadataResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: IntegrationMetadataResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   IntegrationMetadataResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   IntegrationMetadataResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type IntegrationMetadataResponseConfig struct {
 	// On-call page data in a link request.
@@ -255,10 +255,10 @@ var IntegrationMetadataResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: IntegrationMetadataResponse_DataFields,
+			Kind:     "object",
+			Fields:   IntegrationMetadataResponse_DataFields,
 		},
-		"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
+		"IncidentId":            ubx.FieldSpec{WireName: "incident_id"},
 		"IntegrationMetadataId": ubx.FieldSpec{WireName: "integration_metadata_id"},
 	},
 }

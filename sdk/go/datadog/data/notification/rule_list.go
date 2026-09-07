@@ -5,33 +5,33 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleList_Data_Attributes_CreatedBy struct {
 	Handle any
-	Name any
+	Name   any
 }
 
 type RuleList_Data_Attributes_Selectors struct {
-	Query any
-	RuleTypes any
-	Severities any
+	Query         any
+	RuleTypes     any
+	Severities    any
 	TriggerSource any
 }
 
 type RuleList_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	Enabled any
-	ModifiedAt any
-	ModifiedBy any
-	Name any
-	Selectors any
-	Targets any
+	CreatedAt       any
+	CreatedBy       any
+	Enabled         any
+	ModifiedAt      any
+	ModifiedBy      any
+	Name            any
+	Selectors       any
+	Targets         any
 	TimeAggregation any
-	Version any
+	Version         any
 }
 
 type RuleList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RuleListConfig struct {
@@ -43,6 +43,5 @@ type RuleListAttrs struct {
 
 var RuleList = ubx.DataSourceBinding{
 	WireType: "datadog_notification_rule_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -5,60 +5,60 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleRevisionList_Data_Attributes_Arguments struct {
 	Description any
-	Name any
+	Name        any
 }
 
 type RuleRevisionList_Data_Attributes_Tests struct {
 	AnnotationCount any
-	Code any
-	Filename any
+	Code            any
+	Filename        any
 }
 
 type RuleRevisionList_Data_Attributes struct {
-	Arguments any
-	Category any
-	Checksum any
-	Code any
-	CreatedAt any
-	CreatedBy any
-	CreationMessage any
-	Cve any
-	Cwe any
-	Description any
+	Arguments        any
+	Category         any
+	Checksum         any
+	Code             any
+	CreatedAt        any
+	CreatedBy        any
+	CreationMessage  any
+	Cve              any
+	Cwe              any
+	Description      any
 	DocumentationUrl any
-	IsPublished any
-	IsTesting any
-	Language any
-	Severity any
+	IsPublished      any
+	IsTesting        any
+	Language         any
+	Severity         any
 	ShortDescription any
-	ShouldUseAiFix any
-	Tags any
-	Tests any
-	TreeSitterQuery any
+	ShouldUseAiFix   any
+	Tags             any
+	Tests            any
+	TreeSitterQuery  any
 }
 
 type RuleRevisionList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RuleRevisionListConfig struct {
-	RuleName any
+	RuleName    any
 	RulesetName any
 }
 
 type RuleRevisionListAttrs struct {
 	// List of custom rule revisions.
-	Data any
-	RuleName any
+	Data        any
+	RuleName    any
 	RulesetName any
 }
 
 var RuleRevisionList = ubx.DataSourceBinding{
 	WireType: "datadog_custom_rule_revision_list",
 	Fields: ubx.FieldMap{
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"RuleName":    ubx.FieldSpec{WireName: "rule_name"},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
 	},
 }

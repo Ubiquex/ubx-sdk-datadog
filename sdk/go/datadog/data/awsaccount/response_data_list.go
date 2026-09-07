@@ -4,20 +4,20 @@ package awsaccount
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponseDataList_Data_Attributes_AuthConfig struct {
-	AccessKeyId any
-	ExternalId any
-	RoleName any
+	AccessKeyId     any
+	ExternalId      any
+	RoleName        any
 	SecretAccessKey any
 }
 
 type ResponseDataList_Data_Attributes_AwsRegions struct {
-	IncludeAll any
+	IncludeAll  any
 	IncludeOnly any
 }
 
 type ResponseDataList_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfig_TagFilters struct {
 	Source any
-	Tags any
+	Tags   any
 }
 
 type ResponseDataList_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfig struct {
@@ -25,9 +25,9 @@ type ResponseDataList_Data_Attributes_LogsConfig_LambdaForwarder_LogSourceConfig
 }
 
 type ResponseDataList_Data_Attributes_LogsConfig_LambdaForwarder struct {
-	Lambdas any
+	Lambdas         any
 	LogSourceConfig any
-	Sources any
+	Sources         any
 }
 
 type ResponseDataList_Data_Attributes_LogsConfig struct {
@@ -37,7 +37,7 @@ type ResponseDataList_Data_Attributes_LogsConfig struct {
 type ResponseDataList_Data_Attributes_MetricsConfig_MetricNameFilters struct {
 	ExcludeOnly any
 	IncludeOnly any
-	Namespace any
+	Namespace   any
 }
 
 type ResponseDataList_Data_Attributes_MetricsConfig_NamespaceFilters struct {
@@ -47,22 +47,22 @@ type ResponseDataList_Data_Attributes_MetricsConfig_NamespaceFilters struct {
 
 type ResponseDataList_Data_Attributes_MetricsConfig_TagFilters struct {
 	Namespace any
-	Tags any
+	Tags      any
 }
 
 type ResponseDataList_Data_Attributes_MetricsConfig struct {
-	AutomuteEnabled any
+	AutomuteEnabled         any
 	CollectCloudwatchAlarms any
-	CollectCustomMetrics any
-	Enabled any
-	MetricNameFilters any
-	NamespaceFilters any
-	TagFilters any
+	CollectCustomMetrics    any
+	Enabled                 any
+	MetricNameFilters       any
+	NamespaceFilters        any
+	TagFilters              any
 }
 
 type ResponseDataList_Data_Attributes_ResourcesConfig struct {
 	CloudSecurityPostureManagementCollection any
-	ExtendedCollection any
+	ExtendedCollection                       any
 }
 
 type ResponseDataList_Data_Attributes_TracesConfig struct {
@@ -70,23 +70,23 @@ type ResponseDataList_Data_Attributes_TracesConfig struct {
 }
 
 type ResponseDataList_Data_Attributes struct {
-	AccountTags any
-	AuthConfig any
-	AwsAccountId any
-	AwsPartition any
-	AwsRegions any
-	CreatedAt any
-	LogsConfig any
-	MetricsConfig any
-	ModifiedAt any
+	AccountTags     any
+	AuthConfig      any
+	AwsAccountId    any
+	AwsPartition    any
+	AwsRegions      any
+	CreatedAt       any
+	LogsConfig      any
+	MetricsConfig   any
+	ModifiedAt      any
 	ResourcesConfig any
-	TracesConfig any
+	TracesConfig    any
 }
 
 type ResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ResponseDataListConfig struct {

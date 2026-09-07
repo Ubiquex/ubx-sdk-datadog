@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupPolicyConfigDataList_Data_Attributes struct {
 	AllowedValues any
-	DefaultValue any
-	Description any
-	Name any
-	ValueType any
+	DefaultValue  any
+	Description   any
+	Name          any
+	ValueType     any
 }
 
 type GroupPolicyConfigDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type GroupPolicyConfigDataListConfig struct {
@@ -27,6 +27,5 @@ type GroupPolicyConfigDataListAttrs struct {
 
 var GroupPolicyConfigDataList = ubx.DataSourceBinding{
 	WireType: "datadog_org_group_policy_config_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

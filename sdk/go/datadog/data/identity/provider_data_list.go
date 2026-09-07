@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProviderDataList_Data_Attributes struct {
 	AuthenticationMethod any
-	Enabled any
+	Enabled              any
 }
 
 type ProviderDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ProviderDataListConfig struct {
@@ -24,6 +24,5 @@ type ProviderDataListAttrs struct {
 
 var ProviderDataList = ubx.DataSourceBinding{
 	WireType: "datadog_identity_provider_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

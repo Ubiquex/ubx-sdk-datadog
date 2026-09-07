@@ -9,8 +9,8 @@ type AgentVersionV2List_Data_Attributes struct {
 
 type AgentVersionV2List_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AgentVersionV2List_Meta_Page struct {
@@ -35,6 +35,5 @@ type AgentVersionV2ListAttrs struct {
 
 var AgentVersionV2List = ubx.DataSourceBinding{
 	WireType: "datadog_fleet_agent_version_v2_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

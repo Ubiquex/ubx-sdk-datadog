@@ -49,39 +49,39 @@ type FetchResponse_Data struct {
 }
 
 var FetchResponse_Data_Attributes_GitFields = ubx.FieldMap{
-		"CommitSha": ubx.FieldSpec{WireName: "commit_sha"},
-		"RepositoryId": ubx.FieldSpec{WireName: "repository_id"},
-	}
+	"CommitSha":    ubx.FieldSpec{WireName: "commit_sha"},
+	"RepositoryId": ubx.FieldSpec{WireName: "repository_id"},
+}
 
 var FetchResponse_Data_AttributesFields = ubx.FieldMap{
-		"CustomTags": ubx.FieldSpec{WireName: "custom_tags"},
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"FinishedAt": ubx.FieldSpec{WireName: "finished_at"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Git": ubx.FieldSpec{
-			WireName: "git",
-			Kind: "object",
-			Fields: FetchResponse_Data_Attributes_GitFields,
-		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"StartedAt": ubx.FieldSpec{WireName: "started_at"},
-		"Team": ubx.FieldSpec{WireName: "team"},
-		"To": ubx.FieldSpec{WireName: "to"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"CustomTags": ubx.FieldSpec{WireName: "custom_tags"},
+	"Env":        ubx.FieldSpec{WireName: "env"},
+	"FinishedAt": ubx.FieldSpec{WireName: "finished_at"},
+	"From":       ubx.FieldSpec{WireName: "from"},
+	"Git": ubx.FieldSpec{
+		WireName: "git",
+		Kind:     "object",
+		Fields:   FetchResponse_Data_Attributes_GitFields,
+	},
+	"Limit":     ubx.FieldSpec{WireName: "limit"},
+	"Query":     ubx.FieldSpec{WireName: "query"},
+	"Service":   ubx.FieldSpec{WireName: "service"},
+	"Sort":      ubx.FieldSpec{WireName: "sort"},
+	"StartedAt": ubx.FieldSpec{WireName: "started_at"},
+	"Team":      ubx.FieldSpec{WireName: "team"},
+	"To":        ubx.FieldSpec{WireName: "to"},
+	"Version":   ubx.FieldSpec{WireName: "version"},
+}
 
 var FetchResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: FetchResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   FetchResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type FetchResponseConfig struct {
 	// The JSON:API data.
@@ -102,8 +102,8 @@ var FetchResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: FetchResponse_DataFields,
+			Kind:     "object",
+			Fields:   FetchResponse_DataFields,
 		},
 		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
 	},

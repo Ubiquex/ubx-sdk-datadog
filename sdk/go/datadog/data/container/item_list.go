@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ItemList_Data_Attributes struct {
 	ContainerId any
-	CreatedAt any
-	Host any
+	CreatedAt   any
+	Host        any
 	ImageDigest any
-	ImageName any
-	ImageTags any
-	Name any
-	StartedAt any
-	State any
-	Tags any
+	ImageName   any
+	ImageTags   any
+	Name        any
+	StartedAt   any
+	State       any
+	Tags        any
 }
 
 type ItemList_Data_Relationships_Containers_Links struct {
@@ -21,7 +21,7 @@ type ItemList_Data_Relationships_Containers_Links struct {
 }
 
 type ItemList_Data_Relationships_Containers struct {
-	Data any
+	Data  any
 	Links any
 }
 
@@ -30,10 +30,10 @@ type ItemList_Data_Relationships struct {
 }
 
 type ItemList_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ItemList_Links struct {
@@ -71,12 +71,12 @@ type ItemList_Meta struct {
 
 type ItemListConfig struct {
 	GroupBy any
-	Sort any
+	Sort    any
 }
 
 type ItemListAttrs struct {
 	// Array of Container objects.
-	Data any
+	Data    any
 	GroupBy any
 	// Pagination links.
 	Links any
@@ -89,6 +89,6 @@ var ItemList = ubx.DataSourceBinding{
 	WireType: "datadog_container_item_list",
 	Fields: ubx.FieldMap{
 		"GroupBy": ubx.FieldSpec{WireName: "group_by"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

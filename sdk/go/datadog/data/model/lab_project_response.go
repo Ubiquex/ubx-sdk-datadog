@@ -4,7 +4,7 @@ package model
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LabProjectResponse_Data_Attributes_Tags struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -46,7 +46,7 @@ type LabProjectResponseConfig struct {
 
 type LabProjectResponseAttrs struct {
 	// A Model Lab project JSON:API resource object.
-	Data any
+	Data      any
 	ProjectId any
 }
 

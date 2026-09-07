@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountResponseDataList_Data_Attributes_Resources struct {
 	EnableCustomMetrics any
-	Id any
-	ResourceType any
-	Tags any
+	Id                  any
+	ResourceType        any
+	Tags                any
 }
 
 type AccountResponseDataList_Data_Attributes struct {
-	ApiKey any
+	ApiKey    any
 	Resources any
-	Tags any
+	Tags      any
 }
 
 type AccountResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AccountResponseDataListConfig struct {
@@ -32,6 +32,5 @@ type AccountResponseDataListAttrs struct {
 
 var AccountResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_confluent_account_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

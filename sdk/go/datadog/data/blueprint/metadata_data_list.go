@@ -4,38 +4,38 @@ package blueprint
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetadataDataList_Data_Attributes struct {
-	CreatedAt any
-	Description any
-	Name any
-	Slug any
-	Tags any
-	TileBackground any
+	CreatedAt         any
+	Description       any
+	Name              any
+	Slug              any
+	Tags              any
+	TileBackground    any
 	TileIconActionFqn any
-	UpdatedAt any
+	UpdatedAt         any
 }
 
 type MetadataDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MetadataDataListConfig struct {
 	Limit any
-	Page any
+	Page  any
 }
 
 type MetadataDataListAttrs struct {
 	// An array of blueprint metadata.
-	Data any
+	Data  any
 	Limit any
-	Page any
+	Page  any
 }
 
 var MetadataDataList = ubx.DataSourceBinding{
 	WireType: "datadog_blueprint_metadata_data_list",
 	Fields: ubx.FieldMap{
 		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":  ubx.FieldSpec{WireName: "page"},
 	},
 }

@@ -35,16 +35,16 @@ type BatchDetails_Data_Metadata struct {
 }
 
 type BatchDetails_Data_Results struct {
-	Device any
-	Duration any
+	Device        any
+	Duration      any
 	ExecutionRule any
-	Location any
-	ResultId any
-	Retries any
-	Status any
-	TestName any
-	TestPublicId any
-	TestType any
+	Location      any
+	ResultId      any
+	Retries       any
+	Status        any
+	TestName      any
+	TestPublicId  any
+	TestType      any
 }
 
 type BatchDetails_Data struct {

@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContentConfig struct {
 	ArtifactPath any
-	ProjectId any
+	ProjectId    any
 }
 
 type ContentAttrs struct {
 	ArtifactPath any
-	ProjectId any
+	ProjectId    any
 }
 
 var Content = ubx.DataSourceBinding{
 	WireType: "datadog_content",
 	Fields: ubx.FieldMap{
 		"ArtifactPath": ubx.FieldSpec{WireName: "artifact_path"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"ProjectId":    ubx.FieldSpec{WireName: "project_id"},
 	},
 }

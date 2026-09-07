@@ -43,7 +43,7 @@ type ListAttrs struct {
 var List = ubx.ResourceBinding{
 	WireType: "datadog_dashboard_list",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ListId": ubx.FieldSpec{WireName: "list_id"},
 	},
 }

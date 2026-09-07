@@ -4,37 +4,37 @@ package secret
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleDataList_Data_Attributes_MatchValidation_InvalidHttpStatusCode struct {
-	End any
+	End   any
 	Start any
 }
 
 type RuleDataList_Data_Attributes_MatchValidation struct {
-	Endpoint any
-	Hosts any
-	HttpMethod any
+	Endpoint              any
+	Hosts                 any
+	HttpMethod            any
 	InvalidHttpStatusCode any
-	RequestHeaders any
-	TimeoutSeconds any
-	Type any
-	ValidHttpStatusCode any
+	RequestHeaders        any
+	TimeoutSeconds        any
+	Type                  any
+	ValidHttpStatusCode   any
 }
 
 type RuleDataList_Data_Attributes struct {
 	DefaultIncludedKeywords any
-	Description any
-	License any
-	MatchValidation any
-	Name any
-	Pattern any
-	Priority any
-	SdsId any
-	Validators any
+	Description             any
+	License                 any
+	MatchValidation         any
+	Name                    any
+	Pattern                 any
+	Priority                any
+	SdsId                   any
+	Validators              any
 }
 
 type RuleDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RuleDataListConfig struct {
@@ -47,6 +47,5 @@ type RuleDataListAttrs struct {
 
 var RuleDataList = ubx.DataSourceBinding{
 	WireType: "datadog_secret_rule_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

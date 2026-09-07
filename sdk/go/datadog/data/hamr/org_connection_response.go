@@ -39,6 +39,5 @@ type OrgConnectionResponseAttrs struct {
 
 var OrgConnectionResponse = ubx.DataSourceBinding{
 	WireType: "datadog_hamr_org_connection_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

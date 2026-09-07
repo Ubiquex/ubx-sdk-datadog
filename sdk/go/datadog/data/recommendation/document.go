@@ -50,13 +50,13 @@ type Document_Data struct {
 
 type DocumentConfig struct {
 	BypassCache any
-	Service any
+	Service     any
 }
 
 type DocumentAttrs struct {
 	BypassCache any
 	// JSON:API resource object for SPA Recommendation. Includes type, optional ID, and resource attributes with structured recommendations.
-	Data any
+	Data    any
 	Service any
 }
 
@@ -64,6 +64,6 @@ var Document = ubx.DataSourceBinding{
 	WireType: "datadog_recommendation_document",
 	Fields: ubx.FieldMap{
 		"BypassCache": ubx.FieldSpec{WireName: "bypass_cache"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"Service":     ubx.FieldSpec{WireName: "service"},
 	},
 }

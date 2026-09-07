@@ -54,89 +54,89 @@ type UserDefinedRoleResponse_Data struct {
 }
 
 type UserDefinedRoleResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type UserDefinedRoleResponse_Included_Relationships struct {
-	CreatedByUser any
-	GoogleMeetConfiguration any
-	LastModifiedByUser any
+	CreatedByUser               any
+	GoogleMeetConfiguration     any
+	LastModifiedByUser          any
 	MicrosoftTeamsConfiguration any
-	ZoomConfiguration any
+	ZoomConfiguration           any
 }
 
 type UserDefinedRoleResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var UserDefinedRoleResponse_Data_Attributes_PolicyFields = ubx.FieldMap{
-		"IsSingle": ubx.FieldSpec{WireName: "is_single"},
-	}
+	"IsSingle": ubx.FieldSpec{WireName: "is_single"},
+}
 
 var UserDefinedRoleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Created": ubx.FieldSpec{WireName: "created"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Modified": ubx.FieldSpec{WireName: "modified"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Policy": ubx.FieldSpec{
-			WireName: "policy",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_Attributes_PolicyFields,
-		},
-	}
+	"Created":     ubx.FieldSpec{WireName: "created"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Modified":    ubx.FieldSpec{WireName: "modified"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Policy": ubx.FieldSpec{
+		WireName: "policy",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Attributes_PolicyFields,
+	},
+}
 
 var UserDefinedRoleResponse_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_Relationships_CreatedByUser_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var UserDefinedRoleResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"CreatedByUser": ubx.FieldSpec{
-			WireName: "created_by_user",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
-		},
-		"IncidentType": ubx.FieldSpec{
-			WireName: "incident_type",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
-		},
-		"LastModifiedByUser": ubx.FieldSpec{
-			WireName: "last_modified_by_user",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"IncidentType": ubx.FieldSpec{
+		WireName: "incident_type",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var UserDefinedRoleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   UserDefinedRoleResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type UserDefinedRoleResponseConfig struct {
 	// Data for creating an incident user-defined role.
@@ -159,8 +159,8 @@ var UserDefinedRoleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: UserDefinedRoleResponse_DataFields,
+			Kind:     "object",
+			Fields:   UserDefinedRoleResponse_DataFields,
 		},
 		"RoleId": ubx.FieldSpec{WireName: "role_id"},
 	},

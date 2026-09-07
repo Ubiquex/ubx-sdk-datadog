@@ -9,7 +9,7 @@ type CountResponse_Data_Attributes_Groups_GroupValues struct {
 }
 
 type CountResponse_Data_Attributes_Groups struct {
-	Group any
+	Group       any
 	GroupValues any
 }
 
@@ -28,24 +28,24 @@ type CountResponse_Data struct {
 }
 
 type CountResponseConfig struct {
-	GroupBys any
-	Limit any
+	GroupBys    any
+	Limit       any
 	QueryFilter any
 }
 
 type CountResponseAttrs struct {
 	// Data object containing the count results, including per-field group breakdowns.
-	Data any
-	GroupBys any
-	Limit any
+	Data        any
+	GroupBys    any
+	Limit       any
 	QueryFilter any
 }
 
 var CountResponse = ubx.DataSourceBinding{
 	WireType: "datadog_case_count_response",
 	Fields: ubx.FieldMap{
-		"GroupBys": ubx.FieldSpec{WireName: "group_bys"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"GroupBys":    ubx.FieldSpec{WireName: "group_bys"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
 		"QueryFilter": ubx.FieldSpec{WireName: "query_filter"},
 	},
 }

@@ -10,9 +10,9 @@ type EmbedGetResponse_Data_Attributes_GlobalTime struct {
 
 type EmbedGetResponse_Data_Attributes_SelectableTemplateVars struct {
 	DefaultValues any
-	Name any
-	Prefix any
-	VisibleTags any
+	Name          any
+	Prefix        any
+	VisibleTags   any
 }
 
 type EmbedGetResponse_Data_Attributes_ViewingPreferences struct {
@@ -61,58 +61,58 @@ type EmbedGetResponse_Data struct {
 }
 
 var EmbedGetResponse_Data_Attributes_GlobalTimeFields = ubx.FieldMap{
-		"LiveSpan": ubx.FieldSpec{WireName: "live_span"},
-	}
+	"LiveSpan": ubx.FieldSpec{WireName: "live_span"},
+}
 
 var EmbedGetResponse_Data_Attributes_SelectableTemplateVarsFields = ubx.FieldMap{
-		"DefaultValues": ubx.FieldSpec{WireName: "default_values"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"VisibleTags": ubx.FieldSpec{WireName: "visible_tags"},
-	}
+	"DefaultValues": ubx.FieldSpec{WireName: "default_values"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Prefix":        ubx.FieldSpec{WireName: "prefix"},
+	"VisibleTags":   ubx.FieldSpec{WireName: "visible_tags"},
+}
 
 var EmbedGetResponse_Data_Attributes_ViewingPreferencesFields = ubx.FieldMap{
-		"HighDensity": ubx.FieldSpec{WireName: "high_density"},
-		"Theme": ubx.FieldSpec{WireName: "theme"},
-	}
+	"HighDensity": ubx.FieldSpec{WireName: "high_density"},
+	"Theme":       ubx.FieldSpec{WireName: "theme"},
+}
 
 var EmbedGetResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CredentialSuffix": ubx.FieldSpec{WireName: "credential_suffix"},
-		"DashboardId": ubx.FieldSpec{WireName: "dashboard_id"},
-		"GlobalTime": ubx.FieldSpec{
-			WireName: "global_time",
-			Kind: "object",
-			Fields: EmbedGetResponse_Data_Attributes_GlobalTimeFields,
-		},
-		"GlobalTimeSelectable": ubx.FieldSpec{WireName: "global_time_selectable"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"SelectableTemplateVars": ubx.FieldSpec{
-			WireName: "selectable_template_vars",
-			Kind: "list",
-			Fields: EmbedGetResponse_Data_Attributes_SelectableTemplateVarsFields,
-		},
-		"ShareType": ubx.FieldSpec{WireName: "share_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Token": ubx.FieldSpec{WireName: "token"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"ViewingPreferences": ubx.FieldSpec{
-			WireName: "viewing_preferences",
-			Kind: "object",
-			Fields: EmbedGetResponse_Data_Attributes_ViewingPreferencesFields,
-		},
-	}
+	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
+	"CredentialSuffix": ubx.FieldSpec{WireName: "credential_suffix"},
+	"DashboardId":      ubx.FieldSpec{WireName: "dashboard_id"},
+	"GlobalTime": ubx.FieldSpec{
+		WireName: "global_time",
+		Kind:     "object",
+		Fields:   EmbedGetResponse_Data_Attributes_GlobalTimeFields,
+	},
+	"GlobalTimeSelectable": ubx.FieldSpec{WireName: "global_time_selectable"},
+	"Id":                   ubx.FieldSpec{WireName: "id"},
+	"SelectableTemplateVars": ubx.FieldSpec{
+		WireName: "selectable_template_vars",
+		Kind:     "list",
+		Fields:   EmbedGetResponse_Data_Attributes_SelectableTemplateVarsFields,
+	},
+	"ShareType": ubx.FieldSpec{WireName: "share_type"},
+	"Status":    ubx.FieldSpec{WireName: "status"},
+	"Title":     ubx.FieldSpec{WireName: "title"},
+	"Token":     ubx.FieldSpec{WireName: "token"},
+	"Url":       ubx.FieldSpec{WireName: "url"},
+	"ViewingPreferences": ubx.FieldSpec{
+		WireName: "viewing_preferences",
+		Kind:     "object",
+		Fields:   EmbedGetResponse_Data_Attributes_ViewingPreferencesFields,
+	},
+}
 
 var EmbedGetResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: EmbedGetResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   EmbedGetResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type EmbedGetResponseConfig struct {
 	// Data object for creating a secure embed.
@@ -137,10 +137,10 @@ var EmbedGetResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: EmbedGetResponse_DataFields,
+			Kind:     "object",
+			Fields:   EmbedGetResponse_DataFields,
 		},
 		"DashboardId": ubx.FieldSpec{WireName: "dashboard_id"},
-		"Token": ubx.FieldSpec{WireName: "token"},
+		"Token":       ubx.FieldSpec{WireName: "token"},
 	},
 }

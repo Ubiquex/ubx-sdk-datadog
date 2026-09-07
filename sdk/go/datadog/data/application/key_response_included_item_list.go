@@ -47,20 +47,20 @@ type KeyResponseIncludedItemList_Data struct {
 }
 
 type KeyResponseIncludedItemList_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type KeyResponseIncludedItemList_Included_Relationships_OtherOrgs struct {
@@ -68,17 +68,17 @@ type KeyResponseIncludedItemList_Included_Relationships_OtherOrgs struct {
 }
 
 type KeyResponseIncludedItemList_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type KeyResponseIncludedItemList_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type KeyResponseIncludedItemListConfig struct {

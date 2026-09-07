@@ -4,15 +4,15 @@ package org
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupPolicyOverrideDataList_Data_Attributes struct {
-	Content any
-	CreatedAt any
+	Content    any
+	CreatedAt  any
 	ModifiedAt any
-	OrgSite any
-	OrgUuid any
+	OrgSite    any
+	OrgUuid    any
 }
 
 type GroupPolicyOverrideDataList_Data_Relationships_OrgGroup_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -21,15 +21,15 @@ type GroupPolicyOverrideDataList_Data_Relationships_OrgGroup struct {
 }
 
 type GroupPolicyOverrideDataList_Data_Relationships struct {
-	OrgGroup any
+	OrgGroup       any
 	OrgGroupPolicy any
 }
 
 type GroupPolicyOverrideDataList_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type GroupPolicyOverrideDataList_Links struct {

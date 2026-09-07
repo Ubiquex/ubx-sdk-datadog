@@ -5,31 +5,31 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringSuppressionsResponse_Data_Attributes_Creator struct {
 	Handle any
-	Name any
+	Name   any
 }
 
 type MonitoringSuppressionsResponse_Data_Attributes struct {
-	CreationDate any
-	Creator any
+	CreationDate       any
+	Creator            any
 	DataExclusionQuery any
-	Description any
-	Editable any
-	Enabled any
-	ExpirationDate any
-	Name any
-	RuleQuery any
-	StartDate any
-	SuppressionQuery any
-	Tags any
-	UpdateDate any
-	Updater any
-	Version any
+	Description        any
+	Editable           any
+	Enabled            any
+	ExpirationDate     any
+	Name               any
+	RuleQuery          any
+	StartDate          any
+	SuppressionQuery   any
+	Tags               any
+	UpdateDate         any
+	Updater            any
+	Version            any
 }
 
 type MonitoringSuppressionsResponse_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MonitoringSuppressionsResponseConfig struct {

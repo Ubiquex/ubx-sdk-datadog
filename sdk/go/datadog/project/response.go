@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes_ColumnsConfig_Columns_Sort struct {
 	Ascending any
-	Priority any
+	Priority  any
 }
 
 type Response_Data_Attributes_ColumnsConfig_Columns struct {
-	Sort any
+	Sort      any
 	SortField any
-	Type any
+	Type      any
 }
 
 type Response_Data_Attributes_ColumnsConfig struct {
@@ -32,7 +32,7 @@ type Response_Data_Attributes_Settings_AutoTransitionAssignedCases struct {
 }
 
 type Response_Data_Attributes_Settings_IntegrationIncident_FieldMappings struct {
-	CaseField any
+	CaseField                  any
 	IncidentUserDefinedFieldId any
 }
 
@@ -77,7 +77,7 @@ type Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_Assignee 
 
 type Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_CustomFields struct {
 	SyncType any
-	Value any
+	Value    any
 }
 
 type Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_DueDate struct {
@@ -146,15 +146,15 @@ type Response_Data_Attributes_Settings_IntegrationMonitor struct {
 
 type Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries_Target struct {
 	DynamicTeamPaging any
-	TeamId any
-	UserId any
+	TeamId            any
+	UserId            any
 }
 
 type Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries struct {
 	Enabled any
-	Id any
-	Query any
-	Target any
+	Id      any
+	Query   any
+	Target  any
 }
 
 type Response_Data_Attributes_Settings_IntegrationOnCall struct {
@@ -262,7 +262,7 @@ type Response_Data_Attributes struct {
 }
 
 type Response_Data_Relationships_MemberTeam_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -302,377 +302,377 @@ type Response_Data struct {
 }
 
 var Response_Data_Attributes_ColumnsConfig_Columns_SortFields = ubx.FieldMap{
-		"Ascending": ubx.FieldSpec{WireName: "ascending"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-	}
+	"Ascending": ubx.FieldSpec{WireName: "ascending"},
+	"Priority":  ubx.FieldSpec{WireName: "priority"},
+}
 
 var Response_Data_Attributes_ColumnsConfig_ColumnsFields = ubx.FieldMap{
-		"Sort": ubx.FieldSpec{
-			WireName: "sort",
-			Kind: "object",
-			Fields: Response_Data_Attributes_ColumnsConfig_Columns_SortFields,
-		},
-		"SortField": ubx.FieldSpec{WireName: "sort_field"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Sort": ubx.FieldSpec{
+		WireName: "sort",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_ColumnsConfig_Columns_SortFields,
+	},
+	"SortField": ubx.FieldSpec{WireName: "sort_field"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_Attributes_ColumnsConfigFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Response_Data_Attributes_ColumnsConfig_ColumnsFields,
-		},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_ColumnsConfig_ColumnsFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_AutoCloseInactiveCasesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxInactiveTimeInSecs": ubx.FieldSpec{WireName: "max_inactive_time_in_secs"},
-	}
+	"Enabled":               ubx.FieldSpec{WireName: "enabled"},
+	"MaxInactiveTimeInSecs": ubx.FieldSpec{WireName: "max_inactive_time_in_secs"},
+}
 
 var Response_Data_Attributes_Settings_AutoTransitionAssignedCasesFields = ubx.FieldMap{
-		"AutoTransitionAssignedCasesOnSelfAssigned": ubx.FieldSpec{WireName: "auto_transition_assigned_cases_on_self_assigned"},
-	}
+	"AutoTransitionAssignedCasesOnSelfAssigned": ubx.FieldSpec{WireName: "auto_transition_assigned_cases_on_self_assigned"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationIncident_FieldMappingsFields = ubx.FieldMap{
-		"CaseField": ubx.FieldSpec{WireName: "case_field"},
-		"IncidentUserDefinedFieldId": ubx.FieldSpec{WireName: "incident_user_defined_field_id"},
-	}
+	"CaseField":                  ubx.FieldSpec{WireName: "case_field"},
+	"IncidentUserDefinedFieldId": ubx.FieldSpec{WireName: "incident_user_defined_field_id"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationIncident_SeverityConfigFields = ubx.FieldMap{
-		"PriorityMapping": ubx.FieldSpec{WireName: "priority_mapping"},
-	}
+	"PriorityMapping": ubx.FieldSpec{WireName: "priority_mapping"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationIncidentFields = ubx.FieldMap{
-		"AutoEscalationQuery": ubx.FieldSpec{WireName: "auto_escalation_query"},
-		"DefaultIncidentCommander": ubx.FieldSpec{WireName: "default_incident_commander"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: Response_Data_Attributes_Settings_IntegrationIncident_FieldMappingsFields,
-		},
-		"IncidentType": ubx.FieldSpec{WireName: "incident_type"},
-		"SeverityConfig": ubx.FieldSpec{
-			WireName: "severity_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationIncident_SeverityConfigFields,
-		},
-	}
+	"AutoEscalationQuery":      ubx.FieldSpec{WireName: "auto_escalation_query"},
+	"DefaultIncidentCommander": ubx.FieldSpec{WireName: "default_incident_commander"},
+	"Enabled":                  ubx.FieldSpec{WireName: "enabled"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_Settings_IntegrationIncident_FieldMappingsFields,
+	},
+	"IncidentType": ubx.FieldSpec{WireName: "incident_type"},
+	"SeverityConfig": ubx.FieldSpec{
+		WireName: "severity_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationIncident_SeverityConfigFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_IntegrationJira_AutoCreationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationJira_MetadataFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"IssueTypeId": ubx.FieldSpec{WireName: "issue_type_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+	"IssueTypeId": ubx.FieldSpec{WireName: "issue_type_id"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields = ubx.FieldMap{
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
-	}
+	"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_CustomFieldsFields = ubx.FieldMap{
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"SyncType": ubx.FieldSpec{WireName: "sync_type"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_DueDateFields = ubx.FieldMap{
-		"JiraFieldId": ubx.FieldSpec{WireName: "jira_field_id"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
-	}
+	"JiraFieldId": ubx.FieldSpec{WireName: "jira_field_id"},
+	"SyncType":    ubx.FieldSpec{WireName: "sync_type"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields = ubx.FieldMap{
-		"Mapping": ubx.FieldSpec{WireName: "mapping"},
-		"NameMapping": ubx.FieldSpec{WireName: "name_mapping"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
-	}
+	"Mapping":     ubx.FieldSpec{WireName: "mapping"},
+	"NameMapping": ubx.FieldSpec{WireName: "name_mapping"},
+	"SyncType":    ubx.FieldSpec{WireName: "sync_type"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationJira_Sync_PropertiesFields = ubx.FieldMap{
-		"Assignee": ubx.FieldSpec{
-			WireName: "assignee",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
-		},
-		"Comments": ubx.FieldSpec{
-			WireName: "comments",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
-		},
-		"CustomFields": ubx.FieldSpec{
-			WireName: "custom_fields",
-			Kind: "map",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_CustomFieldsFields,
-		},
-		"Description": ubx.FieldSpec{
-			WireName: "description",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
-		},
-		"DueDate": ubx.FieldSpec{
-			WireName: "due_date",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_DueDateFields,
-		},
-		"Priority": ubx.FieldSpec{
-			WireName: "priority",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields,
-		},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields,
-		},
-		"Title": ubx.FieldSpec{
-			WireName: "title",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
-		},
-	}
+	"Assignee": ubx.FieldSpec{
+		WireName: "assignee",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+	},
+	"Comments": ubx.FieldSpec{
+		WireName: "comments",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+	},
+	"CustomFields": ubx.FieldSpec{
+		WireName: "custom_fields",
+		Kind:     "map",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_CustomFieldsFields,
+	},
+	"Description": ubx.FieldSpec{
+		WireName: "description",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+	},
+	"DueDate": ubx.FieldSpec{
+		WireName: "due_date",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_DueDateFields,
+	},
+	"Priority": ubx.FieldSpec{
+		WireName: "priority",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields,
+	},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields,
+	},
+	"Title": ubx.FieldSpec{
+		WireName: "title",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_IntegrationJira_SyncFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_PropertiesFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_PropertiesFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_IntegrationJiraFields = ubx.FieldMap{
-		"AutoCreation": ubx.FieldSpec{
-			WireName: "auto_creation",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_AutoCreationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_MetadataFields,
-		},
-		"Sync": ubx.FieldSpec{
-			WireName: "sync",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_SyncFields,
-		},
-	}
+	"AutoCreation": ubx.FieldSpec{
+		WireName: "auto_creation",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_AutoCreationFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_MetadataFields,
+	},
+	"Sync": ubx.FieldSpec{
+		WireName: "sync",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_SyncFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_IntegrationMonitorFields = ubx.FieldMap{
-		"AutoResolveEnabled": ubx.FieldSpec{WireName: "auto_resolve_enabled"},
-		"CaseTypeId": ubx.FieldSpec{WireName: "case_type_id"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-	}
+	"AutoResolveEnabled": ubx.FieldSpec{WireName: "auto_resolve_enabled"},
+	"CaseTypeId":         ubx.FieldSpec{WireName: "case_type_id"},
+	"Enabled":            ubx.FieldSpec{WireName: "enabled"},
+	"Handle":             ubx.FieldSpec{WireName: "handle"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries_TargetFields = ubx.FieldMap{
-		"DynamicTeamPaging": ubx.FieldSpec{WireName: "dynamic_team_paging"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"DynamicTeamPaging": ubx.FieldSpec{WireName: "dynamic_team_paging"},
+	"TeamId":            ubx.FieldSpec{WireName: "team_id"},
+	"UserId":            ubx.FieldSpec{WireName: "user_id"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueriesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries_TargetFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Query":   ubx.FieldSpec{WireName: "query"},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueries_TargetFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_IntegrationOnCallFields = ubx.FieldMap{
-		"AutoAssignOnCall": ubx.FieldSpec{WireName: "auto_assign_on_call"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EscalationQueries": ubx.FieldSpec{
-			WireName: "escalation_queries",
-			Kind: "list",
-			Fields: Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueriesFields,
-		},
-	}
+	"AutoAssignOnCall": ubx.FieldSpec{WireName: "auto_assign_on_call"},
+	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+	"EscalationQueries": ubx.FieldSpec{
+		WireName: "escalation_queries",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_Settings_IntegrationOnCall_EscalationQueriesFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_Properties_PriorityFields = ubx.FieldMap{
-		"ImpactMapping": ubx.FieldSpec{WireName: "impact_mapping"},
-		"SyncType": ubx.FieldSpec{WireName: "sync_type"},
-		"UrgencyMapping": ubx.FieldSpec{WireName: "urgency_mapping"},
-	}
+	"ImpactMapping":  ubx.FieldSpec{WireName: "impact_mapping"},
+	"SyncType":       ubx.FieldSpec{WireName: "sync_type"},
+	"UrgencyMapping": ubx.FieldSpec{WireName: "urgency_mapping"},
+}
 
 var Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_PropertiesFields = ubx.FieldMap{
-		"Comments": ubx.FieldSpec{
-			WireName: "comments",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
-		},
-		"Priority": ubx.FieldSpec{
-			WireName: "priority",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_Properties_PriorityFields,
-		},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields,
-		},
-	}
+	"Comments": ubx.FieldSpec{
+		WireName: "comments",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_AssigneeFields,
+	},
+	"Priority": ubx.FieldSpec{
+		WireName: "priority",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_Properties_PriorityFields,
+	},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_Sync_Properties_PriorityFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_PropertiesFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfig_PropertiesFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_IntegrationServiceNowFields = ubx.FieldMap{
-		"AssignmentGroup": ubx.FieldSpec{WireName: "assignment_group"},
-		"AutoCreation": ubx.FieldSpec{
-			WireName: "auto_creation",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJira_AutoCreationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
-		"SyncConfig": ubx.FieldSpec{
-			WireName: "sync_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfigFields,
-		},
-	}
+	"AssignmentGroup": ubx.FieldSpec{WireName: "assignment_group"},
+	"AutoCreation": ubx.FieldSpec{
+		WireName: "auto_creation",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJira_AutoCreationFields,
+	},
+	"Enabled":      ubx.FieldSpec{WireName: "enabled"},
+	"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
+	"SyncConfig": ubx.FieldSpec{
+		WireName: "sync_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationServiceNow_SyncConfigFields,
+	},
+}
 
 var Response_Data_Attributes_Settings_NotificationFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{WireName: "destinations"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"NotifyOnCaseAssignment": ubx.FieldSpec{WireName: "notify_on_case_assignment"},
-		"NotifyOnCaseClosed": ubx.FieldSpec{WireName: "notify_on_case_closed"},
-		"NotifyOnCaseComment": ubx.FieldSpec{WireName: "notify_on_case_comment"},
-		"NotifyOnCaseCommentMention": ubx.FieldSpec{WireName: "notify_on_case_comment_mention"},
-		"NotifyOnCasePriorityChange": ubx.FieldSpec{WireName: "notify_on_case_priority_change"},
-		"NotifyOnCaseStatusChange": ubx.FieldSpec{WireName: "notify_on_case_status_change"},
-		"NotifyOnCaseUnassignment": ubx.FieldSpec{WireName: "notify_on_case_unassignment"},
-	}
+	"Destinations":               ubx.FieldSpec{WireName: "destinations"},
+	"Enabled":                    ubx.FieldSpec{WireName: "enabled"},
+	"NotifyOnCaseAssignment":     ubx.FieldSpec{WireName: "notify_on_case_assignment"},
+	"NotifyOnCaseClosed":         ubx.FieldSpec{WireName: "notify_on_case_closed"},
+	"NotifyOnCaseComment":        ubx.FieldSpec{WireName: "notify_on_case_comment"},
+	"NotifyOnCaseCommentMention": ubx.FieldSpec{WireName: "notify_on_case_comment_mention"},
+	"NotifyOnCasePriorityChange": ubx.FieldSpec{WireName: "notify_on_case_priority_change"},
+	"NotifyOnCaseStatusChange":   ubx.FieldSpec{WireName: "notify_on_case_status_change"},
+	"NotifyOnCaseUnassignment":   ubx.FieldSpec{WireName: "notify_on_case_unassignment"},
+}
 
 var Response_Data_Attributes_SettingsFields = ubx.FieldMap{
-		"AutoCloseInactiveCases": ubx.FieldSpec{
-			WireName: "auto_close_inactive_cases",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_AutoCloseInactiveCasesFields,
-		},
-		"AutoTransitionAssignedCases": ubx.FieldSpec{
-			WireName: "auto_transition_assigned_cases",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_AutoTransitionAssignedCasesFields,
-		},
-		"IntegrationIncident": ubx.FieldSpec{
-			WireName: "integration_incident",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationIncidentFields,
-		},
-		"IntegrationJira": ubx.FieldSpec{
-			WireName: "integration_jira",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationJiraFields,
-		},
-		"IntegrationMonitor": ubx.FieldSpec{
-			WireName: "integration_monitor",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationMonitorFields,
-		},
-		"IntegrationOnCall": ubx.FieldSpec{
-			WireName: "integration_on_call",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationOnCallFields,
-		},
-		"IntegrationServiceNow": ubx.FieldSpec{
-			WireName: "integration_service_now",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_IntegrationServiceNowFields,
-		},
-		"Notification": ubx.FieldSpec{
-			WireName: "notification",
-			Kind: "object",
-			Fields: Response_Data_Attributes_Settings_NotificationFields,
-		},
-	}
+	"AutoCloseInactiveCases": ubx.FieldSpec{
+		WireName: "auto_close_inactive_cases",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_AutoCloseInactiveCasesFields,
+	},
+	"AutoTransitionAssignedCases": ubx.FieldSpec{
+		WireName: "auto_transition_assigned_cases",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_AutoTransitionAssignedCasesFields,
+	},
+	"IntegrationIncident": ubx.FieldSpec{
+		WireName: "integration_incident",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationIncidentFields,
+	},
+	"IntegrationJira": ubx.FieldSpec{
+		WireName: "integration_jira",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationJiraFields,
+	},
+	"IntegrationMonitor": ubx.FieldSpec{
+		WireName: "integration_monitor",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationMonitorFields,
+	},
+	"IntegrationOnCall": ubx.FieldSpec{
+		WireName: "integration_on_call",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationOnCallFields,
+	},
+	"IntegrationServiceNow": ubx.FieldSpec{
+		WireName: "integration_service_now",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_IntegrationServiceNowFields,
+	},
+	"Notification": ubx.FieldSpec{
+		WireName: "notification",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_Settings_NotificationFields,
+	},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"ColumnsConfig": ubx.FieldSpec{
-			WireName: "columns_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_ColumnsConfigFields,
-		},
-		"EnabledCustomCaseTypes": ubx.FieldSpec{WireName: "enabled_custom_case_types"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Restricted": ubx.FieldSpec{WireName: "restricted"},
-		"Settings": ubx.FieldSpec{
-			WireName: "settings",
-			Kind: "object",
-			Fields: Response_Data_Attributes_SettingsFields,
-		},
-		"TeamUuid": ubx.FieldSpec{WireName: "team_uuid"},
-	}
+	"ColumnsConfig": ubx.FieldSpec{
+		WireName: "columns_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_ColumnsConfigFields,
+	},
+	"EnabledCustomCaseTypes": ubx.FieldSpec{WireName: "enabled_custom_case_types"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"Restricted":             ubx.FieldSpec{WireName: "restricted"},
+	"Settings": ubx.FieldSpec{
+		WireName: "settings",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_SettingsFields,
+	},
+	"TeamUuid": ubx.FieldSpec{WireName: "team_uuid"},
+}
 
 var Response_Data_Relationships_MemberTeam_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_Relationships_MemberTeam_LinksFields = ubx.FieldMap{
-		"Related": ubx.FieldSpec{WireName: "related"},
-	}
+	"Related": ubx.FieldSpec{WireName: "related"},
+}
 
 var Response_Data_Relationships_MemberTeamFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "list",
-			Fields: Response_Data_Relationships_MemberTeam_DataFields,
-		},
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "object",
-			Fields: Response_Data_Relationships_MemberTeam_LinksFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   Response_Data_Relationships_MemberTeam_DataFields,
+	},
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_MemberTeam_LinksFields,
+	},
+}
 
 var Response_Data_Relationships_MemberUserFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "list",
-			Fields: Response_Data_Relationships_MemberTeam_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   Response_Data_Relationships_MemberTeam_DataFields,
+	},
+}
 
 var Response_Data_RelationshipsFields = ubx.FieldMap{
-		"MemberTeam": ubx.FieldSpec{
-			WireName: "member_team",
-			Kind: "object",
-			Fields: Response_Data_Relationships_MemberTeamFields,
-		},
-		"MemberUser": ubx.FieldSpec{
-			WireName: "member_user",
-			Kind: "object",
-			Fields: Response_Data_Relationships_MemberUserFields,
-		},
-	}
+	"MemberTeam": ubx.FieldSpec{
+		WireName: "member_team",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_MemberTeamFields,
+	},
+	"MemberUser": ubx.FieldSpec{
+		WireName: "member_user",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_MemberUserFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: Response_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Response_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Project create.
@@ -693,8 +693,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
 	},

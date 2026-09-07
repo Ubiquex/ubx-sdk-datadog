@@ -4,14 +4,14 @@ package web
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IntegrationAccountResponseDataList_Data_Attributes struct {
-	Name any
+	Name     any
 	Settings any
 }
 
 type IntegrationAccountResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type IntegrationAccountResponseDataListConfig struct {
@@ -20,7 +20,7 @@ type IntegrationAccountResponseDataListConfig struct {
 
 type IntegrationAccountResponseDataListAttrs struct {
 	// The JSON:API data array.
-	Data any
+	Data            any
 	IntegrationName any
 }
 

@@ -4,19 +4,19 @@ package model
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LabRunResponse_Data_Attributes_MetricSummaries struct {
-	Count any
+	Count     any
 	FirstStep any
-	Key any
-	LastStep any
-	Latest any
-	Max any
-	Mean any
-	Min any
-	Stddev any
+	Key       any
+	LastStep  any
+	Latest    any
+	Max       any
+	Mean      any
+	Min       any
+	Stddev    any
 }
 
 type LabRunResponse_Data_Attributes_Params struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -76,7 +76,7 @@ type LabRunResponseConfig struct {
 
 type LabRunResponseAttrs struct {
 	// A Model Lab run JSON:API resource object.
-	Data any
+	Data  any
 	RunId any
 }
 

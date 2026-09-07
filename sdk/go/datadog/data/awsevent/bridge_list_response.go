@@ -4,14 +4,14 @@ package awsevent
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BridgeListResponse_Data_Attributes_Accounts_EventHubs struct {
-	Name any
+	Name   any
 	Region any
 }
 
 type BridgeListResponse_Data_Attributes_Accounts struct {
 	AccountId any
 	EventHubs any
-	Tags any
+	Tags      any
 }
 
 type BridgeListResponse_Data_Attributes struct {
@@ -40,6 +40,5 @@ type BridgeListResponseAttrs struct {
 
 var BridgeListResponse = ubx.DataSourceBinding{
 	WireType: "datadog_awsevent_bridge_list_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

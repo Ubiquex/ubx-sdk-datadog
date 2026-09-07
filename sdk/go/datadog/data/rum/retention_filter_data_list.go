@@ -4,23 +4,23 @@ package rum
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RetentionFilterDataList_Data_Attributes_CrossProductSampling struct {
-	TraceEnabled any
+	TraceEnabled    any
 	TraceSampleRate any
 }
 
 type RetentionFilterDataList_Data_Attributes struct {
 	CrossProductSampling any
-	Enabled any
-	EventType any
-	Name any
-	Query any
-	SampleRate any
+	Enabled              any
+	EventType            any
+	Name                 any
+	Query                any
+	SampleRate           any
 }
 
 type RetentionFilterDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RetentionFilterDataListConfig struct {

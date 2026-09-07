@@ -24,21 +24,21 @@ type ScanOptions_Data struct {
 }
 
 var ScanOptions_Data_AttributesFields = ubx.FieldMap{
-		"CloudFunction": ubx.FieldSpec{WireName: "cloud_function"},
-		"ComplianceHost": ubx.FieldSpec{WireName: "compliance_host"},
-		"VulnContainersOs": ubx.FieldSpec{WireName: "vuln_containers_os"},
-		"VulnHostOs": ubx.FieldSpec{WireName: "vuln_host_os"},
-	}
+	"CloudFunction":    ubx.FieldSpec{WireName: "cloud_function"},
+	"ComplianceHost":   ubx.FieldSpec{WireName: "compliance_host"},
+	"VulnContainersOs": ubx.FieldSpec{WireName: "vuln_containers_os"},
+	"VulnHostOs":       ubx.FieldSpec{WireName: "vuln_host_os"},
+}
 
 var ScanOptions_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ScanOptions_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ScanOptions_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ScanOptionsConfig struct {
 	// Single GCP scan options entry.
@@ -59,8 +59,8 @@ var ScanOptions = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ScanOptions_DataFields,
+			Kind:     "object",
+			Fields:   ScanOptions_DataFields,
 		},
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
 	},

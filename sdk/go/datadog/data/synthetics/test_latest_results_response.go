@@ -4,73 +4,73 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestLatestResultsResponse_Data_Attributes_Device_Browser struct {
-	Type any
+	Type      any
 	UserAgent any
-	Version any
+	Version   any
 }
 
 type TestLatestResultsResponse_Data_Attributes_Device_Platform struct {
-	Name any
+	Name    any
 	Version any
 }
 
 type TestLatestResultsResponse_Data_Attributes_Device_Resolution struct {
-	Height any
+	Height     any
 	PixelRatio any
-	Width any
+	Width      any
 }
 
 type TestLatestResultsResponse_Data_Attributes_Device struct {
-	Browser any
-	Id any
-	Name any
-	Platform any
+	Browser    any
+	Id         any
+	Name       any
+	Platform   any
 	Resolution any
-	Type any
+	Type       any
 }
 
 type TestLatestResultsResponse_Data_Attributes_ExecutionInfo_Duration struct {
 	HasDuration any
-	Value any
+	Value       any
 }
 
 type TestLatestResultsResponse_Data_Attributes_ExecutionInfo struct {
-	Duration any
+	Duration     any
 	ErrorMessage any
-	IsFastRetry any
-	Timings any
-	Tunnel any
-	Unhealthy any
+	IsFastRetry  any
+	Timings      any
+	Tunnel       any
+	Unhealthy    any
 }
 
 type TestLatestResultsResponse_Data_Attributes_Location struct {
-	Id any
-	Name any
-	Version any
+	Id       any
+	Name     any
+	Version  any
 	WorkerId any
 }
 
 type TestLatestResultsResponse_Data_Attributes_StepsInfo struct {
 	Completed any
-	Errors any
-	Total any
+	Errors    any
+	Total     any
 }
 
 type TestLatestResultsResponse_Data_Attributes struct {
-	Device any
+	Device        any
 	ExecutionInfo any
-	FinishedAt any
-	Location any
-	RunType any
-	StartedAt any
-	Status any
-	StepsInfo any
-	TestSubType any
-	TestType any
+	FinishedAt    any
+	Location      any
+	RunType       any
+	StartedAt     any
+	Status        any
+	StepsInfo     any
+	TestSubType   any
+	TestType      any
 }
 
 type TestLatestResultsResponse_Data_Relationships_Test_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -83,55 +83,55 @@ type TestLatestResultsResponse_Data_Relationships struct {
 }
 
 type TestLatestResultsResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TestLatestResultsResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TestLatestResultsResponseConfig struct {
 	DeviceId any
-	FromTs any
-	ProbeDc any
+	FromTs   any
+	ProbeDc  any
 	PublicId any
 	// The type of run for a Synthetic test result.
 	RunType any
 	// Status of a Synthetic test result.
 	Status any
-	ToTs any
+	ToTs   any
 }
 
 type TestLatestResultsResponseAttrs struct {
 	// Array of Synthetic test result summaries.
-	Data any
+	Data     any
 	DeviceId any
-	FromTs any
+	FromTs   any
 	// Array of included related resources, such as the test definition.
 	Included any
-	ProbeDc any
+	ProbeDc  any
 	PublicId any
 	// The type of run for a Synthetic test result.
 	RunType any
 	// Status of a Synthetic test result.
 	Status any
-	ToTs any
+	ToTs   any
 }
 
 var TestLatestResultsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_test_latest_results_response",
 	Fields: ubx.FieldMap{
 		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"FromTs": ubx.FieldSpec{WireName: "from_ts"},
-		"ProbeDc": ubx.FieldSpec{WireName: "probe_dc"},
+		"FromTs":   ubx.FieldSpec{WireName: "from_ts"},
+		"ProbeDc":  ubx.FieldSpec{WireName: "probe_dc"},
 		"PublicId": ubx.FieldSpec{WireName: "public_id"},
-		"RunType": ubx.FieldSpec{WireName: "run_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"ToTs": ubx.FieldSpec{WireName: "to_ts"},
+		"RunType":  ubx.FieldSpec{WireName: "run_type"},
+		"Status":   ubx.FieldSpec{WireName: "status"},
+		"ToTs":     ubx.FieldSpec{WireName: "to_ts"},
 	},
 }

@@ -4,13 +4,13 @@ package get
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomFrameworkResponse_Data_Attributes_Requirements_Controls struct {
-	Name any
+	Name    any
 	RulesId any
 }
 
 type CustomFrameworkResponse_Data_Attributes_Requirements struct {
 	Controls any
-	Name any
+	Name     any
 }
 
 type CustomFrameworkResponse_Data_Attributes struct {
@@ -36,21 +36,21 @@ type CustomFrameworkResponse_Data struct {
 }
 
 type CustomFrameworkResponseConfig struct {
-	Handle any
+	Handle  any
 	Version any
 }
 
 type CustomFrameworkResponseAttrs struct {
 	// Contains type and attributes for custom frameworks.
-	Data any
-	Handle any
+	Data    any
+	Handle  any
 	Version any
 }
 
 var CustomFrameworkResponse = ubx.DataSourceBinding{
 	WireType: "datadog_get_custom_framework_response",
 	Fields: ubx.FieldMap{
-		"Handle": ubx.FieldSpec{WireName: "handle"},
+		"Handle":  ubx.FieldSpec{WireName: "handle"},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

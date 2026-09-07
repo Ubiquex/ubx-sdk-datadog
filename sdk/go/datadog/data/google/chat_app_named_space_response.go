@@ -24,21 +24,21 @@ type ChatAppNamedSpaceResponse_Data struct {
 }
 
 type ChatAppNamedSpaceResponseConfig struct {
-	DomainName any
+	DomainName       any
 	SpaceDisplayName any
 }
 
 type ChatAppNamedSpaceResponseAttrs struct {
 	// Google Chat space data from a response.
-	Data any
-	DomainName any
+	Data             any
+	DomainName       any
 	SpaceDisplayName any
 }
 
 var ChatAppNamedSpaceResponse = ubx.DataSourceBinding{
 	WireType: "datadog_google_chat_app_named_space_response",
 	Fields: ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+		"DomainName":       ubx.FieldSpec{WireName: "domain_name"},
 		"SpaceDisplayName": ubx.FieldSpec{WireName: "space_display_name"},
 	},
 }

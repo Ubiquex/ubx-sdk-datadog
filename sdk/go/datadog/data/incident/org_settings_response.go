@@ -42,20 +42,20 @@ type OrgSettingsResponse_Data struct {
 
 type OrgSettingsResponseConfig struct {
 	IncidentTypeId any
-	Include any
+	Include        any
 }
 
 type OrgSettingsResponseAttrs struct {
 	// Incident org settings data in a response.
-	Data any
+	Data           any
 	IncidentTypeId any
-	Include any
+	Include        any
 }
 
 var OrgSettingsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_incident_org_settings_response",
 	Fields: ubx.FieldMap{
 		"IncidentTypeId": ubx.FieldSpec{WireName: "incident_type_id"},
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":        ubx.FieldSpec{WireName: "include"},
 	},
 }

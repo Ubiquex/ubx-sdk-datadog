@@ -4,40 +4,40 @@ package ticket
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CreationRuleDataResponseList_Data_Attributes_Action struct {
-	AssigneeId any
+	AssigneeId         any
 	AutoDisabledReason any
-	Fields any
-	MaxTicketsPerDay any
-	ProjectId any
-	Target any
+	Fields             any
+	MaxTicketsPerDay   any
+	ProjectId          any
+	Target             any
 }
 
 type CreationRuleDataResponseList_Data_Attributes_CreatedBy struct {
-	Id any
+	Id   any
 	Name any
 	Type any
 }
 
 type CreationRuleDataResponseList_Data_Attributes_Rule struct {
 	FindingTypes any
-	Query any
+	Query        any
 }
 
 type CreationRuleDataResponseList_Data_Attributes struct {
-	Action any
-	CreatedAt any
-	CreatedBy any
-	Enabled any
+	Action     any
+	CreatedAt  any
+	CreatedBy  any
+	Enabled    any
 	ModifiedAt any
 	ModifiedBy any
-	Name any
-	Rule any
+	Name       any
+	Rule       any
 }
 
 type CreationRuleDataResponseList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type CreationRuleDataResponseList_Links struct {
@@ -75,6 +75,5 @@ type CreationRuleDataResponseListAttrs struct {
 
 var CreationRuleDataResponseList = ubx.DataSourceBinding{
 	WireType: "datadog_ticket_creation_rule_data_response_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

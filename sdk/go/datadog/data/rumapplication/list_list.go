@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ListList_Data_Attributes_ProductScales_ProductAnalyticsRetentionScale struct {
 	LastModifiedAt any
-	State any
+	State          any
 }
 
 type ListList_Data_Attributes_ProductScales struct {
 	ProductAnalyticsRetentionScale any
-	RumEventProcessingScale any
+	RumEventProcessingScale        any
 }
 
 type ListList_Data_Attributes struct {
-	ApplicationId any
-	CreatedAt any
+	ApplicationId   any
+	CreatedAt       any
 	CreatedByHandle any
-	Hash any
-	IsActive any
-	Name any
-	OrgId any
-	ProductScales any
-	Type any
-	UpdatedAt any
+	Hash            any
+	IsActive        any
+	Name            any
+	OrgId           any
+	ProductScales   any
+	Type            any
+	UpdatedAt       any
 	UpdatedByHandle any
 }
 
 type ListList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ListListConfig struct {
@@ -43,6 +43,5 @@ type ListListAttrs struct {
 
 var ListList = ubx.DataSourceBinding{
 	WireType: "datadog_rumapplication_list_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

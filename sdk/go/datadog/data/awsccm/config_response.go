@@ -4,11 +4,11 @@ package awsccm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigResponse_Data_Attributes_DataExportConfigs struct {
-	BucketName any
+	BucketName   any
 	BucketRegion any
-	ReportName any
+	ReportName   any
 	ReportPrefix any
-	ReportType any
+	ReportType   any
 }
 
 type ConfigResponse_Data_Attributes struct {

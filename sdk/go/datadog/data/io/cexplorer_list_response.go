@@ -4,7 +4,7 @@ package io
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CexplorerListResponse_Data_Attributes_Data_AsGeo struct {
-	City any
+	City        any
 	CountryCode any
 	CountryName any
 }
@@ -14,30 +14,30 @@ type CexplorerListResponse_Data_Attributes_Data_BenignSources struct {
 }
 
 type CexplorerListResponse_Data_Attributes_Data struct {
-	AsGeo any
-	AsType any
-	BenignSources any
-	Categories any
-	FirstSeen any
-	Id any
-	Indicator any
-	IndicatorType any
-	LastSeen any
-	LogMatches any
-	MAsType any
-	MPersistence any
-	MSignal any
-	MSources any
-	MaliciousSources any
-	MaxTrustScore any
-	Score any
-	SignalMatches any
-	SignalTier any
+	AsGeo             any
+	AsType            any
+	BenignSources     any
+	Categories        any
+	FirstSeen         any
+	Id                any
+	Indicator         any
+	IndicatorType     any
+	LastSeen          any
+	LogMatches        any
+	MAsType           any
+	MPersistence      any
+	MSignal           any
+	MSources          any
+	MaliciousSources  any
+	MaxTrustScore     any
+	Score             any
+	SignalMatches     any
+	SignalTier        any
 	SuspiciousSources any
-	Tags any
-	TriageState any
-	TriagedAt any
-	TriagedBy any
+	Tags              any
+	TriageState       any
+	TriagedAt         any
+	TriagedBy         any
 }
 
 type CexplorerListResponse_Data_Attributes_Metadata struct {
@@ -69,35 +69,35 @@ type CexplorerListResponse_Data struct {
 }
 
 type CexplorerListResponseConfig struct {
-	Limit any
-	Ocsf any
+	Limit  any
+	Ocsf   any
 	Offset any
-	Query any
+	Query  any
 	// Current triage state of the indicator.
 	TriageState any
-	WorkedBy any
+	WorkedBy    any
 }
 
 type CexplorerListResponseAttrs struct {
 	// IoC Explorer list response data object.
-	Data any
-	Limit any
-	Ocsf any
+	Data   any
+	Limit  any
+	Ocsf   any
 	Offset any
-	Query any
+	Query  any
 	// Current triage state of the indicator.
 	TriageState any
-	WorkedBy any
+	WorkedBy    any
 }
 
 var CexplorerListResponse = ubx.DataSourceBinding{
 	WireType: "datadog_io_cexplorer_list_response",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Ocsf": ubx.FieldSpec{WireName: "ocsf"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
+		"Ocsf":        ubx.FieldSpec{WireName: "ocsf"},
+		"Offset":      ubx.FieldSpec{WireName: "offset"},
+		"Query":       ubx.FieldSpec{WireName: "query"},
 		"TriageState": ubx.FieldSpec{WireName: "triage_state"},
-		"WorkedBy": ubx.FieldSpec{WireName: "worked_by"},
+		"WorkedBy":    ubx.FieldSpec{WireName: "worked_by"},
 	},
 }

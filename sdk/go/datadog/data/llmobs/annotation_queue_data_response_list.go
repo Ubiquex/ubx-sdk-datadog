@@ -4,18 +4,18 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnnotationQueueDataResponseList_Data_Attributes_AnnotationSchema_LabelSchemas struct {
-	Description any
+	Description   any
 	HasAssessment any
-	HasReasoning any
-	Id any
-	IsAssessment any
-	IsInteger any
-	IsRequired any
-	Max any
-	Min any
-	Name any
-	Type any
-	Values any
+	HasReasoning  any
+	Id            any
+	IsAssessment  any
+	IsInteger     any
+	IsRequired    any
+	Max           any
+	Min           any
+	Name          any
+	Type          any
+	Values        any
 }
 
 type AnnotationQueueDataResponseList_Data_Attributes_AnnotationSchema struct {
@@ -23,43 +23,43 @@ type AnnotationQueueDataResponseList_Data_Attributes_AnnotationSchema struct {
 }
 
 type AnnotationQueueDataResponseList_Data_Attributes struct {
-	AnnotationSchema any
-	CanManageAccess any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	ModifiedAt any
-	ModifiedBy any
-	Name any
-	OwnedBy any
-	ProjectId any
+	AnnotationSchema    any
+	CanManageAccess     any
+	CreatedAt           any
+	CreatedBy           any
+	Description         any
+	ModifiedAt          any
+	ModifiedBy          any
+	Name                any
+	OwnedBy             any
+	ProjectId           any
 	RestrictToAssignees any
 	RestrictToReviewers any
-	ReviewerEmails any
+	ReviewerEmails      any
 }
 
 type AnnotationQueueDataResponseList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AnnotationQueueDataResponseListConfig struct {
 	ProjectId any
-	QueueIds any
+	QueueIds  any
 }
 
 type AnnotationQueueDataResponseListAttrs struct {
 	// List of annotation queues.
-	Data any
+	Data      any
 	ProjectId any
-	QueueIds any
+	QueueIds  any
 }
 
 var AnnotationQueueDataResponseList = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_annotation_queue_data_response_list",
 	Fields: ubx.FieldMap{
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"QueueIds": ubx.FieldSpec{WireName: "queue_ids"},
+		"QueueIds":  ubx.FieldSpec{WireName: "queue_ids"},
 	},
 }

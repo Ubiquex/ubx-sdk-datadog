@@ -4,15 +4,15 @@ package auth
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NmappingsResponse_Data_Attributes struct {
-	AttributeKey any
-	AttributeValue any
-	CreatedAt any
-	ModifiedAt any
+	AttributeKey             any
+	AttributeValue           any
+	CreatedAt                any
+	ModifiedAt               any
 	SamlAssertionAttributeId any
 }
 
 type NmappingsResponse_Data_Relationships_Role_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -21,20 +21,20 @@ type NmappingsResponse_Data_Relationships_Role struct {
 }
 
 type NmappingsResponse_Data_Relationships struct {
-	Role any
+	Role                   any
 	SamlAssertionAttribute any
-	Team any
+	Team                   any
 }
 
 type NmappingsResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type NmappingsResponse_Included_Attributes struct {
-	AttributeKey any
+	AttributeKey   any
 	AttributeValue any
 }
 
@@ -47,10 +47,10 @@ type NmappingsResponse_Included_Relationships struct {
 }
 
 type NmappingsResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type NmappingsResponse_Meta_Page struct {
@@ -75,7 +75,7 @@ type NmappingsResponseConfig struct {
 
 type NmappingsResponseAttrs struct {
 	// Array of returned AuthN Mappings.
-	Data any
+	Data   any
 	Filter any
 	// Included data in the AuthN Mapping response.
 	Included any
@@ -90,8 +90,8 @@ type NmappingsResponseAttrs struct {
 var NmappingsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_auth_nmappings_response",
 	Fields: ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":       ubx.FieldSpec{WireName: "filter"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":         ubx.FieldSpec{WireName: "sort"},
 	},
 }

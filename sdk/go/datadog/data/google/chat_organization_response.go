@@ -44,7 +44,7 @@ type ChatOrganizationResponseConfig struct {
 
 type ChatOrganizationResponseAttrs struct {
 	// Google Chat organization data from a response.
-	Data any
+	Data                  any
 	OrganizationBindingId any
 }
 

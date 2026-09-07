@@ -4,16 +4,16 @@ package team
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LinkList_Data_Attributes struct {
-	Label any
+	Label    any
 	Position any
-	TeamId any
-	Url any
+	TeamId   any
+	Url      any
 }
 
 type LinkList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type LinkListConfig struct {
@@ -22,7 +22,7 @@ type LinkListConfig struct {
 
 type LinkListAttrs struct {
 	// Team links response data
-	Data any
+	Data   any
 	TeamId any
 }
 

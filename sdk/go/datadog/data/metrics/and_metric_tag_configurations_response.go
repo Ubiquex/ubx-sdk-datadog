@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AndMetricTagConfigurationsResponse_Data_Attributes_Aggregations struct {
 	Space any
-	Time any
+	Time  any
 }
 
 type AndMetricTagConfigurationsResponse_Data_Attributes struct {
-	Aggregations any
-	CreatedAt any
-	ExcludeTagsMode any
+	Aggregations       any
+	CreatedAt          any
+	ExcludeTagsMode    any
 	IncludePercentiles any
-	MetricType any
-	ModifiedAt any
-	Tags any
+	MetricType         any
+	ModifiedAt         any
+	Tags               any
 }
 
 type AndMetricTagConfigurationsResponse_Data_Relationships_MetricVolumes_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -32,21 +32,21 @@ type AndMetricTagConfigurationsResponse_Data_Relationships struct {
 }
 
 type AndMetricTagConfigurationsResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type AndMetricTagConfigurationsResponse_Included_Attributes struct {
-	IndexedVolume any
+	IndexedVolume  any
 	IngestedVolume any
 }
 
 type AndMetricTagConfigurationsResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AndMetricTagConfigurationsResponse_Links struct {
@@ -80,12 +80,12 @@ type AndMetricTagConfigurationsResponse_Meta struct {
 
 type AndMetricTagConfigurationsResponseConfig struct {
 	Include any
-	Sort any
+	Sort    any
 }
 
 type AndMetricTagConfigurationsResponseAttrs struct {
 	// Array of metrics and metric tag configurations.
-	Data any
+	Data    any
 	Include any
 	// Array of metric volume resources included when requested with `include=metric_volumes`.
 	Included any
@@ -100,6 +100,6 @@ var AndMetricTagConfigurationsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_metrics_and_metric_tag_configurations_response",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

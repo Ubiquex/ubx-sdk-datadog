@@ -17,7 +17,7 @@ type CanDeleteSloresponseAttrs struct {
 	Data any
 	// A mapping of SLO id to it's current usages.
 	Errors any
-	Ids any
+	Ids    any
 }
 
 var CanDeleteSloresponse = ubx.DataSourceBinding{

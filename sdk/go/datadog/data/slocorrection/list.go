@@ -4,31 +4,31 @@ package slocorrection
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_Data_Attributes_Creator struct {
-	Email any
+	Email  any
 	Handle any
-	Name any
+	Name   any
 }
 
 type List_Data_Attributes struct {
-	Category any
-	CreatedAt any
-	Creator any
+	Category    any
+	CreatedAt   any
+	Creator     any
 	Description any
-	Duration any
-	End any
-	ModifiedAt any
-	Modifier any
-	Rrule any
-	SloId any
-	SloQuery any
-	Start any
-	Timezone any
+	Duration    any
+	End         any
+	ModifiedAt  any
+	Modifier    any
+	Rrule       any
+	SloId       any
+	SloQuery    any
+	Start       any
+	Timezone    any
 }
 
 type List_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type List_Meta_Page struct {
@@ -44,23 +44,23 @@ type List_Meta struct {
 }
 
 type ListConfig struct {
-	Limit any
+	Limit  any
 	Offset any
 }
 
 type ListAttrs struct {
 	// The list of SLO corrections objects.
-	Data any
+	Data  any
 	Limit any
 	// Object describing meta attributes of response.
-	Meta any
+	Meta   any
 	Offset any
 }
 
 var List = ubx.DataSourceBinding{
 	WireType: "datadog_slocorrection_list",
 	Fields: ubx.FieldMap{
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
 		"Offset": ubx.FieldSpec{WireName: "offset"},
 	},
 }
