@@ -60,3 +60,11 @@ jobs:
           python -m pip install -e .
           python -m compileall -q ubx
         working-directory: sdk/python
+
+      - name: README counts match the generated tree
+        # The README-GEN block looks generated and never was. Every one of
+        # these repos was carrying a wrong count, some by hundreds, and
+        # nothing said so (UBI-241). Derived from the tree here, and
+        # counted across all three languages so a partial regeneration is
+        # caught too.
+        run: python3 scripts/check_readme_counts.py
