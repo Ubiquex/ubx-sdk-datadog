@@ -1,4 +1,4 @@
-module github.com/ubiquex/ubx-sdk-datadog/sdk/go
+module github.com/ubiquex/ubx-sdk-datadog/sdk/go/v2
 
 go 1.26.3
 
