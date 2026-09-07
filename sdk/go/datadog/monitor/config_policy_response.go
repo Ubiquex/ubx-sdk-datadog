@@ -4,7 +4,7 @@ package monitor
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigPolicyResponse_Data_Attributes_Policy struct {
-	TagKey         any
+	TagKey any
 	TagKeyRequired any
 	ValidTagValues any
 }
@@ -26,29 +26,29 @@ type ConfigPolicyResponse_Data struct {
 }
 
 var ConfigPolicyResponse_Data_Attributes_PolicyFields = ubx.FieldMap{
-	"TagKey":         ubx.FieldSpec{WireName: "tag_key"},
-	"TagKeyRequired": ubx.FieldSpec{WireName: "tag_key_required"},
-	"ValidTagValues": ubx.FieldSpec{WireName: "valid_tag_values"},
-}
+		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
+		"TagKeyRequired": ubx.FieldSpec{WireName: "tag_key_required"},
+		"ValidTagValues": ubx.FieldSpec{WireName: "valid_tag_values"},
+	}
 
 var ConfigPolicyResponse_Data_AttributesFields = ubx.FieldMap{
-	"Policy": ubx.FieldSpec{
-		WireName: "policy",
-		Kind:     "object",
-		Fields:   ConfigPolicyResponse_Data_Attributes_PolicyFields,
-	},
-	"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-}
+		"Policy": ubx.FieldSpec{
+			WireName: "policy",
+			Kind: "object",
+			Fields: ConfigPolicyResponse_Data_Attributes_PolicyFields,
+		},
+		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
+	}
 
 var ConfigPolicyResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   ConfigPolicyResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: ConfigPolicyResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ConfigPolicyResponseConfig struct {
 	// A monitor configuration policy data.
@@ -69,8 +69,8 @@ var ConfigPolicyResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   ConfigPolicyResponse_DataFields,
+			Kind: "object",
+			Fields: ConfigPolicyResponse_DataFields,
 		},
 		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
 	},

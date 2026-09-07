@@ -5,9 +5,9 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .coverage_timeseries_response import CoverageTimeseriesResponse, CoverageTimeseriesResponseConfig
-from .list_item import ListItem, ListItemConfig
+from .list_item_list import ListItemList, ListItemListConfig
 from .on_demand_hotspots_scalar_response import OnDemandHotspotsScalarResponse, OnDemandHotspotsScalarResponseConfig
 from .savings_timeseries_response import SavingsTimeseriesResponse, SavingsTimeseriesResponseConfig
-from .scalar_column import ScalarColumn, ScalarColumnConfig
+from .scalar_column_list import ScalarColumnList, ScalarColumnListConfig
 from .utilization_scalar_response import UtilizationScalarResponse, UtilizationScalarResponseConfig
 from .utilization_timeseries_response import UtilizationTimeseriesResponse, UtilizationTimeseriesResponseConfig

@@ -28,8 +28,8 @@ type PrivateLocation_Secrets struct {
 }
 
 var PrivateLocation_MetadataFields = ubx.FieldMap{
-	"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
-}
+		"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
+	}
 
 type PrivateLocationConfig struct {
 	// Description of the private location.
@@ -67,11 +67,11 @@ var PrivateLocation = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind:     "object",
-			Fields:   PrivateLocation_MetadataFields,
+			Kind: "object",
+			Fields: PrivateLocation_MetadataFields,
 		},
-		"Name":       ubx.FieldSpec{WireName: "name"},
-		"Tags":       ubx.FieldSpec{WireName: "tags"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"LocationId": ubx.FieldSpec{WireName: "location_id"},
 	},
 }

@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .attribute_config import AttributeConfig, AttributeConfigConfig
+from .attribute_config_list import AttributeConfigList, AttributeConfigListConfig
 from .costs_file_get_response import CostsFileGetResponse, CostsFileGetResponseConfig
-from .costs_file_metadata_high_level import CostsFileMetadataHighLevel, CostsFileMetadataHighLevelConfig
-from .destination_response_definition import DestinationResponseDefinition, DestinationResponseDefinitionConfig
+from .costs_file_metadata_high_level_list import CostsFileMetadataHighLevelList, CostsFileMetadataHighLevelListConfig
+from .destination_response_definition_list import DestinationResponseDefinitionList, DestinationResponseDefinitionListConfig
 from .forecast_response import ForecastResponse, ForecastResponseConfig
-from .rule_revision import RuleRevision, RuleRevisionConfig
+from .rule_revision_list import RuleRevisionList, RuleRevisionListConfig
 from .rule_revision_response import RuleRevisionResponse, RuleRevisionResponseConfig
-from .ruleset import Ruleset, RulesetConfig
+from .ruleset_list import RulesetList, RulesetListConfig

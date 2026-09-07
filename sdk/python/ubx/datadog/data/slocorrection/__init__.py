@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .slocorrection import Slocorrection, SlocorrectionConfig
+from .list import List, ListConfig

@@ -38,6 +38,7 @@ class AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions
 @dataclasses.dataclass
 class AnnotatedInteractionsByTraceResponse_Data_Attributes_AnnotatedInteractions:
     annotations: Any = None
+    can_annotate: Any = None
     content_id: Any = None
     created_at: Any = None
     display_block: Any = None

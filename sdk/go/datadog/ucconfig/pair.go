@@ -15,21 +15,21 @@ type Pair_Data_Attributes_ActualBillConfig struct {
 }
 
 type Pair_Data_Attributes_Configs struct {
-	AccountId        any
-	ClientId         any
-	CreatedAt        any
-	DatasetType      any
-	ErrorMessages    any
-	ExportName       any
-	ExportPath       any
-	Id               any
-	Months           any
-	Scope            any
-	Status           any
-	StatusUpdatedAt  any
-	StorageAccount   any
+	AccountId any
+	ClientId any
+	CreatedAt any
+	DatasetType any
+	ErrorMessages any
+	ExportName any
+	ExportPath any
+	Id any
+	Months any
+	Scope any
+	Status any
+	StatusUpdatedAt any
+	StorageAccount any
 	StorageContainer any
-	UpdatedAt        any
+	UpdatedAt any
 }
 
 type Pair_Data_Attributes struct {
@@ -57,60 +57,60 @@ type Pair_Data struct {
 }
 
 var Pair_Data_Attributes_ActualBillConfigFields = ubx.FieldMap{
-	"ExportName":       ubx.FieldSpec{WireName: "export_name"},
-	"ExportPath":       ubx.FieldSpec{WireName: "export_path"},
-	"StorageAccount":   ubx.FieldSpec{WireName: "storage_account"},
-	"StorageContainer": ubx.FieldSpec{WireName: "storage_container"},
-}
+		"ExportName": ubx.FieldSpec{WireName: "export_name"},
+		"ExportPath": ubx.FieldSpec{WireName: "export_path"},
+		"StorageAccount": ubx.FieldSpec{WireName: "storage_account"},
+		"StorageContainer": ubx.FieldSpec{WireName: "storage_container"},
+	}
 
 var Pair_Data_Attributes_ConfigsFields = ubx.FieldMap{
-	"AccountId":        ubx.FieldSpec{WireName: "account_id"},
-	"ClientId":         ubx.FieldSpec{WireName: "client_id"},
-	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
-	"DatasetType":      ubx.FieldSpec{WireName: "dataset_type"},
-	"ErrorMessages":    ubx.FieldSpec{WireName: "error_messages"},
-	"ExportName":       ubx.FieldSpec{WireName: "export_name"},
-	"ExportPath":       ubx.FieldSpec{WireName: "export_path"},
-	"Id":               ubx.FieldSpec{WireName: "id"},
-	"Months":           ubx.FieldSpec{WireName: "months"},
-	"Scope":            ubx.FieldSpec{WireName: "scope"},
-	"Status":           ubx.FieldSpec{WireName: "status"},
-	"StatusUpdatedAt":  ubx.FieldSpec{WireName: "status_updated_at"},
-	"StorageAccount":   ubx.FieldSpec{WireName: "storage_account"},
-	"StorageContainer": ubx.FieldSpec{WireName: "storage_container"},
-	"UpdatedAt":        ubx.FieldSpec{WireName: "updated_at"},
-}
+		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"DatasetType": ubx.FieldSpec{WireName: "dataset_type"},
+		"ErrorMessages": ubx.FieldSpec{WireName: "error_messages"},
+		"ExportName": ubx.FieldSpec{WireName: "export_name"},
+		"ExportPath": ubx.FieldSpec{WireName: "export_path"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Months": ubx.FieldSpec{WireName: "months"},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"StatusUpdatedAt": ubx.FieldSpec{WireName: "status_updated_at"},
+		"StorageAccount": ubx.FieldSpec{WireName: "storage_account"},
+		"StorageContainer": ubx.FieldSpec{WireName: "storage_container"},
+		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+	}
 
 var Pair_Data_AttributesFields = ubx.FieldMap{
-	"AccountId": ubx.FieldSpec{WireName: "account_id"},
-	"ActualBillConfig": ubx.FieldSpec{
-		WireName: "actual_bill_config",
-		Kind:     "object",
-		Fields:   Pair_Data_Attributes_ActualBillConfigFields,
-	},
-	"AmortizedBillConfig": ubx.FieldSpec{
-		WireName: "amortized_bill_config",
-		Kind:     "object",
-		Fields:   Pair_Data_Attributes_ActualBillConfigFields,
-	},
-	"ClientId": ubx.FieldSpec{WireName: "client_id"},
-	"Configs": ubx.FieldSpec{
-		WireName: "configs",
-		Kind:     "list",
-		Fields:   Pair_Data_Attributes_ConfigsFields,
-	},
-	"Scope": ubx.FieldSpec{WireName: "scope"},
-}
+		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"ActualBillConfig": ubx.FieldSpec{
+			WireName: "actual_bill_config",
+			Kind: "object",
+			Fields: Pair_Data_Attributes_ActualBillConfigFields,
+		},
+		"AmortizedBillConfig": ubx.FieldSpec{
+			WireName: "amortized_bill_config",
+			Kind: "object",
+			Fields: Pair_Data_Attributes_ActualBillConfigFields,
+		},
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"Configs": ubx.FieldSpec{
+			WireName: "configs",
+			Kind: "list",
+			Fields: Pair_Data_Attributes_ConfigsFields,
+		},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+	}
 
 var Pair_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   Pair_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: Pair_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type PairConfig struct {
 	// Azure config Post data.
@@ -131,8 +131,8 @@ var Pair = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   Pair_DataFields,
+			Kind: "object",
+			Fields: Pair_DataFields,
 		},
 		"CloudAccountId": ubx.FieldSpec{WireName: "cloud_account_id"},
 	},

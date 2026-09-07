@@ -6,4 +6,4 @@ SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .array import Array, ArrayConfig
 from .template_array import TemplateArray, TemplateArrayConfig
-from .window import Window, WindowConfig
+from .window_list import WindowList, WindowListConfig

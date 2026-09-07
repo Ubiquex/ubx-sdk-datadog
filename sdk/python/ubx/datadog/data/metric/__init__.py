@@ -5,9 +5,9 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .all_tags_response import AllTagsResponse, AllTagsResponseConfig
-from .asset_response_included import AssetResponseIncluded, AssetResponseIncludedConfig
+from .asset_response_included_list import AssetResponseIncludedList, AssetResponseIncludedListConfig
 from .search_response import SearchResponse, SearchResponseConfig
 from .suggested_tags_and_aggregations_response import SuggestedTagsAndAggregationsResponse, SuggestedTagsAndAggregationsResponseConfig
-from .tag_cardinality import TagCardinality, TagCardinalityConfig
+from .tag_cardinality_list import TagCardinalityList, TagCardinalityListConfig
 from .tag_configuration_response import TagConfigurationResponse, TagConfigurationResponseConfig
 from .volumes_response import VolumesResponse, VolumesResponseConfig

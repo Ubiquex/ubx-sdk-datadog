@@ -33,7 +33,7 @@ type Response_Data_Attributes struct {
 }
 
 type Response_Data_Relationships_TeamLinks_Data struct {
-	Id   any
+	Id any
 	Type any
 }
 
@@ -82,96 +82,96 @@ type Response_Data struct {
 }
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-	"Avatar":         ubx.FieldSpec{WireName: "avatar"},
-	"Banner":         ubx.FieldSpec{WireName: "banner"},
-	"CreatedAt":      ubx.FieldSpec{WireName: "created_at"},
-	"Description":    ubx.FieldSpec{WireName: "description"},
-	"Handle":         ubx.FieldSpec{WireName: "handle"},
-	"HiddenModules":  ubx.FieldSpec{WireName: "hidden_modules"},
-	"IsManaged":      ubx.FieldSpec{WireName: "is_managed"},
-	"LinkCount":      ubx.FieldSpec{WireName: "link_count"},
-	"ModifiedAt":     ubx.FieldSpec{WireName: "modified_at"},
-	"Name":           ubx.FieldSpec{WireName: "name"},
-	"Summary":        ubx.FieldSpec{WireName: "summary"},
-	"UserCount":      ubx.FieldSpec{WireName: "user_count"},
-	"VisibleModules": ubx.FieldSpec{WireName: "visible_modules"},
-}
+		"Avatar": ubx.FieldSpec{WireName: "avatar"},
+		"Banner": ubx.FieldSpec{WireName: "banner"},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Handle": ubx.FieldSpec{WireName: "handle"},
+		"HiddenModules": ubx.FieldSpec{WireName: "hidden_modules"},
+		"IsManaged": ubx.FieldSpec{WireName: "is_managed"},
+		"LinkCount": ubx.FieldSpec{WireName: "link_count"},
+		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Summary": ubx.FieldSpec{WireName: "summary"},
+		"UserCount": ubx.FieldSpec{WireName: "user_count"},
+		"VisibleModules": ubx.FieldSpec{WireName: "visible_modules"},
+	}
 
 var Response_Data_Relationships_TeamLinks_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Response_Data_Relationships_TeamLinks_LinksFields = ubx.FieldMap{
-	"Related": ubx.FieldSpec{WireName: "related"},
-}
+		"Related": ubx.FieldSpec{WireName: "related"},
+	}
 
 var Response_Data_Relationships_TeamLinksFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "list",
-		Fields:   Response_Data_Relationships_TeamLinks_DataFields,
-	},
-	"Links": ubx.FieldSpec{
-		WireName: "links",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_TeamLinks_LinksFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "list",
+			Fields: Response_Data_Relationships_TeamLinks_DataFields,
+		},
+		"Links": ubx.FieldSpec{
+			WireName: "links",
+			Kind: "object",
+			Fields: Response_Data_Relationships_TeamLinks_LinksFields,
+		},
+	}
 
 var Response_Data_Relationships_UserTeamPermissionsFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_TeamLinks_DataFields,
-	},
-	"Links": ubx.FieldSpec{
-		WireName: "links",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_TeamLinks_LinksFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "object",
+			Fields: Response_Data_Relationships_TeamLinks_DataFields,
+		},
+		"Links": ubx.FieldSpec{
+			WireName: "links",
+			Kind: "object",
+			Fields: Response_Data_Relationships_TeamLinks_LinksFields,
+		},
+	}
 
 var Response_Data_Relationships_UsersFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "list",
-		Fields:   Response_Data_Relationships_TeamLinks_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "list",
+			Fields: Response_Data_Relationships_TeamLinks_DataFields,
+		},
+	}
 
 var Response_Data_RelationshipsFields = ubx.FieldMap{
-	"TeamLinks": ubx.FieldSpec{
-		WireName: "team_links",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_TeamLinksFields,
-	},
-	"UserTeamPermissions": ubx.FieldSpec{
-		WireName: "user_team_permissions",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_UserTeamPermissionsFields,
-	},
-	"Users": ubx.FieldSpec{
-		WireName: "users",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_UsersFields,
-	},
-}
+		"TeamLinks": ubx.FieldSpec{
+			WireName: "team_links",
+			Kind: "object",
+			Fields: Response_Data_Relationships_TeamLinksFields,
+		},
+		"UserTeamPermissions": ubx.FieldSpec{
+			WireName: "user_team_permissions",
+			Kind: "object",
+			Fields: Response_Data_Relationships_UserTeamPermissionsFields,
+		},
+		"Users": ubx.FieldSpec{
+			WireName: "users",
+			Kind: "object",
+			Fields: Response_Data_Relationships_UsersFields,
+		},
+	}
 
 var Response_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   Response_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   Response_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: Response_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: Response_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResponseConfig struct {
 	// Team create
@@ -192,8 +192,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   Response_DataFields,
+			Kind: "object",
+			Fields: Response_DataFields,
 		},
 		"TeamId": ubx.FieldSpec{WireName: "team_id"},
 	},

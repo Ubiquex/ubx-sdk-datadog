@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .cloud_integration_account_response_data import CloudIntegrationAccountResponseData, CloudIntegrationAccountResponseDataConfig
+from .cloud_integration_account_response_data_list import CloudIntegrationAccountResponseDataList, CloudIntegrationAccountResponseDataListConfig

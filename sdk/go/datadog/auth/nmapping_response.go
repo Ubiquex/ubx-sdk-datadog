@@ -17,7 +17,7 @@ type NmappingResponse_Data_Attributes struct {
 }
 
 type NmappingResponse_Data_Relationships_Role_Data struct {
-	Id   any
+	Id any
 	Type any
 }
 
@@ -42,7 +42,7 @@ type NmappingResponse_Data struct {
 }
 
 type NmappingResponse_Included_Attributes struct {
-	AttributeKey   any
+	AttributeKey any
 	AttributeValue any
 }
 
@@ -55,60 +55,60 @@ type NmappingResponse_Included_Relationships struct {
 }
 
 type NmappingResponse_Included struct {
-	Attributes    any
-	Id            any
+	Attributes any
+	Id any
 	Relationships any
-	Type          any
+	Type any
 }
 
 var NmappingResponse_Data_AttributesFields = ubx.FieldMap{
-	"AttributeKey":             ubx.FieldSpec{WireName: "attribute_key"},
-	"AttributeValue":           ubx.FieldSpec{WireName: "attribute_value"},
-	"CreatedAt":                ubx.FieldSpec{WireName: "created_at"},
-	"ModifiedAt":               ubx.FieldSpec{WireName: "modified_at"},
-	"SamlAssertionAttributeId": ubx.FieldSpec{WireName: "saml_assertion_attribute_id"},
-}
+		"AttributeKey": ubx.FieldSpec{WireName: "attribute_key"},
+		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+		"SamlAssertionAttributeId": ubx.FieldSpec{WireName: "saml_assertion_attribute_id"},
+	}
 
 var NmappingResponse_Data_Relationships_Role_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var NmappingResponse_Data_Relationships_RoleFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "object",
-		Fields:   NmappingResponse_Data_Relationships_Role_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "object",
+			Fields: NmappingResponse_Data_Relationships_Role_DataFields,
+		},
+	}
 
 var NmappingResponse_Data_RelationshipsFields = ubx.FieldMap{
-	"Role": ubx.FieldSpec{
-		WireName: "role",
-		Kind:     "object",
-		Fields:   NmappingResponse_Data_Relationships_RoleFields,
-	},
-	"Team": ubx.FieldSpec{
-		WireName: "team",
-		Kind:     "object",
-		Fields:   NmappingResponse_Data_Relationships_RoleFields,
-	},
-}
+		"Role": ubx.FieldSpec{
+			WireName: "role",
+			Kind: "object",
+			Fields: NmappingResponse_Data_Relationships_RoleFields,
+		},
+		"Team": ubx.FieldSpec{
+			WireName: "team",
+			Kind: "object",
+			Fields: NmappingResponse_Data_Relationships_RoleFields,
+		},
+	}
 
 var NmappingResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   NmappingResponse_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   NmappingResponse_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: NmappingResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: NmappingResponse_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type NmappingResponseConfig struct {
 	// Data for creating an AuthN Mapping.
@@ -131,8 +131,8 @@ var NmappingResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   NmappingResponse_DataFields,
+			Kind: "object",
+			Fields: NmappingResponse_DataFields,
 		},
 		"AuthnMappingId": ubx.FieldSpec{WireName: "authn_mapping_id"},
 	},

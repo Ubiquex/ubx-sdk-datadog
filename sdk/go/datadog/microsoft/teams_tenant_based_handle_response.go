@@ -24,21 +24,21 @@ type TeamsTenantBasedHandleResponse_Data struct {
 }
 
 var TeamsTenantBasedHandleResponse_Data_AttributesFields = ubx.FieldMap{
-	"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-	"Name":      ubx.FieldSpec{WireName: "name"},
-	"TeamId":    ubx.FieldSpec{WireName: "team_id"},
-	"TenantId":  ubx.FieldSpec{WireName: "tenant_id"},
-}
+		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TeamId": ubx.FieldSpec{WireName: "team_id"},
+		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
+	}
 
 var TeamsTenantBasedHandleResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   TeamsTenantBasedHandleResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: TeamsTenantBasedHandleResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type TeamsTenantBasedHandleResponseConfig struct {
 	// Tenant-based handle data from a response.
@@ -59,8 +59,8 @@ var TeamsTenantBasedHandleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   TeamsTenantBasedHandleResponse_DataFields,
+			Kind: "object",
+			Fields: TeamsTenantBasedHandleResponse_DataFields,
 		},
 		"HandleId": ubx.FieldSpec{WireName: "handle_id"},
 	},

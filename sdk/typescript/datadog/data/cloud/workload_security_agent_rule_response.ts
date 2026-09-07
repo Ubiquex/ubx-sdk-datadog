@@ -29,6 +29,7 @@ export interface WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Set {
 }
 
 export interface WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions {
+  disabled?: boolean | Computed<boolean>;
   filter?: string | Computed<string>;
   hash?: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Hash | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Hash>;
   kill?: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Kill | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Kill>;
@@ -48,6 +49,8 @@ export interface WorkloadSecurityAgentRuleResponse_Data_Attributes {
   actions?: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions[] | Computed<WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions[]>;
   /** The version of the Agent */
   agentConstraint?: string | Computed<string>;
+  /** The version constraint of the Datadog Agent the rule applies to */
+  agentVersion?: string | Computed<string>;
   /** The blocking policies that the rule belongs to */
   blocking?: string[] | Computed<string[]>;
   /** The category of the Agent rule */
@@ -66,10 +69,14 @@ export interface WorkloadSecurityAgentRuleResponse_Data_Attributes {
   disabled?: string[] | Computed<string[]>;
   /** Whether the Agent rule is enabled */
   enabled?: boolean | Computed<boolean>;
+  /** The rate limiting duration of the Agent rule, in nanoseconds */
+  every?: number | Computed<number>;
   /** The SECL expression of the Agent rule */
   expression?: string | Computed<string>;
   /** The platforms the Agent rule is supported on */
   filters?: string[] | Computed<string[]>;
+  /** The group of rules the Agent rule belongs to */
+  groupId?: string | Computed<string>;
   /** The monitoring policies that the rule belongs to */
   monitoring?: string[] | Computed<string[]>;
   /** The name of the Agent rule */

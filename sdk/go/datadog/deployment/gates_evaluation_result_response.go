@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules_Options struct {
 	Duration any
-	Query    any
+	Query any
 }
 
 type GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules struct {
-	DryRun  any
-	Name    any
+	DryRun any
+	Name any
 	Options any
-	Type    any
+	Type any
 }
 
 type GatesEvaluationResultResponse_Data_Attributes_Configuration struct {
@@ -24,7 +24,7 @@ type GatesEvaluationResultResponse_Data_Attributes_Configuration struct {
 
 type GatesEvaluationResultResponse_Data_Attributes_Rules struct {
 	DryRun any
-	Name   any
+	Name any
 	Reason any
 	Status any
 }
@@ -66,69 +66,69 @@ type GatesEvaluationResultResponse_Data struct {
 }
 
 var GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules_OptionsFields = ubx.FieldMap{
-	"Duration": ubx.FieldSpec{WireName: "duration"},
-	"Query":    ubx.FieldSpec{WireName: "query"},
-}
+		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"Query": ubx.FieldSpec{WireName: "query"},
+	}
 
 var GatesEvaluationResultResponse_Data_Attributes_Configuration_RulesFields = ubx.FieldMap{
-	"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-	"Name":   ubx.FieldSpec{WireName: "name"},
-	"Options": ubx.FieldSpec{
-		WireName: "options",
-		Kind:     "object",
-		Fields:   GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules_OptionsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Options": ubx.FieldSpec{
+			WireName: "options",
+			Kind: "object",
+			Fields: GatesEvaluationResultResponse_Data_Attributes_Configuration_Rules_OptionsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields = ubx.FieldMap{
-	"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-	"Rules": ubx.FieldSpec{
-		WireName: "rules",
-		Kind:     "list",
-		Fields:   GatesEvaluationResultResponse_Data_Attributes_Configuration_RulesFields,
-	},
-}
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: GatesEvaluationResultResponse_Data_Attributes_Configuration_RulesFields,
+		},
+	}
 
 var GatesEvaluationResultResponse_Data_Attributes_RulesFields = ubx.FieldMap{
-	"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-	"Name":   ubx.FieldSpec{WireName: "name"},
-	"Reason": ubx.FieldSpec{WireName: "reason"},
-	"Status": ubx.FieldSpec{WireName: "status"},
-}
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Reason": ubx.FieldSpec{WireName: "reason"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
 
 var GatesEvaluationResultResponse_Data_AttributesFields = ubx.FieldMap{
-	"Configuration": ubx.FieldSpec{
-		WireName: "configuration",
-		Kind:     "object",
-		Fields:   GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields,
-	},
-	"DryRun":        ubx.FieldSpec{WireName: "dry_run"},
-	"Env":           ubx.FieldSpec{WireName: "env"},
-	"EvaluationId":  ubx.FieldSpec{WireName: "evaluation_id"},
-	"EvaluationUrl": ubx.FieldSpec{WireName: "evaluation_url"},
-	"GateId":        ubx.FieldSpec{WireName: "gate_id"},
-	"GateStatus":    ubx.FieldSpec{WireName: "gate_status"},
-	"Identifier":    ubx.FieldSpec{WireName: "identifier"},
-	"PrimaryTag":    ubx.FieldSpec{WireName: "primary_tag"},
-	"Rules": ubx.FieldSpec{
-		WireName: "rules",
-		Kind:     "list",
-		Fields:   GatesEvaluationResultResponse_Data_Attributes_RulesFields,
-	},
-	"Service": ubx.FieldSpec{WireName: "service"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Configuration": ubx.FieldSpec{
+			WireName: "configuration",
+			Kind: "object",
+			Fields: GatesEvaluationResultResponse_Data_Attributes_ConfigurationFields,
+		},
+		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+		"Env": ubx.FieldSpec{WireName: "env"},
+		"EvaluationId": ubx.FieldSpec{WireName: "evaluation_id"},
+		"EvaluationUrl": ubx.FieldSpec{WireName: "evaluation_url"},
+		"GateId": ubx.FieldSpec{WireName: "gate_id"},
+		"GateStatus": ubx.FieldSpec{WireName: "gate_status"},
+		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"PrimaryTag": ubx.FieldSpec{WireName: "primary_tag"},
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: GatesEvaluationResultResponse_Data_Attributes_RulesFields,
+		},
+		"Service": ubx.FieldSpec{WireName: "service"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var GatesEvaluationResultResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   GatesEvaluationResultResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: GatesEvaluationResultResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type GatesEvaluationResultResponseConfig struct {
 	// Data for a deployment gate evaluation request.
@@ -149,8 +149,8 @@ var GatesEvaluationResultResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   GatesEvaluationResultResponse_DataFields,
+			Kind: "object",
+			Fields: GatesEvaluationResultResponse_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

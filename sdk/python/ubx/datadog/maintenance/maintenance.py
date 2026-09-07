@@ -25,6 +25,8 @@ class Maintenance_Data_Attributes_Updates:
 
 @dataclasses.dataclass
 class Maintenance_Data_Attributes:
+    # The description shown when the maintenance is canceled.
+    canceled_description: Any = None
     # Timestamp of when the maintenance was completed.
     completed_date: Any = None
     # The description shown when the maintenance is completed.
@@ -126,6 +128,7 @@ _Maintenance_Data_Attributes_UpdatesFields = {
 }
 
 _Maintenance_Data_AttributesFields = {
+    "canceled_description": ubx.FieldSpec(wire_name="canceled_description"),
     "completed_date": ubx.FieldSpec(wire_name="completed_date"),
     "completed_description": ubx.FieldSpec(wire_name="completed_description"),
     "components_affected": ubx.FieldSpec(

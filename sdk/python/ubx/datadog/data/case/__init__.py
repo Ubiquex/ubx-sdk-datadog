@@ -4,10 +4,10 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .case import Case, CaseConfig
 from .count_response import CountResponse, CountResponseConfig
-from .link import Link, LinkConfig
-from .notification_rule import NotificationRule, NotificationRuleConfig
-from .type_resource import TypeResource, TypeResourceConfig
-from .view import View, ViewConfig
-from .watcher import Watcher, WatcherConfig
+from .link_list import LinkList, LinkListConfig
+from .list import List, ListConfig
+from .notification_rule_list import NotificationRuleList, NotificationRuleListConfig
+from .type_resource_list import TypeResourceList, TypeResourceListConfig
+from .view_list import ViewList, ViewListConfig
+from .watcher_list import WatcherList, WatcherListConfig

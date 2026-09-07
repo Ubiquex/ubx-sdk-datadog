@@ -193,6 +193,30 @@ class Monitor_Options_Variables_JoinCondition:
     join_type: Any = None
 
 @dataclasses.dataclass
+class Monitor_Options_Variables_MonitorOptions_ModelConfiguration:
+    auto_resolve_days: Any = None
+    enable_flatline_detection: Any = None
+    function: Any = None
+    min_lower_bound_size: Any = None
+    min_upper_bound_size: Any = None
+    model_bounds_override: Any = None
+
+@dataclasses.dataclass
+class Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_Source:
+    custom_sql: Any = None
+    custom_where: Any = None
+    entity_id: Any = None
+    entity_type: Any = None
+    group_by_columns: Any = None
+
+@dataclasses.dataclass
+class Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig:
+    diff_type: Any = None
+    entity_type: Any = None
+    source: Any = None
+    target: Any = None
+
+@dataclasses.dataclass
 class Monitor_Options_Variables_MonitorOptions:
     crontab_override: Any = None
     custom_sql: Any = None
@@ -200,10 +224,12 @@ class Monitor_Options_Variables_MonitorOptions:
     custom_where: Any = None
     # A list of columns to group by for the variable's expression in the monitor query. (AI-inferred)
     group_by_columns: Any = None
+    model_configuration: Any = None
     # Override the model type for the monitor variable. Allowed values are 'freshness', 'percentage', or 'any'. (AI-inferred)
     model_type_override: Any = None
     # The sensitivity of the anomaly detection monitor, from 1 (least sensitive) to 5 (most sensitive). This controls the width of the anomaly detection band. (AI-inferred)
     sensitivity: Any = None
+    source_to_target_config: Any = None
 
 @dataclasses.dataclass
 class Monitor_Options_Variables:
@@ -494,13 +520,55 @@ _Monitor_Options_Variables_JoinConditionFields = {
     "join_type": ubx.FieldSpec(wire_name="join_type"),
 }
 
+_Monitor_Options_Variables_MonitorOptions_ModelConfigurationFields = {
+    "auto_resolve_days": ubx.FieldSpec(wire_name="auto_resolve_days"),
+    "enable_flatline_detection": ubx.FieldSpec(wire_name="enable_flatline_detection"),
+    "function": ubx.FieldSpec(wire_name="function"),
+    "min_lower_bound_size": ubx.FieldSpec(wire_name="min_lower_bound_size"),
+    "min_upper_bound_size": ubx.FieldSpec(wire_name="min_upper_bound_size"),
+    "model_bounds_override": ubx.FieldSpec(wire_name="model_bounds_override"),
+}
+
+_Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_SourceFields = {
+    "custom_sql": ubx.FieldSpec(wire_name="custom_sql"),
+    "custom_where": ubx.FieldSpec(wire_name="custom_where"),
+    "entity_id": ubx.FieldSpec(wire_name="entity_id"),
+    "entity_type": ubx.FieldSpec(wire_name="entity_type"),
+    "group_by_columns": ubx.FieldSpec(wire_name="group_by_columns"),
+}
+
+_Monitor_Options_Variables_MonitorOptions_SourceToTargetConfigFields = {
+    "diff_type": ubx.FieldSpec(wire_name="diff_type"),
+    "entity_type": ubx.FieldSpec(wire_name="entity_type"),
+    "source": ubx.FieldSpec(
+        wire_name="source",
+        kind="object",
+        fields=_Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_SourceFields,
+    ),
+    "target": ubx.FieldSpec(
+        wire_name="target",
+        kind="object",
+        fields=_Monitor_Options_Variables_MonitorOptions_SourceToTargetConfig_SourceFields,
+    ),
+}
+
 _Monitor_Options_Variables_MonitorOptionsFields = {
     "crontab_override": ubx.FieldSpec(wire_name="crontab_override"),
     "custom_sql": ubx.FieldSpec(wire_name="custom_sql"),
     "custom_where": ubx.FieldSpec(wire_name="custom_where"),
     "group_by_columns": ubx.FieldSpec(wire_name="group_by_columns"),
+    "model_configuration": ubx.FieldSpec(
+        wire_name="model_configuration",
+        kind="object",
+        fields=_Monitor_Options_Variables_MonitorOptions_ModelConfigurationFields,
+    ),
     "model_type_override": ubx.FieldSpec(wire_name="model_type_override"),
     "sensitivity": ubx.FieldSpec(wire_name="sensitivity"),
+    "source_to_target_config": ubx.FieldSpec(
+        wire_name="source_to_target_config",
+        kind="object",
+        fields=_Monitor_Options_Variables_MonitorOptions_SourceToTargetConfigFields,
+    ),
 }
 
 _Monitor_Options_VariablesFields = {

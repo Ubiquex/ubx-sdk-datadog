@@ -21,7 +21,7 @@ type QueryWithRelationshipsResponse_Data_Attributes struct {
 }
 
 type QueryWithRelationshipsResponse_Data_Relationships_Roles_Data struct {
-	Id   any
+	Id any
 	Type any
 }
 
@@ -52,55 +52,55 @@ type QueryWithRelationshipsResponse_Included_Attributes struct {
 
 type QueryWithRelationshipsResponse_Included struct {
 	Attributes any
-	Id         any
-	Type       any
+	Id any
+	Type any
 }
 
 var QueryWithRelationshipsResponse_Data_AttributesFields = ubx.FieldMap{
-	"CreatedAt":         ubx.FieldSpec{WireName: "created_at"},
-	"LastModifierEmail": ubx.FieldSpec{WireName: "last_modifier_email"},
-	"LastModifierName":  ubx.FieldSpec{WireName: "last_modifier_name"},
-	"ModifiedAt":        ubx.FieldSpec{WireName: "modified_at"},
-	"RestrictionQuery":  ubx.FieldSpec{WireName: "restriction_query"},
-	"RoleCount":         ubx.FieldSpec{WireName: "role_count"},
-	"UserCount":         ubx.FieldSpec{WireName: "user_count"},
-}
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"LastModifierEmail": ubx.FieldSpec{WireName: "last_modifier_email"},
+		"LastModifierName": ubx.FieldSpec{WireName: "last_modifier_name"},
+		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+		"RestrictionQuery": ubx.FieldSpec{WireName: "restriction_query"},
+		"RoleCount": ubx.FieldSpec{WireName: "role_count"},
+		"UserCount": ubx.FieldSpec{WireName: "user_count"},
+	}
 
 var QueryWithRelationshipsResponse_Data_Relationships_Roles_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var QueryWithRelationshipsResponse_Data_Relationships_RolesFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "list",
-		Fields:   QueryWithRelationshipsResponse_Data_Relationships_Roles_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "list",
+			Fields: QueryWithRelationshipsResponse_Data_Relationships_Roles_DataFields,
+		},
+	}
 
 var QueryWithRelationshipsResponse_Data_RelationshipsFields = ubx.FieldMap{
-	"Roles": ubx.FieldSpec{
-		WireName: "roles",
-		Kind:     "object",
-		Fields:   QueryWithRelationshipsResponse_Data_Relationships_RolesFields,
-	},
-}
+		"Roles": ubx.FieldSpec{
+			WireName: "roles",
+			Kind: "object",
+			Fields: QueryWithRelationshipsResponse_Data_Relationships_RolesFields,
+		},
+	}
 
 var QueryWithRelationshipsResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   QueryWithRelationshipsResponse_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   QueryWithRelationshipsResponse_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: QueryWithRelationshipsResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: QueryWithRelationshipsResponse_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type QueryWithRelationshipsResponseConfig struct {
 	// Data related to the creation of a restriction query.
@@ -123,8 +123,8 @@ var QueryWithRelationshipsResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   QueryWithRelationshipsResponse_DataFields,
+			Kind: "object",
+			Fields: QueryWithRelationshipsResponse_DataFields,
 		},
 		"RestrictionQueryId": ubx.FieldSpec{WireName: "restriction_query_id"},
 	},

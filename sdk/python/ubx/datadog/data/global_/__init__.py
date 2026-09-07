@@ -5,4 +5,4 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .incident_settings_response import IncidentSettingsResponse, IncidentSettingsResponseConfig
-from .org_data import OrgData, OrgDataConfig
+from .org_data_list import OrgDataList, OrgDataListConfig

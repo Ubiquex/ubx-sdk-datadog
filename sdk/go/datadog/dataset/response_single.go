@@ -31,31 +31,31 @@ type ResponseSingle_Data struct {
 }
 
 var ResponseSingle_Data_Attributes_ProductFiltersFields = ubx.FieldMap{
-	"Filters": ubx.FieldSpec{WireName: "filters"},
-	"Product": ubx.FieldSpec{WireName: "product"},
-}
+		"Filters": ubx.FieldSpec{WireName: "filters"},
+		"Product": ubx.FieldSpec{WireName: "product"},
+	}
 
 var ResponseSingle_Data_AttributesFields = ubx.FieldMap{
-	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
-	"CreatedBy":  ubx.FieldSpec{WireName: "created_by"},
-	"Name":       ubx.FieldSpec{WireName: "name"},
-	"Principals": ubx.FieldSpec{WireName: "principals"},
-	"ProductFilters": ubx.FieldSpec{
-		WireName: "product_filters",
-		Kind:     "list",
-		Fields:   ResponseSingle_Data_Attributes_ProductFiltersFields,
-	},
-}
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Principals": ubx.FieldSpec{WireName: "principals"},
+		"ProductFilters": ubx.FieldSpec{
+			WireName: "product_filters",
+			Kind: "list",
+			Fields: ResponseSingle_Data_Attributes_ProductFiltersFields,
+		},
+	}
 
 var ResponseSingle_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   ResponseSingle_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: ResponseSingle_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResponseSingleConfig struct {
 	// **Datasets Object Constraints** - **Tag limit per dataset**: - Each restricted dataset supports a maximum of 10 key:value pairs per product. - **Tag key rules per telemetry type**: - Only one tag key or attribute may be used to define access within a single telemetry type. - The same or different tag key may be used across different telemetry types. - **Tag value uniqueness**: - Tag values must be unique within a single dataset. - A tag value used in one dataset cannot be reused in another dataset of the same telemetry type.
@@ -76,8 +76,8 @@ var ResponseSingle = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   ResponseSingle_DataFields,
+			Kind: "object",
+			Fields: ResponseSingle_DataFields,
 		},
 		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
 	},

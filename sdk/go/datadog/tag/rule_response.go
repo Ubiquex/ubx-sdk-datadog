@@ -67,72 +67,72 @@ type RuleResponse_Data struct {
 }
 
 type RuleResponse_Included_Attributes struct {
-	Score   any
-	TsEnd   any
+	Score any
+	TsEnd any
 	TsStart any
 	Version any
 }
 
 type RuleResponse_Included struct {
 	Attributes any
-	Id         any
-	Type       any
+	Id any
+	Type any
 }
 
 var RuleResponse_Data_AttributesFields = ubx.FieldMap{
-	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
-	"CreatedBy":        ubx.FieldSpec{WireName: "created_by"},
-	"DeletedAt":        ubx.FieldSpec{WireName: "deleted_at"},
-	"DeletedBy":        ubx.FieldSpec{WireName: "deleted_by"},
-	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
-	"ModifiedAt":       ubx.FieldSpec{WireName: "modified_at"},
-	"ModifiedBy":       ubx.FieldSpec{WireName: "modified_by"},
-	"Name":             ubx.FieldSpec{WireName: "name"},
-	"Negated":          ubx.FieldSpec{WireName: "negated"},
-	"Required":         ubx.FieldSpec{WireName: "required"},
-	"RuleType":         ubx.FieldSpec{WireName: "rule_type"},
-	"Scope":            ubx.FieldSpec{WireName: "scope"},
-	"Source":           ubx.FieldSpec{WireName: "source"},
-	"TagKey":           ubx.FieldSpec{WireName: "tag_key"},
-	"TagValuePatterns": ubx.FieldSpec{WireName: "tag_value_patterns"},
-	"Version":          ubx.FieldSpec{WireName: "version"},
-}
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+		"DeletedAt": ubx.FieldSpec{WireName: "deleted_at"},
+		"DeletedBy": ubx.FieldSpec{WireName: "deleted_by"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+		"ModifiedBy": ubx.FieldSpec{WireName: "modified_by"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Negated": ubx.FieldSpec{WireName: "negated"},
+		"Required": ubx.FieldSpec{WireName: "required"},
+		"RuleType": ubx.FieldSpec{WireName: "rule_type"},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Source": ubx.FieldSpec{WireName: "source"},
+		"TagKey": ubx.FieldSpec{WireName: "tag_key"},
+		"TagValuePatterns": ubx.FieldSpec{WireName: "tag_value_patterns"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var RuleResponse_Data_Relationships_Score_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var RuleResponse_Data_Relationships_ScoreFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "object",
-		Fields:   RuleResponse_Data_Relationships_Score_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "object",
+			Fields: RuleResponse_Data_Relationships_Score_DataFields,
+		},
+	}
 
 var RuleResponse_Data_RelationshipsFields = ubx.FieldMap{
-	"Score": ubx.FieldSpec{
-		WireName: "score",
-		Kind:     "object",
-		Fields:   RuleResponse_Data_Relationships_ScoreFields,
-	},
-}
+		"Score": ubx.FieldSpec{
+			WireName: "score",
+			Kind: "object",
+			Fields: RuleResponse_Data_Relationships_ScoreFields,
+		},
+	}
 
 var RuleResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   RuleResponse_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   RuleResponse_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: RuleResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: RuleResponse_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type RuleResponseConfig struct {
 	// Data object for creating a tag rule.
@@ -155,8 +155,8 @@ var RuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   RuleResponse_DataFields,
+			Kind: "object",
+			Fields: RuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

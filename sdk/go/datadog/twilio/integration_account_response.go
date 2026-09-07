@@ -66,87 +66,87 @@ type IntegrationAccountResponse_Data struct {
 }
 
 var IntegrationAccountResponse_Data_Attributes_AuthenticationFields = ubx.FieldMap{
-	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-	"Password": ubx.FieldSpec{WireName: "password"},
-	"Username": ubx.FieldSpec{WireName: "username"},
-}
+		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+		"Password": ubx.FieldSpec{WireName: "password"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_StatusFields = ubx.FieldMap{
-	"Health":    ubx.FieldSpec{WireName: "health"},
-	"Message":   ubx.FieldSpec{WireName: "message"},
-	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-}
+		"Health": ubx.FieldSpec{WireName: "health"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+	}
 
 var IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields = ubx.FieldMap{
-	"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	"Status": ubx.FieldSpec{
-		WireName: "status",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_StatusFields,
-	},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Status": ubx.FieldSpec{
+			WireName: "status",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogs_StatusFields,
+		},
+	}
 
 var IntegrationAccountResponse_Data_Attributes_DataflowsFields = ubx.FieldMap{
-	"TwilioAlertsLogs": ubx.FieldSpec{
-		WireName: "twilio_alerts_logs",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
-	},
-	"TwilioCallSummariesLogs": ubx.FieldSpec{
-		WireName: "twilio_call_summaries_logs",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
-	},
-	"TwilioCloudCostMetrics": ubx.FieldSpec{
-		WireName: "twilio_cloud_cost_metrics",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
-	},
-	"TwilioEventsLogs": ubx.FieldSpec{
-		WireName: "twilio_events_logs",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
-	},
-	"TwilioMessagesLogs": ubx.FieldSpec{
-		WireName: "twilio_messages_logs",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
-	},
-}
+		"TwilioAlertsLogs": ubx.FieldSpec{
+			WireName: "twilio_alerts_logs",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
+		},
+		"TwilioCallSummariesLogs": ubx.FieldSpec{
+			WireName: "twilio_call_summaries_logs",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
+		},
+		"TwilioCloudCostMetrics": ubx.FieldSpec{
+			WireName: "twilio_cloud_cost_metrics",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
+		},
+		"TwilioEventsLogs": ubx.FieldSpec{
+			WireName: "twilio_events_logs",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
+		},
+		"TwilioMessagesLogs": ubx.FieldSpec{
+			WireName: "twilio_messages_logs",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_Attributes_Dataflows_TwilioAlertsLogsFields,
+		},
+	}
 
 var IntegrationAccountResponse_Data_Attributes_SettingsFields = ubx.FieldMap{
-	"AccountSid": ubx.FieldSpec{WireName: "account_sid"},
-	"CensorLogs": ubx.FieldSpec{WireName: "censor_logs"},
-}
+		"AccountSid": ubx.FieldSpec{WireName: "account_sid"},
+		"CensorLogs": ubx.FieldSpec{WireName: "censor_logs"},
+	}
 
 var IntegrationAccountResponse_Data_AttributesFields = ubx.FieldMap{
-	"Authentication": ubx.FieldSpec{
-		WireName: "authentication",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_Attributes_AuthenticationFields,
-	},
-	"Dataflows": ubx.FieldSpec{
-		WireName: "dataflows",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_Attributes_DataflowsFields,
-	},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Settings": ubx.FieldSpec{
-		WireName: "settings",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_Attributes_SettingsFields,
-	},
-}
+		"Authentication": ubx.FieldSpec{
+			WireName: "authentication",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_Attributes_AuthenticationFields,
+		},
+		"Dataflows": ubx.FieldSpec{
+			WireName: "dataflows",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_Attributes_DataflowsFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Settings": ubx.FieldSpec{
+			WireName: "settings",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_Attributes_SettingsFields,
+		},
+	}
 
 var IntegrationAccountResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   IntegrationAccountResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: IntegrationAccountResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type IntegrationAccountResponseConfig struct {
 	// Data envelope for creating a Twilio integration account.
@@ -167,8 +167,8 @@ var IntegrationAccountResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   IntegrationAccountResponse_DataFields,
+			Kind: "object",
+			Fields: IntegrationAccountResponse_DataFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

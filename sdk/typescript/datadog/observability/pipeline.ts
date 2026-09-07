@@ -103,6 +103,7 @@ export interface Pipeline_Data_Attributes_Config_Destinations {
   dcrImmutableId?: string | Computed<string>;
   defaultNamespace?: string | Computed<string>;
   encoding?: string | Computed<string>;
+  endpointTarget?: string | Computed<string>;
   endpointUrlKey?: string | Computed<string>;
   format?: string | Computed<string>;
   framing?: Pipeline_Data_Attributes_Config_Destinations_Framing | Computed<Pipeline_Data_Attributes_Config_Destinations_Framing>;
@@ -111,6 +112,7 @@ export interface Pipeline_Data_Attributes_Config_Destinations {
   headerSourceCategory?: string | Computed<string>;
   headerSourceName?: string | Computed<string>;
   headersKey?: string | Computed<string>;
+  httpClientUriKey?: string | Computed<string>;
   id?: string | Computed<string>;
   idKey?: string | Computed<string>;
   index?: string | Computed<string>;
@@ -371,6 +373,7 @@ export interface Pipeline_Data_Attributes_Config_Sources {
   httpAddressKey?: string | Computed<string>;
   id?: string | Computed<string>;
   librdkafkaOptions?: Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFields[] | Computed<Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFields[]>;
+  maxConnectionDurationSecs?: number | Computed<number>;
   mode?: string | Computed<string>;
   passwordKey?: string | Computed<string>;
   project?: string | Computed<string>;
@@ -551,6 +554,7 @@ const Pipeline_Data_Attributes_Config_DestinationsFields: FieldMap = {
   dcrImmutableId: "dcr_immutable_id",
   defaultNamespace: "default_namespace",
   encoding: "encoding",
+  endpointTarget: "endpoint_target",
   endpointUrlKey: "endpoint_url_key",
   format: "format",
   framing: {
@@ -567,6 +571,7 @@ const Pipeline_Data_Attributes_Config_DestinationsFields: FieldMap = {
   headerSourceCategory: "header_source_category",
   headerSourceName: "header_source_name",
   headersKey: "headers_key",
+  httpClientUriKey: "http_client_uri_key",
   id: "id",
   idKey: "id_key",
   index: "index",
@@ -971,6 +976,7 @@ const Pipeline_Data_Attributes_Config_SourcesFields: FieldMap = {
     kind: "list",
     fields: Pipeline_Data_Attributes_Config_Destinations_HeaderCustomFieldsFields,
   },
+  maxConnectionDurationSecs: "max_connection_duration_secs",
   mode: "mode",
   passwordKey: "password_key",
   project: "project",

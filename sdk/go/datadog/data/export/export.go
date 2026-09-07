@@ -6,25 +6,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ExportConfig struct {
 	DatasetId any
 	// Supported export format for an Agent Observability dataset.
-	Format    any
+	Format any
 	ProjectId any
-	Version   any
+	Version any
 }
 
 type ExportAttrs struct {
 	DatasetId any
 	// Supported export format for an Agent Observability dataset.
-	Format    any
+	Format any
 	ProjectId any
-	Version   any
+	Version any
 }
 
 var Export = ubx.DataSourceBinding{
 	WireType: "datadog_export",
 	Fields: ubx.FieldMap{
 		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"Format":    ubx.FieldSpec{WireName: "format"},
+		"Format": ubx.FieldSpec{WireName: "format"},
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Version":   ubx.FieldSpec{WireName: "version"},
+		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

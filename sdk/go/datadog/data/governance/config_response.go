@@ -33,5 +33,6 @@ type ConfigResponseAttrs struct {
 
 var ConfigResponse = ubx.DataSourceBinding{
 	WireType: "datadog_governance_config_response",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

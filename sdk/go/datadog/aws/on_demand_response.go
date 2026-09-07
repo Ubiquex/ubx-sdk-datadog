@@ -24,21 +24,21 @@ type OnDemandResponse_Data struct {
 }
 
 var OnDemandResponse_Data_AttributesFields = ubx.FieldMap{
-	"Arn":        ubx.FieldSpec{WireName: "arn"},
-	"AssignedAt": ubx.FieldSpec{WireName: "assigned_at"},
-	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
-	"Status":     ubx.FieldSpec{WireName: "status"},
-}
+		"Arn": ubx.FieldSpec{WireName: "arn"},
+		"AssignedAt": ubx.FieldSpec{WireName: "assigned_at"},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
 
 var OnDemandResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   OnDemandResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: OnDemandResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type OnDemandResponseConfig struct {
 	// Object for a single AWS on demand task.
@@ -59,8 +59,8 @@ var OnDemandResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   OnDemandResponse_DataFields,
+			Kind: "object",
+			Fields: OnDemandResponse_DataFields,
 		},
 		"TaskId": ubx.FieldSpec{WireName: "task_id"},
 	},

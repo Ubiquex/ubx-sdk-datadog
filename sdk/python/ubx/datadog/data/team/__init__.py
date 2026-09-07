@@ -4,11 +4,11 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .connection import Connection, ConnectionConfig
+from .connection_list import ConnectionList, ConnectionListConfig
 from .hierarchy_links_response import HierarchyLinksResponse, HierarchyLinksResponseConfig
-from .link import Link, LinkConfig
-from .notification_rule import NotificationRule, NotificationRuleConfig
-from .on_call_responders_included import OnCallRespondersIncluded, OnCallRespondersIncludedConfig
-from .permission_setting import PermissionSetting, PermissionSettingConfig
-from .routing_rules_included import RoutingRulesIncluded, RoutingRulesIncludedConfig
-from .sync_data import SyncData, SyncDataConfig
+from .link_list import LinkList, LinkListConfig
+from .notification_rule_list import NotificationRuleList, NotificationRuleListConfig
+from .on_call_responders_included_list import OnCallRespondersIncludedList, OnCallRespondersIncludedListConfig
+from .permission_setting_list import PermissionSettingList, PermissionSettingListConfig
+from .routing_rules_included_list import RoutingRulesIncludedList, RoutingRulesIncludedListConfig
+from .sync_data_list import SyncDataList, SyncDataListConfig

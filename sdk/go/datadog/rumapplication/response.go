@@ -62,55 +62,55 @@ type Response_Data struct {
 }
 
 var Response_Data_Attributes_ProductScales_ProductAnalyticsRetentionScaleFields = ubx.FieldMap{
-	"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-	"State":          ubx.FieldSpec{WireName: "state"},
-}
+		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var Response_Data_Attributes_ProductScalesFields = ubx.FieldMap{
-	"ProductAnalyticsRetentionScale": ubx.FieldSpec{
-		WireName: "product_analytics_retention_scale",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_ProductScales_ProductAnalyticsRetentionScaleFields,
-	},
-	"RumEventProcessingScale": ubx.FieldSpec{
-		WireName: "rum_event_processing_scale",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_ProductScales_ProductAnalyticsRetentionScaleFields,
-	},
-}
+		"ProductAnalyticsRetentionScale": ubx.FieldSpec{
+			WireName: "product_analytics_retention_scale",
+			Kind: "object",
+			Fields: Response_Data_Attributes_ProductScales_ProductAnalyticsRetentionScaleFields,
+		},
+		"RumEventProcessingScale": ubx.FieldSpec{
+			WireName: "rum_event_processing_scale",
+			Kind: "object",
+			Fields: Response_Data_Attributes_ProductScales_ProductAnalyticsRetentionScaleFields,
+		},
+	}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-	"ApiKeyId":                       ubx.FieldSpec{WireName: "api_key_id"},
-	"ApplicationId":                  ubx.FieldSpec{WireName: "application_id"},
-	"ClientToken":                    ubx.FieldSpec{WireName: "client_token"},
-	"CreatedAt":                      ubx.FieldSpec{WireName: "created_at"},
-	"CreatedByHandle":                ubx.FieldSpec{WireName: "created_by_handle"},
-	"Hash":                           ubx.FieldSpec{WireName: "hash"},
-	"IsActive":                       ubx.FieldSpec{WireName: "is_active"},
-	"Name":                           ubx.FieldSpec{WireName: "name"},
-	"OrgId":                          ubx.FieldSpec{WireName: "org_id"},
-	"ProductAnalyticsRetentionState": ubx.FieldSpec{WireName: "product_analytics_retention_state"},
-	"ProductScales": ubx.FieldSpec{
-		WireName: "product_scales",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_ProductScalesFields,
-	},
-	"RemoteConfigId":          ubx.FieldSpec{WireName: "remote_config_id"},
-	"RumEventProcessingState": ubx.FieldSpec{WireName: "rum_event_processing_state"},
-	"Type":                    ubx.FieldSpec{WireName: "type"},
-	"UpdatedAt":               ubx.FieldSpec{WireName: "updated_at"},
-	"UpdatedByHandle":         ubx.FieldSpec{WireName: "updated_by_handle"},
-}
+		"ApiKeyId": ubx.FieldSpec{WireName: "api_key_id"},
+		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ClientToken": ubx.FieldSpec{WireName: "client_token"},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"CreatedByHandle": ubx.FieldSpec{WireName: "created_by_handle"},
+		"Hash": ubx.FieldSpec{WireName: "hash"},
+		"IsActive": ubx.FieldSpec{WireName: "is_active"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"OrgId": ubx.FieldSpec{WireName: "org_id"},
+		"ProductAnalyticsRetentionState": ubx.FieldSpec{WireName: "product_analytics_retention_state"},
+		"ProductScales": ubx.FieldSpec{
+			WireName: "product_scales",
+			Kind: "object",
+			Fields: Response_Data_Attributes_ProductScalesFields,
+		},
+		"RemoteConfigId": ubx.FieldSpec{WireName: "remote_config_id"},
+		"RumEventProcessingState": ubx.FieldSpec{WireName: "rum_event_processing_state"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+		"UpdatedByHandle": ubx.FieldSpec{WireName: "updated_by_handle"},
+	}
 
 var Response_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   Response_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: Response_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResponseConfig struct {
 	// RUM application creation.
@@ -131,8 +131,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   Response_DataFields,
+			Kind: "object",
+			Fields: Response_DataFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 	},

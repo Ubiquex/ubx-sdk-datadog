@@ -17,7 +17,7 @@ type Response_Data_Attributes struct {
 }
 
 type Response_Data_Relationships_Permissions_Data struct {
-	Id   any
+	Id any
 	Type any
 }
 
@@ -43,48 +43,48 @@ type Response_Data struct {
 }
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-	"CreatedAt":               ubx.FieldSpec{WireName: "created_at"},
-	"ModifiedAt":              ubx.FieldSpec{WireName: "modified_at"},
-	"Name":                    ubx.FieldSpec{WireName: "name"},
-	"ReceivesPermissionsFrom": ubx.FieldSpec{WireName: "receives_permissions_from"},
-	"UserCount":               ubx.FieldSpec{WireName: "user_count"},
-}
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ReceivesPermissionsFrom": ubx.FieldSpec{WireName: "receives_permissions_from"},
+		"UserCount": ubx.FieldSpec{WireName: "user_count"},
+	}
 
 var Response_Data_Relationships_Permissions_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Response_Data_Relationships_PermissionsFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "list",
-		Fields:   Response_Data_Relationships_Permissions_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "list",
+			Fields: Response_Data_Relationships_Permissions_DataFields,
+		},
+	}
 
 var Response_Data_RelationshipsFields = ubx.FieldMap{
-	"Permissions": ubx.FieldSpec{
-		WireName: "permissions",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_PermissionsFields,
-	},
-}
+		"Permissions": ubx.FieldSpec{
+			WireName: "permissions",
+			Kind: "object",
+			Fields: Response_Data_Relationships_PermissionsFields,
+		},
+	}
 
 var Response_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   Response_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   Response_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: Response_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: Response_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResponseConfig struct {
 	// Data for the clone role request.
@@ -105,8 +105,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   Response_DataFields,
+			Kind: "object",
+			Fields: Response_DataFields,
 		},
 		"RoleId": ubx.FieldSpec{WireName: "role_id"},
 	},

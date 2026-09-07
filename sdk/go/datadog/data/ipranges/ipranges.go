@@ -55,5 +55,6 @@ type IprangesAttrs struct {
 
 var Ipranges = ubx.DataSourceBinding{
 	WireType: "datadog_ipranges",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

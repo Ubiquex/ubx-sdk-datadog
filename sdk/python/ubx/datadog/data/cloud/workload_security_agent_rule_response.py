@@ -35,6 +35,7 @@ class WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Set:
 
 @dataclasses.dataclass
 class WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions:
+    disabled: Any = None
     filter: Any = None
     hash: Any = None
     kill: Any = None
@@ -54,6 +55,8 @@ class WorkloadSecurityAgentRuleResponse_Data_Attributes:
     actions: Any = None
     # The version of the Agent
     agent_constraint: Any = None
+    # The version constraint of the Datadog Agent the rule applies to
+    agent_version: Any = None
     # The blocking policies that the rule belongs to
     blocking: Any = None
     # The category of the Agent rule
@@ -72,10 +75,14 @@ class WorkloadSecurityAgentRuleResponse_Data_Attributes:
     disabled: Any = None
     # Whether the Agent rule is enabled
     enabled: Any = None
+    # The rate limiting duration of the Agent rule, in nanoseconds
+    every: Any = None
     # The SECL expression of the Agent rule
     expression: Any = None
     # The platforms the Agent rule is supported on
     filters: Any = None
+    # The group of rules the Agent rule belongs to
+    group_id: Any = None
     # The monitoring policies that the rule belongs to
     monitoring: Any = None
     # The name of the Agent rule

@@ -35,6 +35,7 @@ class WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Set:
 
 @dataclasses.dataclass
 class WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions:
+    disabled: Any = None
     filter: Any = None
     hash: Any = None
     kill: Any = None
@@ -74,10 +75,14 @@ class WorkloadSecurityAgentRuleResponse_Data_Attributes:
     disabled: Any = None
     # Whether the Agent rule is enabled.
     enabled: Any = None
+    # The rate limiting duration of the Agent rule, in nanoseconds
+    every: Any = None
     # The SECL expression of the Agent rule.
     expression: Any = None
     # The platforms the Agent rule is supported on.
     filters: Any = None
+    # The group of rules the Agent rule belongs to
+    group_id: Any = None
     # The monitoring policies that the rule belongs to.
     monitoring: Any = None
     # The name of the Agent rule.
@@ -136,6 +141,7 @@ _WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_SetFields = {
 }
 
 _WorkloadSecurityAgentRuleResponse_Data_Attributes_ActionsFields = {
+    "disabled": ubx.FieldSpec(wire_name="disabled"),
     "filter": ubx.FieldSpec(wire_name="filter"),
     "hash": ubx.FieldSpec(
         wire_name="hash",
@@ -185,8 +191,10 @@ _WorkloadSecurityAgentRuleResponse_Data_AttributesFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "disabled": ubx.FieldSpec(wire_name="disabled"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
+    "every": ubx.FieldSpec(wire_name="every"),
     "expression": ubx.FieldSpec(wire_name="expression"),
     "filters": ubx.FieldSpec(wire_name="filters"),
+    "group_id": ubx.FieldSpec(wire_name="group_id"),
     "monitoring": ubx.FieldSpec(wire_name="monitoring"),
     "name": ubx.FieldSpec(wire_name="name"),
     "policy_id": ubx.FieldSpec(wire_name="policy_id"),

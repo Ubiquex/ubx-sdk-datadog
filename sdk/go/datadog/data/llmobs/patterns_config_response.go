@@ -49,5 +49,6 @@ type PatternsConfigResponseAttrs struct {
 
 var PatternsConfigResponse = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_patterns_config_response",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

@@ -60,87 +60,87 @@ type ResponderResponse_Data struct {
 }
 
 type ResponderResponse_Included_Attributes struct {
-	Email  any
+	Email any
 	Handle any
-	Icon   any
-	Name   any
-	Uuid   any
+	Icon any
+	Name any
+	Uuid any
 }
 
 type ResponderResponse_Included struct {
 	Attributes any
-	Id         any
-	Type       any
+	Id any
+	Type any
 }
 
 var ResponderResponse_Data_AttributesFields = ubx.FieldMap{
-	"Created":        ubx.FieldSpec{WireName: "created"},
-	"ExternalId":     ubx.FieldSpec{WireName: "external_id"},
-	"ExternalSource": ubx.FieldSpec{WireName: "external_source"},
-	"IsBillable":     ubx.FieldSpec{WireName: "is_billable"},
-	"LastActive":     ubx.FieldSpec{WireName: "last_active"},
-	"Meta":           ubx.FieldSpec{WireName: "meta"},
-	"Modified":       ubx.FieldSpec{WireName: "modified"},
-}
+		"Created": ubx.FieldSpec{WireName: "created"},
+		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
+		"ExternalSource": ubx.FieldSpec{WireName: "external_source"},
+		"IsBillable": ubx.FieldSpec{WireName: "is_billable"},
+		"LastActive": ubx.FieldSpec{WireName: "last_active"},
+		"Meta": ubx.FieldSpec{WireName: "meta"},
+		"Modified": ubx.FieldSpec{WireName: "modified"},
+	}
 
 var ResponderResponse_Data_Relationships_CreatedBy_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var ResponderResponse_Data_Relationships_CreatedByFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "object",
-		Fields:   ResponderResponse_Data_Relationships_CreatedBy_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "object",
+			Fields: ResponderResponse_Data_Relationships_CreatedBy_DataFields,
+		},
+	}
 
 var ResponderResponse_Data_Relationships_RoleAssignmentsFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "list",
-		Fields:   ResponderResponse_Data_Relationships_CreatedBy_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "list",
+			Fields: ResponderResponse_Data_Relationships_CreatedBy_DataFields,
+		},
+	}
 
 var ResponderResponse_Data_RelationshipsFields = ubx.FieldMap{
-	"CreatedBy": ubx.FieldSpec{
-		WireName: "created_by",
-		Kind:     "object",
-		Fields:   ResponderResponse_Data_Relationships_CreatedByFields,
-	},
-	"LastModifiedBy": ubx.FieldSpec{
-		WireName: "last_modified_by",
-		Kind:     "object",
-		Fields:   ResponderResponse_Data_Relationships_CreatedByFields,
-	},
-	"RoleAssignments": ubx.FieldSpec{
-		WireName: "role_assignments",
-		Kind:     "object",
-		Fields:   ResponderResponse_Data_Relationships_RoleAssignmentsFields,
-	},
-	"User": ubx.FieldSpec{
-		WireName: "user",
-		Kind:     "object",
-		Fields:   ResponderResponse_Data_Relationships_CreatedByFields,
-	},
-}
+		"CreatedBy": ubx.FieldSpec{
+			WireName: "created_by",
+			Kind: "object",
+			Fields: ResponderResponse_Data_Relationships_CreatedByFields,
+		},
+		"LastModifiedBy": ubx.FieldSpec{
+			WireName: "last_modified_by",
+			Kind: "object",
+			Fields: ResponderResponse_Data_Relationships_CreatedByFields,
+		},
+		"RoleAssignments": ubx.FieldSpec{
+			WireName: "role_assignments",
+			Kind: "object",
+			Fields: ResponderResponse_Data_Relationships_RoleAssignmentsFields,
+		},
+		"User": ubx.FieldSpec{
+			WireName: "user",
+			Kind: "object",
+			Fields: ResponderResponse_Data_Relationships_CreatedByFields,
+		},
+	}
 
 var ResponderResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   ResponderResponse_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   ResponderResponse_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: ResponderResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: ResponderResponse_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResponderResponseConfig struct {
 	// Incident responder data in a create request.
@@ -167,10 +167,10 @@ var ResponderResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   ResponderResponse_DataFields,
+			Kind: "object",
+			Fields: ResponderResponse_DataFields,
 		},
-		"IncidentId":  ubx.FieldSpec{WireName: "incident_id"},
+		"IncidentId": ubx.FieldSpec{WireName: "incident_id"},
 		"ResponderId": ubx.FieldSpec{WireName: "responder_id"},
 	},
 }

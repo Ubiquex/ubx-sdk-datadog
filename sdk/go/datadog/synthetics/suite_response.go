@@ -10,7 +10,7 @@ type SuiteResponse_Data_Attributes_Options struct {
 
 type SuiteResponse_Data_Attributes_Tests struct {
 	AlertingCriticality any
-	PublicId            any
+	PublicId any
 }
 
 type SuiteResponse_Data_Attributes struct {
@@ -42,42 +42,42 @@ type SuiteResponse_Data struct {
 }
 
 var SuiteResponse_Data_Attributes_OptionsFields = ubx.FieldMap{
-	"AlertingThreshold": ubx.FieldSpec{WireName: "alerting_threshold"},
-}
+		"AlertingThreshold": ubx.FieldSpec{WireName: "alerting_threshold"},
+	}
 
 var SuiteResponse_Data_Attributes_TestsFields = ubx.FieldMap{
-	"AlertingCriticality": ubx.FieldSpec{WireName: "alerting_criticality"},
-	"PublicId":            ubx.FieldSpec{WireName: "public_id"},
-}
+		"AlertingCriticality": ubx.FieldSpec{WireName: "alerting_criticality"},
+		"PublicId": ubx.FieldSpec{WireName: "public_id"},
+	}
 
 var SuiteResponse_Data_AttributesFields = ubx.FieldMap{
-	"Message":   ubx.FieldSpec{WireName: "message"},
-	"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
-	"Name":      ubx.FieldSpec{WireName: "name"},
-	"Options": ubx.FieldSpec{
-		WireName: "options",
-		Kind:     "object",
-		Fields:   SuiteResponse_Data_Attributes_OptionsFields,
-	},
-	"PublicId": ubx.FieldSpec{WireName: "public_id"},
-	"Tags":     ubx.FieldSpec{WireName: "tags"},
-	"Tests": ubx.FieldSpec{
-		WireName: "tests",
-		Kind:     "list",
-		Fields:   SuiteResponse_Data_Attributes_TestsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"MonitorId": ubx.FieldSpec{WireName: "monitor_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Options": ubx.FieldSpec{
+			WireName: "options",
+			Kind: "object",
+			Fields: SuiteResponse_Data_Attributes_OptionsFields,
+		},
+		"PublicId": ubx.FieldSpec{WireName: "public_id"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tests": ubx.FieldSpec{
+			WireName: "tests",
+			Kind: "list",
+			Fields: SuiteResponse_Data_Attributes_TestsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var SuiteResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   SuiteResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: SuiteResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type SuiteResponseConfig struct {
 	// Data object for creating or editing a Synthetic test suite.
@@ -98,8 +98,8 @@ var SuiteResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   SuiteResponse_DataFields,
+			Kind: "object",
+			Fields: SuiteResponse_DataFields,
 		},
 		"PublicId": ubx.FieldSpec{WireName: "public_id"},
 	},

@@ -6,9 +6,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type MobileTest_Config_Variables struct {
 	// Sample value for the variable, used as an example in the test configuration. (AI-inferred)
 	Example any
-	Id      any
+	Id any
 	// The name of the variable, used to reference it within the test configuration. (AI-inferred)
-	Name    any
+	Name any
 	Pattern any
 	// Whether the variable is a secure variable, meaning its value is encrypted and hidden in the UI. (AI-inferred)
 	Secure any
@@ -132,7 +132,7 @@ type MobileTest_Steps_Params_Element_UserLocator_Values struct {
 type MobileTest_Steps_Params_Element_UserLocator struct {
 	// If true, the mobile test step is marked as failed when the specified user locator fails to locate the element. (AI-inferred)
 	FailTestOnCannotLocate any
-	Values                 any
+	Values any
 }
 
 type MobileTest_Steps_Params_Element struct {
@@ -142,7 +142,7 @@ type MobileTest_Steps_Params_Element struct {
 	// A description of the mobile UI element targeted by the step. (AI-inferred)
 	ElementDescription any
 	// A list of alternative locators for the element, allowing the synthetics mobile test to use any of these locators to find the element during test execution. (AI-inferred)
-	MultiLocator     any
+	MultiLocator any
 	RelativePosition any
 	// The text content of the on-screen element used to identify and interact with it in the mobile test step. (AI-inferred)
 	TextContent any
@@ -153,7 +153,7 @@ type MobileTest_Steps_Params_Element struct {
 
 type MobileTest_Steps_Params_Variable struct {
 	Example any
-	Name    any
+	Name any
 }
 
 type MobileTest_Steps_Params struct {
@@ -163,15 +163,15 @@ type MobileTest_Steps_Params struct {
 	Delay any
 	// Specifies the direction of the mobile gesture (e.g., swipe), with allowed values: up, down, left, right. (AI-inferred)
 	Direction any
-	Element   any
-	Enabled   any
+	Element any
+	Enabled any
 	// The maximum number of scroll actions to perform during this mobile test step. (AI-inferred)
 	MaxScrolls any
-	Positions  any
+	Positions any
 	// The public ID of the subtest to run in this step. (AI-inferred)
 	SubtestPublicId any
 	// The value associated with a parameter for a step in the mobile test. The type is dynamic and can vary based on the specific step and parameter. (AI-inferred)
-	Value    any
+	Value any
 	Variable any
 	// Whether to press the Enter key after inputting text in the step. (AI-inferred)
 	WithEnter any
@@ -182,7 +182,7 @@ type MobileTest_Steps_Params struct {
 
 type MobileTest_Steps struct {
 	// Determines if the mobile test step can fail without marking the entire test as failed. When set to true, a failure in this step will not fail the overall test. (AI-inferred)
-	AllowFailure      any
+	AllowFailure any
 	HasNewStepElement any
 	// A boolean indicating whether this step is critical. If a critical step fails, the entire test is considered failed; non-critical steps do not cause failure on their own. (AI-inferred)
 	IsCritical any
@@ -190,203 +190,203 @@ type MobileTest_Steps struct {
 	Name any
 	// Whether to disable the screenshot capture for this step. Set to true to prevent Datadog from taking a screenshot during this step. (AI-inferred)
 	NoScreenshot any
-	Params       any
-	PublicId     any
-	Timeout      any
+	Params any
+	PublicId any
+	Timeout any
 	// The type of step to perform in the mobile test. Possible values include assertElementContent, assertScreenContains, assertScreenLacks, doubleTap, extractVariable, flick, openDeeplink, playSubTest, pressBack, restartApplication, rotate, scroll, scrollToElement, tap, toggleWiFi, typeText, and wait. (AI-inferred)
 	Type any
 }
 
 var MobileTest_Config_VariablesFields = ubx.FieldMap{
-	"Example": ubx.FieldSpec{WireName: "example"},
-	"Id":      ubx.FieldSpec{WireName: "id"},
-	"Name":    ubx.FieldSpec{WireName: "name"},
-	"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	"Secure":  ubx.FieldSpec{WireName: "secure"},
-	"Type":    ubx.FieldSpec{WireName: "type"},
-}
+		"Example": ubx.FieldSpec{WireName: "example"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Pattern": ubx.FieldSpec{WireName: "pattern"},
+		"Secure": ubx.FieldSpec{WireName: "secure"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var MobileTest_ConfigFields = ubx.FieldMap{
-	"InitialApplicationArguments": ubx.FieldSpec{WireName: "initial_application_arguments"},
-	"Variables": ubx.FieldSpec{
-		WireName: "variables",
-		Kind:     "list",
-		Fields:   MobileTest_Config_VariablesFields,
-	},
-}
+		"InitialApplicationArguments": ubx.FieldSpec{WireName: "initial_application_arguments"},
+		"Variables": ubx.FieldSpec{
+			WireName: "variables",
+			Kind: "list",
+			Fields: MobileTest_Config_VariablesFields,
+		},
+	}
 
 var MobileTest_Options_BindingsFields = ubx.FieldMap{
-	"Principals": ubx.FieldSpec{WireName: "principals"},
-	"Relation":   ubx.FieldSpec{WireName: "relation"},
-}
+		"Principals": ubx.FieldSpec{WireName: "principals"},
+		"Relation": ubx.FieldSpec{WireName: "relation"},
+	}
 
 var MobileTest_Options_CiFields = ubx.FieldMap{
-	"ExecutionRule": ubx.FieldSpec{WireName: "execution_rule"},
-}
+		"ExecutionRule": ubx.FieldSpec{WireName: "execution_rule"},
+	}
 
 var MobileTest_Options_MobileApplicationFields = ubx.FieldMap{
-	"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-	"ReferenceId":   ubx.FieldSpec{WireName: "reference_id"},
-	"ReferenceType": ubx.FieldSpec{WireName: "reference_type"},
-}
+		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+		"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
+		"ReferenceType": ubx.FieldSpec{WireName: "reference_type"},
+	}
 
 var MobileTest_Options_MonitorOptionsFields = ubx.FieldMap{
-	"EscalationMessage":      ubx.FieldSpec{WireName: "escalation_message"},
-	"NotificationPresetName": ubx.FieldSpec{WireName: "notification_preset_name"},
-	"RenotifyInterval":       ubx.FieldSpec{WireName: "renotify_interval"},
-	"RenotifyOccurrences":    ubx.FieldSpec{WireName: "renotify_occurrences"},
-}
+		"EscalationMessage": ubx.FieldSpec{WireName: "escalation_message"},
+		"NotificationPresetName": ubx.FieldSpec{WireName: "notification_preset_name"},
+		"RenotifyInterval": ubx.FieldSpec{WireName: "renotify_interval"},
+		"RenotifyOccurrences": ubx.FieldSpec{WireName: "renotify_occurrences"},
+	}
 
 var MobileTest_Options_RetryFields = ubx.FieldMap{
-	"Count":    ubx.FieldSpec{WireName: "count"},
-	"Interval": ubx.FieldSpec{WireName: "interval"},
-}
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"Interval": ubx.FieldSpec{WireName: "interval"},
+	}
 
 var MobileTest_Options_Scheduling_TimeframesFields = ubx.FieldMap{
-	"Day":  ubx.FieldSpec{WireName: "day"},
-	"From": ubx.FieldSpec{WireName: "from"},
-	"To":   ubx.FieldSpec{WireName: "to"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"From": ubx.FieldSpec{WireName: "from"},
+		"To": ubx.FieldSpec{WireName: "to"},
+	}
 
 var MobileTest_Options_SchedulingFields = ubx.FieldMap{
-	"Timeframes": ubx.FieldSpec{
-		WireName: "timeframes",
-		Kind:     "list",
-		Fields:   MobileTest_Options_Scheduling_TimeframesFields,
-	},
-	"Timezone": ubx.FieldSpec{WireName: "timezone"},
-}
+		"Timeframes": ubx.FieldSpec{
+			WireName: "timeframes",
+			Kind: "list",
+			Fields: MobileTest_Options_Scheduling_TimeframesFields,
+		},
+		"Timezone": ubx.FieldSpec{WireName: "timezone"},
+	}
 
 var MobileTest_OptionsFields = ubx.FieldMap{
-	"AllowApplicationCrash": ubx.FieldSpec{WireName: "allow_application_crash"},
-	"Bindings": ubx.FieldSpec{
-		WireName: "bindings",
-		Kind:     "list",
-		Fields:   MobileTest_Options_BindingsFields,
-	},
-	"Ci": ubx.FieldSpec{
-		WireName: "ci",
-		Kind:     "object",
-		Fields:   MobileTest_Options_CiFields,
-	},
-	"DefaultStepTimeout":     ubx.FieldSpec{WireName: "default_step_timeout"},
-	"DeviceIds":              ubx.FieldSpec{WireName: "device_ids"},
-	"DisableAutoAcceptAlert": ubx.FieldSpec{WireName: "disable_auto_accept_alert"},
-	"MinFailureDuration":     ubx.FieldSpec{WireName: "min_failure_duration"},
-	"MobileApplication": ubx.FieldSpec{
-		WireName: "mobile_application",
-		Kind:     "object",
-		Fields:   MobileTest_Options_MobileApplicationFields,
-	},
-	"MonitorName": ubx.FieldSpec{WireName: "monitor_name"},
-	"MonitorOptions": ubx.FieldSpec{
-		WireName: "monitor_options",
-		Kind:     "object",
-		Fields:   MobileTest_Options_MonitorOptionsFields,
-	},
-	"MonitorPriority": ubx.FieldSpec{WireName: "monitor_priority"},
-	"NoScreenshot":    ubx.FieldSpec{WireName: "no_screenshot"},
-	"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
-	"Retry": ubx.FieldSpec{
-		WireName: "retry",
-		Kind:     "object",
-		Fields:   MobileTest_Options_RetryFields,
-	},
-	"Scheduling": ubx.FieldSpec{
-		WireName: "scheduling",
-		Kind:     "object",
-		Fields:   MobileTest_Options_SchedulingFields,
-	},
-	"TickEvery": ubx.FieldSpec{WireName: "tick_every"},
-	"Verbosity": ubx.FieldSpec{WireName: "verbosity"},
-}
+		"AllowApplicationCrash": ubx.FieldSpec{WireName: "allow_application_crash"},
+		"Bindings": ubx.FieldSpec{
+			WireName: "bindings",
+			Kind: "list",
+			Fields: MobileTest_Options_BindingsFields,
+		},
+		"Ci": ubx.FieldSpec{
+			WireName: "ci",
+			Kind: "object",
+			Fields: MobileTest_Options_CiFields,
+		},
+		"DefaultStepTimeout": ubx.FieldSpec{WireName: "default_step_timeout"},
+		"DeviceIds": ubx.FieldSpec{WireName: "device_ids"},
+		"DisableAutoAcceptAlert": ubx.FieldSpec{WireName: "disable_auto_accept_alert"},
+		"MinFailureDuration": ubx.FieldSpec{WireName: "min_failure_duration"},
+		"MobileApplication": ubx.FieldSpec{
+			WireName: "mobile_application",
+			Kind: "object",
+			Fields: MobileTest_Options_MobileApplicationFields,
+		},
+		"MonitorName": ubx.FieldSpec{WireName: "monitor_name"},
+		"MonitorOptions": ubx.FieldSpec{
+			WireName: "monitor_options",
+			Kind: "object",
+			Fields: MobileTest_Options_MonitorOptionsFields,
+		},
+		"MonitorPriority": ubx.FieldSpec{WireName: "monitor_priority"},
+		"NoScreenshot": ubx.FieldSpec{WireName: "no_screenshot"},
+		"RestrictedRoles": ubx.FieldSpec{WireName: "restricted_roles"},
+		"Retry": ubx.FieldSpec{
+			WireName: "retry",
+			Kind: "object",
+			Fields: MobileTest_Options_RetryFields,
+		},
+		"Scheduling": ubx.FieldSpec{
+			WireName: "scheduling",
+			Kind: "object",
+			Fields: MobileTest_Options_SchedulingFields,
+		},
+		"TickEvery": ubx.FieldSpec{WireName: "tick_every"},
+		"Verbosity": ubx.FieldSpec{WireName: "verbosity"},
+	}
 
 var MobileTest_Steps_Params_Element_RelativePositionFields = ubx.FieldMap{
-	"X": ubx.FieldSpec{WireName: "x"},
-	"Y": ubx.FieldSpec{WireName: "y"},
-}
+		"X": ubx.FieldSpec{WireName: "x"},
+		"Y": ubx.FieldSpec{WireName: "y"},
+	}
 
 var MobileTest_Steps_Params_Element_UserLocator_ValuesFields = ubx.FieldMap{
-	"Type":  ubx.FieldSpec{WireName: "type"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var MobileTest_Steps_Params_Element_UserLocatorFields = ubx.FieldMap{
-	"FailTestOnCannotLocate": ubx.FieldSpec{WireName: "fail_test_on_cannot_locate"},
-	"Values": ubx.FieldSpec{
-		WireName: "values",
-		Kind:     "list",
-		Fields:   MobileTest_Steps_Params_Element_UserLocator_ValuesFields,
-	},
-}
+		"FailTestOnCannotLocate": ubx.FieldSpec{WireName: "fail_test_on_cannot_locate"},
+		"Values": ubx.FieldSpec{
+			WireName: "values",
+			Kind: "list",
+			Fields: MobileTest_Steps_Params_Element_UserLocator_ValuesFields,
+		},
+	}
 
 var MobileTest_Steps_Params_ElementFields = ubx.FieldMap{
-	"Context":            ubx.FieldSpec{WireName: "context"},
-	"ContextType":        ubx.FieldSpec{WireName: "context_type"},
-	"ElementDescription": ubx.FieldSpec{WireName: "element_description"},
-	"MultiLocator":       ubx.FieldSpec{WireName: "multi_locator"},
-	"RelativePosition": ubx.FieldSpec{
-		WireName: "relative_position",
-		Kind:     "object",
-		Fields:   MobileTest_Steps_Params_Element_RelativePositionFields,
-	},
-	"TextContent": ubx.FieldSpec{WireName: "text_content"},
-	"UserLocator": ubx.FieldSpec{
-		WireName: "user_locator",
-		Kind:     "object",
-		Fields:   MobileTest_Steps_Params_Element_UserLocatorFields,
-	},
-	"ViewName": ubx.FieldSpec{WireName: "view_name"},
-}
+		"Context": ubx.FieldSpec{WireName: "context"},
+		"ContextType": ubx.FieldSpec{WireName: "context_type"},
+		"ElementDescription": ubx.FieldSpec{WireName: "element_description"},
+		"MultiLocator": ubx.FieldSpec{WireName: "multi_locator"},
+		"RelativePosition": ubx.FieldSpec{
+			WireName: "relative_position",
+			Kind: "object",
+			Fields: MobileTest_Steps_Params_Element_RelativePositionFields,
+		},
+		"TextContent": ubx.FieldSpec{WireName: "text_content"},
+		"UserLocator": ubx.FieldSpec{
+			WireName: "user_locator",
+			Kind: "object",
+			Fields: MobileTest_Steps_Params_Element_UserLocatorFields,
+		},
+		"ViewName": ubx.FieldSpec{WireName: "view_name"},
+	}
 
 var MobileTest_Steps_Params_VariableFields = ubx.FieldMap{
-	"Example": ubx.FieldSpec{WireName: "example"},
-	"Name":    ubx.FieldSpec{WireName: "name"},
-}
+		"Example": ubx.FieldSpec{WireName: "example"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var MobileTest_Steps_ParamsFields = ubx.FieldMap{
-	"Check":     ubx.FieldSpec{WireName: "check"},
-	"Delay":     ubx.FieldSpec{WireName: "delay"},
-	"Direction": ubx.FieldSpec{WireName: "direction"},
-	"Element": ubx.FieldSpec{
-		WireName: "element",
-		Kind:     "object",
-		Fields:   MobileTest_Steps_Params_ElementFields,
-	},
-	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
-	"MaxScrolls": ubx.FieldSpec{WireName: "max_scrolls"},
-	"Positions": ubx.FieldSpec{
-		WireName: "positions",
-		Kind:     "list",
-		Fields:   MobileTest_Steps_Params_Element_RelativePositionFields,
-	},
-	"SubtestPublicId": ubx.FieldSpec{WireName: "subtest_public_id"},
-	"Value":           ubx.FieldSpec{WireName: "value"},
-	"Variable": ubx.FieldSpec{
-		WireName: "variable",
-		Kind:     "object",
-		Fields:   MobileTest_Steps_Params_VariableFields,
-	},
-	"WithEnter": ubx.FieldSpec{WireName: "with_enter"},
-	"X":         ubx.FieldSpec{WireName: "x"},
-	"Y":         ubx.FieldSpec{WireName: "y"},
-}
+		"Check": ubx.FieldSpec{WireName: "check"},
+		"Delay": ubx.FieldSpec{WireName: "delay"},
+		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"Element": ubx.FieldSpec{
+			WireName: "element",
+			Kind: "object",
+			Fields: MobileTest_Steps_Params_ElementFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"MaxScrolls": ubx.FieldSpec{WireName: "max_scrolls"},
+		"Positions": ubx.FieldSpec{
+			WireName: "positions",
+			Kind: "list",
+			Fields: MobileTest_Steps_Params_Element_RelativePositionFields,
+		},
+		"SubtestPublicId": ubx.FieldSpec{WireName: "subtest_public_id"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+		"Variable": ubx.FieldSpec{
+			WireName: "variable",
+			Kind: "object",
+			Fields: MobileTest_Steps_Params_VariableFields,
+		},
+		"WithEnter": ubx.FieldSpec{WireName: "with_enter"},
+		"X": ubx.FieldSpec{WireName: "x"},
+		"Y": ubx.FieldSpec{WireName: "y"},
+	}
 
 var MobileTest_StepsFields = ubx.FieldMap{
-	"AllowFailure":      ubx.FieldSpec{WireName: "allow_failure"},
-	"HasNewStepElement": ubx.FieldSpec{WireName: "has_new_step_element"},
-	"IsCritical":        ubx.FieldSpec{WireName: "is_critical"},
-	"Name":              ubx.FieldSpec{WireName: "name"},
-	"NoScreenshot":      ubx.FieldSpec{WireName: "no_screenshot"},
-	"Params": ubx.FieldSpec{
-		WireName: "params",
-		Kind:     "object",
-		Fields:   MobileTest_Steps_ParamsFields,
-	},
-	"PublicId": ubx.FieldSpec{WireName: "public_id"},
-	"Timeout":  ubx.FieldSpec{WireName: "timeout"},
-	"Type":     ubx.FieldSpec{WireName: "type"},
-}
+		"AllowFailure": ubx.FieldSpec{WireName: "allow_failure"},
+		"HasNewStepElement": ubx.FieldSpec{WireName: "has_new_step_element"},
+		"IsCritical": ubx.FieldSpec{WireName: "is_critical"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NoScreenshot": ubx.FieldSpec{WireName: "no_screenshot"},
+		"Params": ubx.FieldSpec{
+			WireName: "params",
+			Kind: "object",
+			Fields: MobileTest_Steps_ParamsFields,
+		},
+		"PublicId": ubx.FieldSpec{WireName: "public_id"},
+		"Timeout": ubx.FieldSpec{WireName: "timeout"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type MobileTestConfig struct {
 	// Configuration object for a Synthetic mobile test.
@@ -439,22 +439,22 @@ var MobileTest = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind:     "object",
-			Fields:   MobileTest_ConfigFields,
+			Kind: "object",
+			Fields: MobileTest_ConfigFields,
 		},
 		"DeviceIds": ubx.FieldSpec{WireName: "device_ids"},
-		"Message":   ubx.FieldSpec{WireName: "message"},
-		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind:     "object",
-			Fields:   MobileTest_OptionsFields,
+			Kind: "object",
+			Fields: MobileTest_OptionsFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 		"Steps": ubx.FieldSpec{
 			WireName: "steps",
-			Kind:     "list",
-			Fields:   MobileTest_StepsFields,
+			Kind: "list",
+			Fields: MobileTest_StepsFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Type": ubx.FieldSpec{WireName: "type"},

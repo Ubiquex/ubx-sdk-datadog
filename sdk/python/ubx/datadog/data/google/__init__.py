@@ -6,7 +6,7 @@ SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .chat_app_named_space_response import ChatAppNamedSpaceResponse, ChatAppNamedSpaceResponseConfig
 from .chat_delegated_user_response import ChatDelegatedUserResponse, ChatDelegatedUserResponseConfig
-from .chat_organization_data import ChatOrganizationData, ChatOrganizationDataConfig
-from .chat_organization_handle_response_data import ChatOrganizationHandleResponseData, ChatOrganizationHandleResponseDataConfig
+from .chat_organization_data_list import ChatOrganizationDataList, ChatOrganizationDataListConfig
+from .chat_organization_handle_response_data_list import ChatOrganizationHandleResponseDataList, ChatOrganizationHandleResponseDataListConfig
 from .chat_organization_response import ChatOrganizationResponse, ChatOrganizationResponseConfig
-from .chat_target_audience_data import ChatTargetAudienceData, ChatTargetAudienceDataConfig
+from .chat_target_audience_data_list import ChatTargetAudienceDataList, ChatTargetAudienceDataListConfig

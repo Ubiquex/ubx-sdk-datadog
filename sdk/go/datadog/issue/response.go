@@ -81,152 +81,152 @@ type Response_Data struct {
 }
 
 type Response_Included_Attributes_Insights struct {
-	Ref        any
+	Ref any
 	ResourceId any
-	Type       any
+	Type any
 }
 
 type Response_Included_Attributes_JiraIssue_Result struct {
-	AccountId  any
-	IssueId    any
-	IssueKey   any
-	IssueUrl   any
-	ProjectId  any
+	AccountId any
+	IssueId any
+	IssueKey any
+	IssueUrl any
+	ProjectId any
 	ProjectKey any
 }
 
 type Response_Included_Attributes_JiraIssue struct {
 	ErrorMessage any
-	Result       any
-	Status       any
+	Result any
+	Status any
 }
 
 type Response_Included_Attributes_LinearIssue_Result struct {
 	AccountId any
-	IssueId   any
-	IssueKey  any
-	IssueUrl  any
-	TeamId    any
+	IssueId any
+	IssueKey any
+	IssueUrl any
+	TeamId any
 }
 
 type Response_Included_Attributes_LinearIssue struct {
 	ErrorMessage any
-	Result       any
-	Status       any
+	Result any
+	Status any
 }
 
 type Response_Included_Attributes struct {
-	ArchivedAt     any
-	ClosedAt       any
-	CreatedAt      any
+	ArchivedAt any
+	ClosedAt any
+	CreatedAt any
 	CreationSource any
-	Description    any
-	DueDate        any
-	Insights       any
-	JiraIssue      any
-	Key            any
-	LinearIssue    any
-	ModifiedAt     any
-	Priority       any
-	Status         any
-	Title          any
-	Type           any
+	Description any
+	DueDate any
+	Insights any
+	JiraIssue any
+	Key any
+	LinearIssue any
+	ModifiedAt any
+	Priority any
+	Status any
+	Title any
+	Type any
 }
 
 type Response_Included_Relationships struct {
-	Assignee   any
-	CreatedBy  any
+	Assignee any
+	CreatedBy any
 	ModifiedBy any
-	Project    any
+	Project any
 }
 
 type Response_Included struct {
-	Attributes    any
-	Id            any
+	Attributes any
+	Id any
 	Relationships any
-	Type          any
+	Type any
 }
 
 var Response_Data_Attributes_RegressionFields = ubx.FieldMap{
-	"RegressedAt":        ubx.FieldSpec{WireName: "regressed_at"},
-	"RegressedAtVersion": ubx.FieldSpec{WireName: "regressed_at_version"},
-	"ResolvedAt":         ubx.FieldSpec{WireName: "resolved_at"},
-}
+		"RegressedAt": ubx.FieldSpec{WireName: "regressed_at"},
+		"RegressedAtVersion": ubx.FieldSpec{WireName: "regressed_at_version"},
+		"ResolvedAt": ubx.FieldSpec{WireName: "resolved_at"},
+	}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-	"ErrorMessage":     ubx.FieldSpec{WireName: "error_message"},
-	"ErrorType":        ubx.FieldSpec{WireName: "error_type"},
-	"FilePath":         ubx.FieldSpec{WireName: "file_path"},
-	"FirstSeen":        ubx.FieldSpec{WireName: "first_seen"},
-	"FirstSeenVersion": ubx.FieldSpec{WireName: "first_seen_version"},
-	"FunctionName":     ubx.FieldSpec{WireName: "function_name"},
-	"IsCrash":          ubx.FieldSpec{WireName: "is_crash"},
-	"Languages":        ubx.FieldSpec{WireName: "languages"},
-	"LastSeen":         ubx.FieldSpec{WireName: "last_seen"},
-	"LastSeenVersion":  ubx.FieldSpec{WireName: "last_seen_version"},
-	"Platform":         ubx.FieldSpec{WireName: "platform"},
-	"Regression": ubx.FieldSpec{
-		WireName: "regression",
-		Kind:     "object",
-		Fields:   Response_Data_Attributes_RegressionFields,
-	},
-	"Service": ubx.FieldSpec{WireName: "service"},
-	"State":   ubx.FieldSpec{WireName: "state"},
-}
+		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+		"ErrorType": ubx.FieldSpec{WireName: "error_type"},
+		"FilePath": ubx.FieldSpec{WireName: "file_path"},
+		"FirstSeen": ubx.FieldSpec{WireName: "first_seen"},
+		"FirstSeenVersion": ubx.FieldSpec{WireName: "first_seen_version"},
+		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
+		"IsCrash": ubx.FieldSpec{WireName: "is_crash"},
+		"Languages": ubx.FieldSpec{WireName: "languages"},
+		"LastSeen": ubx.FieldSpec{WireName: "last_seen"},
+		"LastSeenVersion": ubx.FieldSpec{WireName: "last_seen_version"},
+		"Platform": ubx.FieldSpec{WireName: "platform"},
+		"Regression": ubx.FieldSpec{
+			WireName: "regression",
+			Kind: "object",
+			Fields: Response_Data_Attributes_RegressionFields,
+		},
+		"Service": ubx.FieldSpec{WireName: "service"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var Response_Data_Relationships_Assignee_DataFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Response_Data_Relationships_AssigneeFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_Assignee_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "object",
+			Fields: Response_Data_Relationships_Assignee_DataFields,
+		},
+	}
 
 var Response_Data_Relationships_TeamOwnersFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{
-		WireName: "data",
-		Kind:     "list",
-		Fields:   Response_Data_Relationships_Assignee_DataFields,
-	},
-}
+		"Data": ubx.FieldSpec{
+			WireName: "data",
+			Kind: "list",
+			Fields: Response_Data_Relationships_Assignee_DataFields,
+		},
+	}
 
 var Response_Data_RelationshipsFields = ubx.FieldMap{
-	"Assignee": ubx.FieldSpec{
-		WireName: "assignee",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_AssigneeFields,
-	},
-	"Case": ubx.FieldSpec{
-		WireName: "case",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_AssigneeFields,
-	},
-	"TeamOwners": ubx.FieldSpec{
-		WireName: "team_owners",
-		Kind:     "object",
-		Fields:   Response_Data_Relationships_TeamOwnersFields,
-	},
-}
+		"Assignee": ubx.FieldSpec{
+			WireName: "assignee",
+			Kind: "object",
+			Fields: Response_Data_Relationships_AssigneeFields,
+		},
+		"Case": ubx.FieldSpec{
+			WireName: "case",
+			Kind: "object",
+			Fields: Response_Data_Relationships_AssigneeFields,
+		},
+		"TeamOwners": ubx.FieldSpec{
+			WireName: "team_owners",
+			Kind: "object",
+			Fields: Response_Data_Relationships_TeamOwnersFields,
+		},
+	}
 
 var Response_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   Response_Data_AttributesFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Relationships": ubx.FieldSpec{
-		WireName: "relationships",
-		Kind:     "object",
-		Fields:   Response_Data_RelationshipsFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: Response_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Relationships": ubx.FieldSpec{
+			WireName: "relationships",
+			Kind: "object",
+			Fields: Response_Data_RelationshipsFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResponseConfig struct {
 	// Update issue assignee request.
@@ -249,8 +249,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   Response_DataFields,
+			Kind: "object",
+			Fields: Response_DataFields,
 		},
 		"IssueId": ubx.FieldSpec{WireName: "issue_id"},
 	},

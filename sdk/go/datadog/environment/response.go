@@ -32,25 +32,25 @@ type Response_Data struct {
 }
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-	"CreatedAt":                  ubx.FieldSpec{WireName: "created_at"},
-	"Description":                ubx.FieldSpec{WireName: "description"},
-	"IsProduction":               ubx.FieldSpec{WireName: "is_production"},
-	"Key":                        ubx.FieldSpec{WireName: "key"},
-	"Name":                       ubx.FieldSpec{WireName: "name"},
-	"Queries":                    ubx.FieldSpec{WireName: "queries"},
-	"RequireFeatureFlagApproval": ubx.FieldSpec{WireName: "require_feature_flag_approval"},
-	"UpdatedAt":                  ubx.FieldSpec{WireName: "updated_at"},
-}
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"IsProduction": ubx.FieldSpec{WireName: "is_production"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Queries": ubx.FieldSpec{WireName: "queries"},
+		"RequireFeatureFlagApproval": ubx.FieldSpec{WireName: "require_feature_flag_approval"},
+		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+	}
 
 var Response_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   Response_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: Response_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResponseConfig struct {
 	// Data for creating a new environment.
@@ -71,8 +71,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   Response_DataFields,
+			Kind: "object",
+			Fields: Response_DataFields,
 		},
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
 	},

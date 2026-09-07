@@ -10,7 +10,7 @@ from .custom_framework_response import CustomFrameworkResponse, CustomFrameworkR
 from .data_observability_monitor_run_status_response import DataObservabilityMonitorRunStatusResponse, DataObservabilityMonitorRunStatusResponseConfig
 from .device_response import DeviceResponse, DeviceResponseConfig
 from .finding_response import FindingResponse, FindingResponseConfig
-from .interfaces_data import InterfacesData, InterfacesDataConfig
+from .interfaces_data_list import InterfacesDataList, InterfacesDataListConfig
 from .io_cindicator_response import IoCindicatorResponse, IoCindicatorResponseConfig
 from .mapping_response import MappingResponse, MappingResponseConfig
 from .resource_evaluation_filters_response import ResourceEvaluationFiltersResponse, ResourceEvaluationFiltersResponseConfig

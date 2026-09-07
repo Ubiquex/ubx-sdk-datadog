@@ -8,8 +8,8 @@ from .model import Model, ModelConfig
 from .lab_facet_keys_response import LabFacetKeysResponse, LabFacetKeysResponseConfig
 from .lab_facet_values_response import LabFacetValuesResponse, LabFacetValuesResponseConfig
 from .lab_project_artifacts_response import LabProjectArtifactsResponse, LabProjectArtifactsResponseConfig
-from .lab_project_data import LabProjectData, LabProjectDataConfig
+from .lab_project_data_list import LabProjectDataList, LabProjectDataListConfig
 from .lab_project_response import LabProjectResponse, LabProjectResponseConfig
 from .lab_run_artifacts_response import LabRunArtifactsResponse, LabRunArtifactsResponseConfig
-from .lab_run_data import LabRunData, LabRunDataConfig
+from .lab_run_data_list import LabRunDataList, LabRunDataListConfig
 from .lab_run_response import LabRunResponse, LabRunResponseConfig

@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .gate_response_data import GateResponseData, GateResponseDataConfig
+from .gate_response_data_list import GateResponseDataList, GateResponseDataListConfig
 from .gate_rules_response import GateRulesResponse, GateRulesResponseConfig

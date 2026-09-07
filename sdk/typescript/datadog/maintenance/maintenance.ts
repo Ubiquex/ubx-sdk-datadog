@@ -19,6 +19,8 @@ export interface Maintenance_Data_Attributes_Updates {
 }
 
 export interface Maintenance_Data_Attributes {
+  /** The description shown when the maintenance is canceled. */
+  canceledDescription?: string | Computed<string>;
   /** Timestamp of when the maintenance was completed. */
   completedDate: string | Computed<string>;
   /** The description shown when the maintenance is completed. */
@@ -121,6 +123,7 @@ const Maintenance_Data_Attributes_UpdatesFields: FieldMap = {
 };
 
 const Maintenance_Data_AttributesFields: FieldMap = {
+  canceledDescription: "canceled_description",
   completedDate: "completed_date",
   completedDescription: "completed_description",
   componentsAffected: {

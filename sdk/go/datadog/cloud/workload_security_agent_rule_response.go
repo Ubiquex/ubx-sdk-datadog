@@ -12,30 +12,31 @@ type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Kill struct {
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Metadata struct {
-	ImageTag   any
-	Service    any
+	ImageTag any
+	Service any
 	ShortImage any
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_Set struct {
-	Append       any
+	Append any
 	DefaultValue any
-	Expression   any
-	Field        any
-	Inherited    any
-	Name         any
-	Scope        any
-	Size         any
-	Ttl          any
-	Value        any
+	Expression any
+	Field any
+	Inherited any
+	Name any
+	Scope any
+	Size any
+	Ttl any
+	Value any
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions struct {
-	Filter   any
-	Hash     any
-	Kill     any
+	Disabled any
+	Filter any
+	Hash any
+	Kill any
 	Metadata any
-	Set      any
+	Set any
 }
 
 type WorkloadSecurityAgentRuleResponse_Data_Attributes_Creator struct {
@@ -70,10 +71,14 @@ type WorkloadSecurityAgentRuleResponse_Data_Attributes struct {
 	Disabled any
 	// Whether the Agent rule is enabled.
 	Enabled any
+	// The rate limiting duration of the Agent rule, in nanoseconds
+	Every any
 	// The SECL expression of the Agent rule.
 	Expression any
 	// The platforms the Agent rule is supported on.
 	Filters any
+	// The group of rules the Agent rule belongs to
+	GroupId any
 	// The monitoring policies that the rule belongs to.
 	Monitoring any
 	// The name of the Agent rule.
@@ -106,109 +111,112 @@ type WorkloadSecurityAgentRuleResponse_Data struct {
 }
 
 var WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_HashFields = ubx.FieldMap{
-	"Field": ubx.FieldSpec{WireName: "field"},
-}
+		"Field": ubx.FieldSpec{WireName: "field"},
+	}
 
 var WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_KillFields = ubx.FieldMap{
-	"Signal": ubx.FieldSpec{WireName: "signal"},
-}
+		"Signal": ubx.FieldSpec{WireName: "signal"},
+	}
 
 var WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_MetadataFields = ubx.FieldMap{
-	"ImageTag":   ubx.FieldSpec{WireName: "image_tag"},
-	"Service":    ubx.FieldSpec{WireName: "service"},
-	"ShortImage": ubx.FieldSpec{WireName: "short_image"},
-}
+		"ImageTag": ubx.FieldSpec{WireName: "image_tag"},
+		"Service": ubx.FieldSpec{WireName: "service"},
+		"ShortImage": ubx.FieldSpec{WireName: "short_image"},
+	}
 
 var WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_SetFields = ubx.FieldMap{
-	"Append":       ubx.FieldSpec{WireName: "append"},
-	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-	"Expression":   ubx.FieldSpec{WireName: "expression"},
-	"Field":        ubx.FieldSpec{WireName: "field"},
-	"Inherited":    ubx.FieldSpec{WireName: "inherited"},
-	"Name":         ubx.FieldSpec{WireName: "name"},
-	"Scope":        ubx.FieldSpec{WireName: "scope"},
-	"Size":         ubx.FieldSpec{WireName: "size"},
-	"Ttl":          ubx.FieldSpec{WireName: "ttl"},
-	"Value":        ubx.FieldSpec{WireName: "value"},
-}
+		"Append": ubx.FieldSpec{WireName: "append"},
+		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+		"Expression": ubx.FieldSpec{WireName: "expression"},
+		"Field": ubx.FieldSpec{WireName: "field"},
+		"Inherited": ubx.FieldSpec{WireName: "inherited"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Size": ubx.FieldSpec{WireName: "size"},
+		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var WorkloadSecurityAgentRuleResponse_Data_Attributes_ActionsFields = ubx.FieldMap{
-	"Filter": ubx.FieldSpec{WireName: "filter"},
-	"Hash": ubx.FieldSpec{
-		WireName: "hash",
-		Kind:     "object",
-		Fields:   WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_HashFields,
-	},
-	"Kill": ubx.FieldSpec{
-		WireName: "kill",
-		Kind:     "object",
-		Fields:   WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_KillFields,
-	},
-	"Metadata": ubx.FieldSpec{
-		WireName: "metadata",
-		Kind:     "object",
-		Fields:   WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_MetadataFields,
-	},
-	"Set": ubx.FieldSpec{
-		WireName: "set",
-		Kind:     "object",
-		Fields:   WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_SetFields,
-	},
-}
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Hash": ubx.FieldSpec{
+			WireName: "hash",
+			Kind: "object",
+			Fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_HashFields,
+		},
+		"Kill": ubx.FieldSpec{
+			WireName: "kill",
+			Kind: "object",
+			Fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_KillFields,
+		},
+		"Metadata": ubx.FieldSpec{
+			WireName: "metadata",
+			Kind: "object",
+			Fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_MetadataFields,
+		},
+		"Set": ubx.FieldSpec{
+			WireName: "set",
+			Kind: "object",
+			Fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_Actions_SetFields,
+		},
+	}
 
 var WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields = ubx.FieldMap{
-	"Handle": ubx.FieldSpec{WireName: "handle"},
-	"Name":   ubx.FieldSpec{WireName: "name"},
-}
+		"Handle": ubx.FieldSpec{WireName: "handle"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var WorkloadSecurityAgentRuleResponse_Data_AttributesFields = ubx.FieldMap{
-	"Actions": ubx.FieldSpec{
-		WireName: "actions",
-		Kind:     "list",
-		Fields:   WorkloadSecurityAgentRuleResponse_Data_Attributes_ActionsFields,
-	},
-	"AgentConstraint":    ubx.FieldSpec{WireName: "agent_constraint"},
-	"AgentVersion":       ubx.FieldSpec{WireName: "agent_version"},
-	"Blocking":           ubx.FieldSpec{WireName: "blocking"},
-	"Category":           ubx.FieldSpec{WireName: "category"},
-	"CreationAuthorUuId": ubx.FieldSpec{WireName: "creation_author_uu_id"},
-	"CreationDate":       ubx.FieldSpec{WireName: "creation_date"},
-	"Creator": ubx.FieldSpec{
-		WireName: "creator",
-		Kind:     "object",
-		Fields:   WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields,
-	},
-	"DefaultRule":      ubx.FieldSpec{WireName: "default_rule"},
-	"Description":      ubx.FieldSpec{WireName: "description"},
-	"Disabled":         ubx.FieldSpec{WireName: "disabled"},
-	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
-	"Expression":       ubx.FieldSpec{WireName: "expression"},
-	"Filters":          ubx.FieldSpec{WireName: "filters"},
-	"Monitoring":       ubx.FieldSpec{WireName: "monitoring"},
-	"Name":             ubx.FieldSpec{WireName: "name"},
-	"PolicyId":         ubx.FieldSpec{WireName: "policy_id"},
-	"ProductTags":      ubx.FieldSpec{WireName: "product_tags"},
-	"Silent":           ubx.FieldSpec{WireName: "silent"},
-	"UpdateAuthorUuId": ubx.FieldSpec{WireName: "update_author_uu_id"},
-	"UpdateDate":       ubx.FieldSpec{WireName: "update_date"},
-	"UpdatedAt":        ubx.FieldSpec{WireName: "updated_at"},
-	"Updater": ubx.FieldSpec{
-		WireName: "updater",
-		Kind:     "object",
-		Fields:   WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields,
-	},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Actions": ubx.FieldSpec{
+			WireName: "actions",
+			Kind: "list",
+			Fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_ActionsFields,
+		},
+		"AgentConstraint": ubx.FieldSpec{WireName: "agent_constraint"},
+		"AgentVersion": ubx.FieldSpec{WireName: "agent_version"},
+		"Blocking": ubx.FieldSpec{WireName: "blocking"},
+		"Category": ubx.FieldSpec{WireName: "category"},
+		"CreationAuthorUuId": ubx.FieldSpec{WireName: "creation_author_uu_id"},
+		"CreationDate": ubx.FieldSpec{WireName: "creation_date"},
+		"Creator": ubx.FieldSpec{
+			WireName: "creator",
+			Kind: "object",
+			Fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields,
+		},
+		"DefaultRule": ubx.FieldSpec{WireName: "default_rule"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Every": ubx.FieldSpec{WireName: "every"},
+		"Expression": ubx.FieldSpec{WireName: "expression"},
+		"Filters": ubx.FieldSpec{WireName: "filters"},
+		"GroupId": ubx.FieldSpec{WireName: "group_id"},
+		"Monitoring": ubx.FieldSpec{WireName: "monitoring"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
+		"ProductTags": ubx.FieldSpec{WireName: "product_tags"},
+		"Silent": ubx.FieldSpec{WireName: "silent"},
+		"UpdateAuthorUuId": ubx.FieldSpec{WireName: "update_author_uu_id"},
+		"UpdateDate": ubx.FieldSpec{WireName: "update_date"},
+		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+		"Updater": ubx.FieldSpec{
+			WireName: "updater",
+			Kind: "object",
+			Fields: WorkloadSecurityAgentRuleResponse_Data_Attributes_CreatorFields,
+		},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var WorkloadSecurityAgentRuleResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   WorkloadSecurityAgentRuleResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: WorkloadSecurityAgentRuleResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type WorkloadSecurityAgentRuleResponseConfig struct {
 	// Object for a single Agent rule
@@ -229,8 +237,8 @@ var WorkloadSecurityAgentRuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   WorkloadSecurityAgentRuleResponse_DataFields,
+			Kind: "object",
+			Fields: WorkloadSecurityAgentRuleResponse_DataFields,
 		},
 		"AgentRuleId": ubx.FieldSpec{WireName: "agent_rule_id"},
 	},

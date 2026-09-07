@@ -5,8 +5,8 @@
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
 from .config_response import ConfigResponse, ConfigResponseConfig
-from .exclusion_filter_data import ExclusionFilterData, ExclusionFilterDataConfig
-from .metric_response_data import MetricResponseData, MetricResponseDataConfig
-from .permanent_retention_filter_data import PermanentRetentionFilterData, PermanentRetentionFilterDataConfig
+from .exclusion_filter_data_list import ExclusionFilterDataList, ExclusionFilterDataListConfig
+from .metric_response_data_list import MetricResponseDataList, MetricResponseDataListConfig
+from .permanent_retention_filter_data_list import PermanentRetentionFilterDataList, PermanentRetentionFilterDataListConfig
 from .permanent_retention_filter_response import PermanentRetentionFilterResponse, PermanentRetentionFilterResponseConfig
-from .retention_filter_data import RetentionFilterData, RetentionFilterDataConfig
+from .retention_filter_data_list import RetentionFilterDataList, RetentionFilterDataListConfig

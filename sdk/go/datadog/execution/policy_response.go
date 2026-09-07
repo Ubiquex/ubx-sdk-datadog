@@ -20,7 +20,7 @@ type PolicyResponse_Data_Attributes_Scope_Kubernetes struct {
 }
 
 type PolicyResponse_Data_Attributes_Scope_RemoteActionRshell_Rules struct {
-	Access      any
+	Access any
 	TargetPaths any
 }
 
@@ -49,7 +49,7 @@ type PolicyResponse_Data_Attributes_Scope struct {
 
 type PolicyResponse_Data_Attributes_Targets struct {
 	AgentTags any
-	Name      any
+	Name any
 }
 
 type PolicyResponse_Data_Attributes struct {
@@ -85,104 +85,104 @@ type PolicyResponse_Data struct {
 }
 
 var PolicyResponse_Data_Attributes_ActionPatternFields = ubx.FieldMap{
-	"ActionFqns":  ubx.FieldSpec{WireName: "action_fqns"},
-	"Integration": ubx.FieldSpec{WireName: "integration"},
-}
+		"ActionFqns": ubx.FieldSpec{WireName: "action_fqns"},
+		"Integration": ubx.FieldSpec{WireName: "integration"},
+	}
 
 var PolicyResponse_Data_Attributes_Scope_Kubernetes_RulesFields = ubx.FieldMap{
-	"TargetNamespaces": ubx.FieldSpec{WireName: "target_namespaces"},
-}
+		"TargetNamespaces": ubx.FieldSpec{WireName: "target_namespaces"},
+	}
 
 var PolicyResponse_Data_Attributes_Scope_KubernetesFields = ubx.FieldMap{
-	"Rules": ubx.FieldSpec{
-		WireName: "rules",
-		Kind:     "list",
-		Fields:   PolicyResponse_Data_Attributes_Scope_Kubernetes_RulesFields,
-	},
-}
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: PolicyResponse_Data_Attributes_Scope_Kubernetes_RulesFields,
+		},
+	}
 
 var PolicyResponse_Data_Attributes_Scope_RemoteActionRshell_RulesFields = ubx.FieldMap{
-	"Access":      ubx.FieldSpec{WireName: "access"},
-	"TargetPaths": ubx.FieldSpec{WireName: "target_paths"},
-}
+		"Access": ubx.FieldSpec{WireName: "access"},
+		"TargetPaths": ubx.FieldSpec{WireName: "target_paths"},
+	}
 
 var PolicyResponse_Data_Attributes_Scope_RemoteActionRshellFields = ubx.FieldMap{
-	"Rules": ubx.FieldSpec{
-		WireName: "rules",
-		Kind:     "list",
-		Fields:   PolicyResponse_Data_Attributes_Scope_RemoteActionRshell_RulesFields,
-	},
-}
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: PolicyResponse_Data_Attributes_Scope_RemoteActionRshell_RulesFields,
+		},
+	}
 
 var PolicyResponse_Data_Attributes_Scope_Scripts_RulesFields = ubx.FieldMap{
-	"TargetScriptNames": ubx.FieldSpec{WireName: "target_script_names"},
-}
+		"TargetScriptNames": ubx.FieldSpec{WireName: "target_script_names"},
+	}
 
 var PolicyResponse_Data_Attributes_Scope_ScriptsFields = ubx.FieldMap{
-	"Rules": ubx.FieldSpec{
-		WireName: "rules",
-		Kind:     "list",
-		Fields:   PolicyResponse_Data_Attributes_Scope_Scripts_RulesFields,
-	},
-}
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: PolicyResponse_Data_Attributes_Scope_Scripts_RulesFields,
+		},
+	}
 
 var PolicyResponse_Data_Attributes_ScopeFields = ubx.FieldMap{
-	"Kubernetes": ubx.FieldSpec{
-		WireName: "kubernetes",
-		Kind:     "object",
-		Fields:   PolicyResponse_Data_Attributes_Scope_KubernetesFields,
-	},
-	"RemoteActionRshell": ubx.FieldSpec{
-		WireName: "remote_action_rshell",
-		Kind:     "object",
-		Fields:   PolicyResponse_Data_Attributes_Scope_RemoteActionRshellFields,
-	},
-	"Scripts": ubx.FieldSpec{
-		WireName: "scripts",
-		Kind:     "object",
-		Fields:   PolicyResponse_Data_Attributes_Scope_ScriptsFields,
-	},
-}
+		"Kubernetes": ubx.FieldSpec{
+			WireName: "kubernetes",
+			Kind: "object",
+			Fields: PolicyResponse_Data_Attributes_Scope_KubernetesFields,
+		},
+		"RemoteActionRshell": ubx.FieldSpec{
+			WireName: "remote_action_rshell",
+			Kind: "object",
+			Fields: PolicyResponse_Data_Attributes_Scope_RemoteActionRshellFields,
+		},
+		"Scripts": ubx.FieldSpec{
+			WireName: "scripts",
+			Kind: "object",
+			Fields: PolicyResponse_Data_Attributes_Scope_ScriptsFields,
+		},
+	}
 
 var PolicyResponse_Data_Attributes_TargetsFields = ubx.FieldMap{
-	"AgentTags": ubx.FieldSpec{WireName: "agent_tags"},
-	"Name":      ubx.FieldSpec{WireName: "name"},
-}
+		"AgentTags": ubx.FieldSpec{WireName: "agent_tags"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var PolicyResponse_Data_AttributesFields = ubx.FieldMap{
-	"ActionPattern": ubx.FieldSpec{
-		WireName: "action_pattern",
-		Kind:     "object",
-		Fields:   PolicyResponse_Data_Attributes_ActionPatternFields,
-	},
-	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-	"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-	"Effect":    ubx.FieldSpec{WireName: "effect"},
-	"Name":      ubx.FieldSpec{WireName: "name"},
-	"Scope": ubx.FieldSpec{
-		WireName: "scope",
-		Kind:     "object",
-		Fields:   PolicyResponse_Data_Attributes_ScopeFields,
-	},
-	"Targets": ubx.FieldSpec{
-		WireName: "targets",
-		Kind:     "list",
-		Fields:   PolicyResponse_Data_Attributes_TargetsFields,
-	},
-	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-	"UpdatedBy": ubx.FieldSpec{WireName: "updated_by"},
-	"Version":   ubx.FieldSpec{WireName: "version"},
-}
+		"ActionPattern": ubx.FieldSpec{
+			WireName: "action_pattern",
+			Kind: "object",
+			Fields: PolicyResponse_Data_Attributes_ActionPatternFields,
+		},
+		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+		"Effect": ubx.FieldSpec{WireName: "effect"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Scope": ubx.FieldSpec{
+			WireName: "scope",
+			Kind: "object",
+			Fields: PolicyResponse_Data_Attributes_ScopeFields,
+		},
+		"Targets": ubx.FieldSpec{
+			WireName: "targets",
+			Kind: "list",
+			Fields: PolicyResponse_Data_Attributes_TargetsFields,
+		},
+		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+		"UpdatedBy": ubx.FieldSpec{WireName: "updated_by"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var PolicyResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   PolicyResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: PolicyResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type PolicyResponseConfig struct {
 	// Object for a single execution policy.
@@ -203,8 +203,8 @@ var PolicyResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   PolicyResponse_DataFields,
+			Kind: "object",
+			Fields: PolicyResponse_DataFields,
 		},
 		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
 	},

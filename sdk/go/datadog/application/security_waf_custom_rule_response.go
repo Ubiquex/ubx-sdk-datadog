@@ -24,21 +24,21 @@ type SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters_Inputs 
 
 type SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters_Options struct {
 	CaseSensitive any
-	MinLength     any
+	MinLength any
 }
 
 type SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters struct {
-	Data    any
-	Inputs  any
-	List    any
+	Data any
+	Inputs any
+	List any
 	Options any
-	Regex   any
-	Type    any
-	Value   any
+	Regex any
+	Type any
+	Value any
 }
 
 type SecurityWafCustomRuleResponse_Data_Attributes_Conditions struct {
-	Operator   any
+	Operator any
 	Parameters any
 }
 
@@ -58,7 +58,7 @@ type SecurityWafCustomRuleResponse_Data_Attributes_Metadata struct {
 }
 
 type SecurityWafCustomRuleResponse_Data_Attributes_Scope struct {
-	Env     any
+	Env any
 	Service any
 }
 
@@ -100,116 +100,116 @@ type SecurityWafCustomRuleResponse_Data struct {
 }
 
 var SecurityWafCustomRuleResponse_Data_Attributes_Action_ParametersFields = ubx.FieldMap{
-	"Location":   ubx.FieldSpec{WireName: "location"},
-	"StatusCode": ubx.FieldSpec{WireName: "status_code"},
-}
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"StatusCode": ubx.FieldSpec{WireName: "status_code"},
+	}
 
 var SecurityWafCustomRuleResponse_Data_Attributes_ActionFields = ubx.FieldMap{
-	"Action": ubx.FieldSpec{WireName: "action"},
-	"Parameters": ubx.FieldSpec{
-		WireName: "parameters",
-		Kind:     "object",
-		Fields:   SecurityWafCustomRuleResponse_Data_Attributes_Action_ParametersFields,
-	},
-}
+		"Action": ubx.FieldSpec{WireName: "action"},
+		"Parameters": ubx.FieldSpec{
+			WireName: "parameters",
+			Kind: "object",
+			Fields: SecurityWafCustomRuleResponse_Data_Attributes_Action_ParametersFields,
+		},
+	}
 
 var SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters_InputsFields = ubx.FieldMap{
-	"Address": ubx.FieldSpec{WireName: "address"},
-	"KeyPath": ubx.FieldSpec{WireName: "key_path"},
-}
+		"Address": ubx.FieldSpec{WireName: "address"},
+		"KeyPath": ubx.FieldSpec{WireName: "key_path"},
+	}
 
 var SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters_OptionsFields = ubx.FieldMap{
-	"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
-	"MinLength":     ubx.FieldSpec{WireName: "min_length"},
-}
+		"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
+		"MinLength": ubx.FieldSpec{WireName: "min_length"},
+	}
 
 var SecurityWafCustomRuleResponse_Data_Attributes_Conditions_ParametersFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{WireName: "data"},
-	"Inputs": ubx.FieldSpec{
-		WireName: "inputs",
-		Kind:     "list",
-		Fields:   SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters_InputsFields,
-	},
-	"List": ubx.FieldSpec{WireName: "list"},
-	"Options": ubx.FieldSpec{
-		WireName: "options",
-		Kind:     "object",
-		Fields:   SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters_OptionsFields,
-	},
-	"Regex": ubx.FieldSpec{WireName: "regex"},
-	"Type":  ubx.FieldSpec{WireName: "type"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Data": ubx.FieldSpec{WireName: "data"},
+		"Inputs": ubx.FieldSpec{
+			WireName: "inputs",
+			Kind: "list",
+			Fields: SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters_InputsFields,
+		},
+		"List": ubx.FieldSpec{WireName: "list"},
+		"Options": ubx.FieldSpec{
+			WireName: "options",
+			Kind: "object",
+			Fields: SecurityWafCustomRuleResponse_Data_Attributes_Conditions_Parameters_OptionsFields,
+		},
+		"Regex": ubx.FieldSpec{WireName: "regex"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var SecurityWafCustomRuleResponse_Data_Attributes_ConditionsFields = ubx.FieldMap{
-	"Operator": ubx.FieldSpec{WireName: "operator"},
-	"Parameters": ubx.FieldSpec{
-		WireName: "parameters",
-		Kind:     "object",
-		Fields:   SecurityWafCustomRuleResponse_Data_Attributes_Conditions_ParametersFields,
-	},
-}
+		"Operator": ubx.FieldSpec{WireName: "operator"},
+		"Parameters": ubx.FieldSpec{
+			WireName: "parameters",
+			Kind: "object",
+			Fields: SecurityWafCustomRuleResponse_Data_Attributes_Conditions_ParametersFields,
+		},
+	}
 
 var SecurityWafCustomRuleResponse_Data_Attributes_MetadataFields = ubx.FieldMap{
-	"AddedAt":        ubx.FieldSpec{WireName: "added_at"},
-	"AddedBy":        ubx.FieldSpec{WireName: "added_by"},
-	"AddedByName":    ubx.FieldSpec{WireName: "added_by_name"},
-	"ModifiedAt":     ubx.FieldSpec{WireName: "modified_at"},
-	"ModifiedBy":     ubx.FieldSpec{WireName: "modified_by"},
-	"ModifiedByName": ubx.FieldSpec{WireName: "modified_by_name"},
-}
+		"AddedAt": ubx.FieldSpec{WireName: "added_at"},
+		"AddedBy": ubx.FieldSpec{WireName: "added_by"},
+		"AddedByName": ubx.FieldSpec{WireName: "added_by_name"},
+		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+		"ModifiedBy": ubx.FieldSpec{WireName: "modified_by"},
+		"ModifiedByName": ubx.FieldSpec{WireName: "modified_by_name"},
+	}
 
 var SecurityWafCustomRuleResponse_Data_Attributes_ScopeFields = ubx.FieldMap{
-	"Env":     ubx.FieldSpec{WireName: "env"},
-	"Service": ubx.FieldSpec{WireName: "service"},
-}
+		"Env": ubx.FieldSpec{WireName: "env"},
+		"Service": ubx.FieldSpec{WireName: "service"},
+	}
 
 var SecurityWafCustomRuleResponse_Data_Attributes_TagsFields = ubx.FieldMap{
-	"Category": ubx.FieldSpec{WireName: "category"},
-	"Type":     ubx.FieldSpec{WireName: "type"},
-}
+		"Category": ubx.FieldSpec{WireName: "category"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var SecurityWafCustomRuleResponse_Data_AttributesFields = ubx.FieldMap{
-	"Action": ubx.FieldSpec{
-		WireName: "action",
-		Kind:     "object",
-		Fields:   SecurityWafCustomRuleResponse_Data_Attributes_ActionFields,
-	},
-	"Blocking": ubx.FieldSpec{WireName: "blocking"},
-	"Conditions": ubx.FieldSpec{
-		WireName: "conditions",
-		Kind:     "list",
-		Fields:   SecurityWafCustomRuleResponse_Data_Attributes_ConditionsFields,
-	},
-	"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	"Metadata": ubx.FieldSpec{
-		WireName: "metadata",
-		Kind:     "object",
-		Fields:   SecurityWafCustomRuleResponse_Data_Attributes_MetadataFields,
-	},
-	"Name":     ubx.FieldSpec{WireName: "name"},
-	"PathGlob": ubx.FieldSpec{WireName: "path_glob"},
-	"Scope": ubx.FieldSpec{
-		WireName: "scope",
-		Kind:     "list",
-		Fields:   SecurityWafCustomRuleResponse_Data_Attributes_ScopeFields,
-	},
-	"Tags": ubx.FieldSpec{
-		WireName: "tags",
-		Kind:     "object",
-		Fields:   SecurityWafCustomRuleResponse_Data_Attributes_TagsFields,
-	},
-}
+		"Action": ubx.FieldSpec{
+			WireName: "action",
+			Kind: "object",
+			Fields: SecurityWafCustomRuleResponse_Data_Attributes_ActionFields,
+		},
+		"Blocking": ubx.FieldSpec{WireName: "blocking"},
+		"Conditions": ubx.FieldSpec{
+			WireName: "conditions",
+			Kind: "list",
+			Fields: SecurityWafCustomRuleResponse_Data_Attributes_ConditionsFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Metadata": ubx.FieldSpec{
+			WireName: "metadata",
+			Kind: "object",
+			Fields: SecurityWafCustomRuleResponse_Data_Attributes_MetadataFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PathGlob": ubx.FieldSpec{WireName: "path_glob"},
+		"Scope": ubx.FieldSpec{
+			WireName: "scope",
+			Kind: "list",
+			Fields: SecurityWafCustomRuleResponse_Data_Attributes_ScopeFields,
+		},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "object",
+			Fields: SecurityWafCustomRuleResponse_Data_Attributes_TagsFields,
+		},
+	}
 
 var SecurityWafCustomRuleResponse_DataFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   SecurityWafCustomRuleResponse_Data_AttributesFields,
-	},
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: SecurityWafCustomRuleResponse_Data_AttributesFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type SecurityWafCustomRuleResponseConfig struct {
 	// Object for a single WAF custom rule.
@@ -230,8 +230,8 @@ var SecurityWafCustomRuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind:     "object",
-			Fields:   SecurityWafCustomRuleResponse_DataFields,
+			Kind: "object",
+			Fields: SecurityWafCustomRuleResponse_DataFields,
 		},
 		"CustomRuleId": ubx.FieldSpec{WireName: "custom_rule_id"},
 	},

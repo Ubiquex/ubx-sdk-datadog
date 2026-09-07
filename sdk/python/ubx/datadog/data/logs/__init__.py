@@ -4,9 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "datadog", "version": "dynamic"}
 
-from .archive_definition import ArchiveDefinition, ArchiveDefinitionConfig
+from .archive_definition_list import ArchiveDefinitionList, ArchiveDefinitionListConfig
 from .archive_order import ArchiveOrder, ArchiveOrderConfig
-from .index import Index, IndexConfig
+from .index_list import IndexList, IndexListConfig
 from .indexes_order import IndexesOrder, IndexesOrderConfig
-from .metric_response_data import MetricResponseData, MetricResponseDataConfig
+from .metric_response_data_list import MetricResponseDataList, MetricResponseDataListConfig
 from .pipelines_order import PipelinesOrder, PipelinesOrderConfig
