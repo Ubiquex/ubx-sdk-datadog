@@ -5,42 +5,42 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigDataList_Data_Attributes_LogsConfig struct {
 	CompartmentTagFilters any
-	Enabled any
-	EnabledServices any
+	Enabled               any
+	EnabledServices       any
 }
 
 type ConfigDataList_Data_Attributes_MetricsConfig struct {
 	CompartmentTagFilters any
-	Enabled any
-	ExcludedServices any
+	Enabled               any
+	ExcludedServices      any
 }
 
 type ConfigDataList_Data_Attributes_RegionsConfig struct {
 	Available any
-	Disabled any
-	Enabled any
+	Disabled  any
+	Enabled   any
 }
 
 type ConfigDataList_Data_Attributes struct {
-	BillingPlanId any
-	ConfigVersion any
-	CostCollectionEnabled any
-	DdCompartmentId any
-	DdStackId any
-	HomeRegion any
-	LogsConfig any
-	MetricsConfig any
-	ParentTenancyName any
-	RegionsConfig any
+	BillingPlanId             any
+	ConfigVersion             any
+	CostCollectionEnabled     any
+	DdCompartmentId           any
+	DdStackId                 any
+	HomeRegion                any
+	LogsConfig                any
+	MetricsConfig             any
+	ParentTenancyName         any
+	RegionsConfig             any
 	ResourceCollectionEnabled any
-	TenancyName any
-	UserOcid any
+	TenancyName               any
+	UserOcid                  any
 }
 
 type ConfigDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ConfigDataListConfig struct {
@@ -53,6 +53,5 @@ type ConfigDataListAttrs struct {
 
 var ConfigDataList = ubx.DataSourceBinding{
 	WireType: "datadog_tenancy_config_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

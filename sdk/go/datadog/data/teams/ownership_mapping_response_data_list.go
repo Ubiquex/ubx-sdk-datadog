@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OwnershipMappingResponseDataList_Data_Attributes struct {
 	ApplicationId any
-	CreatedAt any
-	CreatedBy any
-	MatchType any
-	OrgId any
-	Service any
-	TeamHandle any
-	ViewName any
+	CreatedAt     any
+	CreatedBy     any
+	MatchType     any
+	OrgId         any
+	Service       any
+	TeamHandle    any
+	ViewName      any
 }
 
 type OwnershipMappingResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type OwnershipMappingResponseDataListConfig struct {
@@ -30,6 +30,5 @@ type OwnershipMappingResponseDataListAttrs struct {
 
 var OwnershipMappingResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_teams_ownership_mapping_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

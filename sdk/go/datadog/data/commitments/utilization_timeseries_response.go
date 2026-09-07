@@ -21,25 +21,25 @@ type UtilizationTimeseriesResponse_Unit struct {
 type UtilizationTimeseriesResponseConfig struct {
 	// Type of commitment. ri for Reserved Instances, sp for Savings Plans.
 	CommitmentType any
-	End any
-	FilterBy any
-	Product any
+	End            any
+	FilterBy       any
+	Product        any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 }
 
 type UtilizationTimeseriesResponseAttrs struct {
 	// Type of commitment. ri for Reserved Instances, sp for Savings Plans.
 	CommitmentType any
-	End any
-	FilterBy any
-	Product any
+	End            any
+	FilterBy       any
+	Product        any
 	// Cloud provider for commitment programs.
 	Provider any
 	// Timeseries data as a map of series names to their corresponding value arrays.
 	Series any
-	Start any
+	Start  any
 	// Unix timestamps in seconds for the timeseries data points.
 	Times any
 	// Unit metadata for a numeric metric.
@@ -50,10 +50,10 @@ var UtilizationTimeseriesResponse = ubx.DataSourceBinding{
 	WireType: "datadog_commitments_utilization_timeseries_response",
 	Fields: ubx.FieldMap{
 		"CommitmentType": ubx.FieldSpec{WireName: "commitment_type"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"FilterBy": ubx.FieldSpec{WireName: "filter_by"},
-		"Product": ubx.FieldSpec{WireName: "product"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Start": ubx.FieldSpec{WireName: "start"},
+		"End":            ubx.FieldSpec{WireName: "end"},
+		"FilterBy":       ubx.FieldSpec{WireName: "filter_by"},
+		"Product":        ubx.FieldSpec{WireName: "product"},
+		"Provider":       ubx.FieldSpec{WireName: "provider"},
+		"Start":          ubx.FieldSpec{WireName: "start"},
 	},
 }

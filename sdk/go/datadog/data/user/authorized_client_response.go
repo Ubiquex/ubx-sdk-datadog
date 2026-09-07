@@ -59,7 +59,7 @@ type AuthorizedClientResponseConfig struct {
 
 type AuthorizedClientResponseAttrs struct {
 	// Data object representing a user authorized client.
-	Data any
+	Data                   any
 	UserAuthorizedClientId any
 }
 

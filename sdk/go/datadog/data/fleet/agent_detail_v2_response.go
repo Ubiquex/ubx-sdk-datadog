@@ -92,9 +92,9 @@ type AgentDetailV2Response_Data_Attributes_ConfigurationFiles_AgentConfiguration
 }
 
 type AgentDetailV2Response_Data_Attributes_ConfigurationFiles_OtelCollectorsConfiguration struct {
-	CollectorId any
+	CollectorId           any
 	CompiledConfiguration any
-	Distribution any
+	Distribution          any
 }
 
 type AgentDetailV2Response_Data_Attributes_ConfigurationFiles struct {
@@ -111,31 +111,31 @@ type AgentDetailV2Response_Data_Attributes_ConfigurationFiles struct {
 }
 
 type AgentDetailV2Response_Data_Attributes_Integrations_ConfigurationFiles struct {
-	AgentHash any
+	AgentHash   any
 	FileContent any
-	FilePath any
-	Filename any
+	FilePath    any
+	Filename    any
 }
 
 type AgentDetailV2Response_Data_Attributes_Integrations_ErrorIntegrations struct {
-	DataType any
-	ErrorMessages any
-	InitConfig any
+	DataType       any
+	ErrorMessages  any
+	InitConfig     any
 	InstanceConfig any
-	IsCustomCheck any
-	IsDefault any
-	IsInit any
-	LogConfig any
-	Name any
-	PodCount any
-	SourceIndex any
-	SourcePath any
-	Type any
+	IsCustomCheck  any
+	IsDefault      any
+	IsInit         any
+	LogConfig      any
+	Name           any
+	PodCount       any
+	SourceIndex    any
+	SourcePath     any
+	Type           any
 }
 
 type AgentDetailV2Response_Data_Attributes_Integrations_MissingIntegrations struct {
 	EscapedName any
-	Prefix any
+	Prefix      any
 }
 
 type AgentDetailV2Response_Data_Attributes_Integrations struct {
@@ -171,13 +171,13 @@ type AgentDetailV2Response_Data struct {
 
 type AgentDetailV2ResponseConfig struct {
 	AgentKey any
-	Include any
+	Include  any
 }
 
 type AgentDetailV2ResponseAttrs struct {
 	AgentKey any
 	// Detailed information about a specific Datadog Agent.
-	Data any
+	Data    any
 	Include any
 }
 
@@ -185,6 +185,6 @@ var AgentDetailV2Response = ubx.DataSourceBinding{
 	WireType: "datadog_fleet_agent_detail_v2_response",
 	Fields: ubx.FieldMap{
 		"AgentKey": ubx.FieldSpec{WireName: "agent_key"},
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":  ubx.FieldSpec{WireName: "include"},
 	},
 }

@@ -4,38 +4,38 @@ package severity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModifierRuleDataResponseList_Data_Attributes_Action struct {
-	Description any
-	Severity any
+	Description   any
+	Severity      any
 	SeverityDelta any
-	Type any
+	Type          any
 }
 
 type ModifierRuleDataResponseList_Data_Attributes_CreatedBy struct {
-	Id any
+	Id   any
 	Name any
 	Type any
 }
 
 type ModifierRuleDataResponseList_Data_Attributes_Rule struct {
 	FindingTypes any
-	Query any
+	Query        any
 }
 
 type ModifierRuleDataResponseList_Data_Attributes struct {
-	Action any
-	CreatedAt any
-	CreatedBy any
-	Enabled any
+	Action     any
+	CreatedAt  any
+	CreatedBy  any
+	Enabled    any
 	ModifiedAt any
 	ModifiedBy any
-	Name any
-	Rule any
+	Name       any
+	Rule       any
 }
 
 type ModifierRuleDataResponseList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ModifierRuleDataResponseList_Links struct {
@@ -73,6 +73,5 @@ type ModifierRuleDataResponseListAttrs struct {
 
 var ModifierRuleDataResponseList = ubx.DataSourceBinding{
 	WireType: "datadog_severity_modifier_rule_data_response_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

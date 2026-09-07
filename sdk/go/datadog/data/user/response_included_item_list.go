@@ -74,14 +74,14 @@ type ResponseIncludedItemList_Data struct {
 }
 
 type ResponseIncludedItemList_Included_Attributes struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Disabled any
-	ModifiedAt any
-	Name any
-	PublicId any
-	Sharing any
-	Url any
+	Disabled    any
+	ModifiedAt  any
+	Name        any
+	PublicId    any
+	Sharing     any
+	Url         any
 }
 
 type ResponseIncludedItemList_Included_Relationships struct {
@@ -89,10 +89,10 @@ type ResponseIncludedItemList_Included_Relationships struct {
 }
 
 type ResponseIncludedItemList_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ResponseIncludedItemListConfig struct {
@@ -107,6 +107,5 @@ type ResponseIncludedItemListAttrs struct {
 
 var ResponseIncludedItemList = ubx.DataSourceBinding{
 	WireType: "datadog_user_response_included_item_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

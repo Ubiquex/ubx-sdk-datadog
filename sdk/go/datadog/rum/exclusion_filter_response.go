@@ -35,32 +35,32 @@ type ExclusionFilterResponse_Data struct {
 }
 
 var ExclusionFilterResponse_Data_AttributesFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+	"EventType": ubx.FieldSpec{WireName: "event_type"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Query":     ubx.FieldSpec{WireName: "query"},
+}
 
 var ExclusionFilterResponse_Data_MetaFields = ubx.FieldMap{
-		"EnabledAt": ubx.FieldSpec{WireName: "enabled_at"},
-		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-		"UpdatedByHandle": ubx.FieldSpec{WireName: "updated_by_handle"},
-	}
+	"EnabledAt":       ubx.FieldSpec{WireName: "enabled_at"},
+	"UpdatedAt":       ubx.FieldSpec{WireName: "updated_at"},
+	"UpdatedByHandle": ubx.FieldSpec{WireName: "updated_by_handle"},
+}
 
 var ExclusionFilterResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ExclusionFilterResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Meta": ubx.FieldSpec{
-			WireName: "meta",
-			Kind: "object",
-			Fields: ExclusionFilterResponse_Data_MetaFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ExclusionFilterResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Meta": ubx.FieldSpec{
+		WireName: "meta",
+		Kind:     "object",
+		Fields:   ExclusionFilterResponse_Data_MetaFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ExclusionFilterResponseConfig struct {
 	// The new exclusion filter properties to create.
@@ -85,10 +85,10 @@ var ExclusionFilterResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ExclusionFilterResponse_DataFields,
+			Kind:     "object",
+			Fields:   ExclusionFilterResponse_DataFields,
 		},
 		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"EfId": ubx.FieldSpec{WireName: "ef_id"},
+		"EfId":  ubx.FieldSpec{WireName: "ef_id"},
 	},
 }

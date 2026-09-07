@@ -4,17 +4,17 @@ package page
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnnotationsResponse_Data_Attributes_Annotations struct {
-	AuthorId any
-	Color any
-	CreatedAt any
+	AuthorId    any
+	Color       any
+	CreatedAt   any
 	Description any
-	EndTime any
-	Id any
-	ModifiedAt any
-	PageId any
-	StartTime any
-	Type any
-	WidgetIds any
+	EndTime     any
+	Id          any
+	ModifiedAt  any
+	PageId      any
+	StartTime   any
+	Type        any
+	WidgetIds   any
 }
 
 type AnnotationsResponse_Data_Attributes struct {
@@ -36,24 +36,24 @@ type AnnotationsResponse_Data struct {
 }
 
 type AnnotationsResponseConfig struct {
-	EndTime any
-	PageId any
+	EndTime   any
+	PageId    any
 	StartTime any
 }
 
 type AnnotationsResponseAttrs struct {
 	// Annotations grouped by widget for a single page.
-	Data any
-	EndTime any
-	PageId any
+	Data      any
+	EndTime   any
+	PageId    any
 	StartTime any
 }
 
 var AnnotationsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_page_annotations_response",
 	Fields: ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+		"PageId":    ubx.FieldSpec{WireName: "page_id"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 	},
 }

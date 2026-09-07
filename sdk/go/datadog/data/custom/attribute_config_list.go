@@ -4,18 +4,18 @@ package custom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttributeConfigList_Data_Attributes struct {
-	CaseTypeId any
+	CaseTypeId  any
 	Description any
 	DisplayName any
-	IsMulti any
-	Key any
-	Type any
+	IsMulti     any
+	Key         any
+	Type        any
 }
 
 type AttributeConfigList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AttributeConfigListConfig struct {
@@ -28,6 +28,5 @@ type AttributeConfigListAttrs struct {
 
 var AttributeConfigList = ubx.DataSourceBinding{
 	WireType: "datadog_custom_attribute_config_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

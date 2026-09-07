@@ -29,7 +29,7 @@ type MonitoringSignalResponseConfig struct {
 
 type MonitoringSignalResponseAttrs struct {
 	// Object description of a security signal.
-	Data any
+	Data     any
 	SignalId any
 }
 

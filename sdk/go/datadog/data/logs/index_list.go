@@ -4,20 +4,20 @@ package logs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IndexList_Indexes_DailyLimitReset struct {
-	ResetTime any
+	ResetTime      any
 	ResetUtcOffset any
 }
 
 type IndexList_Indexes_ExclusionFilters_Filter struct {
-	Query any
+	Query           any
 	SampleAttribute any
-	SampleRate any
+	SampleRate      any
 }
 
 type IndexList_Indexes_ExclusionFilters struct {
-	Filter any
+	Filter    any
 	IsEnabled any
-	Name any
+	Name      any
 }
 
 type IndexList_Indexes_Filter struct {
@@ -25,16 +25,16 @@ type IndexList_Indexes_Filter struct {
 }
 
 type IndexList_Indexes struct {
-	DailyLimit any
-	DailyLimitReset any
+	DailyLimit                           any
+	DailyLimitReset                      any
 	DailyLimitWarningThresholdPercentage any
-	ExclusionFilters any
-	Filter any
-	IsRateLimited any
-	Name any
-	NumFlexLogsRetentionDays any
-	NumRetentionDays any
-	Tags any
+	ExclusionFilters                     any
+	Filter                               any
+	IsRateLimited                        any
+	Name                                 any
+	NumFlexLogsRetentionDays             any
+	NumRetentionDays                     any
+	Tags                                 any
 }
 
 type IndexListConfig struct {
@@ -47,6 +47,5 @@ type IndexListAttrs struct {
 
 var IndexList = ubx.DataSourceBinding{
 	WireType: "datadog_logs_index_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

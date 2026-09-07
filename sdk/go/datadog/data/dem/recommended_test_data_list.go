@@ -4,20 +4,20 @@ package dem
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RecommendedTestDataList_Data_Attributes struct {
-	Config any
+	Config    any
 	CreatedAt any
-	Name any
-	ResultId any
+	Name      any
+	ResultId  any
 	SessionId any
-	Source any
-	Type any
+	Source    any
+	Type      any
 	VariantId any
 }
 
 type RecommendedTestDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RecommendedTestDataListConfig struct {
@@ -26,7 +26,7 @@ type RecommendedTestDataListConfig struct {
 
 type RecommendedTestDataListAttrs struct {
 	// Recommended synthetic tests for a DEM journey.
-	Data any
+	Data      any
 	JourneyId any
 }
 

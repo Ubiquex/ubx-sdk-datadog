@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SummaryDefinitionList_Dashboards struct {
 	AuthorHandle any
-	CreatedAt any
-	Description any
-	Id any
-	IsReadOnly any
-	LayoutType any
-	ModifiedAt any
-	Title any
-	Url any
+	CreatedAt    any
+	Description  any
+	Id           any
+	IsReadOnly   any
+	LayoutType   any
+	ModifiedAt   any
+	Title        any
+	Url          any
 }
 
 type SummaryDefinitionListConfig struct {
@@ -24,7 +24,7 @@ type SummaryDefinitionListAttrs struct {
 	Count any
 	// List of dashboard definitions.
 	Dashboards any
-	Start any
+	Start      any
 }
 
 var SummaryDefinitionList = ubx.DataSourceBinding{

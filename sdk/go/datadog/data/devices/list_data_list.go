@@ -4,39 +4,39 @@ package devices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ListDataList_Data_Attributes_InterfaceStatuses struct {
-	Down any
-	Off any
-	Up any
+	Down    any
+	Off     any
+	Up      any
 	Warning any
 }
 
 type ListDataList_Data_Attributes struct {
-	Description any
-	DeviceType any
-	Integration any
+	Description       any
+	DeviceType        any
+	Integration       any
 	InterfaceStatuses any
-	IpAddress any
-	Location any
-	Model any
-	Name any
-	OsHostname any
-	OsName any
-	OsVersion any
-	PingStatus any
-	ProductName any
-	SerialNumber any
-	Status any
-	Subnet any
-	SysObjectId any
-	Tags any
-	Vendor any
-	Version any
+	IpAddress         any
+	Location          any
+	Model             any
+	Name              any
+	OsHostname        any
+	OsName            any
+	OsVersion         any
+	PingStatus        any
+	ProductName       any
+	SerialNumber      any
+	Status            any
+	Subnet            any
+	SysObjectId       any
+	Tags              any
+	Vendor            any
+	Version           any
 }
 
 type ListDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ListDataList_Meta_Page struct {

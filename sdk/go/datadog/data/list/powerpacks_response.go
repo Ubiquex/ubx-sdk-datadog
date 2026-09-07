@@ -5,47 +5,47 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PowerpacksResponse_Data_Attributes_GroupWidget_Definition_Widgets_Layout struct {
 	Height any
-	Width any
-	X any
-	Y any
+	Width  any
+	X      any
+	Y      any
 }
 
 type PowerpacksResponse_Data_Attributes_GroupWidget_Definition_Widgets struct {
 	Definition any
-	Layout any
+	Layout     any
 }
 
 type PowerpacksResponse_Data_Attributes_GroupWidget_Definition struct {
 	LayoutType any
-	ShowTitle any
-	Title any
-	Type any
-	Widgets any
+	ShowTitle  any
+	Title      any
+	Type       any
+	Widgets    any
 }
 
 type PowerpacksResponse_Data_Attributes_GroupWidget struct {
 	Definition any
-	Layout any
-	LiveSpan any
+	Layout     any
+	LiveSpan   any
 }
 
 type PowerpacksResponse_Data_Attributes_TemplateVariables struct {
 	AvailableValues any
-	Defaults any
-	Name any
-	Prefix any
+	Defaults        any
+	Name            any
+	Prefix          any
 }
 
 type PowerpacksResponse_Data_Attributes struct {
-	Description any
-	GroupWidget any
-	Name any
-	Tags any
+	Description       any
+	GroupWidget       any
+	Name              any
+	Tags              any
 	TemplateVariables any
 }
 
 type PowerpacksResponse_Data_Relationships_Author_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -58,27 +58,27 @@ type PowerpacksResponse_Data_Relationships struct {
 }
 
 type PowerpacksResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type PowerpacksResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type PowerpacksResponse_Included_Relationships_OtherOrgs struct {
@@ -86,17 +86,17 @@ type PowerpacksResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type PowerpacksResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type PowerpacksResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type PowerpacksResponse_Links struct {
@@ -152,6 +152,5 @@ type PowerpacksResponseAttrs struct {
 
 var PowerpacksResponse = ubx.DataSourceBinding{
 	WireType: "datadog_list_powerpacks_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

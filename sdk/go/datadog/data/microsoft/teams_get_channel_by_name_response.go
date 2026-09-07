@@ -23,15 +23,15 @@ type TeamsGetChannelByNameResponse_Data struct {
 
 type TeamsGetChannelByNameResponseConfig struct {
 	ChannelName any
-	TeamName any
-	TenantName any
+	TeamName    any
+	TenantName  any
 }
 
 type TeamsGetChannelByNameResponseAttrs struct {
 	ChannelName any
 	// Channel data from a response.
-	Data any
-	TeamName any
+	Data       any
+	TeamName   any
 	TenantName any
 }
 
@@ -39,7 +39,7 @@ var TeamsGetChannelByNameResponse = ubx.DataSourceBinding{
 	WireType: "datadog_microsoft_teams_get_channel_by_name_response",
 	Fields: ubx.FieldMap{
 		"ChannelName": ubx.FieldSpec{WireName: "channel_name"},
-		"TeamName": ubx.FieldSpec{WireName: "team_name"},
-		"TenantName": ubx.FieldSpec{WireName: "tenant_name"},
+		"TeamName":    ubx.FieldSpec{WireName: "team_name"},
+		"TenantName":  ubx.FieldSpec{WireName: "tenant_name"},
 	},
 }

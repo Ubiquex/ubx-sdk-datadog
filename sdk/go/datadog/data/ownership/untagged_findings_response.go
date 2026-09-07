@@ -33,6 +33,5 @@ type UntaggedFindingsResponseAttrs struct {
 
 var UntaggedFindingsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_ownership_untagged_findings_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

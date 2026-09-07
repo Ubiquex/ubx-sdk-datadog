@@ -4,15 +4,15 @@ package role
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_Data_Attributes struct {
-	CreatedAt any
-	ModifiedAt any
-	Name any
+	CreatedAt               any
+	ModifiedAt              any
+	Name                    any
 	ReceivesPermissionsFrom any
-	UserCount any
+	UserCount               any
 }
 
 type List_Data_Relationships_Permissions_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -25,10 +25,10 @@ type List_Data_Relationships struct {
 }
 
 type List_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type List_Meta_Page struct {

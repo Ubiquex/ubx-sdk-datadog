@@ -16,7 +16,7 @@ type CanDeleteMonitorResponseAttrs struct {
 	// Wrapper object with the list of monitor IDs.
 	Data any
 	// A mapping of Monitor ID to strings denoting where it's used.
-	Errors any
+	Errors     any
 	MonitorIds any
 }
 

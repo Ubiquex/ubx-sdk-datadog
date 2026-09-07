@@ -30,24 +30,24 @@ type NowTemplateResponse_Data struct {
 }
 
 var NowTemplateResponse_Data_AttributesFields = ubx.FieldMap{
-		"AssignmentGroupId": ubx.FieldSpec{WireName: "assignment_group_id"},
-		"BusinessServiceId": ubx.FieldSpec{WireName: "business_service_id"},
-		"FieldsMapping": ubx.FieldSpec{WireName: "fields_mapping"},
-		"HandleName": ubx.FieldSpec{WireName: "handle_name"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"ServicenowTablename": ubx.FieldSpec{WireName: "servicenow_tablename"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"AssignmentGroupId":   ubx.FieldSpec{WireName: "assignment_group_id"},
+	"BusinessServiceId":   ubx.FieldSpec{WireName: "business_service_id"},
+	"FieldsMapping":       ubx.FieldSpec{WireName: "fields_mapping"},
+	"HandleName":          ubx.FieldSpec{WireName: "handle_name"},
+	"InstanceId":          ubx.FieldSpec{WireName: "instance_id"},
+	"ServicenowTablename": ubx.FieldSpec{WireName: "servicenow_tablename"},
+	"UserId":              ubx.FieldSpec{WireName: "user_id"},
+}
 
 var NowTemplateResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: NowTemplateResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   NowTemplateResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type NowTemplateResponseConfig struct {
 	// Data object for creating a ServiceNow template
@@ -68,8 +68,8 @@ var NowTemplateResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: NowTemplateResponse_DataFields,
+			Kind:     "object",
+			Fields:   NowTemplateResponse_DataFields,
 		},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
 	},

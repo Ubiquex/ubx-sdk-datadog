@@ -4,15 +4,15 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetVersionDataList_Data_Attributes struct {
-	DatasetId any
-	LastUsed any
+	DatasetId     any
+	LastUsed      any
 	VersionNumber any
 }
 
 type DatasetVersionDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DatasetVersionDataListConfig struct {
@@ -22,7 +22,7 @@ type DatasetVersionDataListConfig struct {
 
 type DatasetVersionDataListAttrs struct {
 	// List of dataset versions.
-	Data any
+	Data      any
 	DatasetId any
 	ProjectId any
 }

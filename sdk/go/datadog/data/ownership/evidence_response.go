@@ -19,7 +19,7 @@ type EvidenceResponse_Data struct {
 
 type EvidenceResponseConfig struct {
 	// The owner type for an ownership inference.
-	OwnerType any
+	OwnerType  any
 	ResourceId any
 }
 
@@ -27,14 +27,14 @@ type EvidenceResponseAttrs struct {
 	// The data wrapper for an ownership evidence response.
 	Data any
 	// The owner type for an ownership inference.
-	OwnerType any
+	OwnerType  any
 	ResourceId any
 }
 
 var EvidenceResponse = ubx.DataSourceBinding{
 	WireType: "datadog_ownership_evidence_response",
 	Fields: ubx.FieldMap{
-		"OwnerType": ubx.FieldSpec{WireName: "owner_type"},
+		"OwnerType":  ubx.FieldSpec{WireName: "owner_type"},
 		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

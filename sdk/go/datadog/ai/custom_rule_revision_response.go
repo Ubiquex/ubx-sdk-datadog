@@ -48,33 +48,33 @@ type CustomRuleRevisionResponse_Data struct {
 }
 
 var CustomRuleRevisionResponse_Data_AttributesFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Checksum": ubx.FieldSpec{WireName: "checksum"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-		"Cwe": ubx.FieldSpec{WireName: "cwe"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Directories": ubx.FieldSpec{WireName: "directories"},
-		"ExecutionMode": ubx.FieldSpec{WireName: "execution_mode"},
-		"Globs": ubx.FieldSpec{WireName: "globs"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"IsPublished": ubx.FieldSpec{WireName: "is_published"},
-		"IsTesting": ubx.FieldSpec{WireName: "is_testing"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-	}
+	"Category":         ubx.FieldSpec{WireName: "category"},
+	"Checksum":         ubx.FieldSpec{WireName: "checksum"},
+	"Content":          ubx.FieldSpec{WireName: "content"},
+	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":        ubx.FieldSpec{WireName: "created_by"},
+	"Cwe":              ubx.FieldSpec{WireName: "cwe"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"Directories":      ubx.FieldSpec{WireName: "directories"},
+	"ExecutionMode":    ubx.FieldSpec{WireName: "execution_mode"},
+	"Globs":            ubx.FieldSpec{WireName: "globs"},
+	"IsDefault":        ubx.FieldSpec{WireName: "is_default"},
+	"IsPublished":      ubx.FieldSpec{WireName: "is_published"},
+	"IsTesting":        ubx.FieldSpec{WireName: "is_testing"},
+	"Severity":         ubx.FieldSpec{WireName: "severity"},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+	"VersionId":        ubx.FieldSpec{WireName: "version_id"},
+}
 
 var CustomRuleRevisionResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: CustomRuleRevisionResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   CustomRuleRevisionResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type CustomRuleRevisionResponseConfig struct {
 	// Request data for creating an AI custom rule revision.
@@ -103,11 +103,11 @@ var CustomRuleRevisionResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: CustomRuleRevisionResponse_DataFields,
+			Kind:     "object",
+			Fields:   CustomRuleRevisionResponse_DataFields,
 		},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"RuleName":    ubx.FieldSpec{WireName: "rule_name"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
 	},
 }

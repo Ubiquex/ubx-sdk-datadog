@@ -18,18 +18,18 @@ type MetricsConfigurationResponse_Data struct {
 }
 
 var MetricsConfigurationResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+}
 
 var MetricsConfigurationResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: MetricsConfigurationResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   MetricsConfigurationResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MetricsConfigurationResponseConfig struct {
 	// Data object for enabling historical metrics ingestion for a metric.
@@ -50,8 +50,8 @@ var MetricsConfigurationResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: MetricsConfigurationResponse_DataFields,
+			Kind:     "object",
+			Fields:   MetricsConfigurationResponse_DataFields,
 		},
 		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
 	},

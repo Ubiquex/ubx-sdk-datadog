@@ -4,26 +4,26 @@ package dashboard
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ListItemList_Dashboards_Author struct {
-	Email any
+	Email  any
 	Handle any
-	Name any
+	Name   any
 }
 
 type ListItemList_Dashboards struct {
-	Author any
-	Created any
-	Icon any
-	Id any
+	Author        any
+	Created       any
+	Icon          any
+	Id            any
 	IntegrationId any
-	IsFavorite any
-	IsReadOnly any
-	IsShared any
-	Modified any
-	Popularity any
-	Tags any
-	Title any
-	Type any
-	Url any
+	IsFavorite    any
+	IsReadOnly    any
+	IsShared      any
+	Modified      any
+	Popularity    any
+	Tags          any
+	Title         any
+	Type          any
+	Url           any
 }
 
 type ListItemListConfig struct {

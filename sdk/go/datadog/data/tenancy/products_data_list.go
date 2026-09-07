@@ -4,7 +4,7 @@ package tenancy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProductsDataList_Data_Attributes_Products struct {
-	Enabled any
+	Enabled    any
 	ProductKey any
 }
 
@@ -14,8 +14,8 @@ type ProductsDataList_Data_Attributes struct {
 
 type ProductsDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ProductsDataListConfig struct {
@@ -24,7 +24,7 @@ type ProductsDataListConfig struct {
 
 type ProductsDataListAttrs struct {
 	// List of OCI tenancy product resource objects.
-	Data any
+	Data        any
 	ProductKeys any
 }
 

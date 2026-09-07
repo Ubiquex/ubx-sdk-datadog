@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UrlSettingResponseDataList_Data_Attributes struct {
 	CustomTags any
-	Url any
+	Url        any
 }
 
 type UrlSettingResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type UrlSettingResponseDataListConfig struct {
@@ -24,6 +24,5 @@ type UrlSettingResponseDataListAttrs struct {
 
 var UrlSettingResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_statuspage_url_setting_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

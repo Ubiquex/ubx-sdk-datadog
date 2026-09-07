@@ -24,21 +24,21 @@ type MonitoringTerraformExportResponse_Data struct {
 }
 
 var MonitoringTerraformExportResponse_Data_AttributesFields = ubx.FieldMap{
-		"Output": ubx.FieldSpec{WireName: "output"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceJson": ubx.FieldSpec{WireName: "resource_json"},
-		"TypeName": ubx.FieldSpec{WireName: "type_name"},
-	}
+	"Output":       ubx.FieldSpec{WireName: "output"},
+	"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceJson": ubx.FieldSpec{WireName: "resource_json"},
+	"TypeName":     ubx.FieldSpec{WireName: "type_name"},
+}
 
 var MonitoringTerraformExportResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: MonitoringTerraformExportResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   MonitoringTerraformExportResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type MonitoringTerraformExportResponseConfig struct {
 	// The convert request data object.
@@ -63,10 +63,10 @@ var MonitoringTerraformExportResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: MonitoringTerraformExportResponse_DataFields,
+			Kind:     "object",
+			Fields:   MonitoringTerraformExportResponse_DataFields,
 		},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
 	},
 }

@@ -4,8 +4,8 @@ package model
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LabFacetValuesResponse_Data_Attributes_MetricStatRanges struct {
-	Max any
-	Min any
+	Max  any
+	Min  any
 	Stat any
 }
 
@@ -46,7 +46,7 @@ type LabFacetValuesResponseConfig struct {
 
 type LabFacetValuesResponseAttrs struct {
 	// A facet values JSON:API resource object.
-	Data any
+	Data      any
 	FacetName any
 	// The type of facet for filtering Model Lab runs.
 	FacetType any

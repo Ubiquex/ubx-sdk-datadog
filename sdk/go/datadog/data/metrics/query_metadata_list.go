@@ -4,52 +4,52 @@ package metrics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryMetadataList_Series_Unit struct {
-	Family any
-	Name any
-	Plural any
+	Family      any
+	Name        any
+	Plural      any
 	ScaleFactor any
-	ShortName any
+	ShortName   any
 }
 
 type QueryMetadataList_Series struct {
-	Aggr any
+	Aggr        any
 	DisplayName any
-	End any
-	Expression any
-	Interval any
-	Length any
-	Metric any
-	Pointlist any
-	QueryIndex any
-	Scope any
-	Start any
-	TagSet any
-	Unit any
+	End         any
+	Expression  any
+	Interval    any
+	Length      any
+	Metric      any
+	Pointlist   any
+	QueryIndex  any
+	Scope       any
+	Start       any
+	TagSet      any
+	Unit        any
 }
 
 type QueryMetadataListConfig struct {
 	From any
-	To any
+	To   any
 }
 
 type QueryMetadataListAttrs struct {
 	// Message indicating the errors if status is not `ok`.
 	Error any
-	From any
+	From  any
 	// Start of requested time window, milliseconds since Unix epoch.
 	FromDate any
 	// List of tag keys on which to group.
 	GroupBy any
 	// Message indicating `success` if status is `ok`.
 	Message any
-	Query any
+	Query   any
 	// Type of response.
 	ResType any
 	// List of timeseries queried.
 	Series any
 	// Status of the query.
 	Status any
-	To any
+	To     any
 	// End of requested time window, milliseconds since Unix epoch.
 	ToDate any
 }
@@ -58,6 +58,6 @@ var QueryMetadataList = ubx.DataSourceBinding{
 	WireType: "datadog_metrics_query_metadata_list",
 	Fields: ubx.FieldMap{
 		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"To":   ubx.FieldSpec{WireName: "to"},
 	},
 }

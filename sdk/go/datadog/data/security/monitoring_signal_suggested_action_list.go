@@ -4,17 +4,17 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringSignalSuggestedActionList_Data_Attributes struct {
-	Name any
-	QueryFilter any
+	Name              any
+	QueryFilter       any
 	TemplateVariables any
-	Title any
-	Url any
+	Title             any
+	Url               any
 }
 
 type MonitoringSignalSuggestedActionList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MonitoringSignalSuggestedActionListConfig struct {
@@ -23,7 +23,7 @@ type MonitoringSignalSuggestedActionListConfig struct {
 
 type MonitoringSignalSuggestedActionListAttrs struct {
 	// List of suggested actions for a security signal.
-	Data any
+	Data     any
 	SignalId any
 }
 

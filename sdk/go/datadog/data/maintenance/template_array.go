@@ -4,18 +4,18 @@ package maintenance
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TemplateArray_Data_Attributes struct {
-	CompletedDescription any
-	ComponentIds any
-	CreatedAt any
+	CompletedDescription  any
+	ComponentIds          any
+	CreatedAt             any
 	InProgressDescription any
-	MaintenanceTitle any
-	ModifiedAt any
-	Name any
-	ScheduledDescription any
+	MaintenanceTitle      any
+	ModifiedAt            any
+	Name                  any
+	ScheduledDescription  any
 }
 
 type TemplateArray_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -24,56 +24,56 @@ type TemplateArray_Data_Relationships_CreatedByUser struct {
 }
 
 type TemplateArray_Data_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
-	StatusPage any
+	StatusPage         any
 }
 
 type TemplateArray_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TemplateArray_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type TemplateArray_Included_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type TemplateArray_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TemplateArrayConfig struct {
 	Include any
-	PageId any
+	PageId  any
 }
 
 type TemplateArrayAttrs struct {
 	// A list of maintenance template data objects.
-	Data any
+	Data    any
 	Include any
 	// The included related resources of a maintenance template. Client must explicitly request these resources by name in the `include` query parameter.
 	Included any
-	PageId any
+	PageId   any
 }
 
 var TemplateArray = ubx.DataSourceBinding{
 	WireType: "datadog_maintenance_template_array",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"PageId":  ubx.FieldSpec{WireName: "page_id"},
 	},
 }

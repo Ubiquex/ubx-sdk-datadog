@@ -4,14 +4,14 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiMultistepSubtestDataList_Data_Attributes struct {
-	Name any
+	Name     any
 	PublicId any
 }
 
 type ApiMultistepSubtestDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ApiMultistepSubtestDataListConfig struct {
@@ -20,7 +20,7 @@ type ApiMultistepSubtestDataListConfig struct {
 
 type ApiMultistepSubtestDataListAttrs struct {
 	// List of API tests that can be added as subtests.
-	Data any
+	Data     any
 	PublicId any
 }
 

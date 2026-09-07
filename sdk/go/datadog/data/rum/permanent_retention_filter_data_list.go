@@ -4,7 +4,7 @@ package rum
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermanentRetentionFilterDataList_Data_Attributes_CrossProductSampling struct {
-	TraceEnabled any
+	TraceEnabled    any
 	TraceSampleRate any
 }
 
@@ -14,15 +14,15 @@ type PermanentRetentionFilterDataList_Data_Attributes_Editability struct {
 
 type PermanentRetentionFilterDataList_Data_Attributes struct {
 	CrossProductSampling any
-	Description any
-	Editability any
-	Name any
+	Description          any
+	Editability          any
+	Name                 any
 }
 
 type PermanentRetentionFilterDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type PermanentRetentionFilterDataListConfig struct {

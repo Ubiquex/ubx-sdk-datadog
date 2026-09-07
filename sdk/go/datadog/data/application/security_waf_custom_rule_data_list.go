@@ -4,12 +4,12 @@ package application
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityWafCustomRuleDataList_Data_Attributes_Action_Parameters struct {
-	Location any
+	Location   any
 	StatusCode any
 }
 
 type SecurityWafCustomRuleDataList_Data_Attributes_Action struct {
-	Action any
+	Action     any
 	Parameters any
 }
 
@@ -20,59 +20,59 @@ type SecurityWafCustomRuleDataList_Data_Attributes_Conditions_Parameters_Inputs 
 
 type SecurityWafCustomRuleDataList_Data_Attributes_Conditions_Parameters_Options struct {
 	CaseSensitive any
-	MinLength any
+	MinLength     any
 }
 
 type SecurityWafCustomRuleDataList_Data_Attributes_Conditions_Parameters struct {
-	Data any
-	Inputs any
-	List any
+	Data    any
+	Inputs  any
+	List    any
 	Options any
-	Regex any
-	Type any
-	Value any
+	Regex   any
+	Type    any
+	Value   any
 }
 
 type SecurityWafCustomRuleDataList_Data_Attributes_Conditions struct {
-	Operator any
+	Operator   any
 	Parameters any
 }
 
 type SecurityWafCustomRuleDataList_Data_Attributes_Metadata struct {
-	AddedAt any
-	AddedBy any
-	AddedByName any
-	ModifiedAt any
-	ModifiedBy any
+	AddedAt        any
+	AddedBy        any
+	AddedByName    any
+	ModifiedAt     any
+	ModifiedBy     any
 	ModifiedByName any
 }
 
 type SecurityWafCustomRuleDataList_Data_Attributes_Scope struct {
-	Env any
+	Env     any
 	Service any
 }
 
 type SecurityWafCustomRuleDataList_Data_Attributes_Tags struct {
 	Category any
-	Type any
+	Type     any
 }
 
 type SecurityWafCustomRuleDataList_Data_Attributes struct {
-	Action any
-	Blocking any
+	Action     any
+	Blocking   any
 	Conditions any
-	Enabled any
-	Metadata any
-	Name any
-	PathGlob any
-	Scope any
-	Tags any
+	Enabled    any
+	Metadata   any
+	Name       any
+	PathGlob   any
+	Scope      any
+	Tags       any
 }
 
 type SecurityWafCustomRuleDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type SecurityWafCustomRuleDataListConfig struct {
@@ -85,6 +85,5 @@ type SecurityWafCustomRuleDataListAttrs struct {
 
 var SecurityWafCustomRuleDataList = ubx.DataSourceBinding{
 	WireType: "datadog_application_security_waf_custom_rule_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

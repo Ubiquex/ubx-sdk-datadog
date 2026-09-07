@@ -4,19 +4,19 @@ package fastly
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccountResponseDataList_Data_Attributes_Services struct {
-	Id any
+	Id   any
 	Tags any
 }
 
 type AccountResponseDataList_Data_Attributes struct {
-	Name any
+	Name     any
 	Services any
 }
 
 type AccountResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AccountResponseDataListConfig struct {
@@ -29,6 +29,5 @@ type AccountResponseDataListAttrs struct {
 
 var AccountResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_fastly_account_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

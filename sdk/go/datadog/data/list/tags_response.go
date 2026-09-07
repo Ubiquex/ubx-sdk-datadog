@@ -23,7 +23,7 @@ type TagsResponseConfig struct {
 
 type TagsResponseAttrs struct {
 	// The list tags response data.
-	Data any
+	Data     any
 	DeviceId any
 }
 

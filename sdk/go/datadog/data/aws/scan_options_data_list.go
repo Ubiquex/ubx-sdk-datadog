@@ -4,17 +4,17 @@ package aws
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ScanOptionsDataList_Data_Attributes struct {
-	ComplianceHost any
-	Lambda any
-	SensitiveData any
+	ComplianceHost   any
+	Lambda           any
+	SensitiveData    any
 	VulnContainersOs any
-	VulnHostOs any
+	VulnHostOs       any
 }
 
 type ScanOptionsDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ScanOptionsDataListConfig struct {
@@ -27,6 +27,5 @@ type ScanOptionsDataListAttrs struct {
 
 var ScanOptionsDataList = ubx.DataSourceBinding{
 	WireType: "datadog_aws_scan_options_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,17 +4,17 @@ package get
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ActionConnectionResponse_Data_Attributes_Integration_Credentials struct {
-	AccountId any
-	ExternalId any
+	AccountId   any
+	ExternalId  any
 	PrincipalId any
-	Role any
-	Type any
+	Role        any
+	Type        any
 }
 
 type ActionConnectionResponse_Data_Attributes_Integration struct {
-	BaseUrl any
+	BaseUrl     any
 	Credentials any
-	Type any
+	Type        any
 }
 
 type ActionConnectionResponse_Data_Attributes struct {
@@ -36,42 +36,42 @@ type ActionConnectionResponse_Data struct {
 }
 
 var ActionConnectionResponse_Data_Attributes_Integration_CredentialsFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"PrincipalId": ubx.FieldSpec{WireName: "principal_id"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AccountId":   ubx.FieldSpec{WireName: "account_id"},
+	"ExternalId":  ubx.FieldSpec{WireName: "external_id"},
+	"PrincipalId": ubx.FieldSpec{WireName: "principal_id"},
+	"Role":        ubx.FieldSpec{WireName: "role"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var ActionConnectionResponse_Data_Attributes_IntegrationFields = ubx.FieldMap{
-		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
-		"Credentials": ubx.FieldSpec{
-			WireName: "credentials",
-			Kind: "object",
-			Fields: ActionConnectionResponse_Data_Attributes_Integration_CredentialsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
+	"Credentials": ubx.FieldSpec{
+		WireName: "credentials",
+		Kind:     "object",
+		Fields:   ActionConnectionResponse_Data_Attributes_Integration_CredentialsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ActionConnectionResponse_Data_AttributesFields = ubx.FieldMap{
-		"Integration": ubx.FieldSpec{
-			WireName: "integration",
-			Kind: "object",
-			Fields: ActionConnectionResponse_Data_Attributes_IntegrationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Integration": ubx.FieldSpec{
+		WireName: "integration",
+		Kind:     "object",
+		Fields:   ActionConnectionResponse_Data_Attributes_IntegrationFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 var ActionConnectionResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ActionConnectionResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ActionConnectionResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ActionConnectionResponseConfig struct {
 	// Data related to the connection.
@@ -92,8 +92,8 @@ var ActionConnectionResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ActionConnectionResponse_DataFields,
+			Kind:     "object",
+			Fields:   ActionConnectionResponse_DataFields,
 		},
 		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
 	},

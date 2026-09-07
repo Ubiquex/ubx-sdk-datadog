@@ -16,19 +16,19 @@ type JourneyResponse_Data_Attributes_CreatedBy struct {
 
 type JourneyResponse_Data_Attributes_JourneyRum_RumSteps_Nodes struct {
 	AppId any
-	Id any
+	Id    any
 	Query any
 }
 
 type JourneyResponse_Data_Attributes_JourneyRum_RumSteps struct {
 	Nodes any
-	Type any
+	Type  any
 }
 
 type JourneyResponse_Data_Attributes_JourneyRum_Variants struct {
-	Filter any
-	Id any
-	Name any
+	Filter   any
+	Id       any
+	Name     any
 	RumSteps any
 }
 
@@ -83,100 +83,100 @@ type JourneyResponse_Data struct {
 }
 
 var JourneyResponse_Data_Attributes_CreatedByFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uuid": ubx.FieldSpec{WireName: "uuid"},
-	}
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Uuid":   ubx.FieldSpec{WireName: "uuid"},
+}
 
 var JourneyResponse_Data_Attributes_JourneyRum_RumSteps_NodesFields = ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"AppId": ubx.FieldSpec{WireName: "app_id"},
+	"Id":    ubx.FieldSpec{WireName: "id"},
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var JourneyResponse_Data_Attributes_JourneyRum_RumStepsFields = ubx.FieldMap{
-		"Nodes": ubx.FieldSpec{
-			WireName: "nodes",
-			Kind: "list",
-			Fields: JourneyResponse_Data_Attributes_JourneyRum_RumSteps_NodesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Nodes": ubx.FieldSpec{
+		WireName: "nodes",
+		Kind:     "list",
+		Fields:   JourneyResponse_Data_Attributes_JourneyRum_RumSteps_NodesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var JourneyResponse_Data_Attributes_JourneyRum_VariantsFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RumSteps": ubx.FieldSpec{
-			WireName: "rum_steps",
-			Kind: "list",
-			Fields: JourneyResponse_Data_Attributes_JourneyRum_RumStepsFields,
-		},
-	}
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"RumSteps": ubx.FieldSpec{
+		WireName: "rum_steps",
+		Kind:     "list",
+		Fields:   JourneyResponse_Data_Attributes_JourneyRum_RumStepsFields,
+	},
+}
 
 var JourneyResponse_Data_Attributes_JourneyRumFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"RumSteps": ubx.FieldSpec{
-			WireName: "rum_steps",
-			Kind: "list",
-			Fields: JourneyResponse_Data_Attributes_JourneyRum_RumStepsFields,
-		},
-		"Variants": ubx.FieldSpec{
-			WireName: "variants",
-			Kind: "list",
-			Fields: JourneyResponse_Data_Attributes_JourneyRum_VariantsFields,
-		},
-	}
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+	"RumSteps": ubx.FieldSpec{
+		WireName: "rum_steps",
+		Kind:     "list",
+		Fields:   JourneyResponse_Data_Attributes_JourneyRum_RumStepsFields,
+	},
+	"Variants": ubx.FieldSpec{
+		WireName: "variants",
+		Kind:     "list",
+		Fields:   JourneyResponse_Data_Attributes_JourneyRum_VariantsFields,
+	},
+}
 
 var JourneyResponse_Data_Attributes_TestSuiteFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var JourneyResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{
-			WireName: "created_by",
-			Kind: "object",
-			Fields: JourneyResponse_Data_Attributes_CreatedByFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"JourneyRum": ubx.FieldSpec{
-			WireName: "journey_rum",
-			Kind: "object",
-			Fields: JourneyResponse_Data_Attributes_JourneyRumFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OrgId": ubx.FieldSpec{WireName: "org_id"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TestSuite": ubx.FieldSpec{
-			WireName: "test_suite",
-			Kind: "object",
-			Fields: JourneyResponse_Data_Attributes_TestSuiteFields,
-		},
-		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
-		"UpdatedBy": ubx.FieldSpec{
-			WireName: "updated_by",
-			Kind: "object",
-			Fields: JourneyResponse_Data_Attributes_CreatedByFields,
-		},
-		"Variants": ubx.FieldSpec{
-			WireName: "variants",
-			Kind: "list",
-			Fields: JourneyResponse_Data_Attributes_JourneyRum_VariantsFields,
-		},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   JourneyResponse_Data_Attributes_CreatedByFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"JourneyRum": ubx.FieldSpec{
+		WireName: "journey_rum",
+		Kind:     "object",
+		Fields:   JourneyResponse_Data_Attributes_JourneyRumFields,
+	},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"OrgId": ubx.FieldSpec{WireName: "org_id"},
+	"Tags":  ubx.FieldSpec{WireName: "tags"},
+	"TestSuite": ubx.FieldSpec{
+		WireName: "test_suite",
+		Kind:     "object",
+		Fields:   JourneyResponse_Data_Attributes_TestSuiteFields,
+	},
+	"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+	"UpdatedBy": ubx.FieldSpec{
+		WireName: "updated_by",
+		Kind:     "object",
+		Fields:   JourneyResponse_Data_Attributes_CreatedByFields,
+	},
+	"Variants": ubx.FieldSpec{
+		WireName: "variants",
+		Kind:     "list",
+		Fields:   JourneyResponse_Data_Attributes_JourneyRum_VariantsFields,
+	},
+}
 
 var JourneyResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: JourneyResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   JourneyResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type JourneyResponseConfig struct {
 	// Data object for a DEM journey create or update request.
@@ -197,8 +197,8 @@ var JourneyResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: JourneyResponse_DataFields,
+			Kind:     "object",
+			Fields:   JourneyResponse_DataFields,
 		},
 		"JourneyId": ubx.FieldSpec{WireName: "journey_id"},
 	},

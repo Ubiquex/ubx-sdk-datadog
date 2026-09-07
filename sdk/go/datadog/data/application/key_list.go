@@ -4,8 +4,8 @@ package application
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyList_ApplicationKeys struct {
-	Hash any
-	Name any
+	Hash  any
+	Name  any
 	Owner any
 }
 
@@ -19,6 +19,5 @@ type KeyListAttrs struct {
 
 var KeyList = ubx.DataSourceBinding{
 	WireType: "datadog_application_key_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

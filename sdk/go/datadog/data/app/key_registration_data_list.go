@@ -4,7 +4,7 @@ package app
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyRegistrationDataList_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -27,6 +27,5 @@ type KeyRegistrationDataListAttrs struct {
 
 var KeyRegistrationDataList = ubx.DataSourceBinding{
 	WireType: "datadog_app_key_registration_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,21 +4,21 @@ package billing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DimensionsMappingBodyItemList_Data_Attributes_Endpoints struct {
-	Id any
-	Keys any
+	Id     any
+	Keys   any
 	Status any
 }
 
 type DimensionsMappingBodyItemList_Data_Attributes struct {
-	Endpoints any
+	Endpoints  any
 	InAppLabel any
-	Timestamp any
+	Timestamp  any
 }
 
 type DimensionsMappingBodyItemList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DimensionsMappingBodyItemListConfig struct {
@@ -31,6 +31,5 @@ type DimensionsMappingBodyItemListAttrs struct {
 
 var DimensionsMappingBodyItemList = ubx.DataSourceBinding{
 	WireType: "datadog_billing_dimensions_mapping_body_item_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

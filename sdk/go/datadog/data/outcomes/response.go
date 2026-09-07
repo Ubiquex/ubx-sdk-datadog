@@ -4,15 +4,15 @@ package outcomes
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes struct {
-	CreatedAt any
-	ModifiedAt any
-	Remarks any
+	CreatedAt   any
+	ModifiedAt  any
+	Remarks     any
 	ServiceName any
-	State any
+	State       any
 }
 
 type Response_Data_Relationships_Rule_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -25,21 +25,21 @@ type Response_Data_Relationships struct {
 }
 
 type Response_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type Response_Included_Attributes struct {
-	Name any
+	Name          any
 	ScorecardName any
 }
 
 type Response_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type Response_Links struct {
@@ -53,7 +53,7 @@ type ResponseConfig struct {
 
 type ResponseAttrs struct {
 	// List of rule outcomes.
-	Data any
+	Data    any
 	Include any
 	// Array of rule details.
 	Included any

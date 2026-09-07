@@ -63,61 +63,61 @@ type CreationRuleResponse_Data struct {
 }
 
 var CreationRuleResponse_Data_Attributes_ActionFields = ubx.FieldMap{
-		"AssigneeId": ubx.FieldSpec{WireName: "assignee_id"},
-		"AutoDisabledReason": ubx.FieldSpec{WireName: "auto_disabled_reason"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"MaxTicketsPerDay": ubx.FieldSpec{WireName: "max_tickets_per_day"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"AssigneeId":         ubx.FieldSpec{WireName: "assignee_id"},
+	"AutoDisabledReason": ubx.FieldSpec{WireName: "auto_disabled_reason"},
+	"Fields":             ubx.FieldSpec{WireName: "fields"},
+	"MaxTicketsPerDay":   ubx.FieldSpec{WireName: "max_tickets_per_day"},
+	"ProjectId":          ubx.FieldSpec{WireName: "project_id"},
+	"Target":             ubx.FieldSpec{WireName: "target"},
+}
 
 var CreationRuleResponse_Data_Attributes_CreatedByFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var CreationRuleResponse_Data_Attributes_RuleFields = ubx.FieldMap{
-		"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
+	"Query":        ubx.FieldSpec{WireName: "query"},
+}
 
 var CreationRuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: CreationRuleResponse_Data_Attributes_ActionFields,
-		},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{
-			WireName: "created_by",
-			Kind: "object",
-			Fields: CreationRuleResponse_Data_Attributes_CreatedByFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"ModifiedBy": ubx.FieldSpec{
-			WireName: "modified_by",
-			Kind: "object",
-			Fields: CreationRuleResponse_Data_Attributes_CreatedByFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "object",
-			Fields: CreationRuleResponse_Data_Attributes_RuleFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_Attributes_ActionFields,
+	},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Rule": ubx.FieldSpec{
+		WireName: "rule",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_Attributes_RuleFields,
+	},
+}
 
 var CreationRuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: CreationRuleResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   CreationRuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type CreationRuleResponseConfig struct {
 	// The data object for a ticket creation rule create or update request.
@@ -138,8 +138,8 @@ var CreationRuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: CreationRuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   CreationRuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

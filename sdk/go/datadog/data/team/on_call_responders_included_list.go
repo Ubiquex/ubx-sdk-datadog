@@ -4,7 +4,7 @@ package team
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OnCallRespondersIncludedList_Data_Relationships_Escalations_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -30,20 +30,20 @@ type OnCallRespondersIncludedList_Data struct {
 }
 
 type OnCallRespondersIncludedList_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type OnCallRespondersIncludedList_Included_Relationships_Org struct {
@@ -51,37 +51,37 @@ type OnCallRespondersIncludedList_Included_Relationships_Org struct {
 }
 
 type OnCallRespondersIncludedList_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type OnCallRespondersIncludedList_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type OnCallRespondersIncludedListConfig struct {
 	Include any
-	TeamId any
+	TeamId  any
 }
 
 type OnCallRespondersIncludedListAttrs struct {
 	// Defines the main on-call responder object for a team, including relationships and metadata.
-	Data any
+	Data    any
 	Include any
 	// The `TeamOnCallResponders` `included`.
 	Included any
-	TeamId any
+	TeamId   any
 }
 
 var OnCallRespondersIncludedList = ubx.DataSourceBinding{
 	WireType: "datadog_team_on_call_responders_included_list",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
+		"TeamId":  ubx.FieldSpec{WireName: "team_id"},
 	},
 }

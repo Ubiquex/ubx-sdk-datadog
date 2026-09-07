@@ -27,6 +27,5 @@ type WellKnownSitesResponseAttrs struct {
 
 var WellKnownSitesResponse = ubx.DataSourceBinding{
 	WireType: "datadog_oauth2_well_known_sites_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

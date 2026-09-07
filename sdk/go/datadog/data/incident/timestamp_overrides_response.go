@@ -4,16 +4,16 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TimestampOverridesResponse_Data_Attributes struct {
-	CreatedAt any
-	DeletedAt any
-	IncidentId any
-	ModifiedAt any
-	TimestampType any
+	CreatedAt      any
+	DeletedAt      any
+	IncidentId     any
+	ModifiedAt     any
+	TimestampType  any
 	TimestampValue any
 }
 
 type TimestampOverridesResponse_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -22,29 +22,29 @@ type TimestampOverridesResponse_Data_Relationships_CreatedByUser struct {
 }
 
 type TimestampOverridesResponse_Data_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type TimestampOverridesResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TimestampOverridesResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type TimestampOverridesResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type TimestampOverridesResponseConfig struct {
@@ -53,7 +53,7 @@ type TimestampOverridesResponseConfig struct {
 
 type TimestampOverridesResponseAttrs struct {
 	// List of timestamp overrides.
-	Data any
+	Data       any
 	IncidentId any
 	// Included related resources.
 	Included any

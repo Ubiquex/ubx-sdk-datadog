@@ -4,53 +4,53 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BrowserTestResultShortList_Results_Result_Device struct {
-	Height any
-	Id any
+	Height   any
+	Id       any
 	IsMobile any
-	Name any
-	Width any
+	Name     any
+	Width    any
 }
 
 type BrowserTestResultShortList_Results_Result struct {
-	Device any
-	Duration any
-	ErrorCount any
+	Device             any
+	Duration           any
+	ErrorCount         any
 	StepCountCompleted any
-	StepCountTotal any
+	StepCountTotal     any
 }
 
 type BrowserTestResultShortList_Results struct {
 	CheckTime any
-	ProbeDc any
-	Result any
-	ResultId any
-	Status any
+	ProbeDc   any
+	Result    any
+	ResultId  any
+	Status    any
 }
 
 type BrowserTestResultShortListConfig struct {
-	FromTs any
-	ProbeDc any
+	FromTs   any
+	ProbeDc  any
 	PublicId any
-	ToTs any
+	ToTs     any
 }
 
 type BrowserTestResultShortListAttrs struct {
 	FromTs any
 	// Timestamp of the latest browser test run.
 	LastTimestampFetched any
-	ProbeDc any
-	PublicId any
+	ProbeDc              any
+	PublicId             any
 	// Result of the latest browser test run.
 	Results any
-	ToTs any
+	ToTs    any
 }
 
 var BrowserTestResultShortList = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_browser_test_result_short_list",
 	Fields: ubx.FieldMap{
-		"FromTs": ubx.FieldSpec{WireName: "from_ts"},
-		"ProbeDc": ubx.FieldSpec{WireName: "probe_dc"},
+		"FromTs":   ubx.FieldSpec{WireName: "from_ts"},
+		"ProbeDc":  ubx.FieldSpec{WireName: "probe_dc"},
 		"PublicId": ubx.FieldSpec{WireName: "public_id"},
-		"ToTs": ubx.FieldSpec{WireName: "to_ts"},
+		"ToTs":     ubx.FieldSpec{WireName: "to_ts"},
 	},
 }

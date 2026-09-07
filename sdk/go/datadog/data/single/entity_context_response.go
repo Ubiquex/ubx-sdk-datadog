@@ -4,9 +4,9 @@ package single
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntityContextResponse_Data_Attributes_Revisions struct {
-	Attributes any
+	Attributes  any
 	FirstSeenAt any
-	LastSeenAt any
+	LastSeenAt  any
 }
 
 type EntityContextResponse_Data_Attributes struct {
@@ -26,8 +26,8 @@ type EntityContextResponse_Data struct {
 type EntityContextResponseConfig struct {
 	AsOf any
 	From any
-	Id any
-	To any
+	Id   any
+	To   any
 }
 
 type EntityContextResponseAttrs struct {
@@ -35,8 +35,8 @@ type EntityContextResponseAttrs struct {
 	// A single entity returned by the entity context endpoint.
 	Data any
 	From any
-	Id any
-	To any
+	Id   any
+	To   any
 }
 
 var EntityContextResponse = ubx.DataSourceBinding{
@@ -44,7 +44,7 @@ var EntityContextResponse = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AsOf": ubx.FieldSpec{WireName: "as_of"},
 		"From": ubx.FieldSpec{WireName: "from"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"Id":   ubx.FieldSpec{WireName: "id"},
+		"To":   ubx.FieldSpec{WireName: "to"},
 	},
 }

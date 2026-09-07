@@ -4,17 +4,17 @@ package watcher
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataList_Data_Attributes struct {
-	Handle any
-	Icon any
+	Handle        any
+	Icon          any
 	LastWatchedAt any
-	Name any
-	WatchCount any
+	Name          any
+	WatchCount    any
 }
 
 type DataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataListConfig struct {
@@ -23,7 +23,7 @@ type DataListConfig struct {
 
 type DataListAttrs struct {
 	// Array of watcher data objects.
-	Data any
+	Data      any
 	SessionId any
 }
 

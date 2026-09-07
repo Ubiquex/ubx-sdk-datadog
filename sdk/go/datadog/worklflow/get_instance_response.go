@@ -19,8 +19,8 @@ type GetInstanceResponse_Meta struct {
 }
 
 var GetInstanceResponse_MetaFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-	}
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+}
 
 type GetInstanceResponseConfig struct {
 	// Additional information for creating a workflow instance.
@@ -47,8 +47,8 @@ var GetInstanceResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Meta": ubx.FieldSpec{
 			WireName: "meta",
-			Kind: "object",
-			Fields: GetInstanceResponse_MetaFields,
+			Kind:     "object",
+			Fields:   GetInstanceResponse_MetaFields,
 		},
 		"WorkflowId": ubx.FieldSpec{WireName: "workflow_id"},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},

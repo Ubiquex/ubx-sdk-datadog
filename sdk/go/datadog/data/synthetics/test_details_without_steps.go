@@ -4,21 +4,21 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestDetailsWithoutSteps_Config_Assertions struct {
-	Code any
-	Operator any
-	Property any
-	Target any
+	Code         any
+	Operator     any
+	Property     any
+	Target       any
 	TimingsScope any
-	Type any
+	Type         any
 }
 
 type TestDetailsWithoutSteps_Config_ConfigVariables struct {
 	Example any
-	Id any
-	Name any
+	Id      any
+	Name    any
 	Pattern any
-	Secure any
-	Type any
+	Secure  any
+	Type    any
 }
 
 type TestDetailsWithoutSteps_Config_Request_BasicAuth_AddClaims struct {
@@ -27,30 +27,30 @@ type TestDetailsWithoutSteps_Config_Request_BasicAuth_AddClaims struct {
 }
 
 type TestDetailsWithoutSteps_Config_Request_BasicAuth struct {
-	AccessKey any
-	AccessTokenUrl any
-	AddClaims any
-	Algorithm any
-	Audience any
-	ClientId any
-	ClientSecret any
-	Domain any
-	ExpiresIn any
-	Header any
-	Password any
-	Payload any
-	Region any
-	Resource any
-	Scope any
-	Secret any
-	SecretKey any
-	ServiceName any
-	SessionToken any
+	AccessKey              any
+	AccessTokenUrl         any
+	AddClaims              any
+	Algorithm              any
+	Audience               any
+	ClientId               any
+	ClientSecret           any
+	Domain                 any
+	ExpiresIn              any
+	Header                 any
+	Password               any
+	Payload                any
+	Region                 any
+	Resource               any
+	Scope                  any
+	Secret                 any
+	SecretKey              any
+	ServiceName            any
+	SessionToken           any
 	TokenApiAuthentication any
-	TokenPrefix any
-	Type any
-	Username any
-	Workstation any
+	TokenPrefix            any
+	Type                   any
+	Username               any
+	Workstation            any
 }
 
 type TestDetailsWithoutSteps_Config_Request_Certificate_Cert struct {
@@ -70,13 +70,13 @@ type TestDetailsWithoutSteps_Config_Request_Certificate struct {
 }
 
 type TestDetailsWithoutSteps_Config_Request_Files struct {
-	BucketKey any
-	Content any
-	Encoding any
-	Name any
+	BucketKey        any
+	Content          any
+	Encoding         any
+	Name             any
 	OriginalFileName any
-	Size any
-	Type any
+	Size             any
+	Type             any
 }
 
 type TestDetailsWithoutSteps_Config_Request_Proxy struct {
@@ -218,9 +218,9 @@ type TestDetailsWithoutSteps_Options_RumSettings struct {
 }
 
 type TestDetailsWithoutSteps_Options_Scheduling_Timeframes struct {
-	Day any
+	Day  any
 	From any
-	To any
+	To   any
 }
 
 type TestDetailsWithoutSteps_Options_Scheduling struct {
@@ -306,7 +306,7 @@ type TestDetailsWithoutStepsAttrs struct {
 	// Name of the test.
 	Name any
 	// Object describing the extra options for a Synthetic test.
-	Options any
+	Options  any
 	PublicId any
 	// Define whether you want to start (`live`) or pause (`paused`) a Synthetic test.
 	Status any
@@ -320,6 +320,5 @@ type TestDetailsWithoutStepsAttrs struct {
 
 var TestDetailsWithoutSteps = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_test_details_without_steps",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

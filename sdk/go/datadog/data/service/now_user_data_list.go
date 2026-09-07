@@ -4,17 +4,17 @@ package service
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NowUserDataList_Data_Attributes struct {
-	Email any
-	FullName any
+	Email      any
+	FullName   any
 	InstanceId any
-	UserName any
-	UserSysId any
+	UserName   any
+	UserSysId  any
 }
 
 type NowUserDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type NowUserDataListConfig struct {
@@ -23,7 +23,7 @@ type NowUserDataListConfig struct {
 
 type NowUserDataListAttrs struct {
 	// Array of ServiceNow user data objects
-	Data any
+	Data       any
 	InstanceId any
 }
 

@@ -45,37 +45,37 @@ type FilterResponse_Data struct {
 }
 
 var FilterResponse_Data_Attributes_FilterFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var FilterResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-		"Editable": ubx.FieldSpec{WireName: "editable"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExecutionOrder": ubx.FieldSpec{WireName: "execution_order"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: FilterResponse_Data_Attributes_FilterFields,
-		},
-		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"ModifiedBy": ubx.FieldSpec{WireName: "modified_by"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rate": ubx.FieldSpec{WireName: "rate"},
-		"TraceRate": ubx.FieldSpec{WireName: "trace_rate"},
-	}
+	"CreatedAt":      ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":      ubx.FieldSpec{WireName: "created_by"},
+	"Editable":       ubx.FieldSpec{WireName: "editable"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"ExecutionOrder": ubx.FieldSpec{WireName: "execution_order"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   FilterResponse_Data_Attributes_FilterFields,
+	},
+	"FilterType": ubx.FieldSpec{WireName: "filter_type"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy": ubx.FieldSpec{WireName: "modified_by"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Rate":       ubx.FieldSpec{WireName: "rate"},
+	"TraceRate":  ubx.FieldSpec{WireName: "trace_rate"},
+}
 
 var FilterResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: FilterResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   FilterResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type FilterResponseConfig struct {
 	// The body of the retention filter to be updated.
@@ -96,8 +96,8 @@ var FilterResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: FilterResponse_DataFields,
+			Kind:     "object",
+			Fields:   FilterResponse_DataFields,
 		},
 		"FilterId": ubx.FieldSpec{WireName: "filter_id"},
 	},

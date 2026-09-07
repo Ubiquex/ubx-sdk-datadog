@@ -4,29 +4,29 @@ package csm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AgentDataList_Data_Attributes struct {
-	AgentVersion any
-	AwsFargate any
-	ClusterName any
-	DatadogAgent any
-	EcsFargateTaskArn any
-	Envs any
-	HostId any
-	Hostname any
-	InstallMethodInstallerVersion any
-	InstallMethodTool any
-	IsCsmVmContainersEnabled any
-	IsCsmVmHostsEnabled any
-	IsCspmEnabled any
-	IsCwsEnabled any
+	AgentVersion                    any
+	AwsFargate                      any
+	ClusterName                     any
+	DatadogAgent                    any
+	EcsFargateTaskArn               any
+	Envs                            any
+	HostId                          any
+	Hostname                        any
+	InstallMethodInstallerVersion   any
+	InstallMethodTool               any
+	IsCsmVmContainersEnabled        any
+	IsCsmVmHostsEnabled             any
+	IsCspmEnabled                   any
+	IsCwsEnabled                    any
 	IsCwsRemoteConfigurationEnabled any
-	IsRemoteConfigurationEnabled any
-	Os any
+	IsRemoteConfigurationEnabled    any
+	Os                              any
 }
 
 type AgentDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AgentDataList_Meta struct {
@@ -41,9 +41,9 @@ type AgentDataList_Meta struct {
 type AgentDataListConfig struct {
 	// The sort direction for results.
 	OrderDirection any
-	Page any
-	Query any
-	Size any
+	Page           any
+	Query          any
+	Size           any
 }
 
 type AgentDataListAttrs struct {
@@ -53,17 +53,17 @@ type AgentDataListAttrs struct {
 	Meta any
 	// The sort direction for results.
 	OrderDirection any
-	Page any
-	Query any
-	Size any
+	Page           any
+	Query          any
+	Size           any
 }
 
 var AgentDataList = ubx.DataSourceBinding{
 	WireType: "datadog_csm_agent_data_list",
 	Fields: ubx.FieldMap{
 		"OrderDirection": ubx.FieldSpec{WireName: "order_direction"},
-		"Page": ubx.FieldSpec{WireName: "page"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Size": ubx.FieldSpec{WireName: "size"},
+		"Page":           ubx.FieldSpec{WireName: "page"},
+		"Query":          ubx.FieldSpec{WireName: "query"},
+		"Size":           ubx.FieldSpec{WireName: "size"},
 	},
 }

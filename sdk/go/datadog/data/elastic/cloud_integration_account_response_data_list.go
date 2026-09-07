@@ -9,43 +9,43 @@ type CloudIntegrationAccountResponseDataList_Data_Attributes_Authentication stru
 }
 
 type CloudIntegrationAccountResponseDataList_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats_Status struct {
-	Health any
-	Message any
+	Health    any
+	Message   any
 	UpdatedAt any
 }
 
 type CloudIntegrationAccountResponseDataList_Data_Attributes_Dataflows_ElasticCloudDetailedIndexStats struct {
 	Enabled any
-	Status any
+	Status  any
 }
 
 type CloudIntegrationAccountResponseDataList_Data_Attributes_Dataflows struct {
-	ElasticCloudDetailedIndexStats any
-	ElasticCloudIndexStats any
-	ElasticCloudMetrics any
-	ElasticCloudPendingTaskStats any
+	ElasticCloudDetailedIndexStats          any
+	ElasticCloudIndexStats                  any
+	ElasticCloudMetrics                     any
+	ElasticCloudPendingTaskStats            any
 	ElasticCloudPrimaryShardGracefulTimeout any
-	ElasticCloudPrimaryShardStats any
-	ElasticCloudShardAllocationStats any
-	ElasticCloudSlmStats any
+	ElasticCloudPrimaryShardStats           any
+	ElasticCloudShardAllocationStats        any
+	ElasticCloudSlmStats                    any
 }
 
 type CloudIntegrationAccountResponseDataList_Data_Attributes_Settings struct {
 	Tags any
-	Url any
+	Url  any
 }
 
 type CloudIntegrationAccountResponseDataList_Data_Attributes struct {
 	Authentication any
-	Dataflows any
-	Name any
-	Settings any
+	Dataflows      any
+	Name           any
+	Settings       any
 }
 
 type CloudIntegrationAccountResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type CloudIntegrationAccountResponseDataListConfig struct {
@@ -58,6 +58,5 @@ type CloudIntegrationAccountResponseDataListAttrs struct {
 
 var CloudIntegrationAccountResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_elastic_cloud_integration_account_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

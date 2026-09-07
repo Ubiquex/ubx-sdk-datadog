@@ -4,18 +4,18 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetDataResponseList_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt      any
 	CurrentVersion any
-	Description any
-	Metadata any
-	Name any
-	UpdatedAt any
+	Description    any
+	Metadata       any
+	Name           any
+	UpdatedAt      any
 }
 
 type DatasetDataResponseList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DatasetDataResponseList_Meta struct {
@@ -31,7 +31,7 @@ type DatasetDataResponseListAttrs struct {
 	// List of datasets.
 	Data any
 	// Pagination cursor metadata.
-	Meta any
+	Meta      any
 	ProjectId any
 }
 

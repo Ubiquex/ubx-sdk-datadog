@@ -4,17 +4,17 @@ package product
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogSkudataResponseList_Data_Attributes_Allotments struct {
-	ChildSkuCode any
-	HourlyQuantity any
+	ChildSkuCode    any
+	HourlyQuantity  any
 	MonthlyQuantity any
-	ParentSkuCode any
+	ParentSkuCode   any
 }
 
 type CatalogSkudataResponseList_Data_Attributes_OnDemandTiered_Tiers struct {
 	MaxUsageQuantity any
 	MinUsageQuantity any
-	Price any
-	PricingUnitType any
+	Price            any
+	PricingUnitType  any
 }
 
 type CatalogSkudataResponseList_Data_Attributes_OnDemandTiered struct {
@@ -22,22 +22,22 @@ type CatalogSkudataResponseList_Data_Attributes_OnDemandTiered struct {
 }
 
 type CatalogSkudataResponseList_Data_Attributes struct {
-	Allotments any
-	BillingDimension any
-	BillingUnits any
-	Currency any
-	DefaultOnDemandOption any
+	Allotments                   any
+	BillingDimension             any
+	BillingUnits                 any
+	Currency                     any
+	DefaultOnDemandOption        any
 	NumberOfUnitsIncludedInPrice any
-	OnDemandListPrice any
-	OnDemandTiered any
-	PricingType any
-	SkuName any
+	OnDemandListPrice            any
+	OnDemandTiered               any
+	PricingType                  any
+	SkuName                      any
 }
 
 type CatalogSkudataResponseList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type CatalogSkudataResponseListConfig struct {
@@ -58,6 +58,6 @@ var CatalogSkudataResponseList = ubx.DataSourceBinding{
 	WireType: "datadog_product_catalog_skudata_response_list",
 	Fields: ubx.FieldMap{
 		"AsOfDate": ubx.FieldSpec{WireName: "as_of_date"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Version":  ubx.FieldSpec{WireName: "version"},
 	},
 }

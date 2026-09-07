@@ -4,9 +4,9 @@ package entity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContextEntityList_Data_Attributes_Revisions struct {
-	Attributes any
+	Attributes  any
 	FirstSeenAt any
-	LastSeenAt any
+	LastSeenAt  any
 }
 
 type ContextEntityList_Data_Attributes struct {
@@ -15,8 +15,8 @@ type ContextEntityList_Data_Attributes struct {
 
 type ContextEntityList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ContextEntityList_Meta_Page struct {
@@ -32,35 +32,35 @@ type ContextEntityList_Meta struct {
 }
 
 type ContextEntityListConfig struct {
-	AsOf any
-	From any
-	Limit any
+	AsOf      any
+	From      any
+	Limit     any
 	PageToken any
-	Query any
-	To any
+	Query     any
+	To        any
 }
 
 type ContextEntityListAttrs struct {
 	AsOf any
 	// The list of entities matching the query.
-	Data any
-	From any
+	Data  any
+	From  any
 	Limit any
 	// Metadata returned alongside the entity context response.
-	Meta any
+	Meta      any
 	PageToken any
-	Query any
-	To any
+	Query     any
+	To        any
 }
 
 var ContextEntityList = ubx.DataSourceBinding{
 	WireType: "datadog_entity_context_entity_list",
 	Fields: ubx.FieldMap{
-		"AsOf": ubx.FieldSpec{WireName: "as_of"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"AsOf":      ubx.FieldSpec{WireName: "as_of"},
+		"From":      ubx.FieldSpec{WireName: "from"},
+		"Limit":     ubx.FieldSpec{WireName: "limit"},
 		"PageToken": ubx.FieldSpec{WireName: "page_token"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"Query":     ubx.FieldSpec{WireName: "query"},
+		"To":        ubx.FieldSpec{WireName: "to"},
 	},
 }

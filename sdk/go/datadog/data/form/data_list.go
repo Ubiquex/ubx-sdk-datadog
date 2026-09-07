@@ -4,72 +4,72 @@ package form
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataList_Data_Attributes_DatastoreConfig struct {
-	DatastoreId any
-	PrimaryColumnName any
+	DatastoreId                  any
+	PrimaryColumnName            any
 	PrimaryKeyGenerationStrategy any
 }
 
 type DataList_Data_Attributes_Publication struct {
-	CreatedAt any
-	FormId any
+	CreatedAt   any
+	FormId      any
 	FormVersion any
-	Id any
-	ModifiedAt any
-	OrgId any
-	PublishSeq any
-	UserId any
-	UserUuid any
+	Id          any
+	ModifiedAt  any
+	OrgId       any
+	PublishSeq  any
+	UserId      any
+	UserUuid    any
 }
 
 type DataList_Data_Attributes_Version_DataDefinition struct {
 	Description any
-	Properties any
-	Required any
-	Title any
-	Type any
+	Properties  any
+	Required    any
+	Title       any
+	Type        any
 }
 
 type DataList_Data_Attributes_Version_UiDefinition struct {
 }
 
 type DataList_Data_Attributes_Version struct {
-	CreatedAt any
-	DataDefinition any
+	CreatedAt           any
+	DataDefinition      any
 	DefinitionSignature any
-	Etag any
-	Id any
-	ModifiedAt any
-	State any
-	UiDefinition any
-	UserId any
-	UserUuid any
-	Version any
+	Etag                any
+	Id                  any
+	ModifiedAt          any
+	State               any
+	UiDefinition        any
+	UserId              any
+	UserUuid            any
+	Version             any
 }
 
 type DataList_Data_Attributes struct {
-	Active any
-	Anonymous any
-	CreatedAt any
+	Active          any
+	Anonymous       any
+	CreatedAt       any
 	DatastoreConfig any
-	Description any
-	EndDate any
-	HasSubmitted any
-	IdpSurvey any
-	ModifiedAt any
-	Name any
-	OrgId any
-	Publication any
-	SelfService any
-	SingleResponse any
-	UserId any
-	UserUuid any
-	Version any
+	Description     any
+	EndDate         any
+	HasSubmitted    any
+	IdpSurvey       any
+	ModifiedAt      any
+	Name            any
+	OrgId           any
+	Publication     any
+	SelfService     any
+	SingleResponse  any
+	UserId          any
+	UserUuid        any
+	Version         any
 }
 
 type DataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataListConfig struct {
@@ -82,6 +82,5 @@ type DataListAttrs struct {
 
 var DataList = ubx.DataSourceBinding{
 	WireType: "datadog_form_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

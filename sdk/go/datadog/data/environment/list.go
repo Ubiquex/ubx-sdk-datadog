@@ -4,20 +4,20 @@ package environment
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_Data_Attributes struct {
-	CreatedAt any
-	Description any
-	IsProduction any
-	Key any
-	Name any
-	Queries any
+	CreatedAt                  any
+	Description                any
+	IsProduction               any
+	Key                        any
+	Name                       any
+	Queries                    any
 	RequireFeatureFlagApproval any
-	UpdatedAt any
+	UpdatedAt                  any
 }
 
 type List_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type List_Meta_Page struct {
@@ -33,32 +33,32 @@ type List_Meta struct {
 }
 
 type ListConfig struct {
-	DdEnv any
-	Key any
-	Limit any
-	Name any
+	DdEnv  any
+	Key    any
+	Limit  any
+	Name   any
 	Offset any
 }
 
 type ListAttrs struct {
 	// List of environments.
-	Data any
+	Data  any
 	DdEnv any
-	Key any
+	Key   any
 	Limit any
 	// Pagination metadata for environments.
-	Meta any
-	Name any
+	Meta   any
+	Name   any
 	Offset any
 }
 
 var List = ubx.DataSourceBinding{
 	WireType: "datadog_environment_list",
 	Fields: ubx.FieldMap{
-		"DdEnv": ubx.FieldSpec{WireName: "dd_env"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DdEnv":  ubx.FieldSpec{WireName: "dd_env"},
+		"Key":    ubx.FieldSpec{WireName: "key"},
+		"Limit":  ubx.FieldSpec{WireName: "limit"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Offset": ubx.FieldSpec{WireName: "offset"},
 	},
 }

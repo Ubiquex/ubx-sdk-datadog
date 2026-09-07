@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigReadList_Data_Attributes struct {
 	Description any
-	ModifiedAt any
-	Name any
-	Value any
-	ValueType any
+	ModifiedAt  any
+	Name        any
+	Value       any
+	ValueType   any
 }
 
 type ConfigReadList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ConfigReadListConfig struct {
@@ -27,6 +27,5 @@ type ConfigReadListAttrs struct {
 
 var ConfigReadList = ubx.DataSourceBinding{
 	WireType: "datadog_org_config_read_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

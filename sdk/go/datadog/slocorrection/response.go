@@ -51,44 +51,44 @@ type Response_Data struct {
 }
 
 var Response_Data_Attributes_CreatorFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Handle": ubx.FieldSpec{WireName: "handle"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Handle": ubx.FieldSpec{WireName: "handle"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Creator": ubx.FieldSpec{
-			WireName: "creator",
-			Kind: "object",
-			Fields: Response_Data_Attributes_CreatorFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Modifier": ubx.FieldSpec{
-			WireName: "modifier",
-			Kind: "object",
-			Fields: Response_Data_Attributes_CreatorFields,
-		},
-		"Rrule": ubx.FieldSpec{WireName: "rrule"},
-		"SloId": ubx.FieldSpec{WireName: "slo_id"},
-		"SloQuery": ubx.FieldSpec{WireName: "slo_query"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-		"Timezone": ubx.FieldSpec{WireName: "timezone"},
-	}
+	"Category":  ubx.FieldSpec{WireName: "category"},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"Creator": ubx.FieldSpec{
+		WireName: "creator",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_CreatorFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Duration":    ubx.FieldSpec{WireName: "duration"},
+	"End":         ubx.FieldSpec{WireName: "end"},
+	"ModifiedAt":  ubx.FieldSpec{WireName: "modified_at"},
+	"Modifier": ubx.FieldSpec{
+		WireName: "modifier",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_CreatorFields,
+	},
+	"Rrule":    ubx.FieldSpec{WireName: "rrule"},
+	"SloId":    ubx.FieldSpec{WireName: "slo_id"},
+	"SloQuery": ubx.FieldSpec{WireName: "slo_query"},
+	"Start":    ubx.FieldSpec{WireName: "start"},
+	"Timezone": ubx.FieldSpec{WireName: "timezone"},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// The data object associated with the SLO correction to be created.
@@ -109,8 +109,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"SloCorrectionId": ubx.FieldSpec{WireName: "slo_correction_id"},
 	},

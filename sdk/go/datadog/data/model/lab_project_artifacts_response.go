@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LabProjectArtifactsResponse_Data_Attributes_Files struct {
 	ArtifactPath any
-	CreatedAt any
-	FileSize any
-	Filename any
+	CreatedAt    any
+	FileSize     any
+	Filename     any
 }
 
 type LabProjectArtifactsResponse_Data_Attributes struct {
@@ -30,7 +30,7 @@ type LabProjectArtifactsResponseConfig struct {
 
 type LabProjectArtifactsResponseAttrs struct {
 	// A project artifacts JSON:API resource object.
-	Data any
+	Data      any
 	ProjectId any
 }
 

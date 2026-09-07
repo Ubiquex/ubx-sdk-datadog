@@ -4,27 +4,27 @@ package commitments
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ListItemList_Commitments struct {
-	AvailabilityZone any
-	BenefitName any
-	CacheEngine any
-	CommitmentId any
+	AvailabilityZone      any
+	BenefitName           any
+	CacheEngine           any
+	CommitmentId          any
 	CommittedSpendPerHour any
-	DatabaseEngine any
-	ExpirationDate any
-	InstanceType any
-	IsMultiAz any
-	MeterSubCategory any
-	NumberOfNfus any
-	NumberOfReservations any
-	OfferingClass any
-	OperatingSystem any
-	PurchaseOption any
-	Region any
-	SavingsPlanType any
-	StartDate any
-	Status any
-	TermLength any
-	Utilization any
+	DatabaseEngine        any
+	ExpirationDate        any
+	InstanceType          any
+	IsMultiAz             any
+	MeterSubCategory      any
+	NumberOfNfus          any
+	NumberOfReservations  any
+	OfferingClass         any
+	OperatingSystem       any
+	PurchaseOption        any
+	Region                any
+	SavingsPlanType       any
+	StartDate             any
+	Status                any
+	TermLength            any
+	Utilization           any
 }
 
 type ListItemList_Meta_CommittedSpendUnit struct {
@@ -50,12 +50,12 @@ type ListItemList_Meta struct {
 type ListItemListConfig struct {
 	// Type of commitment. ri for Reserved Instances, sp for Savings Plans.
 	CommitmentType any
-	End any
-	FilterBy any
-	Product any
+	End            any
+	FilterBy       any
+	Product        any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 }
 
 type ListItemListAttrs struct {
@@ -63,24 +63,24 @@ type ListItemListAttrs struct {
 	CommitmentType any
 	// Array of commitment items.
 	Commitments any
-	End any
-	FilterBy any
+	End         any
+	FilterBy    any
 	// Metadata for a commitments list response.
-	Meta any
+	Meta    any
 	Product any
 	// Cloud provider for commitment programs.
 	Provider any
-	Start any
+	Start    any
 }
 
 var ListItemList = ubx.DataSourceBinding{
 	WireType: "datadog_commitments_list_item_list",
 	Fields: ubx.FieldMap{
 		"CommitmentType": ubx.FieldSpec{WireName: "commitment_type"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"FilterBy": ubx.FieldSpec{WireName: "filter_by"},
-		"Product": ubx.FieldSpec{WireName: "product"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"Start": ubx.FieldSpec{WireName: "start"},
+		"End":            ubx.FieldSpec{WireName: "end"},
+		"FilterBy":       ubx.FieldSpec{WireName: "filter_by"},
+		"Product":        ubx.FieldSpec{WireName: "product"},
+		"Provider":       ubx.FieldSpec{WireName: "provider"},
+		"Start":          ubx.FieldSpec{WireName: "start"},
 	},
 }

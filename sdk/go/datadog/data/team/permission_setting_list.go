@@ -4,17 +4,17 @@ package team
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionSettingList_Data_Attributes struct {
-	Action any
+	Action   any
 	Editable any
-	Options any
-	Title any
-	Value any
+	Options  any
+	Title    any
+	Value    any
 }
 
 type PermissionSettingList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type PermissionSettingListConfig struct {
@@ -23,7 +23,7 @@ type PermissionSettingListConfig struct {
 
 type PermissionSettingListAttrs struct {
 	// Team permission settings response data
-	Data any
+	Data   any
 	TeamId any
 }
 

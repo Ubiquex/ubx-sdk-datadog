@@ -52,7 +52,7 @@ type PermanentRetentionFilterResponseAttrs struct {
 var PermanentRetentionFilterResponse = ubx.DataSourceBinding{
 	WireType: "datadog_rum_permanent_retention_filter_response",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":         ubx.FieldSpec{WireName: "app_id"},
 		"PermanentRfId": ubx.FieldSpec{WireName: "permanent_rf_id"},
 	},
 }

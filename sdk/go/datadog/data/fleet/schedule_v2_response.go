@@ -66,7 +66,7 @@ type ScheduleV2ResponseConfig struct {
 type ScheduleV2ResponseAttrs struct {
 	// A fleet upgrade schedule resource in the v2 API response.
 	Data any
-	Id any
+	Id   any
 }
 
 var ScheduleV2Response = ubx.DataSourceBinding{

@@ -55,81 +55,81 @@ type Template_Data struct {
 }
 
 type Template_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type Template_Included_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type Template_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var Template_Data_AttributesFields = ubx.FieldMap{
-		"CompletedDescription": ubx.FieldSpec{WireName: "completed_description"},
-		"ComponentIds": ubx.FieldSpec{WireName: "component_ids"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"InProgressDescription": ubx.FieldSpec{WireName: "in_progress_description"},
-		"MaintenanceTitle": ubx.FieldSpec{WireName: "maintenance_title"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ScheduledDescription": ubx.FieldSpec{WireName: "scheduled_description"},
-	}
+	"CompletedDescription":  ubx.FieldSpec{WireName: "completed_description"},
+	"ComponentIds":          ubx.FieldSpec{WireName: "component_ids"},
+	"CreatedAt":             ubx.FieldSpec{WireName: "created_at"},
+	"InProgressDescription": ubx.FieldSpec{WireName: "in_progress_description"},
+	"MaintenanceTitle":      ubx.FieldSpec{WireName: "maintenance_title"},
+	"ModifiedAt":            ubx.FieldSpec{WireName: "modified_at"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"ScheduledDescription":  ubx.FieldSpec{WireName: "scheduled_description"},
+}
 
 var Template_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Template_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: Template_Data_Relationships_CreatedByUser_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Template_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var Template_Data_RelationshipsFields = ubx.FieldMap{
-		"CreatedByUser": ubx.FieldSpec{
-			WireName: "created_by_user",
-			Kind: "object",
-			Fields: Template_Data_Relationships_CreatedByUserFields,
-		},
-		"LastModifiedByUser": ubx.FieldSpec{
-			WireName: "last_modified_by_user",
-			Kind: "object",
-			Fields: Template_Data_Relationships_CreatedByUserFields,
-		},
-		"StatusPage": ubx.FieldSpec{
-			WireName: "status_page",
-			Kind: "object",
-			Fields: Template_Data_Relationships_CreatedByUserFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   Template_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   Template_Data_Relationships_CreatedByUserFields,
+	},
+	"StatusPage": ubx.FieldSpec{
+		WireName: "status_page",
+		Kind:     "object",
+		Fields:   Template_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var Template_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Template_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: Template_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Template_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Template_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type TemplateConfig struct {
 	// The data object for creating a maintenance template.
@@ -156,10 +156,10 @@ var Template = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Template_DataFields,
+			Kind:     "object",
+			Fields:   Template_DataFields,
 		},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"PageId":     ubx.FieldSpec{WireName: "page_id"},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
 	},
 }

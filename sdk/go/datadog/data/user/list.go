@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_Users struct {
 	AccessRole any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	Name any
-	Verified any
+	Disabled   any
+	Email      any
+	Handle     any
+	Icon       any
+	Name       any
+	Verified   any
 }
 
 type ListConfig struct {
@@ -23,6 +23,5 @@ type ListAttrs struct {
 
 var List = ubx.DataSourceBinding{
 	WireType: "datadog_user_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

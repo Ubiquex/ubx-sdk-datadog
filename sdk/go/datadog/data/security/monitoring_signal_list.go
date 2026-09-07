@@ -4,16 +4,16 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringSignalList_Data_Attributes struct {
-	Custom any
-	Message any
-	Tags any
+	Custom    any
+	Message   any
+	Tags      any
 	Timestamp any
 }
 
 type MonitoringSignalList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type MonitoringSignalList_Links struct {

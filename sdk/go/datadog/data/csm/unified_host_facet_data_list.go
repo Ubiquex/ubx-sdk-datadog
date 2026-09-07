@@ -4,25 +4,25 @@ package csm
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UnifiedHostFacetDataList_Data_Attributes struct {
-	Bounded any
-	Bundled any
+	Bounded        any
+	Bundled        any
 	BundledAndUsed any
-	DefaultValues any
-	Description any
-	Editable any
-	FacetType any
-	Groups any
-	Name any
-	Path any
-	Source any
-	Type any
-	Values any
+	DefaultValues  any
+	Description    any
+	Editable       any
+	FacetType      any
+	Groups         any
+	Name           any
+	Path           any
+	Source         any
+	Type           any
+	Values         any
 }
 
 type UnifiedHostFacetDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type UnifiedHostFacetDataListConfig struct {
@@ -35,6 +35,5 @@ type UnifiedHostFacetDataListAttrs struct {
 
 var UnifiedHostFacetDataList = ubx.DataSourceBinding{
 	WireType: "datadog_csm_unified_host_facet_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

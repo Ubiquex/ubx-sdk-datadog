@@ -4,23 +4,23 @@ package campaign
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponseDataList_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	DueDate any
+	DueDate     any
 	EntityScope any
-	Guidance any
-	Key any
-	ModifiedAt any
-	Name any
-	Owner any
-	StartDate any
-	Status any
+	Guidance    any
+	Key         any
+	ModifiedAt  any
+	Name        any
+	Owner       any
+	StartDate   any
+	Status      any
 }
 
 type ResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ResponseDataList_Meta struct {
@@ -46,6 +46,5 @@ type ResponseDataListAttrs struct {
 
 var ResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_campaign_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

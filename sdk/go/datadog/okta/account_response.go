@@ -28,23 +28,23 @@ type AccountResponse_Data struct {
 }
 
 var AccountResponse_Data_AttributesFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"AuthMethod": ubx.FieldSpec{WireName: "auth_method"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiKey":       ubx.FieldSpec{WireName: "api_key"},
+	"AuthMethod":   ubx.FieldSpec{WireName: "auth_method"},
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+	"Domain":       ubx.FieldSpec{WireName: "domain"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+}
 
 var AccountResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: AccountResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   AccountResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type AccountResponseConfig struct {
 	// Schema for an Okta account.
@@ -65,8 +65,8 @@ var AccountResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: AccountResponse_DataFields,
+			Kind:     "object",
+			Fields:   AccountResponse_DataFields,
 		},
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 	},

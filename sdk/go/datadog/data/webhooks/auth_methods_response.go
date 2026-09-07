@@ -8,7 +8,7 @@ type AuthMethodsResponse_Data_Attributes struct {
 }
 
 type AuthMethodsResponse_Data_Relationships_Oauth2ClientCredentials_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -21,25 +21,25 @@ type AuthMethodsResponse_Data_Relationships struct {
 }
 
 type AuthMethodsResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type AuthMethodsResponse_Included_Attributes struct {
 	AccessTokenUrl any
-	Audience any
-	ClientId any
-	Name any
-	Protocol any
-	Scope any
+	Audience       any
+	ClientId       any
+	Name           any
+	Protocol       any
+	Scope          any
 }
 
 type AuthMethodsResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AuthMethodsResponseConfig struct {

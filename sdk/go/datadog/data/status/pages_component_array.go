@@ -4,25 +4,25 @@ package status
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PagesComponentArray_Data_Attributes_Components struct {
-	Id any
-	Name any
+	Id       any
+	Name     any
 	Position any
-	Status any
-	Type any
+	Status   any
+	Type     any
 }
 
 type PagesComponentArray_Data_Attributes struct {
 	Components any
-	CreatedAt any
+	CreatedAt  any
 	ModifiedAt any
-	Name any
-	Position any
-	Status any
-	Type any
+	Name       any
+	Position   any
+	Status     any
+	Type       any
 }
 
 type PagesComponentArray_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -31,57 +31,57 @@ type PagesComponentArray_Data_Relationships_CreatedByUser struct {
 }
 
 type PagesComponentArray_Data_Relationships struct {
-	CreatedByUser any
-	Group any
+	CreatedByUser      any
+	Group              any
 	LastModifiedByUser any
-	StatusPage any
+	StatusPage         any
 }
 
 type PagesComponentArray_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type PagesComponentArray_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type PagesComponentArray_Included_Relationships struct {
-	CreatedByUser any
+	CreatedByUser      any
 	LastModifiedByUser any
 }
 
 type PagesComponentArray_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type PagesComponentArrayConfig struct {
 	Include any
-	PageId any
+	PageId  any
 }
 
 type PagesComponentArrayAttrs struct {
 	// A list of component data objects.
-	Data any
+	Data    any
 	Include any
 	// The included related resources of a component. Client must explicitly request these resources by name in the `include` query parameter.
 	Included any
-	PageId any
+	PageId   any
 }
 
 var PagesComponentArray = ubx.DataSourceBinding{
 	WireType: "datadog_status_pages_component_array",
 	Fields: ubx.FieldMap{
 		"Include": ubx.FieldSpec{WireName: "include"},
-		"PageId": ubx.FieldSpec{WireName: "page_id"},
+		"PageId":  ubx.FieldSpec{WireName: "page_id"},
 	},
 }

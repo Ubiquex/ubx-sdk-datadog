@@ -60,21 +60,21 @@ type FindingResponse_Data struct {
 }
 
 type FindingResponseConfig struct {
-	FindingId any
+	FindingId         any
 	SnapshotTimestamp any
 }
 
 type FindingResponseAttrs struct {
 	// A single finding with with message and resource configuration.
-	Data any
-	FindingId any
+	Data              any
+	FindingId         any
 	SnapshotTimestamp any
 }
 
 var FindingResponse = ubx.DataSourceBinding{
 	WireType: "datadog_get_finding_response",
 	Fields: ubx.FieldMap{
-		"FindingId": ubx.FieldSpec{WireName: "finding_id"},
+		"FindingId":         ubx.FieldSpec{WireName: "finding_id"},
 		"SnapshotTimestamp": ubx.FieldSpec{WireName: "snapshot_timestamp"},
 	},
 }

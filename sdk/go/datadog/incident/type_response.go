@@ -80,87 +80,87 @@ type TypeResponse_Data struct {
 }
 
 var TypeResponse_Data_Attributes_ConfigurationFields = ubx.FieldMap{
-		"AllowIncidentDeletion": ubx.FieldSpec{WireName: "allow_incident_deletion"},
-		"AllowWorkflows": ubx.FieldSpec{WireName: "allow_workflows"},
-		"CreateMessage": ubx.FieldSpec{WireName: "create_message"},
-		"EditableTimestamps": ubx.FieldSpec{WireName: "editable_timestamps"},
-		"PrivateIncidents": ubx.FieldSpec{WireName: "private_incidents"},
-		"PrivateIncidentsByDefault": ubx.FieldSpec{WireName: "private_incidents_by_default"},
-		"SlugSource": ubx.FieldSpec{WireName: "slug_source"},
-		"TestIncidents": ubx.FieldSpec{WireName: "test_incidents"},
-	}
+	"AllowIncidentDeletion":     ubx.FieldSpec{WireName: "allow_incident_deletion"},
+	"AllowWorkflows":            ubx.FieldSpec{WireName: "allow_workflows"},
+	"CreateMessage":             ubx.FieldSpec{WireName: "create_message"},
+	"EditableTimestamps":        ubx.FieldSpec{WireName: "editable_timestamps"},
+	"PrivateIncidents":          ubx.FieldSpec{WireName: "private_incidents"},
+	"PrivateIncidentsByDefault": ubx.FieldSpec{WireName: "private_incidents_by_default"},
+	"SlugSource":                ubx.FieldSpec{WireName: "slug_source"},
+	"TestIncidents":             ubx.FieldSpec{WireName: "test_incidents"},
+}
 
 var TypeResponse_Data_AttributesFields = ubx.FieldMap{
-		"Configuration": ubx.FieldSpec{
-			WireName: "configuration",
-			Kind: "object",
-			Fields: TypeResponse_Data_Attributes_ConfigurationFields,
-		},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"LastModifiedBy": ubx.FieldSpec{WireName: "last_modified_by"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Configuration": ubx.FieldSpec{
+		WireName: "configuration",
+		Kind:     "object",
+		Fields:   TypeResponse_Data_Attributes_ConfigurationFields,
+	},
+	"CreatedAt":      ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":      ubx.FieldSpec{WireName: "created_by"},
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"IsDefault":      ubx.FieldSpec{WireName: "is_default"},
+	"LastModifiedBy": ubx.FieldSpec{WireName: "last_modified_by"},
+	"ModifiedAt":     ubx.FieldSpec{WireName: "modified_at"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"Prefix":         ubx.FieldSpec{WireName: "prefix"},
+}
 
 var TypeResponse_Data_Relationships_CreatedByUser_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var TypeResponse_Data_Relationships_CreatedByUserFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: TypeResponse_Data_Relationships_CreatedByUser_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   TypeResponse_Data_Relationships_CreatedByUser_DataFields,
+	},
+}
 
 var TypeResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"CreatedByUser": ubx.FieldSpec{
-			WireName: "created_by_user",
-			Kind: "object",
-			Fields: TypeResponse_Data_Relationships_CreatedByUserFields,
-		},
-		"GoogleMeetConfiguration": ubx.FieldSpec{
-			WireName: "google_meet_configuration",
-			Kind: "object",
-			Fields: TypeResponse_Data_Relationships_CreatedByUserFields,
-		},
-		"LastModifiedByUser": ubx.FieldSpec{
-			WireName: "last_modified_by_user",
-			Kind: "object",
-			Fields: TypeResponse_Data_Relationships_CreatedByUserFields,
-		},
-		"MicrosoftTeamsConfiguration": ubx.FieldSpec{
-			WireName: "microsoft_teams_configuration",
-			Kind: "object",
-			Fields: TypeResponse_Data_Relationships_CreatedByUserFields,
-		},
-		"ZoomConfiguration": ubx.FieldSpec{
-			WireName: "zoom_configuration",
-			Kind: "object",
-			Fields: TypeResponse_Data_Relationships_CreatedByUserFields,
-		},
-	}
+	"CreatedByUser": ubx.FieldSpec{
+		WireName: "created_by_user",
+		Kind:     "object",
+		Fields:   TypeResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"GoogleMeetConfiguration": ubx.FieldSpec{
+		WireName: "google_meet_configuration",
+		Kind:     "object",
+		Fields:   TypeResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"LastModifiedByUser": ubx.FieldSpec{
+		WireName: "last_modified_by_user",
+		Kind:     "object",
+		Fields:   TypeResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"MicrosoftTeamsConfiguration": ubx.FieldSpec{
+		WireName: "microsoft_teams_configuration",
+		Kind:     "object",
+		Fields:   TypeResponse_Data_Relationships_CreatedByUserFields,
+	},
+	"ZoomConfiguration": ubx.FieldSpec{
+		WireName: "zoom_configuration",
+		Kind:     "object",
+		Fields:   TypeResponse_Data_Relationships_CreatedByUserFields,
+	},
+}
 
 var TypeResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: TypeResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: TypeResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   TypeResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   TypeResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type TypeResponseConfig struct {
 	// Incident type data for a create request.
@@ -181,8 +181,8 @@ var TypeResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: TypeResponse_DataFields,
+			Kind:     "object",
+			Fields:   TypeResponse_DataFields,
 		},
 		"IncidentTypeId": ubx.FieldSpec{WireName: "incident_type_id"},
 	},

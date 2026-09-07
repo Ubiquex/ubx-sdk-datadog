@@ -4,17 +4,17 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RespondersResponse_Data_Attributes struct {
-	Created any
-	ExternalId any
+	Created        any
+	ExternalId     any
 	ExternalSource any
-	IsBillable any
-	LastActive any
-	Meta any
-	Modified any
+	IsBillable     any
+	LastActive     any
+	Meta           any
+	Modified       any
 }
 
 type RespondersResponse_Data_Relationships_CreatedBy_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -27,31 +27,31 @@ type RespondersResponse_Data_Relationships_RoleAssignments struct {
 }
 
 type RespondersResponse_Data_Relationships struct {
-	CreatedBy any
-	LastModifiedBy any
+	CreatedBy       any
+	LastModifiedBy  any
 	RoleAssignments any
-	User any
+	User            any
 }
 
 type RespondersResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type RespondersResponse_Included_Attributes struct {
-	Email any
+	Email  any
 	Handle any
-	Icon any
-	Name any
-	Uuid any
+	Icon   any
+	Name   any
+	Uuid   any
 }
 
 type RespondersResponse_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RespondersResponseConfig struct {
@@ -60,7 +60,7 @@ type RespondersResponseConfig struct {
 
 type RespondersResponseAttrs struct {
 	// List of incident responders.
-	Data any
+	Data       any
 	IncidentId any
 	// Included related resources.
 	Included any

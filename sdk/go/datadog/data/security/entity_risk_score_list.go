@@ -4,48 +4,48 @@ package security
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntityRiskScoreList_Data_Attributes_ConfigRisks struct {
-	HasIdentityRisk any
-	HasMisconfiguration any
-	HasPrivilegedRole any
-	IsPrivileged any
-	IsProduction any
+	HasIdentityRisk      any
+	HasMisconfiguration  any
+	HasPrivilegedRole    any
+	IsPrivileged         any
+	IsProduction         any
 	IsPubliclyAccessible any
 }
 
 type EntityRiskScoreList_Data_Attributes_EntityMetadata struct {
-	AccountId any
-	Environments any
-	MitreTactics any
+	AccountId       any
+	Environments    any
+	MitreTactics    any
 	MitreTechniques any
-	ProjectId any
-	Services any
-	Sources any
-	SubscriptionId any
+	ProjectId       any
+	Services        any
+	Sources         any
+	SubscriptionId  any
 }
 
 type EntityRiskScoreList_Data_Attributes struct {
-	AccountIds any
-	ConfigRisks any
-	EntityMetadata any
-	EntityName any
-	EntityProviders any
-	EntityRoles any
-	EntitySubTypes any
-	EntityType any
-	EntityTypes any
-	FirstDetected any
-	LastActivityTitle any
-	LastDetected any
-	RiskScore any
+	AccountIds         any
+	ConfigRisks        any
+	EntityMetadata     any
+	EntityName         any
+	EntityProviders    any
+	EntityRoles        any
+	EntitySubTypes     any
+	EntityType         any
+	EntityTypes        any
+	FirstDetected      any
+	LastActivityTitle  any
+	LastDetected       any
+	RiskScore          any
 	RiskScoreEvolution any
-	Severity any
-	SignalsDetected any
+	Severity           any
+	SignalsDetected    any
 }
 
 type EntityRiskScoreList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type EntityRiskScoreList_Meta struct {
@@ -61,25 +61,25 @@ type EntityRiskScoreList_Meta struct {
 
 type EntityRiskScoreListConfig struct {
 	EntityType any
-	From any
-	To any
+	From       any
+	To         any
 }
 
 type EntityRiskScoreListAttrs struct {
 	// Array of entity risk score objects.
-	Data any
+	Data       any
 	EntityType any
-	From any
+	From       any
 	// Metadata for pagination
 	Meta any
-	To any
+	To   any
 }
 
 var EntityRiskScoreList = ubx.DataSourceBinding{
 	WireType: "datadog_security_entity_risk_score_list",
 	Fields: ubx.FieldMap{
 		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-		"From": ubx.FieldSpec{WireName: "from"},
-		"To": ubx.FieldSpec{WireName: "to"},
+		"From":       ubx.FieldSpec{WireName: "from"},
+		"To":         ubx.FieldSpec{WireName: "to"},
 	},
 }

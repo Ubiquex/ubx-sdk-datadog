@@ -4,46 +4,46 @@ package ai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomRuleRevisionResponseDataList_Data_Attributes struct {
-	Category any
-	Checksum any
-	Content any
-	CreatedAt any
-	CreatedBy any
-	Cwe any
-	Description any
-	Directories any
-	ExecutionMode any
-	Globs any
-	IsDefault any
-	IsPublished any
-	IsTesting any
-	Severity any
+	Category         any
+	Checksum         any
+	Content          any
+	CreatedAt        any
+	CreatedBy        any
+	Cwe              any
+	Description      any
+	Directories      any
+	ExecutionMode    any
+	Globs            any
+	IsDefault        any
+	IsPublished      any
+	IsTesting        any
+	Severity         any
 	ShortDescription any
-	VersionId any
+	VersionId        any
 }
 
 type CustomRuleRevisionResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type CustomRuleRevisionResponseDataListConfig struct {
-	RuleName any
+	RuleName    any
 	RulesetName any
 }
 
 type CustomRuleRevisionResponseDataListAttrs struct {
 	// The list of AI custom rule revisions.
-	Data any
-	RuleName any
+	Data        any
+	RuleName    any
 	RulesetName any
 }
 
 var CustomRuleRevisionResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_ai_custom_rule_revision_response_data_list",
 	Fields: ubx.FieldMap{
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"RuleName":    ubx.FieldSpec{WireName: "rule_name"},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
 	},
 }

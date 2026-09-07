@@ -4,14 +4,14 @@ package org
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupPolicySuggestionDataList_Data_Attributes struct {
-	ConsensusRatio any
-	PolicyName any
+	ConsensusRatio   any
+	PolicyName       any
 	RecommendedValue any
-	Status any
+	Status           any
 }
 
 type GroupPolicySuggestionDataList_Data_Relationships_OrgGroup_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -24,10 +24,10 @@ type GroupPolicySuggestionDataList_Data_Relationships struct {
 }
 
 type GroupPolicySuggestionDataList_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type GroupPolicySuggestionDataListConfig struct {
@@ -40,6 +40,5 @@ type GroupPolicySuggestionDataListAttrs struct {
 
 var GroupPolicySuggestionDataList = ubx.DataSourceBinding{
 	WireType: "datadog_org_group_policy_suggestion_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

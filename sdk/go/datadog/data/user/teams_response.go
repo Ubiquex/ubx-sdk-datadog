@@ -4,13 +4,13 @@ package user
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TeamsResponse_Data_Attributes struct {
-	ProvisionedBy any
+	ProvisionedBy   any
 	ProvisionedById any
-	Role any
+	Role            any
 }
 
 type TeamsResponse_Data_Relationships_Team_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -24,27 +24,27 @@ type TeamsResponse_Data_Relationships struct {
 }
 
 type TeamsResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TeamsResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type TeamsResponse_Included_Relationships_OtherOrgs struct {
@@ -52,17 +52,17 @@ type TeamsResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type TeamsResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type TeamsResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type TeamsResponse_Links struct {
@@ -104,7 +104,7 @@ type TeamsResponse_Meta struct {
 
 type TeamsResponseConfig struct {
 	// Specifies the order of returned team memberships
-	Sort any
+	Sort   any
 	TeamId any
 }
 
@@ -118,14 +118,14 @@ type TeamsResponseAttrs struct {
 	// Teams response metadata.
 	Meta any
 	// Specifies the order of returned team memberships
-	Sort any
+	Sort   any
 	TeamId any
 }
 
 var TeamsResponse = ubx.DataSourceBinding{
 	WireType: "datadog_user_teams_response",
 	Fields: ubx.FieldMap{
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Sort":   ubx.FieldSpec{WireName: "sort"},
 		"TeamId": ubx.FieldSpec{WireName: "team_id"},
 	},
 }

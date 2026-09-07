@@ -4,18 +4,18 @@ package ociconfig
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_Data_Attributes struct {
-	AccountId any
-	CreatedAt any
-	ErrorMessages any
-	Status any
+	AccountId       any
+	CreatedAt       any
+	ErrorMessages   any
+	Status          any
 	StatusUpdatedAt any
-	UpdatedAt any
+	UpdatedAt       any
 }
 
 type List_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ListConfig struct {
@@ -28,6 +28,5 @@ type ListAttrs struct {
 
 var List = ubx.DataSourceBinding{
 	WireType: "datadog_ociconfig_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,20 +4,20 @@ package permission
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type List_Data_Attributes struct {
-	Created any
+	Created     any
 	Description any
 	DisplayName any
 	DisplayType any
-	GroupName any
-	Name any
+	GroupName   any
+	Name        any
 	NameAliases any
-	Restricted any
+	Restricted  any
 }
 
 type List_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ListConfig struct {
@@ -30,6 +30,5 @@ type ListAttrs struct {
 
 var List = ubx.DataSourceBinding{
 	WireType: "datadog_permission_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

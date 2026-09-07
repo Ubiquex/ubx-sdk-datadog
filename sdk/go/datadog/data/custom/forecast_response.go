@@ -4,13 +4,13 @@ package custom
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ForecastResponse_Data_Attributes_Entries_TagFilters struct {
-	TagKey any
+	TagKey   any
 	TagValue any
 }
 
 type ForecastResponse_Data_Attributes_Entries struct {
-	Amount any
-	Month any
+	Amount     any
+	Month      any
 	TagFilters any
 }
 

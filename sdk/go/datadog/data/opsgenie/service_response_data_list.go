@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceResponseDataList_Data_Attributes struct {
 	CustomUrl any
-	Name any
-	Region any
+	Name      any
+	Region    any
 }
 
 type ServiceResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ServiceResponseDataListConfig struct {
@@ -25,6 +25,5 @@ type ServiceResponseDataListAttrs struct {
 
 var ServiceResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_opsgenie_service_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -17,27 +17,27 @@ type List_Orgs_Settings_SamlAutocreateUsersDomains struct {
 }
 
 type List_Orgs_Settings struct {
-	PrivateWidgetShare any
-	Saml any
-	SamlAutocreateAccessRole any
+	PrivateWidgetShare         any
+	Saml                       any
+	SamlAutocreateAccessRole   any
 	SamlAutocreateUsersDomains any
-	SamlCanBeEnabled any
-	SamlIdpEndpoint any
-	SamlIdpInitiatedLogin any
-	SamlIdpMetadataUploaded any
-	SamlLoginUrl any
-	SamlStrictMode any
+	SamlCanBeEnabled           any
+	SamlIdpEndpoint            any
+	SamlIdpInitiatedLogin      any
+	SamlIdpMetadataUploaded    any
+	SamlLoginUrl               any
+	SamlStrictMode             any
 }
 
 type List_Orgs struct {
-	Billing any
-	Created any
-	Description any
-	Name any
-	PublicId any
-	Settings any
+	Billing      any
+	Created      any
+	Description  any
+	Name         any
+	PublicId     any
+	Settings     any
 	Subscription any
-	Trial any
+	Trial        any
 }
 
 type ListConfig struct {
@@ -50,6 +50,5 @@ type ListAttrs struct {
 
 var List = ubx.DataSourceBinding{
 	WireType: "datadog_organization_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

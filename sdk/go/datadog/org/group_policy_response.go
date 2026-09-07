@@ -45,48 +45,48 @@ type GroupPolicyResponse_Data struct {
 }
 
 var GroupPolicyResponse_Data_AttributesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"EnforcementTier": ubx.FieldSpec{WireName: "enforcement_tier"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-	}
+	"Content":         ubx.FieldSpec{WireName: "content"},
+	"EnforcementTier": ubx.FieldSpec{WireName: "enforcement_tier"},
+	"ModifiedAt":      ubx.FieldSpec{WireName: "modified_at"},
+	"PolicyName":      ubx.FieldSpec{WireName: "policy_name"},
+	"PolicyType":      ubx.FieldSpec{WireName: "policy_type"},
+}
 
 var GroupPolicyResponse_Data_Relationships_OrgGroup_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var GroupPolicyResponse_Data_Relationships_OrgGroupFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: GroupPolicyResponse_Data_Relationships_OrgGroup_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   GroupPolicyResponse_Data_Relationships_OrgGroup_DataFields,
+	},
+}
 
 var GroupPolicyResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"OrgGroup": ubx.FieldSpec{
-			WireName: "org_group",
-			Kind: "object",
-			Fields: GroupPolicyResponse_Data_Relationships_OrgGroupFields,
-		},
-	}
+	"OrgGroup": ubx.FieldSpec{
+		WireName: "org_group",
+		Kind:     "object",
+		Fields:   GroupPolicyResponse_Data_Relationships_OrgGroupFields,
+	},
+}
 
 var GroupPolicyResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: GroupPolicyResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: GroupPolicyResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   GroupPolicyResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   GroupPolicyResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type GroupPolicyResponseConfig struct {
 	// Data for creating an org group policy.
@@ -107,8 +107,8 @@ var GroupPolicyResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: GroupPolicyResponse_DataFields,
+			Kind:     "object",
+			Fields:   GroupPolicyResponse_DataFields,
 		},
 		"OrgGroupPolicyId": ubx.FieldSpec{WireName: "org_group_policy_id"},
 	},

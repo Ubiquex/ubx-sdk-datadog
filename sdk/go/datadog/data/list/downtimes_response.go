@@ -4,46 +4,46 @@ package list
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DowntimesResponse_Data_Attributes_MonitorIdentifier struct {
-	MonitorId any
+	MonitorId   any
 	MonitorTags any
 }
 
 type DowntimesResponse_Data_Attributes_Schedule_CurrentDowntime struct {
-	End any
+	End   any
 	Start any
 }
 
 type DowntimesResponse_Data_Attributes_Schedule_Recurrences struct {
 	Duration any
-	Rrule any
-	Start any
+	Rrule    any
+	Start    any
 }
 
 type DowntimesResponse_Data_Attributes_Schedule struct {
 	CurrentDowntime any
-	End any
-	Recurrences any
-	Start any
-	Timezone any
+	End             any
+	Recurrences     any
+	Start           any
+	Timezone        any
 }
 
 type DowntimesResponse_Data_Attributes struct {
-	Canceled any
-	Created any
-	DisplayTimezone any
-	Message any
-	Modified any
-	MonitorIdentifier any
+	Canceled                      any
+	Created                       any
+	DisplayTimezone               any
+	Message                       any
+	Modified                      any
+	MonitorIdentifier             any
 	MuteFirstRecoveryNotification any
-	NotifyEndStates any
-	NotifyEndTypes any
-	Schedule any
-	Scope any
-	Status any
+	NotifyEndStates               any
+	NotifyEndTypes                any
+	Schedule                      any
+	Scope                         any
+	Status                        any
 }
 
 type DowntimesResponse_Data_Relationships_CreatedBy_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -53,31 +53,31 @@ type DowntimesResponse_Data_Relationships_CreatedBy struct {
 
 type DowntimesResponse_Data_Relationships struct {
 	CreatedBy any
-	Monitor any
+	Monitor   any
 }
 
 type DowntimesResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type DowntimesResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type DowntimesResponse_Included_Relationships_OtherOrgs struct {
@@ -85,17 +85,17 @@ type DowntimesResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type DowntimesResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type DowntimesResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type DowntimesResponse_Meta_Page struct {
@@ -110,13 +110,13 @@ type DowntimesResponse_Meta struct {
 
 type DowntimesResponseConfig struct {
 	CurrentOnly any
-	Include any
+	Include     any
 }
 
 type DowntimesResponseAttrs struct {
 	CurrentOnly any
 	// An array of downtimes.
-	Data any
+	Data    any
 	Include any
 	// Array of objects related to the downtimes.
 	Included any
@@ -128,6 +128,6 @@ var DowntimesResponse = ubx.DataSourceBinding{
 	WireType: "datadog_list_downtimes_response",
 	Fields: ubx.FieldMap{
 		"CurrentOnly": ubx.FieldSpec{WireName: "current_only"},
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":     ubx.FieldSpec{WireName: "include"},
 	},
 }

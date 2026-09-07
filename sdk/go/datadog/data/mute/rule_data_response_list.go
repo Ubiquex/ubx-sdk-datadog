@@ -4,37 +4,37 @@ package mute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuleDataResponseList_Data_Attributes_Action struct {
-	ExpireAt any
-	Reason any
+	ExpireAt          any
+	Reason            any
 	ReasonDescription any
 }
 
 type RuleDataResponseList_Data_Attributes_CreatedBy struct {
-	Id any
+	Id   any
 	Name any
 	Type any
 }
 
 type RuleDataResponseList_Data_Attributes_Rule struct {
 	FindingTypes any
-	Query any
+	Query        any
 }
 
 type RuleDataResponseList_Data_Attributes struct {
-	Action any
-	CreatedAt any
-	CreatedBy any
-	Enabled any
+	Action     any
+	CreatedAt  any
+	CreatedBy  any
+	Enabled    any
 	ModifiedAt any
 	ModifiedBy any
-	Name any
-	Rule any
+	Name       any
+	Rule       any
 }
 
 type RuleDataResponseList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type RuleDataResponseList_Links struct {
@@ -72,6 +72,5 @@ type RuleDataResponseListAttrs struct {
 
 var RuleDataResponseList = ubx.DataSourceBinding{
 	WireType: "datadog_mute_rule_data_response_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

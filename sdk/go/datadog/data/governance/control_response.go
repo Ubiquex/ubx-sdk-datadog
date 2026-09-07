@@ -9,22 +9,22 @@ type ControlResponse_Data_Attributes_Mitigations_SupportedParameters_SupportedVa
 }
 
 type ControlResponse_Data_Attributes_Mitigations_SupportedParameters struct {
-	DefaultValue any
-	Description any
-	DisplayName any
-	Name any
-	Required any
+	DefaultValue    any
+	Description     any
+	DisplayName     any
+	Name            any
+	Required        any
 	SupportedValues any
-	Type any
+	Type            any
 }
 
 type ControlResponse_Data_Attributes_Mitigations struct {
-	Description any
-	ExecutionModes any
-	Id any
-	Permissions any
+	Description         any
+	ExecutionModes      any
+	Id                  any
+	Permissions         any
 	SupportedParameters any
-	Title any
+	Title               any
 }
 
 type ControlResponse_Data_Attributes struct {
@@ -83,7 +83,7 @@ type ControlResponseConfig struct {
 
 type ControlResponseAttrs struct {
 	// A governance control resource.
-	Data any
+	Data          any
 	DetectionType any
 }
 

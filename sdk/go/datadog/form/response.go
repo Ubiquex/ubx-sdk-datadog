@@ -125,107 +125,106 @@ type Response_Data struct {
 }
 
 var Response_Data_Attributes_DataDefinitionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Properties":  ubx.FieldSpec{WireName: "properties"},
+	"Required":    ubx.FieldSpec{WireName: "required"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_Attributes_DatastoreConfigFields = ubx.FieldMap{
-		"DatastoreId": ubx.FieldSpec{WireName: "datastore_id"},
-		"PrimaryColumnName": ubx.FieldSpec{WireName: "primary_column_name"},
-		"PrimaryKeyGenerationStrategy": ubx.FieldSpec{WireName: "primary_key_generation_strategy"},
-	}
+	"DatastoreId":                  ubx.FieldSpec{WireName: "datastore_id"},
+	"PrimaryColumnName":            ubx.FieldSpec{WireName: "primary_column_name"},
+	"PrimaryKeyGenerationStrategy": ubx.FieldSpec{WireName: "primary_key_generation_strategy"},
+}
 
 var Response_Data_Attributes_PublicationFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"FormId": ubx.FieldSpec{WireName: "form_id"},
-		"FormVersion": ubx.FieldSpec{WireName: "form_version"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"OrgId": ubx.FieldSpec{WireName: "org_id"},
-		"PublishSeq": ubx.FieldSpec{WireName: "publish_seq"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-		"UserUuid": ubx.FieldSpec{WireName: "user_uuid"},
-	}
+	"CreatedAt":   ubx.FieldSpec{WireName: "created_at"},
+	"FormId":      ubx.FieldSpec{WireName: "form_id"},
+	"FormVersion": ubx.FieldSpec{WireName: "form_version"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"ModifiedAt":  ubx.FieldSpec{WireName: "modified_at"},
+	"OrgId":       ubx.FieldSpec{WireName: "org_id"},
+	"PublishSeq":  ubx.FieldSpec{WireName: "publish_seq"},
+	"UserId":      ubx.FieldSpec{WireName: "user_id"},
+	"UserUuid":    ubx.FieldSpec{WireName: "user_uuid"},
+}
 
-var Response_Data_Attributes_UiDefinitionFields = ubx.FieldMap{
-	}
+var Response_Data_Attributes_UiDefinitionFields = ubx.FieldMap{}
 
 var Response_Data_Attributes_VersionFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"DataDefinition": ubx.FieldSpec{
-			WireName: "data_definition",
-			Kind: "object",
-			Fields: Response_Data_Attributes_DataDefinitionFields,
-		},
-		"DefinitionSignature": ubx.FieldSpec{WireName: "definition_signature"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UiDefinition": ubx.FieldSpec{
-			WireName: "ui_definition",
-			Kind: "object",
-			Fields: Response_Data_Attributes_UiDefinitionFields,
-		},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-		"UserUuid": ubx.FieldSpec{WireName: "user_uuid"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"DataDefinition": ubx.FieldSpec{
+		WireName: "data_definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_DataDefinitionFields,
+	},
+	"DefinitionSignature": ubx.FieldSpec{WireName: "definition_signature"},
+	"Etag":                ubx.FieldSpec{WireName: "etag"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"ModifiedAt":          ubx.FieldSpec{WireName: "modified_at"},
+	"State":               ubx.FieldSpec{WireName: "state"},
+	"UiDefinition": ubx.FieldSpec{
+		WireName: "ui_definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_UiDefinitionFields,
+	},
+	"UserId":   ubx.FieldSpec{WireName: "user_id"},
+	"UserUuid": ubx.FieldSpec{WireName: "user_uuid"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
-		"Anonymous": ubx.FieldSpec{WireName: "anonymous"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"DataDefinition": ubx.FieldSpec{
-			WireName: "data_definition",
-			Kind: "object",
-			Fields: Response_Data_Attributes_DataDefinitionFields,
-		},
-		"DatastoreConfig": ubx.FieldSpec{
-			WireName: "datastore_config",
-			Kind: "object",
-			Fields: Response_Data_Attributes_DatastoreConfigFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"HasSubmitted": ubx.FieldSpec{WireName: "has_submitted"},
-		"IdpSurvey": ubx.FieldSpec{WireName: "idp_survey"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OrgId": ubx.FieldSpec{WireName: "org_id"},
-		"Publication": ubx.FieldSpec{
-			WireName: "publication",
-			Kind: "object",
-			Fields: Response_Data_Attributes_PublicationFields,
-		},
-		"SelfService": ubx.FieldSpec{WireName: "self_service"},
-		"SingleResponse": ubx.FieldSpec{WireName: "single_response"},
-		"UiDefinition": ubx.FieldSpec{
-			WireName: "ui_definition",
-			Kind: "object",
-			Fields: Response_Data_Attributes_UiDefinitionFields,
-		},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-		"UserUuid": ubx.FieldSpec{WireName: "user_uuid"},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: Response_Data_Attributes_VersionFields,
-		},
-	}
+	"Active":    ubx.FieldSpec{WireName: "active"},
+	"Anonymous": ubx.FieldSpec{WireName: "anonymous"},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"DataDefinition": ubx.FieldSpec{
+		WireName: "data_definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_DataDefinitionFields,
+	},
+	"DatastoreConfig": ubx.FieldSpec{
+		WireName: "datastore_config",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_DatastoreConfigFields,
+	},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"EndDate":      ubx.FieldSpec{WireName: "end_date"},
+	"HasSubmitted": ubx.FieldSpec{WireName: "has_submitted"},
+	"IdpSurvey":    ubx.FieldSpec{WireName: "idp_survey"},
+	"ModifiedAt":   ubx.FieldSpec{WireName: "modified_at"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"OrgId":        ubx.FieldSpec{WireName: "org_id"},
+	"Publication": ubx.FieldSpec{
+		WireName: "publication",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_PublicationFields,
+	},
+	"SelfService":    ubx.FieldSpec{WireName: "self_service"},
+	"SingleResponse": ubx.FieldSpec{WireName: "single_response"},
+	"UiDefinition": ubx.FieldSpec{
+		WireName: "ui_definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_UiDefinitionFields,
+	},
+	"UserId":   ubx.FieldSpec{WireName: "user_id"},
+	"UserUuid": ubx.FieldSpec{WireName: "user_uuid"},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_VersionFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// The data for creating a form.
@@ -246,8 +245,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"FormId": ubx.FieldSpec{WireName: "form_id"},
 	},

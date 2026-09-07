@@ -37,20 +37,20 @@ type DataList_Data struct {
 }
 
 type DataList_Included_Attributes struct {
-	CreatedAt any
+	CreatedAt   any
 	Description any
-	Disabled any
-	ModifiedAt any
-	Name any
-	PublicId any
-	Sharing any
-	Url any
+	Disabled    any
+	ModifiedAt  any
+	Name        any
+	PublicId    any
+	Sharing     any
+	Url         any
 }
 
 type DataList_Included struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type DataListConfig struct {
@@ -65,6 +65,5 @@ type DataListAttrs struct {
 
 var DataList = ubx.DataSourceBinding{
 	WireType: "datadog_org_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

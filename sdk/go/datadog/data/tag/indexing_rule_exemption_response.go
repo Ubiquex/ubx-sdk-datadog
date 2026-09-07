@@ -29,7 +29,7 @@ type IndexingRuleExemptionResponseConfig struct {
 
 type IndexingRuleExemptionResponseAttrs struct {
 	// A tag indexing rule exemption resource object.
-	Data any
+	Data       any
 	MetricName any
 }
 

@@ -59,7 +59,7 @@ type DeviceResponseConfig struct {
 
 type DeviceResponseAttrs struct {
 	// Get device response data.
-	Data any
+	Data     any
 	DeviceId any
 }
 

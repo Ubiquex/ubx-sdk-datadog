@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SearchResultList_Counts_Muted struct {
 	Count any
-	Name any
+	Name  any
 }
 
 type SearchResultList_Counts struct {
@@ -31,38 +31,38 @@ type SearchResultList_Metadata struct {
 }
 
 type SearchResultList_Monitors_Creator struct {
-	Email any
+	Email  any
 	Handle any
-	Name any
+	Name   any
 }
 
 type SearchResultList_Monitors_Notifications struct {
 	Handle any
-	Name any
+	Name   any
 }
 
 type SearchResultList_Monitors struct {
-	Classification any
-	Creator any
-	Id any
+	Classification  any
+	Creator         any
+	Id              any
 	LastTriggeredTs any
-	Metrics any
-	Name any
-	Notifications any
-	OrgId any
-	QualityIssues any
-	Query any
-	Scopes any
-	Status any
-	Tags any
-	Type any
+	Metrics         any
+	Name            any
+	Notifications   any
+	OrgId           any
+	QualityIssues   any
+	Query           any
+	Scopes          any
+	Status          any
+	Tags            any
+	Type            any
 }
 
 type SearchResultListConfig struct {
-	Page any
+	Page    any
 	PerPage any
-	Query any
-	Sort any
+	Query   any
+	Sort    any
 }
 
 type SearchResultListAttrs struct {
@@ -72,18 +72,18 @@ type SearchResultListAttrs struct {
 	Metadata any
 	// The list of found monitors.
 	Monitors any
-	Page any
-	PerPage any
-	Query any
-	Sort any
+	Page     any
+	PerPage  any
+	Query    any
+	Sort     any
 }
 
 var SearchResultList = ubx.DataSourceBinding{
 	WireType: "datadog_monitor_search_result_list",
 	Fields: ubx.FieldMap{
-		"Page": ubx.FieldSpec{WireName: "page"},
+		"Page":    ubx.FieldSpec{WireName: "page"},
 		"PerPage": ubx.FieldSpec{WireName: "per_page"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
+		"Query":   ubx.FieldSpec{WireName: "query"},
+		"Sort":    ubx.FieldSpec{WireName: "sort"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MonitoringDatasetResponse_Data_Attributes_Definition_Columns struct {
 	Column any
-	Type any
+	Type   any
 }
 
 type MonitoringDatasetResponse_Data_Attributes_Definition_Search struct {
@@ -81,20 +81,20 @@ type MonitoringDatasetResponse_Data struct {
 
 type MonitoringDatasetResponseConfig struct {
 	DatasetId any
-	Version any
+	Version   any
 }
 
 type MonitoringDatasetResponseAttrs struct {
 	// The data wrapper of a dataset response.
-	Data any
+	Data      any
 	DatasetId any
-	Version any
+	Version   any
 }
 
 var MonitoringDatasetResponse = ubx.DataSourceBinding{
 	WireType: "datadog_security_monitoring_dataset_response",
 	Fields: ubx.FieldMap{
 		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Version":   ubx.FieldSpec{WireName: "version"},
 	},
 }

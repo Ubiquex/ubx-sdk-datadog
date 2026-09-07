@@ -4,23 +4,23 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotificationRuleArray_Data_Attributes_Conditions struct {
-	Field any
+	Field  any
 	Values any
 }
 
 type NotificationRuleArray_Data_Attributes struct {
 	Conditions any
-	Created any
-	Enabled any
-	Handles any
-	Modified any
+	Created    any
+	Enabled    any
+	Handles    any
+	Modified   any
 	RenotifyOn any
-	Trigger any
+	Trigger    any
 	Visibility any
 }
 
 type NotificationRuleArray_Data_Relationships_CreatedByUser_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -29,34 +29,34 @@ type NotificationRuleArray_Data_Relationships_CreatedByUser struct {
 }
 
 type NotificationRuleArray_Data_Relationships struct {
-	CreatedByUser any
-	IncidentType any
-	LastModifiedByUser any
+	CreatedByUser        any
+	IncidentType         any
+	LastModifiedByUser   any
 	NotificationTemplate any
 }
 
 type NotificationRuleArray_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type NotificationRuleArray_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type NotificationRuleArray_Included_Relationships_OtherOrgs struct {
@@ -64,17 +64,17 @@ type NotificationRuleArray_Included_Relationships_OtherOrgs struct {
 }
 
 type NotificationRuleArray_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type NotificationRuleArray_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type NotificationRuleArray_Meta_Pagination struct {
@@ -97,7 +97,7 @@ type NotificationRuleArrayConfig struct {
 
 type NotificationRuleArrayAttrs struct {
 	// The `NotificationRuleArray` `data`.
-	Data any
+	Data    any
 	Include any
 	// Related objects that are included in the response.
 	Included any

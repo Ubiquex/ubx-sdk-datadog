@@ -5,25 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GateResponseDataList_Data_Attributes_CreatedBy struct {
 	Handle any
-	Id any
-	Name any
+	Id     any
+	Name   any
 }
 
 type GateResponseDataList_Data_Attributes struct {
-	CreatedAt any
-	CreatedBy any
-	DryRun any
-	Env any
+	CreatedAt  any
+	CreatedBy  any
+	DryRun     any
+	Env        any
 	Identifier any
-	Service any
-	UpdatedAt any
-	UpdatedBy any
+	Service    any
+	UpdatedAt  any
+	UpdatedBy  any
 }
 
 type GateResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type GateResponseDataList_Meta_Page struct {
@@ -52,6 +52,5 @@ type GateResponseDataListAttrs struct {
 
 var GateResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_deployment_gate_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,29 +4,29 @@ package ai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomRulesetResponse_Data_Attributes_Rules_LastRevision struct {
-	Category any
-	Checksum any
-	Content any
-	CreatedAt any
-	CreatedBy any
-	Cwe any
-	Description any
-	Directories any
-	ExecutionMode any
-	Globs any
-	IsDefault any
-	IsPublished any
-	IsTesting any
-	Severity any
+	Category         any
+	Checksum         any
+	Content          any
+	CreatedAt        any
+	CreatedBy        any
+	Cwe              any
+	Description      any
+	Directories      any
+	ExecutionMode    any
+	Globs            any
+	IsDefault        any
+	IsPublished      any
+	IsTesting        any
+	Severity         any
 	ShortDescription any
-	VersionId any
+	VersionId        any
 }
 
 type CustomRulesetResponse_Data_Attributes_Rules struct {
-	CreatedAt any
-	CreatedBy any
+	CreatedAt    any
+	CreatedBy    any
 	LastRevision any
-	Name any
+	Name         any
 }
 
 type CustomRulesetResponse_Data_Attributes struct {
@@ -54,57 +54,57 @@ type CustomRulesetResponse_Data struct {
 }
 
 var CustomRulesetResponse_Data_Attributes_Rules_LastRevisionFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Checksum": ubx.FieldSpec{WireName: "checksum"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-		"Cwe": ubx.FieldSpec{WireName: "cwe"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Directories": ubx.FieldSpec{WireName: "directories"},
-		"ExecutionMode": ubx.FieldSpec{WireName: "execution_mode"},
-		"Globs": ubx.FieldSpec{WireName: "globs"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"IsPublished": ubx.FieldSpec{WireName: "is_published"},
-		"IsTesting": ubx.FieldSpec{WireName: "is_testing"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-	}
+	"Category":         ubx.FieldSpec{WireName: "category"},
+	"Checksum":         ubx.FieldSpec{WireName: "checksum"},
+	"Content":          ubx.FieldSpec{WireName: "content"},
+	"CreatedAt":        ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":        ubx.FieldSpec{WireName: "created_by"},
+	"Cwe":              ubx.FieldSpec{WireName: "cwe"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"Directories":      ubx.FieldSpec{WireName: "directories"},
+	"ExecutionMode":    ubx.FieldSpec{WireName: "execution_mode"},
+	"Globs":            ubx.FieldSpec{WireName: "globs"},
+	"IsDefault":        ubx.FieldSpec{WireName: "is_default"},
+	"IsPublished":      ubx.FieldSpec{WireName: "is_published"},
+	"IsTesting":        ubx.FieldSpec{WireName: "is_testing"},
+	"Severity":         ubx.FieldSpec{WireName: "severity"},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+	"VersionId":        ubx.FieldSpec{WireName: "version_id"},
+}
 
 var CustomRulesetResponse_Data_Attributes_RulesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-		"LastRevision": ubx.FieldSpec{
-			WireName: "last_revision",
-			Kind: "object",
-			Fields: CustomRulesetResponse_Data_Attributes_Rules_LastRevisionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+	"LastRevision": ubx.FieldSpec{
+		WireName: "last_revision",
+		Kind:     "object",
+		Fields:   CustomRulesetResponse_Data_Attributes_Rules_LastRevisionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var CustomRulesetResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: CustomRulesetResponse_Data_Attributes_RulesFields,
-		},
-		"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
-	}
+	"CreatedAt":   ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy":   ubx.FieldSpec{WireName: "created_by"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   CustomRulesetResponse_Data_Attributes_RulesFields,
+	},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+}
 
 var CustomRulesetResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: CustomRulesetResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   CustomRulesetResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type CustomRulesetResponseConfig struct {
 	// Request data for creating an AI custom ruleset.
@@ -125,8 +125,8 @@ var CustomRulesetResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: CustomRulesetResponse_DataFields,
+			Kind:     "object",
+			Fields:   CustomRulesetResponse_DataFields,
 		},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
 	},

@@ -4,19 +4,19 @@ package synthetics
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiMultistepParentTestDataList_Data_Attributes struct {
-	ChildName any
-	ChildPublicId any
-	MonitorId any
-	Name any
-	OverallState any
+	ChildName            any
+	ChildPublicId        any
+	MonitorId            any
+	Name                 any
+	OverallState         any
 	OverallStateModified any
-	PublicId any
+	PublicId             any
 }
 
 type ApiMultistepParentTestDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ApiMultistepParentTestDataListConfig struct {
@@ -25,7 +25,7 @@ type ApiMultistepParentTestDataListConfig struct {
 
 type ApiMultistepParentTestDataListAttrs struct {
 	// List of parent tests that include this subtest.
-	Data any
+	Data     any
 	PublicId any
 }
 

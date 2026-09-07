@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SessionDataList_Data_Attributes struct {
 	SessionEvent any
-	Track any
+	Track        any
 }
 
 type SessionDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type SessionDataListConfig struct {
@@ -20,7 +20,7 @@ type SessionDataListConfig struct {
 
 type SessionDataListAttrs struct {
 	// Array of playlist session data objects.
-	Data any
+	Data       any
 	PlaylistId any
 }
 

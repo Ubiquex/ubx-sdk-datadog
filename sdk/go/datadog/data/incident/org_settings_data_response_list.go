@@ -4,13 +4,13 @@ package incident
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrgSettingsDataResponseList_Data_Attributes struct {
-	Created any
+	Created  any
 	Modified any
 	Settings any
 }
 
 type OrgSettingsDataResponseList_Data_Relationships_IncidentType_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -23,28 +23,28 @@ type OrgSettingsDataResponseList_Data_Relationships struct {
 }
 
 type OrgSettingsDataResponseList_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type OrgSettingsDataResponseListConfig struct {
-	Include any
+	Include        any
 	IncludeDeleted any
 }
 
 type OrgSettingsDataResponseListAttrs struct {
 	// List of incident org settings resources.
-	Data any
-	Include any
+	Data           any
+	Include        any
 	IncludeDeleted any
 }
 
 var OrgSettingsDataResponseList = ubx.DataSourceBinding{
 	WireType: "datadog_incident_org_settings_data_response_list",
 	Fields: ubx.FieldMap{
-		"Include": ubx.FieldSpec{WireName: "include"},
+		"Include":        ubx.FieldSpec{WireName: "include"},
 		"IncludeDeleted": ubx.FieldSpec{WireName: "include_deleted"},
 	},
 }

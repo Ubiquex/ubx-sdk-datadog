@@ -20,24 +20,24 @@ type ResourceEvaluationFiltersResponse_Data struct {
 }
 
 type ResourceEvaluationFiltersResponseConfig struct {
-	AccountId any
+	AccountId     any
 	CloudProvider any
-	SkipCache any
+	SkipCache     any
 }
 
 type ResourceEvaluationFiltersResponseAttrs struct {
-	AccountId any
+	AccountId     any
 	CloudProvider any
 	// The definition of `GetResourceFilterResponseData` object.
-	Data any
+	Data      any
 	SkipCache any
 }
 
 var ResourceEvaluationFiltersResponse = ubx.DataSourceBinding{
 	WireType: "datadog_get_resource_evaluation_filters_response",
 	Fields: ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
+		"AccountId":     ubx.FieldSpec{WireName: "account_id"},
 		"CloudProvider": ubx.FieldSpec{WireName: "cloud_provider"},
-		"SkipCache": ubx.FieldSpec{WireName: "skip_cache"},
+		"SkipCache":     ubx.FieldSpec{WireName: "skip_cache"},
 	},
 }

@@ -4,26 +4,26 @@ package team
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HierarchyLinksResponse_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt     any
 	ProvisionedBy any
 }
 
 type HierarchyLinksResponse_Data_Relationships_ParentTeam_Data_Attributes struct {
-	Avatar any
-	Banner any
-	Handle any
-	IsManaged any
+	Avatar           any
+	Banner           any
+	Handle           any
+	IsManaged        any
 	IsOpenMembership any
-	LinkCount any
-	Name any
-	Summary any
-	UserCount any
+	LinkCount        any
+	Name             any
+	Summary          any
+	UserCount        any
 }
 
 type HierarchyLinksResponse_Data_Relationships_ParentTeam_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type HierarchyLinksResponse_Data_Relationships_ParentTeam struct {
@@ -32,14 +32,14 @@ type HierarchyLinksResponse_Data_Relationships_ParentTeam struct {
 
 type HierarchyLinksResponse_Data_Relationships struct {
 	ParentTeam any
-	SubTeam any
+	SubTeam    any
 }
 
 type HierarchyLinksResponse_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type HierarchyLinksResponse_Links struct {
@@ -95,6 +95,5 @@ type HierarchyLinksResponseAttrs struct {
 
 var HierarchyLinksResponse = ubx.DataSourceBinding{
 	WireType: "datadog_team_hierarchy_links_response",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

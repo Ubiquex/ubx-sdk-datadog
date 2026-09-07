@@ -20,16 +20,16 @@ type SecurityWafExclusionFilterResponse_Data_Attributes_Metadata struct {
 
 type SecurityWafExclusionFilterResponse_Data_Attributes_RulesTarget_Tags struct {
 	Category any
-	Type any
+	Type     any
 }
 
 type SecurityWafExclusionFilterResponse_Data_Attributes_RulesTarget struct {
 	RuleId any
-	Tags any
+	Tags   any
 }
 
 type SecurityWafExclusionFilterResponse_Data_Attributes_Scope struct {
-	Env any
+	Env     any
 	Service any
 }
 
@@ -68,68 +68,68 @@ type SecurityWafExclusionFilterResponse_Data struct {
 }
 
 var SecurityWafExclusionFilterResponse_Data_Attributes_MetadataFields = ubx.FieldMap{
-		"AddedAt": ubx.FieldSpec{WireName: "added_at"},
-		"AddedBy": ubx.FieldSpec{WireName: "added_by"},
-		"AddedByName": ubx.FieldSpec{WireName: "added_by_name"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"ModifiedBy": ubx.FieldSpec{WireName: "modified_by"},
-		"ModifiedByName": ubx.FieldSpec{WireName: "modified_by_name"},
-	}
+	"AddedAt":        ubx.FieldSpec{WireName: "added_at"},
+	"AddedBy":        ubx.FieldSpec{WireName: "added_by"},
+	"AddedByName":    ubx.FieldSpec{WireName: "added_by_name"},
+	"ModifiedAt":     ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy":     ubx.FieldSpec{WireName: "modified_by"},
+	"ModifiedByName": ubx.FieldSpec{WireName: "modified_by_name"},
+}
 
 var SecurityWafExclusionFilterResponse_Data_Attributes_RulesTarget_TagsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Category": ubx.FieldSpec{WireName: "category"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var SecurityWafExclusionFilterResponse_Data_Attributes_RulesTargetFields = ubx.FieldMap{
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: SecurityWafExclusionFilterResponse_Data_Attributes_RulesTarget_TagsFields,
-		},
-	}
+	"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   SecurityWafExclusionFilterResponse_Data_Attributes_RulesTarget_TagsFields,
+	},
+}
 
 var SecurityWafExclusionFilterResponse_Data_Attributes_ScopeFields = ubx.FieldMap{
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Env":     ubx.FieldSpec{WireName: "env"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var SecurityWafExclusionFilterResponse_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EventQuery": ubx.FieldSpec{WireName: "event_query"},
-		"IpList": ubx.FieldSpec{WireName: "ip_list"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: SecurityWafExclusionFilterResponse_Data_Attributes_MetadataFields,
-		},
-		"OnMatch": ubx.FieldSpec{WireName: "on_match"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"PathGlob": ubx.FieldSpec{WireName: "path_glob"},
-		"RulesTarget": ubx.FieldSpec{
-			WireName: "rules_target",
-			Kind: "list",
-			Fields: SecurityWafExclusionFilterResponse_Data_Attributes_RulesTargetFields,
-		},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
-			Kind: "list",
-			Fields: SecurityWafExclusionFilterResponse_Data_Attributes_ScopeFields,
-		},
-		"SearchQuery": ubx.FieldSpec{WireName: "search_query"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"EventQuery":  ubx.FieldSpec{WireName: "event_query"},
+	"IpList":      ubx.FieldSpec{WireName: "ip_list"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   SecurityWafExclusionFilterResponse_Data_Attributes_MetadataFields,
+	},
+	"OnMatch":    ubx.FieldSpec{WireName: "on_match"},
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"PathGlob":   ubx.FieldSpec{WireName: "path_glob"},
+	"RulesTarget": ubx.FieldSpec{
+		WireName: "rules_target",
+		Kind:     "list",
+		Fields:   SecurityWafExclusionFilterResponse_Data_Attributes_RulesTargetFields,
+	},
+	"Scope": ubx.FieldSpec{
+		WireName: "scope",
+		Kind:     "list",
+		Fields:   SecurityWafExclusionFilterResponse_Data_Attributes_ScopeFields,
+	},
+	"SearchQuery": ubx.FieldSpec{WireName: "search_query"},
+}
 
 var SecurityWafExclusionFilterResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: SecurityWafExclusionFilterResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   SecurityWafExclusionFilterResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type SecurityWafExclusionFilterResponseConfig struct {
 	// Object for creating a single WAF exclusion filter.
@@ -150,8 +150,8 @@ var SecurityWafExclusionFilterResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: SecurityWafExclusionFilterResponse_DataFields,
+			Kind:     "object",
+			Fields:   SecurityWafExclusionFilterResponse_DataFields,
 		},
 		"ExclusionFilterId": ubx.FieldSpec{WireName: "exclusion_filter_id"},
 	},

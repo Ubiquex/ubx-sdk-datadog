@@ -8,19 +8,19 @@ type GlobalVariableList_Variables_Attributes struct {
 }
 
 type GlobalVariableList_Variables_ParseTestOptions_Parser struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type GlobalVariableList_Variables_ParseTestOptions struct {
-	Field any
+	Field             any
 	LocalVariableName any
-	Parser any
-	Type any
+	Parser            any
+	Type              any
 }
 
 type GlobalVariableList_Variables_Value_Options_TotpParameters struct {
-	Digits any
+	Digits          any
 	RefreshInterval any
 }
 
@@ -30,21 +30,21 @@ type GlobalVariableList_Variables_Value_Options struct {
 
 type GlobalVariableList_Variables_Value struct {
 	Options any
-	Secure any
-	Value any
+	Secure  any
+	Value   any
 }
 
 type GlobalVariableList_Variables struct {
-	Attributes any
-	Description any
-	Id any
-	IsFido any
-	IsTotp any
-	Name any
-	ParseTestOptions any
+	Attributes        any
+	Description       any
+	Id                any
+	IsFido            any
+	IsTotp            any
+	Name              any
+	ParseTestOptions  any
 	ParseTestPublicId any
-	Tags any
-	Value any
+	Tags              any
+	Value             any
 }
 
 type GlobalVariableListConfig struct {
@@ -57,6 +57,5 @@ type GlobalVariableListAttrs struct {
 
 var GlobalVariableList = ubx.DataSourceBinding{
 	WireType: "datadog_synthetics_global_variable_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

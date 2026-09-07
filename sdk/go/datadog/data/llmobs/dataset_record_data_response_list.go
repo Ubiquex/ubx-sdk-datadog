@@ -4,13 +4,13 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetRecordDataResponseList_Data struct {
-	CreatedAt any
-	DatasetId any
+	CreatedAt      any
+	DatasetId      any
 	ExpectedOutput any
-	Id any
-	Input any
-	Metadata any
-	UpdatedAt any
+	Id             any
+	Input          any
+	Metadata       any
+	UpdatedAt      any
 }
 
 type DatasetRecordDataResponseList_Meta struct {
@@ -25,10 +25,10 @@ type DatasetRecordDataResponseListConfig struct {
 
 type DatasetRecordDataResponseListAttrs struct {
 	// List of dataset records.
-	Data any
+	Data      any
 	DatasetId any
 	// Pagination cursor metadata.
-	Meta any
+	Meta      any
 	ProjectId any
 }
 

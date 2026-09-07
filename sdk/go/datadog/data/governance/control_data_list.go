@@ -9,50 +9,50 @@ type ControlDataList_Data_Attributes_Mitigations_SupportedParameters_SupportedVa
 }
 
 type ControlDataList_Data_Attributes_Mitigations_SupportedParameters struct {
-	DefaultValue any
-	Description any
-	DisplayName any
-	Name any
-	Required any
+	DefaultValue    any
+	Description     any
+	DisplayName     any
+	Name            any
+	Required        any
 	SupportedValues any
-	Type any
+	Type            any
 }
 
 type ControlDataList_Data_Attributes_Mitigations struct {
-	Description any
-	ExecutionModes any
-	Id any
-	Permissions any
+	Description         any
+	ExecutionModes      any
+	Id                  any
+	Permissions         any
 	SupportedParameters any
-	Title any
+	Title               any
 }
 
 type ControlDataList_Data_Attributes struct {
-	ActiveDetectionsCount any
-	Category any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	DetectionParameters any
-	Insights any
-	LastDetectionAt any
-	MitigatedDetectionsCount any
-	MitigationParameters any
-	MitigationType any
-	Mitigations any
-	Name any
-	Priority any
-	Product any
-	ResourceType any
-	ResourceTypeDisplayName any
+	ActiveDetectionsCount        any
+	Category                     any
+	CreatedAt                    any
+	CreatedBy                    any
+	Description                  any
+	DetectionParameters          any
+	Insights                     any
+	LastDetectionAt              any
+	MitigatedDetectionsCount     any
+	MitigationParameters         any
+	MitigationType               any
+	Mitigations                  any
+	Name                         any
+	Priority                     any
+	Product                      any
+	ResourceType                 any
+	ResourceTypeDisplayName      any
 	SupportedDetectionParameters any
-	Type any
+	Type                         any
 }
 
 type ControlDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type ControlDataListConfig struct {
@@ -65,6 +65,5 @@ type ControlDataListAttrs struct {
 
 var ControlDataList = ubx.DataSourceBinding{
 	WireType: "datadog_governance_control_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

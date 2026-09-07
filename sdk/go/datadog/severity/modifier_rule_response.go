@@ -4,10 +4,10 @@ package severity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ModifierRuleResponse_Data_Attributes_Action struct {
-	Description any
-	Severity any
+	Description   any
+	Severity      any
 	SeverityDelta any
-	Type any
+	Type          any
 }
 
 type ModifierRuleResponse_Data_Attributes_CreatedBy struct {
@@ -55,59 +55,59 @@ type ModifierRuleResponse_Data struct {
 }
 
 var ModifierRuleResponse_Data_Attributes_ActionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"SeverityDelta": ubx.FieldSpec{WireName: "severity_delta"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"Severity":      ubx.FieldSpec{WireName: "severity"},
+	"SeverityDelta": ubx.FieldSpec{WireName: "severity_delta"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var ModifierRuleResponse_Data_Attributes_CreatedByFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ModifierRuleResponse_Data_Attributes_RuleFields = ubx.FieldMap{
-		"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"FindingTypes": ubx.FieldSpec{WireName: "finding_types"},
+	"Query":        ubx.FieldSpec{WireName: "query"},
+}
 
 var ModifierRuleResponse_Data_AttributesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: ModifierRuleResponse_Data_Attributes_ActionFields,
-		},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CreatedBy": ubx.FieldSpec{
-			WireName: "created_by",
-			Kind: "object",
-			Fields: ModifierRuleResponse_Data_Attributes_CreatedByFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"ModifiedBy": ubx.FieldSpec{
-			WireName: "modified_by",
-			Kind: "object",
-			Fields: ModifierRuleResponse_Data_Attributes_CreatedByFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "object",
-			Fields: ModifierRuleResponse_Data_Attributes_RuleFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   ModifierRuleResponse_Data_Attributes_ActionFields,
+	},
+	"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+	"CreatedBy": ubx.FieldSpec{
+		WireName: "created_by",
+		Kind:     "object",
+		Fields:   ModifierRuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+	"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
+	"ModifiedBy": ubx.FieldSpec{
+		WireName: "modified_by",
+		Kind:     "object",
+		Fields:   ModifierRuleResponse_Data_Attributes_CreatedByFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Rule": ubx.FieldSpec{
+		WireName: "rule",
+		Kind:     "object",
+		Fields:   ModifierRuleResponse_Data_Attributes_RuleFields,
+	},
+}
 
 var ModifierRuleResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ModifierRuleResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ModifierRuleResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ModifierRuleResponseConfig struct {
 	// The data object for a severity modifier rule create or update request.
@@ -128,8 +128,8 @@ var ModifierRuleResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ModifierRuleResponse_DataFields,
+			Kind:     "object",
+			Fields:   ModifierRuleResponse_DataFields,
 		},
 		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
 	},

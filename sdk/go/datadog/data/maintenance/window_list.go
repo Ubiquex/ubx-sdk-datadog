@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WindowList_Data_Attributes struct {
 	CreatedBy any
-	EndAt any
-	Name any
-	Query any
-	StartAt any
+	EndAt     any
+	Name      any
+	Query     any
+	StartAt   any
 	UpdatedBy any
 }
 
 type WindowList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type WindowListConfig struct {
@@ -28,6 +28,5 @@ type WindowListAttrs struct {
 
 var WindowList = ubx.DataSourceBinding{
 	WireType: "datadog_maintenance_window_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

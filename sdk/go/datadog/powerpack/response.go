@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Response_Data_Attributes_GroupWidget_Definition_Widgets_Layout struct {
 	Height any
-	Width any
-	X any
-	Y any
+	Width  any
+	X      any
+	Y      any
 }
 
 type Response_Data_Attributes_GroupWidget_Definition_Widgets struct {
 	Definition any
-	Layout any
+	Layout     any
 }
 
 type Response_Data_Attributes_GroupWidget_Definition struct {
@@ -39,9 +39,9 @@ type Response_Data_Attributes_GroupWidget struct {
 
 type Response_Data_Attributes_TemplateVariables struct {
 	AvailableValues any
-	Defaults any
-	Name any
-	Prefix any
+	Defaults        any
+	Name            any
+	Prefix          any
 }
 
 type Response_Data_Attributes struct {
@@ -86,20 +86,20 @@ type Response_Data struct {
 }
 
 type Response_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type Response_Included_Relationships_OtherOrgs struct {
@@ -107,119 +107,119 @@ type Response_Included_Relationships_OtherOrgs struct {
 }
 
 type Response_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type Response_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var Response_Data_Attributes_GroupWidget_Definition_Widgets_LayoutFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-		"X": ubx.FieldSpec{WireName: "x"},
-		"Y": ubx.FieldSpec{WireName: "y"},
-	}
+	"Height": ubx.FieldSpec{WireName: "height"},
+	"Width":  ubx.FieldSpec{WireName: "width"},
+	"X":      ubx.FieldSpec{WireName: "x"},
+	"Y":      ubx.FieldSpec{WireName: "y"},
+}
 
 var Response_Data_Attributes_GroupWidget_Definition_WidgetsFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Layout": ubx.FieldSpec{
-			WireName: "layout",
-			Kind: "object",
-			Fields: Response_Data_Attributes_GroupWidget_Definition_Widgets_LayoutFields,
-		},
-	}
+	"Definition": ubx.FieldSpec{WireName: "definition"},
+	"Layout": ubx.FieldSpec{
+		WireName: "layout",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_GroupWidget_Definition_Widgets_LayoutFields,
+	},
+}
 
 var Response_Data_Attributes_GroupWidget_DefinitionFields = ubx.FieldMap{
-		"LayoutType": ubx.FieldSpec{WireName: "layout_type"},
-		"ShowTitle": ubx.FieldSpec{WireName: "show_title"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Widgets": ubx.FieldSpec{
-			WireName: "widgets",
-			Kind: "list",
-			Fields: Response_Data_Attributes_GroupWidget_Definition_WidgetsFields,
-		},
-	}
+	"LayoutType": ubx.FieldSpec{WireName: "layout_type"},
+	"ShowTitle":  ubx.FieldSpec{WireName: "show_title"},
+	"Title":      ubx.FieldSpec{WireName: "title"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+	"Widgets": ubx.FieldSpec{
+		WireName: "widgets",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_GroupWidget_Definition_WidgetsFields,
+	},
+}
 
 var Response_Data_Attributes_GroupWidgetFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{
-			WireName: "definition",
-			Kind: "object",
-			Fields: Response_Data_Attributes_GroupWidget_DefinitionFields,
-		},
-		"Layout": ubx.FieldSpec{
-			WireName: "layout",
-			Kind: "object",
-			Fields: Response_Data_Attributes_GroupWidget_Definition_Widgets_LayoutFields,
-		},
-		"LiveSpan": ubx.FieldSpec{WireName: "live_span"},
-	}
+	"Definition": ubx.FieldSpec{
+		WireName: "definition",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_GroupWidget_DefinitionFields,
+	},
+	"Layout": ubx.FieldSpec{
+		WireName: "layout",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_GroupWidget_Definition_Widgets_LayoutFields,
+	},
+	"LiveSpan": ubx.FieldSpec{WireName: "live_span"},
+}
 
 var Response_Data_Attributes_TemplateVariablesFields = ubx.FieldMap{
-		"AvailableValues": ubx.FieldSpec{WireName: "available_values"},
-		"Defaults": ubx.FieldSpec{WireName: "defaults"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"AvailableValues": ubx.FieldSpec{WireName: "available_values"},
+	"Defaults":        ubx.FieldSpec{WireName: "defaults"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Prefix":          ubx.FieldSpec{WireName: "prefix"},
+}
 
 var Response_Data_AttributesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"GroupWidget": ubx.FieldSpec{
-			WireName: "group_widget",
-			Kind: "object",
-			Fields: Response_Data_Attributes_GroupWidgetFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TemplateVariables": ubx.FieldSpec{
-			WireName: "template_variables",
-			Kind: "list",
-			Fields: Response_Data_Attributes_TemplateVariablesFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"GroupWidget": ubx.FieldSpec{
+		WireName: "group_widget",
+		Kind:     "object",
+		Fields:   Response_Data_Attributes_GroupWidgetFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+	"TemplateVariables": ubx.FieldSpec{
+		WireName: "template_variables",
+		Kind:     "list",
+		Fields:   Response_Data_Attributes_TemplateVariablesFields,
+	},
+}
 
 var Response_Data_Relationships_Author_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Response_Data_Relationships_AuthorFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: Response_Data_Relationships_Author_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_Author_DataFields,
+	},
+}
 
 var Response_Data_RelationshipsFields = ubx.FieldMap{
-		"Author": ubx.FieldSpec{
-			WireName: "author",
-			Kind: "object",
-			Fields: Response_Data_Relationships_AuthorFields,
-		},
-	}
+	"Author": ubx.FieldSpec{
+		WireName: "author",
+		Kind:     "object",
+		Fields:   Response_Data_Relationships_AuthorFields,
+	},
+}
 
 var Response_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: Response_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: Response_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   Response_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   Response_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ResponseConfig struct {
 	// Powerpack data object.
@@ -242,8 +242,8 @@ var Response = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: Response_DataFields,
+			Kind:     "object",
+			Fields:   Response_DataFields,
 		},
 		"PowerpackId": ubx.FieldSpec{WireName: "powerpack_id"},
 	},

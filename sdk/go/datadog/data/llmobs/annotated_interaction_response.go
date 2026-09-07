@@ -4,49 +4,49 @@ package llmobs
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnnotatedInteractionResponse_Data_Attributes_AnnotatedInteraction_Annotations struct {
-	CreatedAt any
-	CreatedBy any
-	Id any
+	CreatedAt     any
+	CreatedBy     any
+	Id            any
 	InteractionId any
-	LabelValues any
-	ModifiedAt any
-	ModifiedBy any
+	LabelValues   any
+	ModifiedAt    any
+	ModifiedBy    any
 }
 
 type AnnotatedInteractionResponse_Data_Attributes_AnnotatedInteraction_DisplayBlock_TimeFrame struct {
-	End any
+	End   any
 	Start any
 }
 
 type AnnotatedInteractionResponse_Data_Attributes_AnnotatedInteraction_DisplayBlock struct {
-	Alt any
-	Content any
-	Height any
+	Alt             any
+	Content         any
+	Height          any
 	InteractionType any
-	Label any
-	Level any
-	TileDef any
-	TimeFrame any
-	TraceId any
-	Type any
-	Url any
+	Label           any
+	Level           any
+	TileDef         any
+	TimeFrame       any
+	TraceId         any
+	Type            any
+	Url             any
 }
 
 type AnnotatedInteractionResponse_Data_Attributes_AnnotatedInteraction struct {
-	Annotations any
-	CanAnnotate any
-	ContentId any
-	CreatedAt any
+	Annotations  any
+	CanAnnotate  any
+	ContentId    any
+	CreatedAt    any
 	DisplayBlock any
-	Id any
-	ModifiedAt any
-	Type any
+	Id           any
+	ModifiedAt   any
+	Type         any
 }
 
 type AnnotatedInteractionResponse_Data_Attributes_Events struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type AnnotatedInteractionResponse_Data_Attributes struct {
@@ -70,27 +70,27 @@ type AnnotatedInteractionResponse_Data struct {
 }
 
 type AnnotatedInteractionResponseConfig struct {
-	Cursor any
+	Cursor        any
 	InteractionId any
-	Limit any
-	QueueId any
+	Limit         any
+	QueueId       any
 }
 
 type AnnotatedInteractionResponseAttrs struct {
 	Cursor any
 	// Data object for a single annotated interaction.
-	Data any
+	Data          any
 	InteractionId any
-	Limit any
-	QueueId any
+	Limit         any
+	QueueId       any
 }
 
 var AnnotatedInteractionResponse = ubx.DataSourceBinding{
 	WireType: "datadog_llmobs_annotated_interaction_response",
 	Fields: ubx.FieldMap{
-		"Cursor": ubx.FieldSpec{WireName: "cursor"},
+		"Cursor":        ubx.FieldSpec{WireName: "cursor"},
 		"InteractionId": ubx.FieldSpec{WireName: "interaction_id"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"QueueId": ubx.FieldSpec{WireName: "queue_id"},
+		"Limit":         ubx.FieldSpec{WireName: "limit"},
+		"QueueId":       ubx.FieldSpec{WireName: "queue_id"},
 	},
 }

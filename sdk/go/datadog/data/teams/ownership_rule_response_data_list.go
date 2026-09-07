@@ -4,22 +4,22 @@ package teams
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OwnershipRuleResponseDataList_Data_Attributes_Teams struct {
-	MappingId any
+	MappingId  any
 	TeamHandle any
 }
 
 type OwnershipRuleResponseDataList_Data_Attributes struct {
 	ApplicationId any
-	MatchType any
-	Service any
-	Teams any
-	ViewName any
+	MatchType     any
+	Service       any
+	Teams         any
+	ViewName      any
 }
 
 type OwnershipRuleResponseDataList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type OwnershipRuleResponseDataListConfig struct {
@@ -32,6 +32,5 @@ type OwnershipRuleResponseDataListAttrs struct {
 
 var OwnershipRuleResponseDataList = ubx.DataSourceBinding{
 	WireType: "datadog_teams_ownership_rule_response_data_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

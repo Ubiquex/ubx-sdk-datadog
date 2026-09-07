@@ -4,15 +4,15 @@ package case_
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ViewList_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt  any
 	ModifiedAt any
-	Name any
-	NpRuleId any
-	Query any
+	Name       any
+	NpRuleId   any
+	Query      any
 }
 
 type ViewList_Data_Relationships_CreatedBy_Data struct {
-	Id any
+	Id   any
 	Type any
 }
 
@@ -21,16 +21,16 @@ type ViewList_Data_Relationships_CreatedBy struct {
 }
 
 type ViewList_Data_Relationships struct {
-	CreatedBy any
+	CreatedBy  any
 	ModifiedBy any
-	Project any
+	Project    any
 }
 
 type ViewList_Data struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 type ViewListConfig struct {
@@ -39,7 +39,7 @@ type ViewListConfig struct {
 
 type ViewListAttrs struct {
 	// A list of case views.
-	Data any
+	Data      any
 	ProjectId any
 }
 

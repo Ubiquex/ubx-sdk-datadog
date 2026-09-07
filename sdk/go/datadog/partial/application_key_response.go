@@ -45,20 +45,20 @@ type ApplicationKeyResponse_Data struct {
 }
 
 type ApplicationKeyResponse_Included_Attributes struct {
-	CreatedAt any
-	Disabled any
-	Email any
-	Handle any
-	Icon any
-	LastLoginTime any
-	MfaEnabled any
-	ModifiedAt any
-	Name any
+	CreatedAt      any
+	Disabled       any
+	Email          any
+	Handle         any
+	Icon           any
+	LastLoginTime  any
+	MfaEnabled     any
+	ModifiedAt     any
+	Name           any
 	ServiceAccount any
-	Status any
-	Title any
-	Uuid any
-	Verified any
+	Status         any
+	Title          any
+	Uuid           any
+	Verified       any
 }
 
 type ApplicationKeyResponse_Included_Relationships_OtherOrgs struct {
@@ -66,62 +66,62 @@ type ApplicationKeyResponse_Included_Relationships_OtherOrgs struct {
 }
 
 type ApplicationKeyResponse_Included_Relationships struct {
-	Org any
-	OtherOrgs any
+	Org        any
+	OtherOrgs  any
 	OtherUsers any
-	Roles any
+	Roles      any
 }
 
 type ApplicationKeyResponse_Included struct {
-	Attributes any
-	Id any
+	Attributes    any
+	Id            any
 	Relationships any
-	Type any
+	Type          any
 }
 
 var ApplicationKeyResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Last4": ubx.FieldSpec{WireName: "last4"},
-		"LastUsedAt": ubx.FieldSpec{WireName: "last_used_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"CreatedAt":  ubx.FieldSpec{WireName: "created_at"},
+	"Last4":      ubx.FieldSpec{WireName: "last4"},
+	"LastUsedAt": ubx.FieldSpec{WireName: "last_used_at"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Scopes":     ubx.FieldSpec{WireName: "scopes"},
+}
 
 var ApplicationKeyResponse_Data_Relationships_OwnedBy_DataFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ApplicationKeyResponse_Data_Relationships_OwnedByFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "object",
-			Fields: ApplicationKeyResponse_Data_Relationships_OwnedBy_DataFields,
-		},
-	}
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "object",
+		Fields:   ApplicationKeyResponse_Data_Relationships_OwnedBy_DataFields,
+	},
+}
 
 var ApplicationKeyResponse_Data_RelationshipsFields = ubx.FieldMap{
-		"OwnedBy": ubx.FieldSpec{
-			WireName: "owned_by",
-			Kind: "object",
-			Fields: ApplicationKeyResponse_Data_Relationships_OwnedByFields,
-		},
-	}
+	"OwnedBy": ubx.FieldSpec{
+		WireName: "owned_by",
+		Kind:     "object",
+		Fields:   ApplicationKeyResponse_Data_Relationships_OwnedByFields,
+	},
+}
 
 var ApplicationKeyResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: ApplicationKeyResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Relationships": ubx.FieldSpec{
-			WireName: "relationships",
-			Kind: "object",
-			Fields: ApplicationKeyResponse_Data_RelationshipsFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   ApplicationKeyResponse_Data_AttributesFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Relationships": ubx.FieldSpec{
+		WireName: "relationships",
+		Kind:     "object",
+		Fields:   ApplicationKeyResponse_Data_RelationshipsFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type ApplicationKeyResponseConfig struct {
 	// Object used to create an application key.
@@ -148,10 +148,10 @@ var ApplicationKeyResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: ApplicationKeyResponse_DataFields,
+			Kind:     "object",
+			Fields:   ApplicationKeyResponse_DataFields,
 		},
 		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-		"AppKeyId": ubx.FieldSpec{WireName: "app_key_id"},
+		"AppKeyId":         ubx.FieldSpec{WireName: "app_key_id"},
 	},
 }

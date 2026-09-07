@@ -4,51 +4,51 @@ package feature
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlagListItemList_Data_Attributes_FeatureFlagEnvironments struct {
-	DefaultAllocationKey any
-	DefaultVariantId any
-	EnvironmentId any
-	EnvironmentName any
-	EnvironmentQueries any
-	IsProduction any
-	OverrideAllocationKey any
-	OverrideVariantId any
-	PendingSuggestionId any
+	DefaultAllocationKey       any
+	DefaultVariantId           any
+	EnvironmentId              any
+	EnvironmentName            any
+	EnvironmentQueries         any
+	IsProduction               any
+	OverrideAllocationKey      any
+	OverrideVariantId          any
+	PendingSuggestionId        any
 	RequireFeatureFlagApproval any
-	Status any
+	Status                     any
 }
 
 type FlagListItemList_Data_Attributes_Variants struct {
 	CreatedAt any
-	Id any
-	Key any
-	Name any
+	Id        any
+	Key       any
+	Name      any
 	UpdatedAt any
-	Value any
+	Value     any
 }
 
 type FlagListItemList_Data_Attributes struct {
-	ArchivedAt any
-	CreatedAt any
-	CreatedBy any
-	Description any
-	DistributionChannel any
+	ArchivedAt              any
+	CreatedAt               any
+	CreatedBy               any
+	Description             any
+	DistributionChannel     any
 	FeatureFlagEnvironments any
-	JsonSchema any
-	Key any
-	LastUpdatedBy any
-	Name any
-	RequireApproval any
-	StalenessStatus any
-	Tags any
-	UpdatedAt any
-	ValueType any
-	Variants any
+	JsonSchema              any
+	Key                     any
+	LastUpdatedBy           any
+	Name                    any
+	RequireApproval         any
+	StalenessStatus         any
+	Tags                    any
+	UpdatedAt               any
+	ValueType               any
+	Variants                any
 }
 
 type FlagListItemList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type FlagListItemList_Meta_Page struct {
@@ -65,19 +65,19 @@ type FlagListItemList_Meta struct {
 
 type FlagListItemListConfig struct {
 	IsArchived any
-	Key any
-	Limit any
-	Offset any
+	Key        any
+	Limit      any
+	Offset     any
 }
 
 type FlagListItemListAttrs struct {
 	// List of feature flags.
-	Data any
+	Data       any
 	IsArchived any
-	Key any
-	Limit any
+	Key        any
+	Limit      any
 	// Pagination metadata for feature flags.
-	Meta any
+	Meta   any
 	Offset any
 }
 
@@ -85,8 +85,8 @@ var FlagListItemList = ubx.DataSourceBinding{
 	WireType: "datadog_feature_flag_list_item_list",
 	Fields: ubx.FieldMap{
 		"IsArchived": ubx.FieldSpec{WireName: "is_archived"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"Key":        ubx.FieldSpec{WireName: "key"},
+		"Limit":      ubx.FieldSpec{WireName: "limit"},
+		"Offset":     ubx.FieldSpec{WireName: "offset"},
 	},
 }

@@ -4,19 +4,19 @@ package restriction
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QueryWithoutRelationshipsList_Data_Attributes struct {
-	CreatedAt any
+	CreatedAt         any
 	LastModifierEmail any
-	LastModifierName any
-	ModifiedAt any
-	RestrictionQuery any
-	RoleCount any
-	UserCount any
+	LastModifierName  any
+	ModifiedAt        any
+	RestrictionQuery  any
+	RoleCount         any
+	UserCount         any
 }
 
 type QueryWithoutRelationshipsList_Data struct {
 	Attributes any
-	Id any
-	Type any
+	Id         any
+	Type       any
 }
 
 type QueryWithoutRelationshipsListConfig struct {
@@ -29,6 +29,5 @@ type QueryWithoutRelationshipsListAttrs struct {
 
 var QueryWithoutRelationshipsList = ubx.DataSourceBinding{
 	WireType: "datadog_restriction_query_without_relationships_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

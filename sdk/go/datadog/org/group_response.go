@@ -26,22 +26,22 @@ type GroupResponse_Data struct {
 }
 
 var GroupResponse_Data_AttributesFields = ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"ModifiedAt": ubx.FieldSpec{WireName: "modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OwnerOrgSite": ubx.FieldSpec{WireName: "owner_org_site"},
-		"OwnerOrgUuid": ubx.FieldSpec{WireName: "owner_org_uuid"},
-	}
+	"CreatedAt":    ubx.FieldSpec{WireName: "created_at"},
+	"ModifiedAt":   ubx.FieldSpec{WireName: "modified_at"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"OwnerOrgSite": ubx.FieldSpec{WireName: "owner_org_site"},
+	"OwnerOrgUuid": ubx.FieldSpec{WireName: "owner_org_uuid"},
+}
 
 var GroupResponse_DataFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "object",
-			Fields: GroupResponse_Data_AttributesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "object",
+		Fields:   GroupResponse_Data_AttributesFields,
+	},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type GroupResponseConfig struct {
 	// Data for creating an org group.
@@ -62,8 +62,8 @@ var GroupResponse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: GroupResponse_DataFields,
+			Kind:     "object",
+			Fields:   GroupResponse_DataFields,
 		},
 		"OrgGroupId": ubx.FieldSpec{WireName: "org_group_id"},
 	},
