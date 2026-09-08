@@ -9,7 +9,7 @@ languages in one combined repo:
 
 - `sdk/go/` — Go bindings, module `github.com/ubiquex/ubx-sdk-datadog/sdk/go/v2`
   (a subdirectory Go module, tagged `sdk/go/vX.Y.Z`)
-- `sdk/typescript/` — TypeScript bindings, published to JSR as `@ubx/sdk-datadog`
+- `sdk/typescript/` — TypeScript bindings, published to npm as `@ubx/sdk-datadog`
 - `sdk/python/` — Python bindings, published to PyPI as `ubx-sdk-datadog`
   (imported as `ubx.datadog.*`, a real PEP 420 namespace package)
 
@@ -50,11 +50,11 @@ for what's currently checked in, not a semantic version.
 - Three independent registries, three independent version numbers per
   language — never assume they agree. Verify each directly before trusting
   parity: Go module proxy (`gh api repos/Ubiquex/ubx-sdk-datadog/tags`),
-  `jsr.io/@ubx/sdk-datadog`, `pypi.org/project/ubx-sdk-datadog`. A commit to
+  `npmjs.com/package/@ubx/sdk-datadog`, `pypi.org/project/ubx-sdk-datadog`. A commit to
   this repo's own `main` is NOT the same as "published" for any of the three
   — verify against the SEPARATE published repo/registry directly (a real
   `git log`/`diff` against the actual separate repo, or a real registry
-  query: the Go module proxy, `jsr.io`, `pypi.org`), never infer "published"
+  query: the Go module proxy, `npmjs.com`, `pypi.org`), never infer "published"
   from a commit to the monorepo's own copy alone (`ubiquex`'s own CLAUDE.md
   rule 8). This bit the project once already at the runtime-repo level: a Go
   fix was reported "committed and pushed" across multiple session summaries,
